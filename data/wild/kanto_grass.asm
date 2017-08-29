@@ -467,7 +467,7 @@
 	db 25, PIDGEOTTO
 	db 25, HOPPIP
 	db 27, HOPPIP
-	db 27, HOPPIP
+	db 25, CHANSEY
 	db 25, CHANSEY
 	; day
 	db 23, NIDORINO
@@ -475,7 +475,7 @@
 	db 25, PIDGEOTTO
 	db 25, HOPPIP
 	db 27, HOPPIP
-	db 27, HOPPIP
+	db 25, CHANSEY
 	db 25, CHANSEY
 	; nite
 	db 23, VENONAT
@@ -483,7 +483,7 @@
 	db 25, NOCTOWL
 	db 25, VENOMOTH
 	db 25, QUAGSIRE
-	db 25, QUAGSIRE
+	db 25, CHANSEY
 	db 25, CHANSEY
 
 	map ROUTE_14
@@ -494,7 +494,7 @@
 	db 28, PIDGEOTTO
 	db 28, HOPPIP
 	db 30, SKIPLOOM
-	db 30, SKIPLOOM
+	db 28, CHANSEY
 	db 28, CHANSEY
 	; day
 	db 26, NIDORINO
@@ -502,7 +502,7 @@
 	db 28, PIDGEOTTO
 	db 28, HOPPIP
 	db 30, SKIPLOOM
-	db 30, SKIPLOOM
+	db 28, CHANSEY
 	db 28, CHANSEY
 	; nite
 	db 26, VENONAT
@@ -510,7 +510,7 @@
 	db 28, NOCTOWL
 	db 28, VENOMOTH
 	db 28, QUAGSIRE
-	db 28, QUAGSIRE
+	db 28, CHANSEY
 	db 28, CHANSEY
 
 	map ROUTE_15
@@ -521,7 +521,7 @@
 	db 25, PIDGEOTTO
 	db 25, HOPPIP
 	db 27, HOPPIP
-	db 27, HOPPIP
+	db 25, CHANSEY
 	db 25, CHANSEY
 	; day
 	db 23, NIDORINO
@@ -529,7 +529,7 @@
 	db 25, PIDGEOTTO
 	db 25, HOPPIP
 	db 27, HOPPIP
-	db 27, HOPPIP
+	db 25, CHANSEY
 	db 25, CHANSEY
 	; nite
 	db 23, VENONAT
@@ -537,7 +537,7 @@
 	db 25, NOCTOWL
 	db 25, VENOMOTH
 	db 25, QUAGSIRE
-	db 25, QUAGSIRE
+	db 25, CHANSEY
 	db 25, CHANSEY
 
 	map ROUTE_16
