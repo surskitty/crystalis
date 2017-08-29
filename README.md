@@ -9,4 +9,5 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - Ghost is now a Special type and Dark is Physical.
 - Poison is super-effective against Bug, just as it was in gen I.
 - Many underpowered pokemon have had their base stats adjusted!
-
+- Trade evolutions can be obtained by either using the item required or by levelling up: 28 for alakazam, 36 for machamp, and 33 for golem and gengar.
+- Absorb is base power 30, Mega Drain 50, Giga Drain 75, and Leech Life 80.  Most pokemon that learned Leech Life now have Absorb in its place.

@@ -527,27 +527,29 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
-	db 1, LEECH_LIFE
-	db 6, SUPERSONIC
-	db 12, BITE
-	db 19, CONFUSE_RAY
-	db 27, WING_ATTACK
-	db 36, MEAN_LOOK
-	db 46, HAZE
+	db 1, ABSORB
+	db 5, SUPERSONIC
+	db 10, BITE
+	db 16, SCREECH
+	db 23, CONFUSE_RAY
+	db 30, WING_ATTACK
+	db 38, MEAN_LOOK
+	db 47, HAZE
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, CROBAT
 	db 0 ; no more evolutions
 	db 1, SCREECH
-	db 1, LEECH_LIFE
+	db 1, ABSORB
 	db 1, SUPERSONIC
-	db 6, SUPERSONIC
-	db 12, BITE
-	db 19, CONFUSE_RAY
-	db 30, WING_ATTACK
-	db 42, MEAN_LOOK
-	db 55, HAZE
+	db 5, SUPERSONIC
+	db 10, BITE
+	db 16, SCREECH
+	db 24, CONFUSE_RAY
+	db 34, WING_ATTACK
+	db 46, MEAN_LOOK
+	db 60, HAZE
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -593,11 +595,11 @@ ParasEvosAttacks:
 	db 1, SCRATCH
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
-	db 19, LEECH_LIFE
+	db 19, MEGA_DRAIN
 	db 25, SPORE
 	db 31, SLASH
 	db 37, GROWTH
-	db 43, GIGA_DRAIN
+	db 43, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
@@ -607,11 +609,11 @@ ParasectEvosAttacks:
 	db 1, POISONPOWDER
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
-	db 19, LEECH_LIFE
+	db 19, MEGA_DRAIN
 	db 28, SPORE
 	db 37, SLASH
 	db 46, GROWTH
-	db 55, GIGA_DRAIN
+	db 55, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 VenonatEvosAttacks:
@@ -620,6 +622,7 @@ VenonatEvosAttacks:
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
+	db 1, POISON_STING
 	db 9, SUPERSONIC
 	db 17, CONFUSION
 	db 20, POISONPOWDER
@@ -635,7 +638,7 @@ VenomothEvosAttacks:
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
-	db 1, SUPERSONIC
+	db 1, POISON_STING
 	db 9, SUPERSONIC
 	db 17, CONFUSION
 	db 20, POISONPOWDER
@@ -2293,17 +2296,14 @@ SpinarakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, STRING_SHOT
+	db 1, CONSTRICT
 	db 6, SCARY_FACE
-	db 11, CONSTRICT
+	db 11, ABSORB
 	db 17, NIGHT_SHADE
-	db 23, LEECH_LIFE
-	db 30, FURY_SWIPES
-	db 37, SPIDER_WEB
-if _CRYSTAL
-	db 45, AGILITY
-else
-	db 45, SCREECH
-endc
+	db 23, FURY_SWIPES
+	db 30, SPIDER_WEB
+	db 37, AGILITY
+	db 45, LEECH_LIFE
 	db 53, PSYCHIC_M
 	db 0 ; no more level-up moves
 
@@ -2311,33 +2311,30 @@ AriadosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
 	db 1, STRING_SHOT
-	db 1, SCARY_FACE
 	db 1, CONSTRICT
+	db 1, SCARY_FACE
 	db 6, SCARY_FACE
-	db 11, CONSTRICT
+	db 11, ABSORB
 	db 17, NIGHT_SHADE
-	db 25, LEECH_LIFE
-	db 34, FURY_SWIPES
-	db 43, SPIDER_WEB
-if _CRYSTAL
-	db 53, AGILITY
-else
-	db 53, SCREECH
-endc
+	db 25, FURY_SWIPES
+	db 34, SPIDER_WEB
+	db 43, AGILITY
+	db 53, LEECH_LIFE
 	db 63, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 CrobatEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCREECH
-	db 1, LEECH_LIFE
+	db 1, ABSORB
 	db 1, SUPERSONIC
-	db 6, SUPERSONIC
-	db 12, BITE
-	db 19, CONFUSE_RAY
-	db 30, WING_ATTACK
-	db 42, MEAN_LOOK
-	db 55, HAZE
+	db 5, SUPERSONIC
+	db 10, BITE
+	db 16, SCREECH
+	db 24, CONFUSE_RAY
+	db 34, WING_ATTACK
+	db 46, MEAN_LOOK
+	db 60, HAZE
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
