@@ -1490,24 +1490,24 @@
 	; morn
 	db 13, EKANS
 	db 14, SPEAROW
-	db 15, RATTATA
-	db 16, RATICATE
+	db 15, MANKEY
+	db 16, MAREEP
 	db 15, ARBOK
 	db 16, FEAROW
 	db 16, FEAROW
 	; day
 	db 13, EKANS
 	db 14, SPEAROW
-	db 15, RATTATA
-	db 16, RATICATE
+	db 15, MANKEY
+	db 16, MAREEP
 	db 15, ARBOK
 	db 16, FEAROW
 	db 16, FEAROW
 	; nite
 	db 13, RATTATA
 	db 14, MURKROW
-	db 15, RATICATE
-	db 16, GOLBAT
+	db 15, MANKEY
+	db 16, MAREEP
 	db 15, MARILL
 	db 16, GOLBAT
 	db 16, GOLBAT
@@ -1520,22 +1520,22 @@
 	db 16, FARFETCH_D
 	db 15, FURRET
 	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 17, FLAAFFY
+	db 17, FLAAFFY
 	; day
 	db 15, SENTRET
 	db 16, PIDGEOTTO
 	db 16, FARFETCH_D
 	db 15, FURRET
 	db 17, RATICATE
-	db 17, FURRET
-	db 17, FURRET
+	db 17, FLAAFFY
+	db 17, FLAAFFY
 	; nite
 	db 15, VENONAT
 	db 16, NOCTOWL
 	db 16, RATICATE
 	db 17, VENONAT
-	db 17, RATICATE
+	db 17, FLAAFFY
 	db 17, VENOMOTH
 	db 17, VENOMOTH
 
