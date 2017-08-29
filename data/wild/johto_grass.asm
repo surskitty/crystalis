@@ -59,18 +59,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -86,18 +86,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -113,18 +113,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -140,18 +140,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -167,18 +167,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -194,18 +194,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -221,18 +221,18 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; nite
 	db 20, GASTLY
@@ -248,10 +248,10 @@
 	; morn
 	db 20, RATTATA
 	db 21, RATTATA
-	db 22, RATTATA
+	db 22, VULPIX
 	db 22, RATTATA
 	db 23, RATTATA
-	db 24, RATTATA
+	db 24, VULPIX
 	db 24, RATTATA
 	; day
 	db 20, RATTATA
@@ -547,7 +547,7 @@
 	db 5, WEEDLE
 	db 7, METAPOD
 	db 7, KAKUNA
-	db 7, PIDGEY
+	db 7, PIKACHU
 	db 6, PARAS
 	db 6, PARAS
 	; day
@@ -555,7 +555,7 @@
 	db 5, WEEDLE
 	db 7, METAPOD
 	db 7, KAKUNA
-	db 7, PIDGEY
+	db 7, PIKACHU
 	db 6, PARAS
 	db 6, PARAS
 	; nite
@@ -1420,8 +1420,8 @@
 	db 15, PIDGEY
 	db 16, GROWLITHE
 	db 15, PIDGEOTTO
-	db 15, PIDGEY
-	db 15, PIDGEY
+	db 15, SLUGMA
+	db 15, SLUGMA
 	; nite
 	db 13, SPINARAK
 	db 14, STANTLER
@@ -1434,18 +1434,18 @@
 	map ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, RATTATA
+	db 16, PIDGEOTTO
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, PONYTA
 	db 13, TAUROS
 	db 13, MILTANK
 	db 13, MILTANK
 	; day
-	db 16, RATTATA
+	db 16, PIDGEOTTO
 	db 16, RATICATE
 	db 16, MAGNEMITE
-	db 16, PIDGEOTTO
+	db 16, PONYTA
 	db 13, TAUROS
 	db 13, MILTANK
 	db 13, MILTANK
@@ -1547,24 +1547,24 @@
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
 	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 26, CHANSEY
+	db 26, CHANSEY
 	; day
 	db 23, TANGELA
 	db 22, LICKITUNG
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
 	db 24, LICKITUNG
-	db 26, LICKITUNG
-	db 26, LICKITUNG
+	db 26, CHANSEY
+	db 26, CHANSEY
 	; nite
 	db 23, TANGELA
 	db 22, POLIWAG
 	db 22, BELLSPROUT
 	db 24, WEEPINBELL
 	db 24, POLIWHIRL
-	db 26, POLIWHIRL
-	db 26, POLIWHIRL
+	db 24, CHANSEY
+	db 26, CHANSEY
 
 	map ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
