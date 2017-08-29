@@ -43,9 +43,9 @@ UnknownText_0x55f08:
 	text "Hey. I love strong"
 	line "#MON."
 
-	para "I feed them PRO-"
-	line "TEIN to crank up"
-	cont "their ATTACK."
+	para "I crank up their"
+	line "ATTACK by giving"
+	cont "them PROTEIN."
 	done
 
 UnknownText_0x55f52:
