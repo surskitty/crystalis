@@ -121,7 +121,7 @@ UnknownText_0x554c2:
 
 	para "You'll be OK,"
 	line "then. Here's the"
-	cont "SQUIRTBOTTLE!"
+	cont "SQUIRTLEJUG!"
 	done
 
 UnknownText_0x5550d:

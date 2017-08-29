@@ -172,7 +172,7 @@
 	db "UP-GRADE@"
 	db "BERRY@"
 	db "GOLD BERRY@"
-	db "SQUIRTBOTTLE@"
+	db "SQUIRTLEJUG@"
 	db "TERU-SAMA@"
 	db "PARK BALL@"
 	db "RAINBOW WING@"
