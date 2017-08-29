@@ -2,7 +2,7 @@
 
 This is a romhack of Pok&eacute;mon Crystal, made off [pret/pokemon-crystal](https://github.com/pret/pokecrystal), by surskitty et al. No monetary gain shall be had from this.
 
-The underlying philosophy of this romhack is to leave it playably a main series Pok&eacute;mon game, simplistic difficulty and all.  Encounters are adjusted so that all Pok&eacute;mon will be available in multiple areas, with as few unfeasibly low appearance rates as possible.  As such, there is no intention of releasing a document detailing full appearance lists.
+The underlying philosophy of this romhack is to leave it playably a main series Pok&eacute;mon game, simplistic difficulty and all.  Encounters are adjusted so that all Pok&eacute;mon will be available in multiple areas, with as few unfeasibly low appearance rates as possible.  As such, there is no intention of releasing a separate document detailing full appearance lists.
 
 ## Major Changes
 
