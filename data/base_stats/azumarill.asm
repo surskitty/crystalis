@@ -3,7 +3,7 @@
 	db 100, 100,  80,  50,  80,  80
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, WATER
+	db WATER, FAIRY_T
 	db 75 ; catch rate
 	db 153 ; base exp
 	db NO_ITEM ; item 1
