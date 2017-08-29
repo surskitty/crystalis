@@ -255,10 +255,10 @@ ClairGroup:
 		db SLAM
 		db DRAGONBREATH
 
-	db 37, DRAGONAIR
+	db 37, AMPHAROS
 		db THUNDER_WAVE
 		db THUNDERBOLT
-		db SLAM
+		db ROCK_SMASH
 		db DRAGONBREATH
 
 	db 37, DRAGONAIR
@@ -828,7 +828,7 @@ BrunoGroup:
 		db PURSUIT
 		db QUICK_ATTACK
 		db DIG
-		db DETECT
+		db PROTECT
 
 	db 42, HITMONLEE
 		db SWAGGER
@@ -1986,7 +1986,7 @@ BirdKeeperGroup:
 
 	db 40, FARFETCH_D
 		db FURY_ATTACK
-		db DETECT
+		db PROTECT
 		db FLY
 		db SLASH
 
@@ -2020,7 +2020,7 @@ BirdKeeperGroup:
 
 	db 38, PIDGEOT
 		db SWIFT
-		db DETECT
+		db PROTECT
 		db STEEL_WING
 		db FLY
 
@@ -2676,15 +2676,12 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (19)
 	db "ALLEN@"
-	db 1 ; moves
+	db 0 ; normal
 
 	; party
 
-	db 27, CHARMELEON
-		db EMBER
-		db SMOKESCREEN
-		db RAGE
-		db SCARY_FACE
+	db 27, OMANYTE
+	db 27, KABUTO
 
 	db $ff ; end
 
@@ -6439,7 +6436,8 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 17, CHARMELEON
+	db 15, CHARMANDER
+	db 15, CHARMANDER
 
 	db $ff ; end
 
