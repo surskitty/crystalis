@@ -153,8 +153,7 @@ UnknownText_0x1900b0:
 	para "Since you're new,"
 	line "you should try a"
 
-	para "yummy RAGECANDY-"
-	line "BAR!"
+	para "nice CAKEOFRAGE!"
 
 	para "Right now, it can"
 	line "be yours for just"
@@ -180,7 +179,7 @@ UnknownText_0x190188:
 	done
 
 UnknownText_0x1901a6:
-	text "RAGECANDYBAR's"
+	text "CAKEOFRAGE's"
 	line "sold out."
 
 	para "I'm packing up."
@@ -236,7 +235,7 @@ MahoganyTownSignText:
 MahoganyTownRagecandybarSignText:
 	text "While visiting"
 	line "MAHOGANY TOWN, try"
-	cont "a RAGECANDYBAR!"
+	cont "a CAKEOFRAGE!"
 	done
 
 MahoganyGymSignText:
