@@ -518,27 +518,27 @@
 	; morn
 	db 21, ZUBAT
 	db 23, ZUBAT
-	db 19, ZUBAT
+	db 19, SLOWPOKE
 	db 21, SLOWPOKE
 	db 23, GOLBAT
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 23, SLOWBRO
+	db 23, SLOWBRO
 	; day
 	db 21, ZUBAT
 	db 23, ZUBAT
-	db 19, ZUBAT
+	db 19, SLOWPOKE
 	db 21, SLOWPOKE
 	db 23, GOLBAT
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 23, SLOWBRO
+	db 23, SLOWBRO
 	; nite
 	db 21, ZUBAT
 	db 23, ZUBAT
-	db 19, ZUBAT
+	db 19, SLOWPOKE
 	db 21, SLOWPOKE
 	db 23, GOLBAT
-	db 23, SLOWPOKE
-	db 23, SLOWPOKE
+	db 23, SLOWBRO
+	db 23, SLOWBRO
 
 	map ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
@@ -563,7 +563,7 @@
 	db 5, VENONAT
 	db 7, ODDISH
 	db 7, PSYDUCK
-	db 7, HOOTHOOT
+	db 7, BULBASAUR
 	db 6, PARAS
 	db 6, PARAS
 
@@ -573,18 +573,18 @@
 	db 14, RATTATA
 	db 13, ZUBAT
 	db 14, MACHOP
-	db 13, GOLBAT
+	db 16, GOLBAT
 	db 14, GEODUDE
-	db 16, RATICATE
-	db 16, RATICATE
+	db 14, SQUIRTLE
+	db 14, SQUIRTLE
 	; day
 	db 14, RATTATA
 	db 13, ZUBAT
 	db 14, MACHOP
-	db 13, GOLBAT
+	db 16, GOLBAT
 	db 14, GEODUDE
-	db 16, RATICATE
-	db 16, RATICATE
+	db 14, SQUIRTLE
+	db 14, SQUIRTLE
 	; nite
 	db 14, RATTATA
 	db 13, ZUBAT
