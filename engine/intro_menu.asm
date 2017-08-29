@@ -697,7 +697,7 @@ OakSpeech: ; 0x5f99
 	call RotateThreePalettesRight
 	call ClearTileMap
 
-	ld a, WOOPER
+	ld a, VENONAT
 	ld [CurSpecies], a
 	ld [CurPartySpecies], a
 	call GetBaseData
@@ -757,7 +757,7 @@ OakText1: ; 0x6045
 OakText2: ; 0x604a
 	text_jump _OakText2
 	start_asm
-	ld a, WOOPER
+	ld a, VENONAT
 	call PlayCry
 	call WaitSFX
 	ld hl, OakText3
