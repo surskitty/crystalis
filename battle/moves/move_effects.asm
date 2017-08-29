@@ -696,6 +696,7 @@ SpeedDownHit:
 	statdownmessage
 	endmove
 
+Moonblast:
 SpecialAttackDownHit:
 	checkobedience
 	usedmovetext
@@ -1652,7 +1653,6 @@ Curse:
 	endmove
 
 Protect:
-Detect:
 	checkobedience
 	usedmovetext
 	doturn

@@ -194,7 +194,7 @@
 	db "DESTINY BOND@"
 	db "PERISH SONG@"
 	db "ICY WIND@"
-	db "DETECT@"
+	db "MOONBLAST@"
 	db "BONE RUSH@"
 	db "LOCK-ON@"
 	db "OUTRAGE@"
