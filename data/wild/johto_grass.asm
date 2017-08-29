@@ -273,19 +273,19 @@
 	map BURNED_TOWER_1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, RATTATA
 	db 14, KOFFING
+	db 13, RATTATA
 	db 15, RATTATA
 	db 14, ZUBAT
-	db 15, RATTATA
+	db 12, CHARMANDER
 	db 15, RATICATE
 	db 15, RATICATE
 	; day
-	db 13, RATTATA
 	db 14, KOFFING
+	db 13, RATTATA
 	db 15, RATTATA
 	db 14, ZUBAT
-	db 15, RATTATA
+	db 12, MAGBY
 	db 15, RATICATE
 	db 15, RATICATE
 	; nite
@@ -293,35 +293,35 @@
 	db 14, KOFFING
 	db 15, RATTATA
 	db 14, ZUBAT
-	db 15, RATTATA
+	db 12, HOUNDOUR
 	db 15, RATICATE
 	db 15, RATICATE
 
 	map BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, RATTATA
 	db 14, KOFFING
+	db 14, RATTATA
 	db 16, KOFFING
 	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
+	db 12, CHARMANDER
+	db 14, CHARMANDER
 	db 16, WEEZING
 	; day
-	db 14, RATTATA
 	db 14, KOFFING
+	db 14, RATTATA
 	db 16, KOFFING
 	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
+	db 12, MAGBY
+	db 14, MAGBY
 	db 16, WEEZING
 	; nite
 	db 14, RATTATA
 	db 14, KOFFING
 	db 16, KOFFING
 	db 15, ZUBAT
-	db 12, KOFFING
-	db 16, KOFFING
+	db 12, HOUNDOUR
+	db 14, HOUNDOUR
 	db 16, WEEZING
 
 	map NATIONAL_PARK
