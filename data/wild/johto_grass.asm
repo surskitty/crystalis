@@ -1505,7 +1505,7 @@
 	db 16, FEAROW
 	; nite
 	db 13, RATTATA
-	db 14, ZUBAT
+	db 14, MURKROW
 	db 15, RATICATE
 	db 16, GOLBAT
 	db 15, MARILL
@@ -1613,7 +1613,7 @@
 	db 2, RATTATA
 	; nite
 	db 2, GEODUDE
-	db 2, RATTATA
+	db 2, MURKROW
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, RATTATA
