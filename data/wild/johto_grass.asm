@@ -3,19 +3,19 @@
 	map SPROUT_TOWER_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
+	db 3, CUBONE
+	db 4, CUBONE
+	db 5, CUBONE
 	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
-	db 3, RATTATA
-	db 6, RATTATA
+	db 6, CUBONE
 	db 5, RATTATA
 	db 5, RATTATA
 	; day
+	db 3, CUBONE
+	db 4, CUBONE
+	db 5, CUBONE
 	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
-	db 3, RATTATA
-	db 6, RATTATA
+	db 6, CUBONE
 	db 5, RATTATA
 	db 5, RATTATA
 	; nite
@@ -30,19 +30,19 @@
 	map SPROUT_TOWER_3F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
+	db 3, CUBONE
+	db 4, CUBONE
+	db 5, CUBONE
 	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
-	db 3, RATTATA
-	db 6, RATTATA
+	db 6, CUBONE
 	db 5, RATTATA
 	db 5, RATTATA
 	; day
+	db 3, CUBONE
+	db 4, CUBONE
+	db 5, CUBONE
 	db 3, RATTATA
-	db 4, RATTATA
-	db 5, RATTATA
-	db 3, RATTATA
-	db 6, RATTATA
+	db 6, CUBONE
 	db 5, RATTATA
 	db 5, RATTATA
 	; nite
@@ -995,36 +995,36 @@
 	db 25, ZUBAT
 	db 24, KRABBY
 	db 26, KRABBY
-	db 27, GOLBAT
-	db 26, GOLBAT
-	db 26, GOLBAT
+	db 27, OMANYTE
+	db 27, KABUTO
+	db 27, KABUTO
 
 	map WHIRL_ISLAND_LUGIA_CHAMBER
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 25, KRABBY
-	db 26, ZUBAT
 	db 25, SEEL
 	db 27, KRABBY
 	db 28, GOLBAT
-	db 27, SEEL
-	db 27, SEEL
+	db 27, OMANYTE
+	db 27, KABUTO
+	db 27, KABUTO
 	; day
 	db 25, KRABBY
-	db 26, ZUBAT
 	db 25, SEEL
 	db 27, KRABBY
 	db 28, GOLBAT
-	db 27, SEEL
-	db 27, SEEL
+	db 27, OMANYTE
+	db 27, KABUTO
+	db 27, KABUTO
 	; nite
 	db 25, KRABBY
-	db 26, ZUBAT
-	db 25, KRABBY
+	db 25, ZUBAT
 	db 27, KRABBY
 	db 28, GOLBAT
-	db 27, GOLBAT
-	db 27, GOLBAT
+	db 27, OMANYTE
+	db 27, KABUTO
+	db 27, KABUTO
 
 	map SILVER_CAVE_ROOM_1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
