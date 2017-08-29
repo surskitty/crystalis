@@ -279,7 +279,7 @@
 	db 14, ZUBAT
 	db 12, CHARMANDER
 	db 15, RATICATE
-	db 15, RATICATE
+	db 15, CHARMANDER
 	; day
 	db 14, KOFFING
 	db 13, RATTATA
@@ -287,7 +287,7 @@
 	db 14, ZUBAT
 	db 12, MAGBY
 	db 15, RATICATE
-	db 15, RATICATE
+	db 15, MAGBY
 	; nite
 	db 13, RATTATA
 	db 14, KOFFING
@@ -295,7 +295,7 @@
 	db 14, ZUBAT
 	db 12, HOUNDOUR
 	db 15, RATICATE
-	db 15, RATICATE
+	db 15, HOUNDOUR
 
 	map BURNED_TOWER_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -601,16 +601,16 @@
 	db 14, RATTATA
 	db 15, MACHOP
 	db 14, RATICATE
+	db 15, SQUIRTLE
 	db 15, ZUBAT
-	db 15, GOLBAT
 	db 15, GOLBAT
 	; day
 	db 13, GEODUDE
 	db 14, RATTATA
 	db 15, MACHOP
 	db 14, RATICATE
+	db 15, SQUIRTLE
 	db 15, ZUBAT
-	db 15, GOLBAT
 	db 15, GOLBAT
 	; nite
 	db 13, GEODUDE
