@@ -367,7 +367,7 @@ ParkBall: ; e8a2
 	; Uncomment the line below to fix.
 
 	ld a, [BattleMonItem]
-;	ld b, a
+	ld b, a
 	callba GetItemHeldEffect
 	ld a, b
 	cp HELD_CATCH_CHANCE
@@ -947,7 +947,7 @@ GLOBAL EvosAttacksPointers
 	push bc
 	ld a, BANK(EvosAttacks)
 	call GetFarByte
-	cp MOON_STONE_RED ; BURN_HEAL
+	cp MOON_STONE
 	pop bc
 	ret nz
 
@@ -1006,7 +1006,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret nz ; for the intended effect, this should be “ret z”
+	ret z
 
 	sla b
 	jr c, .max
@@ -1044,7 +1044,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .next ; for the intended effect, this should be “jr nz, .loop”
+	jr nz, .loop ; for the intended effect, this should be “jr nz, .loop”
 	sla b
 	jr c, .max
 
