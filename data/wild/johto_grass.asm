@@ -1355,7 +1355,7 @@
 	; morn
 	db 12, SNUBBULL
 	db 14, PIDGEY
-	db 13, GROWLITHE
+	db 13, VULPIX
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO
@@ -1363,7 +1363,7 @@
 	; day
 	db 12, SNUBBULL
 	db 14, PIDGEY
-	db 13, GROWLITHE
+	db 13, VULPIX
 	db 10, ABRA
 	db 12, JIGGLYPUFF
 	db 10, DITTO
