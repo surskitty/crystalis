@@ -42,9 +42,9 @@ UnknownText_0x9c086:
 	line "in CIANWOOD CITY"
 	cont "across the sea."
 
-	para "I heard him brag-"
-	line "ging about his"
-	cont "rare #MON."
+	para "I heard him brag"
+	line "about his rare"
+	cont "#MON."
 	done
 
 OlivinePokeCenter1F_MapEventHeader:
