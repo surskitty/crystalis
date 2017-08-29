@@ -253,7 +253,7 @@ Item2Attributes:
 	item_attribute   100, HELD_POISON_BOOST,   10,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; KING'S ROCK
-	item_attribute   100, HELD_TRADE_EVOLVE,   30,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute   100, HELD_TRADE_EVOLVE,   30,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; BITTER BERRY
 	item_attribute    10, HELD_HEAL_CONFUSION,  0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_PARTY
@@ -436,7 +436,7 @@ Item2Attributes:
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; METAL COAT
-	item_attribute   100, HELD_STEEL_BOOST,    10,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute   100, HELD_STEEL_BOOST,    10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; DRAGON FANG
 	item_attribute   100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
@@ -460,7 +460,7 @@ Item2Attributes:
 	item_attribute    10, HELD_RESTORE_PP,     -1,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
 
 ; DRAGON SCALE
-	item_attribute  2100, HELD_DRAGON_BOOST,   10,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute  2100, HELD_DRAGON_BOOST,   10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; BERSERK GENE
 	item_attribute   200, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
@@ -523,7 +523,7 @@ Item2Attributes:
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; UP-GRADE
-	item_attribute  2100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute  2100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; BERRY
 	item_attribute    10, HELD_BERRY,          10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_PARTY
