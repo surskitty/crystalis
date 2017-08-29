@@ -546,10 +546,11 @@ GolbatEvosAttacks:
 	db 5, SUPERSONIC
 	db 10, BITE
 	db 16, SCREECH
+	db 22, LICK
 	db 24, CONFUSE_RAY
-	db 34, WING_ATTACK
-	db 46, MEAN_LOOK
-	db 60, HAZE
+	db 33, WING_ATTACK
+	db 43, MEAN_LOOK
+	db 57, HAZE
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -2332,9 +2333,9 @@ CrobatEvosAttacks:
 	db 10, BITE
 	db 16, SCREECH
 	db 24, CONFUSE_RAY
-	db 34, WING_ATTACK
-	db 46, MEAN_LOOK
-	db 60, HAZE
+	db 33, WING_ATTACK
+	db 43, MEAN_LOOK
+	db 57, HAZE
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
