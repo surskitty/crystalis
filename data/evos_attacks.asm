@@ -2392,6 +2392,7 @@ TogepiEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, TOGETIC
 	db 0 ; no more evolutions
 	db 1, GROWL
+	db 1, CONFUSION
 	db 1, CHARM
 	db 7, METRONOME
 	db 18, SWEET_KISS
@@ -2403,6 +2404,7 @@ TogepiEvosAttacks:
 TogeticEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
+	db 1, CONFUSION
 	db 1, CHARM
 	db 7, METRONOME
 	db 18, SWEET_KISS
@@ -2740,6 +2742,7 @@ WobbuffetEvosAttacks:
 	db 1, MIRROR_COAT
 	db 1, SAFEGUARD
 	db 1, DESTINY_BOND
+	db 27, ENCORE
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
