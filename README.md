@@ -1,4 +1,4 @@
-# Pokémon Chrystalis
+# Pokémon Crystalis
 
 This is a romhack of Pok&eacute;mon Crystal, made off [pret/pokemon-crystal](https://github.com/pret/pokecrystal), by surskitty et al. No monetary gain shall be had from this.
 
