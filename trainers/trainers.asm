@@ -595,7 +595,7 @@ Rival1Group:
 		db CONFUSE_RAY
 		db WING_ATTACK
 
-	db 35, MAGNETON
+	db 38, MAGNETON
 		db THUNDERSHOCK
 		db SONICBOOM
 		db THUNDER_WAVE
@@ -613,7 +613,7 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, MEGANIUM
+	db 40, MEGANIUM
 		db REFLECT
 		db RAZOR_LEAF
 		db POISONPOWDER
@@ -641,7 +641,7 @@ Rival1Group:
 		db CONFUSE_RAY
 		db WING_ATTACK
 
-	db 35, MAGNETON
+	db 38, MAGNETON
 		db THUNDERSHOCK
 		db SONICBOOM
 		db THUNDER_WAVE
@@ -659,7 +659,7 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, TYPHLOSION
+	db 40, TYPHLOSION
 		db SMOKESCREEN
 		db EMBER
 		db QUICK_ATTACK
@@ -687,7 +687,7 @@ Rival1Group:
 		db CONFUSE_RAY
 		db WING_ATTACK
 
-	db 34, MAGNETON
+	db 38, MAGNETON
 		db THUNDERSHOCK
 		db SONICBOOM
 		db THUNDER_WAVE
@@ -705,7 +705,7 @@ Rival1Group:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db 38, FERALIGATR
+	db 40, FERALIGATR
 		db RAGE
 		db WATER_GUN
 		db SCARY_FACE
@@ -745,7 +745,7 @@ WillGroup:
 		db ICE_PUNCH
 		db PSYCHIC_M
 
-	db 41, EXEGGUTOR
+	db 42, EXEGGUTOR
 		db REFLECT
 		db LEECH_SEED
 		db EGG_BOMB
@@ -757,7 +757,7 @@ WillGroup:
 		db BODY_SLAM
 		db PSYCHIC_M
 
-	db 42, XATU
+	db 44, XATU
 		db QUICK_ATTACK
 		db FUTURE_SIGHT
 		db CONFUSE_RAY
@@ -836,10 +836,10 @@ BrunoGroup:
 		db HI_JUMP_KICK
 		db FORESIGHT
 
-	db 42, HITMONCHAN
+	db 45, HITMONCHAN
 		db THUNDERPUNCH
 		db ICE_PUNCH
-		db FIRE_PUNCH
+		db DIZZY_PUNCH
 		db MACH_PUNCH
 
 	db 43, ONIX
@@ -870,31 +870,31 @@ KarenGroup:
 
 	; party
 
-	db 42, UMBREON
+	db 47, UMBREON
 		db SAND_ATTACK
 		db CONFUSE_RAY
 		db FAINT_ATTACK
 		db MEAN_LOOK
 
-	db 42, VILEPLUME
+	db 47, VILEPLUME
 		db STUN_SPORE
 		db ACID
 		db MOONLIGHT
 		db PETAL_DANCE
 
-	db 45, GENGAR
+	db 49, GENGAR
 		db LICK
 		db SPITE
 		db CURSE
 		db DESTINY_BOND
 
-	db 44, MURKROW
+	db 51, MURKROW
 		db QUICK_ATTACK
 		db WHIRLWIND
 		db PURSUIT
 		db FAINT_ATTACK
 
-	db 47, HOUNDOOM
+	db 52, HOUNDOOM
 		db ROAR
 		db PURSUIT
 		db FLAMETHROWER
@@ -916,31 +916,31 @@ KogaGroup:
 
 	; party
 
-	db 40, ARIADOS
+	db 45, ARIADOS
 		db DOUBLE_TEAM
 		db SPIDER_WEB
 		db BATON_PASS
 		db GIGA_DRAIN
 
-	db 41, VENOMOTH
+	db 46, VENOMOTH
 		db SUPERSONIC
-		db GUST
+		db LEECH_LIFE
 		db PSYCHIC_M
 		db TOXIC
 
-	db 43, FORRETRESS
+	db 48, FORRETRESS
 		db PROTECT
 		db SWIFT
 		db EXPLOSION
 		db SPIKES
 
-	db 42, MUK
+	db 47, MUK
 		db MINIMIZE
 		db ACID_ARMOR
 		db SLUDGE_BOMB
 		db TOXIC
 
-	db 44, CROBAT
+	db 49, CROBAT
 		db DOUBLE_TEAM
 		db QUICK_ATTACK
 		db WING_ATTACK
@@ -962,37 +962,37 @@ ChampionGroup:
 
 	; party
 
-	db 44, GYARADOS
+	db 49, GYARADOS
 		db FLAIL
 		db RAIN_DANCE
 		db SURF
 		db HYPER_BEAM
 
-	db 47, DRAGONITE
-		db THUNDER_WAVE
+	db 50, KINGDRA
+		db SURF
 		db TWISTER
-		db THUNDER
+		db ICE_BEAM
 		db HYPER_BEAM
 
-	db 47, DRAGONITE
+	db 52, DRAGONAIR
 		db THUNDER_WAVE
 		db TWISTER
 		db BLIZZARD
 		db HYPER_BEAM
 
-	db 46, AERODACTYL
+	db 51, AERODACTYL
 		db WING_ATTACK
 		db ANCIENTPOWER
 		db ROCK_SLIDE
 		db HYPER_BEAM
 
-	db 46, CHARIZARD
+	db 51, CHARIZARD
 		db FLAMETHROWER
 		db WING_ATTACK
 		db SLASH
 		db HYPER_BEAM
 
-	db 50, DRAGONITE
+	db 55, DRAGONITE
 		db FIRE_BLAST
 		db SAFEGUARD
 		db OUTRAGE
@@ -1060,25 +1060,31 @@ MistyGroup:
 
 	; party
 
-	db 42, GOLDUCK
+	db 52, GOLDUCK
 		db SURF
 		db DISABLE
 		db PSYCH_UP
 		db PSYCHIC_M
 
-	db 42, QUAGSIRE
+	db 52, QUAGSIRE
 		db SURF
 		db AMNESIA
 		db EARTHQUAKE
 		db RAIN_DANCE
 
-	db 44, LAPRAS
-		db SURF
+	db 54, LAPRAS
+		db WHIRLPOOL
 		db PERISH_SONG
 		db BLIZZARD
 		db RAIN_DANCE
 
-	db 47, STARMIE
+	db 54, OMASTAR
+		db SURF
+		db ANCIENTPOWER
+		db SPIKE_CANNON
+		db RAIN_DANCE
+
+	db 57, STARMIE
 		db SURF
 		db CONFUSE_RAY
 		db RECOVER
@@ -6335,22 +6341,34 @@ BlaineGroup:
 
 	; party
 
-	db 45, MAGCARGO
+	db 55, MAGCARGO
 		db CURSE
 		db SMOG
 		db FLAMETHROWER
 		db ROCK_SLIDE
 
-	db 45, MAGMAR
+	db 55, MAGMAR
 		db THUNDERPUNCH
 		db FIRE_PUNCH
 		db SUNNY_DAY
 		db CONFUSE_RAY
 
-	db 50, RAPIDASH
+	db 59, CHARIZARD
+		db FLAMETHROWER
+		db FIRE_SPIN
+		db BEAT_UP
+		db WING_ATTACK
+
+	db 59, TYPHLOSION
+		db FIRE_PUNCH
+		db DIG
+		db SOLARBEAM
+		db SUNNY_DAY
+
+	db 60, RAPIDASH
 		db QUICK_ATTACK
 		db FIRE_SPIN
-		db FURY_ATTACK
+		db MEGAHORN
 		db FIRE_BLAST
 
 	db $ff ; end
@@ -8645,37 +8663,37 @@ BlueGroup:
 
 	; party
 
-	db 56, PIDGEOT
+	db 61, PIDGEOT
 		db QUICK_ATTACK
 		db WHIRLWIND
 		db WING_ATTACK
 		db MIRROR_MOVE
 
-	db 54, ALAKAZAM
+	db 59, ALAKAZAM
 		db DISABLE
 		db RECOVER
 		db PSYCHIC_M
 		db REFLECT
 
-	db 56, RHYDON
+	db 61, RHYDON
 		db FURY_ATTACK
 		db SANDSTORM
 		db ROCK_SLIDE
 		db EARTHQUAKE
 
-	db 58, GYARADOS
+	db 63, GYARADOS
 		db TWISTER
 		db HYDRO_PUMP
 		db RAIN_DANCE
 		db HYPER_BEAM
 
-	db 58, EXEGGUTOR
+	db 63, EXEGGUTOR
 		db SUNNY_DAY
 		db LEECH_SEED
 		db EGG_BOMB
 		db SOLARBEAM
 
-	db 58, ARCANINE
+	db 63, ARCANINE
 		db ROAR
 		db SWIFT
 		db FLAMETHROWER
