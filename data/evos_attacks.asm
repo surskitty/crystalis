@@ -564,7 +564,7 @@ OddishEvosAttacks:
 	db 18, SLEEP_POWDER
 	db 23, ACID
 	db 32, MOONLIGHT
-	db 39, PETAL_DANCE
+	db 39, MOONBLAST
 	db 0 ; no more level-up moves
 
 GloomEvosAttacks:
@@ -2245,7 +2245,7 @@ HoothootEvosAttacks:
 	db 22, REFLECT
 	db 28, TAKE_DOWN
 	db 34, CONFUSION
-	db 48, DREAM_EATER
+	db 48, MOONBLAST
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
@@ -2260,7 +2260,7 @@ NoctowlEvosAttacks:
 	db 25, REFLECT
 	db 33, TAKE_DOWN
 	db 41, CONFUSION
-	db 57, DREAM_EATER
+	db 57, MOONBLAST
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
@@ -2505,7 +2505,8 @@ MarillEvosAttacks:
 	db 15, ROLLOUT
 	db 21, BUBBLEBEAM
 	db 28, DOUBLE_EDGE
-	db 36, RAIN_DANCE
+	db 36, MOONBLAST
+	db 45, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 AzumarillEvosAttacks:
@@ -2520,7 +2521,8 @@ AzumarillEvosAttacks:
 	db 15, ROLLOUT
 	db 25, BUBBLEBEAM
 	db 36, DOUBLE_EDGE
-	db 48, RAIN_DANCE
+	db 48, MOONBLAST
+	db 61, RAIN_DANCE
 	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
@@ -2844,7 +2846,7 @@ SnubbullEvosAttacks:
 	db 19, LICK
 	db 26, ROAR
 	db 34, HEAL_BELL
-	db 43, TAKE_DOWN
+	db 43, MOONBLAST
 	db 0 ; no more level-up moves
 
 GranbullEvosAttacks:
@@ -2857,7 +2859,7 @@ GranbullEvosAttacks:
 	db 19, LICK
 	db 28, ROAR
 	db 38, HEAL_BELL
-	db 51, TAKE_DOWN
+	db 51, MOONBLAST
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
