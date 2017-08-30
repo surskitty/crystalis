@@ -600,7 +600,7 @@ VileplumeEvosAttacks:
 ParasEvosAttacks:
 	db EVOLVE_LEVEL, 24, PARASECT
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, ABSORB
 	db 7, STUN_SPORE
 	db 13, POISONPOWDER
 	db 19, MEGA_DRAIN
@@ -612,7 +612,7 @@ ParasEvosAttacks:
 
 ParasectEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
+	db 1, ABSORB
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
 	db 7, STUN_SPORE
@@ -953,7 +953,7 @@ WeepinbellEvosAttacks:
 
 VictreebelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, VINE_WHIP
+	db 1, ACID
 	db 1, SLEEP_POWDER
 	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
@@ -1241,7 +1241,7 @@ ShellderEvosAttacks:
 CloysterEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WITHDRAW
-	db 1, SUPERSONIC
+	db 1, CLAMP
 	db 1, AURORA_BEAM
 	db 1, PROTECT
 if _CRYSTAL
@@ -1839,7 +1839,6 @@ EeveeEvosAttacks:
 	db 23, QUICK_ATTACK
 	db 30, BITE
 	db 36, BATON_PASS
-endc
 	db 42, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -2572,12 +2571,8 @@ HoppipEvosAttacks:
 	db EVOLVE_LEVEL, 18, SKIPLOOM
 	db 0 ; no more evolutions
 	db 1, SPLASH
-if _CRYSTAL
+	db 1, TAIL_WHIP
 	db 5, SYNTHESIS
-else
-	db 1, SYNTHESIS
-endc
-	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2591,13 +2586,10 @@ SkiploomEvosAttacks:
 	db EVOLVE_LEVEL, 27, JUMPLUFF
 	db 0 ; no more evolutions
 	db 1, SPLASH
-	db 1, SYNTHESIS
 	db 1, TAIL_WHIP
+	db 1, SYNTHESIS
 	db 1, TACKLE
-if _CRYSTAL
 	db 5, SYNTHESIS
-endc
-	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2610,13 +2602,10 @@ endc
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
-	db 1, SYNTHESIS
 	db 1, TAIL_WHIP
+	db 1, SYNTHESIS
 	db 1, TACKLE
-if _CRYSTAL
 	db 5, SYNTHESIS
-endc
-	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
@@ -2669,11 +2658,8 @@ YanmaEvosAttacks:
 	db 19, SONICBOOM
 	db 25, PROTECT
 	db 31, SUPERSONIC
-if _CRYSTAL
 	db 37, WING_ATTACK
-else
 	db 37, SWIFT
-endc
 	db 43, SCREECH
 	db 0 ; no more level-up moves
 
@@ -2775,8 +2761,8 @@ WobbuffetEvosAttacks:
 	db 1, COUNTER
 	db 1, MIRROR_COAT
 	db 1, SAFEGUARD
-	db 1, DESTINY_BOND
-	db 27, ENCORE
+	db 1, ENCORE
+	db 30, DESTINY_BOND
 	db 0 ; no more level-up moves
 
 GirafarigEvosAttacks:
@@ -3018,9 +3004,7 @@ SwinubEvosAttacks:
 	db 28, TAKE_DOWN
 	db 37, MIST
 	db 46, BLIZZARD
-if _CRYSTAL
 	db 55, AMNESIA
-endc
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
@@ -3034,9 +3018,7 @@ PiloswineEvosAttacks:
 	db 33, FURY_ATTACK
 	db 42, MIST
 	db 56, BLIZZARD
-if _CRYSTAL
 	db 70, AMNESIA
-endc
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
@@ -3338,17 +3320,10 @@ SuicuneEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-if _CRYSTAL
 	db 11, BUBBLEBEAM
 	db 21, RAIN_DANCE
 	db 31, GUST
 	db 41, AURORA_BEAM
-else
-	db 11, WATER_GUN
-	db 21, ROAR
-	db 31, GUST
-	db 41, BUBBLEBEAM
-endc
 	db 51, MIST
 	db 61, MIRROR_COAT
 	db 71, HYDRO_PUMP
