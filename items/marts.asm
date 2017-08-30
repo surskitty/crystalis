@@ -153,7 +153,7 @@ Mart9: ; 1613b
 
 Mart10: ; 16140
 	db 5 ; # items
-	db TM_HIDDEN_POWER
+	db TM_PROTECT
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -163,7 +163,7 @@ Mart10: ; 16140
 
 Mart11: ; 16146
 	db 5 ; # items
-	db TM_HIDDEN_POWER
+	db TM_PROTECT
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -173,7 +173,7 @@ Mart11: ; 16146
 
 Mart12: ; 1614c
 	db 6 ; # items
-	db TM_HIDDEN_POWER
+	db TM_PROTECT
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -344,11 +344,11 @@ Mart24: ; 161c2
 Mart25: ; 161ce
 	db 7 ; # items
 	db TM_HIDDEN_POWER
+	db TM_GIGA_DRAIN
+	db TM_EARTHQUAKE
+	db TM_THIEF
 	db TM_SUNNY_DAY
-	db TM_PROTECT
 	db TM_RAIN_DANCE
-	db TM_FRUSTRATION
-	db TM_RETURN
 	db TM_SANDSTORM
 	db $ff
 ; 161d5
