@@ -251,4 +251,4 @@
 	db "BEAT UP@"
 	db "FAIRY WIND@"
 	db "CAPTIVATE@"
-	db "METAL SOUND@"
+	db "FAKE TEARS@"
