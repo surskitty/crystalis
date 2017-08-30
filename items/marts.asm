@@ -143,7 +143,8 @@ Mart8: ; 16134
 ; 1613b
 
 Mart9: ; 1613b
-	db 3 ; # items
+	db 4 ; # items
+	db TM_HIDDEN_POWER
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -151,7 +152,8 @@ Mart9: ; 1613b
 ; 16140
 
 Mart10: ; 16140
-	db 4 ; # items
+	db 5 ; # items
+	db TM_HIDDEN_POWER
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -160,7 +162,8 @@ Mart10: ; 16140
 ; 16146
 
 Mart11: ; 16146
-	db 4 ; # items
+	db 5 ; # items
+	db TM_HIDDEN_POWER
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -169,7 +172,8 @@ Mart11: ; 16146
 ; 1614c
 
 Mart12: ; 1614c
-	db 5 ; # items
+	db 6 ; # items
+	db TM_HIDDEN_POWER
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
@@ -338,18 +342,24 @@ Mart24: ; 161c2
 ; 161ce
 
 Mart25: ; 161ce
-	db 5 ; # items
+	db 7 ; # items
 	db TM_HIDDEN_POWER
 	db TM_SUNNY_DAY
 	db TM_PROTECT
 	db TM_RAIN_DANCE
+	db TM_FRUSTRATION
+	db TM_RETURN
 	db TM_SANDSTORM
 	db $ff
 ; 161d5
 
 Mart26: ; 161d5
-	db 3 ; # items
+	db 7 ; # items
 	db POKE_DOLL
+	db FIRE_STONE
+	db THUNDERSTONE
+	db LEAF_STONE
+	db WATER_STONE
 	db LOVELY_MAIL
 	db SURF_MAIL
 	db $ff
