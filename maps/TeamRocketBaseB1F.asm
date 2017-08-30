@@ -295,7 +295,7 @@ ExplodingTrap2:
 ExplodingTrap3:
 	checkevent EVENT_EXPLODING_TRAP_3
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_3
 	end
@@ -311,7 +311,7 @@ ExplodingTrap4:
 ExplodingTrap5:
 	checkevent EVENT_EXPLODING_TRAP_5
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_5
 	end
@@ -359,7 +359,7 @@ ExplodingTrap10:
 ExplodingTrap11:
 	checkevent EVENT_EXPLODING_TRAP_11
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_11
 	end
@@ -367,7 +367,7 @@ ExplodingTrap11:
 ExplodingTrap12:
 	checkevent EVENT_EXPLODING_TRAP_12
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_12
 	end
@@ -375,7 +375,7 @@ ExplodingTrap12:
 ExplodingTrap13:
 	checkevent EVENT_EXPLODING_TRAP_13
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_13
 	end
@@ -415,7 +415,7 @@ ExplodingTrap17:
 ExplodingTrap18:
 	checkevent EVENT_EXPLODING_TRAP_18
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_18
 	end
@@ -423,7 +423,7 @@ ExplodingTrap18:
 ExplodingTrap19:
 	checkevent EVENT_EXPLODING_TRAP_19
 	iftrue NoExplodingTrap
-	scall GeodudeExplodingTrap
+	scall PorygonExplodingTrap
 	reloadmapafterbattle
 	setevent EVENT_EXPLODING_TRAP_19
 	end
@@ -462,13 +462,13 @@ VoltorbExplodingTrap:
 	startbattle
 	end
 
-GeodudeExplodingTrap:
+PorygonExplodingTrap:
 	special FadeOutPalettes
-	cry GEODUDE
+	cry PORYGON
 	special FadeInPalettes
 	setlasttalked -1
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon GEODUDE, 21
+	loadwildmon PORYGON, 21
 	startbattle
 	end
 
@@ -756,7 +756,7 @@ TeamRocketBaseB1F_MapEventHeader:
 	xy_trigger 0, $10, $16, $0, SecurityCamera4, $0, $0
 	xy_trigger 0, $10, $8, $0, SecurityCamera5, $0, $0
 	; There are spots on the floor that trigger a Pokémon battle.
-	; Each Pokémon (Voltorb, Koffing, Geodude) knows Selfdestruct.
+	; Each Pokémon (Voltorb, Koffing, Porygon) knows Selfdestruct.
 	xy_trigger 0, $7, $2, $0, ExplodingTrap1, $0, $0
 	xy_trigger 0, $7, $3, $0, ExplodingTrap2, $0, $0
 	xy_trigger 0, $7, $4, $0, ExplodingTrap3, $0, $0
