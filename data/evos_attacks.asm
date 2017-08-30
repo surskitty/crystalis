@@ -1096,6 +1096,7 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, METAL_SOUND
 	db 6, THUNDERSHOCK
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
@@ -1109,9 +1110,9 @@ MagnemiteEvosAttacks:
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, METAL_SOUND
 	db 1, THUNDERSHOCK
 	db 1, SUPERSONIC
-	db 1, SONICBOOM
 	db 6, THUNDERSHOCK
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
@@ -1831,10 +1832,7 @@ EeveeEvosAttacks:
 	db 16, GROWL
 	db 23, QUICK_ATTACK
 	db 30, BITE
-if _CRYSTAL
 	db 36, BATON_PASS
-else
-	db 36, FOCUS_ENERGY
 endc
 	db 42, TAKE_DOWN
 	db 0 ; no more level-up moves
@@ -3097,7 +3095,9 @@ SkarmoryEvosAttacks:
 	db 13, SAND_ATTACK
 	db 19, SWIFT
 	db 25, AGILITY
-	db 37, FURY_ATTACK
+	db 31, FURY_ATTACK
+	db 37, METAL_SOUND
+	db 43, WING_ATTACK
 	db 49, STEEL_WING
 	db 0 ; no more level-up moves
 
@@ -3145,10 +3145,11 @@ PhanpyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 9, DEFENSE_CURL
+	db 9, MUD_SLAP
 	db 17, FLAIL
 	db 25, TAKE_DOWN
 	db 33, ROLLOUT
+	db 33, DEFENSE_CURL
 	db 41, ENDURE
 	db 49, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -3157,10 +3158,11 @@ DonphanEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, GROWL
-	db 9, DEFENSE_CURL
+	db 9, MUD_SLAP
 	db 17, FLAIL
 	db 25, FURY_ATTACK
 	db 33, ROLLOUT
+	db 33, DEFENSE_CURL
 	db 41, RAPID_SPIN
 	db 49, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -3210,6 +3212,7 @@ TyrogueEvosAttacks:
 	db EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, FORESIGHT
 	db 0 ; no more level-up moves
 
 HitmontopEvosAttacks:
@@ -3218,6 +3221,10 @@ HitmontopEvosAttacks:
 	db 7, FOCUS_ENERGY
 	db 13, PURSUIT
 	db 19, QUICK_ATTACK
+	db 20, ROLLING_KICK
+	db 20, FOCUS_ENERGY
+	db 20, PURSUIT
+	db 20, QUICK_ATTACK
 	db 25, RAPID_SPIN
 	db 31, COUNTER
 	db 37, AGILITY
