@@ -2209,7 +2209,7 @@ TotodileEvosAttacks:
 	db 15, BITE
 	db 21, SCARY_FACE
 	db 24, METAL_CLAW
-	db 27, WHIRLPOOL
+	db 27, BUBBLEBEAM
 	db 30, SLASH
 	db 36, SCREECH
 	db 42, CRUNCH
@@ -2228,7 +2228,7 @@ CroconawEvosAttacks:
 	db 15, BITE
 	db 22, SCARY_FACE
 	db 26, METAL_CLAW
-	db 30, WHIRLPOOL
+	db 30, BUBBLEBEAM
 	db 36, SLASH
 	db 42, SCREECH
 	db 48, CRUNCH
@@ -2246,7 +2246,7 @@ FeraligatrEvosAttacks:
 	db 15, BITE
 	db 22, SCARY_FACE
 	db 26, METAL_CLAW
-	db 31, WHIRLPOOL
+	db 31, BUBBLEBEAM
 	db 38, SLASH
 	db 45, SCREECH
 	db 51, CRUNCH
