@@ -2150,12 +2150,16 @@ CyndaquilEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
-	db 6, SMOKESCREEN
-	db 12, EMBER
-	db 19, QUICK_ATTACK
-	db 27, FLAME_WHEEL
-	db 36, SWIFT
-	db 46, FLAMETHROWER
+	db 7, SMOKESCREEN
+	db 10, EMBER
+	db 13, QUICK_ATTACK
+	db 18, DEFENSE_CURL
+	db 21, DOUBLE_KICK
+	db 24, FLAME_WHEEL
+	db 30, SWIFT
+	db 39, FIRE_SPIN
+	db 45, ROLLOUT
+	db 52, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 QuilavaEvosAttacks:
@@ -2164,12 +2168,18 @@ QuilavaEvosAttacks:
 	db 1, TACKLE
 	db 1, LEER
 	db 1, SMOKESCREEN
-	db 6, SMOKESCREEN
-	db 12, EMBER
-	db 21, QUICK_ATTACK
-	db 31, FLAME_WHEEL
-	db 42, SWIFT
-	db 54, FLAMETHROWER
+	db 1, EMBER
+	db 1, QUICK_ATTACK
+	db 7, SMOKESCREEN
+	db 10, EMBER
+	db 13, QUICK_ATTACK
+	db 18, DEFENSE_CURL
+	db 24, DOUBLE_KICK
+	db 27, FLAME_WHEEL
+	db 33, SWIFT
+	db 42, FIRE_SPIN
+	db 48, ROLLOUT
+	db 55, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TyphlosionEvosAttacks:
@@ -2178,12 +2188,17 @@ TyphlosionEvosAttacks:
 	db 1, LEER
 	db 1, SMOKESCREEN
 	db 1, EMBER
-	db 6, SMOKESCREEN
-	db 12, EMBER
-	db 21, QUICK_ATTACK
-	db 31, FLAME_WHEEL
-	db 45, SWIFT
-	db 60, FLAMETHROWER
+	db 1, QUICK_ATTACK
+	db 7, SMOKESCREEN
+	db 10, EMBER
+	db 13, QUICK_ATTACK
+	db 18, DEFENSE_CURL
+	db 24, DOUBLE_KICK
+	db 27, FLAME_WHEEL
+	db 33, SWIFT
+	db 45, FIRE_SPIN
+	db 51, ROLLOUT
+	db 60, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 TotodileEvosAttacks:
