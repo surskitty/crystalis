@@ -460,22 +460,23 @@ NidokingEvosAttacks:
 ClefairyEvosAttacks:
 	db EVOLVE_ITEM, MOON_STONE, CLEFABLE
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, FAIRY_WIND
 	db 1, GROWL
 	db 4, ENCORE
 	db 8, SING
 	db 13, DOUBLESLAP
 	db 19, MINIMIZE
-	db 26, DEFENSE_CURL
-	db 34, METRONOME
-	db 43, MOONLIGHT
+	db 19, DEFENSE_CURL
+	db 26, METRONOME
+	db 34, MOONLIGHT
+	db 43, MOONBLAST
 	db 53, LIGHT_SCREEN
 	db 0 ; no more level-up moves
 
 ClefableEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
-	db 1, DOUBLESLAP
+	db 1, MOONBLAST
 	db 1, METRONOME
 	db 1, MOONLIGHT
 	db 0 ; no more level-up moves
@@ -507,13 +508,13 @@ JigglypuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 4, DEFENSE_CURL
-	db 9, POUND
+	db 9, FAIRY_WIND
 	db 14, DISABLE
 	db 19, ROLLOUT
 	db 24, DOUBLESLAP
 	db 29, REST
 	db 34, BODY_SLAM
-	db 39, DOUBLE_EDGE
+	db 39, MOONBLAST
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -521,7 +522,7 @@ WigglytuffEvosAttacks:
 	db 1, SING
 	db 1, DISABLE
 	db 1, DEFENSE_CURL
-	db 1, DOUBLESLAP
+	db 1, MOONBLAST
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -1698,7 +1699,7 @@ ScytherEvosAttacks:
 
 JynxEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
+	db 1, FAIRY_WIND
 	db 1, LICK
 	db 1, LOVELY_KISS
 	db 1, POWDER_SNOW
@@ -2553,7 +2554,7 @@ else
 	db 1, SYNTHESIS
 endc
 	db 5, TAIL_WHIP
-	db 10, TACKLE
+	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
@@ -2573,7 +2574,7 @@ if _CRYSTAL
 	db 5, SYNTHESIS
 endc
 	db 5, TAIL_WHIP
-	db 10, TACKLE
+	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
@@ -2592,7 +2593,7 @@ if _CRYSTAL
 	db 5, SYNTHESIS
 endc
 	db 5, TAIL_WHIP
-	db 10, TACKLE
+	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
