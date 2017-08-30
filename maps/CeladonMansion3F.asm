@@ -141,8 +141,8 @@ UnknownText_0x71830:
 
 UnknownText_0x71863:
 	text "Something's wrong."
-	line "I'll have to can-"
-	cont "cel printing."
+	line "I need to cancel"
+	cont "printing."
 	done
 
 UnknownText_0x71895:
