@@ -712,7 +712,7 @@ Item2Attributes:
 	item_attribute  3000, 0,                 0,             CANT_SELECT, TM_HM,    ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; TM43
-	item_attribute  1000, 0,                 0,             CANT_SELECT, TM_HM,    ITEMMENU_PARTY,   ITEMMENU_NOUSE
+	item_attribute  9800, 0,                 0,             CANT_SELECT, TM_HM,    ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; TM44
 	item_attribute  3000, 0,                 0,             CANT_SELECT, TM_HM,    ITEMMENU_PARTY,   ITEMMENU_NOUSE
