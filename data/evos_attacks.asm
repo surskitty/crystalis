@@ -2204,13 +2204,16 @@ TotodileEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 7, RAGE
-	db 13, WATER_GUN
-	db 20, BITE
-	db 27, SCARY_FACE
-	db 35, SLASH
-	db 43, SCREECH
-	db 52, HYDRO_PUMP
+	db 6, RAGE
+	db 12, WATER_GUN
+	db 15, BITE
+	db 21, SCARY_FACE
+	db 24, METAL_CLAW
+	db 27, WHIRLPOOL
+	db 30, SLASH
+	db 36, SCREECH
+	db 42, CRUNCH
+	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 CroconawEvosAttacks:
@@ -2219,13 +2222,17 @@ CroconawEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, RAGE
-	db 7, RAGE
-	db 13, WATER_GUN
-	db 21, BITE
-	db 28, SCARY_FACE
-	db 37, SLASH
-	db 45, SCREECH
-	db 55, HYDRO_PUMP
+	db 1, WATER_GUN
+	db 6, RAGE
+	db 12, WATER_GUN
+	db 15, BITE
+	db 22, SCARY_FACE
+	db 26, METAL_CLAW
+	db 30, WHIRLPOOL
+	db 36, SLASH
+	db 42, SCREECH
+	db 48, CRUNCH
+	db 57, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 FeraligatrEvosAttacks:
@@ -2234,13 +2241,16 @@ FeraligatrEvosAttacks:
 	db 1, LEER
 	db 1, RAGE
 	db 1, WATER_GUN
-	db 7, RAGE
-	db 13, WATER_GUN
-	db 21, BITE
-	db 28, SCARY_FACE
+	db 6, RAGE
+	db 12, WATER_GUN
+	db 15, BITE
+	db 22, SCARY_FACE
+	db 26, METAL_CLAW
+	db 31, WHIRLPOOL
 	db 38, SLASH
-	db 47, SCREECH
-	db 58, HYDRO_PUMP
+	db 45, SCREECH
+	db 51, CRUNCH
+	db 60, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
