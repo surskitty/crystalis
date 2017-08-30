@@ -178,12 +178,12 @@ ENDM
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,   100,  1,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,   100,  1,   0
 	move TRIPLE_KICK,  EFFECT_TRIPLE_KICK,        10, FIGHTING,  90, 10,   0
-	move THIEF,        EFFECT_THIEF,              40, DARK,     100, 10, 100
+	move THIEF,        EFFECT_THIEF,              60, DARK,     100, 10, 100
 	move SPIDER_WEB,   EFFECT_MEAN_LOOK,           0, BUG,      100, 10,   0
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100, 15,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,     100, 25,  10
-	move SNORE,        EFFECT_SNORE,              40, NORMAL,   100, 15,  30
+	move SNORE,        EFFECT_SNORE,              50, NORMAL,   100, 15,  30
 	move CURSE,        EFFECT_CURSE,               0, CURSE_T,  100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,   100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,   100, 30,   0
@@ -259,6 +259,7 @@ ENDM
 	move ANCIENTPOWER, EFFECT_ANCIENTPOWER,       60, ROCK,     100,  5,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,    100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,       80, PSYCHIC,   90, 15,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING, 100, 15,  50
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_BIND,               15, WATER,     70, 15,   0
-	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,     100, 10,   0
+	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,     100, 10,   0
+	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY_T,  100, 30,   0
