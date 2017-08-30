@@ -1521,26 +1521,32 @@ RhyhornEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
+	db 8, ROCK_THROW
 	db 13, STOMP
-	db 19, FURY_ATTACK
+	db 19, MUD_SLAP
+	db 25, SANDSTORM
 	db 31, SCARY_FACE
-	db 37, HORN_DRILL
-	db 49, TAKE_DOWN
-	db 55, EARTHQUAKE
+	db 37, ROCK_SLIDE
+	db 43, EARTHQUAKE
+	db 49, MEGAHORN
+	db 55, HORN_DRILL
 	db 0 ; no more level-up moves
 
 RhydonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
+	db 1, ROCK_THROW
 	db 1, STOMP
-	db 1, FURY_ATTACK
+	db 8, ROCK_THROW
 	db 13, STOMP
-	db 19, FURY_ATTACK
+	db 19, MUD_SLAP
+	db 25, SANDSTORM
 	db 31, SCARY_FACE
-	db 37, HORN_DRILL
-	db 54, TAKE_DOWN
-	db 65, EARTHQUAKE
+	db 37, ROCK_SLIDE
+	db 45, EARTHQUAKE
+	db 53, MEGAHORN
+	db 61, HORN_DRILL
 	db 0 ; no more level-up moves
 
 ChanseyEvosAttacks:
@@ -2083,10 +2089,12 @@ ChikoritaEvosAttacks:
 	db 1, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
-	db 15, POISONPOWDER
+	db 12, LIGHT_SCREEN
+	db 15, ANCIENTPOWER
 	db 22, SYNTHESIS
+	db 22, REVERSAL
 	db 29, BODY_SLAM
-	db 36, LIGHT_SCREEN
+	db 36, SWORDS_DANCE
 	db 43, SAFEGUARD
 	db 50, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -2100,10 +2108,12 @@ BayleefEvosAttacks:
 	db 1, REFLECT
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
-	db 15, POISONPOWDER
+	db 12, LIGHT_SCREEN
+	db 15, ANCIENTPOWER
 	db 23, SYNTHESIS
+	db 23, REVERSAL
 	db 31, BODY_SLAM
-	db 39, LIGHT_SCREEN
+	db 39, SWORDS_DANCE
 	db 47, SAFEGUARD
 	db 55, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -2116,10 +2126,13 @@ MeganiumEvosAttacks:
 	db 1, REFLECT
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
-	db 15, POISONPOWDER
+	db 12, LIGHT_SCREEN
+	db 15, ANCIENTPOWER
 	db 23, SYNTHESIS
+	db 23, REVERSAL
 	db 31, BODY_SLAM
-	db 41, LIGHT_SCREEN
+	db 41, SWORDS_DANCE
+	db 51, PETAL_DANCE
 	db 51, SAFEGUARD
 	db 61, SOLARBEAM
 	db 0 ; no more level-up moves
