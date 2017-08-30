@@ -73,7 +73,7 @@ MrPokemonsHouse_MrPokemonScript:
 	writetext MrPokemonText_GimmeTheScale
 	yesorno
 	iffalse .refused
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem LUCKY_EGG
 	iffalse .full
 	takeitem RED_SCALE
 	jump .AlwaysNewDiscoveries
@@ -342,7 +342,7 @@ MrPokemonText_GimmeTheScale:
 	line "care to trade it?"
 
 	para "I can offer this"
-	line "EXP.SHARE I got"
+	line "LUCKY EGG I got"
 	cont "from PROF.OAK."
 	done
 
