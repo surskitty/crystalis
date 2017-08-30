@@ -74,7 +74,7 @@ GoldenrodDeptStoreB1FAmuletCoin:
 	itemball AMULET_COIN
 
 GoldenrodDeptStoreB1FBurnHeal:
-	itemball BURN_HEAL
+	itemball THICK_CLUB
 
 GoldenrodDeptStoreB1FUltraBall:
 	itemball ULTRA_BALL
