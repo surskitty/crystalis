@@ -286,7 +286,6 @@ SpeedUp:
 	statupfailtext
 	endmove
 
-Growth:
 SpecialAttackUp:
 	checkobedience
 	usedmovetext
@@ -377,7 +376,7 @@ SpeedUp2:
 	statupmessage
 	statupfailtext
 	endmove
-
+Growth:
 SpecialAttackUp2:
 	checkobedience
 	usedmovetext
@@ -498,7 +497,6 @@ SpecialDefenseDown:
 
 SandAttack:
 Smokescreen:
-Kinesis:
 Flash:
 AccuracyDown:
 	checkobedience
@@ -570,6 +568,7 @@ SpeedDown2:
 	statdownfailtext
 	endmove
 
+Captivate:
 SpecialAttackDown2:
 	checkobedience
 	usedmovetext
@@ -583,6 +582,7 @@ SpecialAttackDown2:
 	statdownfailtext
 	endmove
 
+MetalSound:
 SpecialDefenseDown2:
 	checkobedience
 	usedmovetext
@@ -596,6 +596,7 @@ SpecialDefenseDown2:
 	statdownfailtext
 	endmove
 
+Kinesis:
 AccuracyDown2:
 	checkobedience
 	usedmovetext

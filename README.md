@@ -11,4 +11,6 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - Poison is super-effective against Bug, just as it was in gen I.
 - [Many pokemon have had their base stats adjusted!](https://github.com/surskitty/pokecrystal/commit/72e97583cb11abff3edcd3b2ecabb527dcf18699)
 - Trade evolutions can be obtained by either using the item required or by levelling up: 28 for alakazam, 36 for machamp, and 33 for golem and gengar.
-- Absorb is now base power 30, Mega Drain 50, Giga Drain 75, and Leech Life 80.  Most pokemon that learned Leech Life now have Absorb in its place.
+- Absorb is now base power 40, Mega Drain 60, and Giga Drain and Leech Life are 80.  Most pokemon that learned Leech Life now have Absorb in its place.
+- The Fairy type is here!  The two damaging fairy moves are Fairy Wind and Moonblast.  Look out for them!
+- Growth sharply raises Special Attack, while Captivate and Metal Sound sharply lower the opponent's Special stats!

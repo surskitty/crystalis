@@ -253,6 +253,8 @@
 	const WHIRLPOOL    ; $fa
 	const BEAT_UP      ; $fb
 	const FAIRY_WIND   ; $fc
+	const CAPTIVATE    ; $fd
+	const METAL_SOUND  ; $fe
 
 const_value SET const_value + -1
 
@@ -260,9 +262,6 @@ const_value SET const_value + -1
 
 ; Battle animations use the same constants
 ; as the moves up to this point.
-	const ANIM_FC                ; $fc
-	const ANIM_FD                ; $fd
-	const ANIM_FE                ; $fe
 	const ANIM_SWEET_SCENT_2     ; $ff
 	const ANIM_THROW_POKE_BALL   ; $100
 	const ANIM_SEND_OUT_MON      ; $101

@@ -251,14 +251,12 @@
 	dw WhirlpoolDescription
 	dw BeatUpDescription
 	dw FairyWindDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
+	dw CaptivateDescription
+	dw MetalSoundDescription
 	dw MoveFFDescription
 	dw Move00Description
 ; 2cd52
 
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 UnknownMoveDescription:
@@ -557,8 +555,8 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
-	next "ATK rating.@"
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -797,8 +795,8 @@ AmnesiaDescription:
 	next "user's SPCL.DEF.@"
 
 KinesisDescription:
-	db   "Reduces the foe's"
-	next "accuracy.@"
+	db   "Sharply reduces"
+	next "foe's accuracy.@"
 
 SoftboiledDescription:
 	db   "Restores HP by 1/2"
@@ -1270,4 +1268,12 @@ BeatUpDescription:
 FairyWindDescription:
 	db   "A fey wind that"
 	next "never misses.@"
-; 2ed44
+
+CaptivateDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.ATK.@"
+
+MetalSoundDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.DEF.@"
+
