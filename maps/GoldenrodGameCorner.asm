@@ -172,8 +172,8 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	verticalmenu
 	closewindow
 	if_equal $1, .abra
-	if_equal $2, .cubone
-	if_equal $3, .wobbuffet
+	if_equal $2, .clefairy
+	if_equal $3, .dratini
 	jump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .abra
@@ -194,39 +194,39 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	takecoins 100
 	jump .loop
 
-.cubone
+.clefairy
 	checkcoins 800
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem CUBONE, $0
+	pokenamemem CLEFAIRY, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte CUBONE
+	writebyte CLEFAIRY
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke CUBONE, 15
+	givepoke CLEFAIRY, 15
 	takecoins 800
 	jump .loop
 
-.wobbuffet
+.dratini
 	checkcoins 1500
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem WOBBUFFET, $0
+	pokenamemem DRATINI, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte WOBBUFFET
+	writebyte DRATINI
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
+	givepoke DRATINI, 15
 	takecoins 1500
 	jump .loop
 
@@ -242,8 +242,8 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	db $80 ; flags
 	db 4 ; items
 	db "ABRA        100@"
-	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
+	db "CLEFAIRY    800@"
+	db "DRATINI    1500@"
 	db "CANCEL@"
 
 
