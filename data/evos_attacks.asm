@@ -1678,16 +1678,18 @@ StarmieEvosAttacks:
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BARRIER
-	db 6, CONFUSION
+	db 1, CONFUSION
+	db 6, MIMIC
 	db 11, SUBSTITUTE
-	db 16, MEDITATE
-	db 21, DOUBLESLAP
+	db 16, MIRROR_MOVE
+	db 21, FAIRY_WIND
 	db 26, LIGHT_SCREEN
 	db 26, REFLECT
 	db 31, ENCORE
 	db 36, PSYBEAM
 	db 41, BATON_PASS
 	db 46, SAFEGUARD
+	db 51, MOONBLAST
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
