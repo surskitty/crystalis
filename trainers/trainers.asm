@@ -1014,31 +1014,31 @@ BrockGroup:
 
 	; party
 
-	db 41, GRAVELER
+	db 56, GRAVELER
 		db DEFENSE_CURL
 		db ROCK_SLIDE
 		db ROLLOUT
 		db EARTHQUAKE
 
-	db 41, RHYHORN
+	db 56, RHYHORN
 		db FURY_ATTACK
 		db SCARY_FACE
 		db EARTHQUAKE
 		db HORN_DRILL
 
-	db 42, OMASTAR
+	db 57, OMASTAR
 		db BITE
 		db SURF
 		db PROTECT
 		db SPIKE_CANNON
 
-	db 44, ONIX
+	db 59, ONIX
 		db BIND
 		db ROCK_SLIDE
 		db BIDE
 		db SANDSTORM
 
-	db 42, KABUTOPS
+	db 57, KABUTOPS
 		db SLASH
 		db SURF
 		db ENDURE
@@ -1106,31 +1106,31 @@ LtSurgeGroup:
 
 	; party
 
-	db 44, RAICHU
+	db 54, RAICHU
 		db THUNDER_WAVE
 		db QUICK_ATTACK
 		db THUNDERBOLT
 		db THUNDER
 
-	db 40, ELECTRODE
+	db 50, ELECTRODE
 		db SCREECH
 		db DOUBLE_TEAM
 		db SWIFT
 		db EXPLOSION
 
-	db 40, MAGNETON
+	db 50, MAGNETON
 		db LOCK_ON
 		db DOUBLE_TEAM
 		db SWIFT
 		db ZAP_CANNON
 
-	db 40, ELECTRODE
+	db 50, ELECTRODE
 		db SCREECH
 		db DOUBLE_TEAM
 		db SWIFT
 		db EXPLOSION
 
-	db 46, ELECTABUZZ
+	db 56, ELECTABUZZ
 		db QUICK_ATTACK
 		db THUNDERPUNCH
 		db LIGHT_SCREEN
@@ -1223,28 +1223,28 @@ ErikaGroup:
 
 	; party
 
-	db 42, TANGELA
+	db 52, TANGELA
 		db VINE_WHIP
 		db BIND
 		db GIGA_DRAIN
 		db SLEEP_POWDER
 
-	db 41, JUMPLUFF
+	db 51, JUMPLUFF
 		db MEGA_DRAIN
 		db LEECH_SEED
 		db COTTON_SPORE
 		db GIGA_DRAIN
 
-	db 46, VICTREEBEL
+	db 56, VICTREEBEL
 		db SUNNY_DAY
 		db SYNTHESIS
 		db ACID
 		db RAZOR_LEAF
 
-	db 46, BELLOSSOM
+	db 56, BELLOSSOM
 		db SUNNY_DAY
 		db SYNTHESIS
-		db PETAL_DANCE
+		db MOONBLAST
 		db SOLARBEAM
 
 	db $ff ; end
