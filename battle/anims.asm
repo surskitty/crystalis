@@ -251,7 +251,7 @@ BattleAnimations:: ; c906f
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_252
+	dw BattleAnim_FairyWind
 	dw BattleAnim_253
 	dw BattleAnim_254
 	dw BattleAnim_SweetScent2
@@ -281,7 +281,21 @@ BattleAnimations:: ; c906f
 ; c929b
 
 BattleAnim_0: ; c929b
-BattleAnim_252: ; c929b
+BattleAnim_FairyWind:
+	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  12, 0, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  10, 0, $2
+	anim_wait 96
+	anim_obp0 $54
+	anim_sound 0, 1, SFX_SWEET_SCENT_2
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $15
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $2a
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $3f
+	anim_wait 128
+	anim_ret
+
 BattleAnim_253: ; c929b
 BattleAnim_254: ; c929b
 BattleAnim_MirrorMove: ; c929b

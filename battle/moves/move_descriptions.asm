@@ -250,14 +250,13 @@
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw MoveFCDescription
+	dw FairyWindDescription
 	dw MoveFDDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 ; 2cd52
 
-MoveFCDescription:
 MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
@@ -1162,7 +1161,7 @@ MegahornDescription:
 
 DragonbreathDescription:
 	db   "A strong breath"
-	next "attack.@"
+	next "that paralyzes.@"
 
 BatonPassDescription:
 	db   "Switches while"
@@ -1267,4 +1266,8 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+FairyWindDescription:
+	db   "A fey wind that"
+	next "never misses.@"
 ; 2ed44

@@ -262,4 +262,4 @@ ENDM
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   40, FIGHTING, 100, 15,  50
 	move WHIRLPOOL,    EFFECT_BIND,               15, WATER,     70, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            20, DARK,     100, 10,   0
-	move FAIRY_WIND,   EFFECT_NORMAL_HIT,         40, FAIRY_T,  100, 30,   0
+	move FAIRY_WIND,   EFFECT_ALWAYS_HIT,         40, FAIRY_T,  100, 30,   0

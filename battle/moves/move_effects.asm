@@ -33,6 +33,7 @@ HiJumpKick:
 QuickAttack:
 MachPunch:
 Extremespeed:
+FairyWind:
 NormalHit:
 	checkobedience
 	usedmovetext
