@@ -253,7 +253,7 @@ BattleAnimations:: ; c906f
 	dw BattleAnim_BeatUp
 	dw BattleAnim_FairyWind
 	dw BattleAnim_Captivate
-	dw BattleAnim_MetalSound
+	dw BattleAnim_FakeTears
 	dw BattleAnim_SweetScent2
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -300,7 +300,7 @@ BattleAnim_Captivate:
 	anim_1gfx ANIM_GFX_OBJECTS
 	anim_call BattleAnim_FollowEnemyFeet_0
 	anim_bgeffect ANIM_BG_26, $0, $1, $0
-	anim_sound 0, 0, SFX_ATTRACT
+	anim_sound 0, 0, SFX_CURSE
 	anim_obj ANIM_OBJ_HEART,   8, 0,  10, 0, $0
 	anim_wait 32
 	anim_incbgeffect ANIM_BG_26
@@ -308,15 +308,29 @@ BattleAnim_Captivate:
 	anim_wait 4
 	anim_ret
 
-BattleAnim_MetalSound: 
-	anim_1gfx ANIM_GFX_PSYCHIC
-	anim_bgeffect ANIM_BG_1F, $8, $1, $20
-	anim_sound 6, 2, SFX_SCREECH
+BattleAnim_FakeTears: 
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_A5,   8, 4,   9, 0, $0
+	anim_sound 0, 0, SFX_CURSE
+	anim_wait 32
+	anim_incobj  1
+	anim_wait 12
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgeffect ANIM_BG_07, $0, $0, $0
 .loop
-	anim_obj ANIM_OBJ_4C,   8, 0,  11, 0, $2
-	anim_wait 2
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_9D,   3, 0,   8, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   7, 0,  13, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   3, 0,  13, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   7, 0,   8, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   5, 0,  10, 4, $0
+	anim_wait 5
 	anim_loop 2, .loop
-	anim_wait 64
+	anim_wait 32
 	anim_ret
 
 BattleAnim_MirrorMove: 

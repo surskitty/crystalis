@@ -254,7 +254,7 @@
 	const BEAT_UP      ; $fb
 	const FAIRY_WIND   ; $fc
 	const CAPTIVATE    ; $fd
-	const METAL_SOUND  ; $fe
+	const FAKE_TEARS  ; $fe
 
 const_value SET const_value + -1
 

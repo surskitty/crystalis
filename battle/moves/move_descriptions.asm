@@ -252,7 +252,7 @@
 	dw BeatUpDescription
 	dw FairyWindDescription
 	dw CaptivateDescription
-	dw MetalSoundDescription
+	dw FakeTearsDescription
 	dw MoveFFDescription
 	dw Move00Description
 ; 2cd52
@@ -1273,7 +1273,7 @@ CaptivateDescription:
 	db   "Sharply reduces"
 	next "foe's SPCL.ATK.@"
 
-MetalSoundDescription:
+FakeTearsDescription:
 	db   "Sharply reduces"
 	next "foe's SPCL.DEF.@"
 

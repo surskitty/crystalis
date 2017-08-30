@@ -582,7 +582,7 @@ SpecialAttackDown2:
 	statdownfailtext
 	endmove
 
-MetalSound:
+FakeTears:
 SpecialDefenseDown2:
 	checkobedience
 	usedmovetext

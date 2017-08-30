@@ -1102,7 +1102,6 @@ MagnemiteEvosAttacks:
 	db EVOLVE_LEVEL, 30, MAGNETON
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, METAL_SOUND
 	db 6, THUNDERSHOCK
 	db 11, SUPERSONIC
 	db 16, SONICBOOM
@@ -1116,7 +1115,6 @@ MagnemiteEvosAttacks:
 MagnetonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, METAL_SOUND
 	db 1, THUNDERSHOCK
 	db 1, SUPERSONIC
 	db 6, THUNDERSHOCK
@@ -3099,7 +3097,7 @@ SkarmoryEvosAttacks:
 	db 19, SWIFT
 	db 25, AGILITY
 	db 31, FURY_ATTACK
-	db 37, METAL_SOUND
+	db 37, SCREECH
 	db 43, WING_ATTACK
 	db 49, STEEL_WING
 	db 0 ; no more level-up moves
