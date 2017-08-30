@@ -134,7 +134,7 @@ MapSproutTower3FSignpost5Script:
 	jumptext UnknownText_0x184f61
 
 SproutTower3FPotion:
-	itemball POTION
+	itemball TM_FRUSTRATION
 
 SproutTower3FEscapeRope:
 	itemball ESCAPE_ROPE

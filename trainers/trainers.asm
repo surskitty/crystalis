@@ -7883,7 +7883,7 @@ SageGroup:
 	db 16, GASTLY
 	db 16, GASTLY
 	db 16, GASTLY
-	db 16, GASTLY
+	db 16, CUBONE
 
 	db $ff ; end
 

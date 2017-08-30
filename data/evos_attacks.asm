@@ -1415,35 +1415,38 @@ ExeggutorEvosAttacks:
 CuboneEvosAttacks:
 	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
+	db 1, ENDURE
 	db 1, GROWL
-	db 5, TAIL_WHIP
+	db 1, TAIL_WHIP
+	db 5, FALSE_SWIPE
 	db 9, BONE_CLUB
-	db 13, HEADBUTT
-	db 17, LEER
-	db 21, FOCUS_ENERGY
-	db 25, BONEMERANG
-	db 29, RAGE
-	db 33, FALSE_SWIPE
-	db 37, THRASH
-	db 41, BONE_RUSH
+	db 13, RAGE
+	db 17, FOCUS_ENERGY
+	db 21, BONEMERANG
+	db 25, SCREECH
+	db 29, FALSE_SWIPE
+	db 29, BONE_RUSH
+	db 33, FLAIL
+	db 37, OUTRAGE
+	db 41, REVERSAL
 	db 0 ; no more level-up moves
 
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, ENDURE
 	db 1, GROWL
 	db 1, TAIL_WHIP
-	db 1, BONE_CLUB
-	db 1, HEADBUTT
-	db 5, TAIL_WHIP
+	db 5, FALSE_SWIPE
 	db 9, BONE_CLUB
-	db 13, HEADBUTT
-	db 17, LEER
-	db 21, FOCUS_ENERGY
-	db 25, BONEMERANG
-	db 32, RAGE
-	db 39, FALSE_SWIPE
-	db 46, THRASH
-	db 53, BONE_RUSH
+	db 13, RAGE
+	db 17, FOCUS_ENERGY
+	db 21, BONEMERANG
+	db 25, SCREECH
+	db 30, FALSE_SWIPE
+	db 30, BONE_RUSH
+	db 35, FLAIL
+	db 40, OUTRAGE
+	db 46, REVERSAL
 	db 0 ; no more level-up moves
 
 HitmonleeEvosAttacks:
