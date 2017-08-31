@@ -2773,11 +2773,13 @@ MisdreavusEvosAttacks:
 	db 1, GROWL
 	db 1, PSYWAVE
 	db 6, SPITE
-	db 12, CONFUSE_RAY
-	db 19, MEAN_LOOK
-	db 27, PSYBEAM
+	db 10, LICK
+	db 15, CONFUSE_RAY
+	db 21, MEAN_LOOK
+	db 28, PSYBEAM
 	db 36, PAIN_SPLIT
-	db 46, PERISH_SONG
+	db 45, PERISH_SONG
+	db 55, SHADOW_BALL
 	db 0 ; no more level-up moves
 
 UnownEvosAttacks:
