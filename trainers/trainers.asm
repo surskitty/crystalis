@@ -3850,7 +3850,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GOLBAT
+	db 50, GOLBAT
 
 	db $ff ; end
 
@@ -3999,23 +3999,29 @@ SabrinaGroup:
 
 	; party
 
-	db 46, ESPEON
+	db 56, ESPEON
 		db SAND_ATTACK
-		db QUICK_ATTACK
+		db CHARM
 		db SWIFT
 		db PSYCHIC_M
 
-	db 46, MR__MIME
+	db 56, MR__MIME
 		db BARRIER
 		db REFLECT
 		db BATON_PASS
-		db PSYCHIC_M
+		db MOONBLAST
 
-	db 48, ALAKAZAM
+	db 58, ALAKAZAM
 		db RECOVER
 		db FUTURE_SIGHT
 		db PSYCHIC_M
-		db REFLECT
+		db PSYCH_UP
+
+	db 56, XATU
+		db FUTURE_SIGHT
+		db NIGHT_SHADE
+		db FAINT_ATTACK
+		db PSYCHIC_M
 
 	db $ff ; end
 
