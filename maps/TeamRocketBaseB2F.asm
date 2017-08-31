@@ -693,10 +693,8 @@ UnknownText_0x6d6cf:
 	line "switch on it…"
 
 	para "We have no choice."
-	line "We have to make"
-
-	para "all the #MON"
-	line "faint."
+	line "We have to stop"
+	cont "all the #MON."
 
 	para "That should stop"
 	line "this machine from"
