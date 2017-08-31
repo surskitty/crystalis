@@ -3509,8 +3509,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 24, RATICATE
-	db 24, RATICATE
+	db 29, RATICATE
+	db 29, RATICATE
 
 	db $ff ; end
 
@@ -3521,9 +3521,9 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 23, GRIMER
-	db 23, GRIMER
-	db 25, MUK
+	db 28, GRIMER
+	db 28, GRIMER
+	db 30, MUK
 
 	db $ff ; end
 
@@ -3534,11 +3534,11 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 21, RATTATA
-	db 21, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
-	db 23, RATTATA
+	db 26, RATTATA
+	db 26, RATTATA
+	db 28, RATTATA
+	db 28, RATTATA
+	db 28, RATTATA
 
 	db $ff ; end
 
@@ -3549,8 +3549,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 26, ZUBAT
-	db 26, ZUBAT
+	db 31, ZUBAT
+	db 31, ZUBAT
 
 	db $ff ; end
 
@@ -3561,10 +3561,10 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 23, KOFFING
-	db 23, GRIMER
-	db 23, ZUBAT
-	db 23, RATTATA
+	db 28, KOFFING
+	db 28, GRIMER
+	db 28, ZUBAT
+	db 28, RATTATA
 
 	db $ff ; end
 
@@ -3575,7 +3575,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 26, WEEZING
+	db 31, WEEZING
 
 	db $ff ; end
 
@@ -3586,8 +3586,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 24, RATICATE
-	db 26, KOFFING
+	db 29, RATICATE
+	db 31, KOFFING
 
 	db $ff ; end
 
@@ -3598,9 +3598,9 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 22, ZUBAT
-	db 24, GOLBAT
-	db 22, GRIMER
+	db 27, ZUBAT
+	db 29, GOLBAT
+	db 27, GRIMER
 
 	db $ff ; end
 
@@ -3611,9 +3611,9 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 23, MUK
-	db 23, KOFFING
-	db 25, RATTATA
+	db 28, MUK
+	db 28, KOFFING
+	db 30, RATTATA
 
 	db $ff ; end
 
@@ -3624,7 +3624,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 33, HOUNDOUR
+	db 38, HOUNDOUR
 
 	db $ff ; end
 
@@ -3635,7 +3635,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 27, RATTATA
+	db 32, RATTATA
 
 	db $ff ; end
 
@@ -3646,8 +3646,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 24, RATICATE
-	db 24, GOLBAT
+	db 29, RATICATE
+	db 29, GOLBAT
 
 	db $ff ; end
 
@@ -3658,8 +3658,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 26, GRIMER
-	db 23, WEEZING
+	db 31, GRIMER
+	db 28, WEEZING
 
 	db $ff ; end
 
@@ -3670,10 +3670,10 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
-	db 16, RATTATA
+	db 21, RATTATA
+	db 21, RATTATA
+	db 21, RATTATA
+	db 21, RATTATA
 
 	db $ff ; end
 
@@ -3684,7 +3684,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 18, GOLBAT
+	db 24, GOLBAT
 
 	db $ff ; end
 
@@ -3695,9 +3695,9 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 17, RATTATA
-	db 17, ZUBAT
-	db 17, RATTATA
+	db 22, RATTATA
+	db 22, ZUBAT
+	db 22, RATTATA
 
 	db $ff ; end
 
@@ -3708,8 +3708,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 18, VENONAT
-	db 18, VENONAT
+	db 23, VENONAT
+	db 23, VENONAT
 
 	db $ff ; end
 
@@ -3720,8 +3720,8 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 17, DROWZEE
-	db 19, ZUBAT
+	db 22, DROWZEE
+	db 24, ZUBAT
 
 	db $ff ; end
 
@@ -3732,9 +3732,9 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 16, ZUBAT
-	db 17, GRIMER
-	db 18, RATTATA
+	db 21, ZUBAT
+	db 22, GRIMER
+	db 23, RATTATA
 
 	db $ff ; end
 
@@ -3787,6 +3787,7 @@ GruntMGroup:
 ; ================
 
 	; GRUNTM (26)
+	; UNUSED?
 	db "GRUNT@"
 	db 0 ; normal
 
@@ -3799,6 +3800,7 @@ GruntMGroup:
 ; ================
 
 	; GRUNTM (27)
+	; UNUSED?
 	db "EXECUTIVE@"
 	db 0 ; normal
 
@@ -3814,7 +3816,7 @@ GruntMGroup:
 	db 0 ; normal
 
 	; party
-	db 19, RATICATE
+	db 33, RATICATE
 
 	db $ff ; end
 
@@ -3833,6 +3835,7 @@ GruntMGroup:
 ; ================
 
 	; GRUNTM (30)
+	; UNUSED?
 	db "GRUNT@"
 	db 0 ; normal
 
@@ -8761,7 +8764,7 @@ GruntFGroup:
 	db 0 ; normal
 
 	; party
-	db 26, ARBOK
+	db 31, ARBOK
 
 	db $ff ; end
 
@@ -8772,8 +8775,8 @@ GruntFGroup:
 	db 0 ; normal
 
 	; party
-	db 25, GLOOM
-	db 25, GLOOM
+	db 30, GLOOM
+	db 30, GLOOM
 
 	db $ff ; end
 
@@ -8784,10 +8787,10 @@ GruntFGroup:
 	db 0 ; normal
 
 	; party
-	db 21, EKANS
-	db 23, ODDISH
-	db 21, EKANS
-	db 24, GLOOM
+	db 25, EKANS
+	db 28, ODDISH
+	db 26, EKANS
+	db 29, GLOOM
 
 	db $ff ; end
 
@@ -8799,13 +8802,13 @@ GruntFGroup:
 
 	; party
 
-	db 18, EKANS
+	db 23, EKANS
 		db WRAP
 		db LEER
 		db POISON_STING
 		db BITE
 
-	db 18, GLOOM
+	db 25, GLOOM
 		db ABSORB
 		db SWEET_SCENT
 		db STUN_SPORE
