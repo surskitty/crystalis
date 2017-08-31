@@ -3006,9 +3006,9 @@ SlugmaEvosAttacks:
 	db 6, EMBER
 	db 13, HARDEN
 	db 20, ROCK_THROW
-	db 27, AMNESIA
-	db 34, BODY_SLAM
-	db 41, ROCK_SLIDE
+	db 27, BODY_SLAM
+	db 34, ROCK_SLIDE
+	db 41, AMNESIA
 	db 48, FLAMETHROWER
 	db 55, RECOVER
 	db 0 ; no more level-up moves
@@ -3022,9 +3022,9 @@ MagcargoEvosAttacks:
 	db 6, EMBER
 	db 13, HARDEN
 	db 20, ROCK_THROW
-	db 27, AMNESIA
-	db 34, BODY_SLAM
-	db 42, ROCK_SLIDE
+	db 27, BODY_SLAM
+	db 34, ROCK_SLIDE
+	db 42, AMNESIA
 	db 50, FLAMETHROWER
 	db 58, RECOVER
 	db 0 ; no more level-up moves
