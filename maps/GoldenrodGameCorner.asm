@@ -171,26 +171,26 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	loadmenudata .MenuDataHeader
 	verticalmenu
 	closewindow
-	if_equal $1, .abra
+	if_equal $1, .diglett
 	if_equal $2, .clefairy
 	if_equal $3, .dratini
 	jump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
-.abra
+.diglett
 	checkcoins 100
 	if_equal $2, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	checkcode VAR_PARTYCOUNT
 	if_equal $6, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	pokenamemem ABRA, $0
+	pokenamemem DIGLETT, $0
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	writebyte ABRA
+	writebyte DIGLETT
 	special Special_GameCornerPrizeMonCheckDex
-	givepoke ABRA, 5
+	givepoke DIGLETT, 5
 	takecoins 100
 	jump .loop
 
@@ -241,7 +241,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "ABRA        100@"
+	db "DIGLETT        100@"
 	db "CLEFAIRY    800@"
 	db "DRATINI    1500@"
 	db "CANCEL@"
