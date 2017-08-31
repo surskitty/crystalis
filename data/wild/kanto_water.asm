@@ -2,9 +2,9 @@
 
 	map TOHJO_FALLS
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
-	db 20, SLOWPOKE
-	db 20, SEAKING
+	db 30, GOLDEEN
+	db 30, SLOWPOKE
+	db 30, SEAKING
 
 	map VERMILION_PORT
 	db 2 percent ; encounter rate
@@ -136,7 +136,7 @@
 	db 2 percent ; encounter rate
 	db 20, MAGIKARP
 	db 15, MAGIKARP
-	db 10, MAGIKARP
+	db 10, DRATINI
 
 	map CINNABAR_ISLAND
 	db 6 percent ; encounter rate
