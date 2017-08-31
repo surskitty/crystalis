@@ -121,7 +121,7 @@ MortyGroup:
 
 	db 21, HAUNTER
 		db HYPNOSIS
-		db MIMIC
+		db NIGHTMARE
 		db CURSE
 		db NIGHT_SHADE
 
@@ -131,11 +131,11 @@ MortyGroup:
 		db MEAN_LOOK
 		db DREAM_EATER
 
-	db 23, HAUNTER
+	db 23, MISDREAVUS
 		db SPITE
 		db MEAN_LOOK
-		db MIMIC
-		db NIGHT_SHADE
+		db PROTECT
+		db PSYWAVE
 
 	db $ff ; end
 
@@ -153,19 +153,19 @@ PryceGroup:
 
 	; party
 
-	db 27, SEEL
+	db 33, SNEASEL
+		db BEAT_UP
+		db ICY_WIND
+		db FAINT_ATTACK
+		db LEER
+
+	db 35, DEWGONG
 		db HEADBUTT
 		db ICY_WIND
 		db AURORA_BEAM
 		db REST
 
-	db 29, DEWGONG
-		db HEADBUTT
-		db ICY_WIND
-		db AURORA_BEAM
-		db REST
-
-	db 31, PILOSWINE
+	db 37, PILOSWINE
 		db ICY_WIND
 		db FURY_ATTACK
 		db MIST
