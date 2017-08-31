@@ -193,16 +193,16 @@ JasmineGroup:
 		db SONICBOOM
 		db THUNDER_WAVE
 
-	db 30, MAGNEMITE
-		db THUNDERBOLT
-		db SUPERSONIC
-		db SONICBOOM
-		db THUNDER_WAVE
+	db 30, SKARMORY
+		db PECK
+		db STEEL_WING
+		db SCREECH
+		db SWIFT
 
 	db 35, STEELIX
-		db SCREECH
+		db DRAGONBREATH
 		db SUNNY_DAY
-		db ROCK_THROW
+		db MAGNITUDE
 		db IRON_TAIL
 
 	db $ff ; end
