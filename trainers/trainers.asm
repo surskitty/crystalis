@@ -29,10 +29,10 @@ FalknerGroup:
 		db 0
 		db 0
 
-	db 9, PIDGEOTTO
+	db 9, DODUO
 		db TACKLE
 		db MUD_SLAP
-		db GUST
+		db PECK
 		db 0
 
 	db $ff ; end
@@ -8295,9 +8295,9 @@ BoarderGroup:
 	db 0 ; normal
 
 	; party
-	db 24, SEEL
-	db 25, DEWGONG
-	db 24, SEEL
+	db 31, SEEL
+	db 32, DEWGONG
+	db 31, SEEL
 
 	db $ff ; end
 
@@ -8308,8 +8308,8 @@ BoarderGroup:
 	db 0 ; normal
 
 	; party
-	db 26, SWINUB
-	db 26, SWINUB
+	db 33, SWINUB
+	db 33, SWINUB
 
 	db $ff ; end
 
@@ -8320,9 +8320,9 @@ BoarderGroup:
 	db 0 ; normal
 
 	; party
-	db 24, SHELLDER
-	db 25, CLOYSTER
-	db 24, SHELLDER
+	db 31, SHELLDER
+	db 32, CLOYSTER
+	db 31, SHELLDER
 
 	db $ff ; end
 
