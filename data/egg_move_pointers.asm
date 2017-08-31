@@ -118,11 +118,7 @@ EggMovePointers:: ; 0x23b11
 	dw NoEggMoves
 	dw GoldeenEggMoves
 	dw NoEggMoves
-if _CRYSTAL
-	dw NoEggMoves
-else
 	dw StaryuEggMoves
-endc
 	dw NoEggMoves
 	dw MrMimeEggMoves
 	dw ScytherEggMoves
@@ -131,7 +127,7 @@ endc
 	dw NoEggMoves
 	dw PinsirEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw MagikarpEggMoves
 	dw NoEggMoves
 	dw LaprasEggMoves
 	dw NoEggMoves
@@ -204,7 +200,7 @@ endc
 	dw NoEggMoves
 	dw MisdreavusEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw WobbuffetEggMoves
 	dw GirafarigEggMoves
 	dw PinecoEggMoves
 	dw NoEggMoves
