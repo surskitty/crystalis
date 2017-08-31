@@ -213,7 +213,7 @@
 	map LAKE_OF_RAGE
 	db 6 percent ; encounter rate
 	db 15, MAGIKARP
-	db 10, MAGIKARP
+	db 10, GRIMER
 	db 15, GYARADOS
 
 	map BLACKTHORN_CITY

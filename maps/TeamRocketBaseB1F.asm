@@ -478,7 +478,7 @@ KoffingExplodingTrap:
 	special FadeInPalettes
 	setlasttalked -1
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon KOFFING, 21
+	loadwildmon GRIMER, 21
 	startbattle
 	end
 
