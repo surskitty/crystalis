@@ -3003,13 +3003,14 @@ SlugmaEvosAttacks:
 	db EVOLVE_LEVEL, 38, MAGCARGO
 	db 0 ; no more evolutions
 	db 1, SMOG
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 43, ROCK_SLIDE
-	db 50, BODY_SLAM
+	db 6, EMBER
+	db 13, HARDEN
+	db 20, ROCK_THROW
+	db 27, AMNESIA
+	db 34, BODY_SLAM
+	db 41, ROCK_SLIDE
+	db 48, FLAMETHROWER
+	db 55, RECOVER
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
@@ -3017,13 +3018,15 @@ MagcargoEvosAttacks:
 	db 1, SMOG
 	db 1, EMBER
 	db 1, ROCK_THROW
-	db 8, EMBER
-	db 15, ROCK_THROW
-	db 22, HARDEN
-	db 29, AMNESIA
-	db 36, FLAMETHROWER
-	db 48, ROCK_SLIDE
-	db 60, BODY_SLAM
+	db 1, SMOG
+	db 6, EMBER
+	db 13, HARDEN
+	db 20, ROCK_THROW
+	db 27, AMNESIA
+	db 34, BODY_SLAM
+	db 42, ROCK_SLIDE
+	db 50, FLAMETHROWER
+	db 58, RECOVER
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
@@ -3080,7 +3083,8 @@ RemoraidEvosAttacks:
 OctilleryEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
-	db 11, CONSTRICT
+	db 1, CONSTRICT
+	db 11, WRAP
 	db 22, PSYBEAM
 	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
