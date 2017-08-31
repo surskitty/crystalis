@@ -477,6 +477,7 @@ EeveeEggMoves:
 	db FLAIL
 	db CHARM
 	db GROWTH
+	db FAKE_TEARS
 	db $ff
 
 OmanyteEggMoves:
@@ -550,6 +551,7 @@ TotodileEggMoves:
 	db RAZOR_WIND
 	db ROCK_SLIDE
 	db SUBMISSION
+	db FAKE_TEARS
 	db $ff
 
 SentretEggMoves:
@@ -619,6 +621,7 @@ CleffaEggMoves:
 	db SCARY_FACE
 	db SWIFT
 	db DIZZY_PUNCH
+	db FAKE_TEARS
 	db $ff
 
 IgglybuffEggMoves:
@@ -629,6 +632,7 @@ IgglybuffEggMoves:
 	db PETAL_DANCE
 	db SCARY_FACE
 	db DIZZY_PUNCH
+	db FAKE_TEARS
 	db $ff
 
 TogepiEggMoves:
@@ -670,6 +674,7 @@ MarillEggMoves:
 	db DIZZY_PUNCH
 	db HYDRO_PUMP
 	db SCARY_FACE
+	db FAKE_TEARS
 	db $ff
 
 SudowoodoEggMoves:
@@ -779,6 +784,7 @@ SnubbullEggMoves:
 	db LICK
 	db LEER
 	db LOVELY_KISS
+	db FAKE_TEARS
 	db $ff
 
 QwilfishEggMoves:
