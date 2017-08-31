@@ -766,6 +766,46 @@ WillGroup:
 	db $ff ; end
 
 ; ================
+
+	; WILL (2)
+	db "WILL@"
+	db 3 ; item + moves
+
+	; party
+
+	db 60, XATU, NO_ITEM
+		db QUICK_ATTACK
+		db FUTURE_SIGHT
+		db CONFUSE_RAY
+		db PSYCHIC_M
+
+	db 61, JYNX, NO_ITEM
+		db DOUBLESLAP
+		db LOVELY_KISS
+		db ICE_PUNCH
+		db PSYCHIC_M
+
+	db 62, EXEGGUTOR, NO_ITEM
+		db REFLECT
+		db LEECH_SEED
+		db EGG_BOMB
+		db PSYCHIC_M
+
+	db 61, SLOWBRO, NO_ITEM
+		db CURSE
+		db AMNESIA
+		db BODY_SLAM
+		db PSYCHIC_M
+
+	db 64, XATU, NO_ITEM
+		db QUICK_ATTACK
+		db FUTURE_SIGHT
+		db CONFUSE_RAY
+		db PSYCHIC_M
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
@@ -857,6 +897,47 @@ BrunoGroup:
 	db $ff ; end
 
 ; ================
+
+
+	; BRUNO (2)
+	db "BRUNO@"
+	db 3 ; item + moves
+
+	; party
+
+	db 42, HITMONTOP, NO_ITEM
+		db PURSUIT
+		db QUICK_ATTACK
+		db DIG
+		db PROTECT
+
+	db 42, HITMONLEE, NO_ITEM
+		db SWAGGER
+		db DOUBLE_KICK
+		db HI_JUMP_KICK
+		db FORESIGHT
+
+	db 45, HITMONCHAN, NO_ITEM
+		db DYNAMICPUNCH
+		db ICE_PUNCH
+		db DIZZY_PUNCH
+		db MACH_PUNCH
+
+	db 43, ONIX, NO_ITEM
+		db BIND
+		db EARTHQUAKE
+		db SANDSTORM
+		db ROCK_SLIDE
+
+	db 46, MACHAMP, NO_ITEM
+		db ROCK_SLIDE
+		db FORESIGHT
+		db VITAL_THROW
+		db CROSS_CHOP
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
@@ -895,6 +976,46 @@ KarenGroup:
 		db FAINT_ATTACK
 
 	db 52, HOUNDOOM
+		db ROAR
+		db PURSUIT
+		db FLAMETHROWER
+		db CRUNCH
+
+	db $ff ; end
+
+; ================
+
+	; KAREN (2)
+	db "KAREN@"
+	db 3 ; item + moves
+
+	; party
+
+	db 67, UMBREON, NO_ITEM
+		db SAND_ATTACK
+		db CONFUSE_RAY
+		db FAINT_ATTACK
+		db MEAN_LOOK
+
+	db 67, VILEPLUME, NO_ITEM
+		db STUN_SPORE
+		db ACID
+		db MOONLIGHT
+		db PETAL_DANCE
+
+	db 69, GENGAR, NO_ITEM
+		db LICK
+		db SPITE
+		db CURSE
+		db DESTINY_BOND
+
+	db 71, MURKROW, NO_ITEM
+		db QUICK_ATTACK
+		db WHIRLWIND
+		db PURSUIT
+		db FAINT_ATTACK
+
+	db 72, HOUNDOOM, NO_ITEM
 		db ROAR
 		db PURSUIT
 		db FLAMETHROWER
@@ -949,6 +1070,46 @@ KogaGroup:
 	db $ff ; end
 
 ; ================
+
+	; KOGA (2)
+	db "KOGA@"
+	db 3 ; item + moves
+
+	; party
+	
+	db 65, ARIADOS, NO_ITEM
+		db DOUBLE_TEAM
+		db SPIDER_WEB
+		db BATON_PASS
+		db GIGA_DRAIN
+
+	db 66, VENOMOTH, NO_ITEM
+		db CONFUSE_RAY
+		db LEECH_LIFE
+		db PSYCHIC_M
+		db TOXIC
+
+	db 68, FORRETRESS, NO_ITEM
+		db PROTECT
+		db SWIFT
+		db EXPLOSION
+		db SPIKES
+
+	db 67, MUK, NO_ITEM
+		db MINIMIZE
+		db ACID_ARMOR
+		db SLUDGE_BOMB
+		db TOXIC
+
+	db 69, CROBAT, NO_ITEM
+		db DOUBLE_TEAM
+		db QUICK_ATTACK
+		db WING_ATTACK
+		db TOXIC
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
@@ -993,6 +1154,52 @@ ChampionGroup:
 		db HYPER_BEAM
 
 	db 55, DRAGONITE
+		db FIRE_BLAST
+		db SAFEGUARD
+		db OUTRAGE
+		db HYPER_BEAM
+
+	db $ff ; end
+
+; ================
+
+	; CHAMPION (2)
+	db "LANCE@"
+	db 3 ; item + moves
+
+	; party
+
+	db 69, GYARADOS, NO_ITEM
+		db FLAIL
+		db RAIN_DANCE
+		db SURF
+		db HYPER_BEAM
+
+	db 70, KINGDRA, NO_ITEM
+		db SURF
+		db TWISTER
+		db ICE_BEAM
+		db HYPER_BEAM
+
+	db 72, DRAGONAIR, NO_ITEM
+		db THUNDER_WAVE
+		db TWISTER
+		db BLIZZARD
+		db HYPER_BEAM
+
+	db 71, AERODACTYL, NO_ITEM
+		db WING_ATTACK
+		db ANCIENTPOWER
+		db ROCK_SLIDE
+		db HYPER_BEAM
+
+	db 71, CHARIZARD, NO_ITEM
+		db FLAMETHROWER
+		db WING_ATTACK
+		db SLASH
+		db HYPER_BEAM
+
+	db 75, DRAGONITE, NO_ITEM
 		db FIRE_BLAST
 		db SAFEGUARD
 		db OUTRAGE
