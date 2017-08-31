@@ -338,7 +338,7 @@
 	db 12, NIDORAN_F
 	db 12, NIDORAN_M
 	db 14, SUNKERN
-	db 13, PIDGEY
+	db 13, CHIKORITA
 	db 10, CATERPIE
 	db 10, WEEDLE
 	db 10, WEEDLE
@@ -626,27 +626,27 @@
 	; morn
 	db 31, GRAVELER
 	db 32, MACHOKE
-	db 31, GEODUDE
+	db 31, GOLBAT
 	db 30, RATICATE
 	db 28, MACHOP
-	db 30, GOLBAT
-	db 30, GOLBAT
+	db 30, RHYHORN
+	db 30, RHYHORN
 	; day
 	db 31, GRAVELER
 	db 32, MACHOKE
-	db 31, GEODUDE
+	db 31, GOLBAT
 	db 30, RATICATE
 	db 28, MACHOP
-	db 30, GOLBAT
-	db 30, GOLBAT
+	db 30, RHYHORN
+	db 30, RHYHORN
 	; nite
 	db 31, GRAVELER
-	db 31, GEODUDE
+	db 31, GOLBAT
 	db 30, RATICATE
-	db 30, GOLBAT
+	db 30, GEODUDE
 	db 28, MARILL
-	db 32, GOLBAT
-	db 32, GOLBAT
+	db 32, RHYHORN
+	db 32, RHYHORN
 
 	map MOUNT_MORTAR_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -684,7 +684,7 @@
 	db 23, SWINUB
 	db 24, GOLBAT
 	db 22, GOLBAT
-	db 22, GOLBAT
+	db 22, JYNX
 	; day
 	db 21, SWINUB
 	db 22, ZUBAT
@@ -692,7 +692,7 @@
 	db 23, SWINUB
 	db 24, GOLBAT
 	db 22, GOLBAT
-	db 22, GOLBAT
+	db 22, JYNX
 	; nite
 	db 21, DELIBIRD
 	db 22, ZUBAT
@@ -700,7 +700,7 @@
 	db 23, DELIBIRD
 	db 24, GOLBAT
 	db 22, GOLBAT
-	db 22, GOLBAT
+	db 22, SNEASEL
 
 	map ICE_PATH_B1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
@@ -710,7 +710,7 @@
 	db 23, GOLBAT
 	db 24, SWINUB
 	db 25, GOLBAT
-	db 23, GOLBAT
+	db 23, JYNX
 	db 22, JYNX
 	; day
 	db 22, SWINUB
@@ -718,7 +718,7 @@
 	db 23, GOLBAT
 	db 24, SWINUB
 	db 25, GOLBAT
-	db 23, GOLBAT
+	db 23, JYNX
 	db 22, JYNX
 	; nite
 	db 22, DELIBIRD
@@ -726,7 +726,7 @@
 	db 23, GOLBAT
 	db 24, DELIBIRD
 	db 25, GOLBAT
-	db 23, GOLBAT
+	db 23, SNEASEL
 	db 22, SNEASEL
 
 	map ICE_PATH_B2F_MAHOGANY_SIDE
@@ -1140,25 +1140,25 @@
 	db 3, GEODUDE
 	db 2, ZUBAT
 	db 2, GEODUDE
-	db 4, GEODUDE
 	db 2, TEDDIURSA
-	db 4, ZUBAT
+	db 4, GEODUDE
+	db 4, DUNSPARCE
 	db 4, DUNSPARCE
 	; day
 	db 3, GEODUDE
 	db 2, ZUBAT
 	db 2, GEODUDE
 	db 4, GEODUDE
-	db 2, ZUBAT
-	db 4, ZUBAT
+	db 2, WOBBUFFET
+	db 4, DUNSPARCE
 	db 4, DUNSPARCE
 	; nite
-	db 3, GEODUDE
-	db 2, ZUBAT
+	db 3, ZUBAT
 	db 2, GEODUDE
-	db 4, GEODUDE
-	db 2, ZUBAT
+	db 2, GEODUDE
 	db 4, ZUBAT
+	db 2, WOBBUFFET
+	db 4, DUNSPARCE
 	db 4, DUNSPARCE
 
 	map DARK_CAVE_BLACKTHORN_ENTRANCE
@@ -1169,24 +1169,24 @@
 	db 25, GRAVELER
 	db 25, URSARING
 	db 20, TEDDIURSA
-	db 23, GOLBAT
-	db 23, GOLBAT
+	db 23, DUNSPARCE
+	db 23, DUNSPARCE
 	; day
 	db 23, GEODUDE
 	db 23, ZUBAT
 	db 25, GRAVELER
 	db 25, URSARING
 	db 30, URSARING
-	db 23, GOLBAT
-	db 23, GOLBAT
+	db 23, DUNSPARCE
+	db 23, DUNSPARCE
 	; nite
 	db 23, GEODUDE
 	db 23, ZUBAT
 	db 25, GRAVELER
 	db 20, WOBBUFFET
 	db 25, WOBBUFFET
-	db 23, GOLBAT
-	db 23, GOLBAT
+	db 23, DUNSPARCE
+	db 23, DUNSPARCE
 
 	map ROUTE_29
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -1589,9 +1589,9 @@
 	db 23, GRAVELER
 	db 24, GLIGAR
 	db 25, GRAVELER
-	db 27, GRAVELER
-	db 27, GRAVELER
-	db 27, GRAVELER
+	db 25, CYNDAQUIL
+	db 27, CYNDAQUIL
+	db 27, QUILAVA
 
 	map ROUTE_46
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
