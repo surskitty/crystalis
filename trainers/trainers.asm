@@ -804,9 +804,9 @@ PKMNTrainerGroup:
 	db 0 ; normal
 
 	; party
-	db 50, MEGANIUM
-	db 50, TYPHLOSION
-	db 50, FERALIGATR
+	db 65, MEGANIUM
+	db 65, TYPHLOSION
+	db 65, FERALIGATR
 
 	db $ff ; end
 
