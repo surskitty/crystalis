@@ -177,16 +177,19 @@ MetapodEvosAttacks:
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, GUST
 	db 1, CONFUSION
-	db 10, CONFUSION
+	db 10, GUST
+	db 12, CONFUSION
 	db 13, POISONPOWDER
 	db 14, STUN_SPORE
 	db 15, SLEEP_POWDER
 	db 18, SUPERSONIC
-	db 23, WHIRLWIND
-	db 28, GUST
+	db 21, WHIRLWIND
+	db 27, CAPTIVATE
+	db 30, SAFEGUARD
 	db 34, PSYBEAM
-	db 40, SAFEGUARD
+	db 40, FAIRY_WIND
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
@@ -205,14 +208,17 @@ KakunaEvosAttacks:
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, TWINEEDLE
 	db 1, FURY_ATTACK
 	db 10, FURY_ATTACK
-	db 15, FOCUS_ENERGY
-	db 20, TWINEEDLE
-	db 25, RAGE
-	db 30, PURSUIT
-	db 35, PIN_MISSILE
-	db 40, AGILITY
+	db 12, TWINEEDLE
+	db 15, PURSUIT
+	db 18, FOCUS_ENERGY
+	db 21, RAGE
+	db 27, PIN_MISSILE
+	db 30, POISON_STING
+	db 34, SWORDS_DANCE
+	db 40, TOXIC
 	db 0 ; no more level-up moves
 
 PidgeyEvosAttacks:
