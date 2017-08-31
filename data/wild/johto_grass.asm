@@ -1601,24 +1601,24 @@
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, PHANPY
-	db 2, RATTATA
-	db 2, RATTATA
+	db 2, DODUO
+	db 2, DODUO
 	; day
 	db 2, GEODUDE
 	db 2, SPEAROW
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, RATTATA
-	db 2, RATTATA
-	db 2, RATTATA
+	db 2, DODUO
+	db 2, DODUO
 	; nite
 	db 2, GEODUDE
 	db 2, MURKROW
 	db 3, GEODUDE
 	db 3, RATTATA
 	db 2, RATTATA
-	db 2, RATTATA
-	db 2, RATTATA
+	db 2, MURKROW
+	db 2, MURKROW
 
 	map SILVER_CAVE_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
