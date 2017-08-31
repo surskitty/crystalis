@@ -79,17 +79,17 @@ BugsyGroup:
 
 	; party
 
-	db 14, METAPOD
-		db TACKLE
-		db STRING_SHOT
-		db HARDEN
-		db 0
-
 	db 14, KAKUNA
 		db POISON_STING
 		db STRING_SHOT
 		db HARDEN
 		db 0
+
+	db 14, VENONAT
+		db TACKLE
+		db DISABLE
+		db FORESIGHT
+		db POISON_STING
 
 	db 16, SCYTHER
 		db QUICK_ATTACK
@@ -2037,11 +2037,11 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 17, PIDGEY
-	db 15, PIDGEY
+	db 21, PIDGEY
 	db 19, PIDGEY
-	db 15, PIDGEY
-	db 15, PIDGEY
+	db 23, PIDGEY
+	db 19, PIDGEY
+	db 19, PIDGEY
 
 	db $ff ; end
 
@@ -2052,9 +2052,9 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 15, DODUO
-	db 16, DODUO
 	db 17, DODUO
+	db 18, DODUO
+	db 19, DODUO
 
 	db $ff ; end
 
@@ -2065,9 +2065,9 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 18, SPEAROW
-	db 20, FEAROW
-	db 18, SPEAROW
+	db 22, SPEAROW
+	db 24, FEAROW
+	db 22, MURKROW
 
 	db $ff ; end
 
@@ -2078,8 +2078,8 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 25, PIDGEOTTO
-	db 25, PIDGEOTTO
+	db 33, PIDGEOTTO
+	db 33, PIDGEOTTO
 
 	db $ff ; end
 
@@ -2135,10 +2135,10 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (12)
 	db "JOSE@"
-	db 0 ; normal
+	db 2 ; item
 
 	; party
-	db 46, FARFETCH_D
+	db 46, FARFETCH_D, STICK
 
 	db $ff ; end
 
@@ -2159,10 +2159,10 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (14)
 	db "JOSE@"
-	db 0 ; normal
+	db 2 ; item
 
 	; party
-	db 34, FARFETCH_D
+	db 37, FARFETCH_D, STICK
 
 	db $ff ; end
 
@@ -2170,10 +2170,10 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (15)
 	db "PERRY@"
-	db 0 ; normal
+	db 2 ; item
 
 	; party
-	db 54, FARFETCH_D
+	db 54, FARFETCH_D, STICK
 
 	db $ff ; end
 
