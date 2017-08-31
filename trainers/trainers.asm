@@ -2090,8 +2090,8 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 12, PIDGEY
-	db 34, PIDGEOT
+	db 47, MURKROW
+	db 54, PIDGEOT
 
 	db $ff ; end
 
@@ -2102,8 +2102,8 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 29, FEAROW
-	db 35, FEAROW
+	db 49, DODRIO
+	db 55, FEAROW
 
 	db $ff ; end
 
@@ -2114,9 +2114,9 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 30, DODUO
-	db 28, DODUO
-	db 32, DODRIO
+	db 50, DODUO
+	db 48, DODUO
+	db 52, DODRIO
 
 	db $ff ; end
 
@@ -2127,7 +2127,7 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 34, NOCTOWL
+	db 54, NOCTOWL
 
 	db $ff ; end
 
@@ -2138,7 +2138,7 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 36, FARFETCH_D
+	db 46, FARFETCH_D
 
 	db $ff ; end
 
@@ -2173,7 +2173,7 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 34, FARFETCH_D
+	db 54, FARFETCH_D
 
 	db $ff ; end
 
@@ -2184,8 +2184,8 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 32, PIDGEOTTO
-	db 32, FEAROW
+	db 52, PIDGEOTTO
+	db 52, FEAROW
 
 	db $ff ; end
 
@@ -2193,11 +2193,11 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (17)
 	db "JOSE@"
-	db 1 ; moves
+	db 3 ; item + moves
 
 	; party
 
-	db 40, FARFETCH_D
+	db 60, FARFETCH_D, STICK
 		db FURY_ATTACK
 		db PROTECT
 		db FLY
@@ -2212,8 +2212,8 @@ BirdKeeperGroup:
 	db 0 ; normal
 
 	; party
-	db 32, PIDGEOTTO
-	db 32, PIDGEOTTO
+	db 42, PIDGEOTTO
+	db 42, PIDGEOTTO
 
 	db $ff ; end
 
@@ -2225,13 +2225,13 @@ BirdKeeperGroup:
 
 	; party
 
-	db 38, PIDGEOT
+	db 58, PIDGEOT
 		db TOXIC
 		db QUICK_ATTACK
 		db WHIRLWIND
 		db FLY
 
-	db 38, PIDGEOT
+	db 58, PIDGEOT
 		db SWIFT
 		db PROTECT
 		db STEEL_WING
