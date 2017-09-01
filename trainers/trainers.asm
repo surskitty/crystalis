@@ -8066,9 +8066,9 @@ SageGroup:
 	db 0 ; normal
 
 	; party
-	db 3, BELLSPROUT
-	db 3, BELLSPROUT
-	db 3, BELLSPROUT
+	db 4, BELLSPROUT
+	db 4, HOPPIP
+	db 4, BELLSPROUT
 
 	db $ff ; end
 
@@ -8079,9 +8079,9 @@ SageGroup:
 	db 0 ; normal
 
 	; party
-	db 3, BELLSPROUT
-	db 3, BELLSPROUT
-	db 3, BELLSPROUT
+	db 4, BELLSPROUT
+	db 4, CUBONE
+	db 4, BELLSPROUT
 
 	db $ff ; end
 
@@ -8128,9 +8128,9 @@ SageGroup:
 	; party
 	db 16, GASTLY
 	db 16, GASTLY
-	db 16, GASTLY
-	db 16, GASTLY
 	db 16, CUBONE
+	db 16, GASTLY
+	db 16, GASTLY
 
 	db $ff ; end
 
@@ -8155,6 +8155,7 @@ SageGroup:
 
 	; party
 	db 6, BELLSPROUT
+	db 6, HOPPIP
 
 	db $ff ; end
 
