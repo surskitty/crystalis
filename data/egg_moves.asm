@@ -46,7 +46,6 @@ SquirtleEggMoves:
 	db CONFUSION
 	db FORESIGHT
 	db FLAIL
-	db ZAP_CANNON
 	db $ff
 
 PidgeyEggMoves:
