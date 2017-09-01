@@ -2586,27 +2586,13 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (1)
 	db "NICK@"
-	db 1 ; moves
+	db 0 ; normal
 
 	; party
 
 	db 26, CHARMANDER
-		db EMBER
-		db SMOKESCREEN
-		db RAGE
-		db SCARY_FACE
-
 	db 26, SQUIRTLE
-		db WITHDRAW
-		db WATER_GUN
-		db BITE
-		db CURSE
-
 	db 26, BULBASAUR
-		db LEECH_SEED
-		db POISONPOWDER
-		db SLEEP_POWDER
-		db RAZOR_LEAF
 
 	db $ff ; end
 
@@ -2617,9 +2603,9 @@ CooltrainerMGroup:
 	db 0 ; normal
 
 	; party
-	db 24, IVYSAUR
-	db 24, CHARMELEON
-	db 24, WARTORTLE
+	db 28, IVYSAUR
+	db 28, CHARMELEON
+	db 28, WARTORTLE
 
 	db $ff ; end
 
@@ -2667,19 +2653,19 @@ CooltrainerMGroup:
 
 	; party
 
-	db 35, VICTREEBEL
+	db 45, VICTREEBEL
 		db WRAP
 		db TOXIC
 		db ACID
 		db RAZOR_LEAF
 
-	db 35, KINGLER
+	db 45, KINGLER
 		db BUBBLEBEAM
 		db STOMP
 		db GUILLOTINE
 		db PROTECT
 
-	db 35, FLAREON
+	db 45, FLAREON
 		db SAND_ATTACK
 		db QUICK_ATTACK
 		db BITE
@@ -2695,19 +2681,19 @@ CooltrainerMGroup:
 
 	; party
 
-	db 39, VICTREEBEL, NO_ITEM
+	db 59, VICTREEBEL, NO_ITEM
 		db GIGA_DRAIN
 		db TOXIC
 		db SLUDGE_BOMB
 		db RAZOR_LEAF
 
-	db 39, KINGLER, KINGS_ROCK
+	db 59, KINGLER, KINGS_ROCK
 		db SURF
 		db STOMP
 		db GUILLOTINE
 		db BLIZZARD
 
-	db 39, FLAREON, NO_ITEM
+	db 59, FLAREON, NO_ITEM
 		db FLAMETHROWER
 		db QUICK_ATTACK
 		db BITE
@@ -2836,6 +2822,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (13)
 	db "ERICK@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 10, BULBASAUR
@@ -2849,6 +2836,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (14)
 	db "ANDY@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 10, BULBASAUR
@@ -2862,6 +2850,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (15)
 	db "TYLER@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 10, BULBASAUR
@@ -2877,9 +2866,9 @@ CooltrainerMGroup:
 	db 0 ; normal
 
 	; party
-	db 35, FLAREON
-	db 35, TANGELA
-	db 35, TAUROS
+	db 45, FLAREON
+	db 45, TANGELA
+	db 45, TAUROS
 
 	db $ff ; end
 
@@ -2890,9 +2879,9 @@ CooltrainerMGroup:
 	db 0 ; normal
 
 	; party
-	db 38, RHYHORN
-	db 35, CHARMELEON
-	db 35, WARTORTLE
+	db 48, RHYHORN
+	db 45, CHARMELEON
+	db 45, WARTORTLE
 
 	db $ff ; end
 
@@ -2901,6 +2890,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (18)
 	db "STEVE@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 14, BULBASAUR
