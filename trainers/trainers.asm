@@ -8847,41 +8847,41 @@ RedGroup:
 
 	; RED (1)
 	db "RED@"
-	db 1 ; moves
+	db 3 ; item + moves
 
 	; party
 
-	db 81, PIKACHU
+	db 81, PIKACHU, LIGHT_BALL
 		db CHARM
 		db QUICK_ATTACK
 		db THUNDERBOLT
 		db THUNDER
 
-	db 73, ESPEON
-		db MUD_SLAP
-		db REFLECT
-		db SWIFT
-		db PSYCHIC_M
-
-	db 75, SNORLAX
-		db AMNESIA
-		db SNORE
+	db 73, UMBREON, MIRACLEBERRY
+		db MEAN_LOOK
+		db TOXIC
+		db CHARM
 		db REST
-		db BODY_SLAM
 
-	db 77, VENUSAUR
+	db 75, SNORLAX, LEFTOVERS
+		db DOUBLE_EDGE
+		db CURSE
+		db REST
+		db LOVELY_KISS
+
+	db 77, VENUSAUR, NO_ITEM
 		db SUNNY_DAY
 		db GIGA_DRAIN
 		db SYNTHESIS
 		db SOLARBEAM
 
-	db 77, CHARIZARD
+	db 77, CHARIZARD, NO_ITEM
 		db FLAMETHROWER
 		db WING_ATTACK
 		db SLASH
 		db FIRE_SPIN
 
-	db 77, BLASTOISE
+	db 77, BLASTOISE, NO_ITEM
 		db RAIN_DANCE
 		db SURF
 		db BLIZZARD
