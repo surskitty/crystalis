@@ -39,8 +39,8 @@
 	map ILEX_FOREST
 	db 2 percent ; encounter rate
 	db 15, PSYDUCK
-	db 10, PSYDUCK
 	db 15, GOLDUCK
+	db 10, TOTODILE
 
 	map MOUNT_MORTAR_1F_OUTSIDE
 	db 4 percent ; encounter rate
@@ -69,20 +69,20 @@
 	map WHIRL_ISLAND_B2F
 	db 4 percent ; encounter rate
 	db 15, HORSEA
-	db 20, HORSEA
-	db 20, TENTACRUEL
+	db 20, OMANYTE
+	db 20, KABUTO
 
 	map WHIRL_ISLAND_LUGIA_CHAMBER
 	db 4 percent ; encounter rate
 	db 20, HORSEA
-	db 20, TENTACRUEL
-	db 20, SEADRA
+	db 20, KABUTO
+	db 20, OMANYTE
 
 	map SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 35, SEAKING
-	db 35, GOLDUCK
-	db 35, GOLDEEN
+	db 55, SEAKING
+	db 55, GOLDUCK
+	db 55, CROCONAW
 
 	map DARK_CAVE_VIOLET_ENTRANCE
 	db 2 percent ; encounter rate
@@ -135,8 +135,8 @@
 	map ROUTE_35
 	db 4 percent ; encounter rate
 	db 20, PSYDUCK
-	db 15, PSYDUCK
 	db 20, GOLDUCK
+	db 15, SQUIRTLE
 
 	map ROUTE_40
 	db 6 percent ; encounter rate
@@ -213,7 +213,7 @@
 	map LAKE_OF_RAGE
 	db 6 percent ; encounter rate
 	db 15, MAGIKARP
-	db 10, MAGIKARP
+	db 10, GRIMER
 	db 15, GYARADOS
 
 	map BLACKTHORN_CITY
@@ -224,8 +224,8 @@
 
 	map SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate
-	db 35, POLIWHIRL
-	db 40, POLIWHIRL
-	db 35, POLIWAG
+	db 45, POLIWHIRL
+	db 50, POLIWHIRL
+	db 45, POLIWAG
 
 	db -1 ; end
