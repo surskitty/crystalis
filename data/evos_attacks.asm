@@ -2294,6 +2294,7 @@ HoothootEvosAttacks:
 	db 11, PECK
 	db 16, HYPNOSIS
 	db 22, REFLECT
+	db 22, CONFUSE_RAY
 	db 28, TAKE_DOWN
 	db 34, CONFUSION
 	db 48, MOONBLAST
@@ -2309,6 +2310,7 @@ NoctowlEvosAttacks:
 	db 11, PECK
 	db 16, HYPNOSIS
 	db 25, REFLECT
+	db 25, CONFUSE_RAY
 	db 33, TAKE_DOWN
 	db 41, CONFUSION
 	db 57, MOONBLAST
@@ -2701,11 +2703,13 @@ YanmaEvosAttacks:
 	db 7, QUICK_ATTACK
 	db 13, DOUBLE_TEAM
 	db 19, SONICBOOM
-	db 25, PROTECT
-	db 31, SUPERSONIC
-	db 37, WING_ATTACK
-	db 37, SWIFT
+	db 23, SUPERSONIC
+	db 27, SWIFT
+	db 31, PURSUIT
+	db 35, WING_ATTACK
+	db 39, HYPNOSIS
 	db 43, SCREECH
+	db 47, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:

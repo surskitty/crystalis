@@ -96,7 +96,6 @@ NidoranFEggMoves:
 	db SUPERSONIC
 	db DISABLE
 	db TAKE_DOWN
-	db FOCUS_ENERGY
 	db CHARM
 	db COUNTER
 	db BEAT_UP
@@ -439,7 +438,6 @@ TangelaEggMoves:
 KangaskhanEggMoves:
 	db STOMP
 	db FORESIGHT
-	db FOCUS_ENERGY
 	db SAFEGUARD
 	db DISABLE
 	db FAINT_ATTACK
@@ -565,41 +563,32 @@ ChikoritaEggMoves:
 	db VINE_WHIP
 	db LEECH_SEED
 	db COUNTER
-	db ANCIENTPOWER
-	db FLAIL
-	db SWORDS_DANCE
 	db PETAL_DANCE
 	db BODY_SLAM
 	db $ff
 
 CyndaquilEggMoves:
-	db FURY_SWIPES
 	db QUICK_ATTACK
 	db REVERSAL
 	db THRASH
 	db FORESIGHT
 	db SUBMISSION
 	db DOUBLE_EDGE
-	db DOUBLE_KICK
 	db $ff
 
 TotodileEggMoves:
-	db CRUNCH
 	db THRASH
-	db HYDRO_PUMP
 	db ANCIENTPOWER
 	db RAZOR_WIND
 	db ROCK_SLIDE
 	db SUBMISSION
 	db FAKE_TEARS
-	db METAL_CLAW
 	db $ff
 
 SentretEggMoves:
 	db DOUBLE_EDGE
 	db PURSUIT
 	db SLASH
-	db FOCUS_ENERGY
 	db REVERSAL
 	db DIZZY_PUNCH
 	db CHARM
@@ -608,7 +597,6 @@ SentretEggMoves:
 
 HoothootEggMoves:
 	db MIRROR_MOVE
-	db SUPERSONIC
 	db FAINT_ATTACK
 	db WING_ATTACK
 	db WHIRLWIND
@@ -640,7 +628,6 @@ SpinarakEggMoves:
 
 ChinchouEggMoves:
 	db FLAIL
-	db SUPERSONIC
 	db SCREECH
 	db LIGHT_SCREEN
 	db AGILITY
@@ -653,8 +640,6 @@ PichuEggMoves:
 	db PRESENT
 	db ENCORE
 	db DOUBLESLAP
-	db SURF
-	db FLY
 	db DIZZY_PUNCH
 	db PETAL_DANCE
 	db SCARY_FACE
@@ -765,10 +750,8 @@ AipomEggMoves:
 YanmaEggMoves:
 	db WHIRLWIND
 	db REVERSAL
-	db LEECH_LIFE
 	db SWEET_KISS
 	db FAINT_ATTACK
-	db PURSUIT
 	db DOUBLE_EDGE
 	db $ff
 
@@ -1026,7 +1009,6 @@ TyrogueEggMoves:
 SmoochumEggMoves:
 	db LOVELY_KISS
 	db MEDITATE
-	db DIZZY_PUNCH
 	db METRONOME
 	db PETAL_DANCE
 	db CAPTIVATE
@@ -1051,7 +1033,6 @@ MagbyEggMoves:
 	db FAINT_ATTACK
 	db DIZZY_PUNCH
 	db BELLY_DRUM
-	db FOCUS_ENERGY
 	db $ff
 
 MiltankEggMoves:
@@ -1067,7 +1048,6 @@ LarvitarEggMoves:
 	db PURSUIT
 	db STOMP
 	db OUTRAGE
-	db FOCUS_ENERGY
 	db ANCIENTPOWER
 	db RAGE
 	db $ff
