@@ -2773,6 +2773,7 @@ MurkrowEvosAttacks:
 	db 26, NIGHT_SHADE
 	db 31, FAINT_ATTACK
 	db 41, MEAN_LOOK
+	db 46, WING_ATTACK
 	db 0 ; no more level-up moves
 
 SlowkingEvosAttacks:
@@ -2824,9 +2825,11 @@ GirafarigEvosAttacks:
 	db 1, STOMP
 	db 7, CONFUSION
 	db 13, STOMP
-	db 20, AGILITY
-	db 30, BATON_PASS
-	db 41, PSYBEAM
+	db 19, AGILITY
+	db 23, PSYBEAM
+	db 29, DOUBLE_KICK
+	db 32, BATON_PASS
+	db 41, PSYCHIC
 	db 54, CRUNCH
 	db 0 ; no more level-up moves
 

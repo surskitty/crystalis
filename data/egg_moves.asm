@@ -772,19 +772,16 @@ MurkrowEggMoves:
 	db DRILL_PECK
 	db QUICK_ATTACK
 	db MIRROR_MOVE
-	db WING_ATTACK
 	db SKY_ATTACK
 	db BEAT_UP
 	db PERISH_SONG
 	db SCREECH
-	db FAINT_ATTACK
 	db $ff
 
 MisdreavusEggMoves:
 	db SCREECH
 	db DESTINY_BOND
 	db HYPNOSIS
-	db SPITE
 	db $ff
 
 GirafarigEggMoves:
@@ -793,9 +790,7 @@ GirafarigEggMoves:
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db BEAT_UP
-	db DOUBLE_KICK
 	db MIRROR_COAT
-	db RAZOR_WIND
 	db MEAN_LOOK
 	db $ff
 
