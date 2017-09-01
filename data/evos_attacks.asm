@@ -2864,12 +2864,18 @@ ForretressEvosAttacks:
 DunsparceEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, RAGE
-	db 5, DEFENSE_CURL
+	db 1, DEFENSE_CURL
+	db 6, ROLLOUT
 	db 13, GLARE
 	db 18, SPITE
-	db 26, PURSUIT
-	db 30, SCREECH
-	db 38, TAKE_DOWN
+	db 22, ANCIENTPOWER
+	db 27, PURSUIT
+	db 31, SCREECH
+	db 36, TAKE_DOWN
+	db 40, DIG
+	db 45, DOUBLE_EDGE
+	db 49, ENDURE
+	db 54, FLAIL
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:

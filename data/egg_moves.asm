@@ -803,17 +803,13 @@ PinecoEggMoves:
 	db COUNTER
 	db DOUBLE_EDGE
 	db MIRROR_COAT
-	db RAZOR_WIND
 	db MEAN_LOOK
 	db $ff
 
 DunsparceEggMoves:
 	db BIDE
-	db ANCIENTPOWER
 	db ROCK_SLIDE
 	db BITE
-	db RAGE
-	db FURY_ATTACK
 	db HORN_DRILL
 	db AGILITY
 	db $ff
