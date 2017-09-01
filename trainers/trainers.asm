@@ -7718,7 +7718,7 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 10, DIGLETT
+	db 10, SLUGMA
 	db 10, ZUBAT
 	db 14, DIGLETT
 
@@ -7743,7 +7743,7 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 36, NIDOKING
+	db 56, NIDOKING
 
 	db $ff ; end
 
@@ -7754,7 +7754,7 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 34, NIDOKING
+	db 44, NIDOKING
 
 	db $ff ; end
 
@@ -7765,8 +7765,8 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 33, GOLDUCK
-	db 31, SANDSLASH
+	db 48, GOLDUCK
+	db 46, SANDSLASH
 
 	db $ff ; end
 
@@ -7777,9 +7777,9 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 32, DUGTRIO
-	db 29, PRIMEAPE
-	db 29, POLIWRATH
+	db 47, DUGTRIO
+	db 44, PRIMEAPE
+	db 44, POLITOED
 
 	db $ff ; end
 
@@ -7788,6 +7788,7 @@ CamperGroup:
 	; CAMPER (9)
 	db "HARVEY@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, NIDORINO
@@ -7799,6 +7800,7 @@ CamperGroup:
 	; CAMPER (10)
 	db "DALE@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, NIDORINO
@@ -7812,7 +7814,7 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 17, MANKEY
+	db 22, MANKEY
 
 	db $ff ; end
 
@@ -7823,9 +7825,9 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 17, GEODUDE
-	db 17, GEODUDE
-	db 23, PSYDUCK
+	db 21, GEODUDE
+	db 21, RHYHORN
+	db 27, PSYDUCK
 
 	db $ff ; end
 
@@ -7836,9 +7838,9 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 23, GEODUDE
-	db 23, GEODUDE
-	db 26, PSYDUCK
+	db 28, GEODUDE
+	db 28, RHYHORN
+	db 31, GOLDUCK
 
 	db $ff ; end
 
@@ -7847,6 +7849,7 @@ CamperGroup:
 	; CAMPER (14)
 	db "THOMAS@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 33, GRAVELER
@@ -7861,6 +7864,7 @@ CamperGroup:
 	; CAMPER (15)
 	db "LEROY@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 33, GRAVELER
@@ -7875,6 +7879,7 @@ CamperGroup:
 	; CAMPER (16)
 	db "DAVID@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 33, GRAVELER
@@ -7889,6 +7894,7 @@ CamperGroup:
 	; CAMPER (17)
 	db "JOHN@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 33, GRAVELER
@@ -7905,7 +7911,9 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 37, SANDSLASH
+	db 55, SANDSLASH
+	db 55, OMASTAR
+	db 55, KABUTOPS
 
 	db $ff ; end
 
@@ -7916,9 +7924,9 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 17, SANDSHREW
-	db 17, SANDSLASH
-	db 19, ZUBAT
+	db 22, SANDSHREW
+	db 22, SANDSLASH
+	db 24, ZUBAT
 
 	db $ff ; end
 
@@ -7929,10 +7937,10 @@ CamperGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GRAVELER
-	db 30, GRAVELER
-	db 30, SLUGMA
-	db 32, PSYDUCK
+	db 40, GRAVELER
+	db 40, RHYDON
+	db 40, SLUGMA
+	db 42, PSYDUCK
 
 	db $ff ; end
 
@@ -7944,25 +7952,25 @@ CamperGroup:
 
 	; party
 
-	db 33, GRAVELER
+	db 53, GRAVELER
 		db SELFDESTRUCT
 		db ROCK_THROW
-		db HARDEN
+		db SANDSTORM
 		db MAGNITUDE
 
-	db 33, GRAVELER
-		db SELFDESTRUCT
-		db ROCK_THROW
-		db HARDEN
+	db 53, RHYDON
+		db MEGAHORN
+		db ROCK_SLIDE
+		db STOMP
 		db MAGNITUDE
 
-	db 36, MAGCARGO
-		db ROCK_THROW
+	db 56, MAGCARGO
+		db ROCK_SLIDE
 		db HARDEN
 		db AMNESIA
 		db FLAMETHROWER
 
-	db 34, GOLDUCK
+	db 54, GOLDUCK
 		db DISABLE
 		db PSYCHIC_M
 		db SURF
