@@ -195,7 +195,7 @@
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
-	dw DetectDescription
+	dw MoonblastDescription
 	dw BoneRushDescription
 	dw LockOnDescription
 	dw OutrageDescription
@@ -250,16 +250,13 @@
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
+	dw FairyWindDescription
+	dw CaptivateDescription
+	dw FakeTearsDescription
 	dw MoveFFDescription
 	dw Move00Description
 ; 2cd52
 
-MoveFCDescription:
-MoveFDDescription:
-MoveFEDescription:
 MoveFFDescription:
 Move00Description:
 UnknownMoveDescription:
@@ -558,8 +555,8 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
-	next "ATK rating.@"
+	db   "Sharply raises the"
+	next "user's SPCL.ATK.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -798,8 +795,8 @@ AmnesiaDescription:
 	next "user's SPCL.DEF.@"
 
 KinesisDescription:
-	db   "Reduces the foe's"
-	next "accuracy.@"
+	db   "Sharply reduces"
+	next "foe's accuracy.@"
 
 SoftboiledDescription:
 	db   "Restores HP by 1/2"
@@ -1048,9 +1045,9 @@ IcyWindDescription:
 	db   "An icy attack that"
 	next "lowers SPEED.@"
 
-DetectDescription:
-	db   "Evades attack that"
-	next "turn. It may fail.@"
+MoonblastDescription:
+	db   "Attack that might"
+	next "lower SPCL.ATK.@"
 
 BoneRushDescription:
 	db   "An attack that"
@@ -1162,7 +1159,7 @@ MegahornDescription:
 
 DragonbreathDescription:
 	db   "A strong breath"
-	next "attack.@"
+	next "that paralyzes.@"
 
 BatonPassDescription:
 	db   "Switches while"
@@ -1230,7 +1227,7 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower DEFENSE.@"
 
 MirrorCoatDescription:
 	db   "Counters a SPCL."
@@ -1267,4 +1264,16 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
-; 2ed44
+
+FairyWindDescription:
+	db   "A fey wind that"
+	next "never misses.@"
+
+CaptivateDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.ATK.@"
+
+FakeTearsDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.DEF.@"
+

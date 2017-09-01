@@ -197,7 +197,7 @@
 	const DESTINY_BOND ; $c2
 	const PERISH_SONG  ; $c3
 	const ICY_WIND     ; $c4
-	const DETECT       ; $c5
+	const MOONBLAST    ; $c5
 	const BONE_RUSH    ; $c6
 	const LOCK_ON      ; $c7
 	const OUTRAGE      ; $c8
@@ -252,6 +252,9 @@
 	const ROCK_SMASH   ; $f9
 	const WHIRLPOOL    ; $fa
 	const BEAT_UP      ; $fb
+	const FAIRY_WIND   ; $fc
+	const CAPTIVATE    ; $fd
+	const FAKE_TEARS  ; $fe
 
 const_value SET const_value + -1
 
@@ -259,9 +262,6 @@ const_value SET const_value + -1
 
 ; Battle animations use the same constants
 ; as the moves up to this point.
-	const ANIM_FC                ; $fc
-	const ANIM_FD                ; $fd
-	const ANIM_FE                ; $fe
 	const ANIM_SWEET_SCENT_2     ; $ff
 	const ANIM_THROW_POKE_BALL   ; $100
 	const ANIM_SEND_OUT_MON      ; $101

@@ -828,7 +828,7 @@ BrunoGroup:
 		db PURSUIT
 		db QUICK_ATTACK
 		db DIG
-		db DETECT
+		db PROTECT
 
 	db 42, HITMONLEE
 		db SWAGGER
@@ -1986,7 +1986,7 @@ BirdKeeperGroup:
 
 	db 40, FARFETCH_D
 		db FURY_ATTACK
-		db DETECT
+		db PROTECT
 		db FLY
 		db SLASH
 
@@ -2020,7 +2020,7 @@ BirdKeeperGroup:
 
 	db 38, PIDGEOT
 		db SWIFT
-		db DETECT
+		db PROTECT
 		db STEEL_WING
 		db FLY
 

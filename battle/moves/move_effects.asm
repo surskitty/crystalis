@@ -33,6 +33,7 @@ HiJumpKick:
 QuickAttack:
 MachPunch:
 Extremespeed:
+FairyWind:
 NormalHit:
 	checkobedience
 	usedmovetext
@@ -285,7 +286,6 @@ SpeedUp:
 	statupfailtext
 	endmove
 
-Growth:
 SpecialAttackUp:
 	checkobedience
 	usedmovetext
@@ -376,7 +376,7 @@ SpeedUp2:
 	statupmessage
 	statupfailtext
 	endmove
-
+Growth:
 SpecialAttackUp2:
 	checkobedience
 	usedmovetext
@@ -497,7 +497,6 @@ SpecialDefenseDown:
 
 SandAttack:
 Smokescreen:
-Kinesis:
 Flash:
 AccuracyDown:
 	checkobedience
@@ -569,6 +568,7 @@ SpeedDown2:
 	statdownfailtext
 	endmove
 
+Captivate:
 SpecialAttackDown2:
 	checkobedience
 	usedmovetext
@@ -582,6 +582,7 @@ SpecialAttackDown2:
 	statdownfailtext
 	endmove
 
+FakeTears:
 SpecialDefenseDown2:
 	checkobedience
 	usedmovetext
@@ -595,6 +596,7 @@ SpecialDefenseDown2:
 	statdownfailtext
 	endmove
 
+Kinesis:
 AccuracyDown2:
 	checkobedience
 	usedmovetext
@@ -696,6 +698,7 @@ SpeedDownHit:
 	statdownmessage
 	endmove
 
+Moonblast:
 SpecialAttackDownHit:
 	checkobedience
 	usedmovetext
@@ -1652,7 +1655,6 @@ Curse:
 	endmove
 
 Protect:
-Detect:
 	checkobedience
 	usedmovetext
 	doturn

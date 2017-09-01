@@ -196,7 +196,7 @@ BattleAnimations:: ; c906f
 	dw BattleAnim_DestinyBond
 	dw BattleAnim_PerishSong
 	dw BattleAnim_IcyWind
-	dw BattleAnim_Detect
+	dw BattleAnim_Moonblast
 	dw BattleAnim_BoneRush
 	dw BattleAnim_LockOn
 	dw BattleAnim_Outrage
@@ -251,9 +251,9 @@ BattleAnimations:: ; c906f
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_252
-	dw BattleAnim_253
-	dw BattleAnim_254
+	dw BattleAnim_FairyWind
+	dw BattleAnim_Captivate
+	dw BattleAnim_FakeTears
 	dw BattleAnim_SweetScent2
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -281,10 +281,59 @@ BattleAnimations:: ; c906f
 ; c929b
 
 BattleAnim_0: ; c929b
-BattleAnim_252: ; c929b
-BattleAnim_253: ; c929b
-BattleAnim_254: ; c929b
-BattleAnim_MirrorMove: ; c929b
+BattleAnim_FairyWind:
+	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  12, 0, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLOWER,   8, 0,  10, 0, $2
+	anim_wait 96
+	anim_obp0 $54
+	anim_sound 0, 1, SFX_SWEET_SCENT_2
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $15
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $2a
+	anim_obj ANIM_OBJ_COTTON, -15, 0,   5, 0, $3f
+	anim_wait 128
+	anim_ret
+
+BattleAnim_Captivate: 
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_call BattleAnim_FollowEnemyFeet_0
+	anim_bgeffect ANIM_BG_26, $0, $1, $0
+	anim_sound 0, 0, SFX_CURSE
+	anim_obj ANIM_OBJ_HEART,   8, 0,  10, 0, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_26
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 4
+	anim_ret
+
+BattleAnim_FakeTears: 
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
+	anim_obj ANIM_OBJ_A5,   8, 4,   9, 0, $0
+	anim_sound 0, 0, SFX_CURSE
+	anim_wait 32
+	anim_incobj  1
+	anim_wait 12
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgeffect ANIM_BG_07, $0, $0, $0
+.loop
+	anim_sound 0, 0, SFX_METRONOME
+	anim_obj ANIM_OBJ_9D,   3, 0,   8, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   7, 0,  13, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   3, 0,  13, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   7, 0,   8, 0, $0
+	anim_wait 5
+	anim_obj ANIM_OBJ_9D,   5, 0,  10, 4, $0
+	anim_wait 5
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
+BattleAnim_MirrorMove: 
 	anim_ret
 ; c929c
 
@@ -3871,12 +3920,30 @@ BattleAnim_IcyWind: ; cb14c
 	anim_ret
 ; cb18c
 
-BattleAnim_Detect: ; cb18c
+BattleAnim_Moonblast: ; cb18c
 	anim_1gfx ANIM_GFX_SHINE
+	anim_bgp $1b
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
-	anim_sound 0, 0, SFX_FORESIGHT
-	anim_obj ANIM_OBJ_A7,   8, 0,  11, 0, $0
-	anim_wait 24
+	anim_obj ANIM_OBJ_9E,   0, 0,   5, 0, $0
+	anim_obj ANIM_OBJ_9E,   2, 0,   7, 0, $0
+	anim_obj ANIM_OBJ_9E,   4, 0,   9, 0, $0
+	anim_obj ANIM_OBJ_9E,   6, 0,  11, 0, $0
+	anim_obj ANIM_OBJ_9E,   8, 0,  13, 0, $0
+	anim_wait 1
+	anim_sound 0, 0, SFX_MOONLIGHT
+	anim_wait 63
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_27,   8, 0,  11, 4, $0
+	anim_wait 4
+	anim_sound 0, 0, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_27,  10, 0,  10, 4, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_27,  12, 0,   9, 4, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_HYPER_BEAM
+	anim_obj ANIM_OBJ_27,  14, 0,   8, 4, $0
+	anim_obj ANIM_OBJ_28,  15, 6,   7, 6, $0
 	anim_ret
 ; cb19d
 

@@ -52,7 +52,6 @@ MetronomeExcepts: ; 37454
 	db COUNTER
 	db MIRROR_COAT
 	db PROTECT
-	db DETECT
 	db ENDURE
 	db DESTINY_BOND
 	db SLEEP_TALK
