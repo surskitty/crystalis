@@ -815,9 +815,6 @@ DunsparceEggMoves:
 	db $ff
 
 GligarEggMoves:
-	db METAL_CLAW
-	db WING_ATTACK
-	db RAZOR_WIND
 	db COUNTER
 	db AGILITY
 	db BATON_PASS

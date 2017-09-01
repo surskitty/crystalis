@@ -2881,13 +2881,16 @@ DunsparceEvosAttacks:
 GligarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 6, SAND_ATTACK
-	db 13, HARDEN
-	db 20, QUICK_ATTACK
-	db 28, FAINT_ATTACK
+	db 6, MUD_SLAP
+	db 12, METAL_CLAW
+	db 18, QUICK_ATTACK
+	db 24, FURY_CUTTER
+	db 30, FAINT_ATTACK
 	db 36, SLASH
-	db 44, SCREECH
-	db 52, GUILLOTINE
+	db 42, SCREECH
+	db 46, WING_ATTACK
+	db 54, SWORDS_DANCE
+	db 60, GUILLOTINE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
