@@ -3284,9 +3284,9 @@ BeautyGroup:
 	db 0 ; normal
 
 	; party
-	db 9, SENTRET
 	db 13, SENTRET
-	db 17, SENTRET
+	db 15, JIGGLYPUFF
+	db 17, CLEFAIRY
 
 	db $ff ; end
 
@@ -3317,6 +3317,7 @@ BeautyGroup:
 	; BEAUTY (3)
 	db "JULIE@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, SENTRET
@@ -3328,6 +3329,7 @@ BeautyGroup:
 	; BEAUTY (4)
 	db "JACLYN@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, SENTRET
@@ -3339,6 +3341,7 @@ BeautyGroup:
 	; BEAUTY (5)
 	db "BRENDA@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 16, FURRET
@@ -3352,8 +3355,8 @@ BeautyGroup:
 	db 0 ; normal
 
 	; party
-	db 28, VILEPLUME
-	db 34, BUTTERFREE
+	db 48, VILEPLUME
+	db 54, BUTTERFREE
 
 	db $ff ; end
 
@@ -3362,6 +3365,7 @@ BeautyGroup:
 	; BEAUTY (7)
 	db "CAROLINE@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 30, MARILL
@@ -3375,6 +3379,7 @@ BeautyGroup:
 	; BEAUTY (8)
 	db "CARLENE@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, SENTRET
@@ -3386,6 +3391,7 @@ BeautyGroup:
 	; BEAUTY (9)
 	db "JESSICA@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, SENTRET
@@ -3430,6 +3436,7 @@ BeautyGroup:
 	; BEAUTY (13)
 	db "VERONICA@"
 	db 0 ; normal
+	; UNUSED?
 
 	; party
 	db 15, SENTRET
@@ -3443,9 +3450,9 @@ BeautyGroup:
 	db 0 ; normal
 
 	; party
-	db 32, PARAS
-	db 32, EXEGGCUTE
-	db 35, PARASECT
+	db 52, BAYLEEF
+	db 52, EXEGGCUTE
+	db 55, PARASECT
 
 	db $ff ; end
 
@@ -3454,6 +3461,7 @@ BeautyGroup:
 	; BEAUTY (15)
 	db "THERESA@"
 	db 0 ; normal
+	; UNUSED
 
 	; party
 	db 15, SENTRET
@@ -3468,16 +3476,16 @@ BeautyGroup:
 
 	; party
 
-	db 17, HOPPIP
+	db 19, HOPPIP
 		db SYNTHESIS
-		db TAIL_WHIP
-		db TACKLE
+		db COTTON_SPORE
+		db FAIRY_WIND
 		db POISONPOWDER
 
-	db 17, SKIPLOOM
+	db 19, SKIPLOOM
 		db SYNTHESIS
-		db TAIL_WHIP
-		db TACKLE
+		db COTTON_SPORE
+		db FAIRY_WIND
 		db STUN_SPORE
 
 	db $ff ; end
@@ -3489,7 +3497,7 @@ BeautyGroup:
 	db 0 ; normal
 
 	; party
-	db 19, CORSOLA
+	db 22, CORSOLA
 
 	db $ff ; end
 
