@@ -245,8 +245,8 @@ UnknownText_0x1a02df:
 	text "If you use FLY,"
 	line "you can get back"
 
-	para "to OLIVINE in-"
-	line "stantly."
+	para "to OLIVINE at"
+	line "any time."
 	done
 
 UnknownText_0x1a0319:
@@ -276,9 +276,9 @@ UnknownText_0x1a03cc:
 	line "islands between"
 	cont "here and OLIVINE."
 
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
+	para "Some weird sea"
+	line "creatures might"
+	cont "be there."
 	done
 
 UnknownText_0x1a0433:
@@ -295,8 +295,8 @@ UnknownText_0x1a0433:
 	line "SUICUNE running on"
 	cont "the waves."
 
-	para "SUICUNE is beau-"
-	line "tiful and grand."
+	para "SUICUNE is grand"
+	line "and gorgeous."
 
 	para "And it races"
 	line "through towns and"

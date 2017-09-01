@@ -30,10 +30,13 @@ UnknownText_0x9e1bc:
 	line "the four islands"
 	cont "along the way?"
 
-	para "I heard that a "
-	line "mythical sea crea-"
-	cont "ture is hiding in"
-	cont "them."
+	para "I heard something"
+	line "strange showed up"
+	cont "over there."
+
+	para "A mythical beast"
+	line "and lost sea"
+	cont "creatures."
 	done
 
 UnknownText_0x9e23f:
