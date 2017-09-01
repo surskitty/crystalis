@@ -3097,6 +3097,10 @@ OctilleryEvosAttacks:
 DelibirdEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PRESENT
+	db 15, SPIKES
+	db 25, DRILL_PECK
+	db 35, WHIRLWIND
+	db 45, THIEF
 	db 0 ; no more level-up moves
 
 MantineEvosAttacks:
