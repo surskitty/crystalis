@@ -132,7 +132,6 @@ ZubatEggMoves:
 	db QUICK_ATTACK
 	db PURSUIT
 	db FAINT_ATTACK
-	db GUST
 	db WHIRLWIND
 	db FLAIL
 	db HYPNOSIS
@@ -165,7 +164,6 @@ ParasEggMoves:
 VenonatEggMoves:
 	db BATON_PASS
 	db SCREECH
-	db GIGA_DRAIN
 	db AGILITY
 	db MORNING_SUN
 	db $ff
@@ -185,7 +183,6 @@ MeowthEggMoves:
 	db HYPNOSIS
 	db AMNESIA
 	db FLAIL
-	db TAIL_WHIP
 	db $ff
 
 PsyduckEggMoves:
@@ -238,7 +235,6 @@ AbraEggMoves:
 	db ENCORE
 	db BARRIER
 	db METRONOME
-	db FORESIGHT
 	db $ff
 
 MachopEggMoves:
@@ -269,7 +265,6 @@ TentacoolEggMoves:
 	db HAZE
 	db SAFEGUARD
 	db CONFUSE_RAY
-	db BUBBLE
 	db $ff
 
 GeodudeEggMoves:
@@ -303,10 +298,8 @@ SlowpokeEggMoves:
 FarfetchDEggMoves:
 	db FORESIGHT
 	db MIRROR_MOVE
-	db GUST
 	db QUICK_ATTACK
 	db FLAIL
-	db FURY_CUTTER
 	db $ff
 
 DoduoEggMoves:
@@ -358,9 +351,6 @@ GastlyEggMoves:
 OnixEggMoves:
 	db ROCK_SLIDE
 	db FLAIL
-	db SHARPEN
-	db DEFENCE_CURL
-	db ROLLOUT
 	db $ff
 
 DrowzeeEggMoves:
@@ -388,7 +378,6 @@ ExeggcuteEggMoves:
 	db REFLECT
 	db MEGA_DRAIN
 	db ANCIENTPOWER
-	db SWEET_SCENT
 	db $ff
 
 CuboneEggMoves:
@@ -399,7 +388,6 @@ CuboneEggMoves:
 	db SKULL_BASH
 	db PERISH_SONG
 	db SWORDS_DANCE
-	db FURY_ATTACK
 	db DOUBLE_KICK
 	db $ff
 
@@ -413,7 +401,6 @@ LickitungEggMoves:
 
 KoffingEggMoves:
 	db SCREECH
-	db PSYWAVE
 	db PSYBEAM
 	db DESTINY_BOND
 	db PAIN_SPLIT
@@ -435,7 +422,6 @@ ChanseyEggMoves:
 	db PRESENT
 	db METRONOME
 	db HEAL_BELL
-	db SWEET_SCENT
 	db COUNTER
 	db SEISMIC_TOSS
 	db $ff
@@ -484,7 +470,6 @@ GoldeenEggMoves:
 MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
-	db MIMIC
 	db METRONOME
 	db MIND_READER
 	db CONFUSE_RAY
@@ -889,7 +874,6 @@ QwilfishEggMoves:
 	db $ff
 
 ShuckleEggMoves:
-	db SWEET_SCENT
 	db ACID
 	db $ff
 
@@ -992,7 +976,6 @@ SkarmoryEggMoves:
 	db PURSUIT
 	db WHIRLWIND
 	db SKY_ATTACK
-	db FURY_CUTTER
 	db $ff
 
 HoundourEggMoves:

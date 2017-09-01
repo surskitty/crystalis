@@ -1147,6 +1147,7 @@ FarfetchDEvosAttacks:
 	db 31, AGILITY
 	db 37, SLASH
 	db 44, FALSE_SWIPE
+	db 50, FURY_CUTTER
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -2980,9 +2981,7 @@ SneaselEvosAttacks:
 	db 41, AGILITY
 	db 49, SLASH
 	db 57, BEAT_UP
-if _CRYSTAL
 	db 65, METAL_CLAW
-endc
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:
