@@ -4192,7 +4192,7 @@ TeacherGroup:
 	db 0 ; normal
 
 	; party
-	db 36, CLEFAIRY
+	db 56, CLEFAIRY
 
 	db $ff ; end
 
@@ -4200,11 +4200,11 @@ TeacherGroup:
 
 	; TEACHER (2)
 	db "HILLARY@"
-	db 0 ; normal
+	db 2 ; item
 
 	; party
-	db 32, AIPOM
-	db 36, CUBONE
+	db 52, AIPOM, NO_ITEM
+	db 56, MAROWAK, THICK_CLUB
 
 	db $ff ; end
 
@@ -4215,7 +4215,7 @@ TeacherGroup:
 	db 0 ; normal
 
 	; party
-	db 35, JIGGLYPUFF
+	db 55, JIGGLYPUFF
 
 	db $ff ; end
 
