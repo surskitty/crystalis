@@ -1,16 +1,18 @@
-# Pokémon Crystal [![Build Status][travis-badge]][travis]
+# Pokémon Crystalis
 
-This is a disassembly of Pokémon Crystal.
+This is a romhack of Pok&eacute;mon Crystal, made off [pret/pokemon-crystal](https://github.com/pret/pokecrystal), by surskitty et al. No monetary gain shall be had from this.
 
-It builds the following roms:
+The underlying philosophy of this romhack is to leave it playably a main series Pok&eacute;mon game, simplistic difficulty and all.  Encounters are adjusted so that all Pok&eacute;mon will be available in multiple areas, with as few unfeasibly low appearance rates as possible.  As such, there is no intention of releasing a separate document detailing full appearance lists.
 
-* Pokemon - Crystal Version (UE) (V1.0) [C][!].gbc `sha1: f4cd194bdee0d04ca4eac29e09b8e4e9d818c133`
-* Pokemon - Crystal Version (UE) (V1.1) [C][!].gbc `sha1: f2f52230b536214ef7c9924f483392993e226cfb`
+## Major Changes
 
-To set up the repository, see [INSTALL.md](INSTALL.md).
-
-### irc: [freenode#pret][irc]
-
-[irc]: https://kiwiirc.com/client/irc.freenode.net/?#pret
-[travis]: https://travis-ci.org/pret/pokecrystal
-[travis-badge]: https://travis-ci.org/pret/pokecrystal.svg?branch=master
+- So many Pok&eacute;mon locations and level-up movesets.
+- Ghost is now a Special type and Dark is Physical.
+- Poison is super-effective against Bug, just as it was in gen I.
+- Many pokemon have had their base stats adjusted!
+- Trade evolutions can be obtained by either using the item required or by levelling up: 28 for alakazam, 36 for machamp, and 33 for golem and gengar.
+- Absorb is now base power 40, Mega Drain 60, and Giga Drain and Leech Life are 80.
+- The Fairy type is here!  The two damaging fairy moves are Fairy Wind and Moonblast.  Look out for them!
+- Growth and Kinesis now affect stats by two levels.
+- The moves Captivate and Fake Tears have been added.
+- Egg moves have been updated!  All PCNY event moves are obtainable now, as are egg moves added in later games.
