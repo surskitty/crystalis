@@ -62,6 +62,9 @@ UnknownText_0x184583:
 
 	para "We must always be"
 	line "thankful for this."
+
+	para "CUBONE understand"
+	line "this well."
 	done
 
 UnknownText_0x1845d8:

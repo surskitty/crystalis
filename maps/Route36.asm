@@ -417,18 +417,18 @@ Route36SuicuneMovement:
 
 UseSquirtbottleText:
 	text "It's a weird tree."
-	line "Use SQUIRTBOTTLE?"
+	line "Use SQUIRTLEJUG?"
 	done
 
 UsedSquirtbottleText:
 	text "<PLAYER> used the"
-	line "SQUIRTBOTTLE."
+	line "SQUIRTLEJUG."
 	done
 
 SudowoodoAttackedText:
 	text "The weird tree"
 	line "doesn't like the"
-	cont "SQUIRTBOTTLE!"
+	cont "SQUIRTLEJUG!"
 
 	para "The weird tree"
 	line "attacked!"

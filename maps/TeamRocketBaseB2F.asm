@@ -263,8 +263,8 @@ RocketElectrode2:
 	jump UnknownScript_0x6d184
 
 RocketElectrode3:
-	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	cry PORYGON
+	loadwildmon PORYGON, 25
 	startbattle
 	iftrue UnknownScript_0x6d182
 	disappear TEAMROCKETBASEB2F_ELECTRODE3
@@ -693,10 +693,8 @@ UnknownText_0x6d6cf:
 	line "switch on it…"
 
 	para "We have no choice."
-	line "We have to make"
-
-	para "all the ELECTRODE"
-	line "faint."
+	line "We have to stop"
+	cont "all the #MON."
 
 	para "That should stop"
 	line "this machine from"

@@ -73,7 +73,7 @@ Route32CooltrainerMTrigger:
 .GiveMiracleSeed:
 	writetext Route32CooltrainerMText_HaveThisSeed
 	buttonsound
-	verbosegiveitem MIRACLE_SEED
+	verbosegiveitem EXP_SHARE
 	iffalse .BagFull
 	setevent EVENT_GOT_MIRACLE_SEED_IN_ROUTE_32
 	jump .GotMiracleSeed
@@ -599,9 +599,8 @@ Route32CooltrainerMText_HaveThisSeed:
 	line "VIOLET CITY, take"
 	cont "this."
 
-	para "It increases the"
-	line "power of grass-"
-	cont "type moves."
+	para "#MON train by"
+	line "observing others."
 	done
 
 Route32CooltrainerMText_ExperiencesShouldBeUseful:

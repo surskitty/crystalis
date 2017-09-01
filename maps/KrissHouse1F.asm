@@ -310,7 +310,7 @@ UnknownText_0x7a8e5:
 	para "That does sound"
 	line "challenging."
 
-	para "But, you should be"
+	para "But you should be"
 	line "proud that people"
 	cont "rely on you."
 	done
