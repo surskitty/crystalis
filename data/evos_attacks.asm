@@ -2601,14 +2601,20 @@ HoppipEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, TAIL_WHIP
+	db 1, COTTON_SPORE
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
-	db 20, LEECH_SEED
-	db 25, COTTON_SPORE
-	db 30, MEGA_DRAIN
+	db 20, MEGA_DRAIN
+	db 25, LEECH_SEED
+	db 30, GUST
+	db 30, TWISTER
+	db 35, SWAGGER
+	db 40, SOLARBEAM
+	db 40, SUNNY_DAY
+	db 45, MOONBLAST
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -2616,32 +2622,41 @@ SkiploomEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, TAIL_WHIP
-	db 1, SYNTHESIS
-	db 1, TACKLE
+	db 1, COTTON_SPORE
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
-	db 22, LEECH_SEED
-	db 29, COTTON_SPORE
-	db 36, MEGA_DRAIN
+	db 22, MEGA_DRAIN
+	db 27, LEECH_SEED
+	db 32, GUST
+	db 32, TWISTER
+	db 38, SWAGGER
+	db 42, SOLARBEAM
+	db 42, SUNNY_DAY
+	db 47, MOONBLAST
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, TAIL_WHIP
+	db 1, COTTON_SPORE
 	db 1, SYNTHESIS
-	db 1, TACKLE
 	db 5, SYNTHESIS
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
 	db 15, STUN_SPORE
 	db 17, SLEEP_POWDER
-	db 22, LEECH_SEED
-	db 33, COTTON_SPORE
-	db 44, MEGA_DRAIN
+	db 22, MEGA_DRAIN
+	db 30, LEECH_SEED
+	db 35, GUST
+	db 35, TWISTER
+	db 40, SWAGGER
+	db 45, SOLARBEAM
+	db 45, SUNNY_DAY
+	db 50, MOONBLAST
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:
