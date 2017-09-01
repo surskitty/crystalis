@@ -2956,13 +2956,13 @@ CooltrainerFGroup:
 
 	; party
 
-	db 25, SKIPLOOM
+	db 27, SKIPLOOM
 		db SYNTHESIS
 		db POISONPOWDER
 		db MEGA_DRAIN
 		db LEECH_SEED
 
-	db 25, NINETALES
+	db 27, NINETALES
 		db EMBER
 		db QUICK_ATTACK
 		db CONFUSE_RAY
@@ -3024,9 +3024,9 @@ CooltrainerFGroup:
 	db 0 ; normal
 
 	; party
-	db 27, MARILL
-	db 24, WARTORTLE
-	db 24, WARTORTLE
+	db 32, MARILL
+	db 29, WARTORTLE
+	db 29, CROCONAW
 
 	db $ff ; end
 
@@ -3034,11 +3034,11 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (8)
 	db "JOYCE@"
-	db 1 ; moves
+	db 3 ; items + moves
 
 	; party
 
-	db 36, PIKACHU
+	db 36, PIKACHU, LIGHT_BALL
 		db QUICK_ATTACK
 		db DOUBLE_TEAM
 		db THUNDERBOLT
@@ -3117,7 +3117,7 @@ CooltrainerFGroup:
 
 	; party
 
-	db 39, RAPIDASH
+	db 49, RAPIDASH
 		db STOMP
 		db FIRE_SPIN
 		db FURY_ATTACK
@@ -3132,9 +3132,9 @@ CooltrainerFGroup:
 	db 0 ; normal
 
 	; party
-	db 35, ELECTRODE
-	db 35, STARMIE
-	db 35, NINETALES
+	db 45, ELECTRODE
+	db 45, STARMIE
+	db 45, NINETALES
 
 	db $ff ; end
 
@@ -3145,8 +3145,8 @@ CooltrainerFGroup:
 	db 0 ; normal
 
 	; party
-	db 38, IVYSAUR
-	db 38, STARMIE
+	db 58, IVYSAUR
+	db 58, STARMIE
 
 	db $ff ; end
 
@@ -3165,21 +3165,12 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (16)
 	db "CYBIL@"
-	db 1 ; moves
+	db 0 ; moves
 
 	; party
 
-	db 25, BUTTERFREE
-		db CONFUSION
-		db SLEEP_POWDER
-		db WHIRLWIND
-		db GUST
-
-	db 25, BELLOSSOM
-		db ABSORB
-		db STUN_SPORE
-		db ACID
-		db SOLARBEAM
+	db 30, BUTTERFREE
+	db 30, BELLOSSOM
 
 	db $ff ; end
 
@@ -3203,10 +3194,10 @@ CooltrainerFGroup:
 
 	; party
 
-	db 43, RAPIDASH, FOCUS_BAND
+	db 63, RAPIDASH, FOCUS_BAND
 		db STOMP
 		db FIRE_SPIN
-		db FURY_ATTACK
+		db MEGAHORN
 		db FIRE_BLAST
 
 	db $ff ; end
@@ -3218,9 +3209,9 @@ CooltrainerFGroup:
 	db 0 ; normal
 
 	; party
-	db 34, STARMIE
-	db 36, NIDOQUEEN
-	db 34, STARMIE
+	db 44, STARMIE
+	db 46, NIDOQUEEN
+	db 44, STARMIE
 
 	db $ff ; end
 
@@ -3232,19 +3223,19 @@ CooltrainerFGroup:
 
 	; party
 
-	db 38, STARMIE, NO_ITEM
+	db 68, STARMIE, NO_ITEM
 		db DOUBLE_TEAM
 		db PSYCHIC_M
 		db WATERFALL
 		db CONFUSE_RAY
 
-	db 40, NIDOQUEEN, PINK_BOW
+	db 60, NIDOQUEEN, PINK_BOW
 		db EARTHQUAKE
 		db DOUBLE_KICK
 		db TOXIC
 		db BODY_SLAM
 
-	db 38, STARMIE, NO_ITEM
+	db 68, STARMIE, NO_ITEM
 		db BLIZZARD
 		db PSYCHIC_M
 		db WATERFALL
@@ -3266,13 +3257,13 @@ CooltrainerFGroup:
 		db WHIRLPOOL
 		db TWISTER
 
-	db 33, HORSEA
+	db 34, SEADRA
 		db SMOKESCREEN
 		db LEER
 		db WHIRLPOOL
 		db TWISTER
 
-	db 35, SEADRA
+	db 36, KINGDRA
 		db SWIFT
 		db LEER
 		db WATERFALL
