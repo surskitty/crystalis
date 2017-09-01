@@ -374,7 +374,7 @@ Rival1Group:
 		db SONICBOOM
 
 	db 20, ZUBAT
-		db LEECH_LIFE
+		db WING_ATTACK
 		db SUPERSONIC
 		db BITE
 		db CONFUSE_RAY
@@ -408,7 +408,7 @@ Rival1Group:
 		db SONICBOOM
 
 	db 20, ZUBAT
-		db LEECH_LIFE
+		db WING_ATTACK
 		db SUPERSONIC
 		db BITE
 		db CONFUSE_RAY
@@ -479,7 +479,7 @@ Rival1Group:
 		db LICK
 		db MEAN_LOOK
 		db CURSE
-		db SHADOW_BALL
+		db SLUDGE_BOMB
 
 	db 37, SNEASEL
 		db LEER
@@ -490,7 +490,7 @@ Rival1Group:
 	db 37, MEGANIUM
 		db REFLECT
 		db RAZOR_LEAF
-		db POISONPOWDER
+		db REVERSAL
 		db BODY_SLAM
 
 	db $ff ; end
@@ -519,7 +519,7 @@ Rival1Group:
 		db LICK
 		db MEAN_LOOK
 		db CURSE
-		db SHADOW_BALL
+		db SLUDGE_BOMB
 
 	db 37, SNEASEL
 		db LEER
@@ -529,7 +529,7 @@ Rival1Group:
 
 	db 37, QUILAVA
 		db SMOKESCREEN
-		db EMBER
+		db DOUBLE_KICK
 		db QUICK_ATTACK
 		db FLAME_WHEEL
 
@@ -559,7 +559,7 @@ Rival1Group:
 		db LICK
 		db MEAN_LOOK
 		db CURSE
-		db SHADOW_BALL
+		db SLUDGE_BOMB
 
 	db 37, SNEASEL
 		db LEER
@@ -568,8 +568,8 @@ Rival1Group:
 		db FAINT_ATTACK
 
 	db 37, FERALIGATR
-		db RAGE
-		db WATER_GUN
+		db METAL_CLAW
+		db BUBBLE_BEAM
 		db BITE
 		db SCARY_FACE
 
@@ -616,7 +616,7 @@ Rival1Group:
 	db 40, MEGANIUM
 		db REFLECT
 		db RAZOR_LEAF
-		db POISONPOWDER
+		db REVERSAL
 		db BODY_SLAM
 
 	db $ff ; end
@@ -661,7 +661,7 @@ Rival1Group:
 
 	db 40, TYPHLOSION
 		db SMOKESCREEN
-		db EMBER
+		db DOUBLE_KICK
 		db QUICK_ATTACK
 		db FLAME_WHEEL
 
@@ -706,8 +706,8 @@ Rival1Group:
 		db FUTURE_SIGHT
 
 	db 40, FERALIGATR
-		db RAGE
-		db WATER_GUN
+		db METAL_CLAW
+		db BUBBLE_BEAM
 		db SCARY_FACE
 		db SLASH
 
