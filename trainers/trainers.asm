@@ -6864,10 +6864,10 @@ BlackbeltGroup:
 	db 0 ; normal
 
 	; party
-	db 27, ONIX
-	db 30, HITMONLEE
-	db 27, ONIX
-	db 32, MACHOKE
+	db 37, ONIX
+	db 40, HITMONLEE
+	db 37, ONIX
+	db 42, MACHOKE
 
 	db $ff ; end
 
@@ -6895,25 +6895,25 @@ BlackbeltGroup:
 
 	; party
 
-	db 33, ONIX
+	db 53, ONIX
 		db BIND
 		db ROCK_THROW
 		db TOXIC
 		db DIG
 
-	db 38, MACHAMP
+	db 58, MACHAMP
 		db HEADBUTT
 		db SWAGGER
 		db THUNDERPUNCH
 		db VITAL_THROW
 
-	db 33, STEELIX
+	db 53, STEELIX
 		db EARTHQUAKE
 		db ROCK_THROW
 		db IRON_TAIL
 		db SANDSTORM
 
-	db 36, HITMONLEE
+	db 56, HITMONLEE
 		db DOUBLE_TEAM
 		db HI_JUMP_KICK
 		db MUD_SLAP
@@ -6930,7 +6930,7 @@ BlackbeltGroup:
 	; party
 
 	db 27, HITMONCHAN
-		db COMET_PUNCH
+		db MACH_PUNCH
 		db THUNDERPUNCH
 		db ICE_PUNCH
 		db FIRE_PUNCH
@@ -6945,17 +6945,17 @@ BlackbeltGroup:
 
 	; party
 
-	db 25, MACHOP
-		db LEER
-		db FOCUS_ENERGY
-		db KARATE_CHOP
-		db SEISMIC_TOSS
+	db 25, TYROGUE
+		db MACH_PUNCH
+		db PURSUIT
+		db RAPID_SPIM
+		db HI_JUMP_KICK
 
-	db 25, MACHOKE
-		db LEER
-		db KARATE_CHOP
-		db SEISMIC_TOSS
-		db ROCK_SLIDE
+	db 25, HITMONTOP
+		db ROLLING_KICK
+		db PURSUIT
+		db PROTECT
+		db DIG
 
 	db $ff ; end
 
@@ -6979,7 +6979,7 @@ BlackbeltGroup:
 
 	; party
 	db 23, MANKEY
-	db 23, MANKEY
+	db 23, MACHOP
 	db 25, PRIMEAPE
 
 	db $ff ; end
@@ -6991,7 +6991,7 @@ BlackbeltGroup:
 	db 0 ; normal
 
 	; party
-	db 28, MACHOKE
+	db 30, MACHOKE
 
 	db $ff ; end
 
@@ -7002,9 +7002,9 @@ BlackbeltGroup:
 	db 0 ; normal
 
 	; party
-	db 30, MACHOKE
-	db 32, MACHOKE
-	db 34, MACHOKE
+	db 50, MACHOKE
+	db 52, MACHOKE
+	db 54, MACHOKE
 
 	db $ff ; end
 
