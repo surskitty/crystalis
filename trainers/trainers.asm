@@ -6477,10 +6477,10 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 27, KOFFING
-	db 28, KOFFING
-	db 29, KOFFING
-	db 30, KOFFING
+	db 47, KOFFING
+	db 48, BEEDRILL
+	db 49, WEEZING
+	db 50, ARIADOS
 
 	db $ff ; end
 
@@ -6491,7 +6491,7 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 34, FLAREON
+	db 54, FLAREON
 
 	db $ff ; end
 
@@ -6502,8 +6502,8 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 32, KOFFING
-	db 32, KOFFING
+	db 52, KOFFING
+	db 52, KOFFING
 
 	db $ff ; end
 
@@ -6514,9 +6514,9 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 30, KOFFING
-	db 30, CHARMELEON
-	db 30, WEEZING
+	db 50, KOFFING
+	db 50, CHARMELEON
+	db 50, WEEZING
 
 	db $ff ; end
 
@@ -6527,7 +6527,7 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 34, WEEZING
+	db 54, WEEZING
 
 	db $ff ; end
 
@@ -6538,8 +6538,8 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 32, MAGMAR
-	db 32, MAGMAR
+	db 52, MAGBY
+	db 52, MAGMAR
 
 	db $ff ; end
 
@@ -6550,9 +6550,9 @@ BikerGroup:
 	db 0 ; normal
 
 	; party
-	db 28, KOFFING
-	db 30, MAGMAR
-	db 32, WEEZING
+	db 48, KOFFING
+	db 50, MAGMAR
+	db 52, WEEZING
 
 	db $ff ; end
 
