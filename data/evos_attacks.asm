@@ -729,11 +729,15 @@ PsyduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 5, TAIL_WHIP
-	db 10, DISABLE
+	db 8, WATER_GUN
+	db 12, DISABLE
 	db 16, CONFUSION
-	db 23, SCREECH
-	db 31, PSYCH_UP
-	db 40, FURY_SWIPES
+	db 20, FURY_SWIPES
+	db 24, SCREECH
+	db 32, PSYCH_UP
+	db 36, SWAGGER
+	db 40, PSYBEAM
+	db 44, AMNESIA
 	db 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -741,15 +745,19 @@ GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, TAIL_WHIP
+	db 1, WATER_GUN
 	db 1, DISABLE
-	db 1, CONFUSION
 	db 5, TAIL_WHIP
-	db 10, DISABLE
+	db 8, WATER_GUN
+	db 12, DISABLE
 	db 16, CONFUSION
-	db 23, SCREECH
-	db 31, PSYCH_UP
-	db 44, FURY_SWIPES
-	db 58, HYDRO_PUMP
+	db 20, FURY_SWIPES
+	db 24, SCREECH
+	db 32, PSYCH_UP
+	db 38, SWAGGER
+	db 42, PSYBEAM
+	db 47, AMNESIA
+	db 54, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 MankeyEvosAttacks:
