@@ -170,10 +170,8 @@ MeowthEggMoves:
 PsyduckEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
-	db PSYBEAM
 	db LIGHT_SCREEN
 	db FUTURE_SIGHT
-	db PSYCHIC_M
 	db CROSS_CHOP
 	db PETAL_DANCE
 	db TRI_ATTACK
