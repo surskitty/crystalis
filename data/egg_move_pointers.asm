@@ -127,7 +127,7 @@ EggMovePointers:: ; 0x23b11
 	dw NoEggMoves
 	dw PinsirEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw MagikarpEggMoves
 	dw NoEggMoves
 	dw LaprasEggMoves
 	dw NoEggMoves
@@ -200,7 +200,7 @@ EggMovePointers:: ; 0x23b11
 	dw NoEggMoves
 	dw MisdreavusEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw WobbuffetEggMoves
 	dw GirafarigEggMoves
 	dw PinecoEggMoves
 	dw NoEggMoves

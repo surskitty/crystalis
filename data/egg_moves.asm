@@ -108,6 +108,7 @@ VulpixEggMoves:
 	db FLAIL
 	db SPITE
 	db DISABLE
+	db CAPTIVATE
 	db $ff
 
 ZubatEggMoves:
@@ -331,6 +332,9 @@ GastlyEggMoves:
 OnixEggMoves:
 	db ROCK_SLIDE
 	db FLAIL
+	db SHARPEN
+	db DEFENCE_CURL
+	db ROLLOUT
 	db $ff
 
 DrowzeeEggMoves:
@@ -357,6 +361,7 @@ ExeggcuteEggMoves:
 	db REFLECT
 	db MEGA_DRAIN
 	db ANCIENTPOWER
+	db SWEET_SCENT
 	db $ff
 
 CuboneEggMoves:
