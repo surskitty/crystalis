@@ -6671,9 +6671,9 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 29, MAGMAR
-	db 32, WEEZING
-	db 29, MAGMAR
+	db 49, MAGMAR
+	db 52, WEEZING
+	db 49, CHARIZARD
 
 	db $ff ; end
 
@@ -6685,7 +6685,7 @@ FirebreatherGroup:
 
 	; party
 	db 15, CHARMANDER
-	db 15, CHARMANDER
+	db 15, CYNDAQUIL
 
 	db $ff ; end
 
@@ -6696,9 +6696,9 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 15, KOFFING
-	db 16, GROWLITHE
-	db 15, KOFFING
+	db 15, GROWLITHE
+	db 16, KOFFING
+	db 15, VULPIX
 
 	db $ff ; end
 
@@ -6709,8 +6709,8 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 32, KOFFING
-	db 32, SLUGMA
+	db 52, WEEZING
+	db 52, MAGCARGO
 
 	db $ff ; end
 
@@ -6721,7 +6721,7 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 6, KOFFING
+	db 6, MAGBY
 	db 6, KOFFING
 
 	db $ff ; end
@@ -6733,7 +6733,7 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 11, MAGMAR
+	db 11, MAGBY
 	db 13, MAGMAR
 
 	db $ff ; end
@@ -6756,9 +6756,9 @@ FirebreatherGroup:
 	db 0 ; normal
 
 	; party
-	db 28, KOFFING
-	db 31, FLAREON
-	db 28, KOFFING
+	db 48, KOFFING
+	db 51, FLAREON
+	db 48, KOFFING
 
 	db $ff ; end
 
