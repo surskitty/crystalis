@@ -2293,7 +2293,7 @@ LassGroup:
 
 	; party
 	db 15, JIGGLYPUFF
-	db 15, JIGGLYPUFF
+	db 15, CHANSEY
 	db 15, JIGGLYPUFF
 
 	db $ff ; end
@@ -2305,9 +2305,9 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GLOOM
-	db 34, ARBOK
-	db 30, GLOOM
+	db 45, GLOOM
+	db 49, ARBOK
+	db 45, GLOOM
 
 	db $ff ; end
 
@@ -2341,9 +2341,9 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 30, BULBASAUR
-	db 32, IVYSAUR
-	db 34, VENUSAUR
+	db 45, BULBASAUR
+	db 47, IVYSAUR
+	db 49, VENUSAUR
 
 	db $ff ; end
 
@@ -2354,9 +2354,9 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 28, GLOOM
-	db 31, PIDGEOTTO
-	db 31, BELLOSSOM
+	db 44, GLOOM
+	db 46, PIDGEOTTO
+	db 46, BELLOSSOM
 
 	db $ff ; end
 
@@ -2367,9 +2367,9 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 29, PARAS
-	db 29, PARAS
-	db 32, PARASECT
+	db 44, PARAS
+	db 44, PARAS
+	db 47, PARASECT
 
 	db $ff ; end
 
@@ -2380,9 +2380,9 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 32, SKIPLOOM
-	db 33, HOPPIP
-	db 34, JUMPLUFF
+	db 47, SKIPLOOM
+	db 48, HOPPIP
+	db 49, JUMPLUFF
 
 	db $ff ; end
 
@@ -2415,8 +2415,8 @@ LassGroup:
 	db 0 ; normal
 
 	; party
-	db 30, WIGGLYTUFF
-	db 34, GRANBULL
+	db 45, WIGGLYTUFF
+	db 49, GRANBULL
 
 	db $ff ; end
 
@@ -2450,13 +2450,13 @@ LassGroup:
 
 	; party
 
-	db 21, FLAAFFY
+	db 23, FLAAFFY
 		db TACKLE
 		db GROWL
 		db THUNDERSHOCK
 		db THUNDER_WAVE
 
-	db 21, PSYDUCK
+	db 23, PSYDUCK
 		db SCRATCH
 		db TAIL_WHIP
 		db DISABLE
@@ -2476,10 +2476,10 @@ LassGroup:
 		db SCRATCH
 		db DISABLE
 		db CONFUSION
-		db SCREECH
+		db WATER_GUN
 
 	db 29, AMPHAROS
-		db TACKLE
+		db TWISTER
 		db THUNDERSHOCK
 		db THUNDER_WAVE
 		db COTTON_SPORE
@@ -2494,16 +2494,16 @@ LassGroup:
 
 	; party
 
-	db 32, PSYDUCK
-		db SCRATCH
+	db 42, GOLDUCK
+		db WATER_GUN
 		db DISABLE
 		db CONFUSION
-		db SCREECH
+		db SWAGGER
 
-	db 32, AMPHAROS
-		db TACKLE
+	db 42, AMPHAROS
+		db DRAGONBREATH
 		db THUNDERPUNCH
-		db THUNDER_WAVE
+		db LIGHT_SCREEN
 		db COTTON_SPORE
 
 	db $ff ; end
@@ -2516,17 +2516,17 @@ LassGroup:
 
 	; party
 
-	db 36, AMPHAROS
+	db 56, AMPHAROS
 		db SWIFT
 		db THUNDERPUNCH
 		db THUNDER_WAVE
-		db COTTON_SPORE
+		db DRAGONBREATH
 
-	db 36, GOLDUCK
+	db 56, GOLDUCK
 		db DISABLE
 		db SURF
 		db PSYCHIC_M
-		db SCREECH
+		db SWAGGER
 
 	db $ff ; end
 
