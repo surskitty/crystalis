@@ -7141,7 +7141,7 @@ PsychicGroup:
 	db 0 ; normal
 
 	; party
-	db 37, KADABRA
+	db 52, KADABRA
 
 	db $ff ; end
 
@@ -7152,9 +7152,9 @@ PsychicGroup:
 	db 0 ; normal
 
 	; party
-	db 30, EXEGGCUTE
-	db 30, EXEGGCUTE
-	db 30, EXEGGUTOR
+	db 50, EXEGGCUTE
+	db 50, EXEGGCUTE
+	db 50, EXEGGUTOR
 
 	db $ff ; end
 
@@ -7165,7 +7165,7 @@ PsychicGroup:
 	db 0 ; normal
 
 	; party
-	db 34, XATU
+	db 54, XATU
 
 	db $ff ; end
 
@@ -7177,7 +7177,13 @@ PsychicGroup:
 
 	; party
 
-	db 17, DROWZEE
+	db 16, SMOOCHUM
+		db SING
+		db SWEET_KISS
+		db CONFUSION
+		db 0
+
+	db 16, DROWZEE
 		db HYPNOSIS
 		db DISABLE
 		db DREAM_EATER
@@ -7193,13 +7199,13 @@ PsychicGroup:
 
 	; party
 
-	db 17, SLOWPOKE
+	db 19, SLOWPOKE
 		db TACKLE
 		db GROWL
 		db WATER_GUN
 		db 0
 
-	db 20, SLOWPOKE
+	db 22, SLOWKING
 		db CURSE
 		db BODY_SLAM
 		db WATER_GUN
@@ -7221,10 +7227,10 @@ PsychicGroup:
 		db 0
 		db 0
 
-	db 13, ABRA
+	db 14, ABRA
 		db TELEPORT
 		db FLASH
-		db 0
+		db METRONOME
 		db 0
 
 	db 15, KADABRA
@@ -7243,13 +7249,13 @@ PsychicGroup:
 
 	; party
 
-	db 24, NATU
+	db 29, NATU
 		db LEER
 		db NIGHT_SHADE
 		db FUTURE_SIGHT
 		db CONFUSE_RAY
 
-	db 26, KADABRA
+	db 31, KADABRA
 		db DISABLE
 		db PSYBEAM
 		db RECOVER
@@ -7288,9 +7294,9 @@ PsychicGroup:
 	db 0 ; normal
 
 	; party
-	db 32, MR__MIME
-	db 32, EXEGGCUTE
-	db 35, EXEGGCUTE
+	db 47, MR__MIME
+	db 47, EXEGGCUTE
+	db 50, EXEGGUTOR
 
 	db $ff ; end
 
@@ -7301,8 +7307,8 @@ PsychicGroup:
 	db 0 ; normal
 
 	; party
-	db 29, DROWZEE
-	db 33, HYPNO
+	db 49, DROWZEE
+	db 53, HYPNO
 
 	db $ff ; end
 
