@@ -569,7 +569,7 @@ Rival1Group:
 
 	db 37, FERALIGATR
 		db METAL_CLAW
-		db BUBBLE_BEAM
+		db BUBBLEBEAM
 		db BITE
 		db SCARY_FACE
 
@@ -707,7 +707,7 @@ Rival1Group:
 
 	db 40, FERALIGATR
 		db METAL_CLAW
-		db BUBBLE_BEAM
+		db BUBBLEBEAM
 		db SCARY_FACE
 		db SLASH
 
