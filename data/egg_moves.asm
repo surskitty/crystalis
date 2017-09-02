@@ -3,13 +3,6 @@ INCLUDE "includes.asm"
 
 SECTION "Egg Moves", ROMX, BANK[EGG_MOVES]
 
-; All instances of Charm, Steel Wing, Sweet Scent, and Lovely Kiss were
-; removed from egg move lists in Crystal, because they are also TMs.
-
-; Staryu's egg moves were removed in Crystal, because Staryu is genderless
-; and can only breed with Ditto.
-
-
 INCLUDE "data/egg_move_pointers.asm"
 
 
@@ -17,11 +10,8 @@ EggMoves::
 
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
-	db SKULL_BASH
 	db SAFEGUARD
 	db CHARM
-	db RAZOR_WIND
-	db PETAL_DANCE
 	db ANCIENTPOWER
 	db AMNESIA
 	db SLUDGE
@@ -35,7 +25,6 @@ CharmanderEggMoves:
 	db OUTRAGE
 	db BEAT_UP
 	db CRUNCH
-	db METAL_CLAW
 	db COUNTER
 	db $ff
 
@@ -43,8 +32,6 @@ SquirtleEggMoves:
 	db MIRROR_COAT
 	db HAZE
 	db MIST
-	db CONFUSION
-	db FORESIGHT
 	db FLAIL
 	db $ff
 
@@ -93,7 +80,6 @@ SandshrewEggMoves:
 	db $ff
 
 NidoranFEggMoves:
-	db SUPERSONIC
 	db DISABLE
 	db TAKE_DOWN
 	db CHARM
@@ -106,10 +92,8 @@ NidoranFEggMoves:
 	db $ff
 
 NidoranMEggMoves:
-	db SUPERSONIC
 	db DISABLE
 	db TAKE_DOWN
-	db CONFUSION
 	db AMNESIA
 	db COUNTER
 	db BEAT_UP
@@ -124,7 +108,6 @@ VulpixEggMoves:
 	db FLAIL
 	db SPITE
 	db DISABLE
-	db CAPTIVATE
 	db $ff
 
 ZubatEggMoves:
@@ -151,7 +134,6 @@ ParasEggMoves:
 	db COUNTER
 	db PSYBEAM
 	db FLAIL
-	db SWEET_SCENT
 	db LIGHT_SCREEN
 	db PURSUIT
 	db SYNTHESIS
@@ -188,7 +170,6 @@ PsyduckEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
 	db PSYBEAM
-	db FORESIGHT
 	db LIGHT_SCREEN
 	db FUTURE_SIGHT
 	db PSYCHIC_M
@@ -343,7 +324,7 @@ GastlyEggMoves:
 	db PERISH_SONG
 	db HAZE
 	db DISABLE
-	db SCARY_FAE
+	db SCARY_FACE
 	db SMOG
 	db $ff
 
@@ -368,7 +349,6 @@ KrabbyEggMoves:
 	db METAL_CLAW
 	db ANCIENTPOWER
 	db AGILITY
-	db BIDE
 	db $ff
 
 ExeggcuteEggMoves:
@@ -427,7 +407,6 @@ ChanseyEggMoves:
 
 TangelaEggMoves:
 	db FLAIL
-	db CONFUSION
 	db MEGA_DRAIN
 	db REFLECT
 	db AMNESIA
@@ -452,7 +431,6 @@ HorseaEggMoves:
 	db DISABLE
 	db DRAGON_RAGE
 	db HAZE
-	db RAZOR_WIND
 	db OUTRAGE
 	db $ff
 
@@ -477,7 +455,6 @@ ScytherEggMoves:
 	db COUNTER
 	db SAFEGUARD
 	db BATON_PASS
-	db RAZOR_WIND
 	db REVERSAL
 	db LIGHT_SCREEN
 	db SONICBOOM
@@ -493,7 +470,6 @@ PinsirEggMoves:
 
 LaprasEggMoves:
 	db AURORA_BEAM
-	db FORESIGHT
 	db BITE
 	db FUTURE_SIGHT
 	db HORN_DRILL
@@ -515,8 +491,6 @@ OmanyteEggMoves:
 	db SLAM
 	db SUPERSONIC
 	db HAZE
-	db ROCK_THROW
-	db SPIKES
 	db BIDE
 	db $ff
 
@@ -526,18 +500,14 @@ KabutoEggMoves:
 	db RAPID_SPIN
 	db DIG
 	db FLAIL
-	db ROCK_THROW
 	db CONFUSE_RAY
 	db SCREECH
-	db FORESIGHT
 	db TAKE_DOWN
 	db $ff
 
 AerodactylEggMoves:
 	db WHIRLWIND
 	db PURSUIT
-	db FORESIGHT
-	db ROCK_THROW
 	db $ff
 
 SnorlaxEggMoves:
@@ -560,7 +530,6 @@ DratiniEggMoves:
 	db $ff
 
 ChikoritaEggMoves:
-	db VINE_WHIP
 	db LEECH_SEED
 	db COUNTER
 	db PETAL_DANCE
@@ -571,7 +540,6 @@ CyndaquilEggMoves:
 	db QUICK_ATTACK
 	db REVERSAL
 	db THRASH
-	db FORESIGHT
 	db SUBMISSION
 	db DOUBLE_EDGE
 	db $ff
@@ -579,7 +547,6 @@ CyndaquilEggMoves:
 TotodileEggMoves:
 	db THRASH
 	db ANCIENTPOWER
-	db RAZOR_WIND
 	db ROCK_SLIDE
 	db SUBMISSION
 	db FAKE_TEARS
@@ -607,7 +574,6 @@ HoothootEggMoves:
 
 LedybaEggMoves:
 	db PSYBEAM
-	db BIDE
 	db LIGHT_SCREEN
 	db BARRIER
 	db SCREECH
@@ -636,7 +602,6 @@ ChinchouEggMoves:
 
 PichuEggMoves:
 	db REVERSAL
-	db BIDE
 	db PRESENT
 	db ENCORE
 	db DOUBLESLAP
@@ -665,19 +630,15 @@ IgglybuffEggMoves:
 	db PERISH_SONG
 	db PRESENT
 	db FAINT_ATTACK
-	db MIMIC
 	db PETAL_DANCE
 	db SCARY_FACE
 	db DIZZY_PUNCH
-	db FAKE_TEARS
-	db CAPTIVATE
 	db $ff
 
 TogepiEggMoves:
 	db PRESENT
 	db MIRROR_MOVE
 	db PECK
-	db FORESIGHT
 	db FUTURE_SIGHT
 	db MORNING_SUN
 	db $ff
@@ -708,8 +669,6 @@ MarillEggMoves:
 	db FUTURE_SIGHT
 	db BELLY_DRUM
 	db PERISH_SONG
-	db SUPERSONIC
-	db FORESIGHT
 	db DIZZY_PUNCH
 	db HYDRO_PUMP
 	db SCARY_FACE
@@ -720,13 +679,10 @@ MarillEggMoves:
 SudowoodoEggMoves:
 	db SELFDESTRUCT
 	db SUBSTITUTE
-	db HARDEN
 	db ROLLOUT
 	db $ff
 
 HoppipEggMoves:
-	db CONFUSION
-	db GROWL
 	db ENCORE
 	db DOUBLE_EDGE
 	db REFLECT
@@ -826,10 +782,6 @@ SnubbullEggMoves:
 	db FAINT_ATTACK
 	db REFLECT
 	db PRESENT
-	db CRUNCH
-	db HEAL_BELL
-	db LICK
-	db LEER
 	db LOVELY_KISS
 	db FAKE_TEARS
 	db DOUBLE_EDGE
@@ -839,8 +791,6 @@ SnubbullEggMoves:
 QwilfishEggMoves:
 	db FLAIL
 	db HAZE
-	db BUBBLEBEAM
-	db SUPERSONIC
 	db DOUBLE_EDGE
 	db $ff
 
@@ -849,20 +799,14 @@ ShuckleEggMoves:
 	db $ff
 
 HeracrossEggMoves:
-	db HARDEN
-	db BIDE
-	db FLAIL
 	db SEISMIC_TOSS
 	db PURSUIT
 	db DOUBLE_EDGE
-	db SEISMIC_TOSS
-	db MEGAHORN
 	db $ff
 
 SneaselEggMoves:
 	db COUNTER
 	db SPITE
-	db FORESIGHT
 	db REFLECT
 	db BITE
 	db MOONLIGHT
@@ -873,10 +817,8 @@ TeddiursaEggMoves:
 	db CRUNCH
 	db TAKE_DOWN
 	db SEISMIC_TOSS
-	db FOCUS_ENERGY
 	db COUNTER
 	db METAL_CLAW
-	db SWEET_SCENT
 	db FAKE_TEARS
 	db CROSS_CHOP
 	db DOUBLE_EDGE
@@ -890,11 +832,9 @@ SlugmaEggMoves:
 	db $ff
 
 SwinubEggMoves:
-	db TAKE_DOWN
 	db BITE
 	db BODY_SLAM
 	db ROCK_SLIDE
-	db ANCIENTPOWER
 	db WHIRLWIND
 	db DOUBLE_EDGE
 	db FISSURE
@@ -913,7 +853,6 @@ CorsolaEggMoves:
 RemoraidEggMoves:
 	db AURORA_BEAM
 	db OCTAZOOKA
-	db SUPERSONIC
 	db HAZE
 	db SCREECH
 	db AMNESIA
@@ -927,8 +866,6 @@ DelibirdEggMoves:
 	db QUICK_ATTACK
 	db FUTURE_SIGHT
 	db RAPID_SPIN
-	db PAY_DAY
-	db SPIKES
 	db DESTINY_BOND
 	db $ff
 
@@ -961,7 +898,6 @@ HoundourEggMoves:
 	db $ff
 
 PhanpyEggMoves:
-	db FOCUS_ENERGY
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db WATER_GUN

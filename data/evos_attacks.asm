@@ -41,6 +41,7 @@ IvysaurEvosAttacks:
 	db 38, GROWTH
 	db 47, SYNTHESIS
 	db 56, SOLARBEAM
+	db 65, PETAL_DANCE
 	db 0 ; no more level-up moves
 
 VenusaurEvosAttacks:
@@ -59,6 +60,7 @@ VenusaurEvosAttacks:
 	db 41, GROWTH
 	db 53, SYNTHESIS
 	db 65, SOLARBEAM
+	db 72, PETAL_DANCE
 	db 0 ; no more level-up moves
 
 CharmanderEvosAttacks:
@@ -68,6 +70,7 @@ CharmanderEvosAttacks:
 	db 1, GROWL
 	db 7, EMBER
 	db 13, SMOKESCREEN
+	db 13, METAL_CLAW
 	db 19, RAGE
 	db 25, SCARY_FACE
 	db 31, FLAMETHROWER
@@ -497,13 +500,14 @@ VulpixEvosAttacks:
 	db 19, CONFUSE_RAY
 	db 25, SAFEGUARD
 	db 31, FLAMETHROWER
-	db 37, FIRE_SPIN
+	db 37, CAPTIVATE
+	db 42, FIRE_SPIN
 	db 0 ; no more level-up moves
 
 NinetalesEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, EMBER
-	db 1, QUICK_ATTACK
+	db 1, CAPTIVATE
 	db 1, CONFUSE_RAY
 	db 1, SAFEGUARD
 	db 43, FIRE_SPIN
@@ -1928,6 +1932,7 @@ OmastarEvosAttacks:
 	db 31, LEER
 	db 37, PROTECT
 	db 40, SPIKE_CANNON
+	db 40, SPIKES
 	db 54, ANCIENTPOWER
 	db 65, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -1968,7 +1973,8 @@ AerodactylEvosAttacks:
 	db 29, ANCIENTPOWER
 	db 36, SCARY_FACE
 	db 43, TAKE_DOWN
-	db 50, HYPER_BEAM
+	db 50, ROCK_SLIDE
+	db 57, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -2445,9 +2451,11 @@ IgglybuffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SING
 	db 1, CHARM
-	db 4, DEFENSE_CURL
+	db 4, CAPTIVATE
 	db 9, POUND
-	db 14, SWEET_KISS
+	db 13, SWEET_KISS
+	db 17, FAKE_TEARS
+	db 21, MIMIC
 	db 0 ; no more level-up moves
 
 TogepiEvosAttacks:
@@ -2917,7 +2925,8 @@ SnubbullEvosAttacks:
 	db 19, LICK
 	db 26, ROAR
 	db 34, HEAL_BELL
-	db 43, MOONBLAST
+	db 43, CRUNCH
+	db 52, MOONBLAST
 	db 0 ; no more level-up moves
 
 GranbullEvosAttacks:
@@ -3065,7 +3074,7 @@ SwinubEvosAttacks:
 	db 1, TACKLE
 	db 10, POWDER_SNOW
 	db 19, ENDURE
-	db 28, TAKE_DOWN
+	db 28, ANCIENTPOWER
 	db 37, MIST
 	db 46, BLIZZARD
 	db 55, AMNESIA
@@ -3079,10 +3088,11 @@ PiloswineEvosAttacks:
 	db 10, POWDER_SNOW
 	db 19, ENDURE
 	db 28, TAKE_DOWN
-	db 33, FURY_ATTACK
+	db 33, ANCIENTPOWER
 	db 42, MIST
 	db 56, BLIZZARD
-	db 70, AMNESIA
+	db 60, AMNESIA
+	db 70, FISSURE
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
@@ -3131,6 +3141,7 @@ DelibirdEvosAttacks:
 	db 25, DRILL_PECK
 	db 35, WHIRLWIND
 	db 45, THIEF
+	db 55, PAY_DAY
 	db 0 ; no more level-up moves
 
 MantineEvosAttacks:
