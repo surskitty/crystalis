@@ -333,7 +333,6 @@ OnixEggMoves:
 	db ROCK_SLIDE
 	db FLAIL
 	db SHARPEN
-	db DEFENCE_CURL
 	db ROLLOUT
 	db $ff
 
@@ -757,7 +756,6 @@ GirafarigEggMoves:
 
 PinecoEggMoves:
 	db REFLECT
-	db PIN_MISSILE
 	db FLAIL
 	db SWIFT
 	db SUBSTITUTE
@@ -913,15 +911,10 @@ PhanpyEggMoves:
 
 StantlerEggMoves:
 	db REFLECT
-	db SPITE
-	db DISABLE
 	db LIGHT_SCREEN
 	db BITE
 	db SAFEGUARD
-	db DOUBLE_KICK
 	db THRASH
-	db MEGAHORN
-	db RAGE
 	db $ff
 
 TyrogueEggMoves:

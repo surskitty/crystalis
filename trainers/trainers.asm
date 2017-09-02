@@ -6948,7 +6948,7 @@ BlackbeltGroup:
 	db 25, TYROGUE
 		db MACH_PUNCH
 		db PURSUIT
-		db RAPID_SPIM
+		db RAPID_SPIN
 		db HI_JUMP_KICK
 
 	db 25, HITMONTOP
