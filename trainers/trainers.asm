@@ -6098,7 +6098,8 @@ GuitaristGroup:
 	db 0 ; normal
 
 	; party
-	db 34, ELECTABUZZ
+	db 52, ELEKID
+	db 54, ELECTABUZZ
 
 	db $ff ; end
 
@@ -6109,10 +6110,10 @@ GuitaristGroup:
 	db 0 ; normal
 
 	; party
-	db 27, MAGNEMITE
-	db 33, VOLTORB
-	db 32, MAGNEMITE
-	db 32, MAGNEMITE
+	db 57, MAGNEMITE
+	db 53, VOLTORB
+	db 52, MAGNETON
+	db 52, ELECTRODE
 
 	db $ff ; end
 
