@@ -7336,8 +7336,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 9, HOPPIP
-	db 9, HOPPIP
+	db 8, HOPPIP
+	db 10, CHIKORITA
 	db 12, BULBASAUR
 
 	db $ff ; end
@@ -7376,7 +7376,7 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 36, NIDOQUEEN
+	db 51, NIDOQUEEN
 
 	db $ff ; end
 
@@ -7387,7 +7387,7 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 34, FLAAFFY
+	db 54, FLAAFFY
 
 	db $ff ; end
 
@@ -7398,8 +7398,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 31, FURRET
-	db 33, RAPIDASH
+	db 51, FURRET
+	db 53, RAPIDASH
 
 	db $ff ; end
 
@@ -7410,7 +7410,7 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 33, SEAKING
+	db 53, SEAKING
 
 	db $ff ; end
 
@@ -7421,9 +7421,9 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 14, HOPPIP
-	db 14, HOPPIP
-	db 17, IVYSAUR
+	db 15, HOPPIP
+	db 17, BAYLEEF
+	db 19, IVYSAUR
 
 	db $ff ; end
 
@@ -7434,8 +7434,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 16, PONYTA
-	db 16, PONYTA
+	db 18, PONYTA
+	db 18, PONYTA
 
 	db $ff ; end
 
@@ -7446,8 +7446,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 15, WEEPINBELL
-	db 15, NIDORINA
+	db 17, WEEPINBELL
+	db 17, NIDORINA
 
 	db $ff ; end
 
@@ -7458,9 +7458,9 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 19, WEEPINBELL
-	db 19, NIDORINO
-	db 21, NIDOQUEEN
+	db 24, WEEPINBELL
+	db 24, NIDORINO
+	db 28, NIDOQUEEN
 
 	db $ff ; end
 
@@ -7471,8 +7471,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 32, SKIPLOOM
-	db 32, SKIPLOOM
+	db 52, SKIPLOOM
+	db 52, JUMPLUFF
 
 	db $ff ; end
 
@@ -7483,8 +7483,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 30, NIDORINA
-	db 34, RAICHU
+	db 50, NIDORINA
+	db 54, RAICHU
 
 	db $ff ; end
 
@@ -7495,8 +7495,8 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 26, SKIPLOOM
-	db 26, SKIPLOOM
+	db 25, SKIPLOOM
+	db 27, BAYLEEF
 	db 29, IVYSAUR
 
 	db $ff ; end
@@ -7512,7 +7512,7 @@ PicnickerGroup:
 	db 31, CLEFAIRY
 		db ENCORE
 		db SING
-		db DOUBLESLAP
+		db FAIRY_WIND
 		db MINIMIZE
 
 	db $ff ; end
@@ -7525,9 +7525,9 @@ PicnickerGroup:
 
 	; party
 
-	db 37, CLEFAIRY
+	db 47, CLEFAIRY
 		db ENCORE
-		db DOUBLESLAP
+		db MOONBLAST
 		db MINIMIZE
 		db METRONOME
 
@@ -7537,11 +7537,12 @@ PicnickerGroup:
 
 	; PICNICKER (18)
 	db "ERIN@"
-	db 0 ; normal
+	db 2 ; item + normal
 
 	; party
-	db 32, PONYTA
-	db 32, PONYTA
+	db 32, PONYTA, NO_ITEM
+	db 32, PIKACHU, LIGHT_BALL
+	db 32, PONYTA, NO_ITEM
 
 	db $ff ; end
 
@@ -7552,7 +7553,7 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 37, EXEGGUTOR
+	db 52, EXEGGUTOR
 
 	db $ff ; end
 
@@ -7567,7 +7568,7 @@ PicnickerGroup:
 	db 20, CLEFAIRY
 		db ENCORE
 		db SING
-		db DOUBLESLAP
+		db FAIRY_WIND
 		db MINIMIZE
 
 	db $ff ; end
@@ -7580,23 +7581,23 @@ PicnickerGroup:
 
 	; party
 
-	db 36, PONYTA
+	db 51, PONYTA
 		db DOUBLE_TEAM
 		db STOMP
 		db FIRE_SPIN
 		db SUNNY_DAY
 
-	db 34, RAICHU
+	db 49, RAICHU
 		db SWIFT
 		db MUD_SLAP
 		db QUICK_ATTACK
 		db THUNDERBOLT
 
-	db 36, PONYTA
+	db 51, RAPIDASH
 		db DOUBLE_TEAM
 		db STOMP
 		db FIRE_SPIN
-		db SUNNY_DAY
+		db MEGAHORN
 
 	db $ff ; end
 
@@ -7607,9 +7608,9 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 24, WEEPINBELL
-	db 26, NIDORINO
-	db 26, NIDOQUEEN
+	db 34, WEEPINBELL
+	db 36, NIDORINO
+	db 36, NIDOQUEEN
 
 	db $ff ; end
 
@@ -7621,19 +7622,19 @@ PicnickerGroup:
 
 	; party
 
-	db 30, WEEPINBELL
+	db 50, WEEPINBELL
 		db SLEEP_POWDER
 		db POISONPOWDER
 		db STUN_SPORE
 		db SLUDGE_BOMB
 
-	db 32, NIDOKING
+	db 52, NIDOKING
 		db EARTHQUAKE
 		db DOUBLE_KICK
-		db POISON_STING
+		db MEGAHORN
 		db IRON_TAIL
 
-	db 32, NIDOQUEEN
+	db 52, NIDOQUEEN
 		db EARTHQUAKE
 		db DOUBLE_KICK
 		db TAIL_WHIP
@@ -7648,9 +7649,9 @@ PicnickerGroup:
 	db 0 ; normal
 
 	; party
-	db 30, SKIPLOOM
-	db 30, SKIPLOOM
-	db 32, IVYSAUR
+	db 38, SKIPLOOM
+	db 40, BAYLEEF
+	db 42, IVYSAUR
 
 	db $ff ; end
 
@@ -7662,21 +7663,21 @@ PicnickerGroup:
 
 	; party
 
-	db 33, JUMPLUFF
-		db STUN_SPORE
-		db SUNNY_DAY
-		db LEECH_SEED
-		db COTTON_SPORE
-
-	db 33, JUMPLUFF
-		db SUNNY_DAY
+	db 54, JUMPLUFF
 		db SLEEP_POWDER
+		db SUNNY_DAY
 		db LEECH_SEED
-		db COTTON_SPORE
-
-	db 38, VENUSAUR
 		db SOLARBEAM
-		db RAZOR_LEAF
+
+	db 56, MEGANIUM
+		db SUNNY_DAY
+		db LIGHT_SCREEN
+		db SYNTHESIS
+		db ANCIENTPOWER
+
+	db 58, VENUSAUR
+		db SOLARBEAM
+		db PETAL_DANCE
 		db HEADBUTT
 		db MUD_SLAP
 
@@ -7690,11 +7691,11 @@ PicnickerGroup:
 
 	; party
 
-	db 43, CLEFAIRY
+	db 53, CLEFAIRY
 		db METRONOME
 		db ENCORE
 		db MOONLIGHT
-		db MINIMIZE
+		db MOONBLAST
 
 	db $ff ; end
 
