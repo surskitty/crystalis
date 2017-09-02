@@ -4273,8 +4273,8 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 32, BEEDRILL
-	db 32, BUTTERFREE
+	db 52, BEEDRILL
+	db 52, BUTTERFREE
 
 	db $ff ; end
 
@@ -4285,9 +4285,9 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 30, BEEDRILL
-	db 30, BEEDRILL
-	db 30, BEEDRILL
+	db 50, BEEDRILL
+	db 50, BEEDRILL
+	db 50, BEEDRILL
 
 	db $ff ; end
 
@@ -4359,8 +4359,8 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 30, ARIADOS
-	db 32, PINSIR
+	db 50, ARIADOS
+	db 52, PINSIR
 
 	db $ff ; end
 
@@ -4373,7 +4373,7 @@ BugCatcherGroup:
 	; party
 	db 9, METAPOD
 	db 9, METAPOD
-	db 10, KAKUNA
+	db 9, KAKUNA
 	db 9, METAPOD
 
 	db $ff ; end
@@ -4385,10 +4385,10 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 14, BUTTERFREE
-	db 14, BUTTERFREE
-	db 15, BEEDRILL
-	db 14, BUTTERFREE
+	db 16, BUTTERFREE
+	db 16, BUTTERFREE
+	db 17, BEEDRILL
+	db 16, BUTTERFREE
 
 	db $ff ; end
 
@@ -4399,7 +4399,7 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 34, ARIADOS
+	db 54, ARIADOS
 
 	db $ff ; end
 
@@ -4410,7 +4410,7 @@ BugCatcherGroup:
 	db 0 ; normal
 
 	; party
-	db 19, VENONAT
+	db 21, VENONAT
 
 	db $ff ; end
 
@@ -4438,25 +4438,25 @@ BugCatcherGroup:
 
 	; party
 
-	db 24, BUTTERFREE
+	db 34, BUTTERFREE
 		db CONFUSION
 		db POISONPOWDER
 		db SUPERSONIC
 		db WHIRLWIND
 
-	db 24, BUTTERFREE
+	db 34, BUTTERFREE
 		db CONFUSION
 		db STUN_SPORE
 		db SUPERSONIC
 		db WHIRLWIND
 
-	db 25, BEEDRILL
+	db 35, BEEDRILL
 		db FURY_ATTACK
 		db FOCUS_ENERGY
 		db TWINEEDLE
 		db RAGE
 
-	db 24, BUTTERFREE
+	db 34, BUTTERFREE
 		db CONFUSION
 		db SLEEP_POWDER
 		db SUPERSONIC
@@ -4472,25 +4472,25 @@ BugCatcherGroup:
 
 	; party
 
-	db 30, BUTTERFREE
+	db 50, BUTTERFREE
 		db CONFUSION
 		db POISONPOWDER
 		db SUPERSONIC
 		db GUST
 
-	db 30, BUTTERFREE
+	db 50, BUTTERFREE
 		db CONFUSION
 		db STUN_SPORE
 		db SUPERSONIC
 		db GUST
 
-	db 32, BEEDRILL
+	db 52, BEEDRILL
 		db FURY_ATTACK
 		db PURSUIT
 		db TWINEEDLE
 		db DOUBLE_TEAM
 
-	db 34, BUTTERFREE
+	db 54, BUTTERFREE
 		db PSYBEAM
 		db SLEEP_POWDER
 		db GUST
@@ -4506,7 +4506,7 @@ BugCatcherGroup:
 
 	; party
 
-	db 36, VENOMOTH
+	db 46, VENOMOTH
 		db GUST
 		db SUPERSONIC
 		db PSYBEAM
@@ -4522,8 +4522,8 @@ BugCatcherGroup:
 
 	; party
 
-	db 40, VENOMOTH
-		db GUST
+	db 50, VENOMOTH
+		db LEECH_LIFE
 		db SUPERSONIC
 		db PSYCHIC_M
 		db TOXIC
