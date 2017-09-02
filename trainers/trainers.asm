@@ -6776,9 +6776,9 @@ JugglerGroup:
 
 	; party
 	db 2, VOLTORB
-	db 6, VOLTORB
+	db 6, KOFFING
 	db 10, VOLTORB
-	db 14, VOLTORB
+	db 14, KOFFING
 
 	db $ff ; end
 
@@ -6789,9 +6789,9 @@ JugglerGroup:
 	db 0 ; normal
 
 	; party
-	db 29, MR__MIME
-	db 29, MAGMAR
-	db 29, MACHOKE
+	db 49, MR__MIME
+	db 49, MAGMAR
+	db 49, MACHOKE
 
 	db $ff ; end
 
@@ -6802,10 +6802,10 @@ JugglerGroup:
 	db 0 ; normal
 
 	; party
-	db 33, ELECTRODE
-	db 33, ELECTRODE
-	db 33, ELECTRODE
-	db 33, ELECTRODE
+	db 53, ELECTRODE
+	db 53, MAGNETON
+	db 53, ELECTRODE
+	db 53, MAGNETON
 
 	db $ff ; end
 
@@ -6816,10 +6816,10 @@ JugglerGroup:
 	db 0 ; normal
 
 	; party
-	db 6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
-	db 18, VOLTORB
+	db 16, VOLTORB
+	db 20, VOLTORB
+	db 24, VOLTORB
+	db 28, VOLTORB
 
 	db $ff ; end
 
@@ -6830,10 +6830,10 @@ JugglerGroup:
 	db 0 ; normal
 
 	; party
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
+	db 28, VOLTORB
+	db 32, VOLTORB
+	db 36, VOLTORB
+	db 40, ELECTRODE
 
 	db $ff ; end
 
@@ -6844,10 +6844,10 @@ JugglerGroup:
 	db 0 ; normal
 
 	; party
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
+	db 38, VOLTORB
+	db 42, VOLTORB
+	db 46, VOLTORB
+	db 50, ELECTRODE
 
 	db $ff ; end
 
