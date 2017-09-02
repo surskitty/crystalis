@@ -2846,10 +2846,11 @@ PinecoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, PROTECT
+	db 6, PIN_MISSILE
 	db 8, SELFDESTRUCT
-	db 15, TAKE_DOWN
-	db 22, RAPID_SPIN
-	db 29, BIDE
+	db 11, TAKE_DOWN
+	db 14, RAPID_SPIN
+	db 19, BIDE
 	db 36, EXPLOSION
 	db 43, SPIKES
 	db 50, DOUBLE_EDGE
@@ -3252,12 +3253,17 @@ Porygon2EvosAttacks:
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 8, LEER
-	db 15, HYPNOSIS
-	db 23, STOMP
-	db 31, SAND_ATTACK
-	db 40, TAKE_DOWN
-	db 49, CONFUSE_RAY
+	db 1, LEER
+	db 7, DISABLE
+	db 10, HYPNOSIS
+	db 13, STOMP
+	db 19, SAND_ATTACK
+	db 25, TAKE_DOWN
+	db 28, CONFUSE_RAY
+	db 31, DOUBLE_KICK
+	db 34, CAPTIVATE
+	db 40, JUMP_KICK
+	db 46, MEGAHORN
 	db 0 ; no more level-up moves
 
 SmeargleEvosAttacks:
