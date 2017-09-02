@@ -2512,11 +2512,13 @@ MareepEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 9, THUNDERSHOCK
-	db 16, THUNDER_WAVE
-	db 23, COTTON_SPORE
-	db 30, LIGHT_SCREEN
-	db 37, THUNDER
+	db 8, THUNDERSHOCK
+	db 14, THUNDER_WAVE
+	db 20, COTTON_SPORE
+	db 26, TAKE_DOWN
+	db 32, CONFUSE_RAY
+	db 38, LIGHT_SCREEN
+	db 44, THUNDER
 	db 0 ; no more level-up moves
 
 FlaaffyEvosAttacks:
@@ -2525,26 +2527,32 @@ FlaaffyEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, THUNDERSHOCK
-	db 9, THUNDERSHOCK
-	db 18, THUNDER_WAVE
-	db 27, COTTON_SPORE
-	db 36, LIGHT_SCREEN
-	db 45, THUNDER
+	db 1, THUNDER_WAVE
+	db 8, THUNDERSHOCK
+	db 14, THUNDER_WAVE
+	db 21, COTTON_SPORE
+	db 28, TAKE_DOWN
+	db 35, CONFUSE_RAY
+	db 42, LIGHT_SCREEN
+	db 49, THUNDER
 	db 0 ; no more level-up moves
 
 AmpharosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
+	db 1, TWISTER
 	db 1, THUNDERSHOCK
 	db 1, THUNDER_WAVE
-	db 9, THUNDERSHOCK
-	db 18, THUNDER_WAVE
-	db 27, COTTON_SPORE
-	db 30, THUNDERPUNCH
-	db 30, DRAGONBREATH
-	db 42, LIGHT_SCREEN
-	db 57, THUNDER
+	db 8, THUNDERSHOCK
+	db 14, THUNDER_WAVE
+	db 21, COTTON_SPORE
+	db 28, TAKE_DOWN
+	db 30, TWISTER
+	db 36, CONFUSE_RAY
+	db 43, LIGHT_SCREEN
+	db 50, THUNDER
+	db 60, DRAGONBREATH
 	db 0 ; no more level-up moves
 
 BellossomEvosAttacks:
