@@ -6616,9 +6616,9 @@ BurglarGroup:
 	db 0 ; normal
 
 	; party
-	db 23, KOFFING
+	db 25, MAGBY
+	db 27, KOFFING
 	db 25, MAGMAR
-	db 23, KOFFING
 
 	db $ff ; end
 
@@ -6630,13 +6630,13 @@ BurglarGroup:
 
 	; party
 
-	db 26, GROWLITHE
+	db 28, GROWLITHE
 		db ROAR
 		db EMBER
 		db LEER
 		db TAKE_DOWN
 
-	db 24, KOFFING
+	db 28, KOFFING
 		db TACKLE
 		db SMOG
 		db SLUDGE
@@ -6651,10 +6651,10 @@ BurglarGroup:
 	db 0 ; normal
 
 	; party
-	db 25, KOFFING
-	db 28, MAGMAR
-	db 25, KOFFING
-	db 30, KOFFING
+	db 45, KOFFING
+	db 48, MAGMAR
+	db 45, VULPIX
+	db 50, QUILAVA
 
 	db $ff ; end
 
