@@ -6130,8 +6130,8 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 16, GEODUDE
-	db 18, MACHAMP
+	db 21, GRAVELER
+	db 23, MACHOKE
 
 	db $ff ; end
 
@@ -6156,8 +6156,8 @@ HikerGroup:
 
 	; party
 	db 23, GEODUDE
-	db 23, GEODUDE
 	db 23, GRAVELER
+	db 23, GOLEM
 
 	db $ff ; end
 
@@ -6192,9 +6192,9 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 14, DIGLETT
-	db 14, GEODUDE
-	db 16, DUGTRIO
+	db 16, DIGLETT
+	db 16, GEODUDE
+	db 18, DUGTRIO
 
 	db $ff ; end
 
@@ -6205,9 +6205,9 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 24, MACHOP
-	db 27, GRAVELER
-	db 27, MACHOP
+	db 29, MANKEY
+	db 32, RHYHORN
+	db 32, PRIMEAPE
 
 	db $ff ; end
 
@@ -6218,9 +6218,9 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 25, GEODUDE
-	db 25, GRAVELER
-	db 25, GOLEM
+	db 30, GEODUDE
+	db 30, GRAVELER
+	db 30, GOLEM
 
 	db $ff ; end
 
@@ -6231,8 +6231,8 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 35, ONIX
-	db 33, SWINUB
+	db 45, ONIX
+	db 43, SWINUB
 
 	db $ff ; end
 
@@ -6244,13 +6244,13 @@ HikerGroup:
 
 	; party
 
-	db 27, DIGLETT
+	db 32, DIGLETT
 		db MAGNITUDE
 		db DIG
 		db SAND_ATTACK
 		db SLASH
 
-	db 27, DUGTRIO
+	db 32, DUGTRIO
 		db MAGNITUDE
 		db DIG
 		db SAND_ATTACK
@@ -6266,9 +6266,9 @@ HikerGroup:
 
 	; party
 	db 13, GEODUDE
+	db 13, RHYHORN
 	db 13, GEODUDE
-	db 13, GEODUDE
-	db 13, GEODUDE
+	db 13, SLUGMA
 	db 13, GEODUDE
 
 	db $ff ; end
@@ -6293,9 +6293,9 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 31, GRAVELER
-	db 31, GRAVELER
-	db 31, GRAVELER
+	db 51, GRAVELER
+	db 51, MAGCARGO
+	db 51, GRAVELER
 
 	db $ff ; end
 
@@ -6318,8 +6318,8 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 34, DUGTRIO
-	db 32, ONIX
+	db 54, DUGTRIO
+	db 52, STEELIX
 
 	db $ff ; end
 
@@ -6330,10 +6330,10 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 27, SANDSLASH
-	db 29, GRAVELER
-	db 31, GOLEM
-	db 29, GRAVELER
+	db 47, SANDSLASH
+	db 49, GRAVELER
+	db 51, GOLEM
+	db 49, GRAVELER
 
 	db $ff ; end
 
@@ -6344,7 +6344,7 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 35, MACHAMP
+	db 55, MACHAMP
 
 	db $ff ; end
 
@@ -6367,19 +6367,19 @@ HikerGroup:
 
 	; party
 
-	db 35, PILOSWINE
+	db 55, PILOSWINE
 		db EARTHQUAKE
 		db BLIZZARD
 		db REST
 		db TAKE_DOWN
 
-	db 35, DUGTRIO
+	db 55, DUGTRIO
 		db MAGNITUDE
 		db DIG
 		db MUD_SLAP
 		db SLASH
 
-	db 38, STEELIX
+	db 58, STEELIX
 		db DIG
 		db IRON_TAIL
 		db SANDSTORM
@@ -6394,7 +6394,7 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 29, ONIX
+	db 32, ONIX
 
 	db $ff ; end
 
@@ -6405,9 +6405,9 @@ HikerGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GRAVELER
-	db 30, GRAVELER
-	db 32, MACHOKE
+	db 40, GRAVELER
+	db 40, GOLEM
+	db 42, MACHAMP
 
 	db $ff ; end
 
@@ -6419,19 +6419,19 @@ HikerGroup:
 
 	; party
 
-	db 34, GRAVELER
+	db 54, GRAVELER
 		db MAGNITUDE
 		db SELFDESTRUCT
 		db DEFENSE_CURL
 		db ROLLOUT
 
-	db 36, GOLEM
+	db 56, GOLEM
 		db MAGNITUDE
 		db SELFDESTRUCT
 		db DEFENSE_CURL
 		db ROLLOUT
 
-	db 34, MACHOKE
+	db 54, MACHAMP
 		db KARATE_CHOP
 		db VITAL_THROW
 		db HEADBUTT
