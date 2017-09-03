@@ -1506,13 +1506,16 @@ HitmonchanEvosAttacks:
 LickitungEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LICK
-	db 7, SUPERSONIC
-	db 13, DEFENSE_CURL
-	db 19, STOMP
-	db 25, WRAP
-	db 31, DISABLE
-	db 37, SLAM
-	db 43, SCREECH
+	db 1, BIDE
+	db 6, SUPERSONIC
+	db 12, DEFENSE_CURL
+	db 18, STOMP
+	db 24, WRAP
+	db 30, DISABLE
+	db 36, SLAM
+	db 42, ROLLOUT
+	db 48, SCREECH
+	db 54, BELLY_DRUM
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:

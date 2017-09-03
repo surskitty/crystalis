@@ -373,7 +373,6 @@ CuboneEggMoves:
 	db $ff
 
 LickitungEggMoves:
-	db BELLY_DRUM
 	db MAGNITUDE
 	db BODY_SLAM
 	db DOUBLESLAP
