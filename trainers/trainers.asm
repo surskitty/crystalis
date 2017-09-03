@@ -3548,8 +3548,8 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 16, NIDORINA
-	db 16, NIDORINO
+	db 18, NIDORINA
+	db 18, NIDORINO
 
 	db $ff ; end
 
@@ -3560,7 +3560,7 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 19, SLOWBRO
+	db 23, SLOWBRO
 
 	db $ff ; end
 
@@ -3571,7 +3571,7 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 19, LICKITUNG
+	db 22, LICKITUNG
 
 	db $ff ; end
 
@@ -3582,7 +3582,7 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 19, NIDOKING
+	db 25, NIDOKING
 
 	db $ff ; end
 
@@ -3605,7 +3605,8 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 25, KANGASKHAN
+	db 30, LICKITUNG
+	db 30, KANGASKHAN
 
 	db $ff ; end
 
@@ -3617,7 +3618,19 @@ PokemaniacGroup:
 
 	; party
 
-	db 36, PORYGON
+	db 46, LICKITUNG
+		db WRAP
+		db STOMP
+		db LICK
+		db CUT
+
+	db 46, KANGASKHAN
+		db THUNDERPUNCH
+		db ICE_PUNCH
+		db DIZZY_PUNCH
+		db RAGE
+
+	db 46, PORYGON
 		db RECOVER
 		db PSYCHIC_M
 		db CONVERSION2
@@ -3628,7 +3641,7 @@ PokemaniacGroup:
 ; ================
 
 	; POKEMANIAC (11)
-	db "ISSAC@"
+	db "ISAAC@"
 	db 1 ; moves
 
 	; party
@@ -3660,7 +3673,7 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 27, RHYHORN
+	db 32, RHYHORN
 
 	db $ff ; end
 
@@ -3672,7 +3685,25 @@ PokemaniacGroup:
 
 	; party
 
-	db 41, CHANSEY
+	db 51, LICKITUNG
+		db WRAP
+		db SLAM
+		db LICK
+		db SCREECH
+
+	db 51, KANGASKHAN
+		db THUNDERPUNCH
+		db ICE_PUNCH
+		db DIZZY_PUNCH
+		db REVERSAL
+
+	db 51, PORYGON2
+		db RECOVER
+		db PSYCHIC_M
+		db CONVERSION2
+		db TRI_ATTACK
+
+	db 51, CHANSEY
 		db ROLLOUT
 		db ATTRACT
 		db EGG_BOMB
@@ -3687,8 +3718,8 @@ PokemaniacGroup:
 	db 0 ; normal
 
 	; party
-	db 17, NIDOKING
-	db 17, NIDOQUEEN
+	db 20, NIDOKING
+	db 20, NIDOQUEEN
 
 	db $ff ; end
 
