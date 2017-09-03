@@ -5712,8 +5712,8 @@ SuperNerdGroup:
 	db 0 ; normal
 
 	; party
-	db 34, GRIMER
-	db 34, MUK
+	db 52, GRIMER
+	db 54, MUK
 
 	db $ff ; end
 
@@ -5724,9 +5724,9 @@ SuperNerdGroup:
 	db 0 ; normal
 
 	; party
-	db 32, MAGNEMITE
-	db 32, MAGNEMITE
-	db 32, MAGNEMITE
+	db 48, MAGNEMITE
+	db 48, MAGNEMITE
+	db 52, MAGNETON
 
 	db $ff ; end
 
@@ -5748,9 +5748,9 @@ SuperNerdGroup:
 	db 0 ; normal
 
 	; party
-	db 31, MAGNEMITE
-	db 33, MUK
-	db 31, MAGNEMITE
+	db 46, MAGNEMITE
+	db 48, MUK
+	db 50, MAGNETON
 
 	db $ff ; end
 
@@ -5821,7 +5821,7 @@ SuperNerdGroup:
 
 	; party
 
-	db 19, SLOWPOKE
+	db 21, SLOWPOKE
 		db CURSE
 		db WATER_GUN
 		db GROWL
