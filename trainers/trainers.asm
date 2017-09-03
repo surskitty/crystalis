@@ -5262,21 +5262,13 @@ SwimmerFGroup:
 
 	; SWIMMERF (4)
 	db "SUSIE@"
-	db 1 ; moves
+	db 0 ; none
 
 	; party
 
 	db 20, PSYDUCK
-		db SCRATCH
-		db TAIL_WHIP
-		db DISABLE
-		db CONFUSION
-
 	db 22, GOLDEEN
-		db PECK
-		db TAIL_WHIP
-		db SUPERSONIC
-		db HORN_ATTACK
+	db 24, TOTODILE
 
 	db $ff ; end
 
@@ -5376,7 +5368,7 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 34, SEAKING
+	db 50, SEAKING
 
 	db $ff ; end
 
@@ -5398,9 +5390,9 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 29, MARILL
-	db 29, MARILL
-	db 32, LAPRAS
+	db 49, MARILL
+	db 50, AZUMARILL
+	db 52, LAPRAS
 
 	db $ff ; end
 
@@ -5411,8 +5403,8 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 32, STARMIE
-	db 32, STARMIE
+	db 52, STARMIE
+	db 52, STARMIE
 
 	db $ff ; end
 
@@ -5434,10 +5426,10 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 28, SEEL
-	db 28, SEEL
-	db 28, SEEL
-	db 28, DEWGONG
+	db 48, SEEL
+	db 48, DEWGONG
+	db 48, SEEL
+	db 48, DEWGONG
 
 	db $ff ; end
 
@@ -5448,7 +5440,7 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 37, GOLDUCK
+	db 52, GOLDUCK
 
 	db $ff ; end
 
@@ -5459,8 +5451,8 @@ SwimmerFGroup:
 	db 0 ; normal
 
 	; party
-	db 35, SEAKING
-	db 35, SEAKING
+	db 50, SEAKING
+	db 50, SEAKING
 
 	db $ff ; end
 
