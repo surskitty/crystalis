@@ -1613,14 +1613,16 @@ TangelaEvosAttacks:
 KangaskhanEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, COMET_PUNCH
-	db 7, LEER
+	db 1, LEER
+	db 7, RAGE
 	db 13, BITE
-	db 19, TAIL_WHIP
+	db 19, FORESIGHT
 	db 25, MEGA_PUNCH
-	db 31, RAGE
-	db 37, ENDURE
-	db 43, DIZZY_PUNCH
-	db 49, REVERSAL
+	db 31, ENDURE
+	db 37, DIZZY_PUNCH
+	db 43, OUTRAGE
+	db 49, CRUNCH
+	db 55, REVERSAL
 	db 0 ; no more level-up moves
 
 HorseaEvosAttacks:
