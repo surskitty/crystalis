@@ -55,7 +55,7 @@ FishGroups: ; 92488
 .Lake_Super: ; 9253a
 	db  40 percent,     GOLDEEN,    40
 	db  70 percent,     0, 5
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     SEAKING,    40
 
 .Pond_Old: ; 92546
@@ -70,7 +70,7 @@ FishGroups: ; 92488
 .Pond_Super: ; 9255b
 	db  40 percent,     POLIWAG,    40
 	db  70 percent,     0, 7
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     POLIWAG,    40
 
 .Dratini_Old: ; 92567
@@ -85,7 +85,7 @@ FishGroups: ; 92488
 .Dratini_Super: ; 9257c
 	db  40 percent,     MAGIKARP,   40
 	db  70 percent,     0, 9
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     DRAGONAIR,  40
 
 .Qwilfish_Swarm_Old: ; 92588
@@ -120,18 +120,18 @@ FishGroups: ; 92488
 
 .Gyarados_Old: ; 925ca
 	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     MAGIKARP,   10
+	db  85 percent + 1, MAGIKARP,   15
+	db 100 percent,     MAGIKARP,   20
 .Gyarados_Good: ; 925d3
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     MAGIKARP,   20
-	db  90 percent + 1, MAGIKARP,   20
+	db  70 percent,     MAGIKARP,   25
+	db  90 percent + 1, MAGIKARP,   30
 	db 100 percent,     0, 14
 .Gyarados_Super: ; 925df
 	db  40 percent,     MAGIKARP,   40
 	db  70 percent,     0, 15
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   50
+	db 100 percent,     MAGIKARP,   60
 
 .Dratini_2_Old: ; 925eb
 	db  70 percent + 1, MAGIKARP,   10
@@ -145,7 +145,7 @@ FishGroups: ; 92488
 .Dratini_2_Super: ; 92600
 	db  40 percent,     MAGIKARP,   10
 	db  70 percent,     0, 17
-	db  90 percent + 1, MAGIKARP,   10
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     DRAGONAIR,  10
 
 .WhirlIslands_Old: ; 9260c
@@ -178,7 +178,7 @@ FishGroups: ; 92488
 .Qwilfish_Super: ; 92642
 	db  40 percent,     TENTACOOL,  40
 	db  70 percent,     0, 21
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     QWILFISH,   40
 
 .Remoraid_Old: ; 9264e
@@ -193,7 +193,7 @@ FishGroups: ; 92488
 .Remoraid_Super: ; 92663
 	db  40 percent,     POLIWAG,    40
 	db  70 percent,     0, 7
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     REMORAID,   40
 ; 9266f
 
