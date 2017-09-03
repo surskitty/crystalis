@@ -1592,7 +1592,7 @@ YoungsterGroup:
 	db 0 ; normal
 
 	; party
-	db 35, FEAROW
+	db 55, FEAROW
 
 	db $ff ; end
 
@@ -1603,8 +1603,8 @@ YoungsterGroup:
 	db 0 ; normal
 
 	; party
-	db 33, RATICATE
-	db 33, ARBOK
+	db 53, RATICATE
+	db 53, ARBOK
 
 	db $ff ; end
 
@@ -1615,7 +1615,7 @@ YoungsterGroup:
 	db 0 ; normal
 
 	; party
-	db 35, GROWLITHE
+	db 55, GROWLITHE
 
 	db $ff ; end
 
@@ -1626,8 +1626,8 @@ YoungsterGroup:
 	db 0 ; normal
 
 	; party
-	db 33, SANDSLASH
-	db 33, CROBAT
+	db 53, SANDSLASH
+	db 53, CROBAT
 
 	db $ff ; end
 
@@ -1639,7 +1639,7 @@ YoungsterGroup:
 
 	; party
 
-	db 30, RATICATE
+	db 40, RATICATE
 		db TAIL_WHIP
 		db QUICK_ATTACK
 		db HYPER_FANG
@@ -1655,7 +1655,7 @@ YoungsterGroup:
 
 	; party
 
-	db 37, RATICATE
+	db 57, RATICATE
 		db HYPER_BEAM
 		db QUICK_ATTACK
 		db HYPER_FANG
