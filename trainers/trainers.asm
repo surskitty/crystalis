@@ -8380,7 +8380,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 17, PIKACHU, BERRY
+	db 19, PIKACHU, BERRY
 
 	db $ff ; end
 
@@ -8391,7 +8391,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 33, QUAGSIRE, BERRY
+	db 53, QUAGSIRE, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8402,12 +8402,12 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 23, PIKACHU, BERRY
-	db 23, PIKACHU, BERRY
-	db 23, PIKACHU, BERRY
-	db 23, PIKACHU, BERRY
-	db 23, PIKACHU, BERRY
-	db 23, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
+	db 43, PIKACHU, BERRY
 
 	db $ff ; end
 
@@ -8418,9 +8418,12 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 29, BULBASAUR, BERRY
-	db 29, CHARMANDER, BERRY
-	db 29, SQUIRTLE, BERRY
+	db 49, BULBASAUR, BERRY
+	db 49, CHARMANDER, BERRY
+	db 49, SQUIRTLE, BERRY
+	db 49, CHIKORITA, BERRY
+	db 49, CYNDAQUIL, BERRY
+	db 49, TOTODILE, BERRY
 
 	db $ff ; end
 
@@ -8431,7 +8434,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 33, PSYDUCK, BERRY
+	db 53, PSYDUCK, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8443,6 +8446,7 @@ PokefanMGroup:
 
 	; party
 	db 13, SNUBBULL, BERRY
+	db 13, SMOOCHUM, BERRY
 
 	db $ff ; end
 
@@ -8453,9 +8457,9 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 28, MEOWTH, BERRY
-	db 28, MEOWTH, BERRY
-	db 28, MEOWTH, BERRY
+	db 48, MEOWTH, BERRY
+	db 48, MEOWTH, BERRY
+	db 48, MEOWTH, BERRY
 
 	db $ff ; end
 
@@ -8466,7 +8470,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 32, DELIBIRD, BERRY
+	db 52, DELIBIRD, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8477,7 +8481,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 19, PIKACHU, BERRY
+	db 39, PIKACHU, BERRY
 
 	db $ff ; end
 
@@ -8488,7 +8492,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 36, PIKACHU, BERRY
+	db 56, PIKACHU, LIGHT_BALL
 
 	db $ff ; end
 
@@ -8499,9 +8503,9 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 29, NIDOKING, BERRY
-	db 29, SLOWKING, BERRY
-	db 29, SEAKING, BERRY
+	db 49, NIDOKING, GOLD_BERRY
+	db 49, SLOWKING, KINGS_ROCK
+	db 49, SEAKING, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8512,7 +8516,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 35, PHANPY, BERRY
+	db 55, PHANPY, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8523,7 +8527,7 @@ PokefanMGroup:
 	db 2 ; item
 
 	; party
-	db 35, TEDDIURSA, BERRY
+	db 55, TEDDIURSA, GOLD_BERRY
 
 	db $ff ; end
 
