@@ -425,7 +425,7 @@ IlexForestHiddenSuperPotion:
 
 
 IlexForestHiddenFullHeal:
-	dwb EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL, LEAF_STONE
+	dwb EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL, FULL_HEAL
 
 IlexForestBoulder:
 ; unused
