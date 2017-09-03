@@ -299,7 +299,7 @@ MapNationalParkSignpost3Script:
 	jumptext UnknownText_0x5c7c6
 
 NationalParkParlyzHeal:
-	itemball PARLYZ_HEAL
+	itemball LEAF_STONE
 
 NationalParkTMDig:
 	itemball TM_DIG

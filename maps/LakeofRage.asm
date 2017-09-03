@@ -231,7 +231,7 @@ WesleyNotWednesdayScript:
 	end
 
 LakeofRageElixer:
-	itemball ELIXER
+	itemball WATER_STONE
 
 LakeofRageTMMoonblast:
 	itemball TM_MOONBLAST

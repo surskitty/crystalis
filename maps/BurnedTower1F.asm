@@ -144,7 +144,7 @@ BurnedTower1FHiddenUltraBall:
 
 
 BurnedTower1FHPUp:
-	itemball HP_UP
+	itemball FIRE_STONE
 
 BurnedTowerMovement_PlayerWalksToSilver:
 	step LEFT
