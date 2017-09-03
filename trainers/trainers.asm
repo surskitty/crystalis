@@ -52,7 +52,7 @@ WhitneyGroup:
 	; party
 
 	db 18, CLEFAIRY
-		db DOUBLESLAP
+		db FAIRY_WIND
 		db MIMIC
 		db ENCORE
 		db METRONOME
@@ -2294,7 +2294,7 @@ LassGroup:
 	; party
 	db 15, JIGGLYPUFF
 	db 15, CHANSEY
-	db 15, JIGGLYPUFF
+	db 12, SNORLAX
 
 	db $ff ; end
 
@@ -8817,7 +8817,7 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 52, GRANBULL, BERRY
+	db 52, GRANBULL, GOLD_BERRY
 
 	db $ff ; end
 
@@ -8831,7 +8831,7 @@ PokefanFGroup:
 	db 43, SENTRET, BERRY
 	db 43, SENTRET, BERRY
 	db 43, SENTRET, BERRY
-	db 48, FURRET, BERRY
+	db 48, FURRET, GOLD_BERRY
 	db 43, SENTRET, BERRY
 
 	db $ff ; end
