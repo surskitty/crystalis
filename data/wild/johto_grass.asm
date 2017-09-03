@@ -602,7 +602,7 @@
 	db 15, MACHOP
 	db 14, RATICATE
 	db 15, SQUIRTLE
-	db 15, ZUBAT
+	db 15, KANGASKHAN
 	db 15, GOLBAT
 	; day
 	db 13, GEODUDE
@@ -610,7 +610,7 @@
 	db 15, MACHOP
 	db 14, RATICATE
 	db 15, SQUIRTLE
-	db 15, ZUBAT
+	db 15, KANGASKHAN
 	db 15, GOLBAT
 	; nite
 	db 13, GEODUDE
@@ -652,11 +652,11 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, ZUBAT
-	db 17, ZUBAT
 	db 17, GOLBAT
-	db 16, MACHOP
+	db 17, MACHOP
 	db 16, GEODUDE
-	db 18, RATICATE
+	db 16, KANGASKHAN
+	db 18, KANGASKHAN
 	db 18, RATICATE
 	; day
 	db 15, ZUBAT
@@ -664,7 +664,7 @@
 	db 17, GOLBAT
 	db 16, MACHOP
 	db 16, GEODUDE
-	db 18, RATICATE
+	db 18, KANGASKHAN
 	db 18, RATICATE
 	; nite
 	db 15, ZUBAT
