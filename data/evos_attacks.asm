@@ -1816,6 +1816,7 @@ MagikarpEvosAttacks:
 	db 30, FLAIL
 	db 45, BUBBLE
 	db 60, REVERSAL
+	db 100, FLY
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:
