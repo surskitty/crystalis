@@ -4611,7 +4611,7 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 34, TENTACRUEL
+	db 49, TENTACRUEL
 
 	db $ff ; end
 
@@ -4622,9 +4622,9 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 28, SEAKING
-	db 31, POLIWHIRL
-	db 31, SEAKING
+	db 48, SEAKING
+	db 51, POLIWHIRL
+	db 51, SEAKING
 
 	db $ff ; end
 
@@ -4647,10 +4647,10 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 10, MAGIKARP
-	db 10, GYARADOS
 	db 15, MAGIKARP
 	db 15, GYARADOS
+	db 20, MAGIKARP
+	db 20, GYARADOS
 
 	db $ff ; end
 
@@ -4698,8 +4698,8 @@ FisherGroup:
 
 	; party
 	db 23, GOLDEEN
-	db 23, GOLDEEN
-	db 25, SEAKING
+	db 25, GOLDEEN
+	db 27, SEAKING
 
 	db $ff ; end
 
@@ -4717,11 +4717,11 @@ FisherGroup:
 		db AURORA_BEAM
 		db BUBBLEBEAM
 
-	db 25, REMORAID
+	db 25, OCTILLERY
 		db LOCK_ON
 		db PSYBEAM
 		db AURORA_BEAM
-		db BUBBLEBEAM
+		db OCTAZOOKA
 
 	db $ff ; end
 
@@ -4732,10 +4732,10 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 25, SHELLDER
-	db 29, OCTILLERY
-	db 25, REMORAID
-	db 29, CLOYSTER
+	db 45, SHELLDER
+	db 49, OCTILLERY
+	db 45, REMORAID
+	db 49, CLOYSTER
 
 	db $ff ; end
 
@@ -4746,8 +4746,8 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 32, REMORAID
-	db 32, REMORAID
+	db 52, REMORAID
+	db 52, OCTILLERY
 
 	db $ff ; end
 
@@ -4758,10 +4758,10 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 25, MAGIKARP
-	db 25, MAGIKARP
-	db 31, QWILFISH
-	db 31, TENTACRUEL
+	db 75, MAGIKARP
+	db 75, MAGIKARP
+	db 50, QWILFISH
+	db 50, TENTACRUEL
 
 	db $ff ; end
 
@@ -4772,9 +4772,9 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GYARADOS
-	db 30, GYARADOS
-	db 30, GYARADOS
+	db 50, GYARADOS
+	db 50, GYARADOS
+	db 50, GYARADOS
 
 	db $ff ; end
 
@@ -4785,7 +4785,7 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 17, GOLDEEN
+	db 19, GOLDEEN
 
 	db $ff ; end
 
@@ -4796,8 +4796,8 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 17, QWILFISH
-	db 19, GOLDEEN
+	db 19, QWILFISH
+	db 21, GOLDEEN
 
 	db $ff ; end
 
@@ -4808,7 +4808,7 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 23, QWILFISH
+	db 28, QWILFISH
 
 	db $ff ; end
 
@@ -4819,9 +4819,9 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 32, GOLDEEN
-	db 32, GOLDEEN
-	db 32, QWILFISH
+	db 38, GOLDEEN
+	db 38, HORSEA
+	db 38, QWILFISH
 
 	db $ff ; end
 
@@ -4832,9 +4832,9 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 29, GOLDEEN
-	db 29, GOLDEEN
-	db 32, SEAKING
+	db 39, GOLDEEN
+	db 39, GOLDEEN
+	db 42, SEAKING
 
 	db $ff ; end
 
@@ -4859,19 +4859,19 @@ FisherGroup:
 
 	; party
 
-	db 34, SEAKING
+	db 49, SEAKING
 		db SUPERSONIC
 		db WATERFALL
 		db FLAIL
 		db FURY_ATTACK
 
-	db 34, SEAKING
+	db 49, SEAKING
 		db SUPERSONIC
 		db WATERFALL
 		db FLAIL
 		db FURY_ATTACK
 
-	db 38, REMORAID
+	db 53, REMORAID
 		db PSYBEAM
 		db AURORA_BEAM
 		db BUBBLEBEAM
@@ -4886,8 +4886,8 @@ FisherGroup:
 	db 0 ; normal
 
 	; party
-	db 30, QWILFISH
-	db 32, GOLDEEN
+	db 35, QWILFISH
+	db 37, GOLDEEN
 
 	db $ff ; end
 
@@ -4899,13 +4899,13 @@ FisherGroup:
 
 	; party
 
-	db 35, QWILFISH
+	db 50, QWILFISH
 		db TOXIC
 		db MINIMIZE
 		db SURF
 		db PIN_MISSILE
 
-	db 39, SEAKING
+	db 54, SEAKING
 		db ENDURE
 		db FLAIL
 		db FURY_ATTACK
@@ -4921,19 +4921,19 @@ FisherGroup:
 
 	; party
 
-	db 34, SEAKING
+	db 49, SEAKING
 		db SUPERSONIC
 		db RAIN_DANCE
 		db WATERFALL
 		db FURY_ATTACK
 
-	db 34, SEAKING
-		db SUPERSONIC
+	db 49, SEADRA
+		db SMOKESCREEN
 		db RAIN_DANCE
 		db WATERFALL
-		db FURY_ATTACK
+		db DRAGONBREATH
 
-	db 37, QWILFISH
+	db 52, QWILFISH
 		db ROLLOUT
 		db SURF
 		db PIN_MISSILE
