@@ -8682,8 +8682,8 @@ TwinsGroup:
 	db 0 ; normal
 
 	; party
-	db 35, VICTREEBEL
-	db 35, VILEPLUME
+	db 50, VICTREEBEL
+	db 50, VILEPLUME
 
 	db $ff ; end
 
@@ -8694,8 +8694,8 @@ TwinsGroup:
 	db 0 ; normal
 
 	; party
-	db 35, VILEPLUME
-	db 35, VICTREEBEL
+	db 50, VILEPLUME
+	db 50, VICTREEBEL
 
 	db $ff ; end
 
@@ -8706,8 +8706,8 @@ TwinsGroup:
 	db 0 ; normal
 
 	; party
-	db 31, TEDDIURSA
-	db 31, PHANPY
+	db 51, TEDDIURSA
+	db 51, PHANPY
 
 	db $ff ; end
 
@@ -8718,8 +8718,8 @@ TwinsGroup:
 	db 0 ; normal
 
 	; party
-	db 31, PHANPY
-	db 31, TEDDIURSA
+	db 51, PHANPY
+	db 51, TEDDIURSA
 
 	db $ff ; end
 
