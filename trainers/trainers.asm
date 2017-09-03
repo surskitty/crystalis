@@ -8239,7 +8239,7 @@ MediumGroup:
 	; party
 	db 18, GASTLY
 	db 20, HAUNTER
-	db 20, GASTLY
+	db 20, MISDREAVUS
 
 	db $ff ; end
 
@@ -8295,8 +8295,8 @@ MediumGroup:
 	db 0 ; normal
 
 	; party
-	db 35, DROWZEE
-	db 35, HYPNO
+	db 50, DROWZEE
+	db 50, HYPNO
 
 	db $ff ; end
 
@@ -8307,8 +8307,8 @@ MediumGroup:
 	db 0 ; normal
 
 	; party
-	db 34, SLOWPOKE
-	db 36, SLOWBRO
+	db 49, SLOWPOKE
+	db 51, SLOWBRO
 
 	db $ff ; end
 
