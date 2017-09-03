@@ -1688,10 +1688,10 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 27, VOLTORB
-	db 27, MAGNEMITE
-	db 31, VOLTORB
-	db 31, MAGNETON
+	db 47, VOLTORB
+	db 47, MAGNEMITE
+	db 51, ELECTRODE
+	db 51, MAGNETON
 
 	db $ff ; end
 
@@ -1703,6 +1703,7 @@ SchoolboyGroup:
 
 	; party
 	db 16, TANGELA
+	db 16, YANMA
 
 	db $ff ; end
 
@@ -1713,9 +1714,9 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 29, BELLSPROUT
-	db 31, WEEPINBELL
-	db 33, VICTREEBEL
+	db 49, BELLSPROUT
+	db 51, WEEPINBELL
+	db 53, VICTREEBEL
 
 	db $ff ; end
 
@@ -1726,9 +1727,9 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 31, JYNX
-	db 31, ELECTABUZZ
-	db 31, MAGMAR
+	db 51, JYNX
+	db 51, ELECTABUZZ
+	db 51, MAGMAR
 
 	db $ff ; end
 
@@ -1739,8 +1740,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 32, XATU
-	db 34, ALAKAZAM
+	db 47, XATU
+	db 50, ALAKAZAM
 
 	db $ff ; end
 
@@ -1751,7 +1752,7 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 35, ODDISH
+	db 50, ODDISH
 
 	db $ff ; end
 
@@ -1762,8 +1763,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 33, TANGELA
-	db 33, VAPOREON
+	db 48, TANGELA
+	db 48, VAPOREON
 
 	db $ff ; end
 
@@ -1774,10 +1775,10 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 27, PARAS
-	db 27, PARAS
-	db 27, POLIWHIRL
-	db 35, DITTO
+	db 47, PARAS
+	db 47, PARASECT
+	db 47, POLIWHIRL
+	db 55, DITTO
 
 	db $ff ; end
 
@@ -1799,8 +1800,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 32, LEDIAN
-	db 32, EXEGGUTOR
+	db 48, LEDIAN
+	db 48, EXEGGUTOR
 
 	db $ff ; end
 
@@ -1811,8 +1812,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 32, AIPOM
-	db 32, DITTO
+	db 48, AIPOM
+	db 52, DITTO
 
 	db $ff ; end
 
@@ -1836,6 +1837,7 @@ SchoolboyGroup:
 
 	; party
 	db 28, GLOOM
+	db 26, GROWLITHE
 	db 31, ELECTRODE
 
 	db $ff ; end
@@ -1847,6 +1849,7 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
+	db 17, NATU
 	db 17, TANGELA
 	db 17, YANMA
 
@@ -1873,8 +1876,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 19, MR__MIME
-	db 19, MAGNEMITE
+	db 21, MR__MIME
+	db 21, MAGNEMITE
 
 	db $ff ; end
 
@@ -1897,9 +1900,9 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 30, GLOOM
-	db 33, GROWLITHE
-	db 33, ELECTRODE
+	db 33, GLOOM
+	db 36, GROWLITHE
+	db 36, ELECTRODE
 
 	db $ff ; end
 
@@ -1911,19 +1914,19 @@ SchoolboyGroup:
 
 	; party
 
-	db 35, ELECTRODE
+	db 50, ELECTRODE
 		db SCREECH
-		db SONICBOOM
+		db THUNDERBOLT
 		db ROLLOUT
 		db LIGHT_SCREEN
 
-	db 35, GROWLITHE
+	db 50, ARCANINE
 		db SUNNY_DAY
 		db LEER
-		db TAKE_DOWN
+		db EXTREMESPEED
 		db FLAME_WHEEL
 
-	db 37, VILEPLUME
+	db 52, VILEPLUME
 		db SOLARBEAM
 		db SLEEP_POWDER
 		db ACID
@@ -1938,10 +1941,10 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 27, NATU
-	db 27, TANGELA
-	db 30, QUAGSIRE
-	db 30, YANMA
+	db 37, NATU
+	db 37, TANGELA
+	db 40, QUAGSIRE
+	db 40, YANMA
 
 	db $ff ; end
 
@@ -1953,25 +1956,25 @@ SchoolboyGroup:
 
 	; party
 
-	db 35, XATU
+	db 47, XATU
 		db PECK
 		db NIGHT_SHADE
 		db SWIFT
 		db FUTURE_SIGHT
 
-	db 32, TANGELA
+	db 47, TANGELA
 		db POISONPOWDER
 		db VINE_WHIP
 		db BIND
 		db MEGA_DRAIN
 
-	db 32, YANMA
+	db 47, YANMA
 		db QUICK_ATTACK
 		db DOUBLE_TEAM
 		db SONICBOOM
 		db SUPERSONIC
 
-	db 35, QUAGSIRE
+	db 50, QUAGSIRE
 		db TAIL_WHIP
 		db SLAM
 		db AMNESIA
@@ -1986,8 +1989,8 @@ SchoolboyGroup:
 	db 0 ; normal
 
 	; party
-	db 30, MR__MIME
-	db 34, MAGNETON
+	db 40, MR__MIME
+	db 44, MAGNETON
 
 	db $ff ; end
 
@@ -1999,13 +2002,13 @@ SchoolboyGroup:
 
 	; party
 
-	db 34, MR__MIME
+	db 49, MR__MIME
 		db PSYCHIC_M
 		db LIGHT_SCREEN
 		db REFLECT
 		db ENCORE
 
-	db 38, MAGNETON
+	db 53, MAGNETON
 		db ZAP_CANNON
 		db THUNDER_WAVE
 		db LOCK_ON
