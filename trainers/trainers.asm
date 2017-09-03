@@ -1383,7 +1383,7 @@ ScientistGroup:
 
 	; party
 	db 22, KOFFING
-	db 22, KOFFING
+	db 24, KOFFING
 
 	db $ff ; end
 
@@ -1391,10 +1391,10 @@ ScientistGroup:
 
 	; SCIENTIST (2)
 	db "MITCH@"
-	db 0 ; normal
+	db 2 ; item
 
 	; party
-	db 24, DITTO
+	db 24, DITTO, METAL_POWDER
 
 	db $ff ; end
 
@@ -1405,9 +1405,9 @@ ScientistGroup:
 	db 0 ; normal
 
 	; party
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
+	db 21, MAGNEMITE
+	db 22, MAGNEMITE
+	db 23, MAGNEMITE
 
 	db $ff ; end
 
@@ -1419,8 +1419,8 @@ ScientistGroup:
 
 	; party
 	db 27, MAGNEMITE
-	db 27, MAGNEMITE
-	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 29, MAGNEMITE
 
 	db $ff ; end
 
@@ -1433,7 +1433,7 @@ ScientistGroup:
 	; party
 
 	db 30, PORYGON
-		db CONVERSION
+		db SHARPEN
 		db CONVERSION2
 		db RECOVER
 		db TRI_ATTACK
