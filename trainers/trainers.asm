@@ -5540,8 +5540,8 @@ SailorGroup:
 	db 0 ; normal
 
 	; party
-	db 32, RATICATE
-	db 32, RATICATE
+	db 47, RATICATE
+	db 47, RATICATE
 
 	db $ff ; end
 
@@ -5552,7 +5552,7 @@ SailorGroup:
 	db 0 ; normal
 
 	; party
-	db 34, KINGLER
+	db 49, KINGLER
 
 	db $ff ; end
 
@@ -5563,23 +5563,23 @@ SailorGroup:
 	db 0 ; normal
 
 	; party
-	db 28, MACHOP
-	db 28, MACHOP
-	db 28, POLIWRATH
-	db 28, MACHOP
+	db 48, MACHOP
+	db 48, MACHOKE
+	db 48, POLIWRATH
+	db 48, MACHAMP
 
 	db $ff ; end
 
 ; ================
 
 	; SAILOR (9)
-	db "STANLY@"
+	db "STANLEY@"
 	db 0 ; normal
 
 	; party
-	db 31, MACHOP
-	db 33, MACHOKE
-	db 26, PSYDUCK
+	db 48, MACHOP
+	db 52, MACHOKE
+	db 48, GOLDUCK
 
 	db $ff ; end
 
@@ -5613,8 +5613,8 @@ SailorGroup:
 	db 0 ; normal
 
 	; party
-	db 34, POLIWHIRL
-	db 34, POLIWRATH
+	db 44, POLITOED
+	db 44, POLIWRATH
 
 	db $ff ; end
 
@@ -5626,13 +5626,13 @@ SailorGroup:
 
 	; party
 
-	db 38, POLITOED
+	db 48, POLITOED
 		db WHIRLPOOL
 		db RAIN_DANCE
 		db BODY_SLAM
 		db PERISH_SONG
 
-	db 38, POLIWRATH
+	db 48, POLIWRATH
 		db SURF
 		db STRENGTH
 		db ICE_PUNCH
