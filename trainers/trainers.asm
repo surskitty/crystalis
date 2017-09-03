@@ -8791,7 +8791,7 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 17, PIKACHU, BERRY
+	db 19, PIKACHU, BERRY
 
 	db $ff ; end
 
@@ -8802,7 +8802,7 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 18, SNUBBULL, BERRY
+	db 33, SNUBBULL, BERRY
 
 	db $ff ; end
 
@@ -8813,7 +8813,7 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 30, GRANBULL, BERRY
+	db 52, GRANBULL, BERRY
 
 	db $ff ; end
 
@@ -8824,11 +8824,11 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 23, SENTRET, BERRY
-	db 23, SENTRET, BERRY
-	db 23, SENTRET, BERRY
-	db 28, FURRET, BERRY
-	db 23, SENTRET, BERRY
+	db 43, SENTRET, BERRY
+	db 43, SENTRET, BERRY
+	db 43, SENTRET, BERRY
+	db 48, FURRET, BERRY
+	db 43, SENTRET, BERRY
 
 	db $ff ; end
 
@@ -8839,7 +8839,7 @@ PokefanFGroup:
 	db 2 ; item
 
 	; party
-	db 16, MEOWTH, BERRY
+	db 18, MEOWTH, BERRY
 
 	db $ff ; end
 
