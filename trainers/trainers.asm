@@ -4136,7 +4136,7 @@ GentlemanGroup:
 	db 0 ; normal
 
 	; party
-	db 33, PERSIAN
+	db 53, PERSIAN
 
 	db $ff ; end
 
@@ -4147,8 +4147,8 @@ GentlemanGroup:
 	db 0 ; normal
 
 	; party
-	db 37, PIKACHU
-	db 33, FLAAFFY
+	db 52, PIKACHU
+	db 48, FLAAFFY
 
 	db $ff ; end
 
