@@ -1814,6 +1814,8 @@ MagikarpEvosAttacks:
 	db 1, SPLASH
 	db 15, TACKLE
 	db 30, FLAIL
+	db 45, BUBBLE
+	db 60, REVERSAL
 	db 0 ; no more level-up moves
 
 GyaradosEvosAttacks:
