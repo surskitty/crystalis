@@ -4954,8 +4954,8 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 32, REMORAID
-	db 30, SEADRA
+	db 52, REMORAID
+	db 50, SEADRA
 
 	db $ff ; end
 
@@ -4980,7 +4980,7 @@ SwimmerMGroup:
 	; party
 	db 18, SHELLDER
 	db 20, WARTORTLE
-	db 18, SHELLDER
+	db 18, MARILL
 
 	db $ff ; end
 
@@ -5006,10 +5006,10 @@ SwimmerMGroup:
 	; party
 	db 16, TENTACOOL
 	db 17, TENTACOOL
-	db 16, TENTACOOL
+	db 16, SEEL
 	db 19, STARYU
-	db 17, TENTACOOL
-	db 19, REMORAID
+	db 17, REMORAID
+	db 19, OCTILLERY
 
 	db $ff ; end
 
@@ -5039,11 +5039,13 @@ SwimmerMGroup:
 ; ================
 
 	; SWIMMERM (8)
-	db "MATHEW@"
+	db "MATTHEW@"
 	db 0 ; normal
 
 	; party
 	db 23, KRABBY
+	db 23, OMANYTE
+	db 23, KABUTO
 
 	db $ff ; end
 
@@ -5118,10 +5120,10 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 26, SEADRA
-	db 28, TENTACOOL
-	db 30, TENTACRUEL
-	db 28, GOLDEEN
+	db 46, SEADRA
+	db 48, TENTACOOL
+	db 50, TENTACRUEL
+	db 48, GOLDEEN
 
 	db $ff ; end
 
@@ -5132,8 +5134,8 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 30, SHELLDER
-	db 34, CLOYSTER
+	db 50, SHELLDER
+	db 54, CLOYSTER
 
 	db $ff ; end
 
@@ -5157,7 +5159,8 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 34, MARILL
+	db 49, MARILL
+	db 51, AZUMARILL
 
 	db $ff ; end
 
@@ -5168,9 +5171,9 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 29, QUAGSIRE
-	db 29, OCTILLERY
-	db 32, QUAGSIRE
+	db 49, QUAGSIRE
+	db 49, OCTILLERY
+	db 52, QUAGSIRE
 
 	db $ff ; end
 
@@ -5207,9 +5210,9 @@ SwimmerMGroup:
 	db 0 ; normal
 
 	; party
-	db 32, HORSEA
-	db 32, HORSEA
-	db 35, SEADRA
+	db 47, HORSEA
+	db 49, SEADRA
+	db 51, KINGDRA
 
 	db $ff ; end
 
