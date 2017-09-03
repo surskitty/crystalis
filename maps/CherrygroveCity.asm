@@ -481,7 +481,9 @@ SilverCherrygroveLossText:
 CherrygroveRivalText_YouWon:
 	text "<......> <......> <......>"
 
-	para "My name's ???."
+	para "I don't need to"
+	line "introduce myself"
+	cont "to wimps like you."
 
 	para "I'm going to be"
 	line "the world's great-"
