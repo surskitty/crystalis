@@ -545,8 +545,9 @@ WigglytuffEvosAttacks:
 ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
-	db 1, ABSORB
+	db 1, TACKLE
 	db 5, SUPERSONIC
+	db 7, ABSORB
 	db 10, BITE
 	db 16, SCREECH
 	db 23, CONFUSE_RAY
