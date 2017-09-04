@@ -546,6 +546,7 @@ ZubatEvosAttacks:
 	db EVOLVE_LEVEL, 22, GOLBAT
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, SMOG
 	db 5, SUPERSONIC
 	db 7, ABSORB
 	db 10, BITE
@@ -554,6 +555,8 @@ ZubatEvosAttacks:
 	db 30, WING_ATTACK
 	db 38, MEAN_LOOK
 	db 47, HAZE
+	db 52, SLUDGE_BOMB
+	db 60, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 GolbatEvosAttacks:
@@ -561,6 +564,7 @@ GolbatEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCREECH
 	db 1, ABSORB
+	db 1, SMOG
 	db 1, SUPERSONIC
 	db 5, SUPERSONIC
 	db 10, BITE
@@ -570,6 +574,8 @@ GolbatEvosAttacks:
 	db 33, WING_ATTACK
 	db 43, MEAN_LOOK
 	db 57, HAZE
+	db 64, SLUDGE_BOMB
+	db 70, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 OddishEvosAttacks:
@@ -2435,14 +2441,18 @@ CrobatEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCREECH
 	db 1, ABSORB
+	db 1, SMOG
 	db 1, SUPERSONIC
 	db 5, SUPERSONIC
 	db 10, BITE
 	db 16, SCREECH
+	db 22, LICK
 	db 24, CONFUSE_RAY
 	db 33, WING_ATTACK
 	db 43, MEAN_LOOK
 	db 57, HAZE
+	db 64, SLUDGE_BOMB
+	db 70, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 ChinchouEvosAttacks:
