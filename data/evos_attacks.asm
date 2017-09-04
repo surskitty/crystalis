@@ -958,6 +958,7 @@ BellsproutEvosAttacks:
 	db 30, SWEET_SCENT
 	db 37, RAZOR_LEAF
 	db 45, SLAM
+	db 54, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 WeepinbellEvosAttacks:
@@ -975,6 +976,7 @@ WeepinbellEvosAttacks:
 	db 33, SWEET_SCENT
 	db 42, RAZOR_LEAF
 	db 54, SLAM
+	db 60, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 VictreebelEvosAttacks:
