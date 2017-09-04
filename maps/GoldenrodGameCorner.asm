@@ -241,7 +241,7 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .MenuData2:
 	db $80 ; flags
 	db 4 ; items
-	db "DIGLETT        100@"
+	db "DIGLETT     100@"
 	db "CLEFAIRY    800@"
 	db "DRATINI    1500@"
 	db "CANCEL@"
