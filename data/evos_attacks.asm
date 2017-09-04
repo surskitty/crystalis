@@ -952,13 +952,15 @@ BellsproutEvosAttacks:
 	db 6, GROWTH
 	db 11, WRAP
 	db 15, SLEEP_POWDER
-	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 16, POISONPOWDER
+	db 17, STUN_SPORE
 	db 23, ACID
+	db 27, BITE
 	db 30, SWEET_SCENT
 	db 37, RAZOR_LEAF
-	db 45, SLAM
+	db 45, SLUDGE_BOMB
 	db 54, LEECH_LIFE
+	db 60, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 WeepinbellEvosAttacks:
@@ -970,18 +972,19 @@ WeepinbellEvosAttacks:
 	db 6, GROWTH
 	db 11, WRAP
 	db 15, SLEEP_POWDER
-	db 17, POISONPOWDER
-	db 19, STUN_SPORE
+	db 16, POISONPOWDER
+	db 17, STUN_SPORE
 	db 24, ACID
+	db 28, BITE
 	db 33, SWEET_SCENT
 	db 42, RAZOR_LEAF
-	db 54, SLAM
+	db 54, SLUDGE_BOMB
 	db 60, LEECH_LIFE
 	db 0 ; no more level-up moves
 
 VictreebelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ACID
+	db 1, SLUDGE_BOMB
 	db 1, SLEEP_POWDER
 	db 1, SWEET_SCENT
 	db 1, RAZOR_LEAF
