@@ -3399,6 +3399,7 @@ MiltankEvosAttacks:
 	db 34, ROLLOUT
 	db 43, BODY_SLAM
 	db 53, HEAL_BELL
+	db 60, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 BlisseyEvosAttacks:
