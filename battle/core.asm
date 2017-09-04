@@ -836,10 +836,10 @@ SometimesFleeMons: ; 3c59a
 	db UNOWN
 	db SNUBBULL
 	db HERACROSS
+	db CUBONE
 	db -1
 
 OftenFleeMons: ; 3c5a8
-	db CUBONE
 	db ARTICUNO
 	db ZAPDOS
 	db MOLTRES
