@@ -1273,7 +1273,7 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, EKANS
-	db 5, RATTATA
+	db 5, MAREEP
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
@@ -1281,7 +1281,7 @@
 	db 7, HOPPIP
 	; day
 	db 4, EKANS
-	db 5, RATTATA
+	db 5, MAREEP
 	db 7, BELLSPROUT
 	db 6, HOPPIP
 	db 7, PIDGEY
@@ -1289,7 +1289,7 @@
 	db 7, HOPPIP
 	; nite
 	db 4, WOOPER
-	db 5, RATTATA
+	db 5, MAREEP
 	db 7, BELLSPROUT
 	db 6, ZUBAT
 	db 7, HOOTHOOT
