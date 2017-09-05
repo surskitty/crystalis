@@ -113,21 +113,21 @@ MortyGroup:
 
 	; party
 
-	db 21, GASTLY
-		db LICK
-		db SPITE
-		db MEAN_LOOK
-		db CURSE
-
 	db 21, HAUNTER
 		db HYPNOSIS
 		db NIGHTMARE
 		db CURSE
-		db NIGHT_SHADE
+		db LICK
+
+	db 21, GASTLY
+		db SHADOW_BALL
+		db SPITE
+		db MEAN_LOOK
+		db CURSE
 
 	db 25, GENGAR
 		db HYPNOSIS
-		db SHADOW_BALL
+		db NIGHT_SHADE
 		db MEAN_LOOK
 		db DREAM_EATER
 
