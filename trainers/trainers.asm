@@ -29,6 +29,12 @@ FalknerGroup:
 		db 0
 		db 0
 
+	db 8, ZUBAT
+		db TACKLE
+		db ABSORB
+		db 0
+		db 0
+
 	db 9, DODUO
 		db TACKLE
 		db MUD_SLAP
