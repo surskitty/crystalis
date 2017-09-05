@@ -55,7 +55,7 @@ UnknownText_0x55f52:
 
 UnknownText_0x55f74:
 	text "Some #MON"
-	line "evolve only by"
+	line "evolve sooner by"
 
 	para "being traded via a"
 	line "Game Link cable."
@@ -66,8 +66,8 @@ UnknownText_0x55f74:
 	para "HAUNTER and, um,"
 	line "GRAVELER."
 
-	para "I heard there are"
-	line "others too."
+	para "But they evolve"
+	line "on their own, too."
 	done
 
 GoldenrodDeptStore4FDirectoryText:
