@@ -1302,9 +1302,11 @@ GastlyEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 28, CONFUSE_RAY
 	db 30, SLUDGE
+	db 33, HYPNOSIS
 	db 33, DREAM_EATER
 	db 36, DESTINY_BOND
 	db 42, SHADOW_BALL
+	db 48, HYPNOSIS
 	db 48, NIGHTMARE
 	db 0 ; no more level-up moves
 
@@ -1322,9 +1324,11 @@ HaunterEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
 	db 36, SLUDGE
+	db 39, HYPNOSIS
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
 	db 54, SHADOW_BALL
+	db 60, HYPNOSIS
 	db 60, NIGHTMARE
 	db 0 ; no more level-up moves
 
@@ -1340,9 +1344,11 @@ GengarEvosAttacks:
 	db 21, NIGHT_SHADE
 	db 31, CONFUSE_RAY
 	db 36, SLUDGE
+	db 39, HYPNOSIS
 	db 39, DREAM_EATER
 	db 48, DESTINY_BOND
 	db 54, SHADOW_BALL
+	db 60, HYPNOSIS
 	db 60, NIGHTMARE
 	db 0 ; no more level-up moves
 
