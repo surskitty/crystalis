@@ -2928,6 +2928,7 @@ GirafarigEvosAttacks:
 PinecoEvosAttacks:
 	db EVOLVE_LEVEL, 31, FORRETRESS
 	db 0 ; no more evolutions
+	db 1, HARDEN
 	db 1, TACKLE
 	db 1, PROTECT
 	db 6, PIN_MISSILE

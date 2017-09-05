@@ -79,9 +79,9 @@ BugsyGroup:
 
 	; party
 
-	db 14, KAKUNA
-		db POISON_STING
-		db STRING_SHOT
+	db 14, PINECO
+		db TACKLE
+		db PIN_MISSILE
 		db HARDEN
 		db 0
 
@@ -6860,9 +6860,9 @@ JugglerGroup:
 
 	; party
 	db 16, VOLTORB
-	db 20, VOLTORB
+	db 20, KOFFING
 	db 24, VOLTORB
-	db 28, VOLTORB
+	db 28, KOFFING
 
 	db $ff ; end
 
@@ -6874,9 +6874,9 @@ JugglerGroup:
 
 	; party
 	db 28, VOLTORB
-	db 32, VOLTORB
-	db 36, VOLTORB
-	db 40, ELECTRODE
+	db 32, KOFFING
+	db 36, ELECTRODE
+	db 40, WEEZING
 
 	db $ff ; end
 
@@ -6888,9 +6888,9 @@ JugglerGroup:
 
 	; party
 	db 38, VOLTORB
-	db 42, VOLTORB
-	db 46, VOLTORB
-	db 50, ELECTRODE
+	db 42, KOFFING
+	db 46, ELECTRODE
+	db 50, WEEZING
 
 	db $ff ; end
 
