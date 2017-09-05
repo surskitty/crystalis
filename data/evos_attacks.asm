@@ -1167,11 +1167,8 @@ MagnetonEvosAttacks:
 	db 16, SONICBOOM
 	db 21, THUNDER_WAVE
 	db 27, LOCK_ON
-if _CRYSTAL
 	db 35, TRI_ATTACK
-else
 	db 35, SWIFT
-endc
 	db 43, SCREECH
 	db 53, ZAP_CANNON
 	db 0 ; no more level-up moves
@@ -1179,12 +1176,14 @@ endc
 FarfetchDEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
+	db 1, LEER
 	db 7, SAND_ATTACK
-	db 13, LEER
-	db 19, FURY_ATTACK
-	db 25, SWORDS_DANCE
-	db 31, AGILITY
+	db 12, FURY_ATTACK
+	db 17, MUD_SLAP
+	db 24, FLAIL
+	db 31, SWORDS_DANCE
 	db 37, SLASH
+	db 40, AGILITY
 	db 44, FALSE_SWIPE
 	db 50, FURY_CUTTER
 	db 0 ; no more level-up moves
@@ -1195,11 +1194,14 @@ DoduoEvosAttacks:
 	db 1, PECK
 	db 1, GROWL
 	db 9, PURSUIT
-	db 13, FURY_ATTACK
+	db 12, RAGE
+	db 18, FURY_ATTACK
 	db 21, TRI_ATTACK
-	db 25, RAGE
+	db 25, THRASH
 	db 33, DRILL_PECK
 	db 37, AGILITY
+	db 42, JUMP_KICK
+	db 50, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
@@ -1207,13 +1209,16 @@ DodrioEvosAttacks:
 	db 1, PECK
 	db 1, GROWL
 	db 1, PURSUIT
-	db 1, FURY_ATTACK
+	db 1, RAGE
 	db 9, PURSUIT
-	db 13, FURY_ATTACK
+	db 12, RAGE
+	db 18, FURY_ATTACK
 	db 21, TRI_ATTACK
-	db 25, RAGE
-	db 38, DRILL_PECK
-	db 47, AGILITY
+	db 25, THRASH
+	db 35, DRILL_PECK
+	db 39, AGILITY
+	db 45, JUMP_KICK
+	db 55, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
