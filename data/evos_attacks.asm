@@ -2536,9 +2536,11 @@ TogepiEvosAttacks:
 	db 1, CONFUSION
 	db 1, CHARM
 	db 7, METRONOME
-	db 18, SWEET_KISS
-	db 25, ENCORE
-	db 31, SAFEGUARD
+	db 10, SWEET_KISS
+	db 17, ENCORE
+	db 20, FAIRY_WIND
+	db 27, SAFEGUARD
+	db 30, ANCIENTPOWER
 	db 38, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -2548,9 +2550,11 @@ TogeticEvosAttacks:
 	db 1, CONFUSION
 	db 1, CHARM
 	db 7, METRONOME
-	db 18, SWEET_KISS
-	db 25, ENCORE
-	db 31, SAFEGUARD
+	db 10, SWEET_KISS
+	db 17, ENCORE
+	db 20, FAIRY_WIND
+	db 27, SAFEGUARD
+	db 30, ANCIENTPOWER
 	db 38, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
