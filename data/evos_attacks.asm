@@ -833,10 +833,11 @@ PoliwagEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
-	db 19, DOUBLESLAP
-	db 25, RAIN_DANCE
-	db 31, BODY_SLAM
+	db 11, WATER_GUN
+	db 15, DOUBLESLAP
+	db 20, RAIN_DANCE
+	db 27, BUBBLEBEAM
+	db 34, BODY_SLAM
 	db 37, BELLY_DRUM
 	db 43, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -850,22 +851,25 @@ PoliwhirlEvosAttacks:
 	db 1, HYPNOSIS
 	db 1, WATER_GUN
 	db 7, HYPNOSIS
-	db 13, WATER_GUN
-	db 19, DOUBLESLAP
-	db 27, RAIN_DANCE
-	db 35, BODY_SLAM
-	db 43, BELLY_DRUM
-	db 51, HYDRO_PUMP
+	db 11, WATER_GUN
+	db 15, DOUBLESLAP
+	db 20, RAIN_DANCE
+	db 28, BUBBLEBEAM
+	db 36, BODY_SLAM
+	db 40, BELLY_DRUM
+	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, BUBBLEBEAM
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, SUBMISSION
 	db 35, SUBMISSION
-	db 51, MIND_READER
+	db 45, SUBMISSION
+	db 50, MIND_READER
+	db 55, SUBMISSION
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -2668,12 +2672,14 @@ SudowoodoEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, BUBBLEBEAM
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
 	db 35, PERISH_SONG
-	db 51, SWAGGER
+	db 45, PERISH_SONG
+	db 50, SWAGGER
+	db 55, PERISH_SONG
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:
