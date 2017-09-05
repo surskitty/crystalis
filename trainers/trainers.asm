@@ -83,7 +83,7 @@ BugsyGroup:
 		db TACKLE
 		db PIN_MISSILE
 		db HARDEN
-		db 0
+		db SPIKES
 
 	db 14, VENONAT
 		db TACKLE
