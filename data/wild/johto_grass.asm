@@ -493,7 +493,7 @@
 	db 6, ZUBAT
 	db 7, ZUBAT
 	db 6, SLOWPOKE
-	db 8, ZUBAT
+	db 7, SLOWPOKE
 	db 8, SLOWPOKE
 	db 8, SLOWPOKE
 	; day
@@ -501,7 +501,7 @@
 	db 6, ZUBAT
 	db 7, ZUBAT
 	db 6, SLOWPOKE
-	db 8, ZUBAT
+	db 7, SLOWPOKE
 	db 8, SLOWPOKE
 	db 8, SLOWPOKE
 	; nite
@@ -509,7 +509,7 @@
 	db 6, ZUBAT
 	db 7, ZUBAT
 	db 6, SLOWPOKE
-	db 8, ZUBAT
+	db 7, SLOWPOKE
 	db 8, SLOWPOKE
 	db 8, SLOWPOKE
 
