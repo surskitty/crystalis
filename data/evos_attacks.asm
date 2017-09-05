@@ -2350,12 +2350,15 @@ HoothootEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 6, FORESIGHT
-	db 11, PECK
-	db 16, HYPNOSIS
+	db 9, PECK
+	db 13, HYPNOSIS
+	db 17, CONFUSION
 	db 22, REFLECT
-	db 22, CONFUSE_RAY
-	db 28, TAKE_DOWN
-	db 34, CONFUSION
+	db 22, LIGHT_SCREEN
+	db 28, CONFUSE_RAY
+	db 32, NIGHT_SHADE
+	db 38, PSYBEAM
+	db 44, WING_ATTACK
 	db 48, MOONBLAST
 	db 0 ; no more level-up moves
 
@@ -2363,16 +2366,17 @@ NoctowlEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, FORESIGHT
-	db 1, PECK
 	db 6, FORESIGHT
-	db 11, PECK
-	db 16, HYPNOSIS
+	db 9, PECK
+	db 13, HYPNOSIS
+	db 17, CONFUSION
 	db 25, REFLECT
-	db 25, CONFUSE_RAY
-	db 33, TAKE_DOWN
-	db 41, CONFUSION
-	db 57, MOONBLAST
+	db 25, LIGHT_SCREEN
+	db 32, CONFUSE_RAY
+	db 36, NIGHT_SHADE
+	db 42, PSYBEAM
+	db 48, WING_ATTACK
+	db 54, MOONBLAST
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:
