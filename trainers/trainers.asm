@@ -134,7 +134,7 @@ MortyGroup:
 	db 23, MISDREAVUS
 		db SPITE
 		db MEAN_LOOK
-		db PROTECT
+		db CURSE
 		db PSYWAVE
 
 	db $ff ; end
@@ -318,12 +318,26 @@ Rival1Group:
 
 	; RIVAL1 (4)
 	db "?@"
-	db 0 ; normal
+	db 1 ; moves
 
 	; party
 	db 12, GASTLY
+		db HYPNOSIS
+		db LICK
+		db SMOG
+		db SPITE
+
 	db 14, ZUBAT
+		db SMOG
+		db SUPERSONIC
+		db ABSORB
+		db BITE
+
 	db 16, BAYLEEF
+		db GROWL
+		db RAZOR_LEAF
+		db REFLECT
+		db LIGHT_SCREEN
 
 	db $ff ; end
 
