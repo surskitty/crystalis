@@ -1381,25 +1381,25 @@
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 4, LEDYBA
-	db 4, PIDGEY
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
+	db 4, MAREEP
 	db 5, PIDGEY
 	db 6, PIDGEY
 	db 6, PIDGEY
 	; day
-	db 4, PIDGEY
-	db 4, PIDGEY
+	db 4, NATU
 	db 5, BELLSPROUT
 	db 5, GROWLITHE
+	db 4, MAREEP
 	db 5, PIDGEY
 	db 6, PIDGEY
 	db 6, PIDGEY
 	; nite
 	db 4, SPINARAK
-	db 4, HOOTHOOT
 	db 5, BELLSPROUT
 	db 5, HOUNDOUR
+	db 4, MAREEP
 	db 5, HOOTHOOT
 	db 5, GASTLY
 	db 5, GASTLY
