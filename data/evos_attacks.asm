@@ -2551,6 +2551,7 @@ TogepiEvosAttacks:
 	db 27, SAFEGUARD
 	db 30, ANCIENTPOWER
 	db 38, DOUBLE_EDGE
+	db 44, FAKE_TEARS
 	db 0 ; no more level-up moves
 
 TogeticEvosAttacks:
@@ -2565,6 +2566,7 @@ TogeticEvosAttacks:
 	db 27, SAFEGUARD
 	db 30, ANCIENTPOWER
 	db 38, DOUBLE_EDGE
+	db 44, FAKE_TEARS
 	db 0 ; no more level-up moves
 
 NatuEvosAttacks:
