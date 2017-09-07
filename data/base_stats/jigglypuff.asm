@@ -7,7 +7,7 @@
 	db 170 ; catch rate
 	db 76 ; base exp
 	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
+	db MOON_STONE ; item 2
 	db 191 ; gender
 	db 100 ; unknown
 	db 10 ; step cycles to hatch
