@@ -6,7 +6,7 @@
 	db BUG, POISON
 	db 75 ; catch rate
 	db 138 ; base exp
-	db NO_ITEM ; item 1
+	db GOLD_LEAF ; item 1
 	db SILVERPOWDER ; item 2
 	db 127 ; gender
 	db 100 ; unknown

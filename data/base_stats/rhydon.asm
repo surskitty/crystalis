@@ -6,8 +6,8 @@
 	db GROUND, ROCK
 	db 60 ; catch rate
 	db 204 ; base exp
-	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
+	db SILVER_LEAF ; item 1
+	db SILVER_LEAF ; item 2
 	db 127 ; gender
 	db 100 ; unknown
 	db 20 ; step cycles to hatch

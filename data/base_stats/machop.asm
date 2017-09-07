@@ -6,8 +6,8 @@
 	db FIGHTING, FIGHTING
 	db 180 ; catch rate
 	db 88 ; base exp
-	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
+	db BRICK_PIECE ; item 1
+	db BRICK_PIECE ; item 2
 	db 63 ; gender
 	db 100 ; unknown
 	db 20 ; step cycles to hatch

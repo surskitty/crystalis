@@ -6,7 +6,7 @@
 	db POISON, POISON
 	db 60 ; catch rate
 	db 173 ; base exp
-	db NO_ITEM ; item 1
+	db SILVER_LEAF ; item 1
 	db SMOKE_BALL ; item 2
 	db 127 ; gender
 	db 100 ; unknown

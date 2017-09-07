@@ -6,7 +6,7 @@
 	db NORMAL, FAIRY_T
 	db 170 ; catch rate
 	db 76 ; base exp
-	db NO_ITEM ; item 1
+	db POLKADOT_BOW ; item 1
 	db MOON_STONE ; item 2
 	db 191 ; gender
 	db 100 ; unknown

@@ -6,8 +6,8 @@
 	db FIGHTING, FIGHTING
 	db 75 ; catch rate
 	db 149 ; base exp
-	db NO_ITEM ; item 1
-	db NO_ITEM ; item 2
+	db GOLD_LEAF ; item 1
+	db GOLD_LEAF ; item 2
 	db 127 ; gender
 	db 100 ; unknown
 	db 20 ; step cycles to hatch
