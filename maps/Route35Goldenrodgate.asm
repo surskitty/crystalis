@@ -172,7 +172,7 @@ UnknownText_0x6a00a:
 	line "wild when someone"
 
 	para "watered it with a"
-	line "SQUIRTBOTTLE."
+	line "SQUIRTLEJUG."
 	done
 
 UnknownText_0x6a09a:
