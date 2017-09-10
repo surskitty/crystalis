@@ -342,7 +342,7 @@ ParkBall: ; e8a2
 	and 1 << FRZ | SLP
 	ld c, 10
 	jr nz, .addstatus
-	; ld a, [EnemyMonStatus]
+	ld a, [EnemyMonStatus]
 	and a
 	ld c, 5
 	jr nz, .addstatus
