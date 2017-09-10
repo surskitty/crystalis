@@ -840,9 +840,6 @@ SometimesFleeMons: ; 3c59a
 	db -1
 
 OftenFleeMons: ; 3c5a8
-	db ARTICUNO
-	db ZAPDOS
-	db MOLTRES
 	db QUAGSIRE
 	db DELIBIRD
 	db PHANPY
