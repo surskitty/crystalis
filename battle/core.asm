@@ -6702,6 +6702,7 @@ CheckSleepingTreeMon: ; 3eb38
 	db EXEGGCUTE
 	db LEDYBA
 	db AIPOM
+	db FARFETCH_D
 	db -1 ; end
 
 .Day:
@@ -6710,6 +6711,7 @@ CheckSleepingTreeMon: ; 3eb38
 	db NOCTOWL
 	db SPINARAK
 	db HERACROSS
+	db MURKROW
 	db -1 ; end
 
 .Morn:
@@ -6718,6 +6720,7 @@ CheckSleepingTreeMon: ; 3eb38
 	db NOCTOWL
 	db SPINARAK
 	db HERACROSS
+	db MURKROW
 	db -1 ; end
 ; 3eb75
 
