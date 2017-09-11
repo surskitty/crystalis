@@ -828,7 +828,6 @@ SometimesFleeMons: ; 3c59a
 	db TANGELA
 	db MR__MIME
 	db EEVEE
-	db PORYGON
 	db DRATINI
 	db DRAGONAIR
 	db TOGETIC
