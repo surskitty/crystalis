@@ -382,28 +382,28 @@
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
+	db 6, UNOWN
+	db 7, UNOWN
+	db 8, UNOWN
+	db 9, UNOWN
+	db 10, UNOWN
+	db 11, UNOWN
 	; day
 	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
+	db 6, UNOWN
+	db 7, UNOWN
+	db 8, UNOWN
+	db 9, UNOWN
+	db 10, UNOWN
+	db 11, UNOWN
 	; nite
 	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
-	db 5, UNOWN
+	db 6, UNOWN
+	db 7, UNOWN
+	db 8, UNOWN
+	db 9, UNOWN
+	db 10, UNOWN
+	db 11, UNOWN
 
 	map UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
