@@ -42,6 +42,16 @@ ValidateOTTrademon: ; fb57e
 	jr z, .normal
 	cp MAGNETON
 	jr z, .normal
+	cp JIGGLYPUFF
+	jr z, .normal
+	cp WIGGLYTUFF
+	jr z, .normal
+	cp MR__MIME
+	jr z, .normal
+	cp CLEFAIRY
+	jr z, .normal
+	cp CLEFABLE
+	jr z, .normal
 
 	ld [CurSpecies], a
 	call GetBaseData
