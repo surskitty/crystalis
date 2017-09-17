@@ -543,29 +543,29 @@
 	map ILEX_FOREST
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 5, CATERPIE
-	db 5, WEEDLE
-	db 7, METAPOD
-	db 7, KAKUNA
-	db 7, PIKACHU
-	db 6, PARAS
-	db 6, PARAS
+	db 6, CATERPIE
+	db 6, WEEDLE
+	db 9, METAPOD
+	db 9, KAKUNA
+	db 8, PIKACHU
+	db 8, PARAS
+	db 8, PARAS
 	; day
-	db 5, CATERPIE
-	db 5, WEEDLE
-	db 7, METAPOD
-	db 7, KAKUNA
-	db 7, PIKACHU
-	db 6, PARAS
-	db 6, PARAS
+	db 6, CATERPIE
+	db 6, WEEDLE
+	db 9, METAPOD
+	db 9, KAKUNA
+	db 8, PIKACHU
+	db 8, PARAS
+	db 8, PARAS
 	; nite
-	db 5, ODDISH
-	db 5, VENONAT
 	db 7, ODDISH
+	db 7, VENONAT
 	db 7, PSYDUCK
+	db 8, PARAS
 	db 7, BULBASAUR
-	db 6, PARAS
-	db 6, PARAS
+	db 9, SLOWPOKE
+	db 9, BULBASAUR
 
 	map MOUNT_MORTAR_1F_OUTSIDE
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -1299,46 +1299,46 @@
 	map ROUTE_33
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 6, RATTATA
-	db 6, SPEAROW
-	db 6, GEODUDE
-	db 6, HOPPIP
-	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 8, RATTATA
+	db 8, SPEAROW
+	db 8, GEODUDE
+	db 8, HOPPIP
+	db 9, EKANS
+	db 9, HOPPIP
+	db 9, HOPPIP
 	; day
-	db 6, RATTATA
-	db 6, SPEAROW
-	db 6, GEODUDE
-	db 6, HOPPIP
-	db 7, EKANS
-	db 7, HOPPIP
-	db 7, HOPPIP
+	db 8, RATTATA
+	db 8, SPEAROW
+	db 8, GEODUDE
+	db 8, HOPPIP
+	db 9, EKANS
+	db 9, HOPPIP
+	db 9, HOPPIP
 	; nite
-	db 6, RATTATA
-	db 6, ZUBAT
-	db 6, GEODUDE
-	db 6, ZUBAT
-	db 7, RATTATA
-	db 7, RATTATA
-	db 7, RATTATA
+	db 8, RATTATA
+	db 8, ZUBAT
+	db 8, GEODUDE
+	db 8, ZUBAT
+	db 9, RATTATA
+	db 9, RATTATA
+	db 9, RATTATA
 
 	map ROUTE_34
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 10, SNUBBULL
-	db 11, RATTATA
 	db 12, PIDGEY
 	db 10, ABRA
 	db 12, JIGGLYPUFF
+	db 11, RATTATA
 	db 10, DITTO
 	db 10, DITTO
 	; day
 	db 10, SNUBBULL
-	db 11, RATTATA
 	db 12, PIDGEY
 	db 10, ABRA
 	db 12, JIGGLYPUFF
+	db 11, RATTATA
 	db 10, DITTO
 	db 10, DITTO
 	; nite
@@ -1410,15 +1410,15 @@
 	db 13, LEDYBA
 	db 14, GROWLITHE
 	db 15, PIDGEY
-	db 16, GROWLITHE
+	db 16, VULPIX
 	db 15, PIDGEOTTO
 	db 15, LEDIAN
 	db 15, LEDIAN
 	; day
 	db 13, PIDGEY
 	db 14, GROWLITHE
+	db 16, VULPIX
 	db 15, PIDGEY
-	db 16, GROWLITHE
 	db 15, PIDGEOTTO
 	db 15, SLUGMA
 	db 15, SLUGMA
