@@ -1569,29 +1569,29 @@
 	map ROUTE_45
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, DONPHAN
-	db 20, PHANPY
-	db 27, SKARMORY
-	db 27, SKARMORY
-	; day
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, DONPHAN
+	db 28, GEODUDE
+	db 28, GRAVELER
+	db 29, GLIGAR
 	db 30, DONPHAN
-	db 27, SKARMORY
-	db 27, SKARMORY
+	db 25, PHANPY
+	db 32, SKARMORY
+	db 32, SKARMORY
+	; day
+	db 28, GEODUDE
+	db 28, GRAVELER
+	db 29, GLIGAR
+	db 30, DONPHAN
+	db 35, DONPHAN
+	db 32, SKARMORY
+	db 32, SKARMORY
 	; nite
-	db 23, GEODUDE
-	db 23, GRAVELER
-	db 24, GLIGAR
-	db 25, GRAVELER
+	db 28, GEODUDE
+	db 28, GRAVELER
+	db 29, GLIGAR
+	db 30, GRAVELER
 	db 25, CYNDAQUIL
-	db 27, CYNDAQUIL
-	db 27, QUILAVA
+	db 30, CYNDAQUIL
+	db 32, QUILAVA
 
 	map ROUTE_46
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
