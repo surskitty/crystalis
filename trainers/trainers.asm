@@ -2317,7 +2317,7 @@ LassGroup:
 	; party
 	db 15, JIGGLYPUFF
 	db 15, CHANSEY
-	db 12, SNORLAX
+	db 15, SNORLAX
 
 	db $ff ; end
 
