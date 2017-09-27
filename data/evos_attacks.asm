@@ -1847,14 +1847,16 @@ PinsirEvosAttacks:
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, TAIL_WHIP
-	db 8, RAGE
-	db 13, HORN_ATTACK
-	db 19, SCARY_FACE
-	db 26, PURSUIT
-	db 34, REST
-	db 43, THRASH
-	db 53, TAKE_DOWN
+	db 3, TAIL_WHIP
+	db 6, RAGE
+	db 10, HORN_ATTACK
+	db 15, SCARY_FACE
+	db 21, PURSUIT
+	db 28, REST
+	db 36, THRASH
+	db 45, TAKE_DOWN
+	db 55, SWAGGER
+	db 66, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
