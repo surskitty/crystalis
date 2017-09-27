@@ -57,17 +57,23 @@ WhitneyGroup:
 
 	; party
 
-	db 18, CLEFAIRY, NO_ITEM
-		db DIZZY_PUNCH
+	db 18, CHANSEY, LUCKY_PUNCH
+		db EGG_BOMB
+		db PRESENT
 		db MIMIC
-		db FAIRY_WIND
 		db METRONOME
+
+	db 19, LICKITUNG, NO_ITEM
+		db MIMIC
+		db LICK
+		db WRAP
+		db DISABLE
 
 	db 20, MILTANK, BERSERK_GENE
 		db ROLLOUT
 		db ATTRACT
 		db STOMP
-		db PRESENT
+		db MILK_DRINK
 
 	db $ff ; end
 
@@ -159,7 +165,7 @@ PryceGroup:
 
 	; party
 
-	db 31, DELIBIRD, BRIGHTPOWDER
+	db 31, DELIBIRD, NO_ITEM
 		db PRESENT
 		db ICY_WIND
 		db SPIKES
