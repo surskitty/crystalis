@@ -146,7 +146,7 @@
 	db "DIZZY PUNCH@"
 	db "SPORE@"
 	db "FLASH@"
-	db "PSYWAVE@"
+	db "SILVER WIND@"
 	db "SPLASH@"
 	db "ACID ARMOR@"
 	db "CRABHAMMER@"

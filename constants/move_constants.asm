@@ -149,7 +149,7 @@
 	const DIZZY_PUNCH  ; $92
 	const SPORE        ; $93
 	const FLASH        ; $94
-	const PSYWAVE      ; $95
+	const SILVER_WIND  ; $95
 	const SPLASH       ; $96
 	const ACID_ARMOR   ; $97
 	const CRABHAMMER   ; $98

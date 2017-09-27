@@ -839,6 +839,7 @@ AttackUpHit:
 	endmove
 
 Ancientpower:
+SilverWind:
 AllUpHit:
 	checkobedience
 	usedmovetext
@@ -1394,7 +1395,6 @@ Sonicboom:
 DragonRage:
 SeismicToss:
 NightShade:
-Psywave:
 StaticDamage:
 	checkobedience
 	usedmovetext

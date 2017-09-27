@@ -1842,6 +1842,7 @@ PinsirEvosAttacks:
 	db 31, GUILLOTINE
 	db 37, SUBMISSION
 	db 43, SWORDS_DANCE
+	db 49, THRASH
 	db 0 ; no more level-up moves
 
 TaurosEvosAttacks:
@@ -2900,7 +2901,7 @@ SlowkingEvosAttacks:
 MisdreavusEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
-	db 1, PSYWAVE
+	db 1, CONFUSION
 	db 6, SPITE
 	db 10, LICK
 	db 15, CONFUSE_RAY

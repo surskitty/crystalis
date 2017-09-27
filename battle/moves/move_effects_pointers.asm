@@ -86,7 +86,7 @@
 	dw Splash
 	dw Disable
 	dw StaticDamage
-	dw Psywave
+	dw SilverWind
 	dw Counter
 	dw Encore
 	dw PainSplit

@@ -15,4 +15,5 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - The Fairy type is here!  The two damaging fairy moves are Fairy Wind and Moonblast.  Look out for them!
 - Growth and Kinesis now affect stats by two levels.
 - The moves Captivate and Fake Tears have been added.
-- Egg moves have been updated!  All PCNY event moves are obtainable now, as are egg moves added in later games.
+- Egg moves have been updated!  All PCNY event moves should be obtainable, as are egg moves added in later games.
+- Psywave has been removed and replaced with Silver Wind.

@@ -147,7 +147,7 @@
 	dw DizzyPunchDescription
 	dw SporeDescription
 	dw FlashDescription
-	dw PsywaveDescription
+	dw SilverWindDescription
 	dw SplashDescription
 	dw AcidArmorDescription
 	dw CrabhammerDescription
@@ -853,9 +853,9 @@ FlashDescription:
 	db   "Blinds the foe to"
 	next "reduce accuracy.@"
 
-PsywaveDescription:
-	db   "An attack with"
-	next "variable power.@"
+SilverWindDescription:
+	db   "An attack that may"
+	next "raise all stats.@"
 
 SplashDescription:
 	db   "Has no effect"
