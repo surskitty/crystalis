@@ -439,7 +439,7 @@ Item2Attributes:
 	item_attribute   100, HELD_STEEL_BOOST,    10,             CANT_SELECT, ITEM,     ITEMMENU_PARTY,   ITEMMENU_NOUSE
 
 ; DRAGON FANG
-	item_attribute   100, 0,                 0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
+	item_attribute   100, HELD_DRAGON_BOOST,    0,             CANT_SELECT, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
 
 ; TERU-SAMA
 	item_attribute $9999, 0,                 0,                       0, ITEM,     ITEMMENU_NOUSE,   ITEMMENU_NOUSE
