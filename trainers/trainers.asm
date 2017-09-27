@@ -64,7 +64,7 @@ WhitneyGroup:
 		db METRONOME
 
 	db 19, LICKITUNG, NO_ITEM
-		db MIMIC
+		db ATTRACT
 		db LICK
 		db WRAP
 		db DISABLE
