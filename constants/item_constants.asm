@@ -232,7 +232,7 @@
 	add_tm SANDSTORM    ; $E5
 	add_tm FIRE_BLAST   ; $E6
 	add_tm SWIFT        ; $E7
-	add_tm DEFENSE_CURL ; $E8
+	add_tm SILVER_WIND  ; $E8
 	add_tm THUNDERPUNCH ; $E9
 	add_tm DREAM_EATER  ; $EA
 	add_tm MOONBLAST    ; $EB
