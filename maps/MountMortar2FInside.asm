@@ -6,13 +6,49 @@ const_value set 2
 	const MOUNTMORTAR2FINSIDE_POKE_BALL5
 	const MOUNTMORTAR2FINSIDE_POKE_BALL6
 	const MOUNTMORTAR2FINSIDE_SUPER_NERD
+	const MOUNTMORTAR2FINSIDE_MOLTRES
 
 MountMortar2FInside_MapScriptHeader:
 .MapTriggers:
 	db 0
 
 .MapCallbacks:
-	db 0
+	db 1
+	dbw MAPCALLBACK_OBJECTS, .Moltres
+
+.Moltres:
+	checkevent EVENT_FOUGHT_MOLTRES
+	iftrue .NoAppear
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .Appear
+	jump .NoAppear
+
+.Appear:
+	appear MOUNTMORTAR2FINSIDE_MOLTRES
+	return
+
+.NoAppear:
+	disappear MOUNTMORTAR2FINSIDE_MOLTRES
+	return
+
+Moltres:
+	faceplayer
+	opentext
+	writetext MoltresText
+	cry MOLTRES
+	pause 15
+	closetext
+	setevent EVENT_FOUGHT_MOLTRES
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	loadwildmon MOLTRES, 50
+	startbattle
+	disappear MOUNTMORTAR2FINSIDE_MOLTRES
+	reloadmapafterbattle
+	end
+
+MoltresText:
+	text "Gyaoo!"
+	done
 
 TrainerSupernerdHugh:
 	trainer EVENT_BEAT_SUPER_NERD_HUGH, SUPER_NERD, HUGH, SupernerdHughSeenText, SupernerdHughBeatenText, 0, SupernerdHughScript
@@ -84,7 +120,7 @@ MountMortar2FInside_MapEventHeader:
 	signpost 8, 24, SIGNPOST_ITEM, MountMortar2FInsideHiddenFullRestore
 
 .PersonEvents:
-	db 7
+	db 8
 	person_event SPRITE_POKE_BALL, 22, 28, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, MountMortar2FInsideMaxPotion, EVENT_MOUNT_MORTAR_2F_INSIDE_MAX_POTION
 	person_event SPRITE_POKE_BALL, 33, 2, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, MountMortar2FInsideRareCandy, EVENT_MOUNT_MORTAR_2F_INSIDE_RARE_CANDY
 	person_event SPRITE_POKE_BALL, 17, 19, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, MountMortar2FInsideTMDefenseCurl, EVENT_MOUNT_MORTAR_2F_INSIDE_TM_DEFENSE_CURL
@@ -92,3 +128,4 @@ MountMortar2FInside_MapEventHeader:
 	person_event SPRITE_POKE_BALL, 11, 9, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, MountMortar2FInsideElixer, EVENT_MOUNT_MORTAR_2F_INSIDE_ELIXER
 	person_event SPRITE_POKE_BALL, 5, 28, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, MountMortar2FInsideEscapeRope, EVENT_MOUNT_MORTAR_2F_INSIDE_ESCAPE_ROPE
 	person_event SPRITE_SUPER_NERD, 26, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BROWN, PERSONTYPE_TRAINER, 2, TrainerSupernerdHugh, -1
+	person_event SPRITE_MOLTRES, 19, 19, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, (1 << 3) | PAL_OW_RED, PERSONTYPE_SCRIPT, 0, Moltres, EVENT_MT_MORTAR_MOLTRES
