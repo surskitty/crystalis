@@ -51,7 +51,7 @@ WillScript_Battle:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
-	iftrue WillsRoom_0x180526
+	iftrue WillScript_0x180526
 	writetext WillScript_WillBeforeText
 	waitbutton
 	closetext
@@ -102,6 +102,27 @@ WillScript_WillBeforeText:
 	para "And, at last, I've"
 	line "been accepted into"
 	cont "the ELITE FOUR."
+
+	para "I can only keep"
+	line "getting better!"
+
+	para "Losing is not an"
+	line "option!"
+	done
+
+WillScript_WillRebattleText:
+	text "Welcome back,"
+	line "<PLAYER>."
+
+	para "I am WILL, of"
+	line "the ELITE FOUR."
+
+	para "I have observed"
+	line "your techniques"
+	cont "since we fought."
+
+	para "Have you studied"
+	line "psychic #MON?"
 
 	para "I can only keep"
 	line "getting better!"
