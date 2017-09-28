@@ -701,10 +701,7 @@ DiglettEvosAttacks:
 
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
-if _CRYSTAL
 	db 1, TRI_ATTACK
-endc
-	db 1, SCRATCH
 	db 1, GROWL
 	db 1, MAGNITUDE
 	db 5, GROWL
@@ -1293,9 +1290,7 @@ CloysterEvosAttacks:
 	db 1, CLAMP
 	db 1, AURORA_BEAM
 	db 1, PROTECT
-if _CRYSTAL
 	db 33, SPIKES
-endc
 	db 41, SPIKE_CANNON
 	db 0 ; no more level-up moves
 
@@ -3048,9 +3043,7 @@ GranbullEvosAttacks:
 
 QwilfishEvosAttacks:
 	db 0 ; no more evolutions
-if _CRYSTAL
 	db 1, SPIKES
-endc
 	db 1, TACKLE
 	db 1, POISON_STING
 	db 10, HARDEN
