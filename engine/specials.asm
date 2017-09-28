@@ -665,18 +665,21 @@ SpecialStationaryRespawns:
 	ld a, ZAPDOS - 1
 	call CheckCaughtMon
 	jr nz, .CaughtZapdos
+	clearevent EVENT_DARK_CAVE_ZAPDOS
 	clearevent EVENT_FOUGHT_ZAPDOS
 .CaughtZapdos
 
 	ld a, MOLTRES - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMoltres
+	clearevent EVENT_MT_MORTAR_MOLTRES
 	clearevent EVENT_FOUGHT_MOLTRES
 .CaughtMoltres
 
 	ld a, MEWTWO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMewtwo
+	clearevent EVENT_MT_SILVER_MEWTWO
 	clearevent EVENT_FOUGHT_MEWTWO
 .CaughtMewtwo
 
