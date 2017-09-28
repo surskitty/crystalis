@@ -209,3 +209,19 @@ ElmPhoneUnusedText: ; 0x1b4d5d
 
 	para "See you later!"
 	done
+
+ElmPhoneBirdText: ; 0x1b4d5d
+	text "Hello, <PLAY_G>?"
+	line "Have you been"
+	cont "keeping up?"
+
+	para "A famous TRAINER"
+	line "released some"
+	cont "rare #MON."
+
+	para "I heard they're"
+	line "in the mountains."
+
+	para "Do you think they"
+	line "might like you?"
+	done

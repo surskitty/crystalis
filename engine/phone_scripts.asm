@@ -196,6 +196,8 @@ BillPhoneScript2: ; 0xbd007
 ElmPhoneScript1: ; 0xbd00d
 	checkcode VAR_SPECIALPHONECALL
 	if_equal $1, .pokerus
+	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	iftrue .legendarybirds
 	checkevent EVENT_SHOWED_TOGEPI_TO_ELM
 	iftrue .discovery
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
@@ -254,6 +256,10 @@ ElmPhoneScript1: ; 0xbd00d
 .pokerus ; 0xbd079
 	farwritetext ElmPhonePokerusText
 	specialphonecall SPECIALCALL_NONE
+	end
+
+.legendarybirds ; 0xbd061
+	farwritetext ElmPhoneBirdText
 	end
 
 ElmPhoneScript2: ; 0xbd081
