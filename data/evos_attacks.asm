@@ -3029,9 +3029,11 @@ SnubbullEvosAttacks:
 	db 4, TAIL_WHIP
 	db 8, CHARM
 	db 13, BITE
-	db 19, LICK
+	db 17, LICK
+	db 22, HEADBUTT
 	db 26, ROAR
-	db 34, HEAL_BELL
+	db 32, HEAL_BELL
+	db 37, RAGE
 	db 43, CRUNCH
 	db 52, MOONBLAST
 	db 0 ; no more level-up moves
@@ -3043,10 +3045,14 @@ GranbullEvosAttacks:
 	db 4, TAIL_WHIP
 	db 8, CHARM
 	db 13, BITE
-	db 19, LICK
-	db 28, ROAR
-	db 38, HEAL_BELL
-	db 51, MOONBLAST
+	db 17, LICK
+	db 22, HEADBUTT
+	db 27, ROAR
+	db 33, HEAL_BELL
+	db 39, RAGE
+	db 45, CRUNCH
+	db 54, MOONBLAST
+	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
 QwilfishEvosAttacks:
