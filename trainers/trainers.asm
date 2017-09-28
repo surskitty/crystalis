@@ -73,7 +73,7 @@ WhitneyGroup:
 		db ROLLOUT
 		db ATTRACT
 		db STOMP
-		db MILK_DRINK
+		db PRESENT
 
 	db $ff ; end
 
