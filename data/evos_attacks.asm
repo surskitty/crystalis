@@ -3176,25 +3176,29 @@ SwinubEvosAttacks:
 	db EVOLVE_LEVEL, 33, PILOSWINE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 10, POWDER_SNOW
-	db 19, ENDURE
-	db 28, ANCIENTPOWER
-	db 37, MIST
-	db 46, BLIZZARD
-	db 55, AMNESIA
+	db 7, POWDER_SNOW
+	db 14, MUD_SLAP
+	db 21, ENDURE
+	db 28, MIST
+	db 35, ANCIENTPOWER
+	db 42, FLAIL
+	db 49, BLIZZARD
+	db 56, AMNESIA
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HORN_ATTACK
 	db 1, POWDER_SNOW
+	db 1, MUD_SLAP
 	db 1, ENDURE
-	db 10, POWDER_SNOW
-	db 19, ENDURE
-	db 28, TAKE_DOWN
-	db 33, ANCIENTPOWER
-	db 42, MIST
-	db 56, BLIZZARD
+	db 7, POWDER_SNOW
+	db 14, MUD_SLAP
+	db 21, ENDURE
+	db 28, MIST
+	db 36, ANCIENTPOWER
+	db 44, FLAIL
+	db 52, BLIZZARD
 	db 60, AMNESIA
 	db 70, FISSURE
 	db 0 ; no more level-up moves
