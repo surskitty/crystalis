@@ -658,32 +658,27 @@ SpecialStationaryRespawns:
 	ld a, ARTICUNO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtArticuno
-	clearevent EVENT_ARTICUNO
+	clearevent EVENT_ICE_PATH_ARTICUNO
+	clearevent EVENT_FOUGHT_ARTICUNO
 .CaughtArticuno
 
 	ld a, ZAPDOS - 1
 	call CheckCaughtMon
 	jr nz, .CaughtZapdos
-	clearevent EVENT_ZAPDOS
+	clearevent EVENT_FOUGHT_ZAPDOS
 .CaughtZapdos
 
 	ld a, MOLTRES - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMoltres
-	clearevent EVENT_MOLTRES
+	clearevent EVENT_FOUGHT_MOLTRES
 .CaughtMoltres
 
 	ld a, MEWTWO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMewtwo
-	clearevent EVENT_MEWTWO
+	clearevent EVENT_FOUGHT_MEWTWO
 .CaughtMewtwo
-
-	ld a, MEW - 1
-	call CheckCaughtMon
-	jr nz, .CaughtMew
-	clearevent EVENT_MEW
-.CaughtMew
 
 	ld a, RAIKOU - 1
 	call CheckCaughtMon
