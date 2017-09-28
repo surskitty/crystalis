@@ -780,14 +780,17 @@ MankeyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 9, LOW_KICK
-	db 15, KARATE_CHOP
-	db 21, FURY_SWIPES
-	db 27, FOCUS_ENERGY
-	db 33, SEISMIC_TOSS
-	db 39, CROSS_CHOP
-	db 45, SCREECH
-	db 51, THRASH
+	db 6, LOW_KICK
+	db 9, FOCUS_ENERGY
+	db 12, PURSUIT
+	db 15, FURY_SWIPES
+	db 20, KARATE_CHOP
+	db 25, SWAGGER
+	db 30, SEISMIC_TOSS
+	db 35, SCREECH
+	db 41, CROSS_CHOP
+	db 47, THRASH
+	db 53, OUTRAGE
 	db 0 ; no more level-up moves
 
 PrimeapeEvosAttacks:
@@ -795,16 +798,18 @@ PrimeapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, LOW_KICK
-	db 1, RAGE
-	db 9, LOW_KICK
-	db 15, KARATE_CHOP
-	db 21, FURY_SWIPES
-	db 27, FOCUS_ENERGY
-	db 28, RAGE
-	db 36, SEISMIC_TOSS
-	db 45, CROSS_CHOP
-	db 54, SCREECH
-	db 63, THRASH
+	db 1, FOCUS_ENERGY
+	db 6, LOW_KICK
+	db 9, FOCUS_ENERGY
+	db 12, PURSUIT
+	db 15, FURY_SWIPES
+	db 20, KARATE_CHOP
+	db 25, SWAGGER
+	db 32, SEISMIC_TOSS
+	db 38, SCREECH
+	db 46, CROSS_CHOP
+	db 52, THRASH
+	db 60, OUTRAGE
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:
