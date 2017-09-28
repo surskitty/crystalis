@@ -56,7 +56,20 @@ BrunoScript_Battle:
 	waitbutton
 	closetext
 	winlosstext BrunoScript_BrunoBeatenText, 0
+	checkevent EVENT_RED_IN_MT_SILVER
+	iftrue .round3
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .round2
+	iffalse .round1
+.round1
 	loadtrainer BRUNO, 1
+	jump .End
+.round2
+	loadtrainer BRUNO, 2
+	jump .End
+.round3
+	loadtrainer BRUNO, 3
+.End
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_BRUNO

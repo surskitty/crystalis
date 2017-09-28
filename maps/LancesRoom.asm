@@ -64,7 +64,20 @@ LanceScript_0x180e7b:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	loadtrainer CHAMPION, LANCE
+	checkevent EVENT_RED_IN_MT_SILVER
+	iftrue .round3
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .round2
+	iffalse .round1
+.round1
+	loadtrainer CHAMPION, 1
+	jump .End
+.round2
+	loadtrainer CHAMPION, 2
+	jump .End
+.round3
+	loadtrainer CHAMPION, 3
+.End
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

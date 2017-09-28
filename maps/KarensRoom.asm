@@ -56,7 +56,20 @@ KarenScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KarenScript_KarenBeatenText, 0
+	checkevent EVENT_RED_IN_MT_SILVER
+	iftrue .round3
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .round2
+	iffalse .round1
+.round1
 	loadtrainer KAREN, 1
+	jump .End
+.round2
+	loadtrainer KAREN, 2
+	jump .End
+.round3
+	loadtrainer KAREN, 3
+.End
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KAREN

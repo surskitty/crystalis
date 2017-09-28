@@ -56,7 +56,20 @@ KogaScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
+	checkevent EVENT_RED_IN_MT_SILVER
+	iftrue .round3
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .round2
+	iffalse .round1
+.round1
 	loadtrainer KOGA, 1
+	jump .End
+.round2
+	loadtrainer KOGA, 2
+	jump .End
+.round3
+	loadtrainer KOGA, 3
+.End
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_KOGA

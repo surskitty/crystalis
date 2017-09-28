@@ -52,11 +52,32 @@ WillScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
 	iftrue WillScript_0x180526
+	checkevent EVENT_RED_IN_MT_SILVER
+	iftrue .round3
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .round2
+	iffalse .round1
+.round1
 	writetext WillScript_WillBeforeText
 	waitbutton
 	closetext
 	winlosstext WillScript_WillBeatenText, 0
 	loadtrainer WILL, 1
+	jump .End
+.round2
+	writetext WillScript_WillRebattleText
+	waitbutton
+	closetext
+	winlosstext WillScript_WillBeatenText, 0
+	loadtrainer WILL, 2
+	jump .End
+.round3
+	writetext WillScript_WillRebattleText
+	waitbutton
+	closetext
+	winlosstext WillScript_WillBeatenText, 0
+	loadtrainer WILL, 3
+.End
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_WILL
