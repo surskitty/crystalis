@@ -23,18 +23,10 @@ TrainerHouseReceptionistScript:
 	writetext TrainerHouseB1FIntroText
 	buttonsound
 	special SpecialTrainerHouse
-	iffalse .GetCal3Name
-	trainertotext CAL, CAL2, $0
-	jump .GotName
+	iftrue .MysteryPartner
+	iffalse .DailyTrainer
 
-.GetCal3Name:
-	trainertotext CAL, CAL3, $0
-.GotName:
-	writetext TrainerHouseB1FYourOpponentIsText
-	buttonsound
-	writetext TrainerHouseB1FAskWantToBattleText
-	yesorno
-	iffalse .Declined
+.DailyTrainer:
 	setflag ENGINE_FOUGHT_IN_TRAINER_HALL_TODAY
 	writetext TrainerHouseB1FGoRightInText
 	waitbutton
@@ -44,29 +36,110 @@ TrainerHouseReceptionistScript:
 	writetext TrainerHouseB1FCalBeforeText
 	waitbutton
 	closetext
-	special SpecialTrainerHouse
-	iffalse .NoSpecialBattle
+	winlosstext TrainerHouseB1FCalBeatenText, 0
+	checkcode VAR_WEEKDAY
+	if_equal SUNDAY, .LoadCynthia
+	if_equal MONDAY, .LoadCarrie1
+	if_equal TUESDAY, .LoadIris
+	if_equal WEDNESDAY, .LoadCarrie2
+	if_equal THURSDAY, .LoadGreen
+	if_equal FRIDAY, .LoadCarrie3
+	if_equal SATURDAY, .LoadCal
+.LoadCal:
+	opentext
+	writetext TrainerHouseB1FCalBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FCalBeatenText, 0
+	loadtrainer CAL, CAL3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CAL
+	jump .End
+.LoadCarrie1:
+	opentext
+	writetext TrainerHouseB1FCarrieBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FCarrieBeatenText, 0
+	loadtrainer CAL, CARRIE1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CARRIE1
+	jump .End
+.LoadCarrie2:
+	opentext
+	writetext TrainerHouseB1FCarrieBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FCarrieBeatenText, 0
+	loadtrainer CAL, CARRIE2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CARRIE2
+	jump .End
+.LoadCarrie3:
+	opentext
+	writetext TrainerHouseB1FCarrieBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FCarrieBeatenText, 0
+	loadtrainer CAL, CARRIE3
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CARRIE3
+	jump .End
+.LoadCynthia:
+	opentext
+	writetext TrainerHouseB1FCynthiaBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FCynthiaBeatenText, 0
+	loadtrainer CAL, CYNTHIA
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CYNTHIA
+	jump .End
+.LoadIris:
+	opentext
+	writetext TrainerHouseB1FIrisBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FIrisBeatenText, 0
+	loadtrainer CAL, CARRIE1
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_IRIS
+	jump .End
+.LoadGreen:
+	opentext
+	writetext TrainerHouseB1FGreenBeforeText
+	waitbutton
+	closetext
+	winlosstext TrainerHouseB1FGreenBeatenText, 0
+	loadtrainer CAL, GREEN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_GREEN
+	jump .End
+
+.MysteryPartner:
+	setflag ENGINE_FOUGHT_IN_TRAINER_HALL_TODAY
+	writetext TrainerHouseB1FGoRightInText
+	waitbutton
+	closetext
+	applymovement PLAYER, Movement_EnterTrainerHouseBattleRoom
+	opentext
+	writetext TrainerHouseB1FCalBeforeText
+	waitbutton
+	closetext
 	winlosstext TrainerHouseB1FCalBeatenText, 0
 	setlasttalked TRAINERHOUSEB1F_CHRIS
 	loadtrainer CAL, CAL2
 	startbattle
 	reloadmapafterbattle
-	iffalse .End
-.NoSpecialBattle:
-	winlosstext TrainerHouseB1FCalBeatenText, 0
-	setlasttalked TRAINERHOUSEB1F_CHRIS
-	loadtrainer CAL, CAL3
-	startbattle
-	reloadmapafterbattle
 .End:
 	applymovement PLAYER, Movement_ExitTrainerHouseBattleRoom
-	end
-
-.Declined:
-	writetext TrainerHouseB1FPleaseComeAgainText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_TrainerHouseTurnBack
 	end
 
 .FoughtTooManyTimes:
@@ -122,17 +195,6 @@ TrainerHouseB1FIntroText:
 	cont "day."
 	done
 
-TrainerHouseB1FYourOpponentIsText:
-	text_from_ram StringBuffer3
-	text " is your"
-	line "opponent today."
-	done
-
-TrainerHouseB1FAskWantToBattleText:
-	text "Would you like to"
-	line "battle?"
-	done
-
 TrainerHouseB1FGoRightInText:
 	text "Please go right"
 	line "through."
@@ -169,6 +231,46 @@ TrainerHouseB1FCalBeforeText:
 	text "I traveled out"
 	line "here just so I"
 	cont "could battle you."
+	done
+
+TrainerHouseB1FCarrieBeatenText:
+	text "I still can't"
+	line "beat you…!"
+	done
+
+TrainerHouseB1FCarrieBeforeText:
+	text "It's been a while"
+	line "since Goldenrod!"
+	done
+
+TrainerHouseB1FCynthiaBeatenText:
+	text "You, too, are"
+	line "a legend."
+	done
+
+TrainerHouseB1FCynthiaBeforeText:
+	text "I came for the"
+	line "towers' legend."
+	done
+
+TrainerHouseB1FGreenBeatenText:
+	text "Still in the"
+	line "sidelines…!"
+	done
+
+TrainerHouseB1FGreenBeforeText:
+	text "Not everyone from"
+	line "Pallet does work."
+	done
+
+TrainerHouseB1FIrisBeatenText:
+	text "Don't you take"
+	line "my title!"
+	done
+
+TrainerHouseB1FIrisBeforeText:
+	text "Dragons only like"
+	line "the strongest."
 	done
 
 TrainerHouseB1F_MapEventHeader:

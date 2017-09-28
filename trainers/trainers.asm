@@ -852,7 +852,7 @@ PKMNTrainerGroup:
 ; ================
 
 	; CAL (1)
-	db "CYNTHIA@"
+	db "CAL@"
 	db 0 ; normal
 
 	; party
@@ -865,7 +865,7 @@ PKMNTrainerGroup:
 ; ================
 
 	; CAL (2)
-	db "ALDER@"
+	db "CAL@"
 	db 0 ; normal
 
 	; party
@@ -891,13 +891,16 @@ PKMNTrainerGroup:
 ; ================
 
 	; CAL (4)
-	db "VENONAT@"
+	db "CARRIE@"
 	db 0 ; normal
 
 	; party
-	db 65, MEGANIUM
-	db 65, TYPHLOSION
-	db 65, FERALIGATR
+	db 60, MEGANIUM
+	db 60, STANTLER
+	db 60, XATU
+	db 60, SCYTHER
+	db 60, POLITOED
+	db 60, MAROWAK
 
 	db $ff ; end
 
@@ -908,9 +911,12 @@ PKMNTrainerGroup:
 	db 0 ; normal
 
 	; party
-	db 65, MEGANIUM
-	db 65, TYPHLOSION
-	db 65, FERALIGATR
+	db 60, TYPHLOSION
+	db 60, KINGLER
+	db 60, ELECTRODE
+	db 60, SCIZOR
+	db 60, PORYGON2
+	db 60, LEDIAN
 
 	db $ff ; end
 
@@ -921,22 +927,60 @@ PKMNTrainerGroup:
 	db 0 ; normal
 
 	; party
-	db 65, MEGANIUM
-	db 65, TYPHLOSION
-	db 65, FERALIGATR
+	db 60, FERALIGATR
+	db 60, CROBAT
+	db 60, HERACROSS
+	db 60, TANGELA
+	db 60, NIDOQUEEN
+	db 60, GLIGAR
 
 	db $ff ; end
 
 ; ================
 
 	; CAL (7)
-	db "CARRIE@"
+	db "CYNTHIA@"
 	db 0 ; normal
 
 	; party
-	db 65, MEGANIUM
-	db 65, TYPHLOSION
-	db 65, FERALIGATR
+	db 60, MISDREAVUS
+	db 60, QUAGSIRE
+	db 60, TOGETIC
+	db 60, GYARADOS
+	db 60, DUGTRIO
+	db 60, HITMONTOP
+
+	db $ff ; end
+
+; ================
+
+	; CAL (8)
+	db "IRIS@"
+	db 0 ; normal
+
+	; party
+	db 60, TYRANITAR
+	db 60, DRAGONITE
+	db 60, AERODACTYL
+	db 60, RHYDON
+	db 60, LAPRAS
+	db 60, KINGDRA
+
+	db $ff ; end
+
+; ================
+
+	; CAL (9)
+	db "GREEN@"
+	db 0 ; normal
+
+	; party
+	db 60, WIGGLYTUFF
+	db 60, GRANBULL
+	db 60, CLEFABLE
+	db 55, ARTICUNO
+	db 55, ZAPDOS
+	db 55, MOLTRES
 
 	db $ff ; end
 

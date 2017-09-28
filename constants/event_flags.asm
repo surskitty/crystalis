@@ -1546,14 +1546,14 @@
 	const EVENT_BEAT_SAGE_GAKU
 	const EVENT_BEAT_SAGE_MASA
 	const EVENT_BEAT_SAGE_KOJI
-; ???
-	const EVENT_5CC
-	const EVENT_5CD
-	const EVENT_5CE
-	const EVENT_5CF
-	const EVENT_5D0
-	const EVENT_5D1
-	const EVENT_5D2
+; Day of Week Trainer House
+	const EVENT_BEAT_CAL
+	const EVENT_BEAT_CARRIE1
+	const EVENT_BEAT_CARRIE2
+	const EVENT_BEAT_CARRIE3
+	const EVENT_BEAT_CYNTHIA
+	const EVENT_BEAT_IRIS
+	const EVENT_BEAT_GREEN
 	const EVENT_5D3
 	const EVENT_5D4
 	const EVENT_5D5

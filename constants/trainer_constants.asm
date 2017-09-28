@@ -50,6 +50,14 @@ KRIS EQU __enum__
 	const CAL1
 	const CAL2
 	const CAL3
+	const CARRIE1
+	const CARRIE2
+	const CARRIE3
+	const CYNTHIA
+	const IRIS
+	const GREEN
+
+
 
 	trainerclass BRUNO ; d
 
