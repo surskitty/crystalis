@@ -1838,7 +1838,8 @@ MagmarEvosAttacks:
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, VICEGRIP
-	db 7, FOCUS_ENERGY
+	db 1, FOCUS_ENERGY
+	db 7, FURY_CUTTER
 	db 13, BIND
 	db 19, SEISMIC_TOSS
 	db 25, HARDEN
