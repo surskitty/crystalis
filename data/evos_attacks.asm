@@ -198,7 +198,7 @@ ButterfreeEvosAttacks:
 	db 27, CAPTIVATE
 	db 30, SAFEGUARD
 	db 34, PSYBEAM
-	db 40, FAIRY_WIND
+	db 40, SILVER_WIND
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
@@ -383,13 +383,17 @@ SandshrewEvosAttacks:
 	db EVOLVE_LEVEL, 22, SANDSLASH
 	db 0 ; no more evolutions
 	db 1, SCRATCH
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
-	db 17, POISON_STING
-	db 23, SLASH
-	db 30, SWIFT
-	db 37, FURY_SWIPES
-	db 45, SANDSTORM
+	db 1, DEFENSE_CURL
+	db 6, SAND_ATTACK
+	db 10, MUD_SLAP
+	db 14, POISON_STING
+	db 18, RAPID_SPIN
+	db 22, FURY_SWIPES
+	db 26, MAGNITUDE
+	db 30, ROLLOUT
+	db 34, SLASH
+	db 40, SANDSTORM
+	db 46, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
@@ -397,13 +401,16 @@ SandslashEvosAttacks:
 	db 1, SCRATCH
 	db 1, DEFENSE_CURL
 	db 1, SAND_ATTACK
-	db 6, DEFENSE_CURL
-	db 11, SAND_ATTACK
-	db 17, POISON_STING
-	db 24, SLASH
-	db 33, SWIFT
-	db 42, FURY_SWIPES
-	db 52, SANDSTORM
+	db 6, SAND_ATTACK
+	db 10, MUD_SLAP
+	db 14, POISON_STING
+	db 18, RAPID_SPIN
+	db 23, FURY_SWIPES
+	db 28, MAGNITUDE
+	db 33, ROLLOUT
+	db 37, SLASH
+	db 44, SANDSTORM
+	db 52, EARTHQUAKE
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
@@ -630,7 +637,7 @@ ParasEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 7, STUN_SPORE
-	db 13, POISONPOWDER
+	db 10, POISONPOWDER
 	db 19, MEGA_DRAIN
 	db 25, SPORE
 	db 31, SLASH
@@ -644,7 +651,7 @@ ParasectEvosAttacks:
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
 	db 7, STUN_SPORE
-	db 13, POISONPOWDER
+	db 10, POISONPOWDER
 	db 19, MEGA_DRAIN
 	db 28, SPORE
 	db 37, SLASH
@@ -1788,6 +1795,7 @@ ScytherEvosAttacks:
 	db 36, SLASH
 	db 42, SWORDS_DANCE
 	db 48, DOUBLE_TEAM
+	db 54, FURY_CUTTER
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
@@ -2031,6 +2039,7 @@ KabutoEvosAttacks:
 
 KabutopsEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, FURY_CUTTER
 	db 1, SCRATCH
 	db 1, HARDEN
 	db 1, ABSORB
@@ -3081,6 +3090,7 @@ ScizorEvosAttacks:
 	db 36, SLASH
 	db 42, SWORDS_DANCE
 	db 48, DOUBLE_TEAM
+	db 54, FURY_CUTTER
 	db 0 ; no more level-up moves
 
 ShuckleEvosAttacks:
