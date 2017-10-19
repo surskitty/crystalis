@@ -69,7 +69,7 @@ WhitneyGroup:
 		db WRAP
 		db DISABLE
 
-	db 20, MILTANK, BERSERK_GENE
+	db 20, MILTANK, BERRY
 		db ROLLOUT
 		db ATTRACT
 		db STOMP
