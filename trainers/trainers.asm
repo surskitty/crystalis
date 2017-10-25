@@ -44,6 +44,52 @@ FalknerGroup:
 	db $ff ; end
 
 ; ================
+
+	; FALKNER (2)
+	db "FALKNER@"
+	db 3 ; item + moves
+
+	; party
+
+	db 54, PIDGEOT, PRZCUREBERRY
+		db DOUBLE_EDGE
+		db SKY_ATTACK
+		db STEEL_WING
+		db MUD_SLAP
+
+	db 54, CROBAT, NO_ITEM
+		db CONFUSE_RAY
+		db SUPER_FANG
+		db TOXIC
+		db MUD_SLAP
+
+	db 55, GLIGAR, NO_ITEM
+		db METAL_CLAW
+		db WING_ATTACK
+		db QUICK_ATTACK
+		db SLUDGE_BOMB
+
+	db 57, DODRIO, MIRACLEBERRY
+		db DRILL_PECK
+		db MUD_SLAP
+		db TRI_ATTACK
+		db STEEL_WING
+
+	db 55, NOCTOWL, MINT_BERRY
+		db PSYCHIC
+		db MOONBLAST
+		db FLY
+		db MUD_SLAP
+
+	db 56, SKARMORY, QUICK_CLAW
+		db STEEL_WING
+		db DRILL_PECK
+		db SKY_ATTACK
+		db MUD_SLAP
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

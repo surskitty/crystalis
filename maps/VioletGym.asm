@@ -14,11 +14,13 @@ VioletGym_MapScriptHeader:
 FalknerScript_0x683c2:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
-	iftrue .FightDone
 	writetext UnknownText_0x68473
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
+	checkevent EVENT_BEAT_FALKNER
+	iftrue .FightDone
 	winlosstext UnknownText_0x6854a, 0
 	loadtrainer FALKNER, 1
 	startbattle
@@ -52,6 +54,27 @@ FalknerScript_0x683c2:
 	writetext UnknownText_0x68735
 	waitbutton
 .NoRoomForMudSlap:
+	closetext
+	end
+
+.Rematch:
+	checkevent EVENT_BEAT_FALKNER
+	iftrue .RematchDone
+	writetext UnknownText_0x68473
+	waitbutton
+	closetext
+	winlosstext FalknerRematchText, 0
+	loadtrainer FALKNER, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FALKNER
+	opentext
+	writetext FalknerRematchText
+	verbosegiveitem TM_MUD_SLAP
+	verbosegiveitem TM_STEEL_WING
+.RematchDone:
+	writetext UnknownText_0x68648
+	waitbutton
 	closetext
 	end
 
@@ -191,6 +214,12 @@ UnknownText_0x68648:
 	para "In other words, it"
 	line "is both defensive"
 	cont "and offensive."
+	done
+
+FalknerRematchText:
+	text "…Darn! My dad's"
+	line "cherished bird"
+	cont "#MON…"
 	done
 
 UnknownText_0x68735:
