@@ -58,9 +58,6 @@ FalknerScript_0x683c2:
 	end
 
 .Rematch:
-	writetext UnknownText_0x68473
-	waitbutton
-	closetext
 	winlosstext FalknerRematchText, 0
 	loadtrainer FALKNER, 2
 	startbattle
