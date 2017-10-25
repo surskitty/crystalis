@@ -32,6 +32,8 @@ WhitneyScript_0x5400c:
 	waitbutton
 	closetext
 	winlosstext UnknownText_0x541a5, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	loadtrainer WHITNEY, 1
 	startbattle
 	reloadmapafterbattle
@@ -47,6 +49,19 @@ WhitneyScript_0x5400c:
 	checkevent EVENT_MADE_WHITNEY_CRY
 	iffalse .StoppedCrying
 	writetext UnknownText_0x541f4
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	loadtrainer WHITNEY, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_WHITNEY
+	opentext
+	verbosegiveitem TM_SWAGGER
+	verbosegiveitem TM_ATTRACT
+	writetext UnknownText_0x54302
 	waitbutton
 	closetext
 	end

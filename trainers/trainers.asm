@@ -124,6 +124,52 @@ WhitneyGroup:
 	db $ff ; end
 
 ; ================
+
+	; WHITNEY (2)
+	db "WHITNEY@"
+	db 3 ; item + moves
+
+	; party
+
+	db 54, AIPOM, BERRY
+		db BATON_PASS
+		db ICE_PUNCH
+		db SUBSTITUTE
+		db AGILITY
+
+	db 53, BLISSEY, LEFTOVERS
+		db SOFTBOILED
+		db TOXIC
+		db FLAMETHROWER
+		db COUNTER
+
+	db 55, LICKITUNG, BERRY_JUICE
+		db ATTRACT
+		db FLAMETHROWER
+		db THUNDERBOLT
+		db ICE_BEAM
+
+	db 55, STANTLER, ICE_BERRY
+		db TAKE_DOWN
+		db PSYCHIC
+		db HEADBUTT
+		db SWIFT
+
+	db 57, URSARING, BITTER_BERRY
+		db CRUNCH
+		db SWORDS_DANCE
+		db ROCK_SLIDE
+		db THRASH
+
+	db 58, MILTANK, BERSERK_GENE
+		db REVERSAL
+		db EARTHQUAKE
+		db STOMP
+		db MILK_DRINK
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
