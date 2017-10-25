@@ -204,6 +204,52 @@ BugsyGroup:
 	db $ff ; end
 
 ; ================
+
+	; BUGSY (1)
+	db "BUGSY@"
+	db 3 ; items + moves
+
+	; party
+
+	db 54, FORRETRESS, NO_ITEM
+		db TOXIC
+		db EXPLOSION
+		db ZAP_CANNON
+		db SPIKES
+
+	db 54, YANMA, LEFTOVERS
+		db BATON_PASS
+		db PROTECT
+		db SILVER_WIND
+		db ANCIENTPOWER
+
+	db 55, HERACROSS, FOCUS_BAND
+		db MEGAHORN
+		db REVERSAL
+		db EARTHQUAKE
+		db TAKE_DOWN
+
+	db 55, SHUCKLE, GOLD_BERRY
+		db EARTHQUAKE
+		db TOXIC
+		db ENCORE
+		db WRAP
+
+	db 56, VENOMOTH, GOLD_LEAF
+		db PSYCHIC
+		db SLEEP_POWDER
+		db LEECH_LIFE
+		db SUBSTITUTE
+
+	db 57, SCIZOR, NO_ITEM
+		db SILVER_WIND
+		db SWORDS_DANCE
+		db STEEL_WING
+		db WING_ATTACK
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

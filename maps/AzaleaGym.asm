@@ -22,6 +22,8 @@ BugsyScript:
 	writetext BugsyText_INeverLose
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	winlosstext BugsyText_ResearchIncomplete, 0
 	loadtrainer BUGSY, 1
 	startbattle
@@ -46,6 +48,20 @@ BugsyScript:
 	verbosegiveitem TM_FURY_CUTTER
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM49_FURY_CUTTER
+	writetext BugsyText_FuryCutterSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	winlosstext BugsyText_Rematch, 0
+	loadtrainer BUGSY, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BUGSY
+	opentext
+	verbosegiveitem TM_FURY_CUTTER
+	verbosegiveitem TM_SILVER_WIND
 	writetext BugsyText_FuryCutterSpeech
 	waitbutton
 	closetext
@@ -177,6 +193,15 @@ BugsyText_ResearchIncomplete:
 
 	para "OK, you win. Take"
 	line "this BADGE."
+	done
+
+BugsyText_Rematch:
+	text "Whoa, amazing!"
+	line "You're an expert"
+	cont "on #MON!"
+
+	para "My research isn't"
+	line "complete yet."
 	done
 
 Text_ReceivedHiveBadge:
