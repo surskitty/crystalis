@@ -205,13 +205,13 @@ BugsyGroup:
 
 ; ================
 
-	; BUGSY (1)
+	; BUGSY (2)
 	db "BUGSY@"
 	db 3 ; items + moves
 
 	; party
 
-	db 54, FORRETRESS, NO_ITEM
+	db 54, FORRETRESS, MAGNET
 		db TOXIC
 		db EXPLOSION
 		db ZAP_CANNON
@@ -241,7 +241,7 @@ BugsyGroup:
 		db LEECH_LIFE
 		db SUBSTITUTE
 
-	db 57, SCIZOR, NO_ITEM
+	db 57, SCIZOR, SILVER_LEAF
 		db SILVER_WIND
 		db SWORDS_DANCE
 		db STEEL_WING
@@ -286,6 +286,52 @@ MortyGroup:
 		db MEAN_LOOK
 		db CURSE
 		db SHADOW_BALL
+
+	db $ff ; end
+
+; ================
+
+	; MORTY (2)
+	db "MORTY@"
+	db 3 ; items + moves
+
+	; party
+
+	db 54, EXEGGUTOR, BERRY
+		db PSYCHIC
+		db GIGA_DRAIN
+		db STUN_SPORE
+		db DOUBLE_EDGE
+
+	db 53, ARIADOS, BURNT_BERRY
+		db SHADOW_BALL
+		db PSYCHIC
+		db DIG
+		db SLUDGE_BOMB
+
+	db 54, GENGAR, GOLD_BERRY
+		db HYPNOSIS
+		db CURSE
+		db MEAN_LOOK
+		db SHADOW_BALL
+
+	db 55, MAROWAK, THICK_CLUB
+		db BONEMERANG
+		db IRON_TAIL
+		db BELLY_DRUM
+		db HEADBUTT
+
+	db 56, GENGAR, KINGS_ROCK
+		db CONFUSE_RAY
+		db MOONBLAST
+		db FIRE_PUNCH
+		db SHADOW_BALL
+
+	db 56, MISDREAVUS, SPELL_TAG
+		db SHADOW_BALL
+		db PSYCHIC
+		db THUNDERBOLT
+		db CONFUSE_RAY
 
 	db $ff ; end
 

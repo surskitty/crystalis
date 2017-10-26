@@ -33,6 +33,8 @@ MortyScript_0x99d58:
 	writetext UnknownText_0x99e65
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	winlosstext UnknownText_0x9a00a, 0
 	loadtrainer MORTY, 1
 	startbattle
@@ -60,6 +62,20 @@ MortyScript_0x99d58:
 	verbosegiveitem TM_SHADOW_BALL
 	iffalse .NoRoomForShadowBall
 	setevent EVENT_GOT_TM30_SHADOW_BALL
+	writetext MortyText_ShadowBallSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	winlosstext MortyText_Rematch, 0
+	loadtrainer MORTY, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_MORTY
+	opentext
+	verbosegiveitem TM_SHADOW_BALL
+	verbosegiveitem TM_NIGHTMARE
 	writetext MortyText_ShadowBallSpeech
 	waitbutton
 	closetext
@@ -228,6 +244,11 @@ UnknownText_0x9a00a:
 
 	para "All right. This"
 	line "BADGE is yours."
+	done
+
+MortyText_Rematch:
+	text "I'm not good"
+	line "enough yet…"
 	done
 
 Text_ReceivedFogBadge:
