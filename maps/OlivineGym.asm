@@ -17,6 +17,8 @@ JasmineScript_0x9c12f:
 	writetext Jasmine_SteelTypeIntro
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	winlosstext Jasmine_BetterTrainer, 0
 	loadtrainer JASMINE, 1
 	startbattle
@@ -37,6 +39,20 @@ JasmineScript_0x9c12f:
 	verbosegiveitem TM_IRON_TAIL
 	iffalse .NoRoomForIronTail
 	setevent EVENT_GOT_TM23_IRON_TAIL
+	writetext Jasmine_IronTailSpeech
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	winlosstext Jasmine_Rematch, 0
+	loadtrainer JASMINE, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_JASMINE
+	opentext
+	verbosegiveitem TM_IRON_TAIL
+	verbosegiveitem TM_STEEL_WING
 	writetext Jasmine_IronTailSpeech
 	waitbutton
 	closetext
@@ -131,6 +147,14 @@ Jasmine_BetterTrainer:
 
 	para "confer upon you"
 	line "this BADGE."
+	done
+
+Jasmine_Rematch:
+	text "…You are a better"
+	line "trainer than me,"
+
+	para "in both skill and"
+	line "kindness."
 	done
 
 Text_ReceivedMineralBadge:

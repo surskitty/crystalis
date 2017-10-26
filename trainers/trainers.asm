@@ -456,6 +456,52 @@ JasmineGroup:
 	db $ff ; end
 
 ; ================
+
+	; JASMINE (2)
+	db "JASMINE@"
+	db 3 ; items + moves
+
+	; party
+
+	db 55, SKARMORY, PRZCUREBERRY
+		db FLY
+		db STEEL_WING
+		db SCREECH
+		db SPIKES
+
+	db 56, MAGNETON, MAGNET
+		db THUNDERBOLT
+		db SCREECH
+		db REFLECT
+		db LIGHT_SCREEN
+
+	db 54, MAGNETON, MAGNET
+		db THUNDER
+		db SWIFT
+		db RAIN_DANCE
+		db THUNDER_WAVE
+
+	db 55, FORRETRESS, BRIGHTPOWDER
+		db EXPLOSION
+		db ROLLOUT
+		db RAPID_SPIN
+		db GIGA_DRAIN
+
+	db 55, SCIZOR, FOCUS_BAND
+		db WING_ATTACK
+		db METAL_CLAW
+		db REVERSAL
+		db SILVER_WIND
+
+	db 57, STEELIX, QUICK_CLAW
+		db CURSE
+		db EARTHQUAKE
+		db ROCK_SLIDE
+		db IRON_TAIL
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
