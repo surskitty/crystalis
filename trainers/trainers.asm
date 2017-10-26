@@ -376,6 +376,52 @@ PryceGroup:
 	db $ff ; end
 
 ; ================
+
+	; PRYCE (2)
+	db "PRYCE@"
+	db 3 ; items + moves
+
+	; party
+
+	db 54, DELIBIRD, BRICK_PIECE
+		db PRESENT
+		db ICE_BEAM
+		db SPIKES
+		db WHIRLWIND
+
+	db 53, SNEASEL, BERRY
+		db BEAT_UP
+		db ICY_WIND
+		db FAINT_ATTACK
+		db LOW_KICK
+
+	db 55, LAPRAS, GOLD_BERRY
+		db SURF
+		db ICE_BEAM
+		db THUNDER
+		db RAIN_DANCE
+
+	db 53, JYNX, MIRACLEBERRY
+		db ICE_PUNCH
+		db PSYCHIC
+		db SHADOW_BALL
+		db LOVELY_KISS
+
+	db 55, DEWGONG, MINT_BERRY
+		db SURF
+		db ICY_WIND
+		db TAKE_DOWN
+		db REST
+
+	db 57, PILOSWINE, QUICK_CLAW
+		db ICE_BEAM
+		db EARTHQUAKE
+		db BODY_SLAM
+		db ANCIENTPOWER
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

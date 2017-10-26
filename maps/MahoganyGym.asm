@@ -19,16 +19,18 @@ PryceScript_0x199a9e:
 	opentext
 	checkevent EVENT_BEAT_PRYCE
 	iftrue .FightDone
-	writetext UnknownText_0x199b8d
+	writetext PryceText_Intro
 	waitbutton
 	closetext
-	winlosstext UnknownText_0x199cb3, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
+	winlosstext PryceText_Impressed, 0
 	loadtrainer PRYCE, 1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
 	opentext
-	writetext UnknownText_0x199d3b
+	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_GLACIERBADGE
@@ -36,26 +38,40 @@ PryceScript_0x199a9e:
 	scall MahoganyGymTriggerRockets
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
-	iftrue UnknownScript_0x199af0
+	iftrue PryceScript_Defeat
 	setevent EVENT_BEAT_SKIER_ROXANNE
 	setevent EVENT_BEAT_SKIER_CLARISSA
 	setevent EVENT_BEAT_BOARDER_RONALD
 	setevent EVENT_BEAT_BOARDER_BRAD
 	setevent EVENT_BEAT_BOARDER_DOUGLAS
-	writetext UnknownText_0x199d55
+	writetext PryceText_GlacierBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_ICY_WIND
-	iffalse UnknownScript_0x199af4
+	iffalse MahoganyGym_NoRoomForIcyWind
 	setevent EVENT_GOT_TM16_ICY_WIND
-	writetext UnknownText_0x199def
+	writetext PryceText_IcyWindSpeech
 	waitbutton
 	closetext
 	end
 
-UnknownScript_0x199af0:
-	writetext UnknownText_0x199e59
+.Rematch:
+	winlosstext PryceText_Rematch, 0
+	loadtrainer PRYCE, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PRYCE
+	opentext
+	verbosegiveitem TM_BLIZZARD
+	verbosegiveitem TM_ICY_WIND
+	writetext PryceText_IcyWindSpeech
 	waitbutton
-UnknownScript_0x199af4:
+	closetext
+	end
+
+PryceScript_Defeat:
+	writetext PryceText_CherishYourPokemon
+	waitbutton
+MahoganyGym_NoRoomForIcyWind:
 	closetext
 	end
 
@@ -109,7 +125,7 @@ TrainerBoarderBrad:
 BoarderBradScript:
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x199fdd
+	writetext BorderBradTalkText
 	waitbutton
 	closetext
 	end
@@ -120,7 +136,7 @@ TrainerBoarderDouglas:
 BoarderDouglasScript:
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x19a047
+	writetext BorderDouglasTalkText
 	waitbutton
 	closetext
 	end
@@ -149,7 +165,7 @@ MahoganyGymStatue:
 	trainertotext PRYCE, 1, $1
 	jumpstd gymstatue2
 
-UnknownText_0x199b8d:
+PryceText_Intro:
 	text "#MON have many"
 	line "experiences in"
 
@@ -180,7 +196,7 @@ UnknownText_0x199b8d:
 	line "my power!"
 	done
 
-UnknownText_0x199cb3:
+PryceText_Impressed:
 	text "Ah, I am impressed"
 	line "by your prowess."
 
@@ -194,12 +210,23 @@ UnknownText_0x199cb3:
 	line "this BADGE!"
 	done
 
-UnknownText_0x199d3b:
+PryceText_Rematch:
+	text "Ah, I am impressed"
+	line "by your prowess."
+
+	para "With your strong"
+	line "will, I know you"
+
+	para "will overcome all"
+	line "life's obstacles."
+	done
+
+Text_ReceivedGlacierBadge:
 	text "<PLAYER> received"
 	line "GLACIERBADGE."
 	done
 
-UnknownText_0x199d55:
+PryceText_GlacierBadgeSpeech:
 	text "That BADGE will"
 	line "raise the SPECIAL"
 	cont "stats of #MON."
@@ -213,7 +240,7 @@ UnknownText_0x199d55:
 	line "a gift from me!"
 	done
 
-UnknownText_0x199def:
+PryceText_IcyWindSpeech:
 	text "That TM contains"
 	line "ICY WIND."
 
@@ -225,7 +252,7 @@ UnknownText_0x199def:
 	cont "winter."
 	done
 
-UnknownText_0x199e59:
+PryceText_CherishYourPokemon:
 	text "When the ice and"
 	line "snow melt, spring"
 	cont "arrives."
@@ -276,7 +303,7 @@ BoarderBradBeatenText:
 	line "serious we are?"
 	done
 
-UnknownText_0x199fdd:
+BorderBradTalkText:
 	text "This GYM is great."
 	line "I love boarding"
 	cont "with my #MON!"
@@ -292,7 +319,7 @@ BoarderDouglasBeatenText:
 	line "PRYCE's secret."
 	done
 
-UnknownText_0x19a047:
+BorderDouglasTalkText:
 	text "The secret behind"
 	line "PRYCE's power…"
 
