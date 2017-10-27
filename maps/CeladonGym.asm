@@ -16,7 +16,7 @@ CeladonGym_MapScriptHeader:
 ErikaScript_0x72a6a:
 	faceplayer
 	opentext
-	checkflag ENGINE_RAINBOWBADGE
+	checkevent EVENT_BEAT_ERIKA
 	iftrue .FightDone
 	writetext UnknownText_0x72b28
 	waitbutton

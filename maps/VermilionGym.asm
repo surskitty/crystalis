@@ -15,7 +15,7 @@ VermilionGym_MapScriptHeader:
 SurgeScript_0x1920a5:
 	faceplayer
 	opentext
-	checkflag ENGINE_THUNDERBADGE
+	checkevent EVENT_BEAT_LTSURGE
 	iftrue .FightDone
 	writetext UnknownText_0x192142
 	waitbutton
@@ -80,7 +80,7 @@ JugglerHortonScript:
 VermilionGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_LTSURGE
+	checkflag ENGINE_THUNDERBADGE
 	iftrue .VermilionGymGuyWinScript
 	writetext VermilionGymGuyText
 	waitbutton

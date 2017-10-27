@@ -18,7 +18,7 @@ UnknownScript_0x1ab4fa:
 BlaineScript_0x1ab4fb:
 	faceplayer
 	opentext
-	checkflag ENGINE_VOLCANOBADGE
+	checkevent EVENT_BEAT_BLAINE
 	iftrue .FightDone
 	writetext UnknownText_0x1ab548
 	waitbutton

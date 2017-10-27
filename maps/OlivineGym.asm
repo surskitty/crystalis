@@ -78,7 +78,7 @@ OlivineGymTriggerRockets:
 
 OlivineGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_JASMINE
+	checkflag ENGINE_MINERALBADGE
 	iftrue .OlivineGymGuyWinScript
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .OlivineGymGuyPreScript

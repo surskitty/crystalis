@@ -16,7 +16,7 @@ SaffronGym_MapScriptHeader:
 SabrinaScript_0x189c2e:
 	faceplayer
 	opentext
-	checkflag ENGINE_MARSHBADGE
+	checkevent EVENT_BEAT_SABRINA
 	iftrue .FightDone
 	writetext UnknownText_0x189cdf
 	waitbutton
@@ -93,7 +93,7 @@ PsychicJaredScript:
 SaffronGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_SABRINA
+	checkflag ENGINE_MARSHBADGE
 	iftrue .SaffronGymGuyWinScript
 	writetext SaffronGymGuyText
 	waitbutton

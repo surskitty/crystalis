@@ -14,7 +14,7 @@ FuchsiaGym_MapScriptHeader:
 	db 0
 
 FuchsiaGymJanineScript:
-	checkflag ENGINE_SOULBADGE
+	checkevent EVENT_BEAT_JANINE
 	iftrue .FightDone
 	applymovement FUCHSIAGYM_JANINE, Movement_NinjaSpin
 	faceplayer
@@ -198,7 +198,7 @@ CamperBarryScript:
 FuchsiaGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_JANINE
+	checkflag ENGINE_SOULBADGE
 	iftrue .FuchsiaGymGuyWinScript
 	writetext FuchsiaGymGuyText
 	waitbutton

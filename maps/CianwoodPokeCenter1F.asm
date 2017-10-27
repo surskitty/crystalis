@@ -19,7 +19,7 @@ LassScript_0x9dbd2:
 
 CianwoodGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_CHUCK
+	checkflag ENGINE_STORMBADGE
 	iftrue .CianwoodGymGuyWinScript
 	opentext
 	writetext CianwoodGymGuyText

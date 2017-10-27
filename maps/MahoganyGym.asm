@@ -144,7 +144,7 @@ BoarderDouglasScript:
 MahoganyGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_PRYCE
+	checkflag ENGINE_GLACIERBADGE
 	iftrue .MahoganyGymGuyWinScript
 	writetext MahoganyGymGuyText
 	waitbutton

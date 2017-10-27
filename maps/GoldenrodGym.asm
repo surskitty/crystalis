@@ -168,7 +168,7 @@ BeautySamanthaScript:
 
 GoldenrodGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	checkflag ENGINE_PLAINBADGE
 	iftrue .GoldenrodGymGuyWinScript
 	opentext
 	writetext GoldenrodGymGuyText

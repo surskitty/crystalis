@@ -162,7 +162,7 @@ MediumGraceScript:
 EcruteakGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_MORTY
+	checkflag ENGINE_FOGBADGE
 	iftrue .EcruteakGymGuyWinScript
 	writetext EcruteakGymGuyText
 	waitbutton

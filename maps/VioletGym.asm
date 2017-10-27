@@ -108,7 +108,7 @@ Bird_keeperAbeScript:
 VioletGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkflag ENGINE_ZEPHYRBADGE
 	iftrue .VioletGymGuyWinScript
 	writetext VioletGymGuyText
 	waitbutton

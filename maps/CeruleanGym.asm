@@ -63,7 +63,7 @@ UnknownScript_0x1883de:
 MistyScript_0x188432:
 	faceplayer
 	opentext
-	checkflag ENGINE_CASCADEBADGE
+	checkflag EVENT_BEAT_MISTY
 	iftrue .FightDone
 	writetext UnknownText_0x188674
 	waitbutton

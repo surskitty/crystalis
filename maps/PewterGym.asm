@@ -13,7 +13,7 @@ PewterGym_MapScriptHeader:
 BrockScript_0x1a2864:
 	faceplayer
 	opentext
-	checkflag ENGINE_BOULDERBADGE
+	checkevent EVENT_BEAT_BROCK
 	iftrue .FightDone
 	writetext UnknownText_0x1a28d0
 	waitbutton
@@ -54,7 +54,7 @@ CamperJerryScript:
 PewterGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BROCK
+	checkflag ENGINE_BOULDERBADGE
 	iftrue .PewterGymGuyWinScript
 	writetext PewterGymGuyText
 	waitbutton
