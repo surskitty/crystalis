@@ -17,3 +17,4 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - The moves Captivate and Fake Tears have been added.
 - Egg moves have been updated!  All PCNY event moves should be obtainable, as are egg moves added in later games.
 - Psywave has been removed and replaced with Silver Wind.
+
