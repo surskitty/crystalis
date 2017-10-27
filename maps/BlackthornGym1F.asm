@@ -151,6 +151,8 @@ BlackthornGymGuyScript:
 	opentext
 	checkevent EVENT_BEAT_CLAIR
 	iftrue .BlackthornGymGuyWinScript
+	checkflag ENGINE_RISINGBADGE
+	iftrue .BlackthornGymGuyWinScript
 	writetext BlackthornGymGuyText
 	waitbutton
 	closetext
