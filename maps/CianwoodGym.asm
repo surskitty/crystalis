@@ -39,6 +39,8 @@ ChuckScript_0x9d60f:
 	writetext ChuckIntroText3
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	winlosstext ChuckLossText, 0
 	loadtrainer CHUCK, 1
 	startbattle
@@ -63,6 +65,20 @@ ChuckScript_0x9d60f:
 	verbosegiveitem TM_DYNAMICPUNCH
 	iffalse .BagFull
 	setevent EVENT_GOT_TM01_DYNAMICPUNCH
+	writetext ChuckExplainTMText
+	waitbutton
+	closetext
+	end
+
+.Rematch:
+	winlosstext ChuckRematchText, 0
+	loadtrainer CHUCK, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHUCK
+	opentext
+	verbosegiveitem TM_DYNAMICPUNCH
+	verbosegiveitem TM_EARTHQUAKE
 	writetext ChuckExplainTMText
 	waitbutton
 	closetext
@@ -193,6 +209,11 @@ ChuckLossText:
 	para "How about that!"
 	line "You're worthy of"
 	cont "STORMBADGE!"
+	done
+
+ChuckRematchText:
+	text "Wha? Huh?"
+	line "I lost?"
 	done
 
 GetStormBadgeText:

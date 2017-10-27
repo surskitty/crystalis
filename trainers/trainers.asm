@@ -530,6 +530,52 @@ ChuckGroup:
 	db $ff ; end
 
 ; ================
+
+	; CHUCK (2)
+	db "CHUCK@"
+	db 3 ; items + moves
+
+	; party
+
+	db 53, MACHAMP, BERSERK_GENE
+		db DYNAMICPUNCH
+		db ROCK_SLIDE
+		db CROSS_CHOP
+		db STRENGTH
+
+	db 55, HITMONTOP, BLACKGLASSES
+		db ROLLING_KICK
+		db QUICK_ATTACK
+		db PURSUIT
+		db COUNTER
+
+	db 55, HITMONCHAN, BLACKBELT
+		db MACH_PUNCH
+		db DYNAMICPUNCH
+		db ICE_PUNCH
+		db THUNDERPUNCH
+
+	db 55, HITMONLEE, FOCUS_BAND
+		db HI_JUMP_KICK
+		db ENDURE
+		db REVERSAL
+		db EARTHQUAKE
+
+	db 56, PRIMEAPE, BITTER_BERRY
+		db OUTRAGE
+		db DYNAMICPUNCH
+		db SWAGGER
+		db THRASH
+
+	db 57, POLIWRATH, GOLD_BERRY
+		db SUBSTITUTE
+		db MIND_READER
+		db SURF
+		db DYNAMICPUNCH
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
