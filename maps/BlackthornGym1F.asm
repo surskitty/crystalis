@@ -33,6 +33,8 @@ BlackthornGym1F_MapScriptHeader:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	checkflag ENGINE_RISINGBADGE
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
@@ -81,6 +83,23 @@ BlackthornGymClairScript:
 	writetext BlackthornGymClairText_DescribeTM24
 	buttonsound
 	jump .GotTM24
+
+.Rematch
+	writetext ClairIntroText
+	waitbutton
+	closetext
+	winlosstext ClairWinText, 0
+	loadtrainer CLAIR, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CLAIR
+	opentext
+	verbosegiveitem TM_DRAGONBREATH
+	verbosegiveitem TM_MOONBLAST
+	writetext BlackthornGymClairText_DescribeTM24
+	waitbutton
+	closetext
+	end
 
 .BagFull:
 	writetext BlackthornGymClairText_BagFull

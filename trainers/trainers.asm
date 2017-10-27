@@ -616,6 +616,52 @@ ClairGroup:
 	db $ff ; end
 
 ; ================
+
+	; CLAIR (2)
+	db "CLAIR@"
+	db 3 ; item + moves
+
+	; party
+
+	db 53, DRAGONAIR, BERRY
+		db THUNDER_WAVE
+		db SURF
+		db SLAM
+		db DRAGONBREATH
+
+	db 54, AMPHAROS, BRIGHTPOWDER
+		db COTTON_SPORE
+		db THUNDERBOLT
+		db CONFUSE_RAY
+		db DRAGONBREATH
+
+	db 55, DRAGONITE, QUICK_CLAW
+		db WATERFALL
+		db ICE_BEAM
+		db WING_ATTACK
+		db DRAGONBREATH
+
+	db 55, MEGANIUM, BITTER_BERRY
+		db PETAL_DANCE
+		db ANCIENTPOWER
+		db BODY_SLAM
+		db DRAGONBREATH
+
+	db 56, DRAGONITE, MIRACLEBERRY
+		db DRAGONBREATH
+		db FIRE_BLAST
+		db HYPER_BEAM
+		db OUTRAGE
+
+	db 57, KINGDRA, GOLD_BERRY
+		db SMOKESCREEN
+		db SURF
+		db HYPER_BEAM
+		db DRAGONBREATH
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
