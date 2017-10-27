@@ -38,6 +38,14 @@ HallOfFameScript:
 	setevent EVENT_TELEPORT_GUY
 	setevent EVENT_RIVAL_SPROUT_TOWER
 	clearevent EVENT_RED_IN_MT_SILVER
+	clearevent EVENT_BEAT_FALKNER
+	clearevent EVENT_BEAT_BUGSY
+	clearevent EVENT_BEAT_WHITNEY
+	clearevent EVENT_BEAT_MORTY
+	clearevent EVENT_BEAT_PRYCE
+	clearevent EVENT_BEAT_JASMINE
+	clearevent EVENT_BEAT_CHUCK
+	clearevent EVENT_BEAT_CLAIR
 	special SpecialStationaryRespawns
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	clearevent EVENT_OLIVINE_PORT_SPRITES_AFTER_HALL_OF_FAME

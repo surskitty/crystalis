@@ -396,9 +396,17 @@ ElmGiveEverstoneScript:
 	end
 
 ElmScript_CallYou:
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue ElmScript_Rebattle
 	writetext ElmText_CallYou
 	waitbutton
 ElmScript_NoRoomForEverstone:
+	closetext
+	end
+
+ElmScript_Rebattle:
+	writetext ElmRebattleNotif
+	waitbutton
 	closetext
 	end
 
@@ -1214,6 +1222,16 @@ ElmGiveTicketText2:
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
+	done
+
+ElmRebattleNotif:
+	text "Some GYM LEADERS"
+	line "might want to see"
+	cont "how you've grown."
+
+	para "Have you tried"
+	line "talking to them,"
+	cont "<PLAY_G>?"
 	done
 
 ElmsLabSignpostText_Egg:
