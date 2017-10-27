@@ -93,7 +93,7 @@ CianwoodCityChucksWife:
 	iftrue .GotFly
 	writetext ChucksWifeEasierToFlyText
 	buttonsound
-	checkevent EVENT_BEAT_CHUCK
+	checkflag ENGINE_STORMBADGE
 	iftrue .BeatChuck
 	writetext ChucksWifeBeatChuckText
 	waitbutton
