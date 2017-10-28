@@ -7368,6 +7368,19 @@ BikerGroup:
 	db $ff ; end
 
 ; ================
+
+	; BIKER (10)
+	db "DILLON@"
+	db 0 ; normal
+
+	; party
+	db 18, KOFFING
+	db 20, FLAAFFY
+	db 22, MILTANK
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
