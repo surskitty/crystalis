@@ -987,7 +987,7 @@ Route32_MapEventHeader:: db 0, 0
 	signpost 67, 12, SIGNPOST_ITEM, Route32HiddenGreatBall
 	signpost 40, 11, SIGNPOST_ITEM, Route32HiddenSuperPotion
 
-.ObjectEvents: db 14
+.ObjectEvents: db 15
 	person_event SPRITE_FISHER, 49, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherJustin, -1
 	person_event SPRITE_FISHER, 56, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	person_event SPRITE_FISHER, 48, 6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherHenry, -1
