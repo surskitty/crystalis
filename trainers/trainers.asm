@@ -4934,6 +4934,30 @@ SkierGroup:
 	db $ff ; end
 
 ; ================
+
+	; SKIER (3)
+	db "KATHY@"
+	db 0 ; normal
+
+	; party
+	db 50, JYNX
+	db 50, LAPRAS
+
+	db $ff ; end
+
+; ================
+
+	; SKIER (4)
+	db "LEXIE@"
+	db 0 ; normal
+
+	; party
+	db 35, MARILL
+	db 35, CLEFAIRY
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

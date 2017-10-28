@@ -260,6 +260,8 @@ KRIS EQU __enum__
 	trainerclass SKIER ; 21
 	const ROXANNE
 	const CLARISSA
+	const KATHY
+	const LEXIE
 
 	trainerclass TEACHER ; 22
 	const COLETTE
