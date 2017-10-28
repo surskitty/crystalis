@@ -4974,6 +4974,32 @@ TeacherGroup:
 	db $ff ; end
 
 ; ================
+
+	; TEACHER (4)
+	db "MOLLY@"
+	db 0 ; normal
+
+	; party
+	db 22, GIRAFARIG
+	db 21, MR__MIME
+	db 20, KADABRA
+
+	db $ff ; end
+
+; ================
+
+	; TEACHER (5)
+	db "TINA@"
+	db 0 ; normal
+
+	; party
+	db 5, EEVEE
+	db 5, SENTRET
+	db 5, RATTATA
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

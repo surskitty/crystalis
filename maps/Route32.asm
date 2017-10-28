@@ -13,6 +13,8 @@ const_value set 2
 	const ROUTE32_FISHER5
 	const ROUTE32_FRIEDA
 	const ROUTE32_POKE_BALL2
+	const ROUTE32_TEACHER
+
 
 Route32_MapScriptHeader:
 .MapTriggers:
@@ -155,6 +157,17 @@ TrainerCamperRoland:
 	end_if_just_battled
 	opentext
 	writetext CamperRolandAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerTeacherTina:
+	trainer EVENT_BEAT_TEACHER_TINA, TEACHER, TINA, TeacherTinaSeenText, TeacherTinaBeatenText, 0, .Script
+
+.Script:
+	end_if_just_battled
+	opentext
+	writetext TeacherTinaAfterText
 	waitbutton
 	closetext
 	end
@@ -676,6 +689,26 @@ FisherRalphAfterText:
 	line "long friends!"
 	done
 
+TeacherTinaSeenText:
+	text "Have you been"
+	line "taking classes?"
+
+	para "EARL's #MON"
+	line "ACADEMY is very"
+	cont "useful!"
+	done
+
+TeacherTinaBeatenText:
+	text "This ought to be"
+	line "educational…"
+	done
+
+TeacherTinaAfterText:
+	text "You always have"
+	line "more to learn"
+	cont "with #MON."
+	done
+
 FisherRalphSwarmText:
 	text "One, two, three…"
 	line "Muahahaha, what a"
@@ -934,33 +967,27 @@ Route32UnionCaveSignText:
 	line "AHEAD"
 	done
 
-Route32_MapEventHeader:
-	; filler
-	db 0, 0
+Route32_MapEventHeader:: db 0, 0
 
-.Warps:
-	db 4
-	warp_def $49, $b, 1, ROUTE_32_POKECENTER_1F
-	warp_def $2, $4, 3, ROUTE_32_RUINS_OF_ALPH_GATE
-	warp_def $3, $4, 4, ROUTE_32_RUINS_OF_ALPH_GATE
-	warp_def $4f, $6, 4, UNION_CAVE_1F
+.Warps: db 4
+	warp_def 73, 11, 1, ROUTE_32_POKECENTER_1F
+	warp_def 2, 4, 3, ROUTE_32_RUINS_OF_ALPH_GATE
+	warp_def 3, 4, 4, ROUTE_32_RUINS_OF_ALPH_GATE
+	warp_def 79, 6, 4, UNION_CAVE_1F
 
-.XYTriggers:
-	db 2
-	xy_trigger 0, $8, $12, $0, Route32CooltrainerMStopsYou, $0, $0
-	xy_trigger 1, $47, $7, $0, Route32WannaBuyASlowpokeTailScript, $0, $0
+.CoordEvents: db 2
+	xy_trigger 0, 8, 18, 0, Route32CooltrainerMStopsYou, 0, 0
+	xy_trigger 1, 71, 7, 0, Route32WannaBuyASlowpokeTailScript, 0, 0
 
-.Signposts:
-	db 6
-	signpost  5, 13, SIGNPOST_READ, Route32Sign
-	signpost  1,  9, SIGNPOST_READ, Route32RuinsSign
+.BGEvents: db 6
+	signpost 5, 13, SIGNPOST_READ, Route32Sign
+	signpost 1, 9, SIGNPOST_READ, Route32RuinsSign
 	signpost 84, 10, SIGNPOST_READ, Route32UnionCaveSign
 	signpost 73, 12, SIGNPOST_READ, Route32PokeCenterSign
 	signpost 67, 12, SIGNPOST_ITEM, Route32HiddenGreatBall
 	signpost 40, 11, SIGNPOST_ITEM, Route32HiddenSuperPotion
 
-.PersonEvents:
-	db 14
+.ObjectEvents: db 14
 	person_event SPRITE_FISHER, 49, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherJustin, -1
 	person_event SPRITE_FISHER, 56, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 3, TrainerFisherRalph1, -1
 	person_event SPRITE_FISHER, 48, 6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherHenry, -1
@@ -975,3 +1002,5 @@ Route32_MapEventHeader:
 	person_event SPRITE_FISHER, 13, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
 	person_event SPRITE_LASS, 67, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
 	person_event SPRITE_POKE_BALL, 30, 3, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+	person_event SPRITE_TEACHER, 1, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_TRAINER, 3, TrainerTeacherTina, -1
+

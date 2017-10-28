@@ -7,6 +7,7 @@ const_value set 2
 	const ROUTE43_YOUNGSTER
 	const ROUTE43_FRUIT_TREE
 	const ROUTE43_POKE_BALL
+	const ROUTE43_TEACHER
 
 Route43_MapScriptHeader:
 .MapTriggers:
@@ -39,6 +40,35 @@ CamperSpencerScript:
 	waitbutton
 	closetext
 	end
+
+TrainerTeacherMolly:
+	trainer EVENT_BEAT_TEACHER_MOLLY, TEACHER, MOLLY, TeacherMollySeenText, TeacherMollyBeatenText, 0, TeacherMollyScript
+
+TeacherMollyScript:
+	end_if_just_battled
+	opentext
+	writetext TeacherMollyAfterText
+	waitbutton
+	closetext
+	end
+
+TeacherMollySeenText:
+	text "My whole class"
+	line "is crazy about"
+	cont "MAGIKARP."
+	done
+
+TeacherMollyBeatenText:
+	text "Oh my, I lost."
+	line "It wasn't on"
+	cont "purpose, either."
+	done
+
+TeacherMollyAfterText:
+	text "I hope they like"
+	line "the field trip"
+	cont "I planned."
+	done
 
 TrainerPokemaniacBen:
 	trainer EVENT_BEAT_POKEMANIAC_BEN, POKEMANIAC, BEN, PokemaniacBenSeenText, PokemaniacBenBeatenText, 0, PokemaniacBenScript
@@ -525,7 +555,7 @@ Route43_MapEventHeader:
 	signpost 38, 16, SIGNPOST_READ, Route43TrainerTips
 
 .PersonEvents:
-	db 8
+	db 9
 	person_event SPRITE_SUPER_NERD, 5, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
 	person_event SPRITE_SUPER_NERD, 20, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_TRAINER, 3, TrainerPokemaniacBrent1, -1
 	person_event SPRITE_SUPER_NERD, 7, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
@@ -534,3 +564,5 @@ Route43_MapEventHeader:
 	person_event SPRITE_YOUNGSTER, 40, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, (1 << 3) | PAL_OW_GREEN, PERSONTYPE_TRAINER, 3, TrainerCamperSpencer, -1
 	person_event SPRITE_FRUIT_TREE, 26, 1, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FruitTreeScript_0x19d266, -1
 	person_event SPRITE_POKE_BALL, 32, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
+	person_event SPRITE_TEACHER, 29, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, PERSONTYPE_TRAINER, 3, TrainerTeacherMolly, -1
+
