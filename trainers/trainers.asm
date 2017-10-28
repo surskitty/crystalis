@@ -9099,6 +9099,20 @@ MediumGroup:
 	db $ff ; end
 
 ; ================
+
+	; MEDIUM (8)
+	db "HOLLY@"
+	db 0 ; normal
+
+	; party
+	db 5, HOOTHOOT
+	db 6, BELLSPROUT
+	db 7, DITTO
+	db 8, UNOWN
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 

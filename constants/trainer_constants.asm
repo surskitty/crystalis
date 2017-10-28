@@ -562,6 +562,7 @@ KRIS EQU __enum__
 	const ETHEL
 	const REBECCA
 	const DORIS
+	const HOLLY
 
 	trainerclass BOARDER ; 3a
 	const RONALD
