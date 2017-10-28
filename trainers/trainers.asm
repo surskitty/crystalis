@@ -6928,6 +6928,22 @@ GuitaristGroup:
 	db $ff ; end
 
 ; ================
+
+	; GUITARIST (3)
+	db "BILLYJOE@"
+	db 0 ; normal
+
+	; party
+	db 4, KOFFING
+	db 8, KOFFING
+	db 12, KOFFING
+	db 16, KOFFING
+	db 20, KOFFING
+	db 24, KOFFING
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
@@ -9392,13 +9408,14 @@ KimonoGirlGroup:
 ; ================
 
 	; KIMONO_GIRL (1)
-	db "NAOKO@"
+	db "NAOMI@"
 	db 0 ; normal
 
 	; party
-	db 20, SKIPLOOM
-	db 20, VULPIX
-	db 18, SKIPLOOM
+	db 20, MURKROW
+	db 20, HAUNTER
+	db 20, MAGCARGO
+	db 20, MISDREAVUS
 
 	db $ff ; end
 

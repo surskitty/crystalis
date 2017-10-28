@@ -400,6 +400,7 @@ KRIS EQU __enum__
 	trainerclass GUITARIST ; 2b
 	const CLYDE
 	const VINCENT
+	const BILLYJOE
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -590,7 +591,7 @@ KRIS EQU __enum__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
-	const NAOKO1
+	const NAOMI
 	const NAOKO2
 	const SAYO
 	const ZUKI
