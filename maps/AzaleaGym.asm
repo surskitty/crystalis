@@ -142,7 +142,7 @@ TrainerBug_catcherJosh:
 
 AzaleaGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_BUGSY
+	checkflag ENGINE_HIVEBADGE
 	iftrue .AzaleaGymGuyWinScript
 	opentext
 	writetext AzaleaGymGuyText

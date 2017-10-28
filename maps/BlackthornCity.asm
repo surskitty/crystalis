@@ -37,7 +37,7 @@ BlackthornCity_MapScriptHeader:
 BlackthornSuperNerdScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CLAIR
+	checkflag ENGINE_RISINGBADGE
 	iftrue .BeatClair
 	checkevent EVENT_CLEARED_RADIO_TOWER
 	iftrue .ClearedRadioTower
