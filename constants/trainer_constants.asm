@@ -592,7 +592,7 @@ KRIS EQU __enum__
 
 	trainerclass KIMONO_GIRL ; 3c
 	const NAOMI
-	const NAOKO2
+	const NAOKO
 	const SAYO
 	const ZUKI
 	const KUNI
