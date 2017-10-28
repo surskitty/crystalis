@@ -570,6 +570,7 @@ KRIS EQU __enum__
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const CLAUDE
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM

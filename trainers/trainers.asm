@@ -9181,6 +9181,21 @@ BoarderGroup:
 	db $ff ; end
 
 ; ================
+
+	; BOARDER (4)
+	db "CLAUDE@"
+	db 0 ; normal
+
+	; party
+	db 52, SNEASEL
+	db 50, BLISSEY
+	db 54, DELIBIRD
+	db 52, KANGASKHAN
+	db 53, VAPOREON
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
