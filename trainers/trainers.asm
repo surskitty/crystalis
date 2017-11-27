@@ -4604,17 +4604,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (12)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 38, HOUNDOUR
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (13)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4725,28 +4714,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (22)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 36, GOLBAT
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (23)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 30, KOFFING
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (24)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4771,31 +4738,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (26)
-	; UNUSED?
-	db "GRUNT@"
-	db 0 ; normal
-
-	; party
-	db 15, RATTATA
-	db 15, RATTATA
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (27)
-	; UNUSED?
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 22, ZUBAT
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (28)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4814,20 +4756,6 @@ GruntMGroup:
 	; party
 	db 9, RATTATA
 	db 9, RATTATA
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (30)
-	; UNUSED?
-	db "GRUNT@"
-	db 0 ; normal
-
-	; party
-	db 25, GOLBAT
-	db 25, GOLBAT
-	db 30, ARBOK
 
 	db $ff ; end
 
