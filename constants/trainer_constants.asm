@@ -437,6 +437,7 @@ KRIS EQU __enum__
 	const JOEL
 	const GLENN
 	const DILLON
+	const NICKY
 
 	trainerclass BLAINE ; 2e
 
@@ -597,6 +598,7 @@ KRIS EQU __enum__
 	const ZUKI
 	const KUNI
 	const MIKI
+	const ROXIE
 
 	trainerclass TWINS ; 3d
 	const AMYANDMAY1

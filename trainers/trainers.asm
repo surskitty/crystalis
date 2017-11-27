@@ -6934,12 +6934,12 @@ GuitaristGroup:
 	db 0 ; normal
 
 	; party
-	db 4, KOFFING
-	db 8, KOFFING
-	db 12, KOFFING
-	db 16, KOFFING
-	db 20, KOFFING
-	db 24, KOFFING
+	db 44, KOFFING
+	db 46, KOFFING
+	db 48, KOFFING
+	db 50, KOFFING
+	db 52, KOFFING
+	db 54, BEEDRILL
 
 	db $ff ; end
 
@@ -7393,6 +7393,19 @@ BikerGroup:
 	db 18, KOFFING
 	db 20, FLAAFFY
 	db 22, MILTANK
+
+	db $ff ; end
+
+; ================
+
+	; BIKER (10)
+	db "NICKY@"
+	db 0 ; normal
+
+	; party
+	db 48, KOFFING
+	db 50, GRIMER
+	db 52, WEEZING
 
 	db $ff ; end
 
@@ -9471,6 +9484,22 @@ KimonoGirlGroup:
 
 	; party
 	db 17, JOLTEON
+
+	db $ff ; end
+
+; ================
+
+	; KIMONO_GIRL (7)
+	db "ROXIE@"
+	db 0 ; normal
+
+	; party
+	db 50, KOFFING
+	db 50, WEEZING
+	db 50, ARBOK
+	db 50, CROBAT
+	db 50, PARASECT
+
 
 	db $ff ; end
 
