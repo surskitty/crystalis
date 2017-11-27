@@ -7662,48 +7662,6 @@ JugglerGroup:
 	db $ff ; end
 
 ; ================
-
-	; JUGGLER (4)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 16, VOLTORB
-	db 20, KOFFING
-	db 24, VOLTORB
-	db 28, KOFFING
-
-	db $ff ; end
-
-; ================
-
-	; JUGGLER (5)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 28, VOLTORB
-	db 32, KOFFING
-	db 36, ELECTRODE
-	db 40, WEEZING
-
-	db $ff ; end
-
-; ================
-
-	; JUGGLER (6)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 38, VOLTORB
-	db 42, KOFFING
-	db 46, ELECTRODE
-	db 50, WEEZING
-
-	db $ff ; end
-
-; ================
 ; ================================
 
 
