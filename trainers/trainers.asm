@@ -8653,18 +8653,6 @@ CamperGroup:
 
 ; ================
 
-	; CAMPER (9)
-	db "HARVEY@"
-	db 0 ; normal
-	; UNUSED?
-
-	; party
-	db 15, NIDORINO
-
-	db $ff ; end
-
-; ================
-
 	; CAMPER (10)
 	db "DALE@"
 	db 0 ; normal

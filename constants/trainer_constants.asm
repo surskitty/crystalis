@@ -528,7 +528,6 @@ KRIS EQU __enum__
 	const LLOYD
 	const DEAN
 	const SID
-	const HARVEY
 	const DALE
 	const TED
 	const TODD2
