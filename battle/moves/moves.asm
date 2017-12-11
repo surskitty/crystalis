@@ -265,4 +265,3 @@ ENDM
 	move FAIRY_WIND,   EFFECT_ALWAYS_HIT,         40, FAIRY_T,  100, 30,   0
 	move CAPTIVATE,    EFFECT_SP_ATK_DOWN_2,       0, NORMAL,   100, 20,   0
 	move FAKE_TEARS,   EFFECT_SP_DEF_DOWN_2,       0, DARK,     100, 20,   0
-

@@ -4604,17 +4604,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (12)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 38, HOUNDOUR
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (13)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4725,28 +4714,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (22)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 36, GOLBAT
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (23)
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 30, KOFFING
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (24)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4771,31 +4738,6 @@ GruntMGroup:
 
 ; ================
 
-	; GRUNTM (26)
-	; UNUSED?
-	db "GRUNT@"
-	db 0 ; normal
-
-	; party
-	db 15, RATTATA
-	db 15, RATTATA
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (27)
-	; UNUSED?
-	db "EXECUTIVE@"
-	db 0 ; normal
-
-	; party
-	db 22, ZUBAT
-
-	db $ff ; end
-
-; ================
-
 	; GRUNTM (28)
 	db "GRUNT@"
 	db 0 ; normal
@@ -4814,20 +4756,6 @@ GruntMGroup:
 	; party
 	db 9, RATTATA
 	db 9, RATTATA
-
-	db $ff ; end
-
-; ================
-
-	; GRUNTM (30)
-	; UNUSED?
-	db "GRUNT@"
-	db 0 ; normal
-
-	; party
-	db 25, GOLBAT
-	db 25, GOLBAT
-	db 30, ARBOK
 
 	db $ff ; end
 
@@ -6934,12 +6862,12 @@ GuitaristGroup:
 	db 0 ; normal
 
 	; party
-	db 4, KOFFING
-	db 8, KOFFING
-	db 12, KOFFING
-	db 16, KOFFING
-	db 20, KOFFING
-	db 24, KOFFING
+	db 44, KOFFING
+	db 46, KOFFING
+	db 48, KOFFING
+	db 50, KOFFING
+	db 52, KOFFING
+	db 54, BEEDRILL
 
 	db $ff ; end
 
@@ -7397,6 +7325,19 @@ BikerGroup:
 	db $ff ; end
 
 ; ================
+
+	; BIKER (10)
+	db "NICKY@"
+	db 0 ; normal
+
+	; party
+	db 48, KOFFING
+	db 50, GRIMER
+	db 52, WEEZING
+
+	db $ff ; end
+
+; ================
 ; ================================
 
 
@@ -7645,48 +7586,6 @@ JugglerGroup:
 	db 53, MAGNETON
 	db 53, ELECTRODE
 	db 53, MAGNETON
-
-	db $ff ; end
-
-; ================
-
-	; JUGGLER (4)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 16, VOLTORB
-	db 20, KOFFING
-	db 24, VOLTORB
-	db 28, KOFFING
-
-	db $ff ; end
-
-; ================
-
-	; JUGGLER (5)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 28, VOLTORB
-	db 32, KOFFING
-	db 36, ELECTRODE
-	db 40, WEEZING
-
-	db $ff ; end
-
-; ================
-
-	; JUGGLER (6)
-	db "IRWIN@"
-	db 0 ; normal
-
-	; party
-	db 38, VOLTORB
-	db 42, KOFFING
-	db 46, ELECTRODE
-	db 50, WEEZING
 
 	db $ff ; end
 
@@ -8640,18 +8539,6 @@ CamperGroup:
 
 ; ================
 
-	; CAMPER (9)
-	db "HARVEY@"
-	db 0 ; normal
-	; UNUSED?
-
-	; party
-	db 15, NIDORINO
-
-	db $ff ; end
-
-; ================
-
 	; CAMPER (10)
 	db "DALE@"
 	db 0 ; normal
@@ -9471,6 +9358,22 @@ KimonoGirlGroup:
 
 	; party
 	db 17, JOLTEON
+
+	db $ff ; end
+
+; ================
+
+	; KIMONO_GIRL (7)
+	db "ROXIE@"
+	db 0 ; normal
+
+	; party
+	db 50, KOFFING
+	db 50, WEEZING
+	db 50, ARBOK
+	db 50, CROBAT
+	db 50, PARASECT
+
 
 	db $ff ; end
 

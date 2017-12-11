@@ -59,6 +59,7 @@ WhitneyScript_0x5400c:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WHITNEY
 	opentext
+	writetext UnknownText_0x541f4
 	verbosegiveitem TM_SWAGGER
 	verbosegiveitem TM_ATTRACT
 	writetext UnknownText_0x54302

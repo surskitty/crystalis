@@ -260,7 +260,6 @@ KRIS EQU __enum__
 	const GRUNTM_9
 	const GRUNTM_10
 	const GRUNTM_11
-	const GRUNTM_12
 	const GRUNTM_13
 	const GRUNTM_14
 	const GRUNTM_15
@@ -270,15 +269,10 @@ KRIS EQU __enum__
 	const GRUNTM_19
 	const GRUNTM_20
 	const GRUNTM_21
-	const GRUNTM_22
-	const GRUNTM_23
 	const GRUNTM_24
 	const GRUNTM_25
-	const GRUNTM_26
-	const GRUNTM_27
 	const GRUNTM_28
 	const GRUNTM_29
-	const GRUNTM_30
 	const GRUNTM_31
 
 	trainerclass GENTLEMAN ; 20
@@ -468,6 +462,7 @@ KRIS EQU __enum__
 	const JOEL
 	const GLENN
 	const DILLON
+	const NICKY
 
 	trainerclass BLAINE ; 2e
 
@@ -490,9 +485,6 @@ KRIS EQU __enum__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2
-	const IRWIN3
-	const IRWIN4
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
@@ -558,7 +550,6 @@ KRIS EQU __enum__
 	const LLOYD
 	const DEAN
 	const SID
-	const HARVEY
 	const DALE
 	const TED
 	const TODD2
@@ -628,6 +619,7 @@ KRIS EQU __enum__
 	const ZUKI
 	const KUNI
 	const MIKI
+	const ROXIE
 
 	trainerclass TWINS ; 3d
 	const AMYANDMAY1
