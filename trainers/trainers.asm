@@ -4,10 +4,10 @@ Trainers:
 	; Name
 		; String in format "TEXT@"
 	; Type
-		; 0: Level, species
-		; 1: Level, species, moves
-		; 2: Level, species, item
-		; 3: Level, species, item, moves
+		; TRAINERTYPE_NORMAL:     level, species
+		; TRAINERTYPE_MOVES:      level, species, moves
+		; TRAINERTYPE_ITEM:       level, species, item
+		; TRAINERTYPE_ITEM_MOVES: level, species, item, moves
 	; Party
 		; Up to six monsters following the data type
 	; $ff
@@ -19,7 +19,7 @@ FalknerGroup:
 
 	; FALKNER (1)
 	db "FALKNER@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -99,7 +99,7 @@ WhitneyGroup:
 
 	; WHITNEY (1)
 	db "WHITNEY@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -179,7 +179,7 @@ BugsyGroup:
 
 	; BUGSY (1)
 	db "BUGSY@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -259,7 +259,7 @@ MortyGroup:
 
 	; MORTY (1)
 	db "MORTY@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -345,7 +345,7 @@ PryceGroup:
 
 	; PRYCE (1)
 	db "PRYCE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -431,7 +431,7 @@ JasmineGroup:
 
 	; JASMINE (1)
 	db "JASMINE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -459,7 +459,7 @@ JasmineGroup:
 
 	; JASMINE (2)
 	db "JASMINE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -585,7 +585,7 @@ ClairGroup:
 
 	; CLAIR (1)
 	db "CLAIR@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -671,7 +671,7 @@ Rival1Group:
 
 	; RIVAL1 (1)
 	db "?@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 5, CHIKORITA
@@ -682,7 +682,7 @@ Rival1Group:
 
 	; RIVAL1 (2)
 	db "?@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 5, CYNDAQUIL
@@ -693,7 +693,7 @@ Rival1Group:
 
 	; RIVAL1 (3)
 	db "?@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 5, TOTODILE
@@ -704,7 +704,7 @@ Rival1Group:
 
 	; RIVAL1 (4)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 	db 12, GASTLY
@@ -731,7 +731,7 @@ Rival1Group:
 
 	; RIVAL1 (5)
 	db "?@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, GASTLY
@@ -744,7 +744,7 @@ Rival1Group:
 
 	; RIVAL1 (6)
 	db "?@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, GASTLY
@@ -757,7 +757,7 @@ Rival1Group:
 
 	; RIVAL1 (7)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -791,7 +791,7 @@ Rival1Group:
 
 	; RIVAL1 (8)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -825,7 +825,7 @@ Rival1Group:
 
 	; RIVAL1 (9)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -859,7 +859,7 @@ Rival1Group:
 
 	; RIVAL1 (10)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -899,7 +899,7 @@ Rival1Group:
 
 	; RIVAL1 (11)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -939,7 +939,7 @@ Rival1Group:
 
 	; RIVAL1 (12)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -979,7 +979,7 @@ Rival1Group:
 
 	; RIVAL1 (13)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -1025,7 +1025,7 @@ Rival1Group:
 
 	; RIVAL1 (14)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -1071,7 +1071,7 @@ Rival1Group:
 
 	; RIVAL1 (15)
 	db "?@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -1129,7 +1129,7 @@ WillGroup:
 
 	; WILL (1)
 	db "WILL@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -1266,7 +1266,7 @@ PKMNTrainerGroup:
 
 	; CAL (1)
 	db "CAL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, CHIKORITA
@@ -1279,7 +1279,7 @@ PKMNTrainerGroup:
 
 	; CAL (2)
 	db "CAL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, BAYLEEF
@@ -1292,7 +1292,7 @@ PKMNTrainerGroup:
 
 	; CAL (3)
 	db "CAL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 65, MEGANIUM
@@ -1407,7 +1407,7 @@ BrunoGroup:
 
 	; BRUNO (1)
 	db "BRUNO@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -1546,7 +1546,7 @@ KarenGroup:
 
 	; KAREN (1)
 	db "KAREN@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -1684,7 +1684,7 @@ KogaGroup:
 
 	; KOGA (1)
 	db "KOGA@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -1822,7 +1822,7 @@ ChampionGroup:
 
 	; CHAMPION (1)
 	db "LANCE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -1966,7 +1966,7 @@ BrockGroup:
 
 	; BROCK (1)
 	db "BROCK@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -2012,7 +2012,7 @@ MistyGroup:
 
 	; MISTY (1)
 	db "MISTY@"
-	db 3 ; moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -2058,7 +2058,7 @@ LtSurgeGroup:
 
 	; LT_SURGE (1)
 	db "LT.SURGE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -2104,7 +2104,7 @@ ScientistGroup:
 
 	; SCIENTIST (1)
 	db "ROSS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, KOFFING
@@ -2116,7 +2116,7 @@ ScientistGroup:
 
 	; SCIENTIST (2)
 	db "MITCH@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 24, DITTO, METAL_POWDER
@@ -2127,7 +2127,7 @@ ScientistGroup:
 
 	; SCIENTIST (3)
 	db "JED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, MAGNEMITE
@@ -2140,7 +2140,7 @@ ScientistGroup:
 
 	; SCIENTIST (4)
 	db "MARC@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 27, MAGNEMITE
@@ -2153,7 +2153,7 @@ ScientistGroup:
 
 	; SCIENTIST (5)
 	db "RICH@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2175,7 +2175,7 @@ ErikaGroup:
 
 	; ERIKA (1)
 	db "ERIKA@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -2221,7 +2221,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (1)
 	db "JOEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 4, RATTATA
@@ -2232,7 +2232,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (2)
 	db "MIKEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 2, PIDGEY
@@ -2244,7 +2244,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (3)
 	db "ALBERT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 6, RATTATA
@@ -2256,7 +2256,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (4)
 	db "GORDON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, WOOPER
@@ -2267,7 +2267,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (5)
 	db "SAMUEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, RATTATA
@@ -2281,7 +2281,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (6)
 	db "IAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, MANKEY
@@ -2293,7 +2293,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (7)
 	db "JOEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, RATTATA
@@ -2304,7 +2304,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (8)
 	db "JOEY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2320,7 +2320,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (9)
 	db "WARREN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 55, FEAROW
@@ -2331,7 +2331,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (10)
 	db "JIMMY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 53, RATICATE
@@ -2343,7 +2343,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (11)
 	db "OWEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 55, GROWLITHE
@@ -2354,7 +2354,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (12)
 	db "JASON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 53, SANDSLASH
@@ -2366,7 +2366,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (13)
 	db "JOEY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2382,7 +2382,7 @@ YoungsterGroup:
 
 	; YOUNGSTER (14)
 	db "JOEY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2404,7 +2404,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (1)
 	db "JACK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, ODDISH
@@ -2416,7 +2416,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (2)
 	db "KIPP@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, VOLTORB
@@ -2430,7 +2430,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (3)
 	db "ALAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, TANGELA
@@ -2442,7 +2442,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (4)
 	db "JOHNNY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, BELLSPROUT
@@ -2455,7 +2455,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (5)
 	db "DANNY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, JYNX
@@ -2468,7 +2468,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (6)
 	db "TOMMY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, XATU
@@ -2480,7 +2480,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (7)
 	db "DUDLEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, ODDISH
@@ -2491,7 +2491,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (8)
 	db "JOE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, TANGELA
@@ -2503,7 +2503,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (9)
 	db "BILLY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, PARAS
@@ -2517,7 +2517,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (10)
 	db "CHAD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 19, MR__MIME
@@ -2528,7 +2528,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (11)
 	db "NATE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, LEDIAN
@@ -2540,7 +2540,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (12)
 	db "RICKY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 48, AIPOM, BERSERK_GENE
@@ -2552,7 +2552,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (13)
 	db "JACK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 14, ODDISH
@@ -2564,7 +2564,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (14)
 	db "JACK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, GLOOM
@@ -2577,7 +2577,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (15)
 	db "ALAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, NATU
@@ -2590,7 +2590,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (16)
 	db "ALAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, NATU
@@ -2604,7 +2604,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (17)
 	db "CHAD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, MR__MIME
@@ -2616,7 +2616,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (18)
 	db "CHAD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 27, MR__MIME
@@ -2628,7 +2628,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (19)
 	db "JACK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, GLOOM
@@ -2641,7 +2641,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (20)
 	db "JACK@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2669,7 +2669,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (21)
 	db "ALAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 37, NATU
@@ -2683,7 +2683,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (22)
 	db "ALAN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2717,7 +2717,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (23)
 	db "CHAD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 40, MR__MIME
@@ -2729,7 +2729,7 @@ SchoolboyGroup:
 
 	; SCHOOLBOY (24)
 	db "CHAD@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -2757,7 +2757,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (1)
 	db "ROD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, PIDGEY
@@ -2769,7 +2769,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (2)
 	db "ABE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, SPEAROW
@@ -2780,7 +2780,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (3)
 	db "BRYAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, PIDGEY
@@ -2792,7 +2792,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (4)
 	db "THEO@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, PIDGEY
@@ -2807,7 +2807,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (5)
 	db "TOBY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, DODUO
@@ -2820,7 +2820,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (6)
 	db "DENIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, SPEAROW
@@ -2833,7 +2833,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (7)
 	db "VANCE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, PIDGEOTTO
@@ -2845,7 +2845,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (8)
 	db "HANK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, MURKROW
@@ -2857,7 +2857,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (9)
 	db "ROY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, DODRIO
@@ -2869,7 +2869,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (10)
 	db "BORIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, DODUO
@@ -2882,7 +2882,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (11)
 	db "BOB@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, NOCTOWL
@@ -2893,7 +2893,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (12)
 	db "JOSE@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 46, FARFETCH_D, STICK
@@ -2904,7 +2904,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (13)
 	db "PETER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 6, PIDGEY
@@ -2917,7 +2917,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (14)
 	db "JOSE@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 37, FARFETCH_D, STICK
@@ -2928,7 +2928,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (15)
 	db "PERRY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 54, FARFETCH_D, STICK
@@ -2939,7 +2939,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (16)
 	db "BRET@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, PIDGEOTTO
@@ -2951,7 +2951,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (17)
 	db "JOSE@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -2967,7 +2967,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (18)
 	db "VANCE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 42, PIDGEOTTO
@@ -2979,7 +2979,7 @@ BirdKeeperGroup:
 
 	; BIRD_KEEPER (19)
 	db "VANCE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3007,7 +3007,7 @@ LassGroup:
 
 	; LASS (1)
 	db "CARRIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3023,7 +3023,7 @@ LassGroup:
 
 	; LASS (2)
 	db "BRIDGET@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, JIGGLYPUFF
@@ -3036,7 +3036,7 @@ LassGroup:
 
 	; LASS (3)
 	db "ALICE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, GLOOM
@@ -3049,7 +3049,7 @@ LassGroup:
 
 	; LASS (4)
 	db "KRISE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, ODDISH
@@ -3061,7 +3061,7 @@ LassGroup:
 
 	; LASS (5)
 	db "CONNIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, MARILL
@@ -3072,7 +3072,7 @@ LassGroup:
 
 	; LASS (6)
 	db "LINDA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, BULBASAUR
@@ -3085,7 +3085,7 @@ LassGroup:
 
 	; LASS (7)
 	db "LAURA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 44, GLOOM
@@ -3098,7 +3098,7 @@ LassGroup:
 
 	; LASS (8)
 	db "SHANNON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 44, PARAS
@@ -3111,7 +3111,7 @@ LassGroup:
 
 	; LASS (9)
 	db "MICHELLE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, SKIPLOOM
@@ -3124,7 +3124,7 @@ LassGroup:
 
 	; LASS (10)
 	db "DANA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3146,7 +3146,7 @@ LassGroup:
 
 	; LASS (11)
 	db "ELLEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, WIGGLYTUFF
@@ -3158,7 +3158,7 @@ LassGroup:
 
 	; LASS (12)
 	db "CONNIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, MARILL
@@ -3169,7 +3169,7 @@ LassGroup:
 
 	; LASS (13)
 	db "CONNIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, MARILL
@@ -3180,7 +3180,7 @@ LassGroup:
 
 	; LASS (14)
 	db "DANA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3202,7 +3202,7 @@ LassGroup:
 
 	; LASS (15)
 	db "DANA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3224,7 +3224,7 @@ LassGroup:
 
 	; LASS (16)
 	db "DANA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3246,7 +3246,7 @@ LassGroup:
 
 	; LASS (17)
 	db "DANA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3274,7 +3274,7 @@ JanineGroup:
 
 	; JANINE (1)
 	db "JANINE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -3320,7 +3320,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (1)
 	db "NICK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 
@@ -3334,7 +3334,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (2)
 	db "AARON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, IVYSAUR
@@ -3347,7 +3347,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (3)
 	db "PAUL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 34, DRATINI
@@ -3360,7 +3360,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (4)
 	db "CODY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 34, HORSEA
@@ -3372,7 +3372,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (5)
 	db "MIKE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 37, DRAGONAIR
@@ -3383,7 +3383,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (6)
 	db "GAVEN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3411,7 +3411,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (7)
 	db "GAVEN@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -3439,7 +3439,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (8)
 	db "RYAN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3461,7 +3461,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (9)
 	db "JAKE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3483,7 +3483,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (10)
 	db "GAVEN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3511,7 +3511,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (11)
 	db "BLAKE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3539,7 +3539,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (12)
 	db "BRIAN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3555,8 +3555,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (13)
 	db "ERICK@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, BULBASAUR
@@ -3569,8 +3568,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (14)
 	db "ANDY@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, BULBASAUR
@@ -3583,8 +3581,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (15)
 	db "TYLER@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, BULBASAUR
@@ -3597,7 +3594,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (16)
 	db "SEAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, FLAREON
@@ -3610,7 +3607,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (17)
 	db "KEVIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, RHYHORN
@@ -3623,8 +3620,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (18)
 	db "STEVE@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 14, BULBASAUR
@@ -3637,7 +3633,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (19)
 	db "ALLEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 
@@ -3650,7 +3646,7 @@ CooltrainerMGroup:
 
 	; COOLTRAINERM (20)
 	db "DARIN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3672,7 +3668,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (1)
 	db "GWEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, EEVEE
@@ -3686,7 +3682,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (2)
 	db "LOIS@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3708,7 +3704,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (3)
 	db "FRAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 37, SEADRA
@@ -3719,7 +3715,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (4)
 	db "LOLA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 34, DRATINI
@@ -3731,7 +3727,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (5)
 	db "KATE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, SHELLDER
@@ -3743,7 +3739,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (6)
 	db "IRENE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, GOLDEEN
@@ -3755,7 +3751,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (7)
 	db "KELLY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, MARILL
@@ -3768,7 +3764,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (8)
 	db "JOYCE@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -3790,7 +3786,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (9)
 	db "BETH@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3806,7 +3802,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (10)
 	db "REENA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, STARMIE
@@ -3819,7 +3815,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (11)
 	db "MEGAN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3847,7 +3843,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (12)
 	db "BETH@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -3863,7 +3859,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (13)
 	db "CAROL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, ELECTRODE
@@ -3876,7 +3872,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (14)
 	db "QUINN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 58, IVYSAUR
@@ -3888,7 +3884,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (15)
 	db "EMMA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, POLIWHIRL
@@ -3899,7 +3895,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (16)
 	db "CYBIL@"
-	db 0 ; moves
+	db TRAINERTYPE_NORMAL
 
 	; party
 
@@ -3912,7 +3908,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (17)
 	db "JENN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, STARYU
@@ -3924,7 +3920,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (18)
 	db "BETH@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -3940,7 +3936,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (19)
 	db "REENA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 44, STARMIE
@@ -3953,7 +3949,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (20)
 	db "REENA@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -3981,7 +3977,7 @@ CooltrainerFGroup:
 
 	; COOLTRAINERF (21)
 	db "CARA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4015,7 +4011,7 @@ BeautyGroup:
 
 	; BEAUTY (1)
 	db "VICTORIA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, SENTRET
@@ -4028,7 +4024,7 @@ BeautyGroup:
 
 	; BEAUTY (2)
 	db "SAMANTHA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4050,8 +4046,7 @@ BeautyGroup:
 
 	; BEAUTY (3)
 	db "JULIE@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4062,8 +4057,7 @@ BeautyGroup:
 
 	; BEAUTY (4)
 	db "JACLYN@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4074,8 +4068,7 @@ BeautyGroup:
 
 	; BEAUTY (5)
 	db "BRENDA@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, FURRET
@@ -4086,7 +4079,7 @@ BeautyGroup:
 
 	; BEAUTY (6)
 	db "CASSIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, VILEPLUME
@@ -4098,8 +4091,7 @@ BeautyGroup:
 
 	; BEAUTY (7)
 	db "CAROLINE@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, MARILL
@@ -4112,8 +4104,7 @@ BeautyGroup:
 
 	; BEAUTY (8)
 	db "CARLENE@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4124,8 +4115,7 @@ BeautyGroup:
 
 	; BEAUTY (9)
 	db "JESSICA@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4136,7 +4126,7 @@ BeautyGroup:
 
 	; BEAUTY (10)
 	db "RACHAEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4147,7 +4137,7 @@ BeautyGroup:
 
 	; BEAUTY (11)
 	db "ANGELICA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4158,7 +4148,7 @@ BeautyGroup:
 
 	; BEAUTY (12)
 	db "KENDRA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4169,8 +4159,7 @@ BeautyGroup:
 
 	; BEAUTY (13)
 	db "VERONICA@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4181,7 +4170,7 @@ BeautyGroup:
 
 	; BEAUTY (14)
 	db "JULIA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, BAYLEEF
@@ -4194,8 +4183,7 @@ BeautyGroup:
 
 	; BEAUTY (15)
 	db "THERESA@"
-	db 0 ; normal
-	; UNUSED
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, SENTRET
@@ -4206,7 +4194,7 @@ BeautyGroup:
 
 	; BEAUTY (16)
 	db "VALERIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4228,7 +4216,7 @@ BeautyGroup:
 
 	; BEAUTY (17)
 	db "OLIVIA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, CORSOLA
@@ -4245,7 +4233,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (1)
 	db "LARRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, SLOWPOKE
@@ -4256,7 +4244,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (2)
 	db "ANDREW@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, MAROWAK
@@ -4268,7 +4256,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (3)
 	db "CALVIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, KANGASKHAN
@@ -4279,7 +4267,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (4)
 	db "SHANE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, NIDORINA
@@ -4291,7 +4279,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (5)
 	db "BEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, SLOWBRO
@@ -4302,7 +4290,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (6)
 	db "BRENT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, LICKITUNG
@@ -4313,7 +4301,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (7)
 	db "RON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, NIDOKING
@@ -4324,7 +4312,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (8)
 	db "ETHAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, RHYHORN
@@ -4336,7 +4324,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (9)
 	db "BRENT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, LICKITUNG
@@ -4348,7 +4336,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (10)
 	db "BRENT@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4376,7 +4364,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (11)
 	db "ISAAC@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4392,7 +4380,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (12)
 	db "DONALD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, SLOWPOKE
@@ -4404,7 +4392,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (13)
 	db "ZACH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, RHYHORN
@@ -4415,7 +4403,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (14)
 	db "BRENT@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -4449,7 +4437,7 @@ PokemaniacGroup:
 
 	; POKEMANIAC (15)
 	db "MILLER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, NIDOKING
@@ -4467,7 +4455,7 @@ GruntMGroup:
 
 	; GRUNTM (1)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 14, KOFFING
@@ -4478,7 +4466,7 @@ GruntMGroup:
 
 	; GRUNTM (2)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, RATTATA
@@ -4491,7 +4479,7 @@ GruntMGroup:
 
 	; GRUNTM (3)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 29, RATICATE
@@ -4503,7 +4491,7 @@ GruntMGroup:
 
 	; GRUNTM (4)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, GRIMER
@@ -4516,7 +4504,7 @@ GruntMGroup:
 
 	; GRUNTM (5)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, RATTATA
@@ -4531,7 +4519,7 @@ GruntMGroup:
 
 	; GRUNTM (6)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, ZUBAT
@@ -4543,7 +4531,7 @@ GruntMGroup:
 
 	; GRUNTM (7)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, KOFFING
@@ -4557,7 +4545,7 @@ GruntMGroup:
 
 	; GRUNTM (8)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, WEEZING
@@ -4568,7 +4556,7 @@ GruntMGroup:
 
 	; GRUNTM (9)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 29, RATICATE
@@ -4580,7 +4568,7 @@ GruntMGroup:
 
 	; GRUNTM (10)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 27, ZUBAT
@@ -4593,7 +4581,7 @@ GruntMGroup:
 
 	; GRUNTM (11)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, MUK
@@ -4606,7 +4594,7 @@ GruntMGroup:
 
 	; GRUNTM (13)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, RATTATA
@@ -4617,7 +4605,7 @@ GruntMGroup:
 
 	; GRUNTM (14)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 29, RATICATE
@@ -4629,7 +4617,7 @@ GruntMGroup:
 
 	; GRUNTM (15)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, GRIMER
@@ -4641,7 +4629,7 @@ GruntMGroup:
 
 	; GRUNTM (16)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, RATTATA
@@ -4655,7 +4643,7 @@ GruntMGroup:
 
 	; GRUNTM (17)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, GOLBAT
@@ -4666,7 +4654,7 @@ GruntMGroup:
 
 	; GRUNTM (18)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, RATTATA
@@ -4679,7 +4667,7 @@ GruntMGroup:
 
 	; GRUNTM (19)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, VENONAT
@@ -4691,7 +4679,7 @@ GruntMGroup:
 
 	; GRUNTM (20)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, DROWZEE
@@ -4703,7 +4691,7 @@ GruntMGroup:
 
 	; GRUNTM (21)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, ZUBAT
@@ -4716,7 +4704,7 @@ GruntMGroup:
 
 	; GRUNTM (24)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, KOFFING
@@ -4728,7 +4716,7 @@ GruntMGroup:
 
 	; GRUNTM (25)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, KOFFING
@@ -4740,7 +4728,7 @@ GruntMGroup:
 
 	; GRUNTM (28)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, RATICATE
@@ -4751,7 +4739,7 @@ GruntMGroup:
 
 	; GRUNTM (29)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, RATTATA
@@ -4763,7 +4751,7 @@ GruntMGroup:
 
 	; GRUNTM (31)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, GOLBAT
@@ -4780,7 +4768,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (1)
 	db "PRESTON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, GROWLITHE
@@ -4792,7 +4780,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (2)
 	db "EDWARD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 53, PERSIAN
@@ -4803,7 +4791,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (3)
 	db "GREGORY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, PIKACHU
@@ -4815,7 +4803,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (4)
 	db "VIRGIL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, PONYTA
@@ -4826,7 +4814,7 @@ GentlemanGroup:
 
 	; GENTLEMAN (5)
 	db "ALFRED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, NOCTOWL
@@ -4843,7 +4831,7 @@ SkierGroup:
 
 	; SKIER (1)
 	db "ROXANNE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, JYNX
@@ -4854,7 +4842,7 @@ SkierGroup:
 
 	; SKIER (2)
 	db "CLARISSA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, DEWGONG
@@ -4895,7 +4883,7 @@ TeacherGroup:
 
 	; TEACHER (1)
 	db "COLETTE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 56, CLEFAIRY
@@ -4906,7 +4894,7 @@ TeacherGroup:
 
 	; TEACHER (2)
 	db "HILLARY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 52, AIPOM, NO_ITEM
@@ -4918,7 +4906,7 @@ TeacherGroup:
 
 	; TEACHER (3)
 	db "SHIRLEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 55, JIGGLYPUFF
@@ -4961,7 +4949,7 @@ SabrinaGroup:
 
 	; SABRINA (1)
 	db "SABRINA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5001,7 +4989,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (1)
 	db "DON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 3, CATERPIE
@@ -5013,7 +5001,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (2)
 	db "ROB@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, BEEDRILL
@@ -5025,7 +5013,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (3)
 	db "ED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, BEEDRILL
@@ -5038,7 +5026,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (4)
 	db "WADE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 2, CATERPIE
@@ -5052,7 +5040,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (5)
 	db "BENNY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, WEEDLE
@@ -5065,7 +5053,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (6)
 	db "AL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 12, CATERPIE
@@ -5077,7 +5065,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (7)
 	db "JOSH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, PARAS
@@ -5088,7 +5076,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (8)
 	db "ARNIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, VENONAT
@@ -5099,7 +5087,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (9)
 	db "KEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, ARIADOS
@@ -5111,7 +5099,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (10)
 	db "WADE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, METAPOD
@@ -5125,7 +5113,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (11)
 	db "WADE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, BUTTERFREE
@@ -5139,7 +5127,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (12)
 	db "DOUG@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, ARIADOS
@@ -5150,7 +5138,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (13)
 	db "ARNIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, VENONAT
@@ -5161,7 +5149,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (14)
 	db "ARNIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5177,7 +5165,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (15)
 	db "WADE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5211,7 +5199,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (16)
 	db "WADE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5245,7 +5233,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (17)
 	db "ARNIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5261,7 +5249,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (18)
 	db "ARNIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5277,7 +5265,7 @@ BugCatcherGroup:
 
 	; BUG_CATCHER (19)
 	db "WAYNE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 8, LEDYBA
@@ -5295,7 +5283,7 @@ FisherGroup:
 
 	; FISHER (1)
 	db "JUSTIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 5, MAGIKARP
@@ -5309,7 +5297,7 @@ FisherGroup:
 
 	; FISHER (2)
 	db "RALPH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, GOLDEEN
@@ -5320,7 +5308,7 @@ FisherGroup:
 
 	; FISHER (3)
 	db "ARNOLD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, TENTACRUEL
@@ -5331,7 +5319,7 @@ FisherGroup:
 
 	; FISHER (4)
 	db "KYLE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, SEAKING
@@ -5344,7 +5332,7 @@ FisherGroup:
 
 	; FISHER (5)
 	db "HENRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 8, POLIWAG
@@ -5356,7 +5344,7 @@ FisherGroup:
 
 	; FISHER (6)
 	db "MARVIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, MAGIKARP
@@ -5370,7 +5358,7 @@ FisherGroup:
 
 	; FISHER (7)
 	db "TULLY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, QWILFISH
@@ -5381,7 +5369,7 @@ FisherGroup:
 
 	; FISHER (8)
 	db "ANDRE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 27, GYARADOS
@@ -5392,7 +5380,7 @@ FisherGroup:
 
 	; FISHER (9)
 	db "RAYMOND@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, MAGIKARP
@@ -5406,7 +5394,7 @@ FisherGroup:
 
 	; FISHER (10)
 	db "WILTON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, GOLDEEN
@@ -5419,7 +5407,7 @@ FisherGroup:
 
 	; FISHER (11)
 	db "EDGAR@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5441,7 +5429,7 @@ FisherGroup:
 
 	; FISHER (12)
 	db "JONAH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, SHELLDER
@@ -5455,7 +5443,7 @@ FisherGroup:
 
 	; FISHER (13)
 	db "MARTIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, REMORAID
@@ -5467,7 +5455,7 @@ FisherGroup:
 
 	; FISHER (14)
 	db "STEPHEN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 75, MAGIKARP
@@ -5481,7 +5469,7 @@ FisherGroup:
 
 	; FISHER (15)
 	db "BARNEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, GYARADOS
@@ -5494,7 +5482,7 @@ FisherGroup:
 
 	; FISHER (16)
 	db "RALPH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 19, GOLDEEN
@@ -5505,7 +5493,7 @@ FisherGroup:
 
 	; FISHER (17)
 	db "RALPH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 19, QWILFISH
@@ -5517,7 +5505,7 @@ FisherGroup:
 
 	; FISHER (18)
 	db "TULLY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, QWILFISH
@@ -5528,7 +5516,7 @@ FisherGroup:
 
 	; FISHER (19)
 	db "TULLY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 38, GOLDEEN
@@ -5541,7 +5529,7 @@ FisherGroup:
 
 	; FISHER (20)
 	db "WILTON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 39, GOLDEEN
@@ -5554,7 +5542,7 @@ FisherGroup:
 
 	; FISHER (21)
 	db "SCOTT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, QWILFISH
@@ -5567,7 +5555,7 @@ FisherGroup:
 
 	; FISHER (22)
 	db "WILTON@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5595,7 +5583,7 @@ FisherGroup:
 
 	; FISHER (23)
 	db "RALPH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 35, QWILFISH
@@ -5607,7 +5595,7 @@ FisherGroup:
 
 	; FISHER (24)
 	db "RALPH@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5629,7 +5617,7 @@ FisherGroup:
 
 	; FISHER (25)
 	db "TULLY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -5663,7 +5651,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (1)
 	db "HAROLD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, REMORAID
@@ -5675,7 +5663,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (2)
 	db "SIMON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, TENTACOOL
@@ -5687,7 +5675,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (3)
 	db "RANDALL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, SHELLDER
@@ -5700,7 +5688,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (4)
 	db "CHARLIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, SHELLDER
@@ -5713,7 +5701,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (5)
 	db "GEORGE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, TENTACOOL
@@ -5729,7 +5717,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (6)
 	db "BERKE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, QWILFISH
@@ -5740,7 +5728,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (7)
 	db "KIRK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, GYARADOS
@@ -5752,7 +5740,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (8)
 	db "MATTHEW@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, KRABBY
@@ -5765,7 +5753,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (9)
 	db "HAL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, SEEL
@@ -5778,7 +5766,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (10)
 	db "PATON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, PILOSWINE
@@ -5790,7 +5778,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (11)
 	db "DARYL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, SHELLDER
@@ -5803,7 +5791,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (12)
 	db "WALTER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, HORSEA
@@ -5816,7 +5804,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (13)
 	db "TONY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, STARYU
@@ -5829,7 +5817,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (14)
 	db "JEROME@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 46, SEADRA
@@ -5843,7 +5831,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (15)
 	db "TUCKER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, SHELLDER
@@ -5855,7 +5843,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (16)
 	db "RICK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, STARYU
@@ -5868,7 +5856,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (17)
 	db "CAMERON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, MARILL
@@ -5880,7 +5868,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (18)
 	db "SETH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, QUAGSIRE
@@ -5893,7 +5881,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (19)
 	db "JAMES@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, STARYU
@@ -5906,7 +5894,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (20)
 	db "LEWIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, STARYU
@@ -5919,7 +5907,7 @@ SwimmerMGroup:
 
 	; SWIMMERM (21)
 	db "PARKER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, HORSEA
@@ -5938,7 +5926,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (1)
 	db "ELAINE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, STARYU
@@ -5949,7 +5937,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (2)
 	db "PAULA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 19, STARYU
@@ -5961,7 +5949,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (3)
 	db "KAYLEE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, GOLDEEN
@@ -5974,7 +5962,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (4)
 	db "SUSIE@"
-	db 0 ; none
+	db TRAINERTYPE_NORMAL
 
 	; party
 
@@ -5988,7 +5976,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (5)
 	db "DENISE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, SEEL
@@ -5999,7 +5987,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (6)
 	db "KARA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, STARYU
@@ -6011,7 +5999,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (7)
 	db "WENDY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6033,7 +6021,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (8)
 	db "LISA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, JYNX
@@ -6044,7 +6032,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (9)
 	db "JILL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, DEWGONG
@@ -6055,7 +6043,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (10)
 	db "MARY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, SEAKING
@@ -6066,7 +6054,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (11)
 	db "KATIE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, DEWGONG
@@ -6077,7 +6065,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (12)
 	db "DAWN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, SEAKING
@@ -6088,7 +6076,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (13)
 	db "TARA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, SEAKING
@@ -6099,7 +6087,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (14)
 	db "NICOLE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, MARILL
@@ -6112,7 +6100,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (15)
 	db "LORI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, STARMIE
@@ -6124,7 +6112,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (16)
 	db "JODY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, SEAKING
@@ -6135,7 +6123,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (17)
 	db "NIKKI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, SEEL
@@ -6149,7 +6137,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (18)
 	db "DIANA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, GOLDUCK
@@ -6160,7 +6148,7 @@ SwimmerFGroup:
 
 	; SWIMMERF (19)
 	db "BRIANA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, SEAKING
@@ -6178,7 +6166,7 @@ SailorGroup:
 
 	; SAILOR (1)
 	db "EUGENE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, POLIWHIRL
@@ -6191,7 +6179,7 @@ SailorGroup:
 
 	; SAILOR (2)
 	db "HUEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, POLIWAG
@@ -6203,7 +6191,7 @@ SailorGroup:
 
 	; SAILOR (3)
 	db "TERRELL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, POLIWHIRL
@@ -6214,7 +6202,7 @@ SailorGroup:
 
 	; SAILOR (4)
 	db "KENT@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6236,7 +6224,7 @@ SailorGroup:
 
 	; SAILOR (5)
 	db "ERNEST@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, MACHOP
@@ -6249,7 +6237,7 @@ SailorGroup:
 
 	; SAILOR (6)
 	db "JEFF@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, RATICATE
@@ -6261,7 +6249,7 @@ SailorGroup:
 
 	; SAILOR (7)
 	db "GARRETT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, KINGLER
@@ -6272,7 +6260,7 @@ SailorGroup:
 
 	; SAILOR (8)
 	db "KENNETH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, MACHOP
@@ -6286,7 +6274,7 @@ SailorGroup:
 
 	; SAILOR (9)
 	db "STANLEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, MACHOP
@@ -6299,7 +6287,7 @@ SailorGroup:
 
 	; SAILOR (10)
 	db "HARRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 19, WOOPER
@@ -6310,7 +6298,7 @@ SailorGroup:
 
 	; SAILOR (11)
 	db "HUEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, POLIWHIRL
@@ -6322,7 +6310,7 @@ SailorGroup:
 
 	; SAILOR (12)
 	db "HUEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 44, POLITOED
@@ -6334,7 +6322,7 @@ SailorGroup:
 
 	; SAILOR (13)
 	db "HUEY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6362,7 +6350,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (1)
 	db "STAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, GRIMER
@@ -6373,7 +6361,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (2)
 	db "ERIC@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 11, GRIMER
@@ -6385,7 +6373,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (3)
 	db "GREGG@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, MAGNEMITE
@@ -6398,7 +6386,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (4)
 	db "JAY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, KOFFING
@@ -6410,7 +6398,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (5)
 	db "DAVE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, DITTO
@@ -6421,7 +6409,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (6)
 	db "SAM@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, GRIMER
@@ -6433,7 +6421,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (7)
 	db "TOM@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, MAGNEMITE
@@ -6446,7 +6434,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (8)
 	db "PAT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 36, PORYGON
@@ -6457,7 +6445,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (9)
 	db "SHAWN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 46, MAGNEMITE
@@ -6470,7 +6458,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (10)
 	db "TERU@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, MAGNEMITE
@@ -6484,7 +6472,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (11)
 	db "RUSS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 27, MAGNEMITE
@@ -6497,7 +6485,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (12)
 	db "NORTON@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6513,7 +6501,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (13)
 	db "HUGH@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6529,7 +6517,7 @@ SuperNerdGroup:
 
 	; SUPER_NERD (14)
 	db "MARKUS@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -6551,7 +6539,7 @@ Rival2Group:
 
 	; RIVAL2 (1)
 	db "?@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6597,7 +6585,7 @@ Rival2Group:
 
 	; RIVAL2 (2)
 	db "?@"
-	db 3 ; items + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6643,7 +6631,7 @@ Rival2Group:
 
 	; RIVAL2 (3)
 	db "?@"
-	db 3 ; moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6689,7 +6677,7 @@ Rival2Group:
 
 	; RIVAL2 (4)
 	db "?@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6735,7 +6723,7 @@ Rival2Group:
 
 	; RIVAL2 (5)
 	db "?@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6781,7 +6769,7 @@ Rival2Group:
 
 	; RIVAL2 (6)
 	db "?@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -6833,7 +6821,7 @@ GuitaristGroup:
 
 	; GUITARIST (1)
 	db "CLYDE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, ELEKID
@@ -6845,7 +6833,7 @@ GuitaristGroup:
 
 	; GUITARIST (2)
 	db "VINCENT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 57, MAGNEMITE
@@ -6881,7 +6869,7 @@ HikerGroup:
 
 	; HIKER (1)
 	db "ANTHONY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, GRAVELER
@@ -6893,7 +6881,7 @@ HikerGroup:
 
 	; HIKER (2)
 	db "RUSSELL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 4, GEODUDE
@@ -6906,7 +6894,7 @@ HikerGroup:
 
 	; HIKER (3)
 	db "PHILLIP@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, GEODUDE
@@ -6919,7 +6907,7 @@ HikerGroup:
 
 	; HIKER (4)
 	db "LEONARD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, GEODUDE
@@ -6931,7 +6919,7 @@ HikerGroup:
 
 	; HIKER (5)
 	db "ANTHONY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 11, GEODUDE
@@ -6943,7 +6931,7 @@ HikerGroup:
 
 	; HIKER (6)
 	db "BENJAMIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, DIGLETT
@@ -6956,7 +6944,7 @@ HikerGroup:
 
 	; HIKER (7)
 	db "ERIK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 29, MANKEY
@@ -6969,7 +6957,7 @@ HikerGroup:
 
 	; HIKER (8)
 	db "MICHAEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, GEODUDE
@@ -6982,7 +6970,7 @@ HikerGroup:
 
 	; HIKER (9)
 	db "PARRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, ONIX
@@ -6994,7 +6982,7 @@ HikerGroup:
 
 	; HIKER (10)
 	db "TIMOTHY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7016,7 +7004,7 @@ HikerGroup:
 
 	; HIKER (11)
 	db "BAILEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, GEODUDE
@@ -7031,7 +7019,7 @@ HikerGroup:
 
 	; HIKER (12)
 	db "ANTHONY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, GRAVELER
@@ -7044,7 +7032,7 @@ HikerGroup:
 
 	; HIKER (13)
 	db "TIM@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, GRAVELER
@@ -7057,7 +7045,7 @@ HikerGroup:
 
 	; HIKER (14)
 	db "NOLAND@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, SANDSLASH
@@ -7069,7 +7057,7 @@ HikerGroup:
 
 	; HIKER (15)
 	db "SIDNEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, DUGTRIO
@@ -7081,7 +7069,7 @@ HikerGroup:
 
 	; HIKER (16)
 	db "KENNY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, SANDSLASH
@@ -7095,7 +7083,7 @@ HikerGroup:
 
 	; HIKER (17)
 	db "JIM@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 55, MACHAMP
@@ -7106,7 +7094,7 @@ HikerGroup:
 
 	; HIKER (18)
 	db "DANIEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 11, ONIX
@@ -7117,7 +7105,7 @@ HikerGroup:
 
 	; HIKER (19)
 	db "PARRY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7145,7 +7133,7 @@ HikerGroup:
 
 	; HIKER (20)
 	db "PARRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, ONIX
@@ -7156,7 +7144,7 @@ HikerGroup:
 
 	; HIKER (21)
 	db "ANTHONY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 40, GRAVELER
@@ -7169,7 +7157,7 @@ HikerGroup:
 
 	; HIKER (22)
 	db "ANTHONY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7203,7 +7191,7 @@ BikerGroup:
 
 	; BIKER (1)
 	db "BENNY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, KOFFING
@@ -7216,7 +7204,7 @@ BikerGroup:
 
 	; BIKER (2)
 	db "KAZU@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, KOFFING
@@ -7229,7 +7217,7 @@ BikerGroup:
 
 	; BIKER (3)
 	db "DWAYNE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, KOFFING
@@ -7243,7 +7231,7 @@ BikerGroup:
 
 	; BIKER (4)
 	db "HARRIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, FLAREON
@@ -7254,7 +7242,7 @@ BikerGroup:
 
 	; BIKER (5)
 	db "ZEKE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, KOFFING
@@ -7266,7 +7254,7 @@ BikerGroup:
 
 	; BIKER (6)
 	db "CHARLES@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, KOFFING
@@ -7279,7 +7267,7 @@ BikerGroup:
 
 	; BIKER (7)
 	db "RILEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, WEEZING
@@ -7290,7 +7278,7 @@ BikerGroup:
 
 	; BIKER (8)
 	db "JOEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, MAGBY
@@ -7302,7 +7290,7 @@ BikerGroup:
 
 	; BIKER (9)
 	db "GLENN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, KOFFING
@@ -7347,7 +7335,7 @@ BlaineGroup:
 
 	; BLAINE (1)
 	db "BLAINE@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -7393,7 +7381,7 @@ BurglarGroup:
 
 	; BURGLAR (1)
 	db "DUNCAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, MAGBY
@@ -7406,7 +7394,7 @@ BurglarGroup:
 
 	; BURGLAR (2)
 	db "EDDIE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7428,7 +7416,7 @@ BurglarGroup:
 
 	; BURGLAR (3)
 	db "COREY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 45, KOFFING
@@ -7448,7 +7436,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (1)
 	db "OTIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, MAGMAR
@@ -7461,7 +7449,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (2)
 	db "DICK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, CHARMANDER
@@ -7473,7 +7461,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (3)
 	db "NED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, GROWLITHE
@@ -7486,7 +7474,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (4)
 	db "BURT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, WEEZING
@@ -7498,7 +7486,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (5)
 	db "BILL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 6, MAGBY
@@ -7510,7 +7498,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (6)
 	db "WALT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 11, MAGBY
@@ -7522,7 +7510,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (7)
 	db "RAY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, VULPIX
@@ -7533,7 +7521,7 @@ FirebreatherGroup:
 
 	; FIREBREATHER (8)
 	db "LYLE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, KOFFING
@@ -7552,7 +7540,7 @@ JugglerGroup:
 
 	; JUGGLER (1)
 	db "IRWIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 2, VOLTORB
@@ -7566,7 +7554,7 @@ JugglerGroup:
 
 	; JUGGLER (2)
 	db "FRITZ@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, MR__MIME
@@ -7579,13 +7567,55 @@ JugglerGroup:
 
 	; JUGGLER (3)
 	db "HORTON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 53, ELECTRODE
 	db 53, MAGNETON
 	db 53, ELECTRODE
 	db 53, MAGNETON
+
+	db $ff ; end
+
+; ================
+
+	; JUGGLER (4)
+	db "IRWIN@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 6, VOLTORB
+	db 10, VOLTORB
+	db 14, VOLTORB
+	db 18, VOLTORB
+
+	db $ff ; end
+
+; ================
+
+	; JUGGLER (5)
+	db "IRWIN@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 18, VOLTORB
+	db 22, VOLTORB
+	db 26, VOLTORB
+	db 30, ELECTRODE
+
+	db $ff ; end
+
+; ================
+
+	; JUGGLER (6)
+	db "IRWIN@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 18, VOLTORB
+	db 22, VOLTORB
+	db 26, VOLTORB
+	db 30, ELECTRODE
 
 	db $ff ; end
 
@@ -7599,7 +7629,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (1)
 	db "KENJI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 37, ONIX
@@ -7613,7 +7643,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (2)
 	db "YOSHI@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7629,7 +7659,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (3)
 	db "KENJI@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7663,7 +7693,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (4)
 	db "LAO@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7679,7 +7709,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (5)
 	db "NOB@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7701,7 +7731,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (6)
 	db "KIYO@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 34, HITMONLEE
@@ -7713,7 +7743,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (7)
 	db "LUNG@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 23, MANKEY
@@ -7726,7 +7756,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (8)
 	db "KENJI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, MACHOKE
@@ -7737,7 +7767,7 @@ BlackbeltGroup:
 
 	; BLACKBELT_T (9)
 	db "WAI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, MACHOKE
@@ -7756,7 +7786,7 @@ ExecutiveMGroup:
 
 	; EXECUTIVEM (1)
 	db "EXECUTIVE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7784,7 +7814,7 @@ ExecutiveMGroup:
 
 	; EXECUTIVEM (2)
 	db "EXECUTIVE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7800,7 +7830,7 @@ ExecutiveMGroup:
 
 	; EXECUTIVEM (3)
 	db "EXECUTIVE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7846,7 +7876,7 @@ ExecutiveMGroup:
 
 	; EXECUTIVEM (4)
 	db "EXECUTIVE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, ZUBAT
@@ -7865,7 +7895,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (1)
 	db "NATHAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 26, GIRAFARIG
@@ -7876,7 +7906,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (2)
 	db "FRANKLIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, KADABRA
@@ -7887,7 +7917,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (3)
 	db "HERMAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, EXEGGCUTE
@@ -7900,7 +7930,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (4)
 	db "FIDEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, XATU
@@ -7911,7 +7941,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (5)
 	db "GREG@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7933,7 +7963,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (6)
 	db "NORMAN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7955,7 +7985,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (7)
 	db "MARK@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -7983,7 +8013,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (8)
 	db "PHIL@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8005,7 +8035,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (9)
 	db "RICHARD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 36, ESPEON
@@ -8016,7 +8046,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (10)
 	db "GILBERT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, STARMIE
@@ -8029,7 +8059,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (11)
 	db "JARED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, MR__MIME
@@ -8042,7 +8072,7 @@ PsychicGroup:
 
 	; PSYCHIC_T (12)
 	db "RODNEY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, DROWZEE
@@ -8060,7 +8090,7 @@ PicnickerGroup:
 
 	; PICNICKER (1)
 	db "LIZ@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, NIDORAN_F
@@ -8071,7 +8101,7 @@ PicnickerGroup:
 
 	; PICNICKER (2)
 	db "GINA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 8, HOPPIP
@@ -8084,7 +8114,7 @@ PicnickerGroup:
 
 	; PICNICKER (3)
 	db "BROOKE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8100,7 +8130,7 @@ PicnickerGroup:
 
 	; PICNICKER (4)
 	db "KIM@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, VULPIX
@@ -8111,7 +8141,7 @@ PicnickerGroup:
 
 	; PICNICKER (5)
 	db "CINDY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, NIDOQUEEN
@@ -8122,7 +8152,7 @@ PicnickerGroup:
 
 	; PICNICKER (6)
 	db "HOPE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 54, FLAAFFY
@@ -8133,7 +8163,7 @@ PicnickerGroup:
 
 	; PICNICKER (7)
 	db "SHARON@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, FURRET
@@ -8145,7 +8175,7 @@ PicnickerGroup:
 
 	; PICNICKER (8)
 	db "DEBRA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 53, SEAKING
@@ -8156,7 +8186,7 @@ PicnickerGroup:
 
 	; PICNICKER (9)
 	db "GINA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, HOPPIP
@@ -8169,7 +8199,7 @@ PicnickerGroup:
 
 	; PICNICKER (10)
 	db "ERIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, PONYTA
@@ -8181,7 +8211,7 @@ PicnickerGroup:
 
 	; PICNICKER (11)
 	db "LIZ@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, WEEPINBELL
@@ -8193,7 +8223,7 @@ PicnickerGroup:
 
 	; PICNICKER (12)
 	db "LIZ@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 24, WEEPINBELL
@@ -8206,7 +8236,7 @@ PicnickerGroup:
 
 	; PICNICKER (13)
 	db "HEIDI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, SKIPLOOM
@@ -8218,7 +8248,7 @@ PicnickerGroup:
 
 	; PICNICKER (14)
 	db "EDNA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, NIDORINA
@@ -8230,7 +8260,7 @@ PicnickerGroup:
 
 	; PICNICKER (15)
 	db "GINA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, SKIPLOOM
@@ -8243,7 +8273,7 @@ PicnickerGroup:
 
 	; PICNICKER (16)
 	db "TIFFANY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8259,7 +8289,7 @@ PicnickerGroup:
 
 	; PICNICKER (17)
 	db "TIFFANY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8275,7 +8305,7 @@ PicnickerGroup:
 
 	; PICNICKER (18)
 	db "ERIN@"
-	db 2 ; item + normal
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 32, PONYTA, NO_ITEM
@@ -8288,7 +8318,7 @@ PicnickerGroup:
 
 	; PICNICKER (19)
 	db "TANYA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 52, EXEGGUTOR
@@ -8299,7 +8329,7 @@ PicnickerGroup:
 
 	; PICNICKER (20)
 	db "TIFFANY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8315,7 +8345,7 @@ PicnickerGroup:
 
 	; PICNICKER (21)
 	db "ERIN@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8343,7 +8373,7 @@ PicnickerGroup:
 
 	; PICNICKER (22)
 	db "LIZ@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 34, WEEPINBELL
@@ -8356,7 +8386,7 @@ PicnickerGroup:
 
 	; PICNICKER (23)
 	db "LIZ@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8384,7 +8414,7 @@ PicnickerGroup:
 
 	; PICNICKER (24)
 	db "GINA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 38, SKIPLOOM
@@ -8397,7 +8427,7 @@ PicnickerGroup:
 
 	; PICNICKER (25)
 	db "GINA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8425,7 +8455,7 @@ PicnickerGroup:
 
 	; PICNICKER (26)
 	db "TIFFANY@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8447,7 +8477,7 @@ CamperGroup:
 
 	; CAMPER (1)
 	db "ROLAND@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, NIDORAN_M
@@ -8458,7 +8488,7 @@ CamperGroup:
 
 	; CAMPER (2)
 	db "TODD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 14, PSYDUCK
@@ -8469,7 +8499,7 @@ CamperGroup:
 
 	; CAMPER (3)
 	db "IVAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, SLUGMA
@@ -8482,7 +8512,7 @@ CamperGroup:
 
 	; CAMPER (4)
 	db "ELLIOT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 13, SANDSHREW
@@ -8494,7 +8524,7 @@ CamperGroup:
 
 	; CAMPER (5)
 	db "BARRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 56, NIDOKING
@@ -8505,7 +8535,7 @@ CamperGroup:
 
 	; CAMPER (6)
 	db "LLOYD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 44, NIDOKING
@@ -8516,7 +8546,7 @@ CamperGroup:
 
 	; CAMPER (7)
 	db "DEAN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 48, GOLDUCK
@@ -8528,7 +8558,7 @@ CamperGroup:
 
 	; CAMPER (8)
 	db "SID@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 47, DUGTRIO
@@ -8539,10 +8569,20 @@ CamperGroup:
 
 ; ================
 
+	; CAMPER (9)
+	db "HARVEY@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 15, NIDORINO
+
+	db $ff ; end
+
+; ================
+
 	; CAMPER (10)
 	db "DALE@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 15, NIDORINO
@@ -8553,7 +8593,7 @@ CamperGroup:
 
 	; CAMPER (11)
 	db "TED@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, MANKEY
@@ -8564,7 +8604,7 @@ CamperGroup:
 
 	; CAMPER (12)
 	db "TODD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 21, GEODUDE
@@ -8577,7 +8617,7 @@ CamperGroup:
 
 	; CAMPER (13)
 	db "TODD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 28, GEODUDE
@@ -8590,8 +8630,7 @@ CamperGroup:
 
 	; CAMPER (14)
 	db "THOMAS@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, GRAVELER
@@ -8605,8 +8644,7 @@ CamperGroup:
 
 	; CAMPER (15)
 	db "LEROY@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, GRAVELER
@@ -8620,8 +8658,7 @@ CamperGroup:
 
 	; CAMPER (16)
 	db "DAVID@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, GRAVELER
@@ -8635,8 +8672,7 @@ CamperGroup:
 
 	; CAMPER (17)
 	db "JOHN@"
-	db 0 ; normal
-	; UNUSED?
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, GRAVELER
@@ -8650,7 +8686,7 @@ CamperGroup:
 
 	; CAMPER (18)
 	db "JERRY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 55, SANDSLASH
@@ -8663,7 +8699,7 @@ CamperGroup:
 
 	; CAMPER (19)
 	db "SPENCER@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, SANDSHREW
@@ -8676,7 +8712,7 @@ CamperGroup:
 
 	; CAMPER (20)
 	db "TODD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 40, GRAVELER
@@ -8690,7 +8726,7 @@ CamperGroup:
 
 	; CAMPER (21)
 	db "TODD@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8724,7 +8760,7 @@ CamperGroup:
 
 	; CAMPER (22)
 	db "QUENTIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, FEAROW
@@ -8743,7 +8779,7 @@ ExecutiveFGroup:
 
 	; EXECUTIVEF (1)
 	db "EXECUTIVE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8771,7 +8807,7 @@ ExecutiveFGroup:
 
 	; EXECUTIVEF (2)
 	db "EXECUTIVE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -8805,7 +8841,7 @@ SageGroup:
 
 	; SAGE (1)
 	db "CHOW@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 4, BELLSPROUT
@@ -8818,7 +8854,7 @@ SageGroup:
 
 	; SAGE (2)
 	db "NICO@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 4, BELLSPROUT
@@ -8831,7 +8867,7 @@ SageGroup:
 
 	; SAGE (3)
 	db "JIN@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 6, BELLSPROUT
@@ -8842,7 +8878,7 @@ SageGroup:
 
 	; SAGE (4)
 	db "TROY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, BELLSPROUT
@@ -8854,7 +8890,7 @@ SageGroup:
 
 	; SAGE (5)
 	db "JEFFREY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 22, HAUNTER
@@ -8865,7 +8901,7 @@ SageGroup:
 
 	; SAGE (6)
 	db "PING@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 16, GASTLY
@@ -8880,7 +8916,7 @@ SageGroup:
 
 	; SAGE (7)
 	db "EDMOND@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 3, BELLSPROUT
@@ -8893,7 +8929,7 @@ SageGroup:
 
 	; SAGE (8)
 	db "NEAL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 6, BELLSPROUT
@@ -8905,7 +8941,7 @@ SageGroup:
 
 	; SAGE (9)
 	db "LI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 7, BELLSPROUT
@@ -8918,7 +8954,7 @@ SageGroup:
 
 	; SAGE (10)
 	db "GAKU@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, NOCTOWL
@@ -8930,7 +8966,7 @@ SageGroup:
 
 	; SAGE (11)
 	db "MASA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, NOCTOWL
@@ -8942,7 +8978,7 @@ SageGroup:
 
 	; SAGE (12)
 	db "KOJI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 32, NOCTOWL
@@ -8960,7 +8996,7 @@ MediumGroup:
 
 	; MEDIUM (1)
 	db "MARTHA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 18, GASTLY
@@ -8973,7 +9009,7 @@ MediumGroup:
 
 	; MEDIUM (2)
 	db "GRACE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, HAUNTER
@@ -8985,7 +9021,7 @@ MediumGroup:
 
 	; MEDIUM (3)
 	db "BETHANY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, HAUNTER
@@ -8996,7 +9032,7 @@ MediumGroup:
 
 	; MEDIUM (4)
 	db "MARGRET@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, HAUNTER
@@ -9007,7 +9043,7 @@ MediumGroup:
 
 	; MEDIUM (5)
 	db "ETHEL@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, HAUNTER
@@ -9018,7 +9054,7 @@ MediumGroup:
 
 	; MEDIUM (6)
 	db "REBECCA@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, DROWZEE
@@ -9030,7 +9066,7 @@ MediumGroup:
 
 	; MEDIUM (7)
 	db "DORIS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 49, SLOWPOKE
@@ -9062,7 +9098,7 @@ BoarderGroup:
 
 	; BOARDER (1)
 	db "RONALD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, SEEL
@@ -9075,7 +9111,7 @@ BoarderGroup:
 
 	; BOARDER (2)
 	db "BRAD@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 33, SWINUB
@@ -9087,7 +9123,7 @@ BoarderGroup:
 
 	; BOARDER (3)
 	db "DOUGLAS@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, SHELLDER
@@ -9121,7 +9157,7 @@ PokefanMGroup:
 
 	; POKEFANM (1)
 	db "WILLIAM@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 14, RAICHU, BERRY
@@ -9132,7 +9168,7 @@ PokefanMGroup:
 
 	; POKEFANM (2)
 	db "DEREK@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 19, PIKACHU, BERRY
@@ -9143,7 +9179,7 @@ PokefanMGroup:
 
 	; POKEFANM (3)
 	db "ROBERT@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 53, QUAGSIRE, GOLD_BERRY
@@ -9154,7 +9190,7 @@ PokefanMGroup:
 
 	; POKEFANM (4)
 	db "JOSHUA@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 43, PIKACHU, BERRY
@@ -9170,7 +9206,7 @@ PokefanMGroup:
 
 	; POKEFANM (5)
 	db "CARTER@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 49, BULBASAUR, BERRY
@@ -9186,7 +9222,7 @@ PokefanMGroup:
 
 	; POKEFANM (6)
 	db "TREVOR@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 53, PSYDUCK, GOLD_BERRY
@@ -9197,7 +9233,7 @@ PokefanMGroup:
 
 	; POKEFANM (7)
 	db "BRANDON@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 13, SNUBBULL, BERRY
@@ -9209,7 +9245,7 @@ PokefanMGroup:
 
 	; POKEFANM (8)
 	db "JEREMY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 48, MEOWTH, BERRY
@@ -9222,7 +9258,7 @@ PokefanMGroup:
 
 	; POKEFANM (9)
 	db "COLIN@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 52, DELIBIRD, GOLD_BERRY
@@ -9233,7 +9269,7 @@ PokefanMGroup:
 
 	; POKEFANM (10)
 	db "DEREK@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 39, PIKACHU, BERRY
@@ -9244,7 +9280,7 @@ PokefanMGroup:
 
 	; POKEFANM (11)
 	db "DEREK@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 56, PIKACHU, LIGHT_BALL
@@ -9255,7 +9291,7 @@ PokefanMGroup:
 
 	; POKEFANM (12)
 	db "ALEX@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 49, NIDOKING, GOLD_BERRY
@@ -9268,7 +9304,7 @@ PokefanMGroup:
 
 	; POKEFANM (13)
 	db "REX@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 55, PHANPY, GOLD_BERRY
@@ -9279,7 +9315,7 @@ PokefanMGroup:
 
 	; POKEFANM (14)
 	db "ALLAN@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 55, TEDDIURSA, GOLD_BERRY
@@ -9296,7 +9332,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (1)
 	db "NAOMI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 20, MURKROW
@@ -9310,7 +9346,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (2)
 	db "NAOKO@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, FLAREON
@@ -9321,7 +9357,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (3)
 	db "SAYO@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, ESPEON
@@ -9332,7 +9368,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (4)
 	db "ZUKI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, UMBREON
@@ -9343,7 +9379,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (5)
 	db "KUNI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, VAPOREON
@@ -9354,7 +9390,7 @@ KimonoGirlGroup:
 
 	; KIMONO_GIRL (6)
 	db "MIKI@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, JOLTEON
@@ -9387,7 +9423,7 @@ TwinsGroup:
 
 	; TWINS (1)
 	db "AMY & MAY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, SPINARAK
@@ -9399,7 +9435,7 @@ TwinsGroup:
 
 	; TWINS (2)
 	db "ANN & ANNE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -9421,7 +9457,7 @@ TwinsGroup:
 
 	; TWINS (3)
 	db "ANN & ANNE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -9443,7 +9479,7 @@ TwinsGroup:
 
 	; TWINS (4)
 	db "AMY & MAY@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 10, LEDYBA
@@ -9455,7 +9491,7 @@ TwinsGroup:
 
 	; TWINS (5)
 	db "JO & ZOE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, VICTREEBEL
@@ -9467,7 +9503,7 @@ TwinsGroup:
 
 	; TWINS (6)
 	db "JO & ZOE@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 50, VILEPLUME
@@ -9479,7 +9515,7 @@ TwinsGroup:
 
 	; TWINS (7)
 	db "MEG & PEG@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, TEDDIURSA
@@ -9491,7 +9527,7 @@ TwinsGroup:
 
 	; TWINS (8)
 	db "MEG & PEG@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 51, PHANPY
@@ -9503,7 +9539,7 @@ TwinsGroup:
 
 	; TWINS (9)
 	db "LEA & PIA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -9525,7 +9561,7 @@ TwinsGroup:
 
 	; TWINS (10)
 	db "LEA & PIA@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -9553,7 +9589,7 @@ PokefanFGroup:
 
 	; POKEFANF (1)
 	db "BEVERLY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 14, SNUBBULL, BERRY
@@ -9564,7 +9600,7 @@ PokefanFGroup:
 
 	; POKEFANF (2)
 	db "RUTH@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 19, PIKACHU, BERRY
@@ -9575,7 +9611,7 @@ PokefanFGroup:
 
 	; POKEFANF (3)
 	db "BEVERLY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 33, SNUBBULL, BERRY
@@ -9586,7 +9622,7 @@ PokefanFGroup:
 
 	; POKEFANF (4)
 	db "BEVERLY@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 52, GRANBULL, GOLD_BERRY
@@ -9597,7 +9633,7 @@ PokefanFGroup:
 
 	; POKEFANF (5)
 	db "GEORGIA@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 43, SENTRET, BERRY
@@ -9612,7 +9648,7 @@ PokefanFGroup:
 
 	; POKEFANF (6)
 	db "JAIME@"
-	db 2 ; item
+	db TRAINERTYPE_ITEM
 
 	; party
 	db 18, MEOWTH, BERRY
@@ -9629,7 +9665,7 @@ RedGroup:
 
 	; RED (1)
 	db "RED@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -9681,7 +9717,7 @@ BlueGroup:
 
 	; BLUE (1)
 	db "BLUE@"
-	db 3 ; item + moves
+	db TRAINERTYPE_ITEM_MOVES
 
 	; party
 
@@ -9733,7 +9769,7 @@ OfficerGroup:
 
 	; OFFICER (1)
 	db "KEITH@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 17, GROWLITHE
@@ -9744,7 +9780,7 @@ OfficerGroup:
 
 	; OFFICER (2)
 	db "DIRK@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 14, GROWLITHE
@@ -9762,7 +9798,7 @@ GruntFGroup:
 
 	; GRUNTF (1)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 9, ZUBAT
@@ -9774,7 +9810,7 @@ GruntFGroup:
 
 	; GRUNTF (2)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 31, ARBOK
@@ -9785,7 +9821,7 @@ GruntFGroup:
 
 	; GRUNTF (3)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 30, GLOOM
@@ -9797,7 +9833,7 @@ GruntFGroup:
 
 	; GRUNTF (4)
 	db "GRUNT@"
-	db 0 ; normal
+	db TRAINERTYPE_NORMAL
 
 	; party
 	db 25, EKANS
@@ -9811,7 +9847,7 @@ GruntFGroup:
 
 	; GRUNTF (5)
 	db "GRUNT@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
@@ -9839,7 +9875,7 @@ MysticalmanGroup:
 
 	; MYSTICALMAN (1)
 	db "EUSINE@"
-	db 1 ; moves
+	db TRAINERTYPE_MOVES
 
 	; party
 
