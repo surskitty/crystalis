@@ -899,7 +899,7 @@ MoveEffectPriorities: ; 3c5df
 	db EFFECT_PROTECT,      3
 	db EFFECT_ENDURE,       3
 	db EFFECT_PRIORITY_HIT, 2
-	db EFFECT_WHIRLWIND,    0
+	db EFFECT_FORCE_SWITCH, 0
 	db EFFECT_COUNTER,      0
 	db EFFECT_MIRROR_COAT,  0
 	db -1
@@ -2991,7 +2991,7 @@ SelectBattleMon: ; 3d329
 
 PickPartyMonInBattle: ; 3d33c
 .loop
-	ld a, $2 ; Which PKMN?
+	ld a, PARTYMENUACTION_SWITCH ; Which PKMN?
 	ld [PartyMenuActionText], a
 	call JumpToPartyMenuAndPrintText
 	call SelectBattleMon
@@ -8639,7 +8639,7 @@ ExitBattle: ; 3f69e
 	call ShowLinkBattleParticipantsAfterEnd
 	ld c, 150
 	call DelayFrames
-	call DetermineMobileBattleResult
+	call DisplayLinkBattleResult
 	ret
 
 .not_linked
@@ -8736,7 +8736,7 @@ ShowLinkBattleParticipantsAfterEnd: ; 3f759
 	ret
 ; 3f77c
 
-DetermineMobileBattleResult: ; 3f77c
+DisplayLinkBattleResult: ; 3f77c
 	callba CheckMobileBattleError
 	jp c, .Mobile_InvalidBattle
 	call IsMobileBattle2

@@ -326,7 +326,7 @@ Function10020b: ; 10020b
 	ld a, $01
 	ld [rSVBK], a
 
-	callba Function17f555
+	callba DisplayMobileError
 
 	pop af
 	ld [rSVBK], a
@@ -4084,7 +4084,7 @@ StartMobileBattle: ; 101a21
 Function101a4f: ; 101a4f
 	ld a, 1
 	ld [wDisableTextAcceleration], a
-	callba DetermineMobileBattleResult
+	callba DisplayLinkBattleResult
 	xor a
 	ld [wDisableTextAcceleration], a
 	callba CleanUpBattleRAM

@@ -7249,13 +7249,13 @@ Function117942: ; 117942 (45:7942)
 	call PlaceString
 	ld a, $1e
 	ld [wcd4e], a
-	ld a, $5
+	ld a, BANK(sMobileLoginPassword)
 	call GetSRAMBank
 	ld a, [wcd4f]
 	ld [sMobileLoginPassword], a
 	ld hl, $c708
 	ld de, sMobileLoginPassword + 1
-	ld bc, LOGIN_PASSWORD_LENGTH
+	ld bc, MOBILE_LOGIN_PASSWORD_LENGTH
 	call CopyBytes
 	call CloseSRAM
 	ld a, [wcd4f]
@@ -7533,7 +7533,7 @@ Function117bb6:
 .asm_117bd0
 	ld a, $2
 	ld [wc303], a
-	callba Function17f555
+	callba DisplayMobileError
 	ld a, $80
 	ld [wJumptableIndex], a
 	ret
