@@ -44,4 +44,5 @@ pokecrystal.txt
 gfx/pics/*/bitmask.asm
 gfx/pics/*/frames.asm
 crowdmap/*.*
+crowdmap
 !gfx/pics/*/shiny.pal
