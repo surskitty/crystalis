@@ -332,11 +332,6 @@ ParkBall: ; e8a2
 	jr nz, .statuscheck
 	ld a, 1
 .statuscheck
-; This routine is buggy. It was intended that SLP and FRZ provide a higher
-; catch rate than BRN/PSN/PAR, which in turn provide a higher catch rate than
-; no status effect at all. But instead, it makes BRN/PSN/PAR provide no
-; benefit.
-; Uncomment the line below to fix this.
 	ld b, a
 	ld a, [EnemyMonStatus]
 	and 1 << FRZ | SLP
@@ -634,9 +629,8 @@ ParkBall: ; e8a2
 	ld a, [CurItem]
 	cp FRIEND_BALL
 	jr nz, .SkipBoxMonFriendBall
-	; Bug: overwrites the happiness of the first mon in the box!
-	ld a, FRIEND_BALL_HAPPINESS
 	ld [sBoxMon1Happiness], a
+	ld a, FRIEND_BALL_HAPPINESS
 .SkipBoxMonFriendBall:
 	call CloseSRAM
 
