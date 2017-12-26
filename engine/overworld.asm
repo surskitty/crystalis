@@ -112,7 +112,7 @@ GetPlayerSprite: ; 14183
 
 
 AddMapSprites: ; 141c9
-	call GetMapPermission
+	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .outdoor
 	call AddIndoorSprites
@@ -178,14 +178,14 @@ MapCallbackSprites_LoadUsedSpritesGFX: ; 14209
 	ret nz
 
 	ld c, EMOTE_SHADOW
-	callba LoadEmote
-	call GetMapPermission
+	farcall LoadEmote
+	call GetMapEnvironment
 	call CheckOutdoorMap
 	ld c, EMOTE_GRASS_RUSTLE
 	jr z, .outdoor
 	ld c, EMOTE_BOULDER_DUST
 .outdoor
-	callba LoadEmote
+	farcall LoadEmote
 	ret
 ; 14236
 
@@ -265,7 +265,7 @@ GetMonSprite: ; 14259
 	and a
 	jr z, .NoBreedmon
 
-	callba LoadOverworldMonIcon
+	farcall LoadOverworldMonIcon
 
 	ld l, 1
 	ld h, 0
@@ -389,8 +389,8 @@ AddSpriteGFX: ; 142e5
 
 
 LoadSpriteGFX: ; 14306
-; Bug: b is not preserved, so
-; it's useless as a next count.
+; Bug: b is not preserved, so it's useless as a next count.
+; Uncomment the lines below to fix.
 
 	ld hl, UsedSprites
 	ld b, SPRITE_GFX_LIST_CAPACITY
@@ -409,7 +409,9 @@ LoadSpriteGFX: ; 14306
 	ret
 
 .LoadSprite:
+	; push bc
 	call GetSprite
+	; pop bc
 	ld a, l
 	ret
 ; 1431e
@@ -661,10 +663,10 @@ rept 4
 	add hl, hl
 endr
 	ld a, l
-	add VTiles0 % $100
+	add LOW(VTiles0)
 	ld l, a
 	ld a, h
-	adc VTiles0 / $100
+	adc HIGH(VTiles0)
 	ld h, a
 	ret
 ; 14418
@@ -721,6 +723,6 @@ INCLUDE "data/emote_headers.asm"
 
 INCLUDE "data/sprite_mons.asm"
 
-INCLUDE "data/outdoor_sprites.asm"
+INCLUDE "data/maps/outdoor_sprites.asm"
 
 INCLUDE "gfx/sprite_headers.asm"

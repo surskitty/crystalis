@@ -1368,9 +1368,19 @@ _GetDecorationSprite: ; 27085
 	ld c, a
 	push de
 	push hl
-	callba GetDecorationSprite
+	farcall GetDecorationSprite
 	pop hl
 	pop de
 	ld a, c
 	ret
 ; 27092
+
+PadCoords_de: ; 27092
+	ld a, d
+	add 4
+	ld d, a
+	ld a, e
+	add 4
+	ld e, a
+	call GetBlockLocation
+	ret

@@ -17,23 +17,23 @@ const_value set 2
 
 
 Route32_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 3
-	maptrigger .DummyTrigger0
-	maptrigger .DummyTrigger1
-	maptrigger .DummyTrigger2
+	scene_script .DummyScene0
+	scene_script .DummyScene1
+	scene_script .DummyScene2
 
 .MapCallbacks:
 	db 1
 	dbw MAPCALLBACK_OBJECTS, .Frieda
 
-.DummyTrigger0:
+.DummyScene0:
 	end
 
-.DummyTrigger1:
+.DummyScene1:
 	end
 
-.DummyTrigger2:
+.DummyScene2:
 	end
 
 .Frieda:
@@ -48,7 +48,7 @@ Route32_MapScriptHeader:
 
 Route32CooltrainerMScript:
 	faceplayer
-Route32CooltrainerMTrigger:
+Route32CooltrainerMContinueScene:
 	opentext
 	checkevent EVENT_GOT_MIRACLE_SEED_IN_ROUTE_32
 	iftrue .GotMiracleSeed
@@ -88,7 +88,7 @@ Route32CooltrainerMTrigger:
 	closetext
 	end
 
-Route32CooltrainerMStopsYou:
+Route32CooltrainerMStopsYouScene:
 	spriteface ROUTE32_COOLTRAINER_M, LEFT
 	spriteface PLAYER, RIGHT
 	opentext
@@ -99,7 +99,7 @@ Route32CooltrainerMStopsYou:
 	applymovement PLAYER, Movement_Route32CooltrainerMPushesYouBackToViolet
 	stopfollow
 	spriteface PLAYER, DOWN
-	scall Route32CooltrainerMTrigger
+	scall Route32CooltrainerMContinueScene
 	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset1
 	applymovement ROUTE32_COOLTRAINER_M, Movement_Route32CooltrainerMReset2
 	end
@@ -129,7 +129,7 @@ Route32WannaBuyASlowpokeTailScript:
 SlowpokeTailSalesmanScript:
 	faceplayer
 _OfferToSellSlowpokeTail:
-	dotrigger $2
+	setscene $2
 	opentext
 	writetext Text_MillionDollarSlowpokeTail
 	yesorno
@@ -970,33 +970,35 @@ Route32_MapEventHeader:: db 0, 0
 	warp_def 3, 4, 4, ROUTE_32_RUINS_OF_ALPH_GATE
 	warp_def 79, 6, 4, UNION_CAVE_1F
 
-.CoordEvents: db 2
-	xy_trigger 0, 8, 18, 0, Route32CooltrainerMStopsYou, 0, 0
-	xy_trigger 1, 71, 7, 0, Route32WannaBuyASlowpokeTailScript, 0, 0
+.CoordEvents:
+	db 2
+	coord_event 0, $8, $12, Route32CooltrainerMStopsYouScene
+	coord_event 1, $47, $7, Route32WannaBuyASlowpokeTailScript
 
-.BGEvents: db 6
-	signpost 5, 13, SIGNPOST_READ, Route32Sign
-	signpost 1, 9, SIGNPOST_READ, Route32RuinsSign
-	signpost 84, 10, SIGNPOST_READ, Route32UnionCaveSign
-	signpost 73, 12, SIGNPOST_READ, Route32PokecenterSign
-	signpost 67, 12, SIGNPOST_ITEM, Route32HiddenGreatBall
-	signpost 40, 11, SIGNPOST_ITEM, Route32HiddenSuperPotion
+.BGEvents:
+	db 6
+	bg_event  5, 13, BGEVENT_READ, Route32Sign
+	bg_event  1,  9, BGEVENT_READ, Route32RuinsSign
+	bg_event 84, 10, BGEVENT_READ, Route32UnionCaveSign
+	bg_event 73, 12, BGEVENT_READ, Route32PokecenterSign
+	bg_event 67, 12, BGEVENT_ITEM, Route32HiddenGreatBall
+	bg_event 40, 11, BGEVENT_ITEM, Route32HiddenSuperPotion
 
-.PersonEvents:
+.ObjectEvents:
 	db 15
-	person_event SPRITE_FISHER, 49, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherJustin, -1
-	person_event SPRITE_FISHER, 56, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerFisherRalph1, -1
-	person_event SPRITE_FISHER, 48, 6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherHenry, -1
-	person_event SPRITE_YOUNGSTER, 22, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
-	person_event SPRITE_YOUNGSTER, 63, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
-	person_event SPRITE_YOUNGSTER, 45, 3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerCamperRoland, -1
-	person_event SPRITE_LASS, 30, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
-	person_event SPRITE_COOLTRAINER_M, 8, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
-	person_event SPRITE_YOUNGSTER, 82, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerBird_keeperPeter, -1
-	person_event SPRITE_FISHER, 70, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
-	person_event SPRITE_POKE_BALL, 53, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
-	person_event SPRITE_FISHER, 13, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
-	person_event SPRITE_LASS, 67, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
-	person_event SPRITE_POKE_BALL, 30, 3, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
-	person_event SPRITE_TEACHER, 1, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerTeacherTina, -1
+	object_event SPRITE_FISHER, 49, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherJustin, -1
+	object_event SPRITE_FISHER, 56, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerFisherRalph1, -1
+	object_event SPRITE_FISHER, 48, 6, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherHenry, -1
+	object_event SPRITE_YOUNGSTER, 22, 12, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterAlbert, -1
+	object_event SPRITE_YOUNGSTER, 63, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterGordon, -1
+	object_event SPRITE_YOUNGSTER, 45, 3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRoland, -1
+	object_event SPRITE_LASS, 30, 10, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerLiz1, -1
+	object_event SPRITE_COOLTRAINER_M, 8, 19, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32CooltrainerMScript, -1
+	object_event SPRITE_YOUNGSTER, 82, 11, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperPeter, -1
+	object_event SPRITE_FISHER, 70, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeTailSalesmanScript, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event SPRITE_POKE_BALL, 53, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32GreatBall, EVENT_ROUTE_32_GREAT_BALL
+	object_event SPRITE_FISHER, 13, 15, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route32RoarTMGuyScript, -1
+	object_event SPRITE_LASS, 67, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FriedaScript, EVENT_ROUTE_32_FRIEDA_OF_FRIDAY
+	object_event SPRITE_POKE_BALL, 30, 3, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route32Repel, EVENT_ROUTE_32_REPEL
+	object_event SPRITE_TEACHER, 1, 10, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerTeacherTina, -1
 

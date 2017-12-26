@@ -3,7 +3,7 @@ const_value set 2
 	const ROUTE40BATTLETOWERGATE_TWIN
 
 Route40BattleTowerGate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,11 +14,11 @@ Route40BattleTowerGate_MapScriptHeader:
 	clearevent EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
 	return
 
-RockerScript_0x9f669:
-	jumptextfaceplayer UnknownText_0x9f716
+Route40BattleTowerGateRockerScript:
+	jumptextfaceplayer Route40BattleTowerGateRockerText
 
-TwinScript_0x9f66c:
-	jumptextfaceplayer UnknownText_0x9f7c8
+Route40BattleTowerGateTwinScript:
+	jumptextfaceplayer Route40BattleTowerGateTwinText
 
 UnknownText_0x9f66f:
 	text "Did you come to"
@@ -40,7 +40,7 @@ UnknownText_0x9f6ba:
 	line "when I win."
 	done
 
-UnknownText_0x9f716:
+Route40BattleTowerGateRockerText:
 	text "Are you going to"
 	line "the BATTLE TOWER?"
 
@@ -59,7 +59,7 @@ UnknownText_0x9f783:
 	line "the BATTLE TOWER."
 	done
 
-UnknownText_0x9f7c8:
+Route40BattleTowerGateTwinText:
 	text "The levels of the"
 	line "#MON I want to"
 
@@ -81,13 +81,13 @@ Route40BattleTowerGate_MapEventHeader:
 	warp_def $0, $4, 1, BATTLE_TOWER_OUTSIDE
 	warp_def $0, $5, 2, BATTLE_TOWER_OUTSIDE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_ROCKER, 3, 3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, RockerScript_0x9f669, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
-	person_event SPRITE_TWIN, 5, 7, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, TwinScript_0x9f66c, -1
+	object_event SPRITE_ROCKER, 3, 3, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateRockerScript, EVENT_BATTLE_TOWER_OUTSIDE_SAILOR
+	object_event SPRITE_TWIN, 5, 7, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route40BattleTowerGateTwinScript, -1

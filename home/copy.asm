@@ -72,16 +72,16 @@ OldDMATransfer:: ; dfd
 	call DelayFrame
 ; add $100 to hl and de
 	ld a, l
-	add $100 % $100
+	add LOW($100)
 	ld l, a
 	ld a, h
-	adc $100 / $100
+	adc HIGH($100)
 	ld h, a
 	ld a, e
-	add $100 % $100
+	add LOW($100)
 	ld e, a
 	ld a, d
-	adc $100 / $100
+	adc HIGH($100)
 	ld d, a
 	jr .loop
 
@@ -101,32 +101,32 @@ OldDMATransfer:: ; dfd
 
 
 ReplaceKrisSprite:: ; e4a
-	callba _ReplaceKrisSprite
+	farcall _ReplaceKrisSprite
 	ret
 ; e51
 
 
 
 LoadStandardFont:: ; e51
-	callba _LoadStandardFont
+	farcall _LoadStandardFont
 	ret
 ; e58
 
 LoadFontsBattleExtra:: ; e58
-	callba _LoadFontsBattleExtra
+	farcall _LoadFontsBattleExtra
 	ret
 ; e5f
 
 
 
 LoadFontsExtra:: ; e5f
-	callba _LoadFontsExtra1
-	callba _LoadFontsExtra2
+	farcall _LoadFontsExtra1
+	farcall _LoadFontsExtra2
 	ret
 ; e6c
 
 LoadFontsExtra2:: ; e6c
-	callba _LoadFontsExtra2
+	farcall _LoadFontsExtra2
 	ret
 ; e73
 

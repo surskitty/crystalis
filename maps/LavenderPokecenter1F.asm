@@ -5,7 +5,7 @@ const_value set 2
 	const LAVENDERPOKECENTER1F_YOUNGSTER
 
 LavenderPokecenter1F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,11 +14,11 @@ LavenderPokecenter1F_MapScriptHeader:
 NurseScript_0x7e6a0:
 	jumpstd pokecenternurse
 
-GentlemanScript_0x7e6a3:
-	jumptextfaceplayer UnknownText_0x7e6bd
+LavenderPokecenter1FGentlemanScript:
+	jumptextfaceplayer LavenderPokecenter1FGentlemanText
 
-TeacherScript_0x7e6a6:
-	jumptextfaceplayer UnknownText_0x7e710
+LavenderPokecenter1FTeacherScript:
+	jumptextfaceplayer LavenderPokecenter1FTeacherText
 
 YoungsterScript_0x7e6a9:
 	faceplayer
@@ -36,7 +36,7 @@ UnknownScript_0x7e6b7:
 	closetext
 	end
 
-UnknownText_0x7e6bd:
+LavenderPokecenter1FGentlemanText:
 	text "To the north of"
 	line "LAVENDER is ROCK"
 
@@ -45,7 +45,7 @@ UnknownText_0x7e6bd:
 	cont "POWER PLANT."
 	done
 
-UnknownText_0x7e710:
+LavenderPokecenter1FTeacherText:
 	text "There's a radio"
 	line "program that plays"
 	cont "# FLUTE music."
@@ -90,15 +90,15 @@ LavenderPokecenter1F_MapEventHeader:
 	warp_def $7, $4, 1, LAVENDER_TOWN
 	warp_def $7, $0, 1, POKECENTER_2F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, NurseScript_0x7e6a0, -1
-	person_event SPRITE_GENTLEMAN, 6, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GentlemanScript_0x7e6a3, -1
-	person_event SPRITE_TEACHER, 3, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, TeacherScript_0x7e6a6, -1
-	person_event SPRITE_YOUNGSTER, 5, 1, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, YoungsterScript_0x7e6a9, -1
+	object_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript_0x7e6a0, -1
+	object_event SPRITE_GENTLEMAN, 6, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderPokecenter1FGentlemanScript, -1
+	object_event SPRITE_TEACHER, 3, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LavenderPokecenter1FTeacherScript, -1
+	object_event SPRITE_YOUNGSTER, 5, 1, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, YoungsterScript_0x7e6a9, -1

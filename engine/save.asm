@@ -1,9 +1,9 @@
 SaveMenu: ; 14a1a
 	call LoadStandardMenuDataHeader
-	callba DisplaySaveInfoOnSave
+	farcall DisplaySaveInfoOnSave
 	call SpeechTextBox
 	call UpdateSprites
-	callba SaveMenu_LoadEDTile
+	farcall SaveMenu_CopyTilemapAtOnce
 	ld hl, Text_WouldYouLikeToSaveTheGame
 	call SaveTheGame_yesorno
 	jr nz, .refused
@@ -19,20 +19,20 @@ SaveMenu: ; 14a1a
 .refused
 	call ExitMenu
 	call ret_d90
-	callba SaveMenu_LoadEDTile
+	farcall SaveMenu_CopyTilemapAtOnce
 	scf
 	ret
 
 SaveAfterLinkTrade: ; 14a58
 	call PauseGameLogic
-	callba StageRTCTimeForSave
-	callba BackupMysteryGift
+	farcall StageRTCTimeForSave
+	farcall BackupMysteryGift
 	call SavePokemonData
 	call SaveChecksum
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
-	callba BackupPartyMonMail
-	callba SaveRTC
+	farcall BackupPartyMonMail
+	farcall SaveRTC
 	call ResumeGameLogic
 	ret
 ; 14a83
@@ -95,8 +95,8 @@ MovePkmnWOMail_InsertMon_SaveGame: ; 14ad5
 	ld [wCurBox], a
 	ld a, $1
 	ld [wSaveFileExists], a
-	callba StageRTCTimeForSave
-	callba BackupMysteryGift
+	farcall StageRTCTimeForSave
+	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
 	call SavePlayerData
@@ -107,9 +107,9 @@ MovePkmnWOMail_InsertMon_SaveGame: ; 14ad5
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
-	callba BackupPartyMonMail
-	callba BackupMobileEventIndex
-	callba SaveRTC
+	farcall BackupPartyMonMail
+	farcall BackupMobileEventIndex
+	farcall SaveRTC
 	call LoadBox
 	call ResumeGameLogic
 	ld de, SFX_SAVE
@@ -271,8 +271,8 @@ SavedTheGame: ; 14be6
 SaveGameData_: ; 14c10
 	ld a, 1
 	ld [wSaveFileExists], a
-	callba StageRTCTimeForSave
-	callba BackupMysteryGift
+	farcall StageRTCTimeForSave
+	farcall BackupMysteryGift
 	call ValidateSave
 	call SaveOptions
 	call SavePlayerData
@@ -285,9 +285,9 @@ SaveGameData_: ; 14c10
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
 	call UpdateStackTop
-	callba BackupPartyMonMail
-	callba BackupMobileEventIndex
-	callba SaveRTC
+	farcall BackupPartyMonMail
+	farcall BackupMobileEventIndex
+	farcall SaveRTC
 	ld a, BANK(sBattleTowerChallengeState)
 	call GetSRAMBank
 	ld a, [sBattleTowerChallengeState]
@@ -500,12 +500,12 @@ HallOfFame_InitSaveIfNeeded: ; 14da0
 ; 14da9
 
 ValidateSave: ; 14da9
-	ld a, BANK(s1_a008)
+	ld a, BANK(sCheckValue1) ; BANK(sCheckValue2)
 	call GetSRAMBank
-	ld a, 99
-	ld [s1_a008], a
-	ld a, " "
-	ld [s1_ad0f], a
+	ld a, SAVE_CHECK_VALUE_1
+	ld [sCheckValue1], a
+	ld a, SAVE_CHECK_VALUE_2
+	ld [sCheckValue2], a
 	jp CloseSRAM
 ; 14dbb
 
@@ -568,12 +568,12 @@ SaveChecksum: ; 14e13
 ; 14e2d
 
 ValidateBackupSave: ; 14e2d
-	ld a, BANK(s0_b208)
+	ld a, BANK(sBackupCheckValue1) ; BANK(sBackupCheckValue2)
 	call GetSRAMBank
-	ld a, 99
-	ld [s0_b208], a
-	ld a, " "
-	ld [s0_bf0f], a
+	ld a, SAVE_CHECK_VALUE_1
+	ld [sBackupCheckValue1], a
+	ld a, SAVE_CHECK_VALUE_2
+	ld [sBackupCheckValue2], a
 	call CloseSRAM
 	ret
 ; 14e40
@@ -636,9 +636,9 @@ TryLoadSaveFile: ; 14ea5 (5:4ea5)
 	call LoadPlayerData
 	call LoadPokemonData
 	call LoadBox
-	callba RestorePartyMonMail
-	callba RestoreMobileEventIndex
-	callba RestoreMysteryGift
+	farcall RestorePartyMonMail
+	farcall RestoreMobileEventIndex
+	farcall RestoreMysteryGift
 	call ValidateBackupSave
 	call SaveBackupOptions
 	call SaveBackupPlayerData
@@ -653,9 +653,9 @@ TryLoadSaveFile: ; 14ea5 (5:4ea5)
 	call LoadBackupPlayerData
 	call LoadBackupPokemonData
 	call LoadBox
-	callba RestorePartyMonMail
-	callba RestoreMobileEventIndex
-	callba RestoreMysteryGift
+	farcall RestorePartyMonMail
+	farcall RestoreMobileEventIndex
+	farcall RestoreMysteryGift
 	call ValidateSave
 	call SaveOptions
 	call SavePlayerData
@@ -731,13 +731,13 @@ INCLUDE "data/default_options.asm"
 
 
 CheckPrimarySaveFile: ; 14f84
-	ld a, BANK(s1_a008)
+	ld a, BANK(sCheckValue1) ; BANK(sCheckValue2)
 	call GetSRAMBank
-	ld a, [s1_a008]
-	cp 99
+	ld a, [sCheckValue1]
+	cp SAVE_CHECK_VALUE_1
 	jr nz, .nope
-	ld a, [s1_ad0f]
-	cp " "
+	ld a, [sCheckValue2]
+	cp SAVE_CHECK_VALUE_2
 	jr nz, .nope
 	ld hl, sOptions
 	ld de, Options
@@ -753,13 +753,13 @@ CheckPrimarySaveFile: ; 14f84
 ; 14faf
 
 CheckBackupSaveFile: ; 14faf
-	ld a, BANK(s0_b208)
+	ld a, BANK(sBackupCheckValue1) ; BANK(sBackupCheckValue2)
 	call GetSRAMBank
-	ld a, [s0_b208]
-	cp 99
+	ld a, [sBackupCheckValue1]
+	cp SAVE_CHECK_VALUE_1
 	jr nz, .nope
-	ld a, [s0_bf0f]
-	cp " "
+	ld a, [sBackupCheckValue2]
+	cp SAVE_CHECK_VALUE_2
 	jr nz, .nope
 	ld hl, sBackupOptions
 	ld de, Options

@@ -8,16 +8,16 @@ const_value set 2
 	const UNIONCAVEB1F_POKE_BALL2
 
 UnionCaveB1F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerPokemaniacAndrew:
-	trainer EVENT_BEAT_POKEMANIAC_ANDREW, POKEMANIAC, ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, PokemaniacAndrewScript
+	trainer EVENT_BEAT_POKEMANIAC_ANDREW, POKEMANIAC, ANDREW, PokemaniacAndrewSeenText, PokemaniacAndrewBeatenText, 0, .Script
 
-PokemaniacAndrewScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokemaniacAndrewAfterBattleText
@@ -26,9 +26,9 @@ PokemaniacAndrewScript:
 	end
 
 TrainerPokemaniacCalvin:
-	trainer EVENT_BEAT_POKEMANIAC_CALVIN, POKEMANIAC, CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, PokemaniacCalvinScript
+	trainer EVENT_BEAT_POKEMANIAC_CALVIN, POKEMANIAC, CALVIN, PokemaniacCalvinSeenText, PokemaniacCalvinBeatenText, 0, .Script
 
-PokemaniacCalvinScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokemaniacCalvinAfterBattleText
@@ -37,9 +37,9 @@ PokemaniacCalvinScript:
 	end
 
 TrainerHikerPhillip:
-	trainer EVENT_BEAT_HIKER_PHILLIP, HIKER, PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, HikerPhillipScript
+	trainer EVENT_BEAT_HIKER_PHILLIP, HIKER, PHILLIP, HikerPhillipSeenText, HikerPhillipBeatenText, 0, .Script
 
-HikerPhillipScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext HikerPhillipAfterBattleText
@@ -48,9 +48,9 @@ HikerPhillipScript:
 	end
 
 TrainerHikerLeonard:
-	trainer EVENT_BEAT_HIKER_LEONARD, HIKER, LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, HikerLeonardScript
+	trainer EVENT_BEAT_HIKER_LEONARD, HIKER, LEONARD, HikerLeonardSeenText, HikerLeonardBeatenText, 0, .Script
 
-HikerLeonardScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext HikerLeonardAfterBattleText
@@ -164,18 +164,18 @@ UnionCaveB1F_MapEventHeader:
 	warp_def $21, $3, 2, UNION_CAVE_1F
 	warp_def $1f, $11, 1, UNION_CAVE_B2F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 7
-	person_event SPRITE_POKEFAN_M, 4, 9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 3, TrainerHikerPhillip, -1
-	person_event SPRITE_POKEFAN_M, 7, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 3, TrainerHikerLeonard, -1
-	person_event SPRITE_SUPER_NERD, 32, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerPokemaniacAndrew, -1
-	person_event SPRITE_SUPER_NERD, 30, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerPokemaniacCalvin, -1
-	person_event SPRITE_POKE_BALL, 16, 2, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, UnionCaveB1FTMSwift, EVENT_UNION_CAVE_B1F_TM_SWIFT
-	person_event SPRITE_BOULDER, 10, 7, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, UnionCaveB1FBoulder, -1
-	person_event SPRITE_POKE_BALL, 23, 17, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_X_DEFEND
+	object_event SPRITE_POKEFAN_M, 4, 9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerPhillip, -1
+	object_event SPRITE_POKEFAN_M, 7, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerLeonard, -1
+	object_event SPRITE_SUPER_NERD, 32, 5, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacAndrew, -1
+	object_event SPRITE_SUPER_NERD, 30, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacCalvin, -1
+	object_event SPRITE_POKE_BALL, 16, 2, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FTMSwift, EVENT_UNION_CAVE_B1F_TM_SWIFT
+	object_event SPRITE_BOULDER, 10, 7, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBoulder, -1
+	object_event SPRITE_POKE_BALL, 23, 17, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FXDefend, EVENT_UNION_CAVE_B1F_X_DEFEND

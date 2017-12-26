@@ -106,7 +106,7 @@ BattleAnimOAMUpdate: ; cca09
 	ld l, a
 	ld a, [wBattleAnimOAMPointerLo]
 	ld e, a
-	ld d, Sprites / $100
+	ld d, HIGH(Sprites)
 .loop
 	ld a, [wBattleAnimTempYCoord]
 	ld b, a
@@ -302,13 +302,13 @@ GetBattleAnimTileOffset: ; ccb31 (33:4b31)
 	ret
 
 _ExecuteBGEffects: ; ccb48
-	callab ExecuteBGEffects
+	callfar ExecuteBGEffects
 	ret
 
 ; ccb4f
 
 _QueueBGEffect: ; ccb4f (33:4b4f)
-	callab QueueBGEffect
+	callfar QueueBGEffect
 	ret
 
 ; ccb56 (33:4b56)

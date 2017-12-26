@@ -1,6 +1,5 @@
 ; Pic animation arrangement.
 
-
 AnimateMon_Slow_Normal: ; d0000
 	hlcoord 12, 0
 	ld a, [wBattleMode]
@@ -53,22 +52,17 @@ AnimateMon_Unused: ; d003a
 	ret
 ; d0042
 
-
-POKEANIM: MACRO
+pokeanim: MACRO
 	rept _NARG
-
 ; Workaround for a bug where macro args can't come after the start of a symbol
 if !def(\1_POKEANIM)
 \1_POKEANIM equs "PokeAnim_\1_"
 endc
-
 	db (\1_POKEANIM - PokeAnim_SetupCommands) / 2
 	shift
 	endr
-
 	db (PokeAnim_Finish_ - PokeAnim_SetupCommands) / 2
 ENDM
-
 
 PokeAnims: ; d0042
 	dw .Slow
@@ -81,15 +75,15 @@ PokeAnims: ; d0042
 	dw .Egg1
 	dw .Egg2
 
-.Slow:   POKEANIM StereoCry, Setup2, Play
-.Normal: POKEANIM StereoCry, Setup, Play
-.Menu:   POKEANIM CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
-.Trade:  POKEANIM Extra, Play2, Extra, Play, SetWait, Wait, Cry, Setup, Play
-.Evolve: POKEANIM Extra, Play, SetWait, Wait, CryNoWait, Setup, Play
-.Hatch:  POKEANIM Extra, Play, CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
-.Unused: POKEANIM CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
-.Egg1:   POKEANIM Setup, Play
-.Egg2:   POKEANIM Extra, Play
+.Slow:   pokeanim StereoCry, Setup2, Play
+.Normal: pokeanim StereoCry, Setup, Play
+.Menu:   pokeanim CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
+.Trade:  pokeanim Extra, Play2, Extra, Play, SetWait, Wait, Cry, Setup, Play
+.Evolve: pokeanim Extra, Play, SetWait, Wait, CryNoWait, Setup, Play
+.Hatch:  pokeanim Extra, Play, CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
+.Unused: pokeanim CryNoWait, Setup, Play, SetWait, Wait, Extra, Play
+.Egg1:   pokeanim Setup, Play
+.Egg2:   pokeanim Extra, Play
 
 
 AnimateFrontpic: ; d008e
@@ -99,7 +93,7 @@ AnimateFrontpic: ; d008e
 .loop
 	call SetUpPokeAnim
 	push af
-	callba HDMATransferTileMapToWRAMBank3
+	farcall HDMATransferTileMapToWRAMBank3
 	pop af
 	jr nc, .loop
 	ret
@@ -288,9 +282,9 @@ PokeAnim_DeinitFrames: ; d01a9
 	ld a, $2
 	ld [rSVBK], a
 	call PokeAnim_PlaceGraphic
-	callba HDMATransferTileMapToWRAMBank3
+	farcall HDMATransferTileMapToWRAMBank3
 	call PokeAnim_SetVBank0
-	callba HDMATransferAttrMapToWRAMBank3
+	farcall HDMATransferAttrMapToWRAMBank3
 	pop af
 	ld [rSVBK], a
 	ret
@@ -887,7 +881,7 @@ PokeAnim_SetVBank1: ; d0504
 	xor a
 	ld [hBGMapMode], a
 	call .SetFlag
-	callba HDMATransferAttrMapToWRAMBank3
+	farcall HDMATransferAttrMapToWRAMBank3
 	pop af
 	ld [rSVBK], a
 	ret
@@ -1127,7 +1121,7 @@ HOF_AnimateFrontpic: ; d066e Predef 49
 	push bc
 	push hl
 	ld de, VTiles2
-	predef FrontpicPredef
+	predef GetAnimatedFrontpicPredef
 	pop hl
 	pop bc
 	ld d, 0

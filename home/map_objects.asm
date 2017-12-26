@@ -6,7 +6,7 @@ GetSpritePalette:: ; 17ff
 	push bc
 	ld c, a
 
-	callba _GetSpritePalette
+	farcall _GetSpritePalette
 
 	ld a, c
 	pop bc
@@ -120,67 +120,67 @@ GetTileCollision:: ; 185d
 CheckGrassTile:: ; 1875
 	ld d, a
 	and $f0
-	cp $10
-	jr z, .ok_10
-	cp $20
-	jr z, .ok_20
+	cp HI_NYBBLE_TALL_GRASS
+	jr z, .grass
+	cp HI_NYBBLE_WATER
+	jr z, .water
 	scf
 	ret
 
-.ok_10
+.grass
 	ld a, d
-	and 7
+	and LO_NYBBLE_GRASS
 	ret z
 	scf
 	ret
 ; For some reason, the above code is duplicated down here.
-.ok_20
+.water
 	ld a, d
-	and 7
+	and LO_NYBBLE_GRASS
 	ret z
 	scf
 	ret
 ; 188e
 
 CheckSuperTallGrassTile:: ; 188e
-	cp $14
+	cp COLL_LONG_GRASS
 	ret z
-	cp $1c
+	cp COLL_LONG_GRASS_1C
 	ret
 ; 1894
 
 CheckCutTreeTile:: ; 1894
-	cp $12
+	cp COLL_CUT_TREE
 	ret z
-	cp $1a
+	cp COLL_CUT_TREE_1A
 	ret
 ; 189a
 
 CheckHeadbuttTreeTile:: ; 189a
-	cp $15
+	cp COLL_HEADBUTT_TREE
 	ret z
-	cp $1d
+	cp COLL_HEADBUTT_TREE_1D
 	ret
 ; 18a0
 
 CheckCounterTile:: ; 18a0
-	cp $90
+	cp COLL_COUNTER
 	ret z
-	cp $98
+	cp COLL_COUNTER_98
 	ret
 ; 18a6
 
 CheckPitTile:: ; 18a6
-	cp $60
+	cp COLL_PIT
 	ret z
-	cp $68
+	cp COLL_PIT_68
 	ret
 ; 18ac
 
 CheckIceTile:: ; 18ac
-	cp $23
+	cp COLL_ICE
 	ret z
-	cp $2b
+	cp COLL_ICE_2B
 	ret z
 	scf
 	ret
@@ -188,30 +188,30 @@ CheckIceTile:: ; 18ac
 
 CheckWhirlpoolTile:: ; 18b4
 	nop
-	cp $24
+	cp COLL_WHIRLPOOL
 	ret z
-	cp $2c
+	cp COLL_WHIRLPOOL_2C
 	ret z
 	scf
 	ret
 ; 18bd
 
 CheckWaterfallTile:: ; 18bd
-	cp $33
+	cp COLL_WATERFALL
 	ret z
-	cp $3b
+	cp COLL_CURRENT_DOWN
 	ret
 ; 18c3
 
 CheckStandingOnEntrance:: ; 18c3
 	ld a, [PlayerStandingTile]
-	cp $71 ; door
+	cp COLL_DOOR
 	ret z
-	cp $79
+	cp COLL_DOOR_79
 	ret z
-	cp $7a ; stairs
+	cp COLL_STAIRCASE
 	ret z
-	cp $7b ; cave
+	cp COLL_CAVE
 	ret
 ; 18d2
 
@@ -328,7 +328,7 @@ _CopyObjectStruct:: ; 1956
 	call UnmaskObject
 	ld a, [hMapObjectIndexBuffer]
 	call GetMapObject
-	callba CopyObjectStruct
+	farcall CopyObjectStruct
 	ret
 ; 1967
 
@@ -345,7 +345,7 @@ ApplyDeletionToMapObject:: ; 1967
 	call .CheckStopFollow
 	pop af
 	call GetObjectStruct
-	callba DeleteMapObject
+	farcall DeleteMapObject
 	ret
 
 .CheckStopFollow:
@@ -356,7 +356,7 @@ ApplyDeletionToMapObject:: ; 1967
 	cp [hl]
 	ret nz
 .ok
-	callba StopFollow
+	farcall StopFollow
 	ld a, -1
 	ld [wObjectFollow_Leader], a
 	ld [wObjectFollow_Follower], a
@@ -409,20 +409,20 @@ CopyPlayerObjectTemplate:: ; 19a6
 .ok
 	ld a, b
 	call GetObjectStruct
-	callba DeleteMapObject
+	farcall DeleteMapObject
 	ret
 ; 19e9
 
 LoadMovementDataPointer:: ; 19e9
-; Load the movement data pointer for person a.
-	ld [wMovementPerson], a
+; Load the movement data pointer for object a.
+	ld [wMovementObject], a
 	ld a, [hROMBank]
 	ld [wMovementDataPointer], a
 	ld a, l
 	ld [wMovementDataPointer + 1], a
 	ld a, h
 	ld [wMovementDataPointer + 2], a
-	ld a, [wMovementPerson]
+	ld a, [wMovementObject]
 	call CheckObjectVisibility
 	ret c
 
@@ -620,8 +620,8 @@ UpdateSprites:: ; 1ad2
 	bit 0, a
 	ret z
 
-	callba Function55e0
-	callba _UpdateSprites
+	farcall Function55e0
+	farcall _UpdateSprites
 	ret
 ; 1ae5
 

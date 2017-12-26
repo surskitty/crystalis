@@ -11,16 +11,16 @@ const_value set 2
 	const ROUTE41_SWIMMER_GIRL5
 
 Route41_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerSwimmerfKaylee:
-	trainer EVENT_BEAT_SWIMMERF_KAYLEE, SWIMMERF, KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, SwimmerfKayleeScript
+	trainer EVENT_BEAT_SWIMMERF_KAYLEE, SWIMMERF, KAYLEE, SwimmerfKayleeSeenText, SwimmerfKayleeBeatenText, 0, .Script
 
-SwimmerfKayleeScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfKayleeAfterBattleText
@@ -29,9 +29,9 @@ SwimmerfKayleeScript:
 	end
 
 TrainerSwimmerfSusie:
-	trainer EVENT_BEAT_SWIMMERF_SUSIE, SWIMMERF, SUSIE, SwimmerfSusieSeenText, SwimmerfSusieBeatenText, 0, SwimmerfSusieScript
+	trainer EVENT_BEAT_SWIMMERF_SUSIE, SWIMMERF, SUSIE, SwimmerfSusieSeenText, SwimmerfSusieBeatenText, 0, .Script
 
-SwimmerfSusieScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfSusieAfterBattleText
@@ -40,9 +40,9 @@ SwimmerfSusieScript:
 	end
 
 TrainerSwimmerfDenise:
-	trainer EVENT_BEAT_SWIMMERF_DENISE, SWIMMERF, DENISE, SwimmerfDeniseSeenText, SwimmerfDeniseBeatenText, 0, SwimmerfDeniseScript
+	trainer EVENT_BEAT_SWIMMERF_DENISE, SWIMMERF, DENISE, SwimmerfDeniseSeenText, SwimmerfDeniseBeatenText, 0, .Script
 
-SwimmerfDeniseScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfDeniseAfterBattleText
@@ -51,9 +51,9 @@ SwimmerfDeniseScript:
 	end
 
 TrainerSwimmerfKara:
-	trainer EVENT_BEAT_SWIMMERF_KARA, SWIMMERF, KARA, SwimmerfKaraSeenText, SwimmerfKaraBeatenText, 0, SwimmerfKaraScript
+	trainer EVENT_BEAT_SWIMMERF_KARA, SWIMMERF, KARA, SwimmerfKaraSeenText, SwimmerfKaraBeatenText, 0, .Script
 
-SwimmerfKaraScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfKaraAfterBattleText
@@ -62,9 +62,9 @@ SwimmerfKaraScript:
 	end
 
 TrainerSwimmerfWendy:
-	trainer EVENT_BEAT_SWIMMERF_WENDY, SWIMMERF, WENDY, SwimmerfWendySeenText, SwimmerfWendyBeatenText, 0, SwimmerfWendyScript
+	trainer EVENT_BEAT_SWIMMERF_WENDY, SWIMMERF, WENDY, SwimmerfWendySeenText, SwimmerfWendyBeatenText, 0, .Script
 
-SwimmerfWendyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfWendyAfterBattleText
@@ -73,9 +73,9 @@ SwimmerfWendyScript:
 	end
 
 TrainerSwimmermCharlie:
-	trainer EVENT_BEAT_SWIMMERM_CHARLIE, SWIMMERM, CHARLIE, SwimmermCharlieSeenText, SwimmermCharlieBeatenText, 0, SwimmermCharlieScript
+	trainer EVENT_BEAT_SWIMMERM_CHARLIE, SWIMMERM, CHARLIE, SwimmermCharlieSeenText, SwimmermCharlieBeatenText, 0, .Script
 
-SwimmermCharlieScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermCharlieAfterBattleText
@@ -84,9 +84,9 @@ SwimmermCharlieScript:
 	end
 
 TrainerSwimmermGeorge:
-	trainer EVENT_BEAT_SWIMMERM_GEORGE, SWIMMERM, GEORGE, SwimmermGeorgeSeenText, SwimmermGeorgeBeatenText, 0, SwimmermGeorgeScript
+	trainer EVENT_BEAT_SWIMMERM_GEORGE, SWIMMERM, GEORGE, SwimmermGeorgeSeenText, SwimmermGeorgeBeatenText, 0, .Script
 
-SwimmermGeorgeScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermGeorgeAfterBattleText
@@ -95,9 +95,9 @@ SwimmermGeorgeScript:
 	end
 
 TrainerSwimmermBerke:
-	trainer EVENT_BEAT_SWIMMERM_BERKE, SWIMMERM, BERKE, SwimmermBerkeSeenText, SwimmermBerkeBeatenText, 0, SwimmermBerkeScript
+	trainer EVENT_BEAT_SWIMMERM_BERKE, SWIMMERM, BERKE, SwimmermBerkeSeenText, SwimmermBerkeBeatenText, 0, .Script
 
-SwimmermBerkeScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermBerkeAfterBattleText
@@ -106,9 +106,9 @@ SwimmermBerkeScript:
 	end
 
 TrainerSwimmermKirk:
-	trainer EVENT_BEAT_SWIMMERM_KIRK, SWIMMERM, KIRK, SwimmermKirkSeenText, SwimmermKirkBeatenText, 0, SwimmermKirkScript
+	trainer EVENT_BEAT_SWIMMERM_KIRK, SWIMMERM, KIRK, SwimmermKirkSeenText, SwimmermKirkBeatenText, 0, .Script
 
-SwimmermKirkScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermKirkAfterBattleText
@@ -117,9 +117,9 @@ SwimmermKirkScript:
 	end
 
 TrainerSwimmermMathew:
-	trainer EVENT_BEAT_SWIMMERM_MATHEW, SWIMMERM, MATHEW, SwimmermMathewSeenText, SwimmermMathewBeatenText, 0, SwimmermMathewScript
+	trainer EVENT_BEAT_SWIMMERM_MATHEW, SWIMMERM, MATHEW, SwimmermMathewSeenText, SwimmermMathewBeatenText, 0, .Script
 
-SwimmermMathewScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermMathewAfterBattleText
@@ -352,22 +352,22 @@ Route41_MapEventHeader:
 	warp_def $25, $c, 1, WHIRL_ISLAND_SW
 	warp_def $2d, $24, 1, WHIRL_ISLAND_SE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 35, 9, SIGNPOST_ITEM, Route41HiddenMaxEther
+	bg_event 35, 9, BGEVENT_ITEM, Route41HiddenMaxEther
 
-.PersonEvents:
+.ObjectEvents:
 	db 10
-	person_event SPRITE_OLIVINE_RIVAL, 6, 32, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermCharlie, -1
-	person_event SPRITE_OLIVINE_RIVAL, 8, 46, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermGeorge, -1
-	person_event SPRITE_OLIVINE_RIVAL, 26, 20, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermBerke, -1
-	person_event SPRITE_OLIVINE_RIVAL, 30, 32, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermKirk, -1
-	person_event SPRITE_OLIVINE_RIVAL, 46, 19, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermMathew, -1
-	person_event SPRITE_SWIMMER_GIRL, 4, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfKaylee, -1
-	person_event SPRITE_SWIMMER_GIRL, 19, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfSusie, -1
-	person_event SPRITE_SWIMMER_GIRL, 34, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
-	person_event SPRITE_SWIMMER_GIRL, 28, 44, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 4, TrainerSwimmerfKara, -1
-	person_event SPRITE_SWIMMER_GIRL, 50, 9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 2, TrainerSwimmerfWendy, -1
+	object_event SPRITE_OLIVINE_RIVAL, 6, 32, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCharlie, -1
+	object_event SPRITE_OLIVINE_RIVAL, 8, 46, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermGeorge, -1
+	object_event SPRITE_OLIVINE_RIVAL, 26, 20, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermBerke, -1
+	object_event SPRITE_OLIVINE_RIVAL, 30, 32, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermKirk, -1
+	object_event SPRITE_OLIVINE_RIVAL, 46, 19, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermMathew, -1
+	object_event SPRITE_SWIMMER_GIRL, 4, 17, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfKaylee, -1
+	object_event SPRITE_SWIMMER_GIRL, 19, 23, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfSusie, -1
+	object_event SPRITE_SWIMMER_GIRL, 34, 27, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfDenise, -1
+	object_event SPRITE_SWIMMER_GIRL, 28, 44, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerSwimmerfKara, -1
+	object_event SPRITE_SWIMMER_GIRL, 50, 9, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSwimmerfWendy, -1

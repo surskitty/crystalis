@@ -10,19 +10,19 @@ const_value set 2
 	const SLOWPOKEWELLB1F_POKE_BALL
 
 SlowpokeWellB1F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
-KurtScript_0x5a5d5:
-	jumptextfaceplayer UnknownText_0x5a6b5
+SlowpokeWellB1FKurtScript:
+	jumptextfaceplayer SlowpokeWellB1FKurtText
 
 TrainerGruntM29:
-	trainer EVENT_BEAT_ROCKET_GRUNTM_29, GRUNTM, GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, GruntM29Script
+	trainer EVENT_BEAT_ROCKET_GRUNTM_29, GRUNTM, GRUNTM_29, GruntM29SeenText, GruntM29BeatenText, 0, .Script
 
-GruntM29Script:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext GruntM29AfterBattleText
@@ -31,9 +31,9 @@ GruntM29Script:
 	end
 
 TrainerGruntM1:
-	trainer EVENT_BEAT_ROCKET_GRUNTM_1, GRUNTM, GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, GruntM1Script
+	trainer EVENT_BEAT_ROCKET_GRUNTM_1, GRUNTM, GRUNTM_1, GruntM1SeenText, GruntM1BeatenText, 0, .Script
 
-GruntM1Script:
+.Script:
 	opentext
 	writetext TrainerGruntM1WhenTalkText
 	waitbutton
@@ -47,7 +47,7 @@ GruntM1Script:
 	pause 15
 	special Special_FadeInQuickly
 	disappear SLOWPOKEWELLB1F_KURT
-	moveperson SLOWPOKEWELLB1F_KURT, $b, $6
+	moveobject SLOWPOKEWELLB1F_KURT, $b, $6
 	appear SLOWPOKEWELLB1F_KURT
 	applymovement SLOWPOKEWELLB1F_KURT, KurtSlowpokeWellVictoryMovementData
 	spriteface PLAYER, RIGHT
@@ -57,7 +57,7 @@ GruntM1Script:
 	closetext
 	setevent EVENT_CLEARED_SLOWPOKE_WELL
 	variablesprite SPRITE_AZALEA_ROCKET, SPRITE_SILVER
-	domaptrigger AZALEA_TOWN, $1
+	setmapscene AZALEA_TOWN, $1
 	clearevent EVENT_ILEX_FOREST_APPRENTICE
 	clearevent EVENT_ILEX_FOREST_FARFETCHD
 	setevent EVENT_CHARCOAL_KILN_FARFETCH_D
@@ -74,9 +74,9 @@ GruntM1Script:
 	end
 
 TrainerGruntM2:
-	trainer EVENT_BEAT_ROCKET_GRUNTM_2, GRUNTM, GRUNTM_2, GruntM2SeenText, GruntM2BeatenText, 0, GruntM2Script
+	trainer EVENT_BEAT_ROCKET_GRUNTM_2, GRUNTM, GRUNTM_2, GruntM2SeenText, GruntM2BeatenText, 0, .Script
 
-GruntM2Script:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext GruntM2AfterBattleText
@@ -85,9 +85,9 @@ GruntM2Script:
 	end
 
 TrainerGruntF1:
-	trainer EVENT_BEAT_ROCKET_GRUNTF_1, GRUNTF, GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, GruntF1Script
+	trainer EVENT_BEAT_ROCKET_GRUNTF_1, GRUNTF, GRUNTF_1, GruntF1SeenText, GruntF1BeatenText, 0, .Script
 
-GruntF1Script:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext GruntF1AfterBattleText
@@ -95,26 +95,26 @@ GruntF1Script:
 	closetext
 	end
 
-SlowpokeScript_0x5a681:
+SlowpokeWellB1FSlowpokeWithMailScript:
 	faceplayer
 	opentext
 	cry SLOWPOKE
-	writetext UnknownText_0x5abcb
+	writetext SlowpokeWellB1FSlowpokeWithMailText
 	yesorno
-	iftrue UnknownScript_0x5a68f
+	iftrue .ReadMail
 	closetext
 	end
 
-UnknownScript_0x5a68f:
-	writetext UnknownText_0x5ac09
+.ReadMail:
+	writetext SlowpokeWellB1FSlowpokeMailText
 	waitbutton
 	closetext
 	end
 
-SlowpokeScript_0x5a695:
+SlowpokeWellB1FTaillessSlowpokeScript:
 	faceplayer
 	opentext
-	writetext UnknownText_0x5ac61
+	writetext SlowpokeWellB1FTaillessSlowpokeText
 	cry SLOWPOKE
 	waitbutton
 	closetext
@@ -144,7 +144,7 @@ KurtSlowpokeWellVictoryMovementData:
 	turn_head LEFT
 	step_end
 
-UnknownText_0x5a6b5:
+SlowpokeWellB1FKurtText:
 	text "KURT: Hey there,"
 	line "<PLAYER>!"
 
@@ -294,7 +294,7 @@ GruntF1AfterBattleText:
 	line "selling them?"
 	done
 
-UnknownText_0x5abcb:
+SlowpokeWellB1FSlowpokeWithMailText:
 	text "A SLOWPOKE with"
 	line "its TAIL cut off…"
 
@@ -302,7 +302,7 @@ UnknownText_0x5abcb:
 	line "Read it?"
 	done
 
-UnknownText_0x5ac09:
+SlowpokeWellB1FSlowpokeMailText:
 	text "<PLAYER> read the"
 	line "MAIL."
 
@@ -315,7 +315,7 @@ UnknownText_0x5ac09:
 	para "Love, Dad"
 	done
 
-UnknownText_0x5ac61:
+SlowpokeWellB1FTaillessSlowpokeText:
 	text "A SLOWPOKE with"
 	line "its TAIL cut off…"
 	done
@@ -329,20 +329,20 @@ SlowpokeWellB1F_MapEventHeader:
 	warp_def $f, $11, 6, AZALEA_TOWN
 	warp_def $b, $7, 1, SLOWPOKE_WELL_B2F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 9
-	person_event SPRITE_ROCKET, 7, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
-	person_event SPRITE_ROCKET, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
-	person_event SPRITE_ROCKET, 6, 5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, PERSONTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
-	person_event SPRITE_ROCKET_GIRL, 4, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
-	person_event SPRITE_SLOWPOKE, 4, 7, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SlowpokeScript_0x5a681, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	person_event SPRITE_SLOWPOKE, 2, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, SlowpokeScript_0x5a695, EVENT_SLOWPOKE_WELL_SLOWPOKES
-	person_event SPRITE_KURT, 14, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, KurtScript_0x5a5d5, EVENT_SLOWPOKE_WELL_KURT
-	person_event SPRITE_BOULDER, 2, 3, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
-	person_event SPRITE_POKE_BALL, 3, 10, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION
+	object_event SPRITE_ROCKET, 7, 15, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerGruntM29, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event SPRITE_ROCKET, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGruntM1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event SPRITE_ROCKET, 6, 5, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGruntM2, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event SPRITE_ROCKET_GIRL, 4, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGruntF1, EVENT_SLOWPOKE_WELL_ROCKETS
+	object_event SPRITE_SLOWPOKE, 4, 7, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FSlowpokeWithMailScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
+	object_event SPRITE_SLOWPOKE, 2, 6, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FTaillessSlowpokeScript, EVENT_SLOWPOKE_WELL_SLOWPOKES
+	object_event SPRITE_KURT, 14, 16, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FKurtScript, EVENT_SLOWPOKE_WELL_KURT
+	object_event SPRITE_BOULDER, 2, 3, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SlowpokeWellB1FBoulder, -1
+	object_event SPRITE_POKE_BALL, 3, 10, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SlowpokeWellB1FSuperPotion, EVENT_SLOWPOKE_WELL_B1F_SUPER_POTION

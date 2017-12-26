@@ -1,11 +1,17 @@
+trainerclass: MACRO
+	enum \1
+const_value = 1
+ENDM
+
 ; trainer class ids
 ; `trainerclass` indexes are for:
-; - TrainerClassAttributes (see trainers/attributes.asm)
-; - TrainerClassDVs (see trainers/dvs.asm)
-; - TrainerEncounterMusic (see trainers/encounter_music.asm)
-; - TrainerGroups (see trainers/trainer_pointers.asm)
-; - BTTrainerClassGenders (see misc/battle_tower_47.asm)
-; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see trainers/trainers.asm)
+; - TrainerClassAttributes (see data/trainers/trainer_attributes.asm)
+; - TrainerClassDVs (see data/trainers/trainer_dvs.asm)
+; - TrainerClassNames (see data/trainers/trainer_class_names.asm)
+; - TrainerEncounterMusic (see data/trainers/encounter_music.asm)
+; - TrainerGroups (see data/trainers/party_pointers.asm)
+; - BTTrainerClassGenders (see data/trainers/gendered_trainers.asm)
+; trainer constants are Trainers indexes, for the sub-tables of TrainerGroups (see data/trainers/parties.asm)
 	enum_start
 CHRIS EQU __enum__
 	trainerclass TRAINER_NONE ; 0
@@ -680,15 +686,15 @@ KRIS EQU __enum__
 
 NUM_TRAINER_CLASSES EQU __enum__
 
-; TrainerClassAttributes fields (see trainers/attributes.asm)
+; TrainerClassAttributes fields (see data/trainers/trainer_attributes.asm)
 	const_def
-	const TRNATTR_ITEM1
-	const TRNATTR_ITEM2
-	const TRNATTR_BASEMONEY
-	const TRNATTR_AI_MOVE_WEIGHTS
-	const TRNATTR_AI2
-	const TRNATTR_AI_ITEM_SWITCH
-	const TRNATTR_AI4
+	const TRNATTR_ITEM1           ; 0
+	const TRNATTR_ITEM2           ; 1
+	const TRNATTR_BASEMONEY       ; 2
+	const TRNATTR_AI_MOVE_WEIGHTS ; 3
+	const TRNATTR_AI2             ; 4
+	const TRNATTR_AI_ITEM_SWITCH  ; 5
+	const TRNATTR_AI4             ; 6
 NUM_TRAINER_ATTRIBUTES EQU const_value
 
 ; TRNATTR_AI_MOVE_WEIGHTS bit flags (wEnemyTrainerAIFlags)

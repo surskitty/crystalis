@@ -10,7 +10,7 @@ const_value set 2
 	const ROUTE43_TEACHER
 
 Route43_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -20,17 +20,17 @@ Route43_MapScriptHeader:
 .CheckIfRockets:
 	checkevent EVENT_CLEARED_ROCKET_HIDEOUT
 	iftrue .NoRockets
-	domaptrigger ROUTE_43_GATE, $0
+	setmapscene ROUTE_43_GATE, $0
 	return
 
 .NoRockets:
-	domaptrigger ROUTE_43_GATE, $1
+	setmapscene ROUTE_43_GATE, $1
 	return
 
 TrainerCamperSpencer:
-	trainer EVENT_BEAT_CAMPER_SPENCER, CAMPER, SPENCER, CamperSpencerSeenText, CamperSpencerBeatenText, 0, CamperSpencerScript
+	trainer EVENT_BEAT_CAMPER_SPENCER, CAMPER, SPENCER, CamperSpencerSeenText, CamperSpencerBeatenText, 0, .Script
 
-CamperSpencerScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CamperSpencerAfterBattleText
@@ -68,9 +68,9 @@ TeacherMollyAfterText:
 	done
 
 TrainerPokemaniacBen:
-	trainer EVENT_BEAT_POKEMANIAC_BEN, POKEMANIAC, BEN, PokemaniacBenSeenText, PokemaniacBenBeatenText, 0, PokemaniacBenScript
+	trainer EVENT_BEAT_POKEMANIAC_BEN, POKEMANIAC, BEN, PokemaniacBenSeenText, PokemaniacBenBeatenText, 0, .Script
 
-PokemaniacBenScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokemaniacBenAfterBattleText
@@ -79,9 +79,9 @@ PokemaniacBenScript:
 	end
 
 TrainerPokemaniacBrent1:
-	trainer EVENT_BEAT_POKEMANIAC_BRENT, POKEMANIAC, BRENT1, PokemaniacBrent1SeenText, PokemaniacBrent1BeatenText, 0, PokemaniacBrent1Script
+	trainer EVENT_BEAT_POKEMANIAC_BRENT, POKEMANIAC, BRENT1, PokemaniacBrent1SeenText, PokemaniacBrent1BeatenText, 0, .Script
 
-PokemaniacBrent1Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_POKEMANIAC_BRENT
 	end_if_just_battled
 	opentext
@@ -184,9 +184,9 @@ UnknownScript_0x19d144:
 	end
 
 TrainerPokemaniacRon:
-	trainer EVENT_BEAT_POKEMANIAC_RON, POKEMANIAC, RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, PokemaniacRonScript
+	trainer EVENT_BEAT_POKEMANIAC_RON, POKEMANIAC, RON, PokemaniacRonSeenText, PokemaniacRonBeatenText, 0, .Script
 
-PokemaniacRonScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokemaniacRonAfterBattleText
@@ -195,9 +195,9 @@ PokemaniacRonScript:
 	end
 
 TrainerFisherMarvin:
-	trainer EVENT_BEAT_FISHER_MARVIN, FISHER, MARVIN, FisherMarvinSeenText, FisherMarvinBeatenText, 0, FisherMarvinScript
+	trainer EVENT_BEAT_FISHER_MARVIN, FISHER, MARVIN, FisherMarvinSeenText, FisherMarvinBeatenText, 0, .Script
 
-FisherMarvinScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext FisherMarvinAfterBattleText
@@ -206,9 +206,9 @@ FisherMarvinScript:
 	end
 
 TrainerPicnickerTiffany3:
-	trainer EVENT_BEAT_PICNICKER_TIFFANY, PICNICKER, TIFFANY3, PicnickerTiffany3SeenText, PicnickerTiffany3BeatenText, 0, PicnickerTiffany3Script
+	trainer EVENT_BEAT_PICNICKER_TIFFANY, PICNICKER, TIFFANY3, PicnickerTiffany3SeenText, PicnickerTiffany3BeatenText, 0, .Script
 
-PicnickerTiffany3Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_PICNICKER_TIFFANY
 	end_if_just_battled
 	opentext
@@ -542,24 +542,24 @@ Route43_MapEventHeader:
 	warp_def $1f, $11, 1, ROUTE_43_GATE
 	warp_def $1f, $12, 2, ROUTE_43_GATE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 3
-	signpost 3, 13, SIGNPOST_READ, Route43Sign1
-	signpost 49, 11, SIGNPOST_READ, Route43Sign2
-	signpost 38, 16, SIGNPOST_READ, Route43TrainerTips
+	bg_event 3, 13, BGEVENT_READ, Route43Sign1
+	bg_event 49, 11, BGEVENT_READ, Route43Sign2
+	bg_event 38, 16, BGEVENT_READ, Route43TrainerTips
 
-.PersonEvents:
+.ObjectEvents:
 	db 9
-	person_event SPRITE_SUPER_NERD, 5, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
-	person_event SPRITE_SUPER_NERD, 20, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerPokemaniacBrent1, -1
-	person_event SPRITE_SUPER_NERD, 7, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
-	person_event SPRITE_FISHER, 16, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 4, TrainerFisherMarvin, -1
-	person_event SPRITE_LASS, 25, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 2, TrainerPicnickerTiffany3, -1
-	person_event SPRITE_YOUNGSTER, 40, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerCamperSpencer, -1
-	person_event SPRITE_FRUIT_TREE, 26, 1, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FruitTreeScript_0x19d266, -1
-	person_event SPRITE_POKE_BALL, 32, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
-	person_event SPRITE_TEACHER, 29, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerTeacherMolly, -1
+	object_event SPRITE_SUPER_NERD, 5, 13, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacBen, -1
+	object_event SPRITE_SUPER_NERD, 20, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacBrent1, -1
+	object_event SPRITE_SUPER_NERD, 7, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacRon, -1
+	object_event SPRITE_FISHER, 16, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerFisherMarvin, -1
+	object_event SPRITE_LASS, 25, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTiffany3, -1
+	object_event SPRITE_YOUNGSTER, 40, 13, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperSpencer, -1
+	object_event SPRITE_FRUIT_TREE, 26, 1, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x19d266, -1
+	object_event SPRITE_POKE_BALL, 32, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route43MaxEther, EVENT_ROUTE_43_MAX_ETHER
+	object_event SPRITE_TEACHER, 29, 14, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerTeacherMolly, -1
 

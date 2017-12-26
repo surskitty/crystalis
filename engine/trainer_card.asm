@@ -34,7 +34,7 @@ TrainerCard: ; 25105
 	call ClearTileMap
 	call DisableLCD
 
-	callba GetCardPic
+	farcall GetCardPic
 
 	ld hl, CardRightCornerGFX
 	ld de, VTiles2 tile $1c
@@ -448,7 +448,7 @@ TrainerCard_Page1_PrintGameTime: ; 25415 (9:5415)
 	ret nz
 	hlcoord 15, 12
 	ld a, [hl]
-	xor %01010001 ; $7F (space) <--> $2E (colon)
+	xor " " ^ $2e ; alternate between space and small colon ($2e) tiles
 	ld [hl], a
 	ret
 

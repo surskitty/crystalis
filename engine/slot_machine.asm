@@ -20,7 +20,7 @@ _SlotMachine:
 	call PlaySFX
 	call WaitSFX
 	call ClearBGPalettes
-	callba TrainerRankings_EndSlotsWinStreak
+	farcall TrainerRankings_EndSlotsWinStreak
 	ld hl, Options
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC ; $ff40
@@ -41,7 +41,7 @@ _SlotMachine:
 	call ByteFill
 	ld b, SCGB_SLOT_MACHINE
 	call GetSGBLayout
-	callab ClearSpriteAnims
+	callfar ClearSpriteAnims
 	ld hl, wSlots
 	ld bc, wSlotsDataEnd - wSlots
 	xor a
@@ -116,7 +116,7 @@ SlotsLoop: ; 927af (24:67af)
 	call Slots_SpinReels
 	xor a
 	ld [wCurrSpriteOAMAddr], a
-	callab DoNextFrameForFirst16Sprites
+	callfar DoNextFrameForFirst16Sprites
 	call .PrintCoinsAndPayout
 	call .DummyFunc
 	call DelayFrame
@@ -471,10 +471,10 @@ Slots_LoadReelState: ; 929f6 (24:69f6)
 
 Slot_CheckCoinCaseFull: ; 92a04 (24:6a04)
 	ld a, d
-	cp 9999 / $100
+	cp HIGH(MAX_COINS)
 	jr c, .not_full
 	ld a, e
-	cp 9999 % $100
+	cp LOW(MAX_COINS)
 	jr c, .not_full
 	scf
 	ret
@@ -766,14 +766,15 @@ UpdateReelPositionAndOAM: ; 92b53 (24:6b53)
 
 ; 92bbe (24:6bbe)
 
+; unreferenced
 Function92bbe: ; 92bbe
 	push hl
 	srl a
 	srl a
-	add Unknown_92bce % $100
+	add LOW(.Unknown_92bce)
 	ld l, a
 	ld a, 0
-	adc Unknown_92bce / $100
+	adc HIGH(.Unknown_92bce)
 	ld h, a
 	ld a, [hl]
 	pop hl
@@ -781,7 +782,7 @@ Function92bbe: ; 92bbe
 
 ; 92bce
 
-Unknown_92bce: ; 92bce
+.Unknown_92bce: ; 92bce
 	db 0, 1, 2, 3, 4, 5
 ; 92bd4
 
@@ -1812,7 +1813,7 @@ SlotGetPayout: ; 93124 (24:7124)
 	ld a, [hl]
 	ld [wPayout], a
 	ld d, a
-	callba TrainerRankings_AddToSlotsPayouts
+	farcall TrainerRankings_AddToSlotsPayouts
 	ret
 
 .PayoutTable:
@@ -1836,7 +1837,7 @@ SlotPayoutText: ; 93158 (24:7158)
 	jr nz, .MatchedSomething
 	ld hl, .Text_Darn
 	call PrintText
-	callba TrainerRankings_EndSlotsWinStreak
+	farcall TrainerRankings_EndSlotsWinStreak
 	ret
 
 .MatchedSomething:
@@ -1860,7 +1861,7 @@ SlotPayoutText: ; 93158 (24:7158)
 .return
 	ld hl, .Text_PrintPayout
 	call PrintText
-	callba TrainerRankings_AddToSlotsWinStreak
+	farcall TrainerRankings_AddToSlotsWinStreak
 	ret
 
 ; 93195 (24:7195)
@@ -2001,7 +2002,7 @@ SlotMachine_AnimateGolem: ; 9321d (24:721d)
 	dec [hl]
 	ld e, a
 	ld d, 14 * 8
-	callba BattleAnim_Sine_e
+	farcall BattleAnim_Sine_e
 	ld a, e
 	ld hl, SPRITEANIMSTRUCT_YOFFSET
 	add hl, bc

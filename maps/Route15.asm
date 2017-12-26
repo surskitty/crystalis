@@ -8,16 +8,16 @@ const_value set 2
 	const ROUTE15_POKE_BALL
 
 Route15_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerTeacherColette:
-	trainer EVENT_BEAT_TEACHER_COLETTE, TEACHER, COLETTE, TeacherColetteSeenText, TeacherColetteBeatenText, 0, TeacherColetteScript
+	trainer EVENT_BEAT_TEACHER_COLETTE, TEACHER, COLETTE, TeacherColetteSeenText, TeacherColetteBeatenText, 0, .Script
 
-TeacherColetteScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext TeacherColetteAfterBattleText
@@ -26,9 +26,9 @@ TeacherColetteScript:
 	end
 
 TrainerTeacherHillary:
-	trainer EVENT_BEAT_TEACHER_HILLARY, TEACHER, HILLARY, TeacherHillarySeenText, TeacherHillaryBeatenText, 0, TeacherHillaryScript
+	trainer EVENT_BEAT_TEACHER_HILLARY, TEACHER, HILLARY, TeacherHillarySeenText, TeacherHillaryBeatenText, 0, .Script
 
-TeacherHillaryScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext TeacherHillaryAfterBattleText
@@ -37,9 +37,9 @@ TeacherHillaryScript:
 	end
 
 TrainerSchoolboyKipp:
-	trainer EVENT_BEAT_SCHOOLBOY_KIP, SCHOOLBOY, KIPP, SchoolboyKippSeenText, SchoolboyKippBeatenText, 0, SchoolboyKippScript
+	trainer EVENT_BEAT_SCHOOLBOY_KIP, SCHOOLBOY, KIPP, SchoolboyKippSeenText, SchoolboyKippBeatenText, 0, .Script
 
-SchoolboyKippScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SchoolboyKippAfterBattleText
@@ -48,9 +48,9 @@ SchoolboyKippScript:
 	end
 
 TrainerSchoolboyTommy:
-	trainer EVENT_BEAT_SCHOOLBOY_TOMMY, SCHOOLBOY, TOMMY, SchoolboyTommySeenText, SchoolboyTommyBeatenText, 0, SchoolboyTommyScript
+	trainer EVENT_BEAT_SCHOOLBOY_TOMMY, SCHOOLBOY, TOMMY, SchoolboyTommySeenText, SchoolboyTommyBeatenText, 0, .Script
 
-SchoolboyTommyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SchoolboyTommyAfterBattleText
@@ -59,9 +59,9 @@ SchoolboyTommyScript:
 	end
 
 TrainerSchoolboyJohnny:
-	trainer EVENT_BEAT_SCHOOLBOY_JOHNNY, SCHOOLBOY, JOHNNY, SchoolboyJohnnySeenText, SchoolboyJohnnyBeatenText, 0, SchoolboyJohnnyScript
+	trainer EVENT_BEAT_SCHOOLBOY_JOHNNY, SCHOOLBOY, JOHNNY, SchoolboyJohnnySeenText, SchoolboyJohnnyBeatenText, 0, .Script
 
-SchoolboyJohnnyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SchoolboyJohnnyAfterBattleText
@@ -70,9 +70,9 @@ SchoolboyJohnnyScript:
 	end
 
 TrainerSchoolboyBilly:
-	trainer EVENT_BEAT_SCHOOLBOY_BILLY, SCHOOLBOY, BILLY, SchoolboyBillySeenText, SchoolboyBillyBeatenText, 0, SchoolboyBillyScript
+	trainer EVENT_BEAT_SCHOOLBOY_BILLY, SCHOOLBOY, BILLY, SchoolboyBillySeenText, SchoolboyBillyBeatenText, 0, .Script
 
-SchoolboyBillyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SchoolboyBillyAfterBattleText
@@ -210,19 +210,19 @@ Route15_MapEventHeader:
 	warp_def $4, $2, 3, ROUTE_15_FUCHSIA_GATE
 	warp_def $5, $2, 4, ROUTE_15_FUCHSIA_GATE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 9, 19, SIGNPOST_READ, Route15Sign
+	bg_event 9, 19, BGEVENT_READ, Route15Sign
 
-.PersonEvents:
+.ObjectEvents:
 	db 7
-	person_event SPRITE_YOUNGSTER, 10, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 4, TrainerSchoolboyKipp, -1
-	person_event SPRITE_YOUNGSTER, 13, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerSchoolboyTommy, -1
-	person_event SPRITE_YOUNGSTER, 10, 33, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerSchoolboyJohnny, -1
-	person_event SPRITE_YOUNGSTER, 10, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerSchoolboyBilly, -1
-	person_event SPRITE_TEACHER, 12, 30, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 4, TrainerTeacherColette, -1
-	person_event SPRITE_TEACHER, 10, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerTeacherHillary, -1
-	person_event SPRITE_POKE_BALL, 5, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route15PPUp, EVENT_ROUTE_15_PP_UP
+	object_event SPRITE_YOUNGSTER, 10, 10, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSchoolboyKipp, -1
+	object_event SPRITE_YOUNGSTER, 13, 15, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyTommy, -1
+	object_event SPRITE_YOUNGSTER, 10, 33, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyJohnny, -1
+	object_event SPRITE_YOUNGSTER, 10, 27, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyBilly, -1
+	object_event SPRITE_TEACHER, 12, 30, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerTeacherColette, -1
+	object_event SPRITE_TEACHER, 10, 20, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerTeacherHillary, -1
+	object_event SPRITE_POKE_BALL, 5, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route15PPUp, EVENT_ROUTE_15_PP_UP

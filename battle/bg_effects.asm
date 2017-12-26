@@ -550,7 +550,7 @@ BattleBGEffect_HeadFollow: ; c8281 (32:4281)
 	ret
 
 _QueueBattleAnimation: ; c82ee (32:42ee)
-	callab QueueBattleAnimation
+	callfar QueueBattleAnimation
 	ret
 
 BattleBGEffect_27: ; c82f5 (32:42f5)
@@ -1223,7 +1223,7 @@ BattleBGEffect_DoubleTeam: ; c8689 (32:4689)
 	xor $ff
 	inc a
 	ld d, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld a, [hLYOverrideStart]
 	ld l, a
 	ld a, [hLYOverrideEnd]
@@ -1264,7 +1264,7 @@ BattleBGEffect_AcidArmor: ; c8709 (32:4709)
 	ld e, [hl]
 	ld d, 2
 	call Functionc8f2e
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld a, [hLYOverrideEnd]
 	ld l, a
 	ld [hl], $0
@@ -1275,7 +1275,7 @@ BattleBGEffect_AcidArmor: ; c8709 (32:4709)
 .one
 	ld a, [hLYOverrideEnd]
 	ld l, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld e, l
 	ld d, h
 	dec de
@@ -1554,7 +1554,7 @@ Functionc88a5: ; c88a5 (32:48a5)
 	ld a, [hLYOverrideEnd]
 	sub d
 	ld d, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld a, [hSCY]
 	or a
 	jr nz, .skip1
@@ -1846,7 +1846,7 @@ BattleBGEffect_2a: ; c8a3a (32:4a3a)
 	ld [hLYOverrideEnd], a
 	ld a, [hLYOverrideStart]
 	ld l, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 .loop
 	ld a, [hLYOverrideEnd]
 	cp l
@@ -1900,7 +1900,7 @@ BattleBGEffect_2a: ; c8a3a (32:4a3a)
 	ld a, [hLYOverrideEnd]
 	sub l
 	srl a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 .loop2
 	ld [hl], e
 	inc hl
@@ -2851,7 +2851,7 @@ BattleBGEffect_WavyScreenFX: ; c8fef (32:4fef)
 	ld l, a
 	inc a
 	ld e, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld d, h
 	ld a, [hLYOverrideEnd]
 	sub l
@@ -2874,7 +2874,7 @@ BattleBGEffect_WavyScreenFX: ; c8fef (32:4fef)
 
 BGEffect_FillLYOverridesBackup: ; c900b (32:500b)
 	push af
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld a, [hLYOverrideStart]
 	ld l, a
 	ld a, [hLYOverrideEnd]
@@ -2897,7 +2897,7 @@ BGEffect_DisplaceLYOverridesBackup: ; c901b (32:501b)
 	sub l
 	sub e
 	ld d, a
-	ld h, LYOverridesBackup / $100
+	ld h, HIGH(LYOverridesBackup)
 	ld a, [hLYOverrideStart]
 	ld l, a
 	ld a, $90
@@ -2944,13 +2944,13 @@ BattleBGEffects_CheckSGB: ; c9059 (32:5059)
 
 BattleBGEffects_Sine: ; c905d (32:505d)
 	ld e, a
-	callab BattleAnim_Sine_e
+	callfar BattleAnim_Sine_e
 	ld a, e
 	ret
 
 BattleBGEffects_Cosine: ; c9066 (32:5066)
 	ld e, a
-	callab BattleAnim_Cosine_e
+	callfar BattleAnim_Cosine_e
 	ld a, e
 	ret
 

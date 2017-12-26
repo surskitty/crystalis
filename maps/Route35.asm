@@ -12,16 +12,16 @@ const_value set 2
 	const ROUTE35_POKE_BALL
 
 Route35_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerBird_keeperBryan:
-	trainer EVENT_BEAT_BIRD_KEEPER_BRYAN, BIRD_KEEPER, BRYAN, Bird_keeperBryanSeenText, Bird_keeperBryanBeatenText, 0, Bird_keeperBryanScript
+	trainer EVENT_BEAT_BIRD_KEEPER_BRYAN, BIRD_KEEPER, BRYAN, Bird_keeperBryanSeenText, Bird_keeperBryanBeatenText, 0, .Script
 
-Bird_keeperBryanScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext Bird_keeperBryanAfterBattleText
@@ -30,9 +30,9 @@ Bird_keeperBryanScript:
 	end
 
 TrainerJugglerIrwin:
-	trainer EVENT_BEAT_JUGGLER_IRWIN, JUGGLER, IRWIN1, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, JugglerIrwin1Script
+	trainer EVENT_BEAT_JUGGLER_IRWIN, JUGGLER, IRWIN1, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
 
-JugglerIrwin1Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_JUGGLER_IRWIN
 	end_if_just_battled
 	opentext
@@ -85,9 +85,9 @@ UnknownScript_0x19c91b:
 	end
 
 TrainerCamperIvan:
-	trainer EVENT_BEAT_CAMPER_IVAN, CAMPER, IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, CamperIvanScript
+	trainer EVENT_BEAT_CAMPER_IVAN, CAMPER, IVAN, CamperIvanSeenText, CamperIvanBeatenText, 0, .Script
 
-CamperIvanScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CamperIvanAfterBattleText
@@ -96,9 +96,9 @@ CamperIvanScript:
 	end
 
 TrainerCamperElliot:
-	trainer EVENT_BEAT_CAMPER_ELLIOT, CAMPER, ELLIOT, CamperElliotSeenText, CamperElliotBeatenText, 0, CamperElliotScript
+	trainer EVENT_BEAT_CAMPER_ELLIOT, CAMPER, ELLIOT, CamperElliotSeenText, CamperElliotBeatenText, 0, .Script
 
-CamperElliotScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CamperElliotAfterBattleText
@@ -107,9 +107,9 @@ CamperElliotScript:
 	end
 
 TrainerPicnickerBrooke:
-	trainer EVENT_BEAT_PICNICKER_BROOKE, PICNICKER, BROOKE, PicnickerBrookeSeenText, PicnickerBrookeBeatenText, 0, PicnickerBrookeScript
+	trainer EVENT_BEAT_PICNICKER_BROOKE, PICNICKER, BROOKE, PicnickerBrookeSeenText, PicnickerBrookeBeatenText, 0, .Script
 
-PicnickerBrookeScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PicnickerBrookeAfterBattleText
@@ -118,9 +118,9 @@ PicnickerBrookeScript:
 	end
 
 TrainerPicnickerKim:
-	trainer EVENT_BEAT_PICNICKER_KIM, PICNICKER, KIM, PicnickerKimSeenText, PicnickerKimBeatenText, 0, PicnickerKimScript
+	trainer EVENT_BEAT_PICNICKER_KIM, PICNICKER, KIM, PicnickerKimSeenText, PicnickerKimBeatenText, 0, .Script
 
-PicnickerKimScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PicnickerKimAfterBattleText
@@ -129,9 +129,9 @@ PicnickerKimScript:
 	end
 
 TrainerBug_catcherArnie1:
-	trainer EVENT_BEAT_BUG_CATCHER_ARNIE, BUG_CATCHER, ARNIE1, Bug_catcherArnie1SeenText, Bug_catcherArnie1BeatenText, 0, Bug_catcherArnie1Script
+	trainer EVENT_BEAT_BUG_CATCHER_ARNIE, BUG_CATCHER, ARNIE1, Bug_catcherArnie1SeenText, Bug_catcherArnie1BeatenText, 0, .Script
 
-Bug_catcherArnie1Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_BUG_CATCHER_ARNIE
 	end_if_just_battled
 	opentext
@@ -226,9 +226,9 @@ UnknownScript_0x19ca2f:
 	end
 
 TrainerFirebreatherWalt:
-	trainer EVENT_BEAT_FIREBREATHER_WALT, FIREBREATHER, WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, FirebreatherWaltScript
+	trainer EVENT_BEAT_FIREBREATHER_WALT, FIREBREATHER, WALT, FirebreatherWaltSeenText, FirebreatherWaltBeatenText, 0, .Script
 
-FirebreatherWaltScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext FirebreatherWaltAfterBattleText
@@ -472,24 +472,24 @@ Route35_MapEventHeader:
 	warp_def $21, $a, 2, ROUTE_35_GOLDENROD_GATE
 	warp_def $5, $3, 3, ROUTE_35_NATIONAL_PARK_GATE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 2
-	signpost 7, 1, SIGNPOST_READ, Route35Sign
-	signpost 31, 11, SIGNPOST_READ, Route35Sign
+	bg_event 7, 1, BGEVENT_READ, Route35Sign
+	bg_event 31, 11, BGEVENT_READ, Route35Sign
 
-.PersonEvents:
+.ObjectEvents:
 	db 11
-	person_event SPRITE_YOUNGSTER, 19, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 2, TrainerCamperIvan, -1
-	person_event SPRITE_YOUNGSTER, 20, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerCamperElliot, -1
-	person_event SPRITE_LASS, 20, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
-	person_event SPRITE_LASS, 26, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerPicnickerKim, -1
-	person_event SPRITE_YOUNGSTER, 28, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 0, TrainerBird_keeperBryan, -1
-	person_event SPRITE_FISHER, 10, 2, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 2, TrainerFirebreatherWalt, -1
-	person_event SPRITE_BUG_CATCHER, 7, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 3, TrainerBug_catcherArnie1, -1
-	person_event SPRITE_SUPER_NERD, 10, 5, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
-	person_event SPRITE_OFFICER, 6, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, OfficerScript_0x19ca49, -1
-	person_event SPRITE_FRUIT_TREE, 25, 2, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FruitTreeScript_0x19ca7e, -1
-	person_event SPRITE_POKE_BALL, 16, 13, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT
+	object_event SPRITE_YOUNGSTER, 19, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperIvan, -1
+	object_event SPRITE_YOUNGSTER, 20, 8, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperElliot, -1
+	object_event SPRITE_LASS, 20, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerBrooke, -1
+	object_event SPRITE_LASS, 26, 10, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerKim, -1
+	object_event SPRITE_YOUNGSTER, 28, 14, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBird_keeperBryan, -1
+	object_event SPRITE_FISHER, 10, 2, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherWalt, -1
+	object_event SPRITE_BUG_CATCHER, 7, 16, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBug_catcherArnie1, -1
+	object_event SPRITE_SUPER_NERD, 10, 5, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerJugglerIrwin, -1
+	object_event SPRITE_OFFICER, 6, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OfficerScript_0x19ca49, -1
+	object_event SPRITE_FRUIT_TREE, 25, 2, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x19ca7e, -1
+	object_event SPRITE_POKE_BALL, 16, 13, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route35TMRollout, EVENT_ROUTE_35_TM_ROLLOUT

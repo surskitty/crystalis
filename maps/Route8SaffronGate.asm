@@ -2,16 +2,16 @@ const_value set 2
 	const ROUTE8SAFFRONGATE_OFFICER
 
 Route8SaffronGate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
-OfficerScript_0x7f416:
-	jumptextfaceplayer UnknownText_0x7f419
+Route8SaffronGateOfficerScript:
+	jumptextfaceplayer Route8SaffronGateOfficerText
 
-UnknownText_0x7f419:
+Route8SaffronGateOfficerText:
 	text "Have you been to"
 	line "LAVENDER TOWN?"
 
@@ -30,12 +30,12 @@ Route8SaffronGate_MapEventHeader:
 	warp_def $4, $9, 1, ROUTE_8
 	warp_def $5, $9, 2, ROUTE_8
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 1
-	person_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, OfficerScript_0x7f416, -1
+	object_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route8SaffronGateOfficerScript, -1

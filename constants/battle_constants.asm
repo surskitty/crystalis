@@ -10,8 +10,12 @@ NUM_MOVES EQU 4
 BASE_STAT_LEVEL EQU 7
 MAX_STAT_LEVEL EQU 13
 
-; turns that Rest sleep lasts
-REST_TURNS EQU 2
+; minimum damage before type effectiveness
+MIN_NEUTRAL_DAMAGE EQU 2
+
+; turns that sleep lasts
+REST_SLEEP_TURNS EQU 2
+TREEMON_SLEEP_TURNS EQU 7
 
 ; PlayerStatLevels and EnemyStatLevels indexes
 ; used for GetStatName
@@ -53,6 +57,8 @@ NUM_STATS EQU const_value
 ; stat formula constants
 STAT_MIN_NORMAL EQU 5
 STAT_MIN_HP EQU 10
+
+MAX_STAT_VALUE EQU 999
 
 ; shiny dvs
 ATKDEFDV_SHINY EQU $EA

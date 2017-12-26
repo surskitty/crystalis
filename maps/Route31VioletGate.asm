@@ -3,25 +3,25 @@ const_value set 2
 	const ROUTE31VIOLETGATE_COOLTRAINER_F
 
 Route31VioletGate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
-OfficerScript_0x197634:
-	jumptextfaceplayer UnknownText_0x19763a
+Route31VioletGateOfficerScript:
+	jumptextfaceplayer Route31VioletGateOfficerText
 
-CooltrainerFScript_0x197637:
-	jumptextfaceplayer UnknownText_0x197661
+Route31VioletGateCooltrainerFScript:
+	jumptextfaceplayer Route31VioletGateCooltrainerFText
 
-UnknownText_0x19763a:
+Route31VioletGateOfficerText:
 	text "Hi there!"
 	line "Did you visit"
 	cont "SPROUT TOWER?"
 	done
 
-UnknownText_0x197661:
+Route31VioletGateCooltrainerFText:
 	text "I came too far"
 	line "out. I'd better"
 	cont "phone home!"
@@ -38,13 +38,13 @@ Route31VioletGate_MapEventHeader:
 	warp_def $4, $9, 1, ROUTE_31
 	warp_def $5, $9, 2, ROUTE_31
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, OfficerScript_0x197634, -1
-	person_event SPRITE_COOLTRAINER_F, 2, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, CooltrainerFScript_0x197637, -1
+	object_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route31VioletGateOfficerScript, -1
+	object_event SPRITE_COOLTRAINER_F, 2, 1, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route31VioletGateCooltrainerFScript, -1

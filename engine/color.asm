@@ -1,5 +1,4 @@
-PALPACKET_LENGTH EQU $10
-INCLUDE "predef/sgb.asm"
+INCLUDE "engine/sgb_layouts.asm"
 
 SHINY_ATK_BIT EQU 5
 SHINY_DEF_VAL EQU 10
@@ -44,6 +43,7 @@ CheckShininess:
 	and a
 	ret
 
+; unreferenced
 CheckContestMon:
 ; Check a mon's DVs at hl in the bug catching contest.
 ; Return carry if its DVs are good enough to place in the contest.
@@ -109,7 +109,8 @@ InitPartyMenuPalettes:
 	call WipeAttrMap
 	ret
 
-SGB_ApplyPartyMenuHPPals: ; 8ade SGB layout $fc
+; SGB layout for SCGB_PARTY_MENU_HP_PALS
+SGB_ApplyPartyMenuHPPals: ; 8ade
 	ld hl, wHPPals
 	ld a, [wSGBPals]
 	ld e, a
@@ -308,7 +309,7 @@ Function8bec:
 	ld a, [EnemySafeguardCount] ; value
 	and $3
 	call FillBoxCGB
-	call LoadEDTile
+	call CopyTilemapAtOnce
 	ret
 
 ApplyMonOrTrainerPals:
@@ -344,18 +345,18 @@ ApplyHPBarPals:
 	ret
 
 .Enemy:
-	ld de, BGPals + 2 palettes + 2
+	ld de, BGPals palette PAL_BATTLE_BG_ENEMY_HP + 2
 	jr .okay
 
 .Player:
-	ld de, BGPals + 3 palettes + 2
+	ld de, BGPals palette PAL_BATTLE_BG_PLAYER_HP + 2
 
 .okay
 	ld l, c
 	ld h, $0
 	add hl, hl
 	add hl, hl
-	ld bc, Palettes_a8be
+	ld bc, HPBarPals
 	add hl, bc
 	ld bc, 4
 	ld a, $5
@@ -396,11 +397,11 @@ LoadStatsScreenPals:
 	ld a, $5
 	ld [rSVBK], a
 	ld a, [hli]
-	ld [UnknBGPals], a
-	ld [UnknBGPals + 8 * 2], a
+	ld [UnknBGPals palette 0], a
+	ld [UnknBGPals palette 2], a
 	ld a, [hl]
-	ld [UnknBGPals + 1], a
-	ld [UnknBGPals + 8 * 2 + 1], a
+	ld [UnknBGPals palette 0 + 1], a
+	ld [UnknBGPals palette 2 + 1], a
 	pop af
 	ld [rSVBK], a
 	call ApplyPals
@@ -450,63 +451,15 @@ LoadMailPalettes:
 	ret
 
 .MailPals:
-	RGB 20, 31, 11
-	RGB 31, 19, 00
-	RGB 31, 10, 09
-	RGB 00, 00, 00
+INCLUDE "data/palettes/mail.pal"
 
-	RGB 15, 20, 31
-	RGB 30, 26, 00
-	RGB 31, 12, 00
-	RGB 00, 00, 00
-
-	RGB 24, 17, 31
-	RGB 30, 26, 00
-	RGB 08, 11, 31
-	RGB 00, 00, 00
-
-	RGB 31, 25, 17
-	RGB 31, 18, 04
-	RGB 28, 12, 05
-	RGB 00, 00, 00
-
-	RGB 19, 26, 31
-	RGB 31, 05, 08
-	RGB 31, 09, 31
-	RGB 00, 00, 00
-
-	RGB 31, 19, 28
-	RGB 31, 21, 00
-	RGB 12, 22, 00
-	RGB 00, 00, 00
-
-	RGB 19, 17, 23
-	RGB 30, 26, 00
-	RGB 31, 12, 00
-	RGB 00, 00, 00
-
-	RGB 07, 26, 31
-	RGB 26, 26, 27
-	RGB 31, 11, 11
-	RGB 00, 00, 00
-
-	RGB 21, 31, 21
-	RGB 30, 26, 00
-	RGB 31, 12, 00
-	RGB 00, 00, 00
-
-	RGB 07, 26, 31
-	RGB 31, 31, 00
-	RGB 00, 21, 00
-	RGB 00, 00, 00
-
-INCLUDE "predef/cgb.asm"
+INCLUDE "engine/cgb_layouts.asm"
 
 Function95f0:
 ; XXX
 	ld hl, .Palette
 	ld de, UnknBGPals
-	ld bc, 8
+	ld bc, 1 palettes
 	ld a, $5
 	call FarCopyWRAM
 	call ApplyPals
@@ -544,7 +497,7 @@ GetPredefPal:
 	add hl, hl
 	add hl, hl
 	add hl, hl
-	ld bc, Palettes_9df6
+	ld bc, PredefPals
 	add hl, bc
 	ret
 
@@ -570,10 +523,10 @@ LoadPalette_White_Col1_Col2_Black:
 	ld a, $5
 	ld [rSVBK], a
 
-	ld a, $7fff % $100
+	ld a, LOW(palred 31 + palgreen 31 + palblue 31)
 	ld [de], a
 	inc de
-	ld a, $7fff / $100
+	ld a, HIGH(palred 31 + palgreen 31 + palblue 31)
 	ld [de], a
 	inc de
 
@@ -623,7 +576,7 @@ ResetBGPals:
 	ld [rSVBK], a
 
 	ld hl, UnknBGPals
-	ld c, 8
+	ld c, 1 palettes
 .loop
 	ld a, $ff
 	ld [hli], a
@@ -704,7 +657,8 @@ ApplyAttrMap:
 	ld [rVBK], a
 	ret
 
-CGB_ApplyPartyMenuHPPals: ; 96f3 CGB layout $fc
+; CGB layout for SCGB_PARTY_MENU_HP_PALS
+CGB_ApplyPartyMenuHPPals: ; 96f3
 	ld hl, wHPPals
 	ld a, [wSGBPals]
 	ld e, a
@@ -731,7 +685,7 @@ CGB_ApplyPartyMenuHPPals: ; 96f3 CGB layout $fc
 	ret
 
 InitPartyMenuOBPals:
-	ld hl, Palettes_b681
+	ld hl, PartyMenuOBPals
 	ld de, UnknOBPals
 	ld bc, 2 palettes
 	ld a, $5
@@ -740,7 +694,7 @@ InitPartyMenuOBPals:
 
 GetBattlemonBackpicPalettePointer:
 	push de
-	callba GetPartyMonDVs
+	farcall GetPartyMonDVs
 	ld c, l
 	ld b, h
 	ld a, [TempBattleMonSpecies]
@@ -750,7 +704,7 @@ GetBattlemonBackpicPalettePointer:
 
 GetEnemyFrontpicPalettePointer:
 	push de
-	callba GetEnemyMonDVs
+	farcall GetEnemyMonDVs
 	ld c, l
 	ld b, h
 	ld a, [TempEnemyMonSpecies]
@@ -795,7 +749,7 @@ GetMonPalettePointer_:
 Function9779: mobile
 	call CheckCGB
 	ret z
-	ld hl, Palettes_979c
+	ld hl, BattleObjectPals
 	ld a, $90
 	ld [rOBPI], a
 	ld c, 6 palettes
@@ -804,43 +758,15 @@ Function9779: mobile
 	ld [rOBPD], a
 	dec c
 	jr nz, .loop
-	ld hl, Palettes_979c
-	ld de, UnknOBPals + 8 * 2
+	ld hl, BattleObjectPals
+	ld de, UnknOBPals palette 2
 	ld bc, 2 palettes
 	ld a, $5
 	call FarCopyWRAM
 	ret
 
-Palettes_979c:
-	RGB 31, 31, 31
-	RGB 25, 25, 25
-	RGB 13, 13, 13
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 07
-	RGB 31, 16, 01
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 19, 24
-	RGB 30, 10, 06
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 12, 25, 01
-	RGB 05, 14, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 08, 12, 31
-	RGB 01, 04, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 18, 07
-	RGB 20, 15, 03
-	RGB 00, 00, 00
+BattleObjectPals:
+INCLUDE "data/palettes/battle_objects.pal"
 
 Function97cc:
 ; XXX
@@ -986,9 +912,9 @@ InitCGBPals::
 	ld [rBGPI], a
 	ld c, 4 * 8
 .bgpals_loop
-	ld a, $7fff % $100
+	ld a, LOW(palred 31 + palgreen 31 + palblue 31)
 	ld [rBGPD], a
-	ld a, $7fff / $100
+	ld a, HIGH(palred 31 + palgreen 31 + palblue 31)
 	ld [rBGPD], a
 	dec c
 	jr nz, .bgpals_loop
@@ -996,9 +922,9 @@ InitCGBPals::
 	ld [rOBPI], a
 	ld c, 4 * 8
 .obpals_loop
-	ld a, $7fff % $100
+	ld a, LOW(palred 31 + palgreen 31 + palblue 31)
 	ld [rOBPD], a
-	ld a, $7fff / $100
+	ld a, HIGH(palred 31 + palgreen 31 + palblue 31)
 	ld [rOBPD], a
 	dec c
 	jr nz, .obpals_loop
@@ -1017,9 +943,9 @@ InitCGBPals::
 .LoadWhitePals:
 	ld c, 4 * 16
 .loop
-	ld a, $7fff % $100
+	ld a, LOW(palred 31 + palgreen 31 + palblue 31)
 	ld [hli], a
-	ld a, $7fff / $100
+	ld a, HIGH(palred 31 + palgreen 31 + palblue 31)
 	ld [hli], a
 	dec c
 	jr nz, .loop
@@ -1083,7 +1009,7 @@ PushSGBBorder:
 
 SGB_ClearVRAM:
 	ld hl, VTiles0
-	ld bc, $2000
+	ld bc, VRAM_End - VTiles0
 	xor a
 	call ByteFill
 	ret
@@ -1142,9 +1068,9 @@ SGBBorder_PushBGPals:
 	call DisableLCD
 	ld a, %11100100
 	ld [rBGP], a
-	ld hl, Palettes_9df6
+	ld hl, PredefPals
 	ld de, VTiles1
-	ld bc, $1000
+	ld bc, $100 tiles
 	call CopyData
 	call DrawDefaultTiles
 	ld a, $e3
@@ -1271,624 +1197,40 @@ SGBDelayCycles:
 	jr nz, .wait
 	ret
 
-BlkPacket_9a86:
-	db $21, $01, $03, $00, $00, $00, $13, $11, $00, $00, $00, $00, $00, $00, $00, $00
+INCLUDE "data/palettes/blk_packets.asm"
 
-BlkPacket_9a96:
-	db $21, $01, $07, $05, $00, $0a, $13, $0d, $00, $00, $00, $00, $00, $00, $00, $00
+INCLUDE "data/palettes/pal_packets.asm"
 
-BlkPacket_9aa6:
-	db $22, $05, $07, $0a, $00, $0c, $13, $11, $03, $05, $01, $00, $0a, $03, $03, $00
-	db $0a, $08, $13, $0a, $03, $0a, $00, $04, $08, $0b, $03, $0f, $0b, $00, $13, $07
+PredefPals:
+INCLUDE "data/palettes/predef.pal"
 
-BlkPacket_9ac6:
-	db $21, $01, $07, $05, $00, $01, $07, $07, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9ad6:
-	db $21, $01, $07, $05, $0b, $01, $13, $02, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9ae6:
-	db $21, $01, $07, $05, $01, $01, $08, $08, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9af6:
-	db $21, $01, $07, $05, $07, $05, $0d, $0b, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9b06:
-	db $22, $05, $03, $05, $00, $00, $13, $0b, $03, $0a, $00, $04, $13, $09, $02, $0f
-	db $00, $06, $13, $07, $03, $00, $04, $04, $0f, $09, $03, $00, $00, $0c, $13, $11
-
-BlkPacket_9b26:
-	db $23, $07, $07, $10, $00, $00, $02, $0c, $02, $00, $0c, $00, $12, $01, $02, $00
-	db $0c, $02, $12, $03, $02, $00, $0c, $04, $12, $05, $02, $00, $0c, $06, $12, $07
-	db $02, $00, $0c, $08, $12, $09, $02, $00, $0c, $0a, $12, $0b, $00, $00, $00, $00
-
-BlkPacket_9b56:
-	db $22, $03, $07, $20, $00, $00, $13, $04, $03, $0f, $00, $06, $13, $11, $03, $05
-	db $0f, $01, $12, $04, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9b76:
-	db $21, $01, $07, $10, $00, $00, $13, $05, $00, $00, $00, $00, $00, $00, $00, $00
-
-BlkPacket_9b86:
-	db $21, $02, $07, $0a, $00, $04, $13, $0d, $03, $05, $00, $06, $13, $0b, $00, $00
-
-PalPacket_9b96:	db $51, $48, $00, $49, $00, $4a, $00, $4b, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9ba6:	db $51, $2b, $00, $24, $00, $20, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9bb6:	db $51, $41, $00, $42, $00, $43, $00, $44, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9bc6:	db $51, $4c, $00, $4c, $00, $4c, $00, $4c, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9bd6:	db $51, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9be6:	db $51, $36, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9bf6:	db $51, $37, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c06:	db $51, $38, $00, $39, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c16:	db $51, $3a, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c26:	db $51, $3b, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c36:	db $51, $3c, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c46:	db $51, $39, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c56:	db $51, $2e, $00, $2f, $00, $30, $00, $31, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c66:	db $51, $1a, $00, $1a, $00, $1a, $00, $1a, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c76:	db $51, $32, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c86:	db $51, $3c, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9c96:	db $51, $3d, $00, $3e, $00, $3f, $00, $40, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9ca6:	db $51, $33, $00, $34, $00, $1b, $00, $1f, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9cb6:	db $51, $1b, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9cc6:	db $51, $1c, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9cd6:	db $51, $35, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9ce6:	db $01, $ff, $7f, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9cf6:	db $09, $ff, $7f, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d06:	db $59, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d16:	db $89, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d26:	db $89, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d36:	db $99, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d46:	db $a1, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d56:	db $b9, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d66:	db $b9, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d76:	db $79, $5d, $08, $00, $0b, $8c, $d0, $f4, $60, $00, $00, $00, $00, $00, $00, $00
-PalPacket_9d86:	db $79, $52, $08, $00, $0b, $a9, $e7, $9f, $01, $c0, $7e, $e8, $e8, $e8, $e8, $e0
-PalPacket_9d96:	db $79, $47, $08, $00, $0b, $c4, $d0, $16, $a5, $cb, $c9, $05, $d0, $10, $a2, $28
-PalPacket_9da6:	db $79, $3c, $08, $00, $0b, $f0, $12, $a5, $c9, $c9, $c8, $d0, $1c, $a5, $ca, $c9
-PalPacket_9db6:	db $79, $31, $08, $00, $0b, $0c, $a5, $ca, $c9, $7e, $d0, $06, $a5, $cb, $c9, $7e
-PalPacket_9dc6:	db $79, $26, $08, $00, $0b, $39, $cd, $48, $0c, $d0, $34, $a5, $c9, $c9, $80, $d0
-PalPacket_9dd6:	db $79, $1b, $08, $00, $0b, $ea, $ea, $ea, $ea, $ea, $a9, $01, $cd, $4f, $0c, $d0
-PalPacket_9de6:	db $79, $10, $08, $00, $0b, $4c, $20, $08, $ea, $ea, $ea, $ea, $ea, $60, $ea, $ea
-
-Palettes_9df6:
-	RGB 31, 31, 31
-	RGB 22, 25, 19
-	RGB 16, 21, 30
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 27, 28, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 28, 19
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 24, 24
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 23, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 21, 27
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 24, 16
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 25, 30, 26
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 25, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 20, 19
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 26, 19
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 27, 28, 27
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 30, 23
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 29, 24, 29
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 23, 29
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 25, 23, 20
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 29, 26, 18
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 21, 18
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 25, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 22, 21, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 22, 25, 21
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 21, 22
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 20, 20
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 26, 26
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 14, 09
-	RGB 15, 20, 20
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 12, 28, 22
-	RGB 15, 20, 20
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 07, 07, 07
-	RGB 02, 03, 03
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 22, 17
-	RGB 16, 14, 19
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 18, 20, 27
-	RGB 11, 15, 23
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 20, 10
-	RGB 26, 10, 06
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 25, 29
-	RGB 14, 19, 25
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 27, 22, 24
-	RGB 21, 15, 23
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 28, 20, 15
-	RGB 21, 14, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 20, 26, 16
-	RGB 09, 20, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 22, 24
-	RGB 28, 15, 21
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 28, 14
-	RGB 26, 20, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 21, 22
-	RGB 15, 15, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 23, 19, 13
-	RGB 14, 12, 17
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 18, 21
-	RGB 10, 12, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 22, 15, 16
-	RGB 17, 02, 05
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 15, 20, 20
-	RGB 05, 16, 16
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 23, 15, 19
-	RGB 14, 04, 12
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 20, 17, 18
-	RGB 18, 13, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 23, 21, 16
-	RGB 12, 12, 10
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 25, 29
-	RGB 30, 22, 24
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 23, 16
-	RGB 29, 14, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 18, 18, 18
-	RGB 10, 10, 10
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 26, 15
-	RGB 00, 23, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 26, 15
-	RGB 31, 23, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 26, 15
-	RGB 31, 00, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 29, 26, 19
-	RGB 27, 20, 14
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 20, 10
-	RGB 21, 00, 04
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 20, 10
-	RGB 21, 00, 04
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 26, 16
-	RGB 16, 12, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 15, 28, 26
-	RGB 12, 22, 26
-	RGB 03, 16, 14
-
-	RGB 31, 31, 31
-	RGB 15, 28, 26
-	RGB 23, 24, 24
-	RGB 00, 00, 00
-
-	RGB 31, 31, 24
-	RGB 07, 27, 19
-	RGB 26, 20, 10
-	RGB 19, 12, 08
-
-	RGB 31, 31, 31
-	RGB 31, 28, 14
-	RGB 31, 13, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 18, 21
-	RGB 10, 12, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 23, 21, 16
-	RGB 12, 12, 10
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 14, 00
-	RGB 07, 11, 15
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 21, 22
-	RGB 26, 10, 06
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 27, 04
-	RGB 24, 20, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 13, 25
-	RGB 24, 20, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 19, 29
-	RGB 24, 20, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 22, 24
-	RGB 18, 18, 18
-	RGB 16, 10, 07
-
-	RGB 31, 31, 31
-	RGB 21, 25, 29
-	RGB 18, 18, 18
-	RGB 16, 10, 07
-
-	RGB 31, 31, 31
-	RGB 20, 26, 16
-	RGB 18, 18, 18
-	RGB 16, 10, 07
-
-	RGB 31, 31, 31
-	RGB 31, 28, 14
-	RGB 18, 18, 18
-	RGB 16, 10, 07
-
-	RGB 31, 31, 31
-	RGB 18, 18, 18
-	RGB 26, 10, 06
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 22, 24
-	RGB 28, 15, 21
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 26, 20, 00
-	RGB 16, 19, 29
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 02, 30
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 13, 04
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 28, 04, 02
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 18, 23, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 24, 20, 11
-	RGB 18, 13, 11
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 25, 30, 00
-	RGB 25, 30, 00
-
-	RGB 00, 00, 00
-	RGB 08, 11, 11
-	RGB 21, 21, 21
-	RGB 31, 31, 31
-
-SGBBorderMap:
-	db $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $14, $14, $15, $14, $16, $14, $17, $14, $17, $54, $16, $54, $15, $54, $14, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14
-	db $01, $14, $02, $14, $03, $14, $03, $54, $02, $54, $01, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $24, $14, $25, $14, $26, $14, $07, $14, $07, $54, $26, $54, $25, $54, $24, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $54, $01, $14, $02, $14, $03, $14, $03, $54, $02, $54, $01, $54
-	db $11, $14, $12, $14, $13, $14, $13, $54, $12, $54, $11, $54, $10, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $24, $14, $34, $14, $35, $14, $35, $54, $34, $54, $33, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $10, $14, $11, $14, $12, $14, $13, $14, $13, $54, $12, $54, $11, $54
-	db $21, $14, $22, $14, $23, $14, $23, $54, $22, $54, $21, $54, $20, $54, $07, $14, $08, $14, $09, $14, $0a, $14, $0b, $14, $0c, $14, $0d, $14, $07, $14, $07, $14, $18, $14, $09, $14, $1a, $14, $1b, $14, $0d, $14, $0c, $14, $1c, $14, $29, $14, $07, $14, $20, $14, $21, $14, $22, $14, $23, $14, $23, $54, $22, $54, $21, $54
-	db $31, $14, $32, $14, $07, $14, $07, $14, $32, $54, $36, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $38, $10, $27, $10, $32, $14, $07, $54, $07, $54, $32, $54, $31, $54
-	db $05, $14, $06, $14, $07, $14, $07, $54, $06, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $06, $14, $07, $14, $07, $54, $06, $54, $05, $54
-	db $15, $14, $16, $14, $17, $14, $17, $54, $16, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $16, $14, $17, $14, $17, $54, $16, $54, $15, $54
-	db $25, $14, $26, $14, $07, $14, $07, $54, $26, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $26, $14, $07, $14, $07, $54, $26, $54, $25, $54
-	db $33, $14, $34, $14, $35, $14, $35, $54, $34, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $34, $14, $35, $14, $35, $54, $34, $54, $33, $54
-	db $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14
-	db $02, $54, $01, $54, $07, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $07, $14, $01, $14, $02, $14
-	db $12, $54, $11, $54, $10, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $10, $14, $11, $14, $12, $14
-	db $22, $54, $21, $54, $20, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $20, $14, $21, $14, $22, $14
-	db $32, $54, $31, $54, $30, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $30, $14, $31, $14, $32, $14
-	db $06, $54, $05, $54, $04, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $04, $14, $05, $14, $06, $14
-	db $16, $54, $15, $54, $14, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $14, $14, $15, $14, $16, $14
-	db $26, $54, $25, $54, $24, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $24, $14, $25, $14, $26, $14
-	db $34, $54, $33, $54, $07, $54, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $07, $14, $33, $14, $34, $14
-	db $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $1f, $10,                                                                                                                                                                                     $37, $10, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14
-	db $01, $14, $02, $14, $03, $14, $03, $54, $02, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $02, $14, $03, $14, $03, $54, $02, $54, $01, $54
-	db $11, $14, $12, $14, $13, $14, $13, $54, $12, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $12, $14, $13, $14, $13, $54, $12, $54, $11, $54
-	db $21, $14, $22, $14, $23, $14, $23, $54, $22, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $22, $14, $23, $14, $23, $54, $22, $54, $21, $54
-	db $31, $14, $32, $14, $07, $14, $07, $14, $32, $54, $1f, $10,                                                                                                                                                                                     $37, $10, $32, $14, $07, $54, $07, $54, $32, $54, $31, $54
-	db $05, $14, $06, $14, $07, $14, $07, $54, $06, $54, $2e, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2f, $10, $2d, $10, $06, $14, $07, $14, $07, $54, $06, $54, $05, $54
-	db $15, $14, $16, $14, $17, $14, $17, $54, $16, $54, $15, $54, $14, $54, $07, $14, $07, $14, $39, $14, $0e, $14, $09, $14, $0f, $14, $28, $14, $07, $14, $19, $14, $0c, $14, $1c, $14, $29, $14, $2a, $14, $2b, $14, $2c, $14, $39, $14, $07, $14, $07, $14, $14, $14, $15, $14, $16, $14, $17, $14, $17, $54, $16, $54, $15, $54
-	db $25, $14, $26, $14, $07, $14, $07, $54, $26, $54, $25, $54, $24, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $01, $14, $02, $14, $03, $14, $03, $54, $02, $54, $01, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $24, $14, $25, $14, $26, $14, $07, $14, $07, $54, $26, $54, $25, $54
-	db $33, $14, $34, $14, $35, $14, $35, $54, $34, $54, $24, $54, $07, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $10, $14, $11, $14, $12, $14, $13, $14, $13, $54, $12, $54, $11, $54, $10, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $24, $14, $34, $14, $35, $14, $35, $54, $34, $54, $33, $54
-	db $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $20, $14, $21, $14, $22, $14, $23, $14, $23, $54, $22, $54, $21, $54, $20, $54, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14, $07, $14
+INCLUDE "data/sgb_border_map.asm"
 
 SGBBorderPalettes:
-	RGB 24, 06, 06
-	RGB 24, 24, 26
-	RGB 14, 15, 20
-	RGB 04, 07, 10
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 18, 24, 18
-	RGB 31, 26, 15
-	RGB 26, 19, 10
-	RGB 12, 07, 05
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 18, 06, 31
-	RGB 31, 31, 29
-	RGB 31, 12, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 12, 31, 06
-	RGB 22, 26, 30
-	RGB 16, 17, 21
-	RGB 00, 03, 00
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
-	RGB 31, 31, 25
+INCLUDE "data/palettes/sgb_border.pal"
 
 SGBBorder:
 INCBIN "gfx/sgb/sgb_border.2bpp"
 
-Palettes_a8be:
-	RGB 30, 26, 15
-	RGB 00, 23, 00
+HPBarPals:
+INCLUDE "data/palettes/hp_bar.pal"
 
-	RGB 30, 26, 15
-	RGB 31, 21, 00
-
-	RGB 30, 26, 15
-	RGB 31, 00, 00
-
-Palettes_a8ca:
-	RGB 30, 26, 15
-	RGB 04, 17, 31
+ExpBarPalette:
+INCLUDE "data/palettes/exp_bar.pal"
 
 INCLUDE "gfx/pics/palette_pointers.asm"
-
 INCLUDE "gfx/trainer_palettes.asm"
 
 LoadMapPals:
-	callba LoadSpecialMapPalette
+	farcall LoadSpecialMapPalette
 	jr c, .got_pals
 
 	; Which palette group is based on whether we're outside or inside
-	ld a, [wPermission]
+	ld a, [wEnvironment]
 	and 7
 	ld e, a
 	ld d, 0
-	ld hl, .TilesetColorsPointers
+	ld hl, EnvironmentColorsPointers
 	add hl, de
 	add hl, de
 	ld a, [hli]
@@ -1951,7 +1293,7 @@ LoadMapPals:
 	ld a, BANK(UnknOBPals)
 	call FarCopyWRAM
 
-	ld a, [wPermission]
+	ld a, [wEnvironment]
 	cp TOWN
 	jr z, .outside
 	cp ROUTE
@@ -1979,40 +1321,7 @@ endr
 	call FarCopyWRAM
 	ret
 
-.TilesetColorsPointers:
-	dw .OutdoorColors ; unused
-	dw .OutdoorColors ; TOWN
-	dw .OutdoorColors ; ROUTE
-	dw .IndoorColors  ; INDOOR
-	dw .DungeonColors ; CAVE
-	dw .Perm5Colors   ; PERM_5
-	dw .IndoorColors  ; GATE
-	dw .DungeonColors ; DUNGEON
-
-; Valid indices: $00 - $29
-.OutdoorColors:
-	db $00, $01, $02, $28, $04, $05, $06, $07 ; morn
-	db $08, $09, $0a, $28, $0c, $0d, $0e, $0f ; day
-	db $10, $11, $12, $29, $14, $15, $16, $17 ; nite
-	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
-
-.IndoorColors:
-	db $20, $21, $22, $23, $24, $25, $26, $07 ; morn
-	db $20, $21, $22, $23, $24, $25, $26, $07 ; day
-	db $10, $11, $12, $13, $14, $15, $16, $07 ; nite
-	db $18, $19, $1a, $1b, $1c, $1d, $1e, $07 ; dark
-
-.DungeonColors:
-	db $00, $01, $02, $03, $04, $05, $06, $07 ; morn
-	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ; day
-	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
-	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
-
-.Perm5Colors:
-	db $00, $01, $02, $03, $04, $05, $06, $07 ; morn
-	db $08, $09, $0a, $0b, $0c, $0d, $0e, $0f ; day
-	db $10, $11, $12, $13, $14, $15, $16, $17 ; nite
-	db $18, $19, $1a, $1b, $1c, $1d, $1e, $1f ; dark
+INCLUDE "data/maps/environment_colors.asm"
 
 Palette_b309: ; b309 mobile
 	RGB 31, 31, 31
@@ -2027,324 +1336,34 @@ Palette_b311: ; b311 not mobile
 	RGB 00, 00, 00
 
 TilesetBGPalette:
-INCLUDE "tilesets/bg.pal"
+INCLUDE "data/palettes/overworld/tileset_bg.pal"
 
 MapObjectPals::
-INCLUDE "tilesets/ob.pal"
+INCLUDE "data/palettes/overworld/map_objects.pal"
 
 RoofPals:
-INCLUDE "tilesets/roof.pal"
+INCLUDE "data/palettes/overworld/roofs.pal"
 
 DiplomaPalettes:
-	RGB 27, 31, 27
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 00, 00, 00
+INCLUDE "data/palettes/diploma.pal"
 
-	RGB 27, 31, 27
-	RGB 31, 07, 06
-	RGB 20, 02, 03
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 10, 31, 09
-	RGB 04, 14, 01
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 08, 12, 31
-	RGB 01, 04, 31
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 31, 07
-	RGB 31, 16, 01
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 22, 16, 08
-	RGB 13, 07, 01
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 15, 31, 31
-	RGB 05, 17, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 11, 11, 19
-	RGB 07, 07, 12
-	RGB 00, 00, 00
-
-Palettes_b681:
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 10, 14, 20
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 27, 31, 27
-	RGB 31, 19, 10
-	RGB 31, 07, 04
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 31, 31, 07
-	RGB 31, 16, 01
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 31, 19, 24
-	RGB 30, 10, 06
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 12, 25, 01
-	RGB 05, 14, 00
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 08, 12, 31
-	RGB 01, 04, 31
-	RGB 07, 07, 07
-
-	RGB 31, 31, 31
-	RGB 24, 18, 07
-	RGB 20, 15, 03
-	RGB 07, 07, 07
+PartyMenuOBPals:
+INCLUDE "data/palettes/party_menu.pal"
 
 Palettes_b6f1:
-	RGB 31, 31, 31
-	RGB 18, 23, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 22, 00, 31
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 00, 00
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 25, 22, 00
-	RGB 15, 20, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 23, 26, 31
-	RGB 18, 23, 31
-	RGB 00, 00, 00
+INCLUDE "data/palettes/unknown/b6f1.pal"
 
 Palettes_b719:
-	RGB 31, 31, 31
-	RGB 07, 06, 03
-	RGB 07, 06, 03
-	RGB 07, 06, 03
-
-	RGB 31, 31, 31
-	RGB 31, 31, 00
-	RGB 26, 22, 00
-	RGB 00, 00, 00
+INCLUDE "data/palettes/unknown/b719.pal"
 
 MalePokegearPals:
-	RGB 28, 31, 20
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 31, 15, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 31, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 31, 00, 00
+INCLUDE "data/palettes/pokegear.pal"
 
 FemalePokegearPals:
-	RGB 28, 31, 20
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 10, 18, 31
-	RGB 13, 06, 31
-	RGB 00, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 00, 00, 31
-	RGB 31, 00, 00
-
-	RGB 28, 31, 20
-	RGB 00, 31, 00
-	RGB 15, 07, 00
-	RGB 31, 00, 00
+INCLUDE "data/palettes/pokegear_f.pal"
 
 Palettes_b789:
-	RGB 31, 31, 31
-	RGB 30, 22, 24
-	RGB 18, 18, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 10, 11, 31
-	RGB 18, 18, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 12, 31, 11
-	RGB 18, 18, 18
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 29, 26, 05
-	RGB 18, 18, 18
-	RGB 00, 00, 00
+INCLUDE "data/palettes/unknown/b789.pal"
 
 SlotMachinePals:
-	RGB 31, 31, 31
-	RGB 24, 25, 28
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 10, 06
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 15, 31, 00
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 15, 31
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 15, 21, 31
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 11
-	RGB 31, 31, 06
-	RGB 24, 24, 09
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 16, 19, 29
-	RGB 25, 22, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 21, 21, 21
-	RGB 13, 13, 13
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 30, 10, 06
-	RGB 31, 00, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 12, 25, 01
-	RGB 05, 14, 00
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 12, 25, 01
-	RGB 30, 10, 06
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 06
-	RGB 20, 15, 03
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 06
-	RGB 15, 21, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 06
-	RGB 20, 15, 03
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 24, 21
-	RGB 31, 13, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-	RGB 00, 00, 00
-
+INCLUDE "data/palettes/slot_machine.pal"

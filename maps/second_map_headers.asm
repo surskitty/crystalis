@@ -1,3 +1,90 @@
+map_header_2: macro
+;\1: map label
+;\2: map id
+;\3: border block
+;\4: connections: combo of NORTH, SOUTH, WEST, and/or EAST, or 0 for none
+\1_SecondMapHeader::
+	db \3
+	db \2_HEIGHT, \2_WIDTH
+	db BANK(\1_BlockData)
+	dw \1_BlockData
+	db BANK(\1_MapScriptHeader)
+	dw \1_MapScriptHeader
+	dw \1_MapEventHeader
+	db \4
+endm
+
+connection: macro
+if "\1" == "north"
+;\2: map id
+;\3: map label (eventually will be rolled into map id)
+;\4: x
+;\5: offset?
+;\6: strip length
+;\7: this map id
+	map \2
+	dw \3_BlockData + \2_WIDTH * (\2_HEIGHT - 3) + \5
+	dw OverworldMap + \4 + 3
+	db \6
+	db \2_WIDTH
+	db \2_HEIGHT * 2 - 1
+	db (\4 - \5) * -2
+	dw OverworldMap + \2_HEIGHT * (\2_WIDTH + 6) + 1
+endc
+
+if "\1" == "south"
+;\2: map id
+;\3: map label (eventually will be rolled into map id)
+;\4: x
+;\5: offset?
+;\6: strip length
+;\7: this map id
+	map \2
+	dw \3_BlockData + \5
+	dw OverworldMap + (\7_HEIGHT + 3) * (\7_WIDTH + 6) + \4 + 3
+	db \6
+	db \2_WIDTH
+	db 0
+	db (\4 - \5) * -2
+	dw OverworldMap + \2_WIDTH + 7
+endc
+
+if "\1" == "west"
+;\2: map id
+;\3: map label (eventually will be rolled into map id)
+;\4: y
+;\5: offset?
+;\6: strip length
+;\7: this map id
+	map \2
+	dw \3_BlockData + (\2_WIDTH * \5) + \2_WIDTH - 3
+	dw OverworldMap + (\7_WIDTH + 6) * (\4 + 3)
+	db \6
+	db \2_WIDTH
+	db (\4 - \5) * -2
+	db \2_WIDTH * 2 - 1
+	dw OverworldMap + \2_WIDTH * 2 + 6
+endc
+
+if "\1" == "east"
+;\2: map id
+;\3: map label (eventually will be rolled into map id)
+;\4: y
+;\5: offset?
+;\6: strip length
+;\7: this map id
+	map \2
+	dw \3_BlockData + (\2_WIDTH * \5)
+	dw OverworldMap + (\7_WIDTH + 6) * (\4 + 3 + 1) - 3
+	db \6
+	db \2_WIDTH
+	db (\4 - \5) * -2
+	db 0
+	dw OverworldMap + \2_WIDTH + 7
+endc
+endm
+
+
 	map_header_2 NewBarkTown, NEW_BARK_TOWN, $5, WEST | EAST
 	connection west, ROUTE_29, Route29, 0, 0, 9, NEW_BARK_TOWN
 	connection east, ROUTE_27, Route27, 0, 0, 9, NEW_BARK_TOWN
@@ -329,10 +416,10 @@
 	map_header_2 TeamRocketBaseB2F, TEAM_ROCKET_BASE_B2F, $0, 0
 	map_header_2 TeamRocketBaseB3F, TEAM_ROCKET_BASE_B3F, $0, 0
 	map_header_2 IlexForest, ILEX_FOREST, $5, 0
-	map_header_2 WarehouseEntrance, WAREHOUSE_ENTRANCE, $0, 0
-	map_header_2 UndergroundPathSwitchRoomEntrances, UNDERGROUND_PATH_SWITCH_ROOM_ENTRANCES, $0, 0
+	map_header_2 GoldenrodUnderground, GOLDENROD_UNDERGROUND, $0, 0
+	map_header_2 GoldenrodUndergroundSwitchRoomEntrances, GOLDENROD_UNDERGROUND_SWITCH_ROOM_ENTRANCES, $0, 0
 	map_header_2 GoldenrodDeptStoreB1F, GOLDENROD_DEPT_STORE_B1F, $0, 0
-	map_header_2 UndergroundWarehouse, UNDERGROUND_WAREHOUSE, $0, 0
+	map_header_2 GoldenrodUndergroundWarehouse, GOLDENROD_UNDERGROUND_WAREHOUSE, $0, 0
 	map_header_2 MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $9, 0
 	map_header_2 MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $9, 0
 	map_header_2 MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $9, 0
@@ -377,7 +464,7 @@
 	map_header_2 Route42EcruteakGate, ROUTE_42_ECRUTEAK_GATE, $0, 0
 	map_header_2 DiglettsCave, DIGLETTS_CAVE, $9, 0
 	map_header_2 MountMoon, MOUNT_MOON, $9, 0
-	map_header_2 Underground, UNDERGROUND, $0, 0
+	map_header_2 UndergroundPath, UNDERGROUND_PATH, $0, 0
 	map_header_2 RockTunnel1F, ROCK_TUNNEL_1F, $9, 0
 	map_header_2 RockTunnelB1F, ROCK_TUNNEL_B1F, $9, 0
 	map_header_2 SafariZoneFuchsiaGateBeta, SAFARI_ZONE_FUCHSIA_GATE_BETA, $0, 0
@@ -427,7 +514,7 @@
 	map_header_2 EarlsPokemonAcademy, EARLS_POKEMON_ACADEMY, $0, 0
 	map_header_2 VioletNicknameSpeechHouse, VIOLET_NICKNAME_SPEECH_HOUSE, $0, 0
 	map_header_2 VioletPokecenter1F, VIOLET_POKECENTER_1F, $0, 0
-	map_header_2 VioletOnixTradeHouse, VIOLET_ONIX_TRADE_HOUSE, $0, 0
+	map_header_2 VioletKylesHouse, VIOLET_KYLES_HOUSE, $0, 0
 	map_header_2 Route32RuinsOfAlphGate, ROUTE_32_RUINS_OF_ALPH_GATE, $0, 0
 	map_header_2 Route32Pokecenter1F, ROUTE_32_POKECENTER_1F, $0, 0
 	map_header_2 Route35GoldenrodGate, ROUTE_35_GOLDENROD_GATE, $0, 0
@@ -465,7 +552,7 @@
 	map_header_2 VermilionHouseDiglettsCaveSpeechHouse, VERMILION_HOUSE_DIGLETTS_CAVE_SPEECH_HOUSE, $0, 0
 	map_header_2 VermilionGym, VERMILION_GYM, $0, 0
 	map_header_2 Route6SaffronGate, ROUTE_6_SAFFRON_GATE, $0, 0
-	map_header_2 Route6UndergroundEntrance, ROUTE_6_UNDERGROUND_ENTRANCE, $0, 0
+	map_header_2 Route6UndergroundPathEntrance, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, $0, 0
 	map_header_2 RedsHouse1F, REDS_HOUSE_1F, $0, 0
 	map_header_2 RedsHouse2F, REDS_HOUSE_2F, $0, 0
 	map_header_2 BluesHouse, BLUES_HOUSE, $0, 0
@@ -585,7 +672,7 @@
 	map_header_2 SilphCo1F, SILPH_CO_1F, $0, 0
 	map_header_2 CopycatsHouse1F, COPYCATS_HOUSE_1F, $0, 0
 	map_header_2 CopycatsHouse2F, COPYCATS_HOUSE_2F, $0, 0
-	map_header_2 Route5UndergroundEntrance, ROUTE_5_UNDERGROUND_ENTRANCE, $0, 0
+	map_header_2 Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $0, 0
 	map_header_2 Route5SaffronCityGate, ROUTE_5_SAFFRON_CITY_GATE, $0, 0
 	map_header_2 Route5CleanseTagSpeechHouse, ROUTE_5_CLEANSE_TAG_SPEECH_HOUSE, $0, 0
 	map_header_2 CherrygroveMart, CHERRYGROVE_MART, $0, 0

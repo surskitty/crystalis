@@ -1016,7 +1016,7 @@ IgnoreSleepOnly: ; 3451f
 
 BattleCommand_UsedMoveText: ; 34541
 ; usedmovetext
-	callba DisplayUsedMoveText
+	farcall DisplayUsedMoveText
 	ret
 
 ; 34548
@@ -1385,14 +1385,14 @@ BattleCommand_Stab: ; 346d2
 	push hl
 	push de
 	push bc
-	callba DoWeatherModifiers
+	farcall DoWeatherModifiers
 	pop bc
 	pop de
 	pop hl
 
 	push de
 	push bc
-	callba DoBadgeTypeBoosts
+	farcall DoBadgeTypeBoosts
 	pop bc
 	pop de
 
@@ -3191,6 +3191,8 @@ BattleCommand_BeatUp: ; 35461
 	ld a, [wd002]
 	ld c, a
 	ld a, [CurBattleMon]
+	; BUG: this can desynchronize link battles
+	; Change "cp [hl]" to "cp c" to fix
 	cp [hl]
 	ld hl, BattleMonStatus
 	jr z, .active_mon
@@ -3574,14 +3576,14 @@ BattleCommand_DamageCalc: ; 35612
 	jr nz, .Cap
 
 	ld a, [hProduct + 2]
-	cp 998 / $100
+	cp HIGH(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1)
 	jr c, .dont_cap_2
 
-	cp 998 / $100 + 1
+	cp HIGH(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1) + 1
 	jr nc, .Cap
 
 	ld a, [hProduct + 3]
-	cp 998 % $100
+	cp LOW(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1)
 	jr nc, .Cap
 
 .dont_cap_2
@@ -3599,21 +3601,21 @@ BattleCommand_DamageCalc: ; 35612
 	jr c, .Cap
 
 	ld a, [hl]
-	cp 998 / $100
+	cp HIGH(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1)
 	jr c, .dont_cap_3
 
-	cp 998 / $100 + 1
+	cp HIGH(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1) + 1
 	jr nc, .Cap
 
 	inc hl
 	ld a, [hld]
-	cp 998 % $100
+	cp LOW(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE + 1)
 	jr c, .dont_cap_3
 
 .Cap:
-	ld a, 997 / $100
+	ld a, HIGH(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE)
 	ld [hli], a
-	ld a, 997 % $100
+	ld a, LOW(MAX_STAT_VALUE - MIN_NEUTRAL_DAMAGE)
 	ld [hld], a
 
 
@@ -3621,7 +3623,7 @@ BattleCommand_DamageCalc: ; 35612
 ; Minimum neutral damage is 2 (bringing the cap to 999).
 	inc hl
 	ld a, [hl]
-	add 2
+	add MIN_NEUTRAL_DAMAGE
 	ld [hld], a
 	jr nc, .dont_floor
 	inc [hl]
@@ -3860,7 +3862,7 @@ BattleCommand_Counter: ; 35813
 	ret z
 
 	ld b, a
-	callab GetMoveEffect
+	callfar GetMoveEffect
 	ld a, b
 	cp EFFECT_COUNTER
 	ret z
@@ -3879,11 +3881,11 @@ BattleCommand_Counter: ; 35813
 	ld de, StringBuffer1
 	call GetMoveData
 
-	ld a, [StringBuffer1 + 2]
+	ld a, [StringBuffer1 + MOVE_POWER]
 	and a
 	ret z
 
-	ld a, [StringBuffer1 + 3]
+	ld a, [StringBuffer1 + MOVE_TYPE]
 	cp SPECIAL
 	ret nc
 
@@ -4066,7 +4068,7 @@ BattleCommand_PainSplit: ; 35926
 	call ResetDamage
 	hlcoord 2, 2
 	predef AnimateHPBar
-	callba _UpdateBattleHUDs
+	farcall _UpdateBattleHUDs
 
 	ld hl, SharedPainText
 	jp StdBattleTextBox
@@ -4516,7 +4518,7 @@ BattleCommand_SleepTalk: ; 35b33
 	push bc
 
 	ld b, a
-	callab GetMoveEffect
+	callfar GetMoveEffect
 	ld a, b
 
 	pop bc
@@ -4745,7 +4747,7 @@ PlayFXAnimID: ; 35d08
 	ld c, 3
 	call DelayFrames
 
-	callab PlayBattleAnim
+	callfar PlayBattleAnim
 
 	ret
 
@@ -5015,7 +5017,7 @@ BattleCommand_SleepTarget: ; 35e5c
 	ld hl, FellAsleepText
 	call StdBattleTextBox
 
-	callba UseHeldStatusHealingItem
+	farcall UseHeldStatusHealingItem
 
 	jp z, OpponentCantMove
 	ret
@@ -5092,7 +5094,7 @@ BattleCommand_PoisonTarget: ; 35eee
 	ld hl, WasPoisonedText
 	call StdBattleTextBox
 
-	callba UseHeldStatusHealingItem
+	farcall UseHeldStatusHealingItem
 	ret
 
 ; 35f2c
@@ -5177,7 +5179,7 @@ BattleCommand_Poison: ; 35f2c
 	call StdBattleTextBox
 
 .finished
-	callba UseHeldStatusHealingItem
+	farcall UseHeldStatusHealingItem
 	ret
 
 .failed
@@ -5380,7 +5382,7 @@ BattleCommand_BurnTarget: ; 3608c
 	ld hl, WasBurnedText
 	call StdBattleTextBox
 
-	callba UseHeldStatusHealingItem
+	farcall UseHeldStatusHealingItem
 	ret
 
 ; 360dd
@@ -5453,7 +5455,7 @@ BattleCommand_FreezeTarget: ; 36102
 	ld hl, WasFrozenText
 	call StdBattleTextBox
 
-	callba UseHeldStatusHealingItem
+	farcall UseHeldStatusHealingItem
 	ret nz
 
 	call OpponentCantMove
@@ -5649,10 +5651,10 @@ CheckIfStatCanBeRaised: ; 361ef
 .no_carry
 	pop bc
 	ld a, [hld]
-	sub 999 % $100
+	sub LOW(MAX_STAT_VALUE)
 	jr nz, .not_already_max
 	ld a, [hl]
-	sbc 999 / $100
+	sbc HIGH(MAX_STAT_VALUE)
 	jp z, .stats_already_max
 .not_already_max
 	ld a, [hBattleTurn]
@@ -6297,11 +6299,11 @@ BattleCommand_Curl: ; 365a7
 
 
 BattleCommand_RaiseSubNoAnim: ; 365af
-	ld hl, GetMonBackpic
+	ld hl, GetBattleMonBackpic
 	ld a, [hBattleTurn]
 	and a
 	jr z, .PlayerTurn
-	ld hl, GetMonFrontpic
+	ld hl, GetEnemyMonFrontpic
 .PlayerTurn:
 	xor a
 	ld [hBGMapMode], a
@@ -6415,14 +6417,14 @@ CalcStats: ; 3661d
 
 .check_maxed_out
 	ld a, [hQuotient + 2]
-	cp 999 % $100
+	cp LOW(MAX_STAT_VALUE)
 	ld a, b
-	sbc 999 / $100
+	sbc HIGH(MAX_STAT_VALUE)
 	jr c, .not_maxed_out
 
-	ld a, 999 % $100
+	ld a, LOW(MAX_STAT_VALUE)
 	ld [hQuotient + 2], a
-	ld a, 999 / $100
+	ld a, HIGH(MAX_STAT_VALUE)
 	ld [hQuotient + 1], a
 
 .not_maxed_out
@@ -6814,7 +6816,7 @@ BattleCommand_ForceSwitch: ; 3680f
 	ld a, d
 	inc a
 	ld [wEnemySwitchMonIndex], a
-	callab ForceEnemySwitch
+	callfar ForceEnemySwitch
 
 	ld hl, DraggedOutText
 	call StdBattleTextBox
@@ -7182,7 +7184,7 @@ CheckOpponentWentFirst: ; 36abf
 ; 36ac9
 
 
-BattleCommand_KingsRock: ; 36ac9
+BattleCommand_HeldFlinch: ; 36ac9
 ; kingsrock
 
 	ld a, [AttackMissed]
@@ -7191,7 +7193,7 @@ BattleCommand_KingsRock: ; 36ac9
 
 	call GetUserItem
 	ld a, b
-	cp HELD_TRADE_EVOLVE ; Only King's Rock has this effect
+	cp HELD_FLINCH
 	ret nz
 
 	call CheckSubstituteOpp
@@ -8079,7 +8081,7 @@ BattleCommand_LeechSeed: ; 36f9d
 
 BattleCommand_Splash: ; 36fe1
 	call AnimateCurrentMove
-	callba TrainerRankings_Splash
+	farcall TrainerRankings_Splash
 	jp PrintNothingHappened
 
 ; 36fed
@@ -8283,7 +8285,7 @@ BattleCommand_Conversion: ; 3707f
 	inc de
 	ld [de], a
 	ld [wNamedObjectIndexBuffer], a
-	callba GetTypeName
+	farcall GetTypeName
 	call AnimateCurrentMove
 	ld hl, TransformedTypeText
 	jp StdBattleTextBox
@@ -8365,7 +8367,7 @@ BattleCommand_Heal: ; 3713e
 	call GetBattleVarAddr
 	ld a, [hl]
 	and a
-	ld [hl], REST_TURNS + 1
+	ld [hl], REST_SLEEP_TURNS + 1
 	ld hl, WentToSleepText
 	jr z, .no_status_to_heal
 	ld hl, RestedText
@@ -8606,7 +8608,7 @@ CheckSubstituteOpp: ; 37378
 
 
 BattleCommand_Selfdestruct: ; 37380
-	callba TrainerRankings_Selfdestruct
+	farcall TrainerRankings_Selfdestruct
 	ld a, BATTLEANIM_PLAYER_DAMAGE
 	ld [wNumHits], a
 	ld c, 3
@@ -8630,8 +8632,8 @@ BattleCommand_Selfdestruct: ; 37380
 	res SUBSTATUS_DESTINY_BOND, [hl]
 	call _CheckBattleScene
 	ret nc
-	callba DrawPlayerHUD
-	callba DrawEnemyHUD
+	farcall DrawPlayerHUD
+	farcall DrawEnemyHUD
 	call WaitBGMap
 	jp RefreshBattleHuds
 
@@ -9030,13 +9032,13 @@ BattleCommand_BatonPass: ; 379c9
 
 ; Transition into switchmon menu
 	call LoadStandardMenuDataHeader
-	callba SetUpBattlePartyMenu_NoLoop
+	farcall SetUpBattlePartyMenu_NoLoop
 
-	callba ForcePickSwitchMonInBattle
+	farcall ForcePickSwitchMonInBattle
 
 ; Return to battle scene
 	call ClearPalettes
-	callba _LoadBattleFontsHPBar
+	farcall _LoadBattleFontsHPBar
 	call CloseWindow
 	call ClearSprites
 	hlcoord 1, 0
@@ -9048,7 +9050,7 @@ BattleCommand_BatonPass: ; 379c9
 	call BatonPass_LinkPlayerSwitch
 
 ; Mobile link battles handle entrances differently
-	callba CheckMobileBattleError
+	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
 
 	ld hl, PassedBattleMonEntrance
@@ -9073,7 +9075,7 @@ BattleCommand_BatonPass: ; 379c9
 	call BatonPass_LinkEnemySwitch
 
 ; Mobile link battles handle entrances differently
-	callba CheckMobileBattleError
+	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
 
 ; Passed enemy PartyMon entrance
@@ -9401,7 +9403,7 @@ BattleCommand_TimeBasedHealContinue: ; 37b7e
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
-	callab RestoreHP
+	callfar RestoreHP
 
 	call BattleCommand_SwitchTurn
 	call UpdateUserInParty
@@ -9431,7 +9433,7 @@ BattleCommand_HiddenPower: ; 37be8
 	ld a, [AttackMissed]
 	and a
 	ret nz
-	callba HiddenPowerDamage
+	farcall HiddenPowerDamage
 	ret
 
 ; 37bf4
@@ -9473,10 +9475,14 @@ BattleCommand_BellyDrum: ; 37c1a
 	and a
 	jr nz, .failed
 
+	callfar GetHalfMaxHP
+	callfar CheckUserHasEnoughHP
+	jr nc, .failed
+
 	push bc
 	call AnimateCurrentMove
 	pop bc
-	callab SubtractHPFromUser
+	callfar SubtractHPFromUser
 	call UpdateUserInParty
 	ld a, 5
 
@@ -9562,7 +9568,7 @@ BattleCommand_MirrorCoat: ; 37c95
 	ret z
 
 	ld b, a
-	callab GetMoveEffect
+	callfar GetMoveEffect
 	ld a, b
 	cp EFFECT_MIRROR_COAT
 	ret z
@@ -9759,6 +9765,7 @@ BattleCommand_ThunderAccuracy: ; 37d94
 
 
 CheckHiddenOpponent: ; 37daa
+; BUG: This routine should account for Lock-On and Mind Reader.
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVar
 	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
@@ -9802,11 +9809,11 @@ GetItemHeldEffect: ; 37dd0
 	ret z
 
 	push hl
-	ld hl, ItemAttributes + 2
+	ld hl, ItemAttributes + ITEMATTR_EFFECT
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, Item2Attributes - Item1Attributes
+	ld a, ITEMATTR_STRUCT_LENGTH
 	call AddNTimes
 	ld a, BANK(ItemAttributes)
 	call GetFarHalfword
@@ -9907,7 +9914,7 @@ PlayUserBattleAnim: ; 37e47
 	push hl
 	push de
 	push bc
-	callab PlayBattleAnim
+	callfar PlayBattleAnim
 	pop bc
 	pop de
 	pop hl
@@ -9929,7 +9936,7 @@ PlayOpponentBattleAnim: ; 37e54
 	push bc
 	call BattleCommand_SwitchTurn
 
-	callab PlayBattleAnim
+	callfar PlayBattleAnim
 
 	call BattleCommand_SwitchTurn
 	pop bc
@@ -10028,21 +10035,21 @@ GetMoveByte: ; 37ebb
 
 
 DisappearUser: ; 37ec0
-	callba _DisappearUser
+	farcall _DisappearUser
 	ret
 
 ; 37ec7
 
 
 AppearUserLowerSub: ; 37ec7
-	callba _AppearUserLowerSub
+	farcall _AppearUserLowerSub
 	ret
 
 ; 37ece
 
 
 AppearUserRaiseSub: ; 37ece
-	callba _AppearUserRaiseSub
+	farcall _AppearUserRaiseSub
 	ret
 
 ; 37ed5
@@ -10053,7 +10060,7 @@ _CheckBattleScene: ; 37ed5
 	push hl
 	push de
 	push bc
-	callba CheckBattleScene
+	farcall CheckBattleScene
 	pop bc
 	pop de
 	pop hl

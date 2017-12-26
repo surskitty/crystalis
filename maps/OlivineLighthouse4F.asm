@@ -3,16 +3,16 @@ const_value set 2
 	const OLIVINELIGHTHOUSE4F_LASS
 
 OlivineLighthouse4F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerLassConnie:
-	trainer EVENT_BEAT_LASS_CONNIE, LASS, CONNIE1, LassConnie1SeenText, LassConnie1BeatenText, 0, LassConnie1Script
+	trainer EVENT_BEAT_LASS_CONNIE, LASS, CONNIE1, LassConnie1SeenText, LassConnie1BeatenText, 0, .Script
 
-LassConnie1Script:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext LassConnie1AfterBattleText
@@ -21,9 +21,9 @@ LassConnie1Script:
 	end
 
 TrainerSailorKent:
-	trainer EVENT_BEAT_SAILOR_KENT, SAILOR, KENT, SailorKentSeenText, SailorKentBeatenText, 0, SailorKentScript
+	trainer EVENT_BEAT_SAILOR_KENT, SAILOR, KENT, SailorKentSeenText, SailorKentBeatenText, 0, .Script
 
-SailorKentScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SailorKentAfterBattleText
@@ -98,13 +98,13 @@ OlivineLighthouse4F_MapEventHeader:
 	warp_def $7, $10, 4, OLIVINE_LIGHTHOUSE_5F
 	warp_def $7, $11, 5, OLIVINE_LIGHTHOUSE_5F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_SAILOR, 14, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerSailorKent, -1
-	person_event SPRITE_LASS, 2, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerLassConnie, -1
+	object_event SPRITE_SAILOR, 14, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSailorKent, -1
+	object_event SPRITE_LASS, 2, 11, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassConnie, -1

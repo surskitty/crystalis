@@ -5,7 +5,7 @@ const_value set 2
 	const ROUTE14_KIM
 
 Route14_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -20,9 +20,9 @@ Kim:
 	end
 
 TrainerPokefanmCarter:
-	trainer EVENT_BEAT_POKEFANM_CARTER, POKEFANM, CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, PokefanmCarterScript
+	trainer EVENT_BEAT_POKEFANM_CARTER, POKEFANM, CARTER, PokefanmCarterSeenText, PokefanmCarterBeatenText, 0, .Script
 
-PokefanmCarterScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokefanmCarterAfterBattleText
@@ -31,9 +31,9 @@ PokefanmCarterScript:
 	end
 
 TrainerBird_keeperRoy:
-	trainer EVENT_BEAT_BIRD_KEEPER_ROY, BIRD_KEEPER, ROY, Bird_keeperRoySeenText, Bird_keeperRoyBeatenText, 0, Bird_keeperRoyScript
+	trainer EVENT_BEAT_BIRD_KEEPER_ROY, BIRD_KEEPER, ROY, Bird_keeperRoySeenText, Bird_keeperRoyBeatenText, 0, .Script
 
-Bird_keeperRoyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext Bird_keeperRoyAfterBattleText
@@ -42,9 +42,9 @@ Bird_keeperRoyScript:
 	end
 
 TrainerPokefanmTrevor:
-	trainer EVENT_BEAT_POKEFANM_TREVOR, POKEFANM, TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, PokefanmTrevorScript
+	trainer EVENT_BEAT_POKEFANM_TREVOR, POKEFANM, TREVOR, PokefanmTrevorSeenText, PokefanmTrevorBeatenText, 0, .Script
 
-PokefanmTrevorScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokefanmTrevorAfterBattleText
@@ -122,15 +122,15 @@ Route14_MapEventHeader:
 .Warps:
 	db 0
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_POKEFAN_M, 15, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
-	person_event SPRITE_YOUNGSTER, 27, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerBird_keeperRoy, -1
-	person_event SPRITE_POKEFAN_M, 11, 6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
-	person_event SPRITE_TEACHER, 5, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 4, Kim, -1
+	object_event SPRITE_POKEFAN_M, 15, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
+	object_event SPRITE_YOUNGSTER, 27, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperRoy, -1
+	object_event SPRITE_POKEFAN_M, 11, 6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
+	object_event SPRITE_TEACHER, 5, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1

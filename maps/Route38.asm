@@ -8,38 +8,38 @@ const_value set 2
 	const ROUTE38_BUENA2
 
 Route38_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerBird_keeperToby:
-	trainer EVENT_BEAT_BIRD_KEEPER_TOBY, BIRD_KEEPER, TOBY, Bird_keeperTobySeenText, Bird_keeperTobyBeatenText, 0, .script
+	trainer EVENT_BEAT_BIRD_KEEPER_TOBY, BIRD_KEEPER, TOBY, Bird_keeperTobySeenText, Bird_keeperTobyBeatenText, 0, .Script
 
-.script
+.Script
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x1a1f86
+	writetext Bird_keeperTobyAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerSailorHarry:
-	trainer EVENT_BEAT_SAILOR_HARRY, SAILOR, HARRY, SailorHarrySeenText, SailorHarryBeatenText, 0, .script
+	trainer EVENT_BEAT_SAILOR_HARRY, SAILOR, HARRY, SailorHarrySeenText, SailorHarryBeatenText, 0, .Script
 
-.script
+.Script
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x1a220c
+	writetext SailorHarryAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerLassDana1:
-	trainer EVENT_BEAT_LASS_DANA, LASS, DANA1, LassDana1SeenText, LassDana1BeatenText, 0, .script
+	trainer EVENT_BEAT_LASS_DANA, LASS, DANA1, LassDana1SeenText, LassDana1BeatenText, 0, .Script
 
-.script
+.Script
 	writecode VAR_CALLERID, PHONE_LASS_DANA
 	end_if_just_battled
 	opentext
@@ -175,9 +175,9 @@ TrainerLassDana1:
 	end
 
 TrainerSchoolboyChad1:
-	trainer EVENT_BEAT_SCHOOLBOY_CHAD, SCHOOLBOY, CHAD1, SchoolboyChad1SeenText, SchoolboyChad1BeatenText, 0, .script
+	trainer EVENT_BEAT_SCHOOLBOY_CHAD, SCHOOLBOY, CHAD1, SchoolboyChad1SeenText, SchoolboyChad1BeatenText, 0, .Script
 
-.script
+.Script
 	writecode VAR_CALLERID, PHONE_SCHOOLBOY_CHAD
 	end_if_just_battled
 	opentext
@@ -292,23 +292,23 @@ TrainerSchoolboyChad1:
 	end
 
 TrainerBeautyValerie:
-	trainer EVENT_BEAT_BEAUTY_VALERIE, BEAUTY, VALERIE, BeautyValerieSeenText, BeautyValerieBeatenText, 0, .script
+	trainer EVENT_BEAT_BEAUTY_VALERIE, BEAUTY, VALERIE, BeautyValerieSeenText, BeautyValerieBeatenText, 0, .Script
 
-.script
+.Script
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x1a2185
+	writetext BeautyValerieAfterBattleText
 	waitbutton
 	closetext
 	end
 
 TrainerBeautyOlivia:
-	trainer EVENT_BEAT_BEAUTY_OLIVIA, BEAUTY, OLIVIA, BeautyOliviaSeenText, BeautyOliviaBeatenText, 0, .script
+	trainer EVENT_BEAT_BEAUTY_OLIVIA, BEAUTY, OLIVIA, BeautyOliviaSeenText, BeautyOliviaBeatenText, 0, .Script
 
-.script
+.Script
 	end_if_just_battled
 	opentext
-	writetext UnknownText_0x1a229a
+	writetext BeautyOliviaAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -333,7 +333,7 @@ Bird_keeperTobyBeatenText:
 	line "flying away now."
 	done
 
-UnknownText_0x1a1f86:
+Bird_keeperTobyAfterBattleText:
 	text "I plan to train in"
 	line "CIANWOOD CITY to"
 
@@ -400,7 +400,7 @@ BeautyValerieBeatenText:
 	line "see your #MON!"
 	done
 
-UnknownText_0x1a2185:
+BeautyValerieAfterBattleText:
 	text "When I see #-"
 	line "MON, it seems to"
 	cont "soothe my nerves."
@@ -419,7 +419,7 @@ SailorHarryBeatenText:
 	line "world class!"
 	done
 
-UnknownText_0x1a220c:
+SailorHarryAfterBattleText:
 	text "All kinds of peo-"
 	line "ple around the"
 
@@ -438,7 +438,7 @@ BeautyOliviaBeatenText:
 	line "MILK every day."
 	done
 
-UnknownText_0x1a229a:
+BeautyOliviaAfterBattleText:
 	text "MOOMOO MILK is"
 	line "good for beauty"
 
@@ -481,20 +481,20 @@ Route38_MapEventHeader:
 	warp_def $8, $23, 1, ROUTE_38_ECRUTEAK_GATE
 	warp_def $9, $23, 2, ROUTE_38_ECRUTEAK_GATE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 2
-	signpost 7, 33, SIGNPOST_READ, Route38Sign
-	signpost 13, 5, SIGNPOST_READ, Route38TrainerTips
+	bg_event 7, 33, BGEVENT_READ, Route38Sign
+	bg_event 13, 5, BGEVENT_READ, Route38TrainerTips
 
-.PersonEvents:
+.ObjectEvents:
 	db 7
-	person_event SPRITE_STANDING_YOUNGSTER, 1, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
-	person_event SPRITE_LASS, 3, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 2, TrainerLassDana1, -1
-	person_event SPRITE_STANDING_YOUNGSTER, 15, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerBird_keeperToby, -1
-	person_event SPRITE_BUENA, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerBeautyValerie, -1
-	person_event SPRITE_SAILOR, 5, 24, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 2, TrainerSailorHarry, -1
-	person_event SPRITE_FRUIT_TREE, 10, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FruitTreeScript_0x1a1f33, -1
-	person_event SPRITE_BUENA, 8, 5, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+	object_event SPRITE_STANDING_YOUNGSTER, 1, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
+	object_event SPRITE_LASS, 3, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
+	object_event SPRITE_STANDING_YOUNGSTER, 15, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBird_keeperToby, -1
+	object_event SPRITE_BUENA, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
+	object_event SPRITE_SAILOR, 5, 24, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
+	object_event SPRITE_FRUIT_TREE, 10, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a1f33, -1
+	object_event SPRITE_BUENA, 8, 5, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1

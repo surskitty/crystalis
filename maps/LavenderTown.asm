@@ -5,7 +5,7 @@ const_value set 2
 	const LAVENDERTOWN_YOUNGSTER
 
 LavenderTown_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -16,17 +16,17 @@ LavenderTown_MapScriptHeader:
 	setflag ENGINE_FLYPOINT_LAVENDER
 	return
 
-PokefanMScript_0x1ad6e4:
-	jumptextfaceplayer UnknownText_0x1ad702
+LavenderTownPokefanMScript:
+	jumptextfaceplayer LavenderTownPokefanMText
 
-TeacherScript_0x1ad6e7:
-	jumptextfaceplayer UnknownText_0x1ad73a
+LavenderTownTeacherScript:
+	jumptextfaceplayer LavenderTownTeacherText
 
-GrampsScript_0x1ad6ea:
-	jumptextfaceplayer UnknownText_0x1ad75c
+LavenderTownGrampsScript:
+	jumptextfaceplayer LavenderTownGrampsText
 
-YoungsterScript_0x1ad6ed:
-	jumptextfaceplayer UnknownText_0x1ad7ac
+LavenderTownYoungsterScript:
+	jumptextfaceplayer LavenderTownYoungsterText
 
 LavenderTownSign:
 	jumptext LavenderTownSignText
@@ -46,7 +46,7 @@ LavenderPokecenterSignText:
 LavenderMartSignText:
 	jumpstd martsign
 
-UnknownText_0x1ad702:
+LavenderTownPokefanMText:
 	text "That's quite some"
 	line "building, eh?"
 
@@ -54,12 +54,12 @@ UnknownText_0x1ad702:
 	line "TOWER."
 	done
 
-UnknownText_0x1ad73a:
+LavenderTownTeacherText:
 	text "KANTO has many"
 	line "good radio shows."
 	done
 
-UnknownText_0x1ad75c:
+LavenderTownGrampsText:
 	text "People come from"
 	line "all over to pay"
 
@@ -68,7 +68,7 @@ UnknownText_0x1ad75c:
 	cont "of #MON."
 	done
 
-UnknownText_0x1ad7ac:
+LavenderTownYoungsterText:
 	text "You need a #"
 	line "FLUTE to wake"
 	cont "sleeping #MON."
@@ -119,21 +119,21 @@ LavenderTown_MapEventHeader:
 	warp_def $b, $d, 1, SOUL_HOUSE
 	warp_def $5, $e, 1, LAV_RADIO_TOWER_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 6
-	signpost 3, 11, SIGNPOST_READ, LavenderTownSign
-	signpost 7, 15, SIGNPOST_READ, KantoRadioStationSign
-	signpost 9, 3, SIGNPOST_READ, VolunteerPokemonHouseSign
-	signpost 13, 15, SIGNPOST_READ, SoulHouseSign
-	signpost 5, 6, SIGNPOST_READ, LavenderPokecenterSignText
-	signpost 5, 2, SIGNPOST_READ, LavenderMartSignText
+	bg_event 3, 11, BGEVENT_READ, LavenderTownSign
+	bg_event 7, 15, BGEVENT_READ, KantoRadioStationSign
+	bg_event 9, 3, BGEVENT_READ, VolunteerPokemonHouseSign
+	bg_event 13, 15, BGEVENT_READ, SoulHouseSign
+	bg_event 5, 6, BGEVENT_READ, LavenderPokecenterSignText
+	bg_event 5, 2, BGEVENT_READ, LavenderMartSignText
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_POKEFAN_M, 7, 12, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, PokefanMScript_0x1ad6e4, -1
-	person_event SPRITE_TEACHER, 15, 2, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, TeacherScript_0x1ad6e7, -1
-	person_event SPRITE_GRAMPS, 12, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, GrampsScript_0x1ad6ea, -1
-	person_event SPRITE_YOUNGSTER, 11, 6, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 1, YoungsterScript_0x1ad6ed, -1
+	object_event SPRITE_POKEFAN_M, 7, 12, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LavenderTownPokefanMScript, -1
+	object_event SPRITE_TEACHER, 15, 2, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, LavenderTownTeacherScript, -1
+	object_event SPRITE_GRAMPS, 12, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LavenderTownGrampsScript, -1
+	object_event SPRITE_YOUNGSTER, 11, 6, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 1, LavenderTownYoungsterScript, -1

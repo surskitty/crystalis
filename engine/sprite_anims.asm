@@ -18,8 +18,8 @@ DoAnimFrame: ; 8d24b
 	dw .PartyMon
 	dw .PartyMonSwitch
 	dw .PartyMonSelected
-	dw .sprite_anim_seq_04
-	dw .namingscreencursor
+	dw .GSTitleTrail
+	dw .NamingScreenCursor
 	dw .GameFreakLogo
 	dw .GSIntroStar
 	dw .GSIntroSparkle
@@ -27,9 +27,9 @@ DoAnimFrame: ; 8d24b
 	dw .SlotsChansey
 	dw .SlotsChanseyEgg
 	dw .MailCursor
-	dw .sprite_anim_seq_0D
-	dw .sprite_anim_seq_0E
-	dw .sprite_anim_seq_0F
+	dw .ForUnusedCursor
+	dw .DummyGameCursor
+	dw .PokegearArrow
 	dw .TradePokeBall
 	dw .TradeTubeBulge
 	dw .TrademonInTube
@@ -132,7 +132,7 @@ DoAnimFrame: ; 8d24b
 	ld [hl], 8 * 3
 	ret
 
-.sprite_anim_seq_04 ; 8d302 (23:5302)
+.GSTitleTrail ; 8d302 (23:5302)
 	call .AnonymousJumptable
 	jp hl
 ; 8d306 (23:5306)
@@ -217,16 +217,16 @@ DoAnimFrame: ; 8d24b
 	ld [hl], a
 	ret
 
-.namingscreencursor ; 8d36c (23:536c)
-	callab NamingScreen_AnimateCursor
+.NamingScreenCursor ; 8d36c (23:536c)
+	callfar NamingScreen_AnimateCursor
 	ret
 
 .MailCursor ; 8d373 (23:5373)
-	callab ComposeMail_AnimateCursor
+	callfar ComposeMail_AnimateCursor
 	ret
 
 .GameFreakLogo: ; 8d37a (23:537a)
-	callab GameFreakLogoJumper
+	callfar GameFreakLogoJumper
 	ret
 
 .GSIntroStar ; 8d381 (23:5381)
@@ -357,11 +357,11 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .SlotsGolem: ; 8d422 (23:5422)
-	callab SlotMachine_AnimateGolem
+	callfar SlotMachine_AnimateGolem
 	ret
 
 .SlotsChansey: ; 8d429 (23:5429)
-	callab Slots_AnimateChansey
+	callfar Slots_AnimateChansey
 	ld hl, wcf64
 	ld a, [hl]
 	cp $2
@@ -404,16 +404,16 @@ DoAnimFrame: ; 8d24b
 	ld [hl], a
 	ret
 
-.sprite_anim_seq_0D ; 8d46e (23:546e)
-	callab ret_e00ed
+.ForUnusedCursor ; 8d46e (23:546e)
+	callfar ret_e00ed
 	ret
 
-.sprite_anim_seq_0F ; 8d475 (23:5475)
-	callab AnimatePokegearModeIndicatorArrow
+.PokegearArrow ; 8d475 (23:5475)
+	callfar AnimatePokegearModeIndicatorArrow
 	ret
 
-.sprite_anim_seq_0E ; 8d47c (23:547c)
-	callab DummyGame_InterpretJoypad_AnimateCursor
+.DummyGameCursor ; 8d47c (23:547c)
+	callfar DummyGame_InterpretJoypad_AnimateCursor
 	ret
 
 .TradePokeBall ; 8d483 (23:5483)
@@ -566,7 +566,7 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .TrademonInTube ; 8d543 (23:5543)
-	callab TradeAnim_AnimateTrademonInTube
+	callfar TradeAnim_AnimateTrademonInTube
 	ret
 
 .RevealNewMon: ; 8d54a (23:554a)
@@ -607,7 +607,7 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .RadioTuningKnob: ; 8d578 (23:5578)
-	callab AnimateTuningKnob
+	callfar AnimateTuningKnob
 	ret
 
 .CutLeaves ; 8d57f (23:557f)
@@ -750,11 +750,11 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .sprite_anim_seq_1B ; 8d630 (23:5630)
-	callba Function108bc7
+	farcall Function108bc7
 	ret
 
 .sprite_anim_seq_1C ; 8d637 (23:5637)
-	callba Function108be0
+	farcall Function108be0
 	ret
 
 .IntroSuicune ; 8d63e (23:563e)
@@ -847,11 +847,11 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .sprite_anim_seq_1A ; 8d6b7 (23:56b7)
-	callba AnimateEZChatCursor
+	farcall AnimateEZChatCursor
 	ret
 
 .Celebi ; 8d6be (23:56be)
-	callba UpdateCelebiPosition
+	farcall UpdateCelebiPosition
 	ret
 
 .AnonymousJumptable: ; 8d6c5 (23:56c5)

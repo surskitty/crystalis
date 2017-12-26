@@ -8,10 +8,10 @@ const_value set 2
 	const ECRUTEAKGYM_GRAMPS
 
 EcruteakGym_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 2
-	maptrigger .ForcedToLeave
-	maptrigger .DummyTrigger
+	scene_script .ForcedToLeave
+	scene_script .DummyScene
 
 .MapCallbacks:
 	db 0
@@ -20,7 +20,7 @@ EcruteakGym_MapScriptHeader:
 	priorityjump EcruteakGymClosed
 	end
 
-.DummyTrigger:
+.DummyScene:
 	end
 
 MortyScript_0x99d58:
@@ -44,8 +44,8 @@ MortyScript_0x99d58:
 	waitsfx
 	setflag ENGINE_FOGBADGE
 	checkcode VAR_BADGES
-	scall EcruteakGymTriggerRockets
-	domaptrigger ECRUTEAK_HOUSE, $1
+	scall EcruteakGymActivateRockets
+	setmapscene ECRUTEAK_HOUSE, $1
 	setevent EVENT_RANG_CLEAR_BELL_1
 	setevent EVENT_RANG_CLEAR_BELL_2
 .FightDone:
@@ -86,7 +86,7 @@ MortyScript_0x99d58:
 	closetext
 	end
 
-EcruteakGymTriggerRockets:
+EcruteakGymActivateRockets:
 	if_equal 7, .RadioTowerRockets
 	if_equal 6, .GoldenrodRockets
 	end
@@ -114,9 +114,9 @@ EcruteakGymClosed:
 	end
 
 TrainerSageJeffrey:
-	trainer EVENT_BEAT_SAGE_JEFFREY, SAGE, JEFFREY, SageJeffreySeenText, SageJeffreyBeatenText, 0, SageJeffreyScript
+	trainer EVENT_BEAT_SAGE_JEFFREY, SAGE, JEFFREY, SageJeffreySeenText, SageJeffreyBeatenText, 0, .Script
 
-SageJeffreyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SageJeffreyAfterBattleText
@@ -125,9 +125,9 @@ SageJeffreyScript:
 	end
 
 TrainerSagePing:
-	trainer EVENT_BEAT_SAGE_PING, SAGE, PING, SagePingSeenText, SagePingBeatenText, 0, SagePingScript
+	trainer EVENT_BEAT_SAGE_PING, SAGE, PING, SagePingSeenText, SagePingBeatenText, 0, .Script
 
-SagePingScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SagePingAfterBattleText
@@ -136,9 +136,9 @@ SagePingScript:
 	end
 
 TrainerMediumMartha:
-	trainer EVENT_BEAT_MEDIUM_MARTHA, MEDIUM, MARTHA, MediumMarthaSeenText, MediumMarthaBeatenText, 0, MediumMarthaScript
+	trainer EVENT_BEAT_MEDIUM_MARTHA, MEDIUM, MARTHA, MediumMarthaSeenText, MediumMarthaBeatenText, 0, .Script
 
-MediumMarthaScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext MediumMarthaAfterBattleText
@@ -147,9 +147,9 @@ MediumMarthaScript:
 	end
 
 TrainerMediumGrace:
-	trainer EVENT_BEAT_MEDIUM_GRACE, MEDIUM, GRACE, MediumGraceSeenText, MediumGraceBeatenText, 0, MediumGraceScript
+	trainer EVENT_BEAT_MEDIUM_GRACE, MEDIUM, GRACE, MediumGraceSeenText, MediumGraceBeatenText, 0, .Script
 
-MediumGraceScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext MediumGraceAfterBattleText
@@ -447,20 +447,20 @@ EcruteakGym_MapEventHeader:
 	warp_def $c, $7, 3, ECRUTEAK_GYM
 	warp_def $d, $7, 3, ECRUTEAK_GYM
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 2
-	signpost 15, 3, SIGNPOST_READ, EcruteakGymStatue
-	signpost 15, 6, SIGNPOST_READ, EcruteakGymStatue
+	bg_event 15, 3, BGEVENT_READ, EcruteakGymStatue
+	bg_event 15, 6, BGEVENT_READ, EcruteakGymStatue
 
-.PersonEvents:
+.ObjectEvents:
 	db 7
-	person_event SPRITE_MORTY, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, MortyScript_0x99d58, -1
-	person_event SPRITE_SAGE, 7, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerSageJeffrey, -1
-	person_event SPRITE_SAGE, 13, 3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerSagePing, -1
-	person_event SPRITE_GRANNY, 5, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 1, TrainerMediumMartha, -1
-	person_event SPRITE_GRANNY, 9, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 1, TrainerMediumGrace, -1
-	person_event SPRITE_GYM_GUY, 15, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, EcruteakGymGuyScript, -1
-	person_event SPRITE_GRAMPS, 14, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS
+	object_event SPRITE_MORTY, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MortyScript_0x99d58, -1
+	object_event SPRITE_SAGE, 7, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageJeffrey, -1
+	object_event SPRITE_SAGE, 13, 3, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSagePing, -1
+	object_event SPRITE_GRANNY, 5, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumMartha, -1
+	object_event SPRITE_GRANNY, 9, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerMediumGrace, -1
+	object_event SPRITE_GYM_GUY, 15, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuyScript, -1
+	object_event SPRITE_GRAMPS, 14, 4, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_GRAMPS

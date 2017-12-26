@@ -159,7 +159,7 @@ Function819a7: ; 819a7
 	ld [rSVBK], a
 	ld hl, Palette_819f4
 	ld de, BGPals
-	ld bc, $80
+	ld bc, 16 palettes
 	call CopyBytes
 	ld a, $80
 	ld [rBGPI], a
@@ -193,93 +193,10 @@ Function819a7: ; 819a7
 ; 819f4
 
 Palette_819f4: ; 819f4
-	; white
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	; red
-	RGB 31, 00, 00
-	RGB 31, 00, 00
-	RGB 31, 00, 00
-	RGB 00, 00, 00
-
-	; green
-	RGB 00, 31, 00
-	RGB 00, 31, 00
-	RGB 00, 31, 00
-	RGB 00, 00, 00
-
-	; blue
-	RGB 00, 00, 31
-	RGB 00, 00, 31
-	RGB 00, 00, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
+INCLUDE "data/palettes/debug/bg.pal"
 
 Palette_81a34: ; 81a34
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 31, 31, 31
-	RGB 00, 00, 00
-
-	; red
-	RGB 31, 31, 31
-	RGB 31, 00, 00
-	RGB 31, 00, 00
-	RGB 00, 00, 00
-
-	; green
-	RGB 31, 31, 31
-	RGB 00, 31, 00
-	RGB 00, 31, 00
-	RGB 00, 00, 00
-
-	; blue
-	RGB 31, 31, 31
-	RGB 00, 00, 31
-	RGB 00, 00, 31
-	RGB 00, 00, 00
+INCLUDE "data/palettes/debug/ob.pal"
 ; 81a74
 
 Function81a74: ; 81a74
@@ -398,7 +315,7 @@ Function81adb: ; 81adb
 	hlcoord 12, 3
 	call _PrepMonFrontpic
 	ld de, VTiles2 tile $31
-	predef GetBackpic
+	predef GetMonBackpic
 	ld a, $31
 	ld [hGraphicStartTile], a
 	hlcoord 2, 4
@@ -424,12 +341,12 @@ Function81adb: ; 81adb
 .asm_81b7a
 	ld a, [wd265]
 	ld [TrainerClass], a
-	callab GetTrainerAttributes
+	callfar GetTrainerAttributes
 	ld de, StringBuffer1
 	hlcoord 4, 1
 	call PlaceString
 	ld de, VTiles2
-	callab GetTrainerPic
+	callfar GetTrainerPic
 	xor a
 	ld [TempEnemyMonSpecies], a
 	ld [hGraphicStartTile], a
@@ -1152,7 +1069,7 @@ TilesetColorTest:
 	ld hl, VTiles1
 	lb bc, BANK(DebugColorTestGFX), 1
 	call Request2bpp
-	ld a, VBGMap1 / $100
+	ld a, HIGH(VBGMap1)
 	ld [hBGMapAddress + 1], a
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT

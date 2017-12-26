@@ -4,16 +4,16 @@ const_value set 2
 	const ROUTE21_FISHER
 
 Route21_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerSwimmermSeth:
-	trainer EVENT_BEAT_SWIMMERM_SETH, SWIMMERM, SETH, SwimmermSethSeenText, SwimmermSethBeatenText, 0, SwimmermSethScript
+	trainer EVENT_BEAT_SWIMMERM_SETH, SWIMMERM, SETH, SwimmermSethSeenText, SwimmermSethBeatenText, 0, .Script
 
-SwimmermSethScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermSethAfterBattleText
@@ -22,9 +22,9 @@ SwimmermSethScript:
 	end
 
 TrainerSwimmerfNikki:
-	trainer EVENT_BEAT_SWIMMERF_NIKKI, SWIMMERF, NIKKI, SwimmerfNikkiSeenText, SwimmerfNikkiBeatenText, 0, SwimmerfNikkiScript
+	trainer EVENT_BEAT_SWIMMERF_NIKKI, SWIMMERF, NIKKI, SwimmerfNikkiSeenText, SwimmerfNikkiBeatenText, 0, .Script
 
-SwimmerfNikkiScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfNikkiAfterBattleText
@@ -33,9 +33,9 @@ SwimmerfNikkiScript:
 	end
 
 TrainerFisherArnold:
-	trainer EVENT_BEAT_FISHER_ARNOLD, FISHER, ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, FisherArnoldScript
+	trainer EVENT_BEAT_FISHER_ARNOLD, FISHER, ARNOLD, FisherArnoldSeenText, FisherArnoldBeatenText, 0, .Script
 
-FisherArnoldScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext FisherArnoldAfterBattleText
@@ -96,14 +96,14 @@ Route21_MapEventHeader:
 .Warps:
 	db 0
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 3
-	person_event SPRITE_SWIMMER_GIRL, 16, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
-	person_event SPRITE_SWIMMER_GUY, 30, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 4, TrainerSwimmermSeth, -1
-	person_event SPRITE_FISHER, 22, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherArnold, -1
+	object_event SPRITE_SWIMMER_GIRL, 16, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNikki, -1
+	object_event SPRITE_SWIMMER_GUY, 30, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerSwimmermSeth, -1
+	object_event SPRITE_FISHER, 22, 14, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherArnold, -1

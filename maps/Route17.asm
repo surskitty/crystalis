@@ -5,7 +5,7 @@ const_value set 2
 	const ROUTE17_BIKER4
 
 Route17_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -18,9 +18,9 @@ Route17_MapScriptHeader:
 	return
 
 TrainerBikerCharles:
-	trainer EVENT_BEAT_BIKER_CHARLES, BIKER, CHARLES, BikerCharlesSeenText, BikerCharlesBeatenText, 0, BikerCharlesScript
+	trainer EVENT_BEAT_BIKER_CHARLES, BIKER, CHARLES, BikerCharlesSeenText, BikerCharlesBeatenText, 0, .Script
 
-BikerCharlesScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext BikerCharlesAfterBattleText
@@ -29,9 +29,9 @@ BikerCharlesScript:
 	end
 
 TrainerBikerRiley:
-	trainer EVENT_BEAT_BIKER_RILEY, BIKER, RILEY, BikerRileySeenText, BikerRileyBeatenText, 0, BikerRileyScript
+	trainer EVENT_BEAT_BIKER_RILEY, BIKER, RILEY, BikerRileySeenText, BikerRileyBeatenText, 0, .Script
 
-BikerRileyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext BikerRileyAfterBattleText
@@ -40,9 +40,9 @@ BikerRileyScript:
 	end
 
 TrainerBikerJoel:
-	trainer EVENT_BEAT_BIKER_JOEL, BIKER, JOEL, BikerJoelSeenText, BikerJoelBeatenText, 0, BikerJoelScript
+	trainer EVENT_BEAT_BIKER_JOEL, BIKER, JOEL, BikerJoelSeenText, BikerJoelBeatenText, 0, .Script
 
-BikerJoelScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext BikerJoelAfterBattleText
@@ -51,9 +51,9 @@ BikerJoelScript:
 	end
 
 TrainerBikerGlenn:
-	trainer EVENT_BEAT_BIKER_GLENN, BIKER, GLENN, BikerGlennSeenText, BikerGlennBeatenText, 0, BikerGlennScript
+	trainer EVENT_BEAT_BIKER_GLENN, BIKER, GLENN, BikerGlennSeenText, BikerGlennBeatenText, 0, .Script
 
-BikerGlennScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext BikerGlennAfterBattleText
@@ -143,17 +143,17 @@ Route17_MapEventHeader:
 	warp_def $52, $11, 1, ROUTE_17_18_GATE
 	warp_def $53, $11, 2, ROUTE_17_18_GATE
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 2
-	signpost 54, 9, SIGNPOST_ITEM, Route17HiddenMaxEther
-	signpost 77, 8, SIGNPOST_ITEM, Route17HiddenMaxElixer
+	bg_event 54, 9, BGEVENT_ITEM, Route17HiddenMaxEther
+	bg_event 77, 8, BGEVENT_ITEM, Route17HiddenMaxElixer
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_BIKER, 17, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 4, TrainerBikerRiley, -1
-	person_event SPRITE_BIKER, 68, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 1, TrainerBikerJoel, -1
-	person_event SPRITE_BIKER, 53, 3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 3, TrainerBikerGlenn, -1
-	person_event SPRITE_BIKER, 80, 6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 4, TrainerBikerCharles, -1
+	object_event SPRITE_BIKER, 17, 4, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerRiley, -1
+	object_event SPRITE_BIKER, 68, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBikerJoel, -1
+	object_event SPRITE_BIKER, 53, 3, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBikerGlenn, -1
+	object_event SPRITE_BIKER, 80, 6, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerBikerCharles, -1

@@ -1,4 +1,4 @@
-; Landmarks indexes (see data/landmarks.asm)
+; Landmarks indexes (see data/maps/landmarks.asm)
 	const_def
 
 ; Johto landmarks
@@ -63,7 +63,7 @@ KANTO_LANDMARK EQU const_value
 	const ROUTE_24          ; 38
 	const ROUTE_25          ; 39
 	const ROUTE_5           ; 3a
-	const UNDERGROUND       ; 3b
+	const UNDERGROUND_PATH  ; 3b
 	const ROUTE_6           ; 3c
 	const VERMILION_CITY    ; 3d
 	const DIGLETTS_CAVE     ; 3e

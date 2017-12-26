@@ -58,7 +58,7 @@ CheckFruitTree: ; 44055
 ; 4405f
 
 PickedFruitTree: ; 4405f
-	callba TrainerRankings_FruitPicked
+	farcall TrainerRankings_FruitPicked
 	ld b, 1
 	jp GetFruitTreeFlag
 ; 4406a
@@ -103,7 +103,7 @@ GetFruitTreeItem: ; 4408a
 ; 44097
 
 
-INCLUDE "data/fruit_tree_items.asm"
+INCLUDE "data/items/fruit_trees.asm"
 
 
 FruitBearingTreeText: ; 440b5

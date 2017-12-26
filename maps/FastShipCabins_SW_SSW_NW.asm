@@ -5,16 +5,16 @@ const_value set 2
 	const FASTSHIPCABINS_SW_SSW_NW_ROCKER
 
 FastShipCabins_SW_SSW_NW_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerFirebreatherLyle:
-	trainer EVENT_BEAT_FIREBREATHER_LYLE, FIREBREATHER, LYLE, FirebreatherLyleSeenText, FirebreatherLyleBeatenText, 0, FirebreatherLyleScript
+	trainer EVENT_BEAT_FIREBREATHER_LYLE, FIREBREATHER, LYLE, FirebreatherLyleSeenText, FirebreatherLyleBeatenText, 0, .Script
 
-FirebreatherLyleScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext FirebreatherLyleAfterBattleText
@@ -23,9 +23,9 @@ FirebreatherLyleScript:
 	end
 
 TrainerBug_catcherKen:
-	trainer EVENT_BEAT_BUG_CATCHER_KEN, BUG_CATCHER, KEN, Bug_catcherKenSeenText, Bug_catcherKenBeatenText, 0, Bug_catcherKenScript
+	trainer EVENT_BEAT_BUG_CATCHER_KEN, BUG_CATCHER, KEN, Bug_catcherKenSeenText, Bug_catcherKenBeatenText, 0, .Script
 
-Bug_catcherKenScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext Bug_catcherKenAfterBattleText
@@ -34,9 +34,9 @@ Bug_catcherKenScript:
 	end
 
 TrainerBeautyCassie:
-	trainer EVENT_BEAT_BEAUTY_CASSIE, BEAUTY, CASSIE, BeautyCassieSeenText, BeautyCassieBeatenText, 0, BeautyCassieScript
+	trainer EVENT_BEAT_BEAUTY_CASSIE, BEAUTY, CASSIE, BeautyCassieSeenText, BeautyCassieBeatenText, 0, .Script
 
-BeautyCassieScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext BeautyCassieAfterBattleText
@@ -45,9 +45,9 @@ BeautyCassieScript:
 	end
 
 TrainerGuitaristClyde:
-	trainer EVENT_BEAT_GUITARIST_CLYDE, GUITARIST, CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, GuitaristClydeScript
+	trainer EVENT_BEAT_GUITARIST_CLYDE, GUITARIST, CLYDE, GuitaristClydeSeenText, GuitaristClydeBeatenText, 0, .Script
 
-GuitaristClydeScript:
+.Script:
 	end_if_just_battled
 	special Mobile_DummyReturnFalse
 	iftrue .mobile
@@ -234,18 +234,18 @@ FastShipCabins_SW_SSW_NW_MapEventHeader:
 	warp_def $1f, $2, 7, FAST_SHIP_1F
 	warp_def $1f, $3, 7, FAST_SHIP_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 3
-	signpost 1, 7, SIGNPOST_READ, FastShipBed
-	signpost 2, 7, SIGNPOST_READ, FastShipBed
-	signpost 7, 7, SIGNPOST_READ, FastShipCabinsNorthwestCabinTrashcan
+	bg_event 1, 7, BGEVENT_READ, FastShipBed
+	bg_event 2, 7, BGEVENT_READ, FastShipBed
+	bg_event 7, 7, BGEVENT_READ, FastShipCabinsNorthwestCabinTrashcan
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_FISHER, 15, 1, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 2, TrainerFirebreatherLyle, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
-	person_event SPRITE_BUG_CATCHER, 15, 6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 2, TrainerBug_catcherKen, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
-	person_event SPRITE_BUENA, 26, 1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerBeautyCassie, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
-	person_event SPRITE_ROCKER, 28, 3, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 2, TrainerGuitaristClyde, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event SPRITE_FISHER, 15, 1, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherLyle, EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
+	object_event SPRITE_BUG_CATCHER, 15, 6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBug_catcherKen, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
+	object_event SPRITE_BUENA, 26, 1, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyCassie, EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
+	object_event SPRITE_ROCKER, 28, 3, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristClyde, EVENT_FAST_SHIP_PASSENGERS_WESTBOUND

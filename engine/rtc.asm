@@ -58,11 +58,11 @@ TimesOfDay: ; 14044
 	db -1, MORN_F
 ; 1404e
 
-Unknown_1404e: ; Unreferenced
-	db 20, 2
-	db 40, 0
-	db 60, 1
-	db -1, 0
+Unknown_1404e: ; unreferenced
+	db 20, NITE_F
+	db 40, MORN_F
+	db 60, DAY_F
+	db -1, MORN_F
 ; 14056
 
 StageRTCTimeForSave: ; 14056
@@ -143,8 +143,8 @@ Function140ae: ; 140ae
 	jr c, .dont_update
 
 .time_overflow
-	callba ClearDailyTimers
-	callba Function170923
+	farcall ClearDailyTimers
+	farcall Function170923
 ; mobile
 	ld a, $5
 	call GetSRAMBank

@@ -1,5 +1,3 @@
-
-
 SpecialHoOhChamber: ; 0x8addb
 	ld hl, PartySpecies
 	ld a, [hl]
@@ -61,10 +59,10 @@ SpecialAerodactylChamber: ; 8ae30
 
 	call GetSecondaryMapHeaderPointer
 	ld a, h
-	cp RuinsOfAlphAerodactylChamber_SecondMapHeader / $100
+	cp HIGH(RuinsOfAlphAerodactylChamber_SecondMapHeader)
 	jr nz, .nope
 	ld a, l
-	cp RuinsOfAlphAerodactylChamber_SecondMapHeader % $100
+	cp LOW(RuinsOfAlphAerodactylChamber_SecondMapHeader)
 	jr nz, .nope
 
 	ld de, EVENT_WALL_OPENED_IN_AERODACTYL_CHAMBER
@@ -89,10 +87,10 @@ SpecialKabutoChamber: ; 8ae4e
 
 	call GetSecondaryMapHeaderPointer
 	ld a, h
-	cp RuinsOfAlphKabutoChamber_SecondMapHeader / $100
+	cp HIGH(RuinsOfAlphKabutoChamber_SecondMapHeader)
 	jr nz, .done
 	ld a, l
-	cp RuinsOfAlphKabutoChamber_SecondMapHeader % $100
+	cp LOW(RuinsOfAlphKabutoChamber_SecondMapHeader)
 	jr nz, .done
 
 	ld de, EVENT_WALL_OPENED_IN_KABUTO_CHAMBER

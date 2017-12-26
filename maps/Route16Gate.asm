@@ -2,18 +2,18 @@ const_value set 2
 	const ROUTE16GATE_OFFICER
 
 Route16Gate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 1
-	maptrigger .DummyTrigger
+	scene_script .DummyScene
 
 .MapCallbacks:
 	db 0
 
-.DummyTrigger:
+.DummyScene:
 	end
 
-OfficerScript_0x733ea:
-	jumptextfaceplayer UnknownText_0x73408
+Route16GateOfficerScript:
+	jumptextfaceplayer Route16GateOfficerText
 
 UnknownScript_0x733ed:
 	checkitem BICYCLE
@@ -35,7 +35,7 @@ MovementData_0x73405:
 	turn_head LEFT
 	step_end
 
-UnknownText_0x73408:
+Route16GateOfficerText:
 	text "CYCLING ROAD"
 	line "starts here."
 
@@ -71,14 +71,14 @@ Route16Gate_MapEventHeader:
 	warp_def $4, $9, 2, ROUTE_16
 	warp_def $5, $9, 3, ROUTE_16
 
-.XYTriggers:
+.CoordEvents:
 	db 2
-	xy_trigger 0, $4, $5, $0, UnknownScript_0x733ed, $0, $0
-	xy_trigger 0, $5, $5, $0, UnknownScript_0x733ed, $0, $0
+	coord_event 0, $4, $5, UnknownScript_0x733ed
+	coord_event 0, $5, $5, UnknownScript_0x733ed
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 1
-	person_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, OfficerScript_0x733ea, -1
+	object_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route16GateOfficerScript, -1

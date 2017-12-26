@@ -66,7 +66,7 @@ LoadMenuMonIcon: ; 8e83f
 	push hl
 	push bc
 	ld d, a
-	callab ItemIsMail
+	callfar ItemIsMail
 	pop bc
 	pop hl
 	jr c, .not_mail
@@ -140,15 +140,15 @@ PartyMenu_InitAnimatedMonIcon: ; 8e8d5 (23:68d5)
 	push hl
 	push bc
 	ld d, a
-	callab ItemIsMail
+	callfar ItemIsMail
 	pop bc
 	pop hl
 	jr c, .mail
-	ld a, SPRITE_ANIM_FRAMESET_03
+	ld a, SPRITE_ANIM_FRAMESET_PARTY_MON_WITH_ITEM
 	jr .okay
 
 .mail
-	ld a, SPRITE_ANIM_FRAMESET_02
+	ld a, SPRITE_ANIM_FRAMESET_PARTY_MON_WITH_MAIL
 .okay
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
@@ -204,7 +204,7 @@ SetPartyMonIconAnimSpeed: ; 8e936 (23:6936)
 	ret
 
 .getspeed ; 8e94c (23:694c)
-	callba PlacePartymonHPBar
+	farcall PlacePartymonHPBar
 	call GetHPPal
 	ld e, d
 	ld d, 0
@@ -297,7 +297,7 @@ GetMemIconGFX: ; 8e9db (23:69db)
 	ld a, [wCurIconTile]
 GetIconGFX: ; 8e9de
 	call GetIcon_a
-	ld de, $80 ; 8 tiles
+	ld de, 8 tiles
 	add hl, de
 	ld de, HeldItemIcons
 	lb bc, BANK(HeldItemIcons), 2
@@ -466,11 +466,8 @@ ReadMonMenuIcon: ; 8eab3
 ; 8eac4
 
 
-INCLUDE "data/mon_menu_icons.asm"
-
+INCLUDE "data/pokemon/menu_icons.asm"
 
 INCLUDE "gfx/icon_pointers.asm"
 
-Icons:
 INCLUDE "gfx/icons.asm"
-

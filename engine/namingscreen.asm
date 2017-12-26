@@ -103,7 +103,7 @@ NamingScreen: ; 116c1
 	inc de
 	hlcoord 5, 4
 	call PlaceString
-	callba GetGender
+	farcall GetGender
 	jr c, .genderless
 	ld a, "♂"
 	jr nz, .place_gender
@@ -124,7 +124,7 @@ NamingScreen: ; 116c1
 ; 1178d
 
 .Player: ; 1178d (4:578d)
-	callba GetPlayerIcon
+	farcall GetPlayerIcon
 	call .LoadSprite
 	hlcoord 5, 2
 	ld de, .PlayerNameString
@@ -235,10 +235,10 @@ NamingScreen: ; 116c1
 	pop de
 	ld b, SPRITE_ANIM_INDEX_RED_WALK
 	ld a, d
-	cp KrisSpriteGFX / $100
+	cp HIGH(KrisSpriteGFX)
 	jr nz, .not_kris
 	ld a, e
-	cp KrisSpriteGFX % $100
+	cp LOW(KrisSpriteGFX)
 	jr nz, .not_kris
 	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
 .not_kris
@@ -352,14 +352,14 @@ NamingScreenJoypadLoop: ; 11915
 	bit 7, a
 	jr nz, .quit
 	call .RunJumptable
-	callba PlaySpriteAnimationsAndDelayFrame
+	farcall PlaySpriteAnimationsAndDelayFrame
 	call .UpdateStringEntry
 	call DelayFrame
 	and a
 	ret
 
 .quit
-	callab ClearSpriteAnims
+	callfar ClearSpriteAnims
 	call ClearSprites
 	xor a
 	ld [hSCX], a
@@ -900,7 +900,7 @@ NamingScreen_GetLastCharacter: ; 11c11 (4:5c11)
 
 LoadNamingScreenGFX: ; 11c51
 	call ClearSprites
-	callab ClearSpriteAnims
+	callfar ClearSpriteAnims
 	call LoadStandardFont
 	call LoadFontsExtra
 
@@ -1096,14 +1096,14 @@ INCBIN "gfx/icon/mail2.2bpp"
 	bit 7, a
 	jr nz, .exit_mail
 	call .DoJumptable
-	callba PlaySpriteAnimationsAndDelayFrame
+	farcall PlaySpriteAnimationsAndDelayFrame
 	call .Update
 	call DelayFrame
 	and a
 	ret
 
 .exit_mail
-	callab ClearSpriteAnims
+	callfar ClearSpriteAnims
 	call ClearSprites
 	xor a
 	ld [hSCX], a

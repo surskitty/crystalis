@@ -1,9 +1,9 @@
 ; item ids
 ; indexes for:
-; - ItemAttributes (see items/item_attributes.asm)
-; - ItemDescriptions (see items/item_descriptions.asm)
-; - ItemEffects (see items/item_effects.asm)
-; - ItemNames (see items/item_names.asm)
+; - ItemAttributes (see data/items/item_attributes.asm)
+; - ItemDescriptions (see data/items/item_descriptions.asm)
+; - ItemEffects (see engine/item_effects.asm)
+; - ItemNames (see data/items/item_names.asm)
 	const_def
 	const NO_ITEM      ; $00
 	const MASTER_BALL  ; $01
@@ -228,7 +228,7 @@
 	add_tm RETURN       ; $DA
 	add_tm DIG          ; $DB
 	const ITEM_DC       ; $DC
-	add_tm PSYCHIC      ; $DD
+	add_tm PSYCHIC_M    ; $DD
 	add_tm SHADOW_BALL  ; $DE
 	add_tm MUD_SLAP     ; $DF
 	add_tm DOUBLE_TEAM  ; $E0
@@ -298,7 +298,6 @@ CANT_TOSS   EQU 1 << 7
 
 ; held item effects
 	const_def
-
 	const HELD_NONE
 	const HELD_BERRY
 	const HELD_2
@@ -367,13 +366,13 @@ const_value SET 70
 	const HELD_ESCAPE
 	const HELD_CRITICAL_UP
 	const HELD_QUICK_CLAW
-	const HELD_TRADE_EVOLVE
+	const HELD_FLINCH
 	const HELD_AMULET_COIN
 	const HELD_BRIGHTPOWDER
 	const HELD_78
 	const HELD_FOCUS_BAND
 
-; item_attribute struct members (see items/item_attributes.asm)
+; item_attribute struct members (see data/items/item_attributes.asm)
 	const_def
 	const ITEMATTR_PRICE
 	const ITEMATTR_PRICE_HI
@@ -382,7 +381,7 @@ const_value SET 70
 	const ITEMATTR_PERMISSIONS
 	const ITEMATTR_POCKET
 	const ITEMATTR_HELP
-NUM_ITEMATTRS EQU const_value
+ITEMATTR_STRUCT_LENGTH EQU const_value
 
 ; item menu types
 ITEMMENU_NOUSE   EQU 0
@@ -398,7 +397,7 @@ ITEMMENU_CLOSE   EQU 6
 	const MARTTYPE_PHARMACY
 	const MARTTYPE_ROOFTOP
 
-; Marts indexes (see items/marts.asm)
+; Marts indexes (see data/items/marts.asm)
 	const_def
 	const MART_CHERRYGROVE
 	const MART_CHERRYGROVE_DEX

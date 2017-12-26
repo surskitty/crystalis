@@ -27,7 +27,7 @@ ITEM_NAME_LENGTH   EQU 13
 TRAINER_CLASS_NAME_LENGTH EQU 13
 NAME_LENGTH_JAPANESE EQU 6
 
-; GetName types (see home.asm)
+; GetName types (see home/names.asm)
 PKMN_NAME     EQU 1
 MOVE_NAME     EQU 2
 ; dummied out EQU 3
@@ -44,12 +44,13 @@ const_value set 5
 	const PRINTNUM_RIGHTALIGN_F   ; 6
 	const PRINTNUM_LEADINGZEROS_F ; 7
 
+; PrintNum arguments (see engine/printnum.asm)
 PRINTNUM_MONEY          EQU 1 << PRINTNUM_MONEY_F
 PRINTNUM_RIGHTALIGN     EQU 1 << PRINTNUM_RIGHTALIGN_F
 PRINTNUM_LEADINGZEROS   EQU 1 << PRINTNUM_LEADINGZEROS_F
 
 
-; movement
+; DoPlayerMovement.DoStep arguments (see engine/player_movement.asm)
 	const_def
 	const STEP_SLOW          ; 0
 	const STEP_WALK          ; 1
@@ -61,8 +62,14 @@ PRINTNUM_LEADINGZEROS   EQU 1 << PRINTNUM_LEADINGZEROS_F
 	const STEP_WALK_IN_PLACE ; 7
 
 
+; hMenuReturn
 HMENURETURN_SCRIPT EQU %10000000
 HMENURETURN_ASM    EQU %11111111
+
+
+; save file corruption check values
+SAVE_CHECK_VALUE_1 EQU 99
+SAVE_CHECK_VALUE_2 EQU 127
 
 
 ; time of day boundaries
@@ -82,10 +89,14 @@ HOF_MON_LENGTH = 1 + 2 + 2 + 1 + (PKMN_NAME_LENGTH +- 1) ; species, id, dvs, lev
 HOF_LENGTH = 1 + HOF_MON_LENGTH * PARTY_LENGTH + 1 ; win count, party, terminator
 NUM_HOF_TEAMS = 30
 
+MAX_LINK_RECORD EQU 9999
+
 
 ; significant money values
 START_MONEY EQU 3000
 MOM_MONEY   EQU 2300
+MAX_MONEY   EQU 999999
+MAX_COINS   EQU 9999
 
 
 ; ChangeHappiness arguments (see data/happiness_changes.asm)
@@ -109,3 +120,5 @@ const_value = 1
 	const HAPPINESS_REVIVALHERB       ; 11
 	const HAPPINESS_MASSAGE           ; 12
 	const HAPPINESS_GAINLEVELATHOME   ; 13
+
+MAX_DAY_CARE_EXP EQU $500000

@@ -1,5 +1,5 @@
 GoldenrodDeptStoreElevator_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,30 +14,30 @@ MapGoldenrodDeptStoreElevatorSignpost0Script:
 	playsound SFX_ELEVATOR
 	earthquake 60
 	waitsfx
-	checkevent EVENT_WAREHOUSE_BLOCKED_OFF
+	checkevent EVENT_GOLDENROD_UNDERGROUND_WAREHOUSE_BLOCKED_OFF
 	iftrue .Done
-	checkevent EVENT_WAREHOUSE_LAYOUT_1
+	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
 	iftrue .BoxLayout1
-	checkevent EVENT_WAREHOUSE_LAYOUT_2
+	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
 	iftrue .BoxLayout2
-	checkevent EVENT_WAREHOUSE_LAYOUT_3
+	checkevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
 	iftrue .BoxLayout3
 .BoxLayout3:
-	setevent EVENT_WAREHOUSE_LAYOUT_1
-	clearevent EVENT_WAREHOUSE_LAYOUT_2
-	clearevent EVENT_WAREHOUSE_LAYOUT_3
+	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
 	end
 
 .BoxLayout1:
-	clearevent EVENT_WAREHOUSE_LAYOUT_1
-	setevent EVENT_WAREHOUSE_LAYOUT_2
-	clearevent EVENT_WAREHOUSE_LAYOUT_3
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
+	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
 	end
 
 .BoxLayout2:
-	clearevent EVENT_WAREHOUSE_LAYOUT_1
-	clearevent EVENT_WAREHOUSE_LAYOUT_2
-	setevent EVENT_WAREHOUSE_LAYOUT_3
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_1
+	clearevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_2
+	setevent EVENT_GOLDENROD_DEPT_STORE_B1F_LAYOUT_3
 	end
 
 .Done:
@@ -62,15 +62,15 @@ GoldenrodDeptStoreElevator_MapEventHeader:
 
 .Warps:
 	db 2
-	warp_def $3, $1, 255, GOLDENROD_DEPT_STORE_1F
-	warp_def $3, $2, 255, GOLDENROD_DEPT_STORE_1F
+	warp_def $3, $1, -1, GOLDENROD_DEPT_STORE_1F
+	warp_def $3, $2, -1, GOLDENROD_DEPT_STORE_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 0, 3, SIGNPOST_READ, MapGoldenrodDeptStoreElevatorSignpost0Script
+	bg_event 0, 3, BGEVENT_READ, MapGoldenrodDeptStoreElevatorSignpost0Script
 
-.PersonEvents:
+.ObjectEvents:
 	db 0

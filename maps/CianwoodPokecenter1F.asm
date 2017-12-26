@@ -5,7 +5,7 @@ const_value set 2
 	const CIANWOODPOKECENTER1F_SUPER_NERD
 
 CianwoodPokecenter1F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,8 +14,8 @@ CianwoodPokecenter1F_MapScriptHeader:
 NurseScript_0x9dbcf:
 	jumpstd pokecenternurse
 
-LassScript_0x9dbd2:
-	jumptextfaceplayer UnknownText_0x9dbed
+CianwoodPokecenter1FLassScript:
+	jumptextfaceplayer CianwoodPokecenter1FLassText
 
 CianwoodGymGuyScript:
 	faceplayer
@@ -34,10 +34,10 @@ CianwoodGymGuyScript:
 	closetext
 	end
 
-SuperNerdScript_0x9dbea:
-	jumptextfaceplayer UnknownText_0x9ded7
+CianwoodPokecenter1FSuperNerdScript:
+	jumptextfaceplayer CianwoodPokecenter1FSuperNerdText
 
-UnknownText_0x9dbed:
+CianwoodPokecenter1FLassText:
 	text "Did you meet the"
 	line "#MANIAC?"
 
@@ -117,7 +117,7 @@ UnknownText_0x9de66:
 	cont "gotta crank it up!"
 	done
 
-UnknownText_0x9ded7:
+CianwoodPokecenter1FSuperNerdText:
 	text "I love showing off"
 	line "the #MON that"
 
@@ -141,15 +141,15 @@ CianwoodPokecenter1F_MapEventHeader:
 	warp_def $7, $4, 3, CIANWOOD_CITY
 	warp_def $7, $0, 1, POKECENTER_2F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, NurseScript_0x9dbcf, -1
-	person_event SPRITE_LASS, 5, 1, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, LassScript_0x9dbd2, -1
-	person_event SPRITE_GYM_GUY, 3, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, CianwoodGymGuyScript, -1
-	person_event SPRITE_SUPER_NERD, 6, 8, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, PERSONTYPE_SCRIPT, 0, SuperNerdScript_0x9dbea, -1
+	object_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript_0x9dbcf, -1
+	object_event SPRITE_LASS, 5, 1, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FLassScript, -1
+	object_event SPRITE_GYM_GUY, 3, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuyScript, -1
+	object_event SPRITE_SUPER_NERD, 6, 8, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodPokecenter1FSuperNerdScript, -1

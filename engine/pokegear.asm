@@ -20,7 +20,7 @@ PokeGear: ; 90b8d (24:4b8d)
 	bit 7, a
 	jr nz, .done
 	call PokegearJumptable
-	callba PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	call DelayFrame
 	jr .loop
 
@@ -35,9 +35,9 @@ PokeGear: ; 90b8d (24:4b8d)
 	pop af
 	ld [Options], a
 	call ClearBGPalettes
-	xor a
+	xor a ; LOW(VBGMap0)
 	ld [hBGMapAddress], a
-	ld a, VBGMap0 / $100
+	ld a, HIGH(VBGMap0)
 	ld [hBGMapAddress + 1], a
 	ld a, $90
 	ld [hWY], a
@@ -55,7 +55,7 @@ PokeGear: ; 90b8d (24:4b8d)
 	ld a, $7
 	ld [hWX], a
 	call Pokegear_LoadGFX
-	callba ClearSpriteAnims
+	farcall ClearSpriteAnims
 	call InitPokegearModeIndicatorArrow
 	ld a, 8
 	call SkipMusic
@@ -106,7 +106,7 @@ Pokegear_LoadGFX: ; 90c4e
 	call GetWorldMapLocation
 	cp FAST_SHIP
 	jr z, .ssaqua
-	callba GetPlayerIcon
+	farcall GetPlayerIcon
 	push de
 	ld h, d
 	ld l, e
@@ -141,7 +141,7 @@ INCBIN "gfx/pokegear/fast_ship.2bpp"
 
 InitPokegearModeIndicatorArrow: ; 90d32 (24:4d32)
 	depixel 4, 2, 4, 0
-	ld a, SPRITE_ANIM_INDEX_0D
+	ld a, SPRITE_ANIM_INDEX_POKEGEAR_ARROW
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
@@ -239,22 +239,22 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 
 .return_from_jumptable
 	call Pokegear_FinishTilemap
-	callba TownMapPals
+	farcall TownMapPals
 	ld a, [wcf65]
 	and a
 	jr nz, .kanto_0
-	xor a
+	xor a ; LOW(VBGMap0)
 	ld [hBGMapAddress], a
-	ld a, VBGMap0 / $100
+	ld a, HIGH(VBGMap0)
 	ld [hBGMapAddress + 1], a
 	call .UpdateBGMap
 	ld a, $90
 	jr .finish
 
 .kanto_0
-	xor a
+	xor a ; LOW(VBGMap1)
 	ld [hBGMapAddress], a
-	ld a, VBGMap1 / $100
+	ld a, HIGH(VBGMap1)
 	ld [hBGMapAddress + 1], a
 	call .UpdateBGMap
 	xor a
@@ -319,7 +319,7 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 .kanto
 	ld e, 1
 .ok
-	callba PokegearMap
+	farcall PokegearMap
 	ld a, $7
 	ld bc, $12
 	hlcoord 1, 2
@@ -513,7 +513,7 @@ Pokegear_UpdateClock: ; 90f86 (24:4f86)
 	ld a, [hMinutes]
 	ld c, a
 	decoord 6, 8
-	callba PrintHoursMins
+	farcall PrintHoursMins
 	ld hl, .DayText
 	bccoord 6, 6
 	call PlaceHLTextAtBC
@@ -670,7 +670,7 @@ PokegearMap_InitPlayerIcon: ; 9106a
 	pop af
 	ld e, a
 	push bc
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	pop bc
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -685,7 +685,7 @@ PokegearMap_InitPlayerIcon: ; 9106a
 PokegearMap_InitCursor: ; 91098
 	push af
 	depixel 0, 0
-	ld a, SPRITE_ANIM_INDEX_0D
+	ld a, SPRITE_ANIM_INDEX_POKEGEAR_ARROW
 	call _InitSpriteAnimStruct
 	ld hl, SPRITEANIMSTRUCT_TILE_ID
 	add hl, bc
@@ -709,9 +709,9 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 	pop af
 	ld e, a
 	push de
-	callba GetLandmarkName
+	farcall GetLandmarkName
 	pop de
-	callba TownMap_ConvertLineBreakCharacters
+	farcall TownMap_ConvertLineBreakCharacters
 	hlcoord 8, 0
 	ld [hl], $34
 	ret
@@ -721,7 +721,7 @@ PokegearMap_UpdateLandmarkName: ; 910b4
 PokegearMap_UpdateCursorPosition: ; 910d4
 	push bc
 	ld e, a
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	pop bc
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -929,7 +929,7 @@ PokegearPhone_MakePhoneCall: ; 911eb (24:51eb)
 	ret
 
 .no_service
-	callba Phone_NoSignal
+	farcall Phone_NoSignal
 	ld hl, .OutOfServiceArea
 	call PrintText
 	ld a, $8
@@ -958,7 +958,7 @@ PokegearPhone_FinishPhoneCall: ; 91256 (24:5256)
 	ld a, [hJoyPressed]
 	and A_BUTTON | B_BUTTON
 	ret z
-	callba HangUp
+	farcall HangUp
 	ld a, $8
 	ld [wJumptableIndex], a
 	ld hl, PokegearText_WhomToCall
@@ -1121,7 +1121,7 @@ PokegearPhoneContactSubmenu: ; 91342 (24:5342)
 	ld d, 0
 	add hl, de
 	ld c, [hl]
-	callba CheckCanDeletePhoneNumber
+	farcall CheckCanDeletePhoneNumber
 	ld a, c
 	and a
 	jr z, .cant_delete
@@ -1688,7 +1688,7 @@ LoadStation_UnownRadio: ; 917d5 (24:57d5)
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
-	ld de, UnknownStationName
+	ld de, UnownStationName
 	ret
 
 LoadStation_PlacesAndPeople: ; 917ea (24:57ea)
@@ -1747,7 +1747,7 @@ LoadStation_EvolutionRadio: ; 9183e (24:583e)
 	ld a, BANK(PlayRadioShow)
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
-	ld de, UnknownStationName
+	ld de, UnownStationName
 	ret
 
 ; 91853 (24:5853)
@@ -1821,7 +1821,7 @@ OaksPkmnTalkName:     db "OAK's <PK><MN> Talk@"
 PokedexShowName:      db "#DEX Show@"
 PokemonMusicName:     db "#MON Music@"
 LuckyChannelName:     db "Lucky Channel@"
-UnknownStationName:   db "?????@"
+UnownStationName:     db "?????@"
 
 PlacesAndPeopleName:  db "Places & People@"
 LetsAllSingName:      db "Let's All Sing!@"
@@ -1849,7 +1849,7 @@ _TownMap: ; 9191c
 	call ClearSprites
 	call DisableLCD
 	call Pokegear_LoadGFX
-	callba ClearSpriteAnims
+	farcall ClearSpriteAnims
 	ld a, 8
 	call SkipMusic
 	ld a, $e3
@@ -1919,7 +1919,7 @@ _TownMap: ; 9191c
 	jr nz, .pressed_down
 .loop2
 	push de
-	callba PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	pop de
 	call DelayFrame
 	jr .loop
@@ -1973,7 +1973,7 @@ _TownMap: ; 9191c
 .kanto2
 	ld e, $1
 .okay_tilemap
-	callba PokegearMap
+	farcall PokegearMap
 	ld a, $7
 	ld bc, 6
 	hlcoord 1, 0
@@ -1994,7 +1994,7 @@ _TownMap: ; 9191c
 	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
-	callba TownMapPals
+	farcall TownMapPals
 	ret
 ; 91a53
 
@@ -2116,7 +2116,7 @@ _FlyMap: ; 91af3
 	ld [hl], $1
 	xor a
 	ld [hBGMapMode], a
-	callba ClearSpriteAnims
+	farcall ClearSpriteAnims
 	call LoadTownMapGFX
 	ld de, FlyMapLabelBorderGFX
 	ld hl, VTiles2 tile $30
@@ -2138,7 +2138,7 @@ _FlyMap: ; 91af3
 	jr nz, .pressedA
 	call FlyMapScroll
 	call GetMapCursorCoordinates
-	callba PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	call DelayFrame
 	jr .loop
 
@@ -2161,9 +2161,9 @@ _FlyMap: ; 91af3
 	call ClearBGPalettes
 	ld a, $90
 	ld [hWY], a
-	xor a
+	xor a ; LOW(VBGMap0)
 	ld [hBGMapAddress], a
-	ld a, VBGMap0 / $100
+	ld a, HIGH(VBGMap0)
 	ld [hBGMapAddress + 1], a
 	ld a, [wTownMapPlayerIconLandmark]
 	ld e, a
@@ -2276,7 +2276,7 @@ TownMapBubble: ; 91bb5
 	ld de, Flypoints
 	add hl, de
 	ld e, [hl]
-	callba GetLandmarkName
+	farcall GetLandmarkName
 	hlcoord 2, 1
 	ld de, StringBuffer1
 	call PlaceString
@@ -2292,7 +2292,7 @@ GetMapCursorCoordinates: ; 91c17
 	ld de, Flypoints
 	add hl, de
 	ld e, [hl]
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	ld a, [wTownMapCursorCoordinates]
 	ld c, a
 	ld a, [wTownMapCursorCoordinates + 1]
@@ -2338,44 +2338,7 @@ HasVisitedSpawn: ; 91c50
 
 ; 91c5e
 
-Flypoints: ; 91c5e
-; landmark, spawn point
-	const_def
-flypoint: MACRO
-	const FLY_\1
-	db \2, SPAWN_\1
-ENDM
-; Johto
-	flypoint NEW_BARK,    NEW_BARK_TOWN
-	flypoint CHERRYGROVE, CHERRYGROVE_CITY
-	flypoint VIOLET,      VIOLET_CITY
-	flypoint AZALEA,      AZALEA_TOWN
-	flypoint GOLDENROD,   GOLDENROD_CITY
-	flypoint ECRUTEAK,    ECRUTEAK_CITY
-	flypoint OLIVINE,     OLIVINE_CITY
-	flypoint CIANWOOD,    CIANWOOD_CITY
-	flypoint MAHOGANY,    MAHOGANY_TOWN
-	flypoint LAKE,        LAKE_OF_RAGE
-	flypoint BLACKTHORN,  BLACKTHORN_CITY
-	flypoint MT_SILVER,   SILVER_CAVE
-; Kanto
-
-KANTO_FLYPOINT EQU const_value
-	flypoint PALLET,      PALLET_TOWN
-	flypoint VIRIDIAN,    VIRIDIAN_CITY
-	flypoint PEWTER,      PEWTER_CITY
-	flypoint CERULEAN,    CERULEAN_CITY
-	flypoint VERMILION,   VERMILION_CITY
-	flypoint ROCK_TUNNEL, ROCK_TUNNEL
-	flypoint LAVENDER,    LAVENDER_TOWN
-	flypoint CELADON,     CELADON_CITY
-	flypoint SAFFRON,     SAFFRON_CITY
-	flypoint FUCHSIA,     FUCHSIA_CITY
-	flypoint CINNABAR,    CINNABAR_ISLAND
-	flypoint INDIGO,      INDIGO_PLATEAU
-	db -1
-
-; 91c8f
+INCLUDE "data/flypoints.asm"
 
 ret_91c8f: ; 91c8f
 	ret
@@ -2632,7 +2595,7 @@ _Area: ; 91d11
 .GetAndPlaceNest: ; 91e1e
 	ld [wTownMapCursorLandmark], a
 	ld e, a
-	callba FindNest ; load nest landmarks into TileMap[0,0]
+	farcall FindNest ; load nest landmarks into TileMap[0,0]
 	decoord 0, 0
 	ld hl, Sprites
 .nestloop
@@ -2642,7 +2605,7 @@ _Area: ; 91d11
 	push de
 	ld e, a
 	push hl
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	pop hl
 	; load into OAM
 	ld a, d
@@ -2674,7 +2637,7 @@ _Area: ; 91d11
 	ret c
 	ld a, [wTownMapPlayerIconLandmark]
 	ld e, a
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	ld c, e
 	ld b, d
 	ld de, .PlayerOAM
@@ -2760,7 +2723,7 @@ _Area: ; 91d11
 	ld a, [wTownMapPlayerIconLandmark]
 	cp FAST_SHIP
 	jr z, .FastShip
-	callba GetPlayerIcon
+	farcall GetPlayerIcon
 	ret
 
 .FastShip:
@@ -2872,19 +2835,7 @@ TownMapPals: ; 91f13
 	ret
 
 .PalMap:
-townmappals: MACRO
-rept _NARG / 2
-	dn \2, \1
-	shift
-	shift
-endr
-endm
-	townmappals 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 3, 1, 4, 5, 4, 5
-	townmappals 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0
-	townmappals 1, 1, 1, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-	townmappals 0, 0, 0, 0, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0
-	townmappals 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0
-	townmappals 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0
+INCLUDE "data/palettes/town_map.asm"
 ; 91f7b
 
 TownMapMon: ; 91f7b
@@ -2900,7 +2851,7 @@ TownMapMon: ; 91f7b
 	ld [wd265], a
 ; Get FlyMon icon
 	ld e, 8 ; starting tile in VRAM
-	callba GetSpeciesIcon
+	farcall GetSpeciesIcon
 ; Animation/palette
 	depixel 0, 0
 	ld a, SPRITE_ANIM_INDEX_PARTY_MON
@@ -2918,7 +2869,7 @@ TownMapMon: ; 91f7b
 TownMapPlayerIcon: ; 91fa6
 ; Draw the player icon at town map location in a
 	push af
-	callba GetPlayerIcon
+	farcall GetPlayerIcon
 ; Standing icon
 	ld hl, VTiles0 tile $10
 	ld c, 4 ; # tiles
@@ -2948,7 +2899,7 @@ TownMapPlayerIcon: ; 91fa6
 	pop af
 	ld e, a
 	push bc
-	callba GetLandmarkCoords
+	farcall GetLandmarkCoords
 	pop bc
 	ld hl, SPRITEANIMSTRUCT_XCOORD
 	add hl, bc
@@ -2994,7 +2945,7 @@ INCBIN "gfx/pokegear/flymap_label_border.1bpp"
 	ld [hl], $1
 	xor a
 	ld [hBGMapMode], a
-	callba ClearSpriteAnims
+	farcall ClearSpriteAnims
 	call LoadTownMapGFX
 	ld de, FlyMapLabelBorderGFX
 	ld hl, VTiles2 tile $30
@@ -3029,7 +2980,7 @@ INCBIN "gfx/pokegear/flymap_label_border.1bpp"
 	jr nz, .pressedA
 	call .HandleDPad
 	call GetMapCursorCoordinates
-	callba PlaySpriteAnimations
+	farcall PlaySpriteAnimations
 	call DelayFrame
 	jr .loop
 
@@ -3052,9 +3003,9 @@ INCBIN "gfx/pokegear/flymap_label_border.1bpp"
 	call ClearBGPalettes
 	ld a, $90
 	ld [hWY], a
-	xor a
+	xor a ; LOW(VBGMap0)
 	ld [hBGMapAddress], a
-	ld a, VBGMap0 / $100
+	ld a, HIGH(VBGMap0)
 	ld [hBGMapAddress + 1], a
 	ld a, [wTownMapPlayerIconLandmark]
 	ld e, a

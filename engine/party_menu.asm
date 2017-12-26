@@ -40,8 +40,8 @@ InitPartyMenuLayout: ; 5003f
 
 LoadPartyMenuGFX: ; 5004f
 	call LoadFontsBattleExtra
-	callab InitPartyMenuPalettes ; engine/color.asm
-	callab ClearSpriteAnims2
+	callfar InitPartyMenuPalettes ; engine/color.asm
+	callfar ClearSpriteAnims2
 	ret
 ; 5005f
 
@@ -587,10 +587,10 @@ PlacePartyMonMobileBattleSelection: ; 50307
 
 
 PartyMenuCheckEgg: ; 50389
-	ld a, PartySpecies % $100
+	ld a, LOW(PartySpecies)
 	add b
 	ld e, a
-	ld a, PartySpecies / $100
+	ld a, HIGH(PartySpecies)
 	adc 0
 	ld d, a
 	ld a, [de]
@@ -662,7 +662,7 @@ InitPartyMenuGFX: ; 503e0
 	pop bc
 	dec c
 	jr nz, .loop
-	callab PlaySpriteAnimations
+	callfar PlaySpriteAnimations
 	ret
 ; 50405
 

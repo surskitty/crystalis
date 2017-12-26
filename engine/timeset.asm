@@ -9,9 +9,9 @@ InitClock: ; 90672 (24:4672)
 	ld [wSpriteUpdatesEnabled], a
 	ld a, $10
 	ld [MusicFade], a
-	ld a, MUSIC_NONE % $100
+	ld a, LOW(MUSIC_NONE)
 	ld [MusicFadeID], a
-	ld a, MUSIC_NONE / $100
+	ld a, HIGH(MUSIC_NONE)
 	ld [MusicFadeID + 1], a
 	ld c, 8
 	call DelayFrames
@@ -40,7 +40,7 @@ InitClock: ; 90672 (24:4672)
 	call RotateFourPalettesRight
 	ld hl, Text_WokeUpOak
 	call PrintText
-	ld hl, wc608
+	ld hl, wTimeSetBuffer
 	ld bc, 50
 	xor a
 	call ByteFill
@@ -590,7 +590,7 @@ Special_InitialSetDSTFlag: ; 90a54
 	ld a, [hMinutes]
 	ld c, a
 	decoord 1, 14
-	callba PrintHoursMins
+	farcall PrintHoursMins
 	ld hl, .DSTIsThatOK
 	ret
 ; 90a83 (24:4a83)
@@ -621,7 +621,7 @@ Special_InitialClearDSTFlag: ; 90a88
 	ld a, [hMinutes]
 	ld c, a
 	decoord 1, 14
-	callba PrintHoursMins
+	farcall PrintHoursMins
 	ld hl, .IsThatOK
 	ret
 ; 90ab7

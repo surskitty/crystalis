@@ -4,7 +4,7 @@ const_value set 2
 	const ROUTE20_SWIMMER_GUY
 
 Route20_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -16,9 +16,9 @@ Route20_MapScriptHeader:
 	return
 
 TrainerSwimmerfNicole:
-	trainer EVENT_BEAT_SWIMMERF_NICOLE, SWIMMERF, NICOLE, SwimmerfNicoleSeenText, SwimmerfNicoleBeatenText, 0, SwimmerfNicoleScript
+	trainer EVENT_BEAT_SWIMMERF_NICOLE, SWIMMERF, NICOLE, SwimmerfNicoleSeenText, SwimmerfNicoleBeatenText, 0, .Script
 
-SwimmerfNicoleScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfNicoleAfterBattleText
@@ -27,9 +27,9 @@ SwimmerfNicoleScript:
 	end
 
 TrainerSwimmerfLori:
-	trainer EVENT_BEAT_SWIMMERF_LORI, SWIMMERF, LORI, SwimmerfLoriSeenText, SwimmerfLoriBeatenText, 0, SwimmerfLoriScript
+	trainer EVENT_BEAT_SWIMMERF_LORI, SWIMMERF, LORI, SwimmerfLoriSeenText, SwimmerfLoriBeatenText, 0, .Script
 
-SwimmerfLoriScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmerfLoriAfterBattleText
@@ -38,9 +38,9 @@ SwimmerfLoriScript:
 	end
 
 TrainerSwimmermCameron:
-	trainer EVENT_BEAT_SWIMMERM_CAMERON, SWIMMERM, CAMERON, SwimmermCameronSeenText, SwimmermCameronBeatenText, 0, SwimmermCameronScript
+	trainer EVENT_BEAT_SWIMMERM_CAMERON, SWIMMERM, CAMERON, SwimmermCameronSeenText, SwimmermCameronBeatenText, 0, .Script
 
-SwimmermCameronScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SwimmermCameronAfterBattleText
@@ -120,15 +120,15 @@ Route20_MapEventHeader:
 	db 1
 	warp_def $7, $26, 1, SEAFOAM_GYM
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 11, 37, SIGNPOST_READ, CinnabarGymSign
+	bg_event 11, 37, BGEVENT_READ, CinnabarGymSign
 
-.PersonEvents:
+.ObjectEvents:
 	db 3
-	person_event SPRITE_SWIMMER_GIRL, 8, 52, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
-	person_event SPRITE_SWIMMER_GIRL, 13, 45, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
-	person_event SPRITE_SWIMMER_GUY, 13, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerSwimmermCameron, -1
+	object_event SPRITE_SWIMMER_GIRL, 8, 52, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1
+	object_event SPRITE_SWIMMER_GIRL, 13, 45, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfLori, -1
+	object_event SPRITE_SWIMMER_GUY, 13, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerSwimmermCameron, -1

@@ -4,21 +4,21 @@ const_value set 2
 	const ROUTE35NATIONALPARKGATE_OFFICER2
 
 Route35NationalParkGate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 3
-	maptrigger .DummyTrigger0
-	maptrigger .DummyTrigger1
-	maptrigger .LeaveContestEarly
+	scene_script .DummyScene0
+	scene_script .DummyScene1
+	scene_script .LeaveContestEarly
 
 .MapCallbacks:
 	db 2
 	dbw MAPCALLBACK_NEWMAP, .CheckIfContestRunning
 	dbw MAPCALLBACK_OBJECTS, .CheckIfContestAvailable
 
-.DummyTrigger0:
+.DummyScene0:
 	end
 
-.DummyTrigger1:
+.DummyScene1:
 	end
 
 .LeaveContestEarly:
@@ -28,11 +28,11 @@ Route35NationalParkGate_MapScriptHeader:
 .CheckIfContestRunning:
 	checkflag ENGINE_BUG_CONTEST_TIMER
 	iftrue .BugContestIsRunning
-	dotrigger $0
+	setscene $0
 	return
 
 .BugContestIsRunning:
-	dotrigger $2
+	setscene $2
 	return
 
 .CheckIfContestAvailable:
@@ -199,8 +199,8 @@ OfficerScript_0x6a2ca:
 	closetext
 	end
 
-YoungsterScript_0x6a2d8:
-	jumptextfaceplayer UnknownText_0x6a8d8
+Route35NationalParkGateYoungsterScript:
+	jumptextfaceplayer Route35NationalParkGateYoungsterText
 
 MapRoute36NationalParkGateSignpost0Script:
 	jumptext UnknownText_0x6a90e
@@ -411,7 +411,7 @@ UnknownText_0x6a894:
 	line "give it a shot."
 	done
 
-UnknownText_0x6a8d8:
+Route35NationalParkGateYoungsterText:
 	text "When is the next"
 	line "Bug-Catching Con-"
 	cont "test going to be?"
@@ -448,15 +448,15 @@ Route35NationalParkGate_MapEventHeader:
 	warp_def $7, $3, 3, ROUTE_35
 	warp_def $7, $4, 3, ROUTE_35
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 0, 5, SIGNPOST_READ, MapRoute36NationalParkGateSignpost0Script
+	bg_event 0, 5, BGEVENT_READ, MapRoute36NationalParkGateSignpost0Script
 
-.PersonEvents:
+.ObjectEvents:
 	db 3
-	person_event SPRITE_OFFICER, 1, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, OfficerScript_0x6a204, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
-	person_event SPRITE_YOUNGSTER, 5, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, YoungsterScript_0x6a2d8, EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER
-	person_event SPRITE_OFFICER, 3, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, OfficerScript_0x6a2ca, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY
+	object_event SPRITE_OFFICER, 1, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OfficerScript_0x6a204, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_CONTEST_DAY
+	object_event SPRITE_YOUNGSTER, 5, 6, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route35NationalParkGateYoungsterScript, EVENT_ROUTE_35_NATIONAL_PARK_GATE_YOUNGSTER
+	object_event SPRITE_OFFICER, 3, 0, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OfficerScript_0x6a2ca, EVENT_ROUTE_35_NATIONAL_PARK_GATE_OFFICER_NOT_CONTEST_DAY

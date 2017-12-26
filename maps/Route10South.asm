@@ -3,16 +3,16 @@ const_value set 2
 	const ROUTE10SOUTH_POKEFAN_M2
 
 Route10South_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerHikerJim:
-	trainer EVENT_BEAT_HIKER_JIM, HIKER, JIM, HikerJimSeenText, HikerJimBeatenText, 0, HikerJimScript
+	trainer EVENT_BEAT_HIKER_JIM, HIKER, JIM, HikerJimSeenText, HikerJimBeatenText, 0, .Script
 
-HikerJimScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext HikerJimAfterBattleText
@@ -21,9 +21,9 @@ HikerJimScript:
 	end
 
 TrainerPokefanmRobert:
-	trainer EVENT_BEAT_POKEFANM_ROBERT, POKEFANM, ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, PokefanmRobertScript
+	trainer EVENT_BEAT_POKEFANM_ROBERT, POKEFANM, ROBERT, PokefanmRobertSeenText, PokefanmRobertBeatenText, 0, .Script
 
-PokefanmRobertScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokefanmRobertAfterBattleText
@@ -83,14 +83,14 @@ Route10South_MapEventHeader:
 	db 1
 	warp_def $1, $6, 2, ROCK_TUNNEL_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 1
-	signpost 3, 5, SIGNPOST_READ, Route10Sign
+	bg_event 3, 5, BGEVENT_READ, Route10Sign
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_POKEFAN_M, 3, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 3, TrainerHikerJim, -1
-	person_event SPRITE_POKEFAN_M, 10, 8, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 3, TrainerPokefanmRobert, -1
+	object_event SPRITE_POKEFAN_M, 3, 17, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerHikerJim, -1
+	object_event SPRITE_POKEFAN_M, 10, 8, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmRobert, -1

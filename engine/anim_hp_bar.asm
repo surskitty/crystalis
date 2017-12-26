@@ -288,7 +288,7 @@ HPBarAnim_PaletteUpdate: ; d7b4
 	call SetHPPal
 	ld a, [wCurHPAnimPal]
 	ld c, a
-	callba ApplyHPBarPals
+	farcall ApplyHPBarPals
 	ret
 ; d7c9
 
@@ -377,7 +377,10 @@ ShortHPBar_CalcPixelFrame: ; d839
 	and a
 	jr z, .return_zero
 	call AddNTimes
+
 	ld b, 0
+; This routine is buggy. If [wCurHPAnimMaxHP] * [wCurHPBarPixels] is divisible
+; by 48, the loop runs one extra time. To fix, uncomment the line below.
 .loop
 	ld a, l
 	sub 6 * 8
@@ -385,6 +388,7 @@ ShortHPBar_CalcPixelFrame: ; d839
 	ld a, h
 	sbc $0
 	ld h, a
+	; jr z, .done
 	jr c, .done
 	inc b
 	jr .loop

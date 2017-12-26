@@ -1,3 +1,6 @@
+NUM_MOM_ITEMS_1 EQUS "((MomItems_1End - MomItems_1) / 8)"
+NUM_MOM_ITEMS_2 EQUS "((MomItems_2End - MomItems_2) / 8)"
+
 const_value = 1
 	const MOM_ITEM
 	const MOM_DOLL
@@ -17,7 +20,7 @@ MomTriesToBuySomething:: ; fcfec
 	ret nc
 	ld b, BANK(.Script)
 	ld de, .Script
-	callba LoadScriptBDE
+	farcall LoadScriptBDE
 	scf
 	ret
 ; fd00f
@@ -57,7 +60,7 @@ MomTriesToBuySomething:: ; fcfec
 
 CheckBalance_MomItem2: ; fd044
 	ld a, [wWhichMomItem]
-	cp 10
+	cp NUM_MOM_ITEMS_2
 	jr nc, .nope
 	call GetItemFromMom
 	ld a, [hli]
@@ -68,7 +71,7 @@ CheckBalance_MomItem2: ; fd044
 	ld [hMoneyTemp + 2], a
 	ld de, wMomsMoney
 	ld bc, hMoneyTemp
-	callba CompareMoney
+	farcall CompareMoney
 	jr nc, .have_enough_money
 
 .nope
@@ -80,15 +83,15 @@ CheckBalance_MomItem2: ; fd044
 
 .check_have_2300
 	ld hl, hMoneyTemp
-	ld [hl], MOM_MONEY / $10000
+	ld [hl], HIGH(MOM_MONEY >> 8)
 	inc hl
-	ld [hl], MOM_MONEY / $100 % $100
+	ld [hl], HIGH(MOM_MONEY) ; mid
 	inc hl
-	ld [hl], MOM_MONEY % $100
+	ld [hl], LOW(MOM_MONEY)
 .loop
 	ld de, MomItemTriggerBalance
 	ld bc, wMomsMoney
-	callba CompareMoney
+	farcall CompareMoney
 	jr z, .exact
 	jr nc, .less_than
 	call .AddMoney
@@ -100,7 +103,7 @@ CheckBalance_MomItem2: ; fd044
 
 .exact
 	call .AddMoney
-	ld a, 5
+	ld a, NUM_MOM_ITEMS_1
 	call RandomRange
 	inc a
 	ld [wWhichMomItemSet], a
@@ -110,7 +113,7 @@ CheckBalance_MomItem2: ; fd044
 .AddMoney:
 	ld de, MomItemTriggerBalance
 	ld bc, hMoneyTemp
-	callba AddMoney
+	farcall AddMoney
 	ret
 ; fd0a6
 
@@ -127,7 +130,7 @@ MomBuysItem_DeductFunds: ; fd0a6 (3f:50a6)
 	ld [hMoneyTemp + 2], a
 	ld de, wMomsMoney
 	ld bc, hMoneyTemp
-	callba TakeMoney
+	farcall TakeMoney
 	ret
 
 
@@ -141,7 +144,7 @@ Mom_GiveItemOrDoll: ; fd0c3
 	ld a, [hl]
 	ld c, a
 	ld b, 1
-	callba DecorationFlagAction_c
+	farcall DecorationFlagAction_c
 	scf
 	ret
 
@@ -195,7 +198,7 @@ GetItemFromMom: ; fd117
 
 .zero
 	ld a, [wWhichMomItem]
-	cp 10 ; length of MomItems_2
+	cp NUM_MOM_ITEMS_2
 	jr c, .ok
 	xor a
 
@@ -212,7 +215,7 @@ endr
 	ret
 ; fd136
 
-INCLUDE "data/mom_phone_items.asm"
+INCLUDE "data/items/mom_phone.asm"
 
 	db 0, 0, 0 ; XXX
 

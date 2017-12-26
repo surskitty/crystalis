@@ -5,7 +5,7 @@ Special_CheckMagikarpLength: ; fbb32
 	; Returns 0 if the Pokemon you select is not a Magikarp.
 
 	; Let's start by selecting a Magikarp.
-	callba SelectMonFromParty
+	farcall SelectMonFromParty
 	jr c, .declined
 	ld a, [CurPartySpecies]
 	cp MAGIKARP
@@ -28,7 +28,7 @@ Special_CheckMagikarpLength: ; fbb32
 	ld c, l
 	call CalcMagikarpLength
 	call PrintMagikarpLength
-	callba TrainerRankings_MagikarpLength
+	farcall TrainerRankings_MagikarpLength
 	ld hl, .MeasureItText
 	call PrintText
 
@@ -127,7 +127,7 @@ CalcMagikarpLength: ; fbbfc
 
 ; if bc < 10:    [wMagikarpLength] = c + 190
 ; if bc ≥ $ff00: [wMagikarpLength] = c + 1370
-; else:          [wMagikarpLength] = z × 100 + (bc − x) / y
+; else:          [wMagikarpLength] = z * 100 + (bc - x) / y
 
 ; X, Y, and Z depend on the value of b as follows:
 

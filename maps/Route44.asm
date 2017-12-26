@@ -12,16 +12,16 @@ const_value set 2
 	const ROUTE44_POKE_BALL3
 
 Route44_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerBird_keeperVance1:
-	trainer EVENT_BEAT_BIRD_KEEPER_VANCE, BIRD_KEEPER, VANCE1, Bird_keeperVance1SeenText, Bird_keeperVance1BeatenText, 0, Bird_keeperVance1Script
+	trainer EVENT_BEAT_BIRD_KEEPER_VANCE, BIRD_KEEPER, VANCE1, Bird_keeperVance1SeenText, Bird_keeperVance1BeatenText, 0, .Script
 
-Bird_keeperVance1Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_BIRDKEEPER_VANCE
 	end_if_just_battled
 	opentext
@@ -150,9 +150,9 @@ UnknownScript_0x19d90a:
 	end
 
 TrainerPsychicPhil:
-	trainer EVENT_BEAT_PSYCHIC_PHIL, PSYCHIC_T, PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, PsychicPhilScript
+	trainer EVENT_BEAT_PSYCHIC_PHIL, PSYCHIC_T, PHIL, PsychicPhilSeenText, PsychicPhilBeatenText, 0, .Script
 
-PsychicPhilScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PsychicPhilAfterBattleText
@@ -161,9 +161,9 @@ PsychicPhilScript:
 	end
 
 TrainerFisherWilton1:
-	trainer EVENT_BEAT_FISHER_WILTON, FISHER, WILTON1, FisherWilton1SeenText, FisherWilton1BeatenText, 0, FisherWilton1Script
+	trainer EVENT_BEAT_FISHER_WILTON, FISHER, WILTON1, FisherWilton1SeenText, FisherWilton1BeatenText, 0, .Script
 
-FisherWilton1Script:
+.Script:
 	writecode VAR_CALLERID, PHONE_FISHER_WILTON
 	end_if_just_battled
 	opentext
@@ -256,9 +256,9 @@ UnknownScript_0x19d9e7:
 	jump UnknownScript_0x19d8ff
 
 TrainerFisherEdgar:
-	trainer EVENT_BEAT_FISHER_EDGAR, FISHER, EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, FisherEdgarScript
+	trainer EVENT_BEAT_FISHER_EDGAR, FISHER, EDGAR, FisherEdgarSeenText, FisherEdgarBeatenText, 0, .Script
 
-FisherEdgarScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext FisherEdgarAfterBattleText
@@ -267,9 +267,9 @@ FisherEdgarScript:
 	end
 
 TrainerCooltrainerfCybil:
-	trainer EVENT_BEAT_COOLTRAINERF_CYBIL, COOLTRAINERF, CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, CooltrainerfCybilScript
+	trainer EVENT_BEAT_COOLTRAINERF_CYBIL, COOLTRAINERF, CYBIL, CooltrainerfCybilSeenText, CooltrainerfCybilBeatenText, 0, .Script
 
-CooltrainerfCybilScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CooltrainerfCybilAfterBattleText
@@ -278,9 +278,9 @@ CooltrainerfCybilScript:
 	end
 
 TrainerPokemaniacZach:
-	trainer EVENT_BEAT_POKEMANIAC_ZACH, POKEMANIAC, ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, PokemaniacZachScript
+	trainer EVENT_BEAT_POKEMANIAC_ZACH, POKEMANIAC, ZACH, PokemaniacZachSeenText, PokemaniacZachBeatenText, 0, .Script
 
-PokemaniacZachScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PokemaniacZachAfterBattleText
@@ -289,9 +289,9 @@ PokemaniacZachScript:
 	end
 
 TrainerCooltrainermAllen:
-	trainer EVENT_BEAT_COOLTRAINERM_ALLEN, COOLTRAINERM, ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, CooltrainermAllenScript
+	trainer EVENT_BEAT_COOLTRAINERM_ALLEN, COOLTRAINERM, ALLEN, CooltrainermAllenSeenText, CooltrainermAllenBeatenText, 0, .Script
 
-CooltrainermAllenScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CooltrainermAllenAfterBattleText
@@ -515,25 +515,25 @@ Route44_MapEventHeader:
 	db 1
 	warp_def $7, $38, 1, ICE_PATH_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 3
-	signpost 7, 53, SIGNPOST_READ, Route44Sign1
-	signpost 10, 6, SIGNPOST_READ, Route44Sign2
-	signpost 9, 32, SIGNPOST_ITEM, Route44HiddenElixer
+	bg_event 7, 53, BGEVENT_READ, Route44Sign1
+	bg_event 10, 6, BGEVENT_READ, Route44Sign2
+	bg_event 9, 32, BGEVENT_ITEM, Route44HiddenElixer
 
-.PersonEvents:
+.ObjectEvents:
 	db 11
-	person_event SPRITE_FISHER, 3, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherWilton1, -1
-	person_event SPRITE_FISHER, 13, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerFisherEdgar, -1
-	person_event SPRITE_YOUNGSTER, 9, 10, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerPsychicPhil, -1
-	person_event SPRITE_SUPER_NERD, 2, 43, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
-	person_event SPRITE_YOUNGSTER, 5, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 2, TrainerBird_keeperVance1, -1
-	person_event SPRITE_COOLTRAINER_M, 15, 41, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
-	person_event SPRITE_COOLTRAINER_F, 14, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
-	person_event SPRITE_FRUIT_TREE, 5, 9, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, FruitTreeScript_0x19da40, -1
-	person_event SPRITE_POKE_BALL, 8, 30, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
-	person_event SPRITE_POKE_BALL, 4, 45, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
-	person_event SPRITE_POKE_BALL, 9, 14, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL
+	object_event SPRITE_FISHER, 3, 35, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherWilton1, -1
+	object_event SPRITE_FISHER, 13, 19, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerFisherEdgar, -1
+	object_event SPRITE_YOUNGSTER, 9, 10, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicPhil, -1
+	object_event SPRITE_SUPER_NERD, 2, 43, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacZach, -1
+	object_event SPRITE_YOUNGSTER, 5, 51, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBird_keeperVance1, -1
+	object_event SPRITE_COOLTRAINER_M, 15, 41, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainermAllen, -1
+	object_event SPRITE_COOLTRAINER_F, 14, 31, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerCooltrainerfCybil, -1
+	object_event SPRITE_FRUIT_TREE, 5, 9, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x19da40, -1
+	object_event SPRITE_POKE_BALL, 8, 30, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRevive, EVENT_ROUTE_44_MAX_REVIVE
+	object_event SPRITE_POKE_BALL, 4, 45, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44UltraBall, EVENT_ROUTE_44_ULTRA_BALL
+	object_event SPRITE_POKE_BALL, 9, 14, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route44MaxRepel, EVENT_ROUTE_44_MAX_REPEL

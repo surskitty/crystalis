@@ -5,16 +5,16 @@ const_value set 2
 	const OLIVINELIGHTHOUSE3F_POKE_BALL
 
 OlivineLighthouse3F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerBird_keeperTheo:
-	trainer EVENT_BEAT_BIRD_KEEPER_THEO, BIRD_KEEPER, THEO, Bird_keeperTheoSeenText, Bird_keeperTheoBeatenText, 0, Bird_keeperTheoScript
+	trainer EVENT_BEAT_BIRD_KEEPER_THEO, BIRD_KEEPER, THEO, Bird_keeperTheoSeenText, Bird_keeperTheoBeatenText, 0, .Script
 
-Bird_keeperTheoScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext Bird_keeperTheoAfterBattleText
@@ -23,9 +23,9 @@ Bird_keeperTheoScript:
 	end
 
 TrainerGentlemanPreston:
-	trainer EVENT_BEAT_GENTLEMAN_PRESTON, GENTLEMAN, PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, GentlemanPrestonScript
+	trainer EVENT_BEAT_GENTLEMAN_PRESTON, GENTLEMAN, PRESTON, GentlemanPrestonSeenText, GentlemanPrestonBeatenText, 0, .Script
 
-GentlemanPrestonScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext GentlemanPrestonAfterBattleText
@@ -34,9 +34,9 @@ GentlemanPrestonScript:
 	end
 
 TrainerSailorTerrell:
-	trainer EVENT_BEAT_SAILOR_TERRELL, SAILOR, TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, SailorTerrellScript
+	trainer EVENT_BEAT_SAILOR_TERRELL, SAILOR, TERRELL, SailorTerrellSeenText, SailorTerrellBeatenText, 0, .Script
 
-SailorTerrellScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext SailorTerrellAfterBattleText
@@ -128,15 +128,15 @@ OlivineLighthouse3F_MapEventHeader:
 	warp_def $3, $8, 7, OLIVINE_LIGHTHOUSE_4F
 	warp_def $3, $9, 8, OLIVINE_LIGHTHOUSE_4F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_SAILOR, 2, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 1, TrainerSailorTerrell, -1
-	person_event SPRITE_GENTLEMAN, 5, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 4, TrainerGentlemanPreston, -1
-	person_event SPRITE_YOUNGSTER, 9, 3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, PERSONTYPE_TRAINER, 3, TrainerBird_keeperTheo, -1
-	person_event SPRITE_POKE_BALL, 2, 8, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, PERSONTYPE_ITEMBALL, 0, OlivineLighthouse3FEther, EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER
+	object_event SPRITE_SAILOR, 2, 9, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSailorTerrell, -1
+	object_event SPRITE_GENTLEMAN, 5, 13, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerGentlemanPreston, -1
+	object_event SPRITE_YOUNGSTER, 9, 3, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperTheo, -1
+	object_event SPRITE_POKE_BALL, 2, 8, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OlivineLighthouse3FEther, EVENT_OLIVINE_LIGHTHOUSE_3F_ETHER

@@ -3,25 +3,25 @@ const_value set 2
 	const ILEXFORESTAZALEAGATE_GRANNY
 
 IlexForestAzaleaGate_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
-OfficerScript_0x62c7a:
-	jumptextfaceplayer UnknownText_0x62c80
+IlexForestAzaleaGateOfficerScript:
+	jumptextfaceplayer IlexForestAzaleaGateOfficerText
 
-GrannyScript_0x62c7d:
-	jumptextfaceplayer UnknownText_0x62cb0
+IlexForestAzaleaGateGrannyScript:
+	jumptextfaceplayer IlexForestAzaleaGateGrannyText
 
-UnknownText_0x62c80:
+IlexForestAzaleaGateOfficerText:
 	text "ILEX FOREST is"
 	line "big. Be careful!"
 	cont "Don't get lost."
 	done
 
-UnknownText_0x62cb0:
+IlexForestAzaleaGateGrannyText:
 	text "The FOREST is"
 	line "watched over by"
 	cont "its protector."
@@ -41,13 +41,13 @@ IlexForestAzaleaGate_MapEventHeader:
 	warp_def $4, $9, 7, AZALEA_TOWN
 	warp_def $5, $9, 8, AZALEA_TOWN
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, OfficerScript_0x62c7a, -1
-	person_event SPRITE_GRANNY, 3, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_SCRIPT, 0, GrannyScript_0x62c7d, -1
+	object_event SPRITE_OFFICER, 2, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateOfficerScript, -1
+	object_event SPRITE_GRANNY, 3, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IlexForestAzaleaGateGrannyScript, -1

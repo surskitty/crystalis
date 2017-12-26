@@ -3,7 +3,7 @@ const_value set 2
 	const CELADONDEPTSTORE6F_YOUNGSTER
 
 CeladonDeptStore6F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,13 +14,13 @@ CeladonDeptStore6F_MapScriptHeader:
 	changeblock $c, $0, $3
 	return
 
-SuperNerdScript_0x7117a:
-	jumptextfaceplayer UnknownText_0x712c7
+CeladonDeptStore6FSuperNerdScript:
+	jumptextfaceplayer CeladonDeptStore6FSuperNerdText
 
-YoungsterScript_0x7117d:
-	jumptextfaceplayer UnknownText_0x71310
+CeladonDeptStore6FYoungsterScript:
+	jumptextfaceplayer CeladonDeptStore6FYoungsterText
 
-CeladonVendingMachine:
+CeladonDeptStore6FVendingMachine:
 	opentext
 	writetext CeladonVendingText
 .Start:
@@ -98,7 +98,8 @@ CeladonVendingMachine:
 CeladonDeptStore6FDirectory:
 	jumptext CeladonDeptStore6FDirectoryText
 
-UnknownScript_0x7124d:
+; unused
+CeladonDeptStore6FElevatorButton:
 	jumpstd elevatorbutton
 
 CeladonVendingText:
@@ -125,7 +126,7 @@ CeladonVendingNoSpaceText:
 	line "room for stuff…"
 	done
 
-UnknownText_0x712c7:
+CeladonDeptStore6FSuperNerdText:
 	text "A vending machine"
 	line "with a prize rou-"
 	cont "lette…"
@@ -134,7 +135,7 @@ UnknownText_0x712c7:
 	line "those anymore."
 	done
 
-UnknownText_0x71310:
+CeladonDeptStore6FYoungsterText:
 	text "Aww! There's no"
 	line "games here!"
 
@@ -155,19 +156,19 @@ CeladonDeptStore6F_MapEventHeader:
 	warp_def $0, $f, 2, CELADON_DEPT_STORE_5F
 	warp_def $0, $2, 1, CELADON_DEPT_STORE_ELEVATOR
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 6
-	signpost 0, 14, SIGNPOST_READ, CeladonDeptStore6FDirectory
-	signpost 0, 3, SIGNPOST_READ, CeladonDeptStore1FElevatorButton
-	signpost 1, 8, SIGNPOST_UP, CeladonVendingMachine
-	signpost 1, 9, SIGNPOST_UP, CeladonVendingMachine
-	signpost 1, 10, SIGNPOST_UP, CeladonVendingMachine
-	signpost 1, 11, SIGNPOST_UP, CeladonVendingMachine
+	bg_event 0, 14, BGEVENT_READ, CeladonDeptStore6FDirectory
+	bg_event 0, 3, BGEVENT_READ, CeladonDeptStore1FElevatorButton
+	bg_event 1, 8, BGEVENT_UP, CeladonDeptStore6FVendingMachine
+	bg_event 1, 9, BGEVENT_UP, CeladonDeptStore6FVendingMachine
+	bg_event 1, 10, BGEVENT_UP, CeladonDeptStore6FVendingMachine
+	bg_event 1, 11, BGEVENT_UP, CeladonDeptStore6FVendingMachine
 
-.PersonEvents:
+.ObjectEvents:
 	db 2
-	person_event SPRITE_SUPER_NERD, 2, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, SuperNerdScript_0x7117a, -1
-	person_event SPRITE_YOUNGSTER, 5, 12, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, YoungsterScript_0x7117d, -1
+	object_event SPRITE_SUPER_NERD, 2, 9, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FSuperNerdScript, -1
+	object_event SPRITE_YOUNGSTER, 5, 12, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonDeptStore6FYoungsterScript, -1

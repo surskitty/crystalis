@@ -1,7 +1,7 @@
 	dw 0 ; padding
 
 BattleCommandPointers: ; 3fd28
-; entries correspond to constants/effect_command_constants.asm
+; entries correspond to macros/scripts/effect_commands.asm
 	dw BattleCommand_CheckTurn ; 34084
 	dw BattleCommand_CheckObedience ; 343db
 	dw BattleCommand_UsedMoveText ; 34541
@@ -78,7 +78,7 @@ BattleCommandPointers: ; 3fd28
 	dw BattleCommand_Spite ; 35c0f
 	dw BattleCommand_FalseSwipe ; 35c94
 	dw BattleCommand_HealBell ; 35cc9
-	dw BattleCommand_KingsRock ; 36ac9
+	dw BattleCommand_HeldFlinch ; 36ac9
 	dw BattleCommand_TripleKick ; 346b2
 	dw BattleCommand_KickCounter ; 346cd
 	dw BattleCommand_Thief ; 37492

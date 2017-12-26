@@ -245,7 +245,7 @@ UpdateChannels: ; e8125
 
 .Channel1:
 	ld a, [Danger]
-	bit 7, a
+	bit DANGER_ON_F, a
 	ret nz
 .Channel5:
 	ld hl, Channel1NoteFlags - Channel1
@@ -537,9 +537,9 @@ _CheckSFX: ; e82e7
 
 PlayDanger: ; e8307
 	ld a, [Danger]
-	bit 7, a
+	bit DANGER_ON_F, a
 	ret z
-	and $7f
+	and $ff ^ (1 << DANGER_ON_F)
 	ld d, a
 	call _CheckSFX
 	jr c, .asm_e8335
@@ -573,7 +573,7 @@ PlayDanger: ; e8307
 	jr c, .asm_e833c
 	xor a
 .asm_e833c
-	or $80
+	or 1 << DANGER_ON_F
 	ld [Danger], a
 	; is hw ch1 on?
 	ld a, [SoundOutput]
@@ -632,9 +632,9 @@ FadeMusic: ; e8358
 	ld [MusicFadeCount], a
 	; get SO1 volume
 	ld a, [Volume]
-	and $7
+	and VOLUME_SO1_LEVEL
 	; which way are we fading?
-	bit 7, d
+	bit MUSIC_FADE_IN_F, d
 	jr nz, .fadein
 	; fading out
 	and a
@@ -648,7 +648,7 @@ FadeMusic: ; e8358
 	ld [Volume], a
 	; did we just get on a bike?
 	ld a, [PlayerState]
-	cp $1 ; bicycle
+	cp PLAYER_BIKE
 	jr z, .bicycle
 	push bc
 	; restart sound
@@ -688,7 +688,7 @@ FadeMusic: ; e8358
 	pop bc
 	; fade in
 	ld hl, MusicFade
-	set 7, [hl]
+	set MUSIC_FADE_IN_F, [hl]
 	ret
 
 .fadein
@@ -1394,8 +1394,7 @@ ParseMusicCommand: ; e870f
 ; e8720
 
 MusicCommands: ; e8720
-; pointer to each command in order
-	; octaves
+; entries correspond to macros/sound.asm enumeration
 	dw Music_Octave8 ; octave 8
 	dw Music_Octave7 ; octave 7
 	dw Music_Octave6 ; octave 6
@@ -2298,9 +2297,9 @@ SetNoteDuration: ; e8a8d
 	add hl, bc
 	ld a, [hl]
 	; multiply NoteLength by delay units
-	ld l, 0; just multiply
+	ld l, 0 ; just multiply
 	call .Multiply
-	ld a, l ; % $100
+	ld a, l ; low
 	; store Tempo in de
 	ld hl, Channel1Tempo - Channel1
 	add hl, bc
@@ -2311,7 +2310,7 @@ SetNoteDuration: ; e8a8d
 	ld hl, Channel1Field0x16 - Channel1
 	add hl, bc
 	ld l, [hl]
-	; multiply Tempo by last result (NoteLength * delay % $100)
+	; multiply Tempo by last result (NoteLength * LOW(delay))
 	call .Multiply
 	; copy result to de
 	ld e, l
@@ -2883,9 +2882,9 @@ LoadMusicByte:: ; e8d76
 ; e8d80
 
 
-INCLUDE "data/audio/notes.asm"
+INCLUDE "audio/notes.asm"
 
-INCLUDE "data/audio/wave_samples.asm"
+INCLUDE "audio/wave_samples.asm"
 
 INCLUDE "audio/drumkits.asm"
 
@@ -2977,7 +2976,7 @@ PlayTrainerEncounterMusic:: ; e900a
 	ld [MusicFade], a
 	; play nothing for one frame
 	push de
-	ld de, 0 ; id: Music_Nothing
+	ld de, MUSIC_NONE
 	call PlayMusic
 	call DelayFrame
 	; play new song

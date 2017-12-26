@@ -5,7 +5,7 @@ const_value set 2
 	const ROUTE10POKECENTER1F_COOLTRAINER_F
 
 Route10Pokecenter1F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -14,8 +14,8 @@ Route10Pokecenter1F_MapScriptHeader:
 NurseScript_0x188bd4:
 	jumpstd pokecenternurse
 
-GentlemanScript_0x188bd7:
-	jumptextfaceplayer UnknownText_0x188bf1
+Route10Pokecenter1FGentlemanScript:
+	jumptextfaceplayer Route10Pokecenter1FGentlemanText
 
 GymGuyScript_0x188bda:
 	faceplayer
@@ -33,10 +33,10 @@ UnknownScript_0x188be8:
 	closetext
 	end
 
-CooltrainerFScript_0x188bee:
-	jumptextfaceplayer UnknownText_0x188d0c
+Route10Pokecenter1FCooltrainerFScript:
+	jumptextfaceplayer Route10Pokecenter1FCooltrainerFText
 
-UnknownText_0x188bf1:
+Route10Pokecenter1FGentlemanText:
 	text "A #MON CENTER"
 	line "near a cave?"
 
@@ -69,7 +69,7 @@ UnknownText_0x188c9e:
 	line "thing about that."
 	done
 
-UnknownText_0x188d0c:
+Route10Pokecenter1FCooltrainerFText:
 	text "When you go out-"
 	line "side, you can see"
 
@@ -90,15 +90,15 @@ Route10Pokecenter1F_MapEventHeader:
 	warp_def $7, $4, 1, ROUTE_10_NORTH
 	warp_def $7, $0, 1, POKECENTER_2F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 4
-	person_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, NurseScript_0x188bd4, -1
-	person_event SPRITE_GENTLEMAN, 6, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_RED, PERSONTYPE_SCRIPT, 0, GentlemanScript_0x188bd7, -1
-	person_event SPRITE_GYM_GUY, 2, 7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_SCRIPT, 0, GymGuyScript_0x188bda, -1
-	person_event SPRITE_COOLTRAINER_F, 3, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, CooltrainerFScript_0x188bee, -1
+	object_event SPRITE_NURSE, 1, 3, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NurseScript_0x188bd4, -1
+	object_event SPRITE_GENTLEMAN, 6, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FGentlemanScript, -1
+	object_event SPRITE_GYM_GUY, 2, 7, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GymGuyScript_0x188bda, -1
+	object_event SPRITE_COOLTRAINER_F, 3, 1, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route10Pokecenter1FCooltrainerFScript, -1

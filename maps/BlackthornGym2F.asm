@@ -9,7 +9,7 @@ const_value set 2
 	const BLACKTHORNGYM2F_BOULDER6
 
 BlackthornGym2F_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
@@ -61,9 +61,9 @@ BlackthornGymBoulder:
 	jumpstd strengthboulder
 
 TrainerCooltrainermCody:
-	trainer EVENT_BEAT_COOLTRAINERM_CODY, COOLTRAINERM, CODY, CooltrainermCodySeenText, CooltrainermCodyBeatenText, 0, CooltrainermCodyScript
+	trainer EVENT_BEAT_COOLTRAINERM_CODY, COOLTRAINERM, CODY, CooltrainermCodySeenText, CooltrainermCodyBeatenText, 0, .Script
 
-CooltrainermCodyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CooltrainermCodyAfterBattleText
@@ -72,9 +72,9 @@ CooltrainermCodyScript:
 	end
 
 TrainerCooltrainerfFran:
-	trainer EVENT_BEAT_COOLTRAINERF_FRAN, COOLTRAINERF, FRAN, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, CooltrainerfFranScript
+	trainer EVENT_BEAT_COOLTRAINERF_FRAN, COOLTRAINERF, FRAN, CooltrainerfFranSeenText, CooltrainerfFranBeatenText, 0, .Script
 
-CooltrainerfFranScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CooltrainerfFranAfterBattleText
@@ -139,19 +139,19 @@ BlackthornGym2F_MapEventHeader:
 	warp_def $7, $8, 6, BLACKTHORN_GYM_1F ; hole
 	warp_def $3, $8, 7, BLACKTHORN_GYM_1F ; hole
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 0
 
-.PersonEvents:
+.ObjectEvents:
 	db 8
-	person_event SPRITE_COOLTRAINER_M, 1, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 1, TrainerCooltrainermCody, -1
-	person_event SPRITE_COOLTRAINER_F, 11, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, PERSONTYPE_TRAINER, 1, TrainerCooltrainerfFran, -1
-	person_event SPRITE_BOULDER, 2, 8, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_1
-	person_event SPRITE_BOULDER, 3, 2, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_2
-	person_event SPRITE_BOULDER, 16, 6, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_3
-	person_event SPRITE_BOULDER, 3, 3, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
-	person_event SPRITE_BOULDER, 1, 6, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
-	person_event SPRITE_BOULDER, 14, 8, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, PERSONTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
+	object_event SPRITE_COOLTRAINER_M, 1, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainermCody, -1
+	object_event SPRITE_COOLTRAINER_F, 11, 4, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerfFran, -1
+	object_event SPRITE_BOULDER, 2, 8, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_1
+	object_event SPRITE_BOULDER, 3, 2, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_2
+	object_event SPRITE_BOULDER, 16, 6, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, EVENT_BOULDER_IN_BLACKTHORN_GYM_3
+	object_event SPRITE_BOULDER, 3, 3, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
+	object_event SPRITE_BOULDER, 1, 6, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1
+	object_event SPRITE_BOULDER, 14, 8, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornGymBoulder, -1

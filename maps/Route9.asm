@@ -7,16 +7,16 @@ const_value set 2
 	const ROUTE9_POKEFAN_M2
 
 Route9_MapScriptHeader:
-.MapTriggers:
+.SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 0
 
 TrainerCamperDean:
-	trainer EVENT_BEAT_CAMPER_DEAN, CAMPER, DEAN, CamperDeanSeenText, CamperDeanBeatenText, 0, CamperDeanScript
+	trainer EVENT_BEAT_CAMPER_DEAN, CAMPER, DEAN, CamperDeanSeenText, CamperDeanBeatenText, 0, .Script
 
-CamperDeanScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CamperDeanAfterBattleText
@@ -25,9 +25,9 @@ CamperDeanScript:
 	end
 
 TrainerPicnickerHeidi:
-	trainer EVENT_BEAT_PICNICKER_HEIDI, PICNICKER, HEIDI, PicnickerHeidiSeenText, PicnickerHeidiBeatenText, 0, PicnickerHeidiScript
+	trainer EVENT_BEAT_PICNICKER_HEIDI, PICNICKER, HEIDI, PicnickerHeidiSeenText, PicnickerHeidiBeatenText, 0, .Script
 
-PicnickerHeidiScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PicnickerHeidiAfterBattleText
@@ -36,9 +36,9 @@ PicnickerHeidiScript:
 	end
 
 TrainerCamperSid:
-	trainer EVENT_BEAT_CAMPER_SID, CAMPER, SID, CamperSidSeenText, CamperSidBeatenText, 0, CamperSidScript
+	trainer EVENT_BEAT_CAMPER_SID, CAMPER, SID, CamperSidSeenText, CamperSidBeatenText, 0, .Script
 
-CamperSidScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext CamperSidAfterBattleText
@@ -47,9 +47,9 @@ CamperSidScript:
 	end
 
 TrainerPicnickerEdna:
-	trainer EVENT_BEAT_PICNICKER_EDNA, PICNICKER, EDNA, PicnickerEdnaSeenText, PicnickerEdnaBeatenText, 0, PicnickerEdnaScript
+	trainer EVENT_BEAT_PICNICKER_EDNA, PICNICKER, EDNA, PicnickerEdnaSeenText, PicnickerEdnaBeatenText, 0, .Script
 
-PicnickerEdnaScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext PicnickerEdnaAfterBattleText
@@ -58,9 +58,9 @@ PicnickerEdnaScript:
 	end
 
 TrainerHikerTim:
-	trainer EVENT_BEAT_HIKER_TIM, HIKER, TIM, HikerTimSeenText, HikerTimBeatenText, 0, HikerTimScript
+	trainer EVENT_BEAT_HIKER_TIM, HIKER, TIM, HikerTimSeenText, HikerTimBeatenText, 0, .Script
 
-HikerTimScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext HikerTimAfterBattleText
@@ -69,9 +69,9 @@ HikerTimScript:
 	end
 
 TrainerHikerSidney:
-	trainer EVENT_BEAT_HIKER_SIDNEY, HIKER, SIDNEY, HikerSidneySeenText, HikerSidneyBeatenText, 0, HikerSidneyScript
+	trainer EVENT_BEAT_HIKER_SIDNEY, HIKER, SIDNEY, HikerSidneySeenText, HikerSidneyBeatenText, 0, .Script
 
-HikerSidneyScript:
+.Script:
 	end_if_just_battled
 	opentext
 	writetext HikerSidneyAfterBattleText
@@ -214,19 +214,19 @@ Route9_MapEventHeader:
 	db 1
 	warp_def $f, $30, 1, ROCK_TUNNEL_1F
 
-.XYTriggers:
+.CoordEvents:
 	db 0
 
-.Signposts:
+.BGEvents:
 	db 2
-	signpost 7, 15, SIGNPOST_READ, Route9Sign
-	signpost 15, 41, SIGNPOST_ITEM, Route9HiddenEther
+	bg_event 7, 15, BGEVENT_READ, Route9Sign
+	bg_event 15, 41, BGEVENT_ITEM, Route9HiddenEther
 
-.PersonEvents:
+.ObjectEvents:
 	db 6
-	person_event SPRITE_YOUNGSTER, 11, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerCamperDean, -1
-	person_event SPRITE_LASS, 8, 39, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 3, TrainerPicnickerHeidi, -1
-	person_event SPRITE_YOUNGSTER, 4, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 5, TrainerCamperSid, -1
-	person_event SPRITE_LASS, 15, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, PERSONTYPE_TRAINER, 1, TrainerPicnickerEdna, -1
-	person_event SPRITE_POKEFAN_M, 3, 28, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 2, TrainerHikerTim, -1
-	person_event SPRITE_POKEFAN_M, 15, 36, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, PERSONTYPE_TRAINER, 4, TrainerHikerSidney, -1
+	object_event SPRITE_YOUNGSTER, 11, 23, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperDean, -1
+	object_event SPRITE_LASS, 8, 39, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerHeidi, -1
+	object_event SPRITE_YOUNGSTER, 4, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerCamperSid, -1
+	object_event SPRITE_LASS, 15, 12, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerEdna, -1
+	object_event SPRITE_POKEFAN_M, 3, 28, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerTim, -1
+	object_event SPRITE_POKEFAN_M, 15, 36, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerHikerSidney, -1
