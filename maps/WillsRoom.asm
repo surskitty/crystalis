@@ -47,7 +47,7 @@ WillScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_WILL
 	iftrue WillScript_0x180526
-	checkevent EVENT_RED_IN_MT_SILVER
+	checkflag ENGINE_EARTHBADGE
 	iftrue .round3
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .round2

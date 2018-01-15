@@ -59,7 +59,7 @@ LanceScript_0x180e7b:
 	closetext
 	winlosstext LanceBattleWinText, 0
 	setlasttalked LANCESROOM_LANCE
-	checkevent EVENT_RED_IN_MT_SILVER
+	checkflag ENGINE_EARTHBADGE
 	iftrue .round3
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .round2

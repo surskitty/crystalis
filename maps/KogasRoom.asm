@@ -51,7 +51,7 @@ KogaScript_Battle:
 	waitbutton
 	closetext
 	winlosstext KogaScript_KogaBeatenText, 0
-	checkevent EVENT_RED_IN_MT_SILVER
+	checkflag ENGINE_EARTHBADGE
 	iftrue .round3
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .round2
