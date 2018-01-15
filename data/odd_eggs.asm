@@ -34,7 +34,7 @@ OddEggs: ; 1fb56e
 OddEgg1:
 	db PICHU
 	db NO_ITEM
-	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
+	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, THIEF
 	dw 02048 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -47,7 +47,7 @@ OddEgg1:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -61,7 +61,7 @@ OddEgg1:
 OddEgg2:
 	db PICHU
 	db NO_ITEM
-	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
+	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, THIEF
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -74,7 +74,7 @@ OddEgg2:
 	db 30, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 17 ; Max HP
@@ -87,7 +87,7 @@ OddEgg2:
 
 	db CLEFFA
 	db NO_ITEM
-	db POUND, CHARM, DIZZY_PUNCH, 0
+	db POUND, CHARM, DIZZY_PUNCH, THIEF
 	dw 04096 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -100,7 +100,7 @@ OddEgg2:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -113,7 +113,7 @@ OddEgg2:
 
 	db CLEFFA
 	db NO_ITEM
-	db POUND, CHARM, DIZZY_PUNCH, 0
+	db POUND, CHARM, DIZZY_PUNCH, THIEF
 	dw 00768 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -126,7 +126,7 @@ OddEgg2:
 	db 35, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 20 ; Max HP
@@ -139,7 +139,7 @@ OddEgg2:
 
 	db IGGLYBUFF
 	db NO_ITEM
-	db SING, CHARM, DIZZY_PUNCH, 0
+	db SING, CHARM, DIZZY_PUNCH, THIEF
 	dw 04096 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -152,7 +152,7 @@ OddEgg2:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -165,7 +165,7 @@ OddEgg2:
 
 	db IGGLYBUFF
 	db NO_ITEM
-	db SING, CHARM, DIZZY_PUNCH, 0
+	db SING, CHARM, DIZZY_PUNCH, THIEF
 	dw 00768 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -178,7 +178,7 @@ OddEgg2:
 	db 15, 20, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 24 ; Max HP
@@ -191,7 +191,7 @@ OddEgg2:
 
 	db SMOOCHUM
 	db NO_ITEM
-	db POUND, LICK, DIZZY_PUNCH, 0
+	db POUND, LICK, DIZZY_PUNCH, THIEF
 	dw 03584 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -204,7 +204,7 @@ OddEgg2:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -217,7 +217,7 @@ OddEgg2:
 
 	db SMOOCHUM
 	db NO_ITEM
-	db POUND, LICK, DIZZY_PUNCH, 0
+	db POUND, LICK, DIZZY_PUNCH, THIEF
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -230,7 +230,7 @@ OddEgg2:
 	db 35, 30, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -243,7 +243,7 @@ OddEgg2:
 
 	db MAGBY
 	db NO_ITEM
-	db EMBER, DIZZY_PUNCH, 0, 0
+	db EMBER, DIZZY_PUNCH, THIEF, 0
 	dw 02560 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -256,7 +256,7 @@ OddEgg2:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -269,7 +269,7 @@ OddEgg2:
 
 	db MAGBY
 	db NO_ITEM
-	db EMBER, DIZZY_PUNCH, 0, 0
+	db EMBER, DIZZY_PUNCH, THIEF, 0
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -282,7 +282,7 @@ OddEgg2:
 	db 25, 10, 0, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -295,7 +295,7 @@ OddEgg2:
 
 	db ELEKID
 	db NO_ITEM
-	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
+	db QUICK_ATTACK, LEER, DIZZY_PUNCH, THIEF
 	dw 03072 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -308,7 +308,7 @@ OddEgg2:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -321,7 +321,7 @@ OddEgg2:
 
 	db ELEKID
 	db NO_ITEM
-	db QUICK_ATTACK, LEER, DIZZY_PUNCH, 0
+	db QUICK_ATTACK, LEER, DIZZY_PUNCH, THIEF
 	dw 00512 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -334,7 +334,7 @@ OddEgg2:
 	db 30, 30, 10, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 19 ; Max HP
@@ -347,7 +347,7 @@ OddEgg2:
 
 	db TYROGUE
 	db NO_ITEM
-	db TACKLE, DIZZY_PUNCH, 0, 0
+	db TACKLE, DIZZY_PUNCH, THIEF, 0
 	dw 02560 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -360,7 +360,7 @@ OddEgg2:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP
@@ -373,7 +373,7 @@ OddEgg2:
 
 	db TYROGUE
 	db NO_ITEM
-	db TACKLE, DIZZY_PUNCH, 0, 0
+	db TACKLE, DIZZY_PUNCH, THIEF, 0
 	dw 00256 ; OT ID
 	dt 125 ; Exp
 	; Stat exp
@@ -386,7 +386,7 @@ OddEgg2:
 	db 35, 10, 0, 0 ; PP
 	db 20 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
+	db EGG_LEVEL ; Level
 	db 0, 0 ; Status
 	bigdw 0 ; HP
 	bigdw 18 ; Max HP
