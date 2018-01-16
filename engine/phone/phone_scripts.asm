@@ -1764,9 +1764,9 @@ WiltonWantsBattle:
 WiltonHasItem:
 	setflag ENGINE_WILTON_HAS_ITEM
 	landmarktotext ROUTE_44, $2
-	clearevent EVENT_WILTON_HAS_ULTRA_BALL
-	clearevent EVENT_WILTON_HAS_GREAT_BALL
-	clearevent EVENT_WILTON_HAS_POKE_BALL
+	clearevent EVENT_WILTON_RARE_FIND
+	clearevent EVENT_WILTON_OCCASIONAL_FIND
+	clearevent EVENT_WILTON_COMMON_FIND
 	random $5
 	if_equal $0, .UltraBall
 	random $3
@@ -1774,15 +1774,15 @@ WiltonHasItem:
 	jump .PokeBall
 
 .UltraBall:
-	setevent EVENT_WILTON_HAS_ULTRA_BALL
+	setevent EVENT_WILTON_RARE_FIND
 	jump .FoundItem
 
 .GreatBall:
-	setevent EVENT_WILTON_HAS_GREAT_BALL
+	setevent EVENT_WILTON_OCCASIONAL_FIND
 	jump .FoundItem
 
 .PokeBall:
-	setevent EVENT_WILTON_HAS_POKE_BALL
+	setevent EVENT_WILTON_COMMON_FIND
 
 .FoundItem:
 	farjump PhoneScript_FoundItem_Male

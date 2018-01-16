@@ -229,11 +229,11 @@ WiltonWantsBattle:
 
 WiltonHasItem:
 	scall Route44GiftM
-	checkevent EVENT_WILTON_HAS_ULTRA_BALL
+	checkevent EVENT_WILTON_RARE_FIND
 	iftrue .UltraBall
-	checkevent EVENT_WILTON_HAS_GREAT_BALL
+	checkevent EVENT_WILTON_OCCASIONAL_FIND
 	iftrue .GreatBall
-	checkevent EVENT_WILTON_HAS_POKE_BALL
+	checkevent EVENT_WILTON_COMMON_FIND
 	iftrue .PokeBall
 .UltraBall:
 	verbosegiveitem ULTRA_BALL

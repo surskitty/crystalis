@@ -41,8 +41,7 @@ pokecrystal.txt
 *.lz
 *.pal
 *.animated.tilemap
-gfx/pics/*/bitmask.asm
-gfx/pics/*/frames.asm
-crowdmap/*.*
-crowdmap
-!gfx/pics/*/shiny.pal
+gfx/pokemon/*/bitmask.asm
+gfx/pokemon/*/frames.asm
+crowdmap/
+!gfx/pokemon/*/shiny.pal
