@@ -168,9 +168,9 @@ TrainerFisherWilton1:
 	end_if_just_battled
 	opentext
 	checkflag ENGINE_WILTON
-	iftrue WiltonWantsBattle
+	iftrue .WantsBattle
 	checkflag ENGINE_WILTON_HAS_ITEM
-	iftrue WiltonHasItem
+	iftrue .HasItem
 	checkcellnum PHONE_FISHER_WILTON
 	iftrue Route44NumberAcceptedM
 	checkevent EVENT_WILTON_ASKED_FOR_PHONE_NUMBER
@@ -191,7 +191,7 @@ TrainerFisherWilton1:
 	scall Route44RegisteredNumberM
 	jump Route44NumberAcceptedM
 
-WiltonWantsBattle:
+.WantsBattle:
 	scall Route44RematchM
 	winlosstext FisherWilton1BeatenText, 0
 	copybytetovar wWiltonFightCount
@@ -227,32 +227,133 @@ WiltonWantsBattle:
 	clearflag ENGINE_WILTON
 	end
 
-WiltonHasItem:
+.HasItem:
 	scall Route44GiftM
 	checkevent EVENT_WILTON_RARE_FIND
-	iftrue .UltraBall
+	iftrue .ThreeApricorns
 	checkevent EVENT_WILTON_OCCASIONAL_FIND
-	iftrue .GreatBall
+	iftrue .TwoApricorns
 	checkevent EVENT_WILTON_COMMON_FIND
-	iftrue .PokeBall
-.UltraBall:
-	verbosegiveitem ULTRA_BALL
-	iffalse .Route44PackFullM
+	iftrue .OneApricorn
+.ThreeApricorns:
+	checkcode VAR_WEEKDAY
+	if_equal SUNDAY, .ThreePnk
+	if_equal MONDAY, .ThreeBlu
+	if_equal TUESDAY, .ThreeRed
+	if_equal WEDNESDAY, .ThreeBlk
+	if_equal THURSDAY, .ThreeGrn
+	if_equal FRIDAY, .ThreeWht
+	if_equal SATURDAY, .ThreeYlw
+.ThreePnk
+	verbosegiveitem PNK_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeBlk
+	verbosegiveitem BLK_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeWht
+	verbosegiveitem WHT_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeGrn
+	verbosegiveitem GRN_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeYlw
+	verbosegiveitem YLW_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeBlu
+	verbosegiveitem BLU_APRICORN, 3
+	iffalse .PackFullM
+	jump .ItemReceived
+.ThreeRed
+	verbosegiveitem RED_APRICORN, 3
+	iffalse .PackFullM
 	jump .ItemReceived
 
-.GreatBall:
-	verbosegiveitem GREAT_BALL
-	iffalse .Route44PackFullM
+.TwoApricorns:
+	checkcode VAR_WEEKDAY
+	if_equal SUNDAY, .TwoPnk
+	if_equal MONDAY, .TwoBlu
+	if_equal TUESDAY, .TwoRed
+	if_equal WEDNESDAY, .TwoBlk
+	if_equal THURSDAY, .TwoGrn
+	if_equal FRIDAY, .TwoWht
+	if_equal SATURDAY, .TwoYlw
+.TwoPnk
+	verbosegiveitem PNK_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoBlk
+	verbosegiveitem BLK_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoWht
+	verbosegiveitem WHT_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoGrn
+	verbosegiveitem GRN_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoYlw
+	verbosegiveitem YLW_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoBlu
+	verbosegiveitem BLU_APRICORN, 2
+	iffalse .PackFullM
+	jump .ItemReceived
+.TwoRed
+	verbosegiveitem RED_APRICORN, 2
+	iffalse .PackFullM
 	jump .ItemReceived
 
-.PokeBall:
-	verbosegiveitem POKE_BALL
-	iffalse .Route44PackFullM
+.OneApricorn:
+	checkcode VAR_WEEKDAY
+	if_equal SUNDAY, .OnePnk
+	if_equal MONDAY, .OneBlu
+	if_equal TUESDAY, .OneRed
+	if_equal WEDNESDAY, .OneBlk
+	if_equal THURSDAY, .OneGrn
+	if_equal FRIDAY, .OneWht
+	if_equal SATURDAY, .OneYlw
+.OnePnk
+	verbosegiveitem PNK_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneBlk
+	verbosegiveitem BLK_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneWht
+	verbosegiveitem WHT_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneGrn
+	verbosegiveitem GRN_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneYlw
+	verbosegiveitem YLW_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneBlu
+	verbosegiveitem BLU_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+.OneRed
+	verbosegiveitem RED_APRICORN
+	iffalse .PackFullM
+	jump .ItemReceived
+
 .ItemReceived:
 	clearflag ENGINE_WILTON_HAS_ITEM
 	jump Route44NumberAcceptedM
 
-.Route44PackFullM:
+.PackFullM:
 	jump Route44PackFullM
 
 TrainerFisherEdgar:
