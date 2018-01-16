@@ -64,7 +64,7 @@ GetPlayerSprite: ; 14183
 	ld a, [wPlayerSpriteSetupFlags]
 	bit 2, a
 	jr nz, .go
-	ld a, [PlayerGender]
+	ld a, [wPlayerGender]
 	bit 0, a
 	jr z, .go
 	ld hl, .Kris
@@ -202,11 +202,11 @@ GetSprite: ; 1423c
 	call GetMonSprite
 	ret c
 
-	ld hl, SpriteHeaders ; address
+	ld hl, OverworldSprites + SPRITEDATA_ADDR
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, 6
+	ld a, NUM_SPRITEDATA_FIELDS
 	call AddNTimes
 	; load the address into de
 	ld a, [hli]
@@ -299,11 +299,11 @@ _DoesSpriteHaveFacings:: ; 142a7
 
 	push hl
 	push bc
-	ld hl, SpriteHeaders + SPRITEHEADER_TYPE ; type
+	ld hl, OverworldSprites + SPRITEDATA_TYPE
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, NUM_SPRITEHEADER_FIELDS
+	ld a, NUM_SPRITEDATA_FIELDS
 	call AddNTimes
 	ld a, [hl]
 	pop bc
@@ -324,11 +324,11 @@ _GetSpritePalette:: ; 142c4
 	call GetMonSprite
 	jr c, .is_pokemon
 
-	ld hl, SpriteHeaders + 5 ; palette
+	ld hl, OverworldSprites + SPRITEDATA_PALETTE
 	dec a
 	ld c, a
 	ld b, 0
-	ld a, 6
+	ld a, NUM_SPRITEDATA_FIELDS
 	call AddNTimes
 	ld c, [hl]
 	ret
@@ -663,10 +663,10 @@ rept 4
 	add hl, hl
 endr
 	ld a, l
-	add LOW(VTiles0)
+	add LOW(vTiles0)
 	ld l, a
 	ld a, h
-	adc HIGH(VTiles0)
+	adc HIGH(vTiles0)
 	ld h, a
 	ret
 ; 14418
@@ -691,8 +691,8 @@ endr
 LoadEmote:: ; 1442f
 ; Get the address of the pointer to emote c.
 	ld a, c
-	ld bc, 6
-	ld hl, EmotesPointers
+	ld bc, 6 ; sizeof(emote)
+	ld hl, Emotes
 	call AddNTimes
 ; Load the emote address into de
 	ld e, [hl]
@@ -719,10 +719,10 @@ LoadEmote:: ; 1442f
 ; 1444d
 
 
-INCLUDE "data/emote_headers.asm"
+INCLUDE "data/emotes.asm"
 
 INCLUDE "data/sprite_mons.asm"
 
 INCLUDE "data/maps/outdoor_sprites.asm"
 
-INCLUDE "gfx/sprite_headers.asm"
+INCLUDE "data/sprites.asm"

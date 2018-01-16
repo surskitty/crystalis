@@ -16,20 +16,20 @@ _CardFlip: ; e00ee (38:40ee)
 	call LoadFontsExtra
 
 	ld hl, CardFlipLZ01
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Decompress
 	ld hl, CardFlipLZ02
-	ld de, VTiles2 tile $3e
+	ld de, vTiles2 tile $3e
 	call Decompress
 	ld hl, CardFlipLZ03
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Decompress
 	ld hl, CardFlipOffButtonGFX
-	ld de, VTiles1 tile $6f
+	ld de, vTiles1 tile $6f
 	ld bc, 1 tiles
 	call CopyBytes
 	ld hl, CardFlipOnButtonGFX
-	ld de, VTiles1 tile $75
+	ld de, vTiles1 tile $75
 	ld bc, 1 tiles
 	call CopyBytes
 
@@ -80,7 +80,6 @@ _CardFlip: ; e00ee (38:40ee)
 ; e01a0 (38:41a0)
 
 .Jumptable: ; e01a0
-
 	dw .AskPlayWithThree
 	dw .DeductCoins
 	dw .ChooseACard
@@ -619,11 +618,11 @@ CardFlip_CopyOAM: ; e0509
 ; e0521
 
 CardFlip_ShiftDigitsLeftTwoPixels: ; e0521 (38:4521)
-	ld de, VTiles1 tile ("0" & $7f)
-	ld hl, VTiles1 tile ("0" & $7f) + 2
+	ld de, vTiles1 tile ("0" & $7f)
+	ld hl, vTiles1 tile ("0" & $7f) + 2
 	ld bc, 10 tiles - 2
 	call CopyBytes
-	ld hl, VTiles1 tile $7f + 1 tiles - 2
+	ld hl, vTiles1 tile $7f + 1 tiles - 2
 	xor a
 	ld [hli], a
 	ld [hl], a
@@ -656,7 +655,6 @@ CardFlip_BlankDiscardedCardSlot: ; e0534
 ; e0553
 
 .Jumptable: ; e0553
-
 	dw .Level1
 	dw .Level2
 	dw .Level3
@@ -833,7 +831,6 @@ CardFlip_CheckWinCondition: ; e0637
 ; e0643
 
 .Jumptable: ; e0643
-
 	dw .Impossible
 	dw .Impossible
 	dw .PikaJiggly
@@ -1413,7 +1410,7 @@ else
 	dbpixel \1, \2
 	dw \3
 endc
-endm
+ENDM
 
 	cardflip_cursor 11,  2,       .Impossible
 	cardflip_cursor 12,  2,       .Impossible
@@ -1655,7 +1652,7 @@ CardFlip_InitAttrPals: ; e0c37 (38:4c37)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, .palettes
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 9 palettes
 	call CopyBytes
 	pop af

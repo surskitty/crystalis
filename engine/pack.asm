@@ -28,7 +28,6 @@ Pack: ; 10000
 ; 10030
 
 .Jumptable: ; 10030 (4:4030)
-
 	dw .InitGFX            ;  0
 	dw .InitItemsPocket    ;  1
 	dw .ItemsPocketMenu    ;  2
@@ -694,7 +693,6 @@ BattlePack: ; 10493
 ; 104c3
 
 .Jumptable: ; 104c3 (4:44c3)
-
 	dw .InitGFX            ;  0
 	dw .InitItemsPocket    ;  1
 	dw .ItemsPocketMenu    ;  2
@@ -865,7 +863,6 @@ TMHMSubmenu: ; 105dc (4:45dc)
 ; 0x10614
 
 .UsableJumptable: ; 10614
-
 	dw .Use
 	dw .Quit
 ; 10618
@@ -885,7 +882,6 @@ TMHMSubmenu: ; 105dc (4:45dc)
 ; 0x10627
 
 .UnusableJumptable: ; 10627
-
 	dw .Quit
 ; 10629
 
@@ -897,7 +893,6 @@ TMHMSubmenu: ; 105dc (4:45dc)
 	ret
 
 .ItemFunctionJumptable: ; 10637 (4:4637)
-
 	dw .Oak
 	dw .Oak
 	dw .Oak
@@ -1002,11 +997,11 @@ DepositSellPack: ; 106be
 ; 106d1
 
 .Jumptable: ; 106d1 (4:46d1)
-
 	dw .ItemsPocket
 	dw .BallsPocket
 	dw .KeyItemsPocket
 	dw .TMHMPocket
+
 .ItemsPocket: ; 106d9 (4:46d9)
 	xor a
 	call InitPocket
@@ -1294,7 +1289,7 @@ DrawPackGFX: ; 1089d
 	ld a, [BattleType]
 	cp BATTLETYPE_TUTORIAL
 	jr z, .male_dude
-	ld a, [PlayerGender]
+	ld a, [wPlayerGender]
 	bit 0, a
 	jr nz, .female
 .male_dude
@@ -1304,7 +1299,7 @@ DrawPackGFX: ; 1089d
 	ld a, [hli]
 	ld e, a
 	ld d, [hl]
-	ld hl, VTiles2 tile $50
+	ld hl, vTiles2 tile $50
 	lb bc, BANK(PackGFX), 15
 	call Request2bpp
 	ret
@@ -1411,7 +1406,7 @@ Pack_InitGFX: ; 10955
 	call ClearSprites
 	call DisableLCD
 	ld hl, PackMenuGFX
-	ld de, VTiles2
+	ld de, vTiles2
 	ld bc, $60 tiles
 	ld a, BANK(PackMenuGFX)
 	call FarCopyBytes

@@ -50,7 +50,6 @@ DoAnimFrame: ; 8d24b
 	dw .IntroUnownF
 	dw .IntroSuicuneAway
 
-
 .Null: ; 8d2a1 (23:52a1)
 	ret
 
@@ -357,7 +356,7 @@ DoAnimFrame: ; 8d24b
 	ret
 
 .SlotsGolem: ; 8d422 (23:5422)
-	callfar SlotMachine_AnimateGolem
+	callfar Slots_AnimateGolem
 	ret
 
 .SlotsChansey: ; 8d429 (23:5429)

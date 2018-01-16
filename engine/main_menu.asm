@@ -9,7 +9,7 @@ MainMenu: ; 49cdc
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	call SetPalettes
-	ld hl, GameTimerPause
+	ld hl, wGameTimerPause
 	res 0, [hl]
 	call MainMenu_GetWhichMenu
 	ld [wWhichIndexSet], a
@@ -54,7 +54,6 @@ MainMenu: ; 49cdc
 	db "MOBILE STUDIUM@"
 
 .Jumptable: ; 0x49d60
-
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Options
@@ -168,7 +167,7 @@ MainMenu_GetWhichMenu: ; 49da4
 	cp -1
 	call CloseSRAM
 	jr nz, .mystery_gift
-	ld a, [StatusFlags]
+	ld a, [wStatusFlags]
 	bit 7, a
 	ld a, $1 ; Continue
 	jr z, .ok
@@ -182,7 +181,7 @@ MainMenu_GetWhichMenu: ; 49da4
 	ret
 
 .mystery_gift
-	ld a, [StatusFlags]
+	ld a, [wStatusFlags]
 	bit 7, a
 	jr z, .ok3
 	jr .ok3

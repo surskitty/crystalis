@@ -1,17 +1,7 @@
-BORDER_WIDTH   EQU 2
-TEXTBOX_WIDTH  EQU SCREEN_WIDTH
-TEXTBOX_INNERW EQU TEXTBOX_WIDTH - BORDER_WIDTH
-TEXTBOX_HEIGHT EQU 6
-TEXTBOX_INNERH EQU TEXTBOX_HEIGHT - BORDER_WIDTH
-TEXTBOX_X      EQU 0
-TEXTBOX_INNERX EQU TEXTBOX_X + 1
-TEXTBOX_Y      EQU SCREEN_HEIGHT - TEXTBOX_HEIGHT
-TEXTBOX_INNERY EQU TEXTBOX_Y + 2
-
 ClearBox:: ; fb6
 ; Fill a c*b box at hl with blank tiles.
-
 	ld a, " "
+	; fallthrough
 
 FillBoxWithByte::
 .row
@@ -41,7 +31,7 @@ ClearTileMap:: ; fc8
 
 	; Update the BG Map.
 	ld a, [rLCDC]
-	bit 7, a
+	bit rLCDC_ENABLE, a
 	ret z
 	jp WaitBGMap
 ; fdb
@@ -54,7 +44,6 @@ ClearScreen:: ; fdb
 	call ByteFill
 	jr ClearTileMap
 ; fe8
-
 
 
 TextBox:: ; fe8
@@ -211,21 +200,21 @@ NextChar:: ; 1083
 	jp PlaceNextChar
 
 CheckDict:: ; 1087
-dict: macro
+dict: MACRO
 if \1 == 0
 	and a
 else
 	cp \1
 endc
 	jp z, \2
-endm
+ENDM
 
-dict2: macro
+dict2: MACRO
 	cp \1
 	jr nz, ._\@
 	ld a, \2
 ._\@:
-endm
+ENDM
 
 	dict "<DAY>",     Char15
 	dict "<LINE>",    LineChar
@@ -320,11 +309,11 @@ Char15:: ; 117b
 ; 1186
 
 
-print_name: macro
+print_name: MACRO
 	push de
 	ld de, \1
 	jp PlaceCommandCharacter
-endm
+ENDM
 
 PrintMomsName:   print_name MomsName   ; 1186
 PrintPlayerName: print_name PlayerName ; 118d
@@ -411,7 +400,7 @@ PlaceGenderedPlayerName:: ; 1252
 	call PlaceString
 	ld h, b
 	ld l, c
-	ld a, [PlayerGender]
+	ld a, [wPlayerGender]
 	bit 0, a
 	ld de, String_kun
 	jr z, PlaceCommandCharacter
@@ -708,7 +697,7 @@ PokeFluteTerminatorCharacter:: ; 13e0
 PlaceHLTextAtBC:: ; 13e5
 	ld a, [TextBoxFlags]
 	push af
-	set 1, a
+	set NO_TEXT_DELAY_F, a
 	ld [TextBoxFlags], a
 
 	call DoTextUntilTerminator

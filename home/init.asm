@@ -62,15 +62,15 @@ Init:: ; 17d
 
 .wait
 	ld a, [rLY]
-	cp 145
+	cp LY_VBLANK + 1
 	jr nz, .wait
 
 	xor a
 	ld [rLCDC], a
 
 ; Clear WRAM bank 0
-	ld hl, wRAM0Start
-	ld bc, wRAM1Start - wRAM0Start
+	ld hl, WRAM0_Begin
+	ld bc, WRAM0_End - WRAM0_Begin
 .ByteFill:
 	ld [hl], 0
 	inc hl
@@ -87,8 +87,8 @@ Init:: ; 17d
 	ld a, [hFFEA]
 	push af
 	xor a
-	ld hl, HRAM_START
-	ld bc, HRAM_END - HRAM_START
+	ld hl, HRAM_Begin
+	ld bc, HRAM_End - HRAM_Begin
 	call ByteFill
 	pop af
 	ld [hFFEA], a
@@ -125,7 +125,7 @@ Init:: ; 17d
 	ld [hWX], a
 	ld [rWX], a
 
-	ld a, %11100011
+	ld a, LCDC_DEFAULT ; %11100011
 	; LCD on
 	; Win tilemap 1
 	; Win on
@@ -141,9 +141,9 @@ Init:: ; 17d
 
 	farcall InitCGBPals
 
-	ld a, HIGH(VBGMap1)
+	ld a, HIGH(vBGMap1)
 	ld [hBGMapAddress + 1], a
-	xor a ; LOW(VBGMap1)
+	xor a ; LOW(vBGMap1)
 	ld [hBGMapAddress], a
 
 	farcall StartClock
@@ -185,7 +185,7 @@ ClearVRAM:: ; 245
 	xor a
 	ld [rVBK], a
 .clear
-	ld hl, VTiles0
+	ld hl, vTiles0
 	ld bc, $2000
 	xor a
 	call ByteFill
@@ -201,8 +201,8 @@ ClearWRAM:: ; 25a
 	push af
 	ld [rSVBK], a
 	xor a
-	ld hl, wRAM1Start
-	ld bc, $1000
+	ld hl, WRAM1_Begin
+	ld bc, WRAM1_End - WRAM1_Begin
 	call ByteFill
 	pop af
 	inc a

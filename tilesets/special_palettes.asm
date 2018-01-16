@@ -54,8 +54,8 @@ LoadSpecialMapPalette: ; 494ac
 ; 494f2
 
 LoadPokeComPalette: ; 494f2
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, PokeComPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
@@ -63,12 +63,12 @@ LoadPokeComPalette: ; 494f2
 ; 49501
 
 PokeComPalette: ; 49501
-INCLUDE "tilesets/palettes/pokecom_center.pal"
+INCLUDE "data/palettes/tilesets/pokecom_center.pal"
 ; 49541
 
 LoadBattleTowerPalette: ; 49541
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, BattleTowerPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
@@ -76,12 +76,12 @@ LoadBattleTowerPalette: ; 49541
 ; 49550
 
 BattleTowerPalette: ; 49550
-INCLUDE "tilesets/palettes/battle_tower.pal"
+INCLUDE "data/palettes/tilesets/battle_tower.pal"
 ; 49590
 
 LoadIcePathPalette: ; 49590
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, IcePathPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
@@ -89,12 +89,12 @@ LoadIcePathPalette: ; 49590
 ; 4959f
 
 IcePathPalette: ; 4959f
-INCLUDE "tilesets/palettes/ice_path.pal"
+INCLUDE "data/palettes/tilesets/ice_path.pal"
 ; 495df
 
 LoadHousePalette: ; 495df
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, HousePalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
@@ -102,12 +102,12 @@ LoadHousePalette: ; 495df
 ; 495ee
 
 HousePalette: ; 495ee
-INCLUDE "tilesets/palettes/house_1.pal"
+INCLUDE "data/palettes/tilesets/house_1.pal"
 ; 4962e
 
 LoadRadioTowerPalette: ; 4962e
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, RadioTowerPalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
@@ -115,7 +115,7 @@ LoadRadioTowerPalette: ; 4962e
 ; 4963d
 
 RadioTowerPalette: ; 4963d
-INCLUDE "tilesets/palettes/radio_tower.pal"
+INCLUDE "data/palettes/tilesets/radio_tower.pal"
 ; 4967d
 
 MansionPalette1: ; 4967d
@@ -169,23 +169,23 @@ MansionPalette4: ; 496bd
 ; 496c5
 
 LoadMansionPalette: ; 496c5
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
 	ld hl, MansionPalette1
 	ld bc, 8 palettes
 	call FarCopyWRAM
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals palette PAL_BG_YELLOW
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1 palette PAL_BG_YELLOW
 	ld hl, MansionPalette2
 	ld bc, 1 palettes
 	call FarCopyWRAM
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals palette PAL_BG_WATER
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1 palette PAL_BG_WATER
 	ld hl, MansionPalette3
 	ld bc, 1 palettes
 	call FarCopyWRAM
-	ld a, BANK(UnknBGPals)
-	ld de, UnknBGPals palette PAL_BG_ROOF
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1 palette PAL_BG_ROOF
 	ld hl, MansionPalette4
 	ld bc, 1 palettes
 	call FarCopyWRAM

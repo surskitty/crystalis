@@ -30,13 +30,13 @@ TrainerPokefanmCarter:
 	closetext
 	end
 
-TrainerBird_keeperRoy:
-	trainer EVENT_BEAT_BIRD_KEEPER_ROY, BIRD_KEEPER, ROY, Bird_keeperRoySeenText, Bird_keeperRoyBeatenText, 0, .Script
+TrainerBirdKeeperRoy:
+	trainer EVENT_BEAT_BIRD_KEEPER_ROY, BIRD_KEEPER, ROY, BirdKeeperRoySeenText, BirdKeeperRoyBeatenText, 0, .Script
 
 .Script:
 	end_if_just_battled
 	opentext
-	writetext Bird_keeperRoyAfterBattleText
+	writetext BirdKeeperRoyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -72,18 +72,18 @@ PokefanmCarterAfterBattleText:
 	line "well-balanced mix."
 	done
 
-Bird_keeperRoySeenText:
+BirdKeeperRoySeenText:
 	text "My dream is to fly"
 	line "with my beloved"
 	cont "bird #MON."
 	done
 
-Bird_keeperRoyBeatenText:
+BirdKeeperRoyBeatenText:
 	text "I can dream, but I"
 	line "can't ever fly…"
 	done
 
-Bird_keeperRoyAfterBattleText:
+BirdKeeperRoyAfterBattleText:
 	text "You have #MON"
 	line "that know the HM"
 
@@ -130,7 +130,7 @@ Route14_MapEventHeader:
 
 .ObjectEvents:
 	db 4
-	object_event SPRITE_POKEFAN_M, 15, 11, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
-	object_event SPRITE_YOUNGSTER, 27, 11, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperRoy, -1
-	object_event SPRITE_POKEFAN_M, 11, 6, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
-	object_event SPRITE_TEACHER, 5, 7, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1
+	object_event 11, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmCarter, -1
+	object_event 11, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRoy, -1
+	object_event 6, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanmTrevor, -1
+	object_event 7, 5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, Kim, -1

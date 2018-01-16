@@ -597,17 +597,17 @@ Function8b677: ; 8b677
 
 Function8b690: ; 8b690
 	ld hl, GFX_17afa5 + $514
-	ld de, VTiles2
+	ld de, vTiles2
 	ld bc, $160
 	ld a, BANK(GFX_17afa5)
 	call FarCopyBytes
 	ld hl, GFX_17afa5 + $514 + $160 - $10
-	ld de, VTiles2 tile $61
+	ld de, vTiles2 tile $61
 	ld bc, $10
 	ld a, BANK(GFX_17afa5)
 	call FarCopyBytes
 	ld hl, GFX_17afa5 + $514 + $160
-	ld de, VTiles1 tile $6e
+	ld de, vTiles1 tile $6e
 	ld bc, $10
 	ld a, BANK(GFX_17afa5)
 	call FarCopyBytes
@@ -620,8 +620,8 @@ Function8b6bb: ; 8b6bb
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_8b6d5
-	ld de, UnknBGPals
-	ld bc, $0018
+	ld de, wBGPals1
+	ld bc, 3 palettes
 	call CopyBytes
 	pop af
 	ld [rSVBK], a

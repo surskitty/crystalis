@@ -46,7 +46,6 @@ LoadMenuMonIcon: ; 8e83f
 	dw Mobile_InitPartyMenuBGPal71 ; mobile
 	dw .GetPartyMenuMonIcon ; unused
 
-
 .GetPartyMenuMonIcon: ; 8e862 (23:6862)
 	call InitPartyMenuIcon
 	call .GetPartyMonItemGFX
@@ -331,7 +330,7 @@ rept 4
 	add hl, hl
 endr
 
-	ld de, VTiles0
+	ld de, vTiles0
 	add hl, de
 	push hl
 
@@ -468,6 +467,6 @@ ReadMonMenuIcon: ; 8eab3
 
 INCLUDE "data/pokemon/menu_icons.asm"
 
-INCLUDE "gfx/icon_pointers.asm"
+INCLUDE "data/icon_pointers.asm"
 
 INCLUDE "gfx/icons.asm"

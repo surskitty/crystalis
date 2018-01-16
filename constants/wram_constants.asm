@@ -7,7 +7,7 @@
 	const WILDMON    ; 4
 
 ; Options: (bits) ; cfcc
-const_value SET 4
+const_value set 4
 	const NO_TEXT_SCROLL ; 4
 	const STEREO         ; 5
 	const BATTLE_SHIFT   ; 6
@@ -29,6 +29,11 @@ TEXT_DELAY_SLOW EQU 5
 	const FRAME_7 ; 6
 	const FRAME_8 ; 7
 
+; TextBoxFlags:
+	const_def
+	const FAST_TEXT_DELAY_F ; 0
+	const NO_TEXT_DELAY_F   ; 1
+
 ; Options2:
 	const_def
 	const MENU_ACCOUNT ; 0
@@ -41,7 +46,7 @@ GBPRINTER_DARKER   EQU $60
 GBPRINTER_DARKEST  EQU $7f
 
 ; WalkingDirection: ; d043
-const_value SET -1
+const_value set -1
 	const STANDING ; -1
 	const DOWN     ; 0
 	const UP       ; 1
@@ -131,7 +136,7 @@ DAY_CARE_DEPOSIT  EQU 3
 	const DEXMODE_ABC
 	const DEXMODE_UNOWN
 
-; JohtoBadges:
+; wJohtoBadges:
 	const_def
 	const ZEPHYRBADGE
 	const HIVEBADGE
@@ -143,7 +148,7 @@ DAY_CARE_DEPOSIT  EQU 3
 	const RISINGBADGE
 NUM_JOHTO_BADGES EQU const_value
 
-; KantoBadges:
+; wKantoBadges:
 	const_def
 	const BOULDERBADGE
 	const CASCADEBADGE

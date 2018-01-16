@@ -16,18 +16,18 @@ UnusedTitleScreen: ; 10c000
 	ld [hl], a  ; wTitleScreenTimer + 1
 
 	ld hl, UnusedTitleBG_GFX
-	ld de, VTiles2
-	ld bc, VBGMap0 - VTiles2
+	ld de, vTiles2
+	ld bc, vBGMap0 - vTiles2
 	call CopyBytes
 
 	ld hl, UnusedTitleBG_GFX + $80 tiles
-	ld de, VTiles1
-	ld bc, VTiles2 - VTiles1
+	ld de, vTiles1
+	ld bc, vTiles2 - vTiles1
 	call CopyBytes
 
 	ld hl, UnusedTitleFG_GFX
-	ld de, VTiles0
-	ld bc, VTiles1 - VTiles0
+	ld de, vTiles0
+	ld bc, vTiles1 - vTiles0
 	call CopyBytes
 
 	ld hl, UnusedTitleBG_Tilemap
@@ -55,8 +55,8 @@ UnusedTitleScreen: ; 10c000
 
 	call EnableLCD
 	ld a, [rLCDC]
-	set 1, a
-	set 2, a
+	set rLCDC_SPRITES_ENABLE, a
+	set rLCDC_SPRITE_SIZE, a
 	ld [rLCDC], a
 
 	call DelayFrame
@@ -67,22 +67,22 @@ UnusedTitleScreen: ; 10c000
 	ld [rSVBK], a
 
 	ld hl, UnusedTitleBG_Palettes
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 8 palettes
 	call CopyBytes
 
 	ld hl, UnusedTitleFG_Palettes
-	ld de, UnknOBPals
+	ld de, wOBPals1
 	ld bc, 8 palettes
 	call CopyBytes
 
 	ld hl, UnusedTitleBG_Palettes
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 8 palettes
 	call CopyBytes
 
 	ld hl, UnusedTitleFG_Palettes
-	ld de, OBPals
+	ld de, wOBPals2
 	ld bc, 8 palettes
 	call CopyBytes
 

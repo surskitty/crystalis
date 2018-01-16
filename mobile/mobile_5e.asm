@@ -738,7 +738,7 @@ Function17aba0: ; 17aba0 (5e:6ba0)
 	ld a, $1
 	ld [rVBK], a
 
-	ld hl, VTiles5 tile $00
+	ld hl, vTiles5 tile $00
 	ld de, GFX_17afa5
 	lb bc, BANK(GFX_17afa5), $80
 	call Get2bpp
@@ -746,12 +746,12 @@ Function17aba0: ; 17aba0 (5e:6ba0)
 	pop af
 	ld [rVBK], a
 
-	ld hl, VTiles0 tile $00
+	ld hl, vTiles0 tile $00
 	ld de, GFX_17afa5 + $4c0
 	lb bc, BANK(GFX_17afa5), 5
 	call Get2bpp
 
-	ld hl, VTiles0 tile $05
+	ld hl, vTiles0 tile $05
 	ld de, GFX_11601a
 	lb bc, BANK(GFX_11601a), 4
 	call Get2bpp
@@ -760,27 +760,27 @@ Function17aba0: ; 17aba0 (5e:6ba0)
 Function17abcf: ; 17abcf (5e:6bcf)
 	ld a, [rSVBK]
 	push af
-	ld a, BANK(UnknBGPals)
+	ld a, BANK(wBGPals1)
 	ld [rSVBK], a
 
 	ld hl, Palette_17ac55
-	ld de, UnknBGPals ; $d000
-	ld bc, $30
+	ld de, wBGPals1 ; $d000
+	ld bc, 6 palettes
 	call CopyBytes
 
 	ld hl, Palette_17ac95
-	ld de, UnknOBPals
-	ld bc, $40
+	ld de, wOBPals1
+	ld bc, 8 palettes
 	call CopyBytes
 
 	ld hl, GFX_17afa5 + $510
-	ld de, UnknOBPals + 2 * 4
-	ld bc, $10
+	ld de, wOBPals1 palette 1
+	ld bc, 2 palettes
 	call CopyBytes
 
-	ld hl, MapObjectPals + 8
-	ld de, UnknOBPals + 6 * 4
-	ld bc, $8
+	ld hl, MapObjectPals palette 1
+	ld de, wOBPals1 palette 3
+	ld bc, 1 palettes
 	ld a, BANK(MapObjectPals)
 	call FarCopyBytes
 

@@ -1,5 +1,5 @@
 MovementPointers: ; 5075
-; entries correspond to macros/movement.asm enumeration
+; entries correspond to macros/scripts/movement.asm enumeration
 	dw Movement_turn_head_down        ; 00
 	dw Movement_turn_head_up          ; 01
 	dw Movement_turn_head_left        ; 02
@@ -727,7 +727,7 @@ Movement_turn_step_right: ; 53fc
 	jr TurnStep
 
 TurnStep: ; 5400
-	ld hl, OBJECT_29 ; new facing
+	ld hl, OBJECT_1D ; new facing
 	add hl, bc
 	ld [hl], a
 
@@ -832,7 +832,7 @@ SlideStep: ; 5468
 
 JumpStep: ; 548a
 	call InitStep
-	ld hl, OBJECT_31
+	ld hl, OBJECT_1F
 	add hl, bc
 	ld [hl], $0
 

@@ -1,11 +1,14 @@
 # Bugs and Glitches
 
+These are known bugs and glitches in the original Pokémon Crystal game: code that clearly does not work as intended, or that only works in limited circumstances but has the possibility to fail or crash.
+
 
 ## Contents
 
 - [Thick Club and Light Ball can decrease damage done with boosted (Special) Attack](#thick-club-and-light-ball-can-decrease-damage-done-with-boosted-special-attack)
 - [Metal Powder can increase damage taken with boosted (Special) Defense](#metal-powder-can-increase-damage-taken-with-boosted-special-defense)
 - [Belly Drum sharply boosts Attack even with under 50% HP](#belly-drum-sharply-boosts-attack-even-with-under-50-hp)
+- [Confusion damage is affected by type-boosting items and Explosion/Self-Destruct doubling](#confusion-damage-is-affected-by-type-boosting-items-and-explosionself-destruct-doubling)
 - [Moves that lower Defense can do so after breaking a Substitute](#moves-that-lower-defense-can-do-so-after-breaking-a-substitute)
 - [Counter and Mirror Coat still work if the opponent uses an item](#counter-and-mirror-coat-still-work-if-the-opponent-uses-an-item)
 - [A Disabled but PP Up–enhanced move may not trigger Struggle](#a-disabled-but-pp-upenhanced-move-may-not-trigger-struggle)
@@ -27,6 +30,7 @@
 - [Dragon Scale, not Dragon Fang, boosts Dragon-type moves](#dragon-scale-not-dragon-fang-boosts-dragon-type-moves)
 - [Daisy's grooming doesn't always increase happiness](#daisys-grooming-doesnt-always-increase-happiness)
 - [Magikarp in Lake of Rage are shorter, not longer](#magikarp-in-lake-of-rage-are-shorter-not-longer)
+- [Magikarp length limits have a unit conversion error](#magikarp-length-limits-have-a-unit-conversion-error)
 - [Magikarp lengths can be miscalculated](#magikarp-lengths-can-be-miscalculated)
 - [Battle transitions fail to account for the enemy's level](#battle-transitions-fail-to-account-for-the-enemys-level)
 - [Slot machine payout sound effects cut each other off](#slot-machine-payout-sound-effects-cut-each-other-off)
@@ -49,14 +53,15 @@
 - [`TryObjectEvent` arbitrary code execution](#tryobjectevent-arbitrary-code-execution)
 - [`Special_CheckBugContestContestantFlag` can read beyond its data table](#special_checkbugcontestcontestantflag-can-read-beyond-its-data-table)
 - [`ClearWRAM` only clears WRAM bank 1](#clearwram-only-clears-wram-bank-1)
-- [`GetForestTreeFrame` works, but it's still bad](#getforesttreeframe-works-but-its-still-bad)
 
 
 ## Thick Club and Light Ball can decrease damage done with boosted (Special) Attack
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=rGqu3d3pdok&t=450))
 
-This is a bug with `SpeciesItemBoost` in [battle/effect_commands.asm](/battle/effect_commands.asm):
+This is a bug with `SpeciesItemBoost` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 ; Double the stat
@@ -88,9 +93,11 @@ This is a bug with `SpeciesItemBoost` in [battle/effect_commands.asm](/battle/ef
 
 ## Metal Powder can increase damage taken with boosted (Special) Defense
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=rGqu3d3pdok&t=450))
 
-This is a bug with `DittoMetalPowder` in [battle/effect_commands.asm](/battle/effect_commands.asm):
+This is a bug with `DittoMetalPowder` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 	ld a, c
@@ -144,9 +151,11 @@ This is a bug with `DittoMetalPowder` in [battle/effect_commands.asm](/battle/ef
 
 ## Belly Drum sharply boosts Attack even with under 50% HP
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=zuCLMikWo4Y))
 
-This is a bug with `BattleCommand_BellyDrum` in [battle/effect_commands.asm](/battle/effect_commands.asm):
+This is a bug with `BattleCommand_BellyDrum` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 BattleCommand_BellyDrum: ; 37c1a
@@ -180,13 +189,24 @@ BattleCommand_BellyDrum: ; 37c1a
 ```
 
 
+## Confusion damage is affected by type-boosting items and Explosion/Self-Destruct doubling
+
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
+([Video](https://twitter.com/crystal_rby/status/874626362287562752))
+
+*To do:* Identify specific code causing this bug and fix it.
+
+
 ## Moves that lower Defense can do so after breaking a Substitute
+
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
 
 ([Video](https://www.youtube.com/watch?v=OGwKPRJLaaI))
 
 This bug affects Acid, Iron Tail, and Rock Smash.
 
-This is a bug with `DefenseDownHit` in [battle/moves/move_effects.asm](/battle/moves/move_effects.asm):
+This is a bug with `DefenseDownHit` in [data/moves/effects.asm](/data/moves/effects.asm):
 
 ```asm
 DefenseDownHit:
@@ -218,6 +238,8 @@ DefenseDownHit:
 
 ## Counter and Mirror Coat still work if the opponent uses an item
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=uRYyzKRatFk))
 
 *To do:* Identify specific code causing this bug and fix it.
@@ -225,9 +247,11 @@ DefenseDownHit:
 
 ## A Disabled but PP Up–enhanced move may not trigger Struggle
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=1v9x4SgMggs))
 
-This is a bug with `CheckPlayerHasUsableMoves` in [battle/core.asm](/battle/core.asm):
+This is a bug with `CheckPlayerHasUsableMoves` in [engine/battle/core.asm](/engine/battle/core.asm):
 
 ```asm
 .done
@@ -250,6 +274,8 @@ This is a bug with `CheckPlayerHasUsableMoves` in [battle/core.asm](/battle/core
 
 ## A Pokémon that fainted from Pursuit will have its old status condition when revived
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=tiRvw-Nb2ME))
 
 *To do:* Identify specific code causing this bug and fix it.
@@ -257,9 +283,11 @@ This is a bug with `CheckPlayerHasUsableMoves` in [battle/core.asm](/battle/core
 
 ## Lock-On and Mind Reader don't always bypass Fly and Dig
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 This bug affects Attract, Curse, Foresight, Mean Look, Mimic, Nightmare, Spider Web, Transform, and stat-lowering effects of moves like String Shot or Bubble during the semi-invulnerable turn of Fly or Dig.
 
-This is a bug with `CheckHiddenOpponent` in [battle/effect_commands.asm](/battle/effect_commands.asm):
+This is a bug with `CheckHiddenOpponent` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 CheckHiddenOpponent: ; 37daa
@@ -275,9 +303,11 @@ CheckHiddenOpponent: ; 37daa
 
 ## Beat Up can desynchronize link battles
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=202-iAsrIa8))
 
-This is a bug with `BattleCommand_BeatUp` in [battle/effect_commands.asm](/battle/effect_commands.asm):
+This is a bug with `BattleCommand_BeatUp` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 .got_mon
@@ -310,11 +340,13 @@ This is a bug with `BattleCommand_BeatUp` in [battle/effect_commands.asm](/battl
 
 ## Present damage is incorrect in link battles
 
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
 ([Video](https://www.youtube.com/watch?v=XJaQoKtrEuw))
 
 This bug existed for all battles in Gold and Silver, and was only fixed for single-player battles in Crystal to preserve link compatibility.
 
-This is a bug with `BattleCommand_Present` in [battle/effects/present.asm](/battle/effects/present.asm):
+This is a bug with `BattleCommand_Present` in [engine/battle/effect_commands/present.asm](/engine/battle/effect_commands/present.asm):
 
 ```asm
 BattleCommand_Present: ; 37874
@@ -355,7 +387,7 @@ BattleCommand_Present: ; 37874
 
 ([Video](https://www.youtube.com/watch?v=cygMO-zHTls))
 
-This is a bug with `AI_Smart_MeanLook` in [battle/ai/scoring.asm](/battle/ai/scoring.asm):
+This is a bug with `AI_Smart_MeanLook` in [engine/battle/ai/scoring.asm](/engine/battle/ai/scoring.asm):
 
 ```asm
 ; 80% chance to greatly encourage this move if the enemy is badly poisoned (buggy).
@@ -370,7 +402,7 @@ This is a bug with `AI_Smart_MeanLook` in [battle/ai/scoring.asm](/battle/ai/sco
 
 ## AI makes a false assumption about `CheckTypeMatchup`
 
-In [battle/effect_commands.asm](/battle/effect_commands.asm):
+In [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
 ```asm
 BattleCheckTypeMatchup: ; 347c8
@@ -401,7 +433,7 @@ CheckTypeMatchup: ; 347d3
 
 ([Video](https://www.youtube.com/watch?v=rGqu3d3pdok&t=322))
 
-This is a bug with `AI_HealStatus` in [battle/ai/items.asm](/battle/ai/items.asm):
+This is a bug with `AI_HealStatus` in [engine/battle/ai/items.asm](/engine/battle/ai/items.asm):
 
 ```asm
 AI_HealStatus: ; 384e0
@@ -429,7 +461,7 @@ AI_HealStatus: ; 384e0
 
 ([Video](https://www.youtube.com/watch?v=SE-BfsFgZVM))
 
-This is a bug with `LongAnim_UpdateVariables` in [engine/anim_hp_bar.asm](/engine/anim_hp_bar.asm):
+This is a bug with `LongAnim_UpdateVariables` in [engine/battle/anim_hp_bar.asm](/engine/battle/anim_hp_bar.asm):
 
 ```asm
 	; This routine is buggy. The result from ComputeHPBarPixels is stored
@@ -661,7 +693,9 @@ FastBallMultiplier:
 
 ## Dragon Scale, not Dragon Fang, boosts Dragon-type moves
 
-This is a bug with `ItemAttributes` in [items/item_attributes.asm](/items/item_attributes.asm):
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
+This is a bug with `ItemAttributes` in [items/attributes.asm](/items/attributes.asm):
 
 ```asm
 ; DRAGON FANG
@@ -678,7 +712,7 @@ This is a bug with `ItemAttributes` in [items/item_attributes.asm](/items/item_a
 
 ## Daisy's grooming doesn't always increase happiness
 
-This is a bug with `MassageOrHaircut` in [event/special.asm](/event/special.asm):
+This is a bug with `MassageOrHaircut` in [engine/events/special.asm](/engine/events/special.asm):
 
 ```asm
 ; Bug: Subtracting $ff from $ff fails to set c.
@@ -727,7 +761,7 @@ Data_DaisyMassage: ; 746b
 
 ## Magikarp in Lake of Rage are shorter, not longer
 
-This is a bug with `LoadEnemyMon.CheckMagikarpArea` in [battle/core.asm](/battle/core.asm):
+This is a bug with `LoadEnemyMon.CheckMagikarpArea` in [engine/battle/core.asm](/engine/battle/core.asm):
 
 ```asm
 .CheckMagikarpArea:
@@ -751,9 +785,46 @@ This is a bug with `LoadEnemyMon.CheckMagikarpArea` in [battle/core.asm](/battle
 **Fix:** Change both `jr z, .Happiness` to `jr nz, .Happiness`.
 
 
+## Magikarp length limits have a unit conversion error
+
+This is a bug with `LoadEnemyMon.CheckMagikarpArea` in [engine/battle/core.asm](/engine/battle/core.asm):
+
+```asm
+; Get Magikarp's length
+	ld de, EnemyMonDVs
+	ld bc, PlayerID
+	callfar CalcMagikarpLength
+
+; No reason to keep going if length > 1536 (i.e. if length / 256 != 6)
+	ld a, [wMagikarpLength]
+	cp HIGH(1536) ; this compares to 6'0'', should be cp 5
+	jr nz, .CheckMagikarpArea
+
+; 5% chance of skipping both size checks
+	call Random
+	cp 5 percent
+	jr c, .CheckMagikarpArea
+; Try again if length > 1615
+	ld a, [wMagikarpLength + 1]
+	cp LOW(1616) ; this compares to 6'80'', should be cp 3
+	jr nc, .GenerateDVs
+
+; 20% chance of skipping this check
+	call Random
+	cp 20 percent - 1
+	jr c, .CheckMagikarpArea
+; Try again if length > 1599
+	ld a, [wMagikarpLength + 1]
+	cp LOW(1600) ; this compares to 6'64'', should be cp 2
+	jr nc, .GenerateDVs
+```
+
+**Fix:** Change the three `cp` instructions to use their commented values.
+
+
 ## Magikarp lengths can be miscalculated
 
-This is a bug with `CalcMagikarpLength.BCLessThanDE` in [event/magikarp.asm](/event/magikarp.asm):
+This is a bug with `CalcMagikarpLength.BCLessThanDE` in [engine/events/magikarp.asm](/engine/events/magikarp.asm):
 
 ```asm
 .BCLessThanDE: ; fbc9a
@@ -1348,7 +1419,7 @@ In [engine/events.asm](/engine/events.asm):
 
 ## `Special_CheckBugContestContestantFlag` can read beyond its data table
 
-In [event/bug_contest_2.asm](/event/bug_contest_2.asm):
+In [engine/events/bug_contest/contest_2.asm](/engine/events/bug_contest/contest_2.asm):
 
 ```asm
 Special_CheckBugContestContestantFlag: ; 139ed
@@ -1398,8 +1469,8 @@ ClearWRAM:: ; 25a
 	push af
 	ld [rSVBK], a
 	xor a
-	ld hl, wRAM1Start
-	ld bc, $1000
+	ld hl, WRAM1_Begin
+	ld bc, WRAM1_End - WRAM1_Begin
 	call ByteFill
 	pop af
 	inc a
@@ -1410,46 +1481,3 @@ ClearWRAM:: ; 25a
 ```
 
 **Fix:** Change `jr nc, .bank_loop` to `jr c, .bank_loop`.
-
-
-## `GetForestTreeFrame` works, but it's still bad
-
-In [tilesets/animations.asm](/tilesets/animations.asm):
-
-```asm
-GetForestTreeFrame: ; fc54c
-; Return 0 if a is even, or 2 if odd.
-	and a
-	jr z, .even
-	cp 1
-	jr z, .odd
-	cp 2
-	jr z, .even
-	cp 3
-	jr z, .odd
-	cp 4
-	jr z, .even
-	cp 5
-	jr z, .odd
-	cp 6
-	jr z, .even
-.odd
-	ld a, 2
-	scf
-	ret
-.even
-	xor a
-	ret
-; fc56d
-```
-
-**Fix:**
-
-```asm
-GetForestTreeFrame: ; fc54c
-; Return 0 if a is even, or 2 if odd.
-	and 1
-	add a
-	ret
-; fc56d
-```

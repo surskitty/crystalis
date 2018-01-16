@@ -1,11 +1,12 @@
 INCLUDE "includes.asm"
 INCLUDE "macros/wram.asm"
+
+
 INCLUDE "vram.asm"
 
 
 SECTION "Stack", WRAM0
 
-wRAM0Start::
 StackBottom::
 	ds $100 - 1
 Stack::
@@ -211,7 +212,7 @@ SECTION "wSpriteAnims", WRAM0
 UNION ; c300
 ; wSpriteAnimDict is a 10x2 dictionary
 ; keys: taken from third column of SpriteAnimSeqData
-; values: VTiles
+; values: vTiles
 wSpriteAnimDict:: ds 10 * 2
 
 wSpriteAnimationStructs::
@@ -805,7 +806,6 @@ NEXTU ; c6d0
 wPokedexDataStart::
 wPokedexOrder:: ds $100 ; >= NUM_POKEMON
 wPokedexOrderEnd::
-wPokedexMetadata::
 wDexListingScrollOffset:: db ; offset of the first displayed entry from the start
 wDexListingCursor:: db ; Dex cursor
 wDexListingEnd:: db ; Last mon to display
@@ -827,12 +827,12 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurrentLocation:: db
-IF DEF(CRYSTAL11)
+if DEF(CRYSTAL11)
 wPokedexStatus:: db
 wPokedexDataEnd::
-ELSE
+else
 wPokedexDataEnd:: ds 1
-ENDC
+endc
 	ds 2
 
 NEXTU ; c6d0
@@ -1312,14 +1312,15 @@ wCardFlipWhichCard:: db
 NEXTU ; cf64
 ; pokedex
 wDexEntryPrevJumptableIndex:: db
-IF !DEF(CRYSTAL11)
+if !DEF(CRYSTAL11)
 wPokedexStatus:: db
-ENDC
+endc
 
 NEXTU ; cf64
 ; miscellaneous
 wNrOfBeatenBattleTowerTrainers::
 wMomBankDigitCursorPosition::
+wSlotsDelay::
 	db
 wCurrPocket::
 wPrinterQueueLength::
@@ -1431,7 +1432,7 @@ wFarCallBCBuffer:: dw ; cfb9
 
 wcfbb:: db
 
-GameTimerPause:: ; cfbc
+wGameTimerPause:: ; cfbc
 ; bit 0
 	db
 
@@ -1479,7 +1480,10 @@ wSaveFileExists:: db
 TextBoxFrame:: ; cfce
 ; bits 0-2: textbox frame 0-7
 	db
-TextBoxFlags:: db
+TextBoxFlags::
+; bit 0: 1-frame text delay
+; bit 4: no text delay
+	db
 GBPrinter:: ; cfd0
 ; bit 0-6: brightness
 ;   lightest: $00
@@ -1504,7 +1508,6 @@ wDaysSince:: db
 
 SECTION "WRAM 1", WRAMX
 
-wRAM1Start::
 wd000:: ds 1
 
 DefaultSpawnpoint:: db
@@ -1630,10 +1633,9 @@ NEXTU ; d002
 ; miscellaneous
 wTempDayOfWeek::
 wApricorns::
+wKeepSevenBiasChance:: ; used in the slots to handle the favoring of 7 symbol streaks
 	db
-
 	ds 2
-
 StartFlypoint:: db
 EndFlypoint:: db
 
@@ -1840,7 +1842,7 @@ CurElevatorFloors:: db
 
 NEXTU ; d0f0
 ; mailbox data
-	ds 1
+wCurMessageScrollPosition:: db
 wCurMessageIndex:: db
 wMailboxCount:: db
 wMailboxItems:: ds MAILBOX_CAPACITY
@@ -1956,7 +1958,7 @@ SouthMapConnection:: map_connection_struct South ; d1b5
 WestMapConnection::  map_connection_struct West ; d1c1
 EastMapConnection::  map_connection_struct East ; d1cd
 
-TilesetHeader::
+Tileset::
 TilesetBank:: db ; d1d9
 TilesetAddress:: dw ; d1da
 TilesetBlocksBank:: db ; d1dc
@@ -1966,7 +1968,7 @@ TilesetCollisionAddress:: dw ; d1e0
 TilesetAnim:: dw ; bank 3f ; d1e2
 	ds 2  ; unused ; d1e4
 TilesetPalettes:: dw ; bank 3f ; d1e6
-TilesetHeaderEnd::
+TilesetEnd::
 
 EvolvableFlags:: flag_array PARTY_LENGTH ; d1e8
 
@@ -2239,7 +2241,7 @@ wBugContestSecsRemaining:: db ; d46d
 wMapStatusEnd:: ds 2 ; d470
 
 wCrystalData::
-PlayerGender:: ; d472
+wPlayerGender:: ; d472
 ; bit 0:
 ;	0 male
 ;	1 female
@@ -2349,7 +2351,7 @@ CurTimeOfDay:: db ; d848
 	ds 1
 
 wSecretID:: dw
-StatusFlags:: ; d84c
+wStatusFlags:: ; d84c
 	; 0 - pokedex
 	; 1 - unown dex
 	; 2 -
@@ -2360,7 +2362,7 @@ StatusFlags:: ; d84c
 	; 7 - bug contest on
 	db
 
-StatusFlags2:: ; d84d
+wStatusFlags2:: ; d84d
 	; 0 - rockets
 	; 1 -
 	; 2 - bug contest timer
@@ -2378,8 +2380,8 @@ wMomSavingMoney:: db ; d854
 Coins:: dw ; d855
 
 Badges::
-JohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
-KantoBadges:: flag_array NUM_KANTO_BADGES ; d858
+wJohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
+wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 
 
 TMsHMs:: ds NUM_TMS + NUM_HMS ; d859
@@ -2558,7 +2560,7 @@ wCelebiEvent:: db
 
 	ds 1
 
-BikeFlags:: ; dbf5
+wBikeFlags:: ; dbf5
 ; bit 0: using strength
 ; bit 1: always on bike
 ; bit 2: downhill
@@ -2600,9 +2602,9 @@ wWhichMomItemSet:: db ; dc18
 MomItemTriggerBalance:: ds 3 ; dc19
 
 wDailyResetTimer:: dw ; dc1c
-DailyFlags:: db
-WeeklyFlags:: db
-SwarmFlags:: db
+wDailyFlags:: db
+wWeeklyFlags:: db
+wSwarmFlags:: db
 	ds 2
 wStartDay:: db
 	ds 3
@@ -2661,7 +2663,7 @@ wPlayerDataEnd::
 
 wMapData::
 
-VisitedSpawns:: flag_array NUM_SPAWNS ; dca5
+wVisitedSpawns:: flag_array NUM_SPAWNS ; dca5
 
 wDigWarpNumber:: db ; dcaa
 wDigMapGroup::   db ; dcab
@@ -2718,7 +2720,7 @@ PokedexSeen:: flag_array NUM_POKEMON ; deb9
 EndPokedexSeen::
 
 UnownDex:: ds NUM_UNOWN ; ded9
-UnlockedUnowns:: db ; def3
+wUnlockedUnowns:: db ; def3
 wFirstUnownSeen:: db
 
 wDayCareMan:: ; def5
@@ -2795,7 +2797,7 @@ wPokeAnimGraphicStartTile:: db
 wPokeAnimCoord:: dw
 wPokeAnimFrontpicHeight:: db
 ; PokeAnim Data
-wPokeAnimExtraFlag:: db
+wPokeAnimIdleFlag:: db
 wPokeAnimSpeed:: db
 wPokeAnimPointerBank:: db
 wPokeAnimPointerAddr:: dw
@@ -2819,7 +2821,7 @@ wPokeAnimBitmaskBuffer:: ds 7
 wPokeAnimStructEnd::
 
 
-SECTION "Battle Tower", WRAMX
+SECTION "Battle Tower RAM", WRAMX
 
 w3_d000:: ds 1 ; d000
 w3_d001:: ds 1
@@ -2878,10 +2880,10 @@ w3_dffc:: ds 4
 SECTION "GBC Video", WRAMX
 
 ; eight 4-color palettes each
-UnknBGPals:: ds 8 palettes ; d000
-UnknOBPals:: ds 8 palettes ; d040
-BGPals::     ds 8 palettes ; d080
-OBPals::     ds 8 palettes ; d0c0
+wBGPals1:: ds 8 palettes ; d000
+wOBPals1:: ds 8 palettes ; d040
+wBGPals2:: ds 8 palettes ; d080
+wOBPals2:: ds 8 palettes ; d0c0
 
 LYOverrides:: ds SCREEN_HEIGHT_PX ; d100
 LYOverridesEnd:: ; d190
@@ -2942,21 +2944,16 @@ wBattleAnimTemp0:: db
 wBattleAnimTemp1:: db
 wBattleAnimTemp2:: db
 wBattleAnimTemp3:: db
-wBattleAnimTemp4:: db
-wBattleAnimTemp5:: db
-wBattleAnimTemp6:: db
-wBattleAnimTemp7:: db
-wBattleAnimTemp8:: db
 
 NEXTU ; d419
 wBattleAnimTempOAMFlags:: db
-	ds 1
+wBattleAnimTempField02:: db
 wBattleAnimTempTileID:: db
 wBattleAnimTempXCoord:: db
 wBattleAnimTempYCoord:: db
 wBattleAnimTempXOffset:: db
 wBattleAnimTempYOffset:: db
-	ds 1
+wBattleAnimTempAddSubFlags:: db
 wBattleAnimTempPalette:: db
 ENDU ; d422
 

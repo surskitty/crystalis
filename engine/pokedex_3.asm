@@ -1,12 +1,12 @@
 LoadSGBPokedexGFX: ; 1ddf1c
 	ld hl, SGBPokedexGFX_LZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	call Decompress
 	ret
 
 LoadSGBPokedexGFX2: ; 1ddf26 (77:5f26)
 	ld hl, SGBPokedexGFX_LZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	lb bc, BANK(SGBPokedexGFX_LZ), $3a
 	call DecompressRequest2bpp
 	ret
@@ -21,7 +21,7 @@ LoadQuestionMarkPic: ; 1de0d7
 	ret
 
 .QuestionMarkLZ: ; 1de0e1
-INCBIN "gfx/pics/questionmark/front.2bpp.lz"
+INCBIN "gfx/pokemon/questionmark/front.2bpp.lz"
 
 DrawPokedexListWindow: ; 1de171 (77:6171)
 	ld a, $32

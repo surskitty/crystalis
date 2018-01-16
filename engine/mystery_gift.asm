@@ -116,7 +116,7 @@ DoMysteryGift: ; 1048ba (41:48ba)
 
 .PrintTextAndExit: ; 1049c5 (41:49c5)
 	call PrintText
-	ld a, $e3
+	ld a, LCDC_DEFAULT
 	ld [rLCDC], a
 	ret
 ; 1049cd (41:49cd)
@@ -262,7 +262,7 @@ Function104a95: ; 104a95 (41:4a95)
 	; Delay frame
 .ly_loop
 	ld a, [rLY]
-	cp $90
+	cp LY_VBLANK
 	jr c, .ly_loop
 	ld c, LOW(rRP)
 	ld a, $c0
@@ -281,14 +281,14 @@ Function104a95: ; 104a95 (41:4a95)
 	and b
 	ld b, a
 	ld a, [rLY]
-	cp $90
+	cp LY_VBLANK
 	jr nc, .ly_loop2
 .ly_loop3
 	ld a, [$ff00+c]
 	and b
 	ld b, a
 	ld a, [rLY]
-	cp $90
+	cp LY_VBLANK
 	jr c, .ly_loop3
 
 	ld a, b
@@ -1153,7 +1153,7 @@ MysteryGift_CopyReceivedDecosToPC: ; 105091 (41:5091)
 .skip
 	inc c
 	ld a, c
-	cp Trophys - DecorationIDs
+	cp TrophyIDs - DecorationIDs
 	jr c, .loop
 	jp CloseSRAM
 
@@ -1277,7 +1277,7 @@ InitMysteryGiftLayout: ; 105153 (41:5153)
 	call ClearBGPalettes
 	call DisableLCD
 	ld hl, MysteryGiftGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	ld a, BANK(MysteryGiftGFX)
 	ld bc, MysteryGiftGFXEnd - MysteryGiftGFX
 	call FarCopyBytes
@@ -1497,7 +1497,7 @@ Function10571a: ; 10571a (41:571a)
 
 asm_105726: ; 105726 (41:5726)
 	call PrintText
-	ld a, $e3
+	ld a, LCDC_DEFAULT
 	ld [rLCDC], a
 	ret
 ; 10572e (41:572e)
@@ -1576,12 +1576,12 @@ Function1057d7: ; 1057d7 (41:57d7)
 	call ClearBGPalettes
 	call DisableLCD
 	ld hl, MysteryGiftJP_GFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	ld a, BANK(MysteryGiftJP_GFX)
 	lb bc, 4, 0
 	call FarCopyBytes
 	ld hl, MysteryGiftJP_GFX + $400
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	ld a, BANK(MysteryGiftJP_GFX)
 	ld bc, $80
 	call FarCopyBytes

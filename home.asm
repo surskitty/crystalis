@@ -306,7 +306,7 @@ PrintLetterDelay:: ; 313d
 
 ; non-scrolling text?
 	ld a, [TextBoxFlags]
-	bit 1, a
+	bit NO_TEXT_DELAY_F, a
 	ret z
 
 	push hl
@@ -323,7 +323,7 @@ PrintLetterDelay:: ; 313d
 
 ; force fast scroll?
 	ld a, [TextBoxFlags]
-	bit 0, a
+	bit FAST_TEXT_DELAY_F, a
 	jr z, .fast
 
 ; text speed
@@ -332,7 +332,7 @@ PrintLetterDelay:: ; 313d
 	jr .updatedelay
 
 .fast
-	ld a, 1
+	ld a, TEXT_DELAY_FAST
 
 .updatedelay
 	ld [TextDelayFrames], a
@@ -347,11 +347,11 @@ PrintLetterDelay:: ; 313d
 
 ; Wait one frame if holding A or B.
 	ld a, [hJoyDown]
-	bit 0, a ; A_BUTTON
+	bit A_BUTTON_F, a
 	jr z, .checkb
 	jr .delay
 .checkb
-	bit 1, a ; B_BUTTON
+	bit B_BUTTON_F, a
 	jr z, .wait
 
 .delay
@@ -574,11 +574,11 @@ CopyTilemapAtOnce:: ; 323d
 	jr c, .wait
 
 	di
-	ld a, BANK(VTiles3)
+	ld a, BANK(vTiles3)
 	ld [rVBK], a
 	hlcoord 0, 0, AttrMap
 	call .StackPointerMagic
-	ld a, BANK(VTiles0)
+	ld a, BANK(vTiles0)
 	ld [rVBK], a
 	hlcoord 0, 0
 	call .StackPointerMagic
@@ -597,7 +597,7 @@ CopyTilemapAtOnce:: ; 323d
 ; 327b
 
 .StackPointerMagic: ; 327b
-; Copy all tiles to VBGMap
+; Copy all tiles to vBGMap
 	ld [hSPBuffer], sp
 	ld sp, hl
 	ld a, [hBGMapAddress + 1]
@@ -680,11 +680,11 @@ ClearPalettes:: ; 3317
 	ld a, [rSVBK]
 	push af
 
-	ld a, BANK(BGPals)
+	ld a, BANK(wBGPals2)
 	ld [rSVBK], a
 
-; Fill BGPals and OBPals with $ffff (white)
-	ld hl, BGPals
+; Fill wBGPals2 and wOBPals2 with $ffff (white)
+	ld hl, wBGPals2
 	ld bc, 16 palettes
 	ld a, $ff
 	call ByteFill
@@ -1074,7 +1074,7 @@ _PrepMonFrontpic:: ; 378b
 	jr c, .not_pokemon
 
 	push hl
-	ld de, VTiles2
+	ld de, vTiles2
 	predef GetMonFrontpic
 	pop hl
 	xor a
@@ -1104,7 +1104,7 @@ PrintLevel:: ; 382d
 
 ; How many digits?
 	ld c, 2
-	cp 100
+	cp 100 ; This is distinct from MAX_LEVEL.
 	jr c, Print8BitNumRightAlign
 
 ; 3-digit numbers overwrite the :L.

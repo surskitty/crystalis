@@ -491,7 +491,7 @@ CheckTimeEvents: ; 9693a
 	and a
 	jr nz, .nothing
 
-	ld hl, StatusFlags2
+	ld hl, wStatusFlags2
 	bit 2, [hl] ; bug contest
 	jr z, .do_daily
 
@@ -875,10 +875,10 @@ CheckMenuOW: ; 96b30
 	ld [hMenuReturn + 1], a
 	ld a, [hJoyPressed]
 
-	bit 2, a ; SELECT
+	bit SELECT_F, a
 	jr nz, .Select
 
-	bit 3, a ; START
+	bit START_F, a
 	jr z, .NoMenu
 
 	ld a, BANK(StartMenuScript)

@@ -10,11 +10,11 @@ LoadMapGroupRoof:: ; 1c000
 	ld hl, Roofs
 	ld bc, $90
 	call AddNTimes
-	ld de, VTiles2 tile $0a
+	ld de, vTiles2 tile $0a
 	ld bc, $90
 	call CopyBytes
 	ret
 ; 1c021
 
 
-INCLUDE "data/maps/mapgroup_roofs.asm"
+INCLUDE "data/maps/roofs.asm"

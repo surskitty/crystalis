@@ -14,13 +14,13 @@ Route38_MapScriptHeader:
 .MapCallbacks:
 	db 0
 
-TrainerBird_keeperToby:
-	trainer EVENT_BEAT_BIRD_KEEPER_TOBY, BIRD_KEEPER, TOBY, Bird_keeperTobySeenText, Bird_keeperTobyBeatenText, 0, .Script
+TrainerBirdKeeperToby:
+	trainer EVENT_BEAT_BIRD_KEEPER_TOBY, BIRD_KEEPER, TOBY, BirdKeeperTobySeenText, BirdKeeperTobyBeatenText, 0, .Script
 
 .Script
 	end_if_just_battled
 	opentext
-	writetext Bird_keeperTobyAfterBattleText
+	writetext BirdKeeperTobyAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -322,18 +322,18 @@ Route38TrainerTips:
 FruitTreeScript_0x1a1f33:
 	fruittree FRUITTREE_ROUTE_38
 
-Bird_keeperTobySeenText:
+BirdKeeperTobySeenText:
 	text "Fly high into the"
 	line "sky, my beloved"
 	cont "bird #MON!"
 	done
 
-Bird_keeperTobyBeatenText:
+BirdKeeperTobyBeatenText:
 	text "I feel like just"
 	line "flying away now."
 	done
 
-Bird_keeperTobyAfterBattleText:
+BirdKeeperTobyAfterBattleText:
 	text "I plan to train in"
 	line "CIANWOOD CITY to"
 
@@ -478,23 +478,23 @@ Route38_MapEventHeader:
 
 .Warps:
 	db 2
-	warp_def $8, $23, 1, ROUTE_38_ECRUTEAK_GATE
-	warp_def $9, $23, 2, ROUTE_38_ECRUTEAK_GATE
+	warp_def 35, 8, 1, ROUTE_38_ECRUTEAK_GATE
+	warp_def 35, 9, 2, ROUTE_38_ECRUTEAK_GATE
 
 .CoordEvents:
 	db 0
 
 .BGEvents:
 	db 2
-	bg_event 7, 33, BGEVENT_READ, Route38Sign
-	bg_event 13, 5, BGEVENT_READ, Route38TrainerTips
+	bg_event 33, 7, BGEVENT_READ, Route38Sign
+	bg_event 5, 13, BGEVENT_READ, Route38TrainerTips
 
 .ObjectEvents:
 	db 7
-	object_event SPRITE_STANDING_YOUNGSTER, 1, 4, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
-	object_event SPRITE_LASS, 3, 15, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
-	object_event SPRITE_STANDING_YOUNGSTER, 15, 12, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBird_keeperToby, -1
-	object_event SPRITE_BUENA, 9, 19, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
-	object_event SPRITE_SAILOR, 5, 24, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
-	object_event SPRITE_FRUIT_TREE, 10, 12, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a1f33, -1
-	object_event SPRITE_BUENA, 8, 5, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1
+	object_event 4, 1, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyChad1, -1
+	object_event 15, 3, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassDana1, -1
+	object_event 12, 15, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBirdKeeperToby, -1
+	object_event 19, 9, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyValerie, -1
+	object_event 24, 5, SPRITE_SAILOR, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorHarry, -1
+	object_event 12, 10, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a1f33, -1
+	object_event 5, 8, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyOlivia, -1

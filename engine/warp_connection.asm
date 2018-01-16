@@ -233,9 +233,9 @@ LoadMapTimeOfDay: ; 104750
 	ret
 
 .ClearBGMap: ; 104770 (41:4770)
-	ld a, HIGH(VBGMap0)
+	ld a, HIGH(vBGMap0)
 	ld [wBGMapAnchor + 1], a
-	xor a ; LOW(VBGMap0)
+	xor a ; LOW(vBGMap0)
 	ld [wBGMapAnchor], a
 	ld [hSCY], a
 	ld [hSCX], a
@@ -247,7 +247,7 @@ LoadMapTimeOfDay: ; 104750
 	ld [rVBK], a
 
 	xor a
-	ld bc, VBGMap1 - VBGMap0
+	ld bc, vBGMap1 - vBGMap0
 	hlbgcoord 0, 0
 	call ByteFill
 
@@ -255,7 +255,7 @@ LoadMapTimeOfDay: ; 104750
 	ld [rVBK], a
 
 	ld a, "<BLACK>"
-	ld bc, VBGMap1 - VBGMap0
+	ld bc, vBGMap1 - vBGMap0
 	hlbgcoord 0, 0
 	call ByteFill
 	ret
@@ -292,8 +292,8 @@ LoadMapTimeOfDay: ; 104750
 	ret
 
 LoadGraphics: ; 1047cf
-	call LoadTilesetHeader
 	call LoadTileset
+	call LoadTilesetGFX
 	xor a
 	ld [hMapAnims], a
 	xor a

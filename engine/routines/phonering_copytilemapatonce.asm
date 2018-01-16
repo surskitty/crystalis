@@ -17,21 +17,21 @@ PhoneRing_CopyTilemapAtOnce: ; 4d188
 	ld [hMapAnims], a
 .wait
 	ld a, [rLY]
-	cp $8f
+	cp LY_VBLANK - 1
 	jr c, .wait
 
 	di
-	ld a, BANK(VBGMap2)
+	ld a, BANK(vBGMap2)
 	ld [rVBK], a
 	hlcoord 0, 0, AttrMap
 	call .CopyTilemapAtOnce
-	ld a, BANK(VBGMap0)
+	ld a, BANK(vBGMap0)
 	ld [rVBK], a
 	hlcoord 0, 0
 	call .CopyTilemapAtOnce
 .wait2
 	ld a, [rLY]
-	cp $8f
+	cp LY_VBLANK - 1
 	jr c, .wait2
 	ei
 

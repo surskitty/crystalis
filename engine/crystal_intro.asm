@@ -3,9 +3,9 @@ Copyright_GFPresents: ; e4579
 	call PlayMusic
 	call ClearBGPalettes
 	call ClearTileMap
-	ld a, HIGH(VBGMap0)
+	ld a, HIGH(vBGMap0)
 	ld [hBGMapAddress + 1], a
-	xor a ; LOW(VBGMap0)
+	xor a ; LOW(vBGMap0)
 	ld [hBGMapAddress], a
 	ld [hJoyDown], a
 	ld [hSCX], a
@@ -51,7 +51,7 @@ Copyright_GFPresents: ; e4579
 
 .GetGFLogoGFX: ; e45e8
 	ld de, GameFreakLogo
-	ld hl, VTiles2
+	ld hl, vTiles2
 	lb bc, BANK(GameFreakLogo), $1c
 	call Get1bpp
 
@@ -65,12 +65,12 @@ Copyright_GFPresents: ; e4579
 	ld a, BANK(IntroLogoGFX)
 	call FarDecompress
 
-	ld hl, VTiles0
+	ld hl, vTiles0
 	ld de, wDecompressScratch
 	lb bc, 1, 8 tiles
 	call Request2bpp
 
-	ld hl, VTiles1
+	ld hl, vTiles1
 	ld de, wDecompressScratch + $80 tiles
 	lb bc, 1, 8 tiles
 	call Request2bpp
@@ -322,9 +322,9 @@ GameFreakLogoScene4: ; e4776 (39:4776)
 	ld a, $5
 	ld [rSVBK], a
 	ld a, [hli]
-	ld [OBPals + 12], a
+	ld [wOBPals2 + 12], a
 	ld a, [hli]
-	ld [OBPals + 13], a
+	ld [wOBPals2 + 13], a
 	pop af
 	ld [rSVBK], a
 	ld a, $1
@@ -470,10 +470,10 @@ IntroScene1: ; e495b (39:495b)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroUnownsGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroPulseGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap002
 	debgcoord 0, 0
@@ -483,11 +483,11 @@ IntroScene1: ; e495b (39:495b)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_365ad
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_365ad
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -546,7 +546,7 @@ IntroScene3: ; e49fd (39:49fd)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroBackgroundGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap004
 	debgcoord 0, 0
@@ -556,11 +556,11 @@ IntroScene3: ; e49fd (39:49fd)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e5edd
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e5edd
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -609,10 +609,10 @@ IntroScene5: ; e4a7a (39:4a7a)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroUnownsGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroPulseGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap006
 	debgcoord 0, 0
@@ -622,11 +622,11 @@ IntroScene5: ; e4a7a (39:4a7a)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_365ad
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_365ad
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -706,17 +706,17 @@ IntroScene7: ; e4b3f (39:4b3f)
 	call Intro_DecompressRequest2bpp_64Tiles
 
 	ld hl, IntroPichuWooperGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroSuicuneRunGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_255Tiles
 
 	ld hl, IntroBackgroundGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 
 	ld hl, IntroTilemap004
@@ -729,12 +729,12 @@ IntroScene7: ; e4b3f (39:4b3f)
 	ld [rSVBK], a
 
 	ld hl, Palette_e5edd
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 
 	ld hl, Palette_e5edd
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 
@@ -877,7 +877,7 @@ IntroScene11: ; e4c86 (39:4c86)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroUnownsGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap008
 	debgcoord 0, 0
@@ -887,11 +887,11 @@ IntroScene11: ; e4c86 (39:4c86)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_365ad
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_365ad
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1001,10 +1001,10 @@ IntroScene13: ; e4d6d (39:4d6d)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroSuicuneRunGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_255Tiles
 	ld hl, IntroBackgroundGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap004
 	debgcoord 0, 0
@@ -1014,11 +1014,11 @@ IntroScene13: ; e4d6d (39:4d6d)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e5edd
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e5edd
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1105,13 +1105,13 @@ IntroScene15: ; e4e40 (39:4e40)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroSuicuneJumpGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroUnownBackGFX
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld de, IntroGrass4GFX
-	ld hl, VTiles1 tile $00
+	ld hl, vTiles1 tile $00
 	lb bc, BANK(IntroGrass4GFX), 1
 	call Request2bpp
 	ld hl, IntroTilemap010
@@ -1123,11 +1123,11 @@ IntroScene15: ; e4e40 (39:4e40)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e77dd
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e77dd
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1187,7 +1187,7 @@ IntroScene17: ; e4ef5 (39:4ef5)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroSuicuneCloseGFX
-	ld de, VTiles1 tile $00
+	ld de, vTiles1 tile $00
 	call Intro_DecompressRequest2bpp_255Tiles
 	ld hl, IntroTilemap012
 	debgcoord 0, 0
@@ -1197,11 +1197,11 @@ IntroScene17: ; e4ef5 (39:4ef5)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e6d6d
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e6d6d
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1253,13 +1253,13 @@ IntroScene19: ; e4f7e (39:4f7e)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroSuicuneBackGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroUnownsGFX
-	ld de, VTiles1 tile $00
+	ld de, vTiles1 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld de, IntroGrass4GFX
-	ld hl, VTiles1 tile $7f
+	ld hl, vTiles1 tile $7f
 	lb bc, BANK(IntroGrass4GFX), 1
 	call Request2bpp
 	ld hl, IntroTilemap014
@@ -1271,11 +1271,11 @@ IntroScene19: ; e4f7e (39:4f7e)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e77dd
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e77dd
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1431,7 +1431,7 @@ IntroScene26: ; e50bb (39:50bb)
 	ld a, $0
 	ld [rVBK], a
 	ld hl, IntroCrystalUnownsGFX
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	call Intro_DecompressRequest2bpp_128Tiles
 	ld hl, IntroTilemap017
 	debgcoord 0, 0
@@ -1441,11 +1441,11 @@ IntroScene26: ; e50bb (39:50bb)
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_e679d
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 	ld hl, Palette_e679d
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 	pop af
@@ -1516,7 +1516,7 @@ IntroScene28: ; e5152 (39:5152)
 	ret
 
 Intro_Scene24_ApplyPaletteFade: ; e5172 (39:5172)
-; load the (a)th palette from .FadePals to all BGPals
+; load the (a)th palette from .FadePals to all wBGPals2
 	ld hl, .FadePals
 	add l
 	ld l, a
@@ -1528,11 +1528,11 @@ Intro_Scene24_ApplyPaletteFade: ; e5172 (39:5172)
 	push af
 	ld a, $5
 	ld [rSVBK], a
-	ld de, BGPals
+	ld de, wBGPals2
 	ld b, 8 ; number of BG pals
 .loop1
 	push hl
-	ld c, 8 ; number of bytes per pal
+	ld c, 1 palettes
 .loop2
 	ld a, [hli]
 	ld [de], a
@@ -1599,7 +1599,7 @@ CrystalIntro_UnownFade: ; e5223 (39:5223)
 	add a
 	ld e, a
 	ld d, $0
-	ld hl, BGPals
+	ld hl, wBGPals2
 	add hl, de
 	inc hl
 	inc hl
@@ -1622,7 +1622,7 @@ CrystalIntro_UnownFade: ; e5223 (39:5223)
 
 	push hl
 	push bc
-	ld hl, BGPals
+	ld hl, wBGPals2
 	ld bc, 8 palettes
 	xor a
 	call ByteFill
@@ -1726,7 +1726,7 @@ Intro_Scene20_AppearUnown: ; e5348 (39:5348)
 	ld [rSVBK], a
 
 	push bc
-	ld de, BGPals
+	ld de, wBGPals2
 
 	ld a, c
 	add e
@@ -1735,11 +1735,11 @@ Intro_Scene20_AppearUnown: ; e5348 (39:5348)
 	adc d
 	ld d, a
 
-	ld bc, 8
+	ld bc, 1 palettes
 	call CopyBytes
 	pop bc
 
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld a, c
 	add e
 	ld e, a
@@ -1747,7 +1747,7 @@ Intro_Scene20_AppearUnown: ; e5348 (39:5348)
 	adc d
 	ld d, a
 
-	ld bc, 8
+	ld bc, 1 palettes
 	call CopyBytes
 
 	pop af
@@ -1779,7 +1779,7 @@ Intro_FadeUnownWordPals: ; e539d (39:539d)
 	add a
 	ld e, a
 	ld d, $0
-	ld hl, BGPals
+	ld hl, wBGPals2
 	add hl, de
 rept 4
 	inc hl
@@ -1922,9 +1922,9 @@ Intro_RustleGrass: ; e546d (39:546d)
 	ld [Requested2bppSource], a
 	ld a, [hli]
 	ld [Requested2bppSource + 1], a
-	ld a, LOW(VTiles2 tile $09)
+	ld a, LOW(vTiles2 tile $09)
 	ld [Requested2bppDest], a
-	ld a, HIGH(VTiles2 tile $09)
+	ld a, HIGH(vTiles2 tile $09)
 	ld [Requested2bppDest + 1], a
 	ld a, 4
 	ld [Requested2bppSize], a
@@ -1949,8 +1949,8 @@ Intro_ClearBGPals: ; e54a3 (39:54a3)
 	ld a, $5
 	ld [rSVBK], a
 
-	ld hl, BGPals
-	ld bc, 16 * 8
+	ld hl, wBGPals2
+	ld bc, 16 palettes
 	xor a
 	call ByteFill
 

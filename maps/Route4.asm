@@ -11,13 +11,13 @@ Route4_MapScriptHeader:
 .MapCallbacks:
 	db 0
 
-TrainerBird_keeperHank:
-	trainer EVENT_BEAT_BIRD_KEEPER_HANK, BIRD_KEEPER, HANK, Bird_keeperHankSeenText, Bird_keeperHankBeatenText, 0, .Script
+TrainerBirdKeeperHank:
+	trainer EVENT_BEAT_BIRD_KEEPER_HANK, BIRD_KEEPER, HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
 
 .Script:
 	end_if_just_battled
 	opentext
-	writetext Bird_keeperHankAfterBattleText
+	writetext BirdKeeperHankAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -54,18 +54,18 @@ Route4HiddenUltraBall:
 	dwb EVENT_ROUTE_4_HIDDEN_ULTRA_BALL, ULTRA_BALL
 
 
-Bird_keeperHankSeenText:
+BirdKeeperHankSeenText:
 	text "I'm raising my"
 	line "#MON. Want to"
 	cont "battle with me?"
 	done
 
-Bird_keeperHankBeatenText:
+BirdKeeperHankBeatenText:
 	text "Ack! I lost that"
 	line "one…"
 	done
 
-Bird_keeperHankAfterBattleText:
+BirdKeeperHankAfterBattleText:
 	text "If you have a"
 	line "specific #MON"
 
@@ -127,19 +127,19 @@ Route4_MapEventHeader:
 
 .Warps:
 	db 1
-	warp_def $5, $2, 2, MOUNT_MOON
+	warp_def 2, 5, 2, MOUNT_MOON
 
 .CoordEvents:
 	db 0
 
 .BGEvents:
 	db 2
-	bg_event 7, 3, BGEVENT_READ, MtMoonSquareSign
-	bg_event 3, 10, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 3, 7, BGEVENT_READ, MtMoonSquareSign
+	bg_event 10, 3, BGEVENT_ITEM, Route4HiddenUltraBall
 
 .ObjectEvents:
 	db 4
-	object_event SPRITE_YOUNGSTER, 9, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperHank, -1
-	object_event SPRITE_LASS, 8, 9, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event SPRITE_LASS, 6, 21, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event SPRITE_POKE_BALL, 3, 26, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	object_event 17, 9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
+	object_event 9, 8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
+	object_event 21, 6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
+	object_event 26, 3, SPRITE_POKE_BALL, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP

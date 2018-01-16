@@ -41,19 +41,18 @@ _TimeOfDayPals:: ; 8c011
 ; update palette id
 	ld [TimeOfDayPal], a
 
-
-; save bg palette 8
-	ld hl, UnknBGPals + 8 * 7 ; UnknBGPals + 7 pals
+; save bg palette 7
+	ld hl, wBGPals1 palette PAL_BG_TEXT
 
 ; save wram bank
 	ld a, [rSVBK]
 	ld b, a
 ; wram bank 5
-	ld a, 5
+	ld a, $5
 	ld [rSVBK], a
 
 ; push palette
-	ld c, 4 ; NUM_PAL_COLORS
+	ld c, NUM_PAL_COLORS
 .push
 	ld d, [hl]
 	inc hl
@@ -73,8 +72,8 @@ _TimeOfDayPals:: ; 8c011
 	call GetSGBLayout
 
 
-; restore bg palette 8
-	ld hl, UnknOBPals - 1 ; last byte in UnknBGPals
+; restore bg palette 7
+	ld hl, wOBPals1 - 1 ; last byte in wBGPals1
 
 ; save wram bank
 	ld a, [rSVBK]
@@ -84,7 +83,7 @@ _TimeOfDayPals:: ; 8c011
 	ld [rSVBK], a
 
 ; pop palette
-	ld e, 4 ; NUM_PAL_COLORS
+	ld e, NUM_PAL_COLORS
 .pop
 	pop bc
 	ld [hl], c
@@ -177,12 +176,12 @@ FillWhiteBGColor: ; 8c0c1
 	ld a, $5
 	ld [rSVBK], a
 
-	ld hl, UnknBGPals
+	ld hl, wBGPals1
 	ld a, [hli]
 	ld e, a
 	ld a, [hli]
 	ld d, a
-	ld hl, UnknBGPals + 1 palettes
+	ld hl, wBGPals1 + 1 palettes
 	ld c, 6
 .loop
 	ld a, e
@@ -216,7 +215,7 @@ ReplaceTimeOfDayPals: ; 8c0e5
 	ret
 
 .DarkCave:
-	ld a, [StatusFlags]
+	ld a, [wStatusFlags]
 	bit 2, a ; Flash
 	jr nz, .UsedFlash
 	ld a, %11111111 ; 3, 3, 3, 3

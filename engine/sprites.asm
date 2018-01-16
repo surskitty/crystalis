@@ -386,7 +386,7 @@ InitSpriteAnimBuffer: ; 8d0ec
 
 GetSpriteAnimVTile: ; 8d109
 ; a = wSpriteAnimDict[a] if a in wSpriteAnimDict else 0
-; VTiles offset
+; vTiles offset
 	push hl
 	push bc
 	ld hl, wSpriteAnimDict
@@ -444,9 +444,9 @@ GetSpriteAnimFrame: ; 8d132
 	inc [hl]
 	call .GetPointer ; load pointer from SpriteAnimFrameData
 	ld a, [hli]
-	cp -2
+	cp dorestart_command
 	jr z, .restart
-	cp -1
+	cp endanim_command
 	jr z, .repeat_last
 
 	push af
@@ -551,13 +551,13 @@ BrokenGetStdGraphics: ; 8d1ac
 ; 8d1c4
 
 
-INCLUDE "data/sprite_anim_seqs.asm"
+INCLUDE "data/sprite_anims/sequences.asm"
 
 INCLUDE "engine/sprite_anims.asm"
 
-INCLUDE "data/sprite_anim_frames.asm"
+INCLUDE "data/sprite_anims/framesets.asm"
 
-INCLUDE "data/sprite_anim_oam.asm"
+INCLUDE "data/sprite_anims/oam.asm"
 
 
 BrokenStdGFXPointers: ; Broken 2bpp pointers
@@ -631,7 +631,7 @@ AnimateEndOfExpBar: ; 8e79d
 	ld de, SGBEndOfExpBarGFX
 
 .load
-	ld hl, VTiles0 tile $00
+	ld hl, vTiles0 tile $00
 	lb bc, BANK(EndOfExpBarGFX), 1
 	call Request2bpp
 	ld c, 8
@@ -683,7 +683,7 @@ AnimateEndOfExpBar: ; 8e79d
 
 	ld a, $0
 	ld [hli], a
-	ld a, $6 ; OBJ 6
+	ld a, PAL_BATTLE_OB_BLUE
 	ld [hli], a
 	jr .anim_loop
 ; 8e7f4
@@ -701,7 +701,7 @@ ClearSpriteAnims2: ; 8e814
 	ld hl, wSpriteAnimDict
 	ld bc, wSpriteAnimsEnd - wSpriteAnimDict
 .loop
-	ld [hl], $0
+	ld [hl], 0
 	inc hl
 	dec bc
 	ld a, c

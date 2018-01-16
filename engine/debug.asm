@@ -104,14 +104,14 @@ Function81928: ; 81928
 Function81948: ; 81948
 	ld a, $1
 	ld [rVBK], a
-	ld hl, VTiles0
-	ld bc, sScratch - VTiles0
+	ld hl, vTiles0
+	ld bc, sScratch - vTiles0
 	xor a
 	call ByteFill
 	ld a, $0
 	ld [rVBK], a
-	ld hl, VTiles0
-	ld bc, sScratch - VTiles0
+	ld hl, vTiles0
+	ld bc, sScratch - vTiles0
 	xor a
 	call ByteFill
 	hlcoord 0, 0, AttrMap
@@ -128,15 +128,15 @@ Function81948: ; 81948
 
 Function8197c: ; 8197c
 	ld hl, DebugColorTestGFX + $10
-	ld de, VTiles2 tile $6a
+	ld de, vTiles2 tile $6a
 	ld bc, $160
 	call CopyBytes
 	ld hl, DebugColorTestGFX
-	ld de, VTiles0
+	ld de, vTiles0
 	ld bc, $10
 	call CopyBytes
 	call LoadStandardFont
-	ld hl, VTiles1
+	ld hl, vTiles1
 	lb bc, 8, 0
 .asm_8199d
 	ld a, [hl]
@@ -158,22 +158,22 @@ Function819a7: ; 819a7
 	ld a, $5
 	ld [rSVBK], a
 	ld hl, Palette_819f4
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
-	ld a, $80
+	ld a, 1 << rBGPI_AUTO_INCREMENT
 	ld [rBGPI], a
 	ld hl, Palette_819f4
-	ld c, $40
+	ld c, 8 palettes
 	xor a
 .asm_819c8
 	ld [rBGPD], a
 	dec c
 	jr nz, .asm_819c8
-	ld a, $80
+	ld a, 1 << rOBPI_AUTO_INCREMENT
 	ld [rOBPI], a
 	ld hl, Palette_81a34
-	ld c, $40
+	ld c, 8 palettes
 .asm_819d6
 	ld a, [hli]
 	ld [rOBPD], a
@@ -314,7 +314,7 @@ Function81adb: ; 81adb
 	ld [wBoxAlignment], a
 	hlcoord 12, 3
 	call _PrepMonFrontpic
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	predef GetMonBackpic
 	ld a, $31
 	ld [hGraphicStartTile], a
@@ -345,7 +345,7 @@ Function81adb: ; 81adb
 	ld de, StringBuffer1
 	hlcoord 4, 1
 	call PlaceString
-	ld de, VTiles2
+	ld de, vTiles2
 	callfar GetTrainerPic
 	xor a
 	ld [TempEnemyMonSpecies], a
@@ -438,7 +438,7 @@ Function81c33: ; 81c33
 	push af
 	ld a, $5
 	ld [rSVBK], a
-	ld hl, BGPals
+	ld hl, wBGPals2
 	ld de, wc608
 	ld c, $1
 	call Function81ee3
@@ -1062,14 +1062,14 @@ TilesetColorTest:
 	xor a
 	ld [hBGMapMode], a
 	ld de, DebugColorTestGFX + $10
-	ld hl, VTiles2 tile $6a
+	ld hl, vTiles2 tile $6a
 	lb bc, BANK(DebugColorTestGFX), $16
 	call Request2bpp
 	ld de, DebugColorTestGFX
-	ld hl, VTiles1
+	ld hl, vTiles1
 	lb bc, BANK(DebugColorTestGFX), 1
 	call Request2bpp
-	ld a, HIGH(VBGMap1)
+	ld a, HIGH(vBGMap1)
 	ld [hBGMapAddress + 1], a
 	hlcoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
@@ -1153,7 +1153,7 @@ Function8220f: ; 8220f
 	add hl, hl
 	add hl, hl
 	add hl, hl
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	add hl, de
 	ld de, wc608
 	ld bc, 8
@@ -1200,12 +1200,12 @@ Function82236: ; 82236
 	push af
 	ld a, $5
 	ld [rSVBK], a
-	ld hl, BGPals
+	ld hl, wBGPals2
 	ld a, [wcf64]
-	ld bc, 8
+	ld bc, 1 palettes
 	call AddNTimes
 	ld de, wc608
-	ld bc, 8
+	ld bc, 1 palettes
 	call CopyBytes
 	pop af
 	ld [rSVBK], a
@@ -1230,14 +1230,14 @@ Function822a3: ; 822a3
 	push af
 	ld a, $5
 	ld [rSVBK], a
-	ld hl, BGPals
+	ld hl, wBGPals2
 	ld a, [wcf64]
-	ld bc, 8
+	ld bc, 1 palettes
 	call AddNTimes
 	ld e, l
 	ld d, h
 	ld hl, wc608
-	ld bc, 8
+	ld bc, 1 palettes
 	call CopyBytes
 	hlcoord 1, 0
 	ld de, wc608

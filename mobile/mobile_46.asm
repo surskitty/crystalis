@@ -1,4 +1,4 @@
-SECTION "bank46", ROMX
+SECTION "Mobile 46", ROMX
 
 Function118000: ; 118000
 	ld a, $1
@@ -1198,7 +1198,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4f], a
 	ld a, $1
 	ld [rSVBK], a
-	ld a, [StatusFlags]
+	ld a, [wStatusFlags]
 	bit 6, a ; Hall Of Fame
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40		; Address to list of strings with the choosable levels
@@ -3016,7 +3016,7 @@ Unknown_1196b8: ; 1196b8
 ; 1196cd
 
 
-SECTION "bank46_2", ROMX
+SECTION "Mobile 46 ASCII", ROMX
 ; A hack to use ascii above.
 
 Function1196cd: ; 1196cd (46:56cd)
@@ -3449,7 +3449,7 @@ Function119987: ; 119987
 	ld l, a
 	ld a, [wcf65]
 	ld h, a
-	ld de, BGPals
+	ld de, wBGPals2
 	ld a, $22
 	jp Function119e2b
 
@@ -7398,6 +7398,7 @@ Function11b5e8: ; 11b5e8
 
 .RunJumptable:
 	jumptable .Jumptable, wJumptableIndex
+
 .Jumptable:
 	dw Function11b66d
 	dw Function11b6b3

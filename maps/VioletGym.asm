@@ -83,24 +83,24 @@ VioletGymActivateRockets:
 .RadioTowerRockets:
 	jumpstd radiotowerrockets
 
-TrainerBird_keeperRod:
-	trainer EVENT_BEAT_BIRD_KEEPER_ROD, BIRD_KEEPER, ROD, Bird_keeperRodSeenText, Bird_keeperRodBeatenText, 0, .Script
+TrainerBirdKeeperRod:
+	trainer EVENT_BEAT_BIRD_KEEPER_ROD, BIRD_KEEPER, ROD, BirdKeeperRodSeenText, BirdKeeperRodBeatenText, 0, .Script
 
 .Script:
 	end_if_just_battled
 	opentext
-	writetext Bird_keeperRodAfterBattleText
+	writetext BirdKeeperRodAfterBattleText
 	waitbutton
 	closetext
 	end
 
-TrainerBird_keeperAbe:
-	trainer EVENT_BEAT_BIRD_KEEPER_ABE, BIRD_KEEPER, ABE, Bird_keeperAbeSeenText, Bird_keeperAbeBeatenText, 0, .Script
+TrainerBirdKeeperAbe:
+	trainer EVENT_BEAT_BIRD_KEEPER_ABE, BIRD_KEEPER, ABE, BirdKeeperAbeSeenText, BirdKeeperAbeBeatenText, 0, .Script
 
 .Script:
 	end_if_just_battled
 	opentext
-	writetext Bird_keeperAbeAfterBattleText
+	writetext BirdKeeperAbeAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -232,7 +232,7 @@ UnknownText_0x68735:
 	line "master!"
 	done
 
-Bird_keeperRodSeenText:
+BirdKeeperRodSeenText:
 	text "The keyword is"
 	line "guts!"
 
@@ -245,11 +245,11 @@ Bird_keeperRodSeenText:
 	para "Come on!"
 	done
 
-Bird_keeperRodBeatenText:
+BirdKeeperRodBeatenText:
 	text "Gaaah!"
 	done
 
-Bird_keeperRodAfterBattleText:
+BirdKeeperRodAfterBattleText:
 	text "FALKNER's skills"
 	line "are for real!"
 
@@ -258,18 +258,18 @@ Bird_keeperRodAfterBattleText:
 	cont "beat me!"
 	done
 
-Bird_keeperAbeSeenText:
+BirdKeeperAbeSeenText:
 	text "Let me see if you"
 	line "are good enough to"
 	cont "face FALKNER!"
 	done
 
-Bird_keeperAbeBeatenText:
+BirdKeeperAbeBeatenText:
 	text "This can't be"
 	line "true!"
 	done
 
-Bird_keeperAbeAfterBattleText:
+BirdKeeperAbeAfterBattleText:
 	text "This is pathetic,"
 	line "losing to some"
 	cont "rookie trainer…"
@@ -310,20 +310,20 @@ VioletGym_MapEventHeader:
 
 .Warps:
 	db 2
-	warp_def $f, $4, 2, VIOLET_CITY
-	warp_def $f, $5, 2, VIOLET_CITY
+	warp_def 4, 15, 2, VIOLET_CITY
+	warp_def 5, 15, 2, VIOLET_CITY
 
 .CoordEvents:
 	db 0
 
 .BGEvents:
 	db 2
-	bg_event 13, 3, BGEVENT_READ, VioletGymStatue
-	bg_event 13, 6, BGEVENT_READ, VioletGymStatue
+	bg_event 3, 13, BGEVENT_READ, VioletGymStatue
+	bg_event 6, 13, BGEVENT_READ, VioletGymStatue
 
 .ObjectEvents:
 	db 4
-	object_event SPRITE_FALKNER, 1, 5, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FalknerScript_0x683c2, -1
-	object_event SPRITE_YOUNGSTER, 6, 7, SPRITEMOVEDATA_STANDING_LEFT, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperRod, -1
-	object_event SPRITE_YOUNGSTER, 10, 2, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBird_keeperAbe, -1
-	object_event SPRITE_GYM_GUY, 13, 7, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1
+	object_event 5, 1, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FalknerScript_0x683c2, -1
+	object_event 7, 6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRod, -1
+	object_event 2, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAbe, -1
+	object_event 7, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1

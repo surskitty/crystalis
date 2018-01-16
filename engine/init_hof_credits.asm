@@ -6,7 +6,7 @@ InitDisplayForHallOfFame: ; 4e881
 	call LoadStandardFont
 	call LoadFontsBattleExtra
 	hlbgcoord 0, 0
-	ld bc, VBGMap1 - VBGMap0
+	ld bc, vBGMap1 - vBGMap0
 	ld a, " "
 	call ByteFill
 	hlcoord 0, 0, AttrMap
@@ -36,14 +36,14 @@ InitDisplayForRedCredits: ; 4e8c2
 	call LoadStandardFont
 	call LoadFontsBattleExtra
 	hlbgcoord 0, 0
-	ld bc, VBGMap1 - VBGMap0
+	ld bc, vBGMap1 - vBGMap0
 	ld a, " "
 	call ByteFill
 	hlcoord 0, 0, AttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	xor a
 	call ByteFill
-	ld hl, UnknBGPals
+	ld hl, wBGPals1
 	ld c, 4 tiles
 .load_white_palettes
 	ld a, LOW(palred 31 + palgreen 31 + palblue 31)

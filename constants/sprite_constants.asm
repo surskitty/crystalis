@@ -1,5 +1,5 @@
 ; sprite ids
-; SpriteHeaders indexes (see gfx/sprite_headers.asm)
+; OverworldSprites indexes (see gfx/sprite_data.asm)
 	const_def
 	const SPRITE_NONE ; 00
 	const SPRITE_CHRIS ; 01
@@ -106,7 +106,7 @@
 	const SPRITE_STANDING_YOUNGSTER ; 66
 
 ; SpriteMons indexes (see data/sprite_mons.asm)
-const_value SET $80
+const_value set $80
 SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_GEODUDE ; 81
@@ -145,12 +145,12 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 
 ; special GetMonSprite values (see engine/overworld.asm)
-const_value SET $e0
+const_value set $e0
 	const SPRITE_DAY_CARE_MON_1 ; e0
 	const SPRITE_DAY_CARE_MON_2 ; e1
 
 ; VariableSprites indexes (see wram.asm)
-const_value SET $f0
+const_value set $f0
 SPRITE_VARS EQU const_value
 	const SPRITE_CONSOLE ; f0
 	const SPRITE_DOLL_1 ; f1

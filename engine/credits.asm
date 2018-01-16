@@ -33,17 +33,17 @@ Credits:: ; 109847
 	jr nz, .load_loop
 
 	ld de, CreditsBorderGFX
-	ld hl, VTiles2 tile $20
+	ld hl, vTiles2 tile $20
 	lb bc, BANK(CreditsBorderGFX), $09
 	call Request2bpp
 
 	ld de, CopyrightGFX
-	ld hl, VTiles2 tile $60
+	ld hl, vTiles2 tile $60
 	lb bc, BANK(CopyrightGFX), $1d
 	call Request2bpp
 
 	ld de, TheEndGFX
-	ld hl, VTiles2 tile $40
+	ld hl, vTiles2 tile $40
 	lb bc, BANK(TheEndGFX), $10
 	call Request2bpp
 
@@ -55,7 +55,7 @@ Credits:: ; 109847
 	call Credits_LoadBorderGFX
 	ld e, l
 	ld d, h
-	ld hl, VTiles2
+	ld hl, vTiles2
 	lb bc, BANK(CreditsMonsGFX), 16
 	call Request2bpp
 
@@ -152,9 +152,7 @@ Credits_Jumptable: ; 109926
 	jp hl
 ; 109937
 
-
 .Jumptable: ; 109937 (42:5937)
-
 	dw ParseCredits
 	dw Credits_Next
 	dw Credits_Next
@@ -168,7 +166,6 @@ Credits_Jumptable: ; 109926
 	dw Credits_UpdateGFXRequestPath
 	dw Credits_RequestGFX
 	dw Credits_LoopBack
-
 
 Credits_Next: ; 109951 (42:5951)
 	ld hl, wJumptableIndex
@@ -193,9 +190,9 @@ Credits_UpdateGFXRequestPath: ; 109964 (42:5964)
 	ld [Requested2bppSource], a
 	ld a, h
 	ld [Requested2bppSource + 1], a
-	ld a, LOW(VTiles2)
+	ld a, LOW(vTiles2)
 	ld [Requested2bppDest], a
-	ld a, HIGH(VTiles2)
+	ld a, HIGH(vTiles2)
 	ld [Requested2bppDest + 1], a
 	jr Credits_RequestGFX
 
@@ -523,20 +520,20 @@ GetCreditsPalette: ; 109b2c
 ; Update the first three colors in both palette buffers.
 	push af
 	push hl
-	add LOW(UnknBGPals)
+	add LOW(wBGPals1)
 	ld e, a
 	ld a, 0
-	adc HIGH(UnknBGPals)
+	adc HIGH(wBGPals1)
 	ld d, a
 	ld bc, 24
 	call CopyBytes
 
 	pop hl
 	pop af
-	add LOW(BGPals)
+	add LOW(wBGPals2)
 	ld e, a
 	ld a, 0
-	adc HIGH(BGPals)
+	adc HIGH(wBGPals2)
 	ld d, a
 	ld bc, 24
 	call CopyBytes
@@ -612,6 +609,13 @@ Credits_TheEnd: ; 109c11 (42:5c11)
 ; 109c24 (42:5c24)
 
 
-INCLUDE "gfx/credits.asm"
+CreditsBorderGFX:    INCBIN "gfx/credits/border.2bpp"
+
+CreditsMonsGFX:
+CreditsPichuGFX:     INCBIN "gfx/credits/pichu.2bpp"
+CreditsSmoochumGFX:  INCBIN "gfx/credits/smoochum.2bpp"
+CreditsDittoGFX:     INCBIN "gfx/credits/ditto.2bpp"
+CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
+
 INCLUDE "data/credits_script.asm"
 INCLUDE "data/credits_strings.asm"

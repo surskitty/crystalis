@@ -1241,10 +1241,10 @@ ScrollMapUp:: ; 2748
 	ld h, a
 	ld bc, $0200
 	add hl, bc
-; cap d at HIGH(VBGMap0)
+; cap d at HIGH(vBGMap0)
 	ld a, h
 	and %00000011
-	or HIGH(VBGMap0)
+	or HIGH(vBGMap0)
 	ld e, l
 	ld d, a
 	call UpdateBGMapRow
@@ -1369,10 +1369,10 @@ UpdateBGMapColumn:: ; 27f8
 	ld e, a
 	jr nc, .skip
 	inc d
-; cap d at HIGH(VBGMap0)
+; cap d at HIGH(vBGMap0)
 	ld a, d
 	and $3
-	or HIGH(VBGMap0)
+	or HIGH(vBGMap0)
 	ld d, a
 
 .skip
@@ -1391,7 +1391,7 @@ UpdateBGMapColumn:: ; 27f8
 	ret
 ; 2821
 
-LoadTileset:: ; 2821
+LoadTilesetGFX:: ; 2821
 	ld hl, TilesetAddress
 	ld a, [hli]
 	ld h, [hl]
@@ -1409,7 +1409,7 @@ LoadTileset:: ; 2821
 	call FarDecompress
 
 	ld hl, wDecompressScratch
-	ld de, VTiles2
+	ld de, vTiles2
 	ld bc, $60 tiles
 	call CopyBytes
 
@@ -1419,7 +1419,7 @@ LoadTileset:: ; 2821
 	ld [rVBK], a
 
 	ld hl, wDecompressScratch + $60 tiles
-	ld de, VTiles2
+	ld de, vTiles2
 	ld bc, $60 tiles
 	call CopyBytes
 
@@ -2054,7 +2054,7 @@ ReloadTilesetAndPalettes:: ; 2bae
 	call SwitchToAnyMapBank
 	farcall UpdateTimeOfDayPal
 	call OverworldTextModeSwitch
-	call LoadTileset
+	call LoadTilesetGFX
 	ld a, 9
 	call SkipMusic
 	pop af
@@ -2305,7 +2305,7 @@ GetMapHeaderMusic:: ; 2cbd
 	ret
 
 .radiotower
-	ld a, [StatusFlags2]
+	ld a, [wStatusFlags2]
 	bit 0, a
 	jr z, .clearedradiotower
 	ld de, MUSIC_ROCKET_OVERTURE
@@ -2320,7 +2320,7 @@ GetMapHeaderMusic:: ; 2cbd
 	jr .done
 
 .mahoganymart
-	ld a, [StatusFlags2]
+	ld a, [wStatusFlags2]
 	bit 7, a
 	jr z, .clearedmahogany
 	ld de, MUSIC_ROCKET_HIDEOUT
@@ -2372,17 +2372,17 @@ GetFishingGroup:: ; 2d19
 	ret
 ; 2d27
 
-LoadTilesetHeader:: ; 2d27
+LoadTileset:: ; 2d27
 	push hl
 	push bc
 
 	ld hl, Tilesets
-	ld bc, TilesetHeaderEnd - TilesetHeader
+	ld bc, TilesetEnd - Tileset
 	ld a, [wTileset]
 	call AddNTimes
 
 	ld de, TilesetBank
-	ld bc, TilesetHeaderEnd - TilesetHeader
+	ld bc, TilesetEnd - Tileset
 
 	ld a, BANK(Tilesets)
 	call FarCopyBytes

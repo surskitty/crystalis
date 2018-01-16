@@ -42,13 +42,11 @@ _DepositPKMN: ; e2391 (38:6391)
 	jp hl
 
 .Jumptable: ; e23df (38:63df)
-
 	dw .Init
 	dw .HandleJoypad
 	dw .WhatsUp
 	dw .Submenu
 	dw BillsPC_EndJumptableLoop
-
 
 .Init: ; e23e9 (38:63e9)
 	xor a
@@ -150,7 +148,6 @@ _DepositPKMN: ; e2391 (38:6391)
 	jp hl
 
 BillsPCDepositJumptable: ; e24a1 (38:64a1)
-
 	dw BillsPCDepositFuncDeposit ; Deposit Pokemon
 	dw BillsPCDepositFuncStats ; Pokemon Stats
 	dw BillsPCDepositFuncRelease ; Release Pokemon
@@ -309,13 +306,11 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	jp hl
 
 .Jumptable: ; e25d2 (38:65d2)
-
 	dw .Init
 	dw .Joypad
 	dw .PrepSubmenu
 	dw BillsPC_Withdraw
 	dw BillsPC_EndJumptableLoop
-
 
 .Init: ; e25dc (38:65dc)
 	ld a, NUM_BOXES + 1
@@ -560,7 +555,6 @@ _MovePKMNWithoutMail: ; e2759
 ; e27ac
 
 .Jumptable: ; e27ac
-
 	dw .Init
 	dw .Joypad
 	dw .PrepSubmenu
@@ -1107,7 +1101,7 @@ PCMonInfo: ; e2ac6 (38:6ac6)
 	ld hl, TempMonDVs
 	predef GetUnownLetter
 	call GetBaseData
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	predef GetMonFrontpic
 	xor a
 	ld [wBillsPC_MonHasMail], a
@@ -1442,15 +1436,15 @@ copy_box_data: MACRO
 	jr .loop\@
 
 .done\@
-IF \1
+if \1
 	call CloseSRAM
-ENDC
+endc
 	ld a, -1
 	ld [de], a
 	ld a, [wd004]
 	inc a
 	ld [wBillsPC_NumMonsInBox], a
-endm
+ENDM
 
 CopyBoxmonSpecies: ; e2d30 (38:6d30)
 	xor a
@@ -2029,7 +2023,6 @@ MovePKMNWitoutMail_InsertMon: ; e31e7
 ; e3245
 
 .Jumptable: ; e3245
-
 	dw .BoxToBox
 	dw .PartyToBox
 	dw .BoxToParty
@@ -2261,18 +2254,18 @@ BillsPC_Jumptable: ; e33df (38:73df)
 
 BillsPC_InitGFX: ; e33e8 (38:73e8)
 	call DisableLCD
-	ld hl, VTiles2 tile $00
+	ld hl, vTiles2 tile $00
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
 	call LoadStandardFont
 	call LoadFontsBattleExtra
 	ld hl, PCMailGFX
-	ld de, VTiles2 tile $5c
+	ld de, vTiles2 tile $5c
 	ld bc, 4 tiles
 	call CopyBytes
 	ld hl, PCSelectLZ
-	ld de, VTiles0 tile $00
+	ld de, vTiles0 tile $00
 	call Decompress
 	ld a, 6
 	call SkipMusic

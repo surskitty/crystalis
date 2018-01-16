@@ -32,29 +32,29 @@ TrainerPicnickerErin1:
 	end_if_just_battled
 	opentext
 	checkflag ENGINE_ERIN
-	iftrue UnknownScript_0x1a96da
+	iftrue ErinWantsBattle
 	checkcellnum PHONE_PICNICKER_ERIN
-	iftrue UnknownScript_0x1a975b
+	iftrue Rt46NumberAcceptedF
 	checkevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	iftrue UnknownScript_0x1a96c3
-	writetext UnknownText_0x1a98c6
+	iftrue .AskedAlready
+	writetext PicnickerErinAfterBattleText
 	buttonsound
 	setevent EVENT_ERIN_ASKED_FOR_PHONE_NUMBER
-	scall UnknownScript_0x1a974f
-	jump UnknownScript_0x1a96c6
+	scall Rt46AskNumber1F
+	jump .AskForNumber
 
-UnknownScript_0x1a96c3:
-	scall UnknownScript_0x1a9753
-UnknownScript_0x1a96c6:
+.AskedAlready:
+	scall Rt46AskNumber2F
+.AskForNumber:
 	askforphonenumber PHONE_PICNICKER_ERIN
-	if_equal $1, UnknownScript_0x1a9763
-	if_equal $2, UnknownScript_0x1a975f
+	if_equal $1, Rt46PhoneFullF
+	if_equal $2, Rt46NumberDeclinedF
 	trainertotext PICNICKER, ERIN1, $0
-	scall UnknownScript_0x1a9757
-	jump UnknownScript_0x1a975b
+	scall Rt46RegisteredNumberF
+	jump Rt46NumberAcceptedF
 
-UnknownScript_0x1a96da:
-	scall UnknownScript_0x1a9767
+ErinWantsBattle:
+	scall Rt46RematchF
 	winlosstext PicnickerErin1BeatenText, 0
 	copybytetovar wErinFightCount
 	if_equal 2, .Fight2
@@ -88,62 +88,62 @@ UnknownScript_0x1a96da:
 	reloadmapafterbattle
 	clearflag ENGINE_ERIN
 	checkevent EVENT_ERIN_CALCIUM
-	iftrue UnknownScript_0x1a973b
+	iftrue .HasCalcium
 	checkevent EVENT_GOT_CALCIUM_FROM_ERIN
-	iftrue UnknownScript_0x1a973a
-	scall UnknownScript_0x1a9772
+	iftrue .GotCalciumAlready
+	scall Rt46RematchGiftF
 	verbosegiveitem CALCIUM
-	iffalse UnknownScript_0x1a976b
+	iffalse ErinNoRoomForCalcium
 	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	jump UnknownScript_0x1a975b
+	jump Rt46NumberAcceptedF
 
-UnknownScript_0x1a973a:
+.GotCalciumAlready:
 	end
 
-UnknownScript_0x1a973b:
+.HasCalcium:
 	opentext
-	writetext UnknownText_0x1a9927
+	writetext PicnickerErin2BeatenText
 	waitbutton
 	verbosegiveitem CALCIUM
-	iffalse UnknownScript_0x1a976b
+	iffalse ErinNoRoomForCalcium
 	clearevent EVENT_ERIN_CALCIUM
 	setevent EVENT_GOT_CALCIUM_FROM_ERIN
-	jump UnknownScript_0x1a975b
+	jump Rt46NumberAcceptedF
 
-UnknownScript_0x1a974f:
+Rt46AskNumber1F:
 	jumpstd asknumber1f
 	end
 
-UnknownScript_0x1a9753:
+Rt46AskNumber2F:
 	jumpstd asknumber2f
 	end
 
-UnknownScript_0x1a9757:
+Rt46RegisteredNumberF:
 	jumpstd registerednumberf
 	end
 
-UnknownScript_0x1a975b:
+Rt46NumberAcceptedF:
 	jumpstd numberacceptedf
 	end
 
-UnknownScript_0x1a975f:
+Rt46NumberDeclinedF:
 	jumpstd numberdeclinedf
 	end
 
-UnknownScript_0x1a9763:
+Rt46PhoneFullF:
 	jumpstd phonefullf
 	end
 
-UnknownScript_0x1a9767:
+Rt46RematchF:
 	jumpstd rematchf
 	end
 
-UnknownScript_0x1a976b:
+ErinNoRoomForCalcium:
 	setevent EVENT_ERIN_CALCIUM
 	jumpstd packfullf
 	end
 
-UnknownScript_0x1a9772:
+Rt46RematchGiftF:
 	jumpstd rematchgiftf
 	end
 
@@ -219,7 +219,7 @@ PicnickerErin1BeatenText:
 	text "Oh, rats!"
 	done
 
-UnknownText_0x1a98c6:
+PicnickerErinAfterBattleText:
 	text "I've been to many"
 	line "GYMS, but the GYM"
 
@@ -230,7 +230,7 @@ UnknownText_0x1a98c6:
 	line "pretty flowers!"
 	done
 
-UnknownText_0x1a9927:
+PicnickerErin2BeatenText:
 	text "Aww… I keep losing"
 	line "all the time!"
 
@@ -256,22 +256,22 @@ Route46_MapEventHeader:
 
 .Warps:
 	db 3
-	warp_def $21, $7, 1, ROUTE_29_46_GATE
-	warp_def $21, $8, 2, ROUTE_29_46_GATE
-	warp_def $5, $e, 3, DARK_CAVE_VIOLET_ENTRANCE
+	warp_def 7, 33, 1, ROUTE_29_46_GATE
+	warp_def 8, 33, 2, ROUTE_29_46_GATE
+	warp_def 14, 5, 3, DARK_CAVE_VIOLET_ENTRANCE
 
 .CoordEvents:
 	db 0
 
 .BGEvents:
 	db 1
-	bg_event 27, 9, BGEVENT_READ, Route46Sign
+	bg_event 9, 27, BGEVENT_READ, Route46Sign
 
 .ObjectEvents:
 	db 6
-	object_event SPRITE_POKEFAN_M, 19, 12, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
-	object_event SPRITE_YOUNGSTER, 14, 4, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
-	object_event SPRITE_LASS, 13, 2, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
-	object_event SPRITE_FRUIT_TREE, 5, 7, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a978f, -1
-	object_event SPRITE_FRUIT_TREE, 6, 8, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a9791, -1
-	object_event SPRITE_POKE_BALL, 15, 1, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED
+	object_event 12, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerBailey, -1
+	object_event 4, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperTed, -1
+	object_event 2, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerErin1, -1
+	object_event 7, 5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a978f, -1
+	object_event 8, 6, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FruitTreeScript_0x1a9791, -1
+	object_event 1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route46XSpeed, EVENT_ROUTE_46_X_SPEED

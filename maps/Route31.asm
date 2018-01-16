@@ -24,8 +24,8 @@ Route31_MapScriptHeader:
 	specialphonecall SPECIALCALL_WORRIED
 	return
 
-TrainerBug_catcherWade1:
-	trainer EVENT_BEAT_BUG_CATCHER_WADE, BUG_CATCHER, WADE1, Bug_catcherWade1SeenText, Bug_catcherWade1BeatenText, 0, .Script
+TrainerBugCatcherWade1:
+	trainer EVENT_BEAT_BUG_CATCHER_WADE, BUG_CATCHER, WADE1, BugCatcherWade1SeenText, BugCatcherWade1BeatenText, 0, .Script
 
 .Script:
 	writecode VAR_CALLERID, PHONE_BUG_CATCHER_WADE
@@ -39,7 +39,7 @@ TrainerBug_catcherWade1:
 	iftrue .AcceptedNumberSTD
 	checkevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER
 	iftrue .AskAgain
-	writetext Bug_catcherWade1AfterText
+	writetext BugCatcherWade1AfterText
 	waitbutton
 	setevent EVENT_WADE_ASKED_FOR_PHONE_NUMBER
 	scall .AskPhoneNumberSTD
@@ -57,7 +57,7 @@ TrainerBug_catcherWade1:
 
 .WadeRematch:
 	scall .RematchSTD
-	winlosstext Bug_catcherWade1BeatenText, 0
+	winlosstext BugCatcherWade1BeatenText, 0
 	copybytetovar wWadeFightCount
 	if_equal 4, .Fight4
 	if_equal 3, .Fight3
@@ -274,17 +274,17 @@ Route31CooltrainerMText:
 	cont "explore it."
 	done
 
-Bug_catcherWade1SeenText:
+BugCatcherWade1SeenText:
 	text "I caught a bunch"
 	line "of #MON. Let me"
 	cont "battle with you!"
 	done
 
-Bug_catcherWade1BeatenText:
+BugCatcherWade1BeatenText:
 	text "Awwwww…"
 	done
 
-Bug_catcherWade1AfterText:
+BugCatcherWade1AfterText:
 	text "You can catch"
 	line "#MON even if"
 
@@ -422,24 +422,24 @@ Route31_MapEventHeader:
 
 .Warps:
 	db 3
-	warp_def $6, $4, 3, ROUTE_31_VIOLET_GATE
-	warp_def $7, $4, 4, ROUTE_31_VIOLET_GATE
-	warp_def $5, $22, 1, DARK_CAVE_VIOLET_ENTRANCE
+	warp_def 4, 6, 3, ROUTE_31_VIOLET_GATE
+	warp_def 4, 7, 4, ROUTE_31_VIOLET_GATE
+	warp_def 34, 5, 1, DARK_CAVE_VIOLET_ENTRANCE
 
 .CoordEvents:
 	db 0
 
 .BGEvents:
 	db 2
-	bg_event 5, 7, BGEVENT_READ, Route31Sign
-	bg_event 5, 31, BGEVENT_READ, DarkCaveSign
+	bg_event 7, 5, BGEVENT_READ, Route31Sign
+	bg_event 31, 5, BGEVENT_READ, DarkCaveSign
 
 .ObjectEvents:
 	db 7
-	object_event SPRITE_FISHER, 7, 17, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
-	object_event SPRITE_YOUNGSTER, 5, 9, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
-	object_event SPRITE_BUG_CATCHER, 13, 21, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBug_catcherWade1, -1
-	object_event SPRITE_COOLTRAINER_M, 8, 33, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
-	object_event SPRITE_FRUIT_TREE, 7, 16, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
-	object_event SPRITE_POKE_BALL, 5, 29, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
-	object_event SPRITE_POKE_BALL, 15, 19, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL
+	object_event 17, 7, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31MailRecipientScript, -1
+	object_event 9, 5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31YoungsterScript, -1
+	object_event 21, 13, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherWade1, -1
+	object_event 33, 8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31CooltrainerMScript, -1
+	object_event 16, 7, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route31FruitTree, -1
+	object_event 29, 5, SPRITE_POKE_BALL, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31Potion, EVENT_ROUTE_31_POTION
+	object_event 19, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route31PokeBall, EVENT_ROUTE_31_POKE_BALL

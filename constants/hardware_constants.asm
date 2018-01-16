@@ -1,4 +1,19 @@
-; Graciously aped from http://nocash.emubase.de/pandocs.htm .
+; Graciously aped from:
+; http://nocash.emubase.de/pandocs.htm
+; http://gameboy.mongenel.com/dmg/asmmemmap.html
+
+; memory map
+VRAM_Begin  EQU $8000
+VRAM_End    EQU $a000
+SRAM_Begin  EQU $a000
+SRAM_End    EQU $c000
+WRAM0_Begin EQU $c000
+WRAM0_End   EQU $d000
+WRAM1_Begin EQU $d000
+WRAM1_End   EQU $e000
+; hardware registers $ff00-$ff80 (see below)
+HRAM_Begin  EQU $ff80
+HRAM_End    EQU $ffff
 
 ; MBC3
 MBC3SRamEnable EQU $0000
@@ -35,12 +50,17 @@ OAM_X_FLIP    EQU 5
 OAM_Y_FLIP    EQU 6
 OAM_PRIORITY  EQU 7 ; 0: OBJ above BG, 1: OBJ behind BG (colors 1-3)
 
+; BG Map attribute flags
 PALETTE_MASK EQU %111
 VRAM_BANK_1  EQU 1 << OAM_TILE_BANK ; $08
 OBP_NUM      EQU 1 << OAM_OBP_NUM   ; $10
 X_FLIP       EQU 1 << OAM_X_FLIP    ; $20
 Y_FLIP       EQU 1 << OAM_Y_FLIP    ; $40
 BEHIND_BG    EQU 1 << OAM_PRIORITY  ; $80
+
+; Other useful constants
+LCDC_DEFAULT EQU %11100011
+LY_VBLANK    EQU 144
 
 ; Hardware registers
 rJOYP       EQU $ff00 ; Joypad (R/W)
@@ -99,6 +119,10 @@ rWave_d     EQU $ff3d
 rWave_e     EQU $ff3e
 rWave_f     EQU $ff3f
 rLCDC       EQU $ff40 ; LCD Control (R/W)
+rLCDC_SPRITES_ENABLE EQU 1 ; 0=Off, 1=On
+rLCDC_SPRITE_SIZE    EQU 2 ; 0=8x8, 1=8x16
+rLCDC_WINDOW_TILEMAP EQU 6 ; 0=9800-9BFF, 1=9C00-9FFF
+rLCDC_ENABLE         EQU 7 ; 0=Off, 1=On
 rSTAT       EQU $ff41 ; LCDC Status (R/W)
 rSCY        EQU $ff42 ; Scroll Y (R/W)
 rSCX        EQU $ff43 ; Scroll X (R/W)
@@ -121,8 +145,10 @@ rHDMA4      EQU $ff54 ; CGB Mode Only - New DMA Destination, Low
 rHDMA5      EQU $ff55 ; CGB Mode Only - New DMA Length/Mode/Start
 rRP         EQU $ff56 ; CGB Mode Only - Infrared Communications Port
 rBGPI       EQU $ff68 ; CGB Mode Only - Background Palette Index
+rBGPI_AUTO_INCREMENT EQU 7 ; increment rBGPI after write to rBGPD
 rBGPD       EQU $ff69 ; CGB Mode Only - Background Palette Data
 rOBPI       EQU $ff6a ; CGB Mode Only - Sprite Palette Index
+rOBPI_AUTO_INCREMENT EQU 7 ; increment rOBPI after write to rOBPD
 rOBPD       EQU $ff6b ; CGB Mode Only - Sprite Palette Data
 rUNKNOWN1   EQU $ff6c ; (FEh) Bit 0 (Read/Write) - CGB Mode Only
 rSVBK       EQU $ff70 ; CGB Mode Only - WRAM Bank

@@ -1,4 +1,4 @@
-map_header: macro
+map_header: MACRO
 ;\1: map label
 ;\2: tileset: a TILESET_* constant
 ;\3: environment: TOWN, ROUTE, INDOOR, CAVE, ENVIRONMENT_5, GATE, or DUNGEON
@@ -13,7 +13,7 @@ map_header: macro
 	db \4, \5
 	dn \6, \7
 	db \8
-endm
+ENDM
 
 MapGroupPointers::
 ; pointers to the first map header of each map group
@@ -382,7 +382,7 @@ MapGroup_Lavender:
 	map_header Route12SuperRodHouse, TILESET_HOUSE_1, INDOOR, ROUTE_12, MUSIC_VIRIDIAN_CITY, 0, PALETTE_DAY, FISHGROUP_SHORE
 
 
-MapGroup_Silver    :
+MapGroup_Silver:
 	map_header Route28, TILESET_KANTO, ROUTE, ROUTE_28, MUSIC_INDIGO_PLATEAU, 0, PALETTE_AUTO, FISHGROUP_POND
 	map_header SilverCaveOutside, TILESET_KANTO, TOWN, SILVER_CAVE, MUSIC_INDIGO_PLATEAU, 0, PALETTE_AUTO, FISHGROUP_POND
 	map_header SilverCavePokecenter1F, TILESET_POKECENTER, INDOOR, SILVER_CAVE, MUSIC_POKEMON_CENTER, 0, PALETTE_DAY, FISHGROUP_SHORE

@@ -59,7 +59,6 @@ HandlePlayerStep: ; d4e5 (3:54e5)
 	ret
 
 .Jumptable: ; d4f2 (3:54f2)
-
 	dw GetMovementPermissions
 	dw BufferScreen
 	dw .mobile
@@ -156,7 +155,7 @@ UpdateOverworldMap: ; d536 (3:5536)
 	ld a, [wBGMapAnchor + 1]
 	inc a
 	and $3
-	or HIGH(VBGMap0)
+	or HIGH(vBGMap0)
 	ld [wBGMapAnchor + 1], a
 .not_overflowed
 	ld hl, wMetatileStandingY
@@ -187,7 +186,7 @@ UpdateOverworldMap: ; d536 (3:5536)
 	ld a, [wBGMapAnchor + 1]
 	dec a
 	and $3
-	or HIGH(VBGMap0)
+	or HIGH(vBGMap0)
 	ld [wBGMapAnchor + 1], a
 .not_underflowed
 	ld hl, wMetatileStandingY

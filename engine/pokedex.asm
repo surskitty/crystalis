@@ -103,7 +103,7 @@ InitPokedex: ; 40063
 	ret
 
 Pokedex_CheckUnlockedUnownMode: ; 400a2
-	ld a, [StatusFlags]
+	ld a, [wStatusFlags]
 	bit 1, a
 	jr nz, .unlocked
 
@@ -184,7 +184,6 @@ Pokedex_RunJumptable: ; 4010b
 	call Pokedex_LoadPointer
 	jp hl
 
-
 .Jumptable: ; 40115 (10:4115)
 	dw Pokedex_InitMainScreen
 	dw Pokedex_UpdateMainScreen
@@ -200,7 +199,6 @@ Pokedex_RunJumptable: ; 4010b
 	dw Pokedex_InitUnownMode
 	dw Pokedex_UpdateUnownMode
 	dw Pokedex_Exit
-
 
 Pokedex_IncrementDexPointer: ; 40131 (10:4131)
 	ld hl, wJumptableIndex
@@ -828,7 +826,7 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 
 .decompress
 	ld hl, PokedexLZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	lb bc, BANK(PokedexLZ), $3a
 	call DecompressRequest2bpp
 
@@ -1623,12 +1621,10 @@ Pokedex_OrderMonsByMode: ; 40bdc
 	call Pokedex_LoadPointer
 	jp hl
 
-
 .Jumptable: ; 40bf0 (10:4bf0)
 	dw .NewMode
 	dw .OldMode
 	dw Pokedex_ABCMode
-
 
 .NewMode: ; 40bf6 (10:4bf6)
 	ld de, NewPokedexOrder
@@ -2354,8 +2350,8 @@ Pokedex_BlackOutBG: ; 41401 (10:5401)
 	push af
 	ld a, $5
 	ld [rSVBK], a
-	ld hl, UnknBGPals
-	ld bc, $40
+	ld hl, wBGPals1
+	ld bc, 8 palettes
 	xor a
 	call ByteFill
 	pop af
@@ -2402,7 +2398,7 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	ld a, [wd265]
 	ld [CurPartySpecies], a
 	call GetBaseData
-	ld de, VTiles2
+	ld de, vTiles2
 	predef GetMonFrontpic
 	ret
 
@@ -2410,7 +2406,7 @@ Pokedex_LoadSelectedMonTiles: ; 4143b
 	ld a, BANK(sScratch)
 	call GetSRAMBank
 	farcall LoadQuestionMarkPic
-	ld hl, VTiles2
+	ld hl, vTiles2
 	ld de, sScratch
 	ld c, 7 * 7
 	ld a, [hROMBank]
@@ -2445,7 +2441,7 @@ Pokedex_LoadAnyFootprint: ; 4147b
 	push hl
 	ld e, l
 	ld d, h
-	ld hl, VTiles2 tile $62
+	ld hl, vTiles2 tile $62
 	lb bc, BANK(Footprints), 2
 	call Request1bpp
 	pop hl
@@ -2457,7 +2453,7 @@ Pokedex_LoadAnyFootprint: ; 4147b
 
 	ld e, l
 	ld d, h
-	ld hl, VTiles2 tile $64
+	ld hl, vTiles2 tile $64
 	lb bc, BANK(Footprints), 2
 	call Request1bpp
 
@@ -2466,13 +2462,13 @@ Pokedex_LoadAnyFootprint: ; 4147b
 
 Pokedex_LoadGFX: ; 414b7
 	call DisableLCD
-	ld hl, VTiles2
+	ld hl, vTiles2
 	ld bc, $31 tiles
 	xor a
 	call ByteFill
 	call Pokedex_LoadInvertedFont
 	call LoadFontsExtra
-	ld hl, VTiles2 tile $60
+	ld hl, vTiles2 tile $60
 	ld bc, $20 tiles
 	call Pokedex_InvertTiles
 	call Pokedex_CheckSGB
@@ -2482,12 +2478,12 @@ Pokedex_LoadGFX: ; 414b7
 
 .LoadPokedexLZ:
 	ld hl, PokedexLZ
-	ld de, VTiles2 tile $31
+	ld de, vTiles2 tile $31
 	call Decompress
 
 .LoadPokedexSlowpokeLZ:
 	ld hl, PokedexSlowpokeLZ
-	ld de, VTiles0
+	ld de, vTiles0
 	call Decompress
 	ld a, 6
 	call SkipMusic
@@ -2496,7 +2492,7 @@ Pokedex_LoadGFX: ; 414b7
 
 Pokedex_LoadInvertedFont: ; 414fb
 	call LoadStandardFont
-	ld hl, VTiles1
+	ld hl, vTiles1
 	ld bc, $80 tiles
 
 Pokedex_InvertTiles: ; 41504
@@ -2536,7 +2532,7 @@ Pokedex_LoadUnownFont: ; 41a2c
 	ld bc, 27 tiles
 	call Pokedex_InvertTiles
 	ld de, sScratch + $188
-	ld hl, VTiles2 tile $40
+	ld hl, vTiles2 tile $40
 	lb bc, BANK(Pokedex_LoadUnownFont), 27
 	call Request2bpp
 	call CloseSRAM
@@ -2555,7 +2551,7 @@ Pokedex_LoadUnownFrontpicTiles: ; 41a58 (10:5a58)
 	ld a, UNOWN
 	ld [CurPartySpecies], a
 	call GetBaseData
-	ld de, VTiles2 tile $00
+	ld de, vTiles2 tile $00
 	predef GetMonFrontpic
 	pop af
 	ld [UnownLetter], a
@@ -2585,7 +2581,7 @@ _NewPokedexEntry: ; 41a7f
 	call EnableLCD
 	call WaitBGMap
 	call GetBaseData
-	ld de, VTiles2
+	ld de, vTiles2
 	predef GetMonFrontpic
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout

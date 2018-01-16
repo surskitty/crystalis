@@ -26,13 +26,13 @@ _TitleScreen: ; 10ed67
 
 ; Decompress running Suicune gfx
 	ld hl, TitleSuicuneGFX
-	ld de, VTiles1
+	ld de, vTiles1
 	call Decompress
 
 
 ; Clear screen palettes
 	hlbgcoord 0, 0
-	ld bc, 20 bgrows
+	ld bc, 20 * BG_MAP_WIDTH
 	xor a
 	call ByteFill
 
@@ -42,8 +42,8 @@ _TitleScreen: ; 10ed67
 ; BG Map 1:
 
 ; line 0 (copyright)
-	hlbgcoord 0, 0, VBGMap1
-	ld bc, 1 bgrows
+	hlbgcoord 0, 0, vBGMap1
+	ld bc, BG_MAP_WIDTH
 	ld a, 7 ; palette
 	call ByteFill
 
@@ -54,27 +54,27 @@ _TitleScreen: ; 10ed67
 
 ; lines 3-4
 	hlbgcoord 0, 3
-	ld bc, 2 bgrows
+	ld bc, 2 * BG_MAP_WIDTH
 	ld a, 2
 	call ByteFill
 ; line 5
 	hlbgcoord 0, 5
-	ld bc, 1 bgrows
+	ld bc, BG_MAP_WIDTH
 	ld a, 3
 	call ByteFill
 ; line 6
 	hlbgcoord 0, 6
-	ld bc, 1 bgrows
+	ld bc, BG_MAP_WIDTH
 	ld a, 4
 	call ByteFill
 ; line 7
 	hlbgcoord 0, 7
-	ld bc, 1 bgrows
+	ld bc, BG_MAP_WIDTH
 	ld a, 5
 	call ByteFill
 ; lines 8-9
 	hlbgcoord 0, 8
-	ld bc, 2 bgrows
+	ld bc, 2 * BG_MAP_WIDTH
 	ld a, 6
 	call ByteFill
 
@@ -87,8 +87,8 @@ _TitleScreen: ; 10ed67
 
 ; Suicune gfx
 	hlbgcoord 0, 12
-	ld bc, 6 bgrows ; the rest of the screen
-	ld a, 8
+	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
 	call ByteFill
 
 
@@ -99,18 +99,18 @@ _TitleScreen: ; 10ed67
 
 ; Decompress logo
 	ld hl, TitleLogoGFX
-	ld de, VTiles1
+	ld de, vTiles1
 	call Decompress
 
 ; Decompress background crystal
 	ld hl, TitleCrystalGFX
-	ld de, VTiles0
+	ld de, vTiles0
 	call Decompress
 
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
-	ld bc, 64 bgrows
+	ld bc, 64 * BG_MAP_WIDTH
 	ld a, " "
 	call ByteFill
 
@@ -122,7 +122,7 @@ _TitleScreen: ; 10ed67
 	call DrawTitleGraphic
 
 ; Draw copyright text
-	hlbgcoord 3, 0, VBGMap1
+	hlbgcoord 3, 0, vBGMap1
 	lb bc, 1, 13
 	ld d, $c
 	ld e, $10
@@ -144,12 +144,12 @@ _TitleScreen: ; 10ed67
 
 ; Update palette colors
 	ld hl, TitleScreenPalettes
-	ld de, UnknBGPals
+	ld de, wBGPals1
 	ld bc, 16 palettes
 	call CopyBytes
 
 	ld hl, TitleScreenPalettes
-	ld de, BGPals
+	ld de, wBGPals2
 	ld bc, 16 palettes
 	call CopyBytes
 
@@ -201,7 +201,7 @@ _TitleScreen: ; 10ed67
 
 ; Set sprite size to 8x16
 	ld a, [rLCDC]
-	set 2, a
+	set rLCDC_SPRITE_SIZE, a
 	ld [rLCDC], a
 
 	ld a, +112
@@ -220,7 +220,7 @@ _TitleScreen: ; 10ed67
 	ld [hBGMapMode], a
 
 	xor a
-	ld [UnknBGPals + 2], a
+	ld [wBGPals1 + 2], a
 
 ; Play starting sound effect
 	call SFXChannelsOff
@@ -231,7 +231,7 @@ _TitleScreen: ; 10ed67
 ; 10eea7
 
 SuicuneFrameIterator: ; 10eea7
-	ld hl, UnknBGPals + 2
+	ld hl, wBGPals1 + 2
 	ld a, [hl]
 	ld c, a
 	inc [hl]
@@ -260,10 +260,10 @@ SuicuneFrameIterator: ; 10eea7
 ; 10eece
 
 .Frames: ; 10eece
-	db $80 ; VTiles4 tile $00
-	db $88 ; VTiles4 tile $08
-	db $00 ; VTiles5 tile $00
-	db $08 ; VTiles5 tile $08
+	db $80 ; vTiles4 tile $00
+	db $88 ; vTiles4 tile $08
+	db $00 ; vTiles5 tile $00
+	db $08 ; vTiles5 tile $08
 ; 10eed2
 
 
