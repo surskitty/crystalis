@@ -6,13 +6,20 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 
 ## Major Changes
 - Pok&eacute;mon locations and level-up movesets; all Pok&eacute;mon are available eventually and most should be at least usable.
+- Trade evolutions can be obtained by either using the item required or by levelling up: 28 for alakazam, 36 for machamp, and 33 for golem and gengar.
+- Buena's password now gives evolution items.
+- Some trainers who call you to give you items have been altered.
+- A few trainers have been added.
+- Mareep is obtainable before the first gym, like in HGSS.
+
+## Battle Changes
 - Ghost is now a Special type and Dark is Physical.
 - Poison is super-effective against Bug, just as it was in gen I.
 - Base stat adjustments, mostly of single-stage pokemon.
-- Trade evolutions can be obtained by either using the item required or by levelling up: 28 for alakazam, 36 for machamp, and 33 for golem and gengar.
 - Absorb is now base power 40, Mega Drain 60, and Giga Drain and Leech Life are 80.
 - The Fairy type, complete with the moves Fairy Wind and Moonblast.
 - Growth and Kinesis now affect stats by two levels.
 - The moves Captivate and Fake Tears have been added.
 - Egg moves have been updated!  All PCNY event moves should be obtainable, as are egg moves added in later games.
 - Psywave has been removed and replaced with Silver Wind.
+
