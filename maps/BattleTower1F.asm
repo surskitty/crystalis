@@ -120,6 +120,20 @@ Script_WalkToBattleTowerElevator:
 	end
 
 Script_GivePlayerHisPrize: ; 0x9e47a
+	checkitem BLUE_CARD
+	iffalse .VanillaPrizes
+	checkcode VAR_BLUECARDBALANCE
+	if_equal 30, .VanillaPrizes
+	addvar 1
+	writevarcode VAR_BLUECARDBALANCE
+	waitsfx
+	playsound SFX_TRANSACTION
+	writebyte BATTLETOWERACTION_1D
+	special Special_BattleTowerAction
+	closetext
+	end
+
+.VanillaPrizes
 	writebyte BATTLETOWERACTION_1C
 	special Special_BattleTowerAction
 	writebyte BATTLETOWERACTION_GIVEREWARD
