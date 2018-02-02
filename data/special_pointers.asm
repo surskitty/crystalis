@@ -7,7 +7,7 @@ add_special: MACRO
 ENDM
 
 SpecialsPointers:: ; c029
-	add_special WarpToSpawnPoint
+	add_special Special_WarpToSpawnPoint
 
 ; Communications
 	add_special Special_SetBitsForLinkTradeRequest
@@ -17,7 +17,7 @@ SpecialsPointers:: ; c029
 	add_special Special_CheckBothSelectedSameRoom
 	add_special Special_FailedLinkToPast
 	add_special Special_CloseLink
-	add_special WaitForOtherPlayerToExit
+	add_special Special_WaitForOtherPlayerToExit
 	add_special Special_SetBitsForBattleRequest
 	add_special Special_SetBitsForTimeCapsuleRequest
 	add_special Special_CheckTimeCapsuleCompatibility
@@ -31,154 +31,154 @@ SpecialsPointers:: ; c029
 	add_special Special_UnlockMysteryGift
 
 ; Map Events
-	add_special BugContestJudging
-	add_special CheckPartyFullAfterContest
-	add_special ContestDropOffMons
-	add_special ContestReturnMons
+	add_special Special_BugContestJudging
+	add_special Special_CheckPartyFullAfterContest
+	add_special Special_ContestDropOffMons
+	add_special Special_ContestReturnMons
 	add_special Special_GiveParkBalls
 	add_special Special_CheckMagikarpLength
 	add_special Special_MagikarpHouseSign
-	add_special HealParty
-	add_special PokemonCenterPC
+	add_special HealParty ; this is both a special and a predef
+	add_special Special_PokemonCenterPC
 	add_special Special_KrissHousePC
 	add_special Special_DayCareMan
 	add_special Special_DayCareLady
 	add_special Special_DayCareManOutside
-	add_special MoveDeletion
+	add_special Special_MoveDeletion
 	add_special Special_BankOfMom
 	add_special Special_MagnetTrain
-	add_special SpecialNameRival
+	add_special Special_NameRival
 	add_special Special_SetDayOfWeek
 	add_special Special_TownMap
 	add_special Special_UnownPrinter
-	add_special MapRadio
+	add_special Special_MapRadio
 	add_special Special_UnownPuzzle
 	add_special Special_SlotMachine
 	add_special Special_CardFlip
 	add_special Special_DummyNonfunctionalGameCornerGame
 	add_special Special_ClearBGPalettesBufferScreen
-	add_special FadeOutPalettes
+	add_special Special_FadeOutPalettes
 	add_special Special_BattleTowerFade
 	add_special Special_FadeBlackQuickly
-	add_special FadeInPalettes
+	add_special Special_FadeInPalettes
 	add_special Special_FadeInQuickly
-	add_special Special_ReloadSpritesNoPalettes
-	add_special ClearBGPalettes
-	add_special UpdateTimePals
-	add_special ClearTileMap
-	add_special UpdateSprites
-	add_special ReplaceKrisSprite
+	add_special ReloadSpritesNoPalettes ; bank 0
+	add_special ClearBGPalettes ; bank 0
+	add_special UpdateTimePals ; bank 0
+	add_special ClearTileMap ; bank 0
+	add_special UpdateSprites ; bank 0
+	add_special ReplaceKrisSprite ; bank 0
 	add_special Special_GameCornerPrizeMonCheckDex
-	add_special SpecialSeenMon
-	add_special WaitSFX
-	add_special PlayMapMusic
-	add_special RestartMapMusic
-	add_special HealMachineAnim
+	add_special UnusedSpecial_SeenMon
+	add_special WaitSFX ; bank 0
+	add_special PlayMapMusic ; bank 0
+	add_special RestartMapMusic ; bank 0
+	add_special Special_HealMachineAnim
 	add_special Special_SurfStartStep
 	add_special Special_FindGreaterThanThatLevel
 	add_special Special_FindAtLeastThatHappy
 	add_special Special_FindThatSpecies
 	add_special Special_FindThatSpeciesYourTrainerID
-	add_special Special_CheckUnusedTwoDayTimer ; unreferenced
+	add_special UnusedSpecial_CheckUnusedTwoDayTimer
 	add_special Special_DayCareMon1
 	add_special Special_DayCareMon2
 	add_special Special_SelectRandomBugContestContestants
 	add_special Special_ActivateFishingSwarm
-	add_special ToggleMaptileDecorations
-	add_special ToggleDecorationsVisibility
-	add_special SpecialGiveShuckle
-	add_special SpecialReturnShuckle
+	add_special Special_ToggleMaptileDecorations
+	add_special Special_ToggleDecorationsVisibility
+	add_special Special_GiveShuckle
+	add_special Special_ReturnShuckle
 	add_special Special_BillsGrandfather
-	add_special SpecialCheckPokerus
+	add_special Special_CheckPokerus
 	add_special Special_DisplayCoinCaseBalance
 	add_special Special_DisplayMoneyAndCoinBalance
-	add_special PlaceMoneyTopRight
+	add_special Special_PlaceMoneyTopRight
 	add_special Special_CheckForLuckyNumberWinners
 	add_special Special_CheckLuckyNumberShowFlag
 	add_special Special_ResetLuckyNumberShowFlag
 	add_special Special_PrintTodaysLuckyNumber
 	add_special Special_SelectApricornForKurt
-	add_special SpecialNameRater
+	add_special Special_NameRater
 	add_special Special_DisplayLinkRecord
-	add_special GetFirstPokemonHappiness
-	add_special CheckFirstMonIsEgg
-	add_special RandomUnseenWildMon
-	add_special RandomPhoneWildMon
-	add_special RandomPhoneMon
-	add_special MapCallbackSprites_LoadUsedSpritesGFX
-	add_special PlaySlowCry
-	add_special SpecialSnorlaxAwake
+	add_special Special_GetFirstPokemonHappiness
+	add_special Special_CheckFirstMonIsEgg
+	add_special Special_RandomUnseenWildMon
+	add_special Special_RandomPhoneWildMon
+	add_special Special_RandomPhoneMon
+	add_special Special_LoadUsedSpritesGFX
+	add_special Special_PlaySlowCry
+	add_special Special_SnorlaxAwake
 	add_special Special_YoungerHaircutBrother
 	add_special Special_OlderHaircutBrother
 	add_special Special_DaisyMassage
-	add_special PlayCurMonCry
-	add_special ProfOaksPCBoot
-	add_special SpecialGameboyCheck
-	add_special SpecialTrainerHouse
-	add_special PhotoStudio
-	add_special InitRoamMons
+	add_special Special_PlayCurMonCry
+	add_special Special_ProfOaksPCBoot
+	add_special Special_GameboyCheck
+	add_special Special_TrainerHouse
+	add_special Special_PhotoStudio
+	add_special Special_InitRoamMons
 	add_special Special_FadeOutMusic
-	add_special Diploma
-	add_special PrintDiploma
+	add_special Special_Diploma
+	add_special Special_PrintDiploma
 
 	; Crystal
-	add_special Function11ac3e
-	add_special Function11b444
-	add_special Function11b5e8
-	add_special Function11b7e5
-	add_special Function11b879
-	add_special Function11b920
-	add_special Function11b93b
-	add_special BattleTowerRoomMenu
-	add_special Function1700ba
-	add_special Function170114
-	add_special BattleTowerBattle
-	add_special Function1704e1
-	add_special EmptySpecial_17021d
-	add_special Function_LoadOpponentTrainerAndPokemonsWithOTSprite
-	add_special Function11ba38
-	add_special SpecialCheckForBattleTowerRules
+	add_special Special_Function11ac3e
+	add_special Special_Function11b444
+	add_special Special_Function11b5e8
+	add_special Special_Function11b7e5
+	add_special Special_Function11b879
+	add_special Special_Function11b920
+	add_special Special_Function11b93b
+	add_special Special_BattleTowerRoomMenu
+	add_special Special_Function1700ba
+	add_special Special_Function170114
+	add_special Special_BattleTowerBattle
+	add_special UnusedSpecial_Function1704e1
+	add_special DummySpecial_17021d
+	add_special Special_LoadOpponentTrainerAndPokemonWithOTSprite
+	add_special Special_Function11ba38
+	add_special Special_CheckForBattleTowerRules
 	add_special Special_GiveOddEgg
-	add_special Reset
-	add_special Function1011f1
-	add_special Function101220
-	add_special Function101225
-	add_special Function101231
+	add_special Reset ; bank 0
+	add_special Special_Function1011f1
+	add_special Special_Function101220
+	add_special Special_Function101225
+	add_special Special_Function101231
 	add_special Special_MoveTutor
-	add_special SpecialOmanyteChamber
-	add_special Function11c1ab
-	add_special BattleTowerAction
+	add_special Special_OmanyteChamber
+	add_special Special_Function11c1ab
+	add_special Special_BattleTowerAction
 	add_special Special_DisplayUnownWords
 	add_special Special_Menu_ChallengeExplanationCancel
-	add_special Function17d2b6
-	add_special Function17d2ce
-	add_special BattleTowerMobileError
-	add_special AskMobileOrCable
-	add_special SpecialHoOhChamber
-	add_special Function102142
+	add_special Special_Function17d2b6
+	add_special Special_Function17d2ce
+	add_special Special_BattleTowerMobileError
+	add_special Special_AskMobileOrCable
+	add_special Special_HoOhChamber
+	add_special Special_Function102142
 	add_special Special_CelebiShrineEvent
-	add_special CheckCaughtCelebi
-	add_special SpecialPokeSeer
-	add_special SpecialBuenasPassword
-	add_special SpecialBuenaPrize
-	add_special SpecialDratini
+	add_special Special_CheckCaughtCelebi
+	add_special Special_PokeSeer
+	add_special Special_BuenasPassword
+	add_special Special_BuenaPrize
+	add_special Special_Dratini
 	add_special Special_SampleKenjiBreakCountdown
-	add_special SpecialBeastsCheck
-	add_special SpecialMonCheck
+	add_special Special_BeastsCheck
+	add_special Special_MonCheck
 	add_special Special_SetPlayerPalette
-	add_special ret_170bd2
-	add_special Mobile_SelectThreeMons
-	add_special Function1037eb
-	add_special Function10383c
-	add_special TrainerRankings_Healings
-	add_special RefreshSprites
-	add_special Function1037c2
-	add_special Mobile_DummyReturnFalse
-	add_special Function103780
-	add_special Function10387b
-	add_special AskRememberPassword
-	add_special LoadMapPalettes
-	add_special FindItemInPCOrBag
+	add_special DummySpecial_170bd2
+	add_special Special_Mobile_SelectThreeMons
+	add_special Special_Function1037eb
+	add_special Special_Function10383c
+	add_special Special_StubbedTrainerRankings_Healings
+	add_special Special_RefreshSprites
+	add_special Special_Function1037c2
+	add_special Special_Mobile_DummyReturnFalse
+	add_special Special_Function103780
+	add_special Special_Function10387b
+	add_special Special_AskRememberPassword
+	add_special Special_LoadMapPalettes
+	add_special UnusedSpecial_FindItemInPCOrBag
 	add_special Special_InitialSetDSTFlag
 	add_special Special_InitialClearDSTFlag
 	add_special SpecialStationaryRespawns

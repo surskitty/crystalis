@@ -311,7 +311,7 @@ BattleAnim_Captivate:
 
 BattleAnim_FakeTears: 
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_OBJECTS
-	anim_obj ANIM_OBJ_A5,   8, 4,   9, 0, $0
+	anim_obj ANIM_OBJ_CURSE,   8, 4,   9, 0, $0
 	anim_sound 0, 0, SFX_CURSE
 	anim_wait 32
 	anim_incobj  1
@@ -320,15 +320,15 @@ BattleAnim_FakeTears:
 	anim_bgeffect ANIM_BG_07, $0, $0, $0
 .loop
 	anim_sound 0, 0, SFX_METRONOME
-	anim_obj ANIM_OBJ_9D,   3, 0,   8, 0, $0
+	anim_obj ANIM_OBJ_GLIMMER,   3, 0,   8, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_9D,   7, 0,  13, 0, $0
+	anim_obj ANIM_OBJ_GLIMMER,   7, 0,  13, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_9D,   3, 0,  13, 0, $0
+	anim_obj ANIM_OBJ_GLIMMER,   3, 0,  13, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_9D,   7, 0,   8, 0, $0
+	anim_obj ANIM_OBJ_GLIMMER,   7, 0,   8, 0, $0
 	anim_wait 5
-	anim_obj ANIM_OBJ_9D,   5, 0,  10, 4, $0
+	anim_obj ANIM_OBJ_GLIMMER,   5, 0,  10, 4, $0
 	anim_wait 5
 	anim_loop 2, .loop
 	anim_wait 32

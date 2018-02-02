@@ -4719,7 +4719,6 @@ GruntMGroup:
 
 	; party
 	db 30, KOFFING
->>>>>>> 7547ad839cf1c8141b931d08ef16a894e7db68c9
 
 	db -1 ; end
 
