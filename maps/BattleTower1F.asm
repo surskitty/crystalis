@@ -46,10 +46,10 @@ MapBattleTower1FSignpost0Script:
 	opentext
 	writetext Text_ReadBattleTowerRules
 	yesorno
-	iffalse UnknownScript_0x9e3e0
+	iffalse .SkipRules
 	writetext Text_BattleTowerRules
 	waitbutton
-UnknownScript_0x9e3e0:
+.SkipRules:
 	closetext
 	end
 
@@ -144,7 +144,7 @@ Script_BattleTowerIntroductionYesNo: ; 0x9e49e
 	yesorno
 	iffalse Script_BattleTowerSkipExplanation
 Script_BattleTowerExplanation: ; 0x9e4a5
-	writetext Text_BattleTowerIntroduction_2
+	writetext Text_BattleTowerIntroduction
 Script_BattleTowerSkipExplanation:
 	writebyte BATTLETOWERACTION_SET_EXPLANATION_READ
 	special Special_BattleTowerAction
@@ -156,74 +156,10 @@ Script_BattleTowerHopeToServeYouAgain:
 	closetext
 	end
 
-UnreferencedScript_0x9e4b6:
-	special Special_BattleTowerMobileError
-	closetext
-	end
-
 Script_WaitButton: ; 0x9e4bb
 	waitbutton
 	closetext
 	end
-
-UnreferencedScript_0x9e4be:
-	writetext Text_SaveBeforeEnteringBattleRoom
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	special Special_TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	writebyte BATTLETOWERACTION_SET_EXPLANATION_READ
-	special Special_BattleTowerAction
-	special Special_Function1700ba
-	if_equal $a, Script_Menu_ChallengeExplanationCancel
-	if_not_equal $0, Script_MobileError
-	writetext Text_ReceivedAListOfLeadersOnTheHonorRoll
-	spriteface BATTLETOWER1F_RECEPTIONIST, LEFT
-	writetext Text_PleaseConfirmOnThisMonitor
-	waitbutton
-	spriteface BATTLETOWER1F_RECEPTIONIST, DOWN
-	closetext
-	end
-
-UnreferencedScript_0x9e4ea:
-	writebyte BATTLETOWERACTION_LEVEL_CHECK
-	special Special_BattleTowerAction
-	if_not_equal $0, Script_APkmnLevelExceeds
-	writebyte BATTLETOWERACTION_UBERS_CHECK
-	special Special_BattleTowerAction
-	if_not_equal $0, Script_MayNotEnterABattleRoomUnderL70
-	special Special_CheckForBattleTowerRules
-	if_not_equal FALSE, Script_WaitButton
-	writebyte BATTLETOWERACTION_05
-	special Special_BattleTowerAction
-	if_equal $0, .zero
-	writetext Text_CantBeRegistered_PreviousRecordDeleted
-	jump continue
-
-.zero
-	writetext Text_CantBeRegistered
-continue:
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	writetext Text_SaveBeforeReentry
-	yesorno
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene 0
-	special Special_TryQuickSave
-	iffalse Script_Menu_ChallengeExplanationCancel
-	setscene 1
-	writebyte BATTLETOWERACTION_06
-	special Special_BattleTowerAction
-	writebyte BATTLETOWERACTION_12
-	special Special_BattleTowerAction
-	writetext Text_RightThisWayToYourBattleRoom
-	waitbutton
-	jump Script_ResumeBattleTowerChallenge
-
-UnreferencedScript_0x9e53b:
-	writetext Text_FiveDayBattleLimit_Mobile
-	waitbutton
-	jump Script_BattleTowerHopeToServeYouAgain
 
 Script_APkmnLevelExceeds: ; 0x9e542
 	writetext Text_APkmnLevelExceeds
@@ -366,67 +302,7 @@ Text_RightThisWayToYourBattleRoom: ; 0x9e60a
 	line "your BATTLE ROOM."
 	done
 
-Text_BattleTowerIntroduction_1: ; 0x9e62f
-	text "BATTLE TOWER is a"
-	line "facility made for"
-	cont "#MON battles."
-
-	para "Countless #MON"
-	line "trainers gather"
-
-	para "from all over to"
-	line "hold battles in"
-
-	para "specially designed"
-	line "BATTLE ROOMS."
-
-	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
-
-	para "Each ROOM holds"
-	line "seven trainers."
-
-	para "If you defeat the"
-	line "seven in a ROOM,"
-
-	para "and you have a"
-	line "good record, you"
-
-	para "could become the"
-	line "ROOM's LEADER."
-
-	para "All LEADERS will"
-	line "be recorded in the"
-
-	para "HONOR ROLL for"
-	line "posterity."
-
-	para "You may challenge"
-	line "in up to five"
-
-	para "BATTLE ROOMS each"
-	line "day."
-
-	para "However, you may"
-	line "battle only once a"
-
-	para "day in any given"
-	line "ROOM."
-
-	para "To interrupt a"
-	line "session, you must"
-
-	para "SAVE. If not, you"
-	line "won't be able to"
-
-	para "resume your ROOM"
-	line "challenge."
-
-	para ""
-	done
-
-Text_BattleTowerIntroduction_2: ; 0x9e886
+Text_BattleTowerIntroduction: ; 0x9e886
 	text "BATTLE TOWER is a"
 	line "facility made for"
 	cont "#MON battles."
@@ -462,19 +338,6 @@ Text_BattleTowerIntroduction_2: ; 0x9e886
 	para ""
 	done
 
-Text_ReceivedAListOfLeadersOnTheHonorRoll: ; 0x9e9eb
-	text "Received a list of"
-	line "LEADERS on the"
-	cont "HONOR ROLL."
-
-	para ""
-	done
-
-Text_PleaseConfirmOnThisMonitor: ; 0x9ea1b
-	text "Please confirm on"
-	line "this monitor."
-	done
-
 Text_ThankYou: ; 0x9ea3c
 	text "Thank you!"
 
@@ -484,24 +347,6 @@ Text_ThankYou: ; 0x9ea3c
 Text_ThanksForVisiting: ; 0x9ea49
 	text "Thanks for"
 	line "visiting!"
-	done
-
-Text_BeatenAllTheTrainers_Mobile:
-	text "Congratulations!"
-
-	para "You've beaten all"
-	line "the trainers!"
-
-	para "Your feat may be"
-	line "worth registering,"
-
-	para "<PLAYER>. With your"
-	line "results, you may"
-
-	para "be chosen as a"
-	line "ROOM LEADER."
-
-	para ""
 	done
 
 Text_CongratulationsYouveBeatenAllTheTrainers: ; 0x9eaef
@@ -514,14 +359,6 @@ Text_CongratulationsYouveBeatenAllTheTrainers: ; 0x9eaef
 	line "this great prize!"
 
 	para ""
-	done
-
-Text_AskRegisterRecord_Mobile:
-	text "Would you like to"
-	line "register your"
-
-	para "record with the"
-	line "CENTER?"
 	done
 
 Text_PlayerGotFive: ; 0x9eb7e
@@ -582,11 +419,6 @@ Text_CantBeRegistered_PreviousRecordDeleted:
 	para "Also, the existing"
 	line "record will be"
 	cont "deleted. OK?"
-	done
-
-Text_CheckTheLeaderHonorRoll: ; 0x9ed1e
-	text "Check the LEADER"
-	line "HONOR ROLL?"
 	done
 
 Text_ReadBattleTowerRules: ; 0x9ed3c
@@ -675,61 +507,12 @@ Text_CancelYourBattleRoomChallenge: ; 0x9efbf
 	line "ROOM challenge?"
 	done
 
-Text_RegisterRecordOnFile_Mobile:
-	text "We have your"
-	line "previous record on"
-
-	para "file. Would you"
-	line "like to register"
-	cont "it at the CENTER?"
-	done
-
 Text_WeveBeenWaitingForYou:
 	text "We've been waiting"
 	line "for you. This way"
 
 	para "to a BATTLE ROOM,"
 	line "please."
-	done
-
-Text_FiveDayBattleLimit_Mobile:
-	text "You may enter only"
-	line "five BATTLE ROOMS"
-	cont "each day."
-
-	para "Please come back"
-	line "tomorrow."
-	done
-
-Text_TooMuchTimeElapsedNoRegister: ; 0x9f0c1
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your"
-	line "current record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
-	done
-
-; a dupe?
-Text_RegisterRecordTimedOut_Mobile:
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your most"
-	line "recent record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
 	done
 
 Text_APkmnLevelExceeds: ; 0x9f1e5
