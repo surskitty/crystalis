@@ -140,7 +140,7 @@ DoPlayerMovement:: ; 80000
 
 .water
 	ld a, c
-	and 3
+	maskbits NUM_DIRECTIONS
 	ld c, a
 	ld b, 0
 	ld hl, .water_table
@@ -244,7 +244,7 @@ DoPlayerMovement:: ; 80000
 	ld a, [PlayerDirection]
 	rrca
 	rrca
-	and 3
+	maskbits NUM_DIRECTIONS
 	cp e
 	jr z, .not_turning
 
@@ -318,7 +318,7 @@ DoPlayerMovement:: ; 80000
 	scf
 	ret
 
-; unused?
+; unused
 	xor a
 	ret
 
@@ -432,7 +432,7 @@ DoPlayerMovement:: ; 80000
 	ld a, [PlayerDirection]
 	rrca
 	rrca
-	and 3
+	maskbits NUM_DIRECTIONS
 	cp e
 	jr nz, .not_warp
 	call WarpCheck
@@ -561,7 +561,7 @@ DoPlayerMovement:: ; 80000
 	cp 0
 	ret z
 
-	and 3
+	maskbits NUM_DIRECTIONS
 	ld e, a
 	ld d, 0
 	ld hl, .forced_dpad

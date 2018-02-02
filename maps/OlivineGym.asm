@@ -2,7 +2,7 @@ const_value set 2
 	const OLIVINEGYM_JASMINE
 	const OLIVINEGYM_GYM_GUY
 
-OlivineGym_MapScriptHeader:
+OlivineGym_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -20,7 +20,7 @@ JasmineScript_0x9c12f:
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .Rematch
 	winlosstext Jasmine_BetterTrainer, 0
-	loadtrainer JASMINE, 1
+	loadtrainer JASMINE, JASMINE1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JASMINE
@@ -107,7 +107,7 @@ OlivineGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext JASMINE, 1, $1
+	trainertotext JASMINE, JASMINE1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 Jasmine_SteelTypeIntro:
@@ -221,7 +221,7 @@ OlivineGymGuyPreText:
 	cont "sionate."
 	done
 
-OlivineGym_MapEventHeader:
+OlivineGym_MapEvents:
 	; filler
 	db 0, 0
 

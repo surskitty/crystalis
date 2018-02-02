@@ -8,7 +8,7 @@ const_value set 2
 	const MOUNTMORTAR2FINSIDE_SUPER_NERD
 	const MOUNTMORTAR2FINSIDE_MOLTRES
 
-MountMortar2FInside_MapScriptHeader:
+MountMortar2FInside_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -80,8 +80,7 @@ MountMortar2FInsideEscapeRope:
 	itemball ESCAPE_ROPE
 
 MountMortar2FInsideHiddenFullRestore:
-	dwb EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE, FULL_RESTORE
-
+	hiddenitem EVENT_MOUNT_MORTAR_2F_INSIDE_HIDDEN_FULL_RESTORE, FULL_RESTORE
 
 SupernerdHughSeenText:
 	text "Yo! MARKUS!"
@@ -103,7 +102,7 @@ SupernerdHughAfterBattleText:
 	line "use STRENGTH?"
 	done
 
-MountMortar2FInside_MapEventHeader:
+MountMortar2FInside_MapEvents:
 	; filler
 	db 0, 0
 

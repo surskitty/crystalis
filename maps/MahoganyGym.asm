@@ -7,7 +7,7 @@ const_value set 2
 	const MAHOGANYGYM_ROCKER3
 	const MAHOGANYGYM_GYM_GUY
 
-MahoganyGym_MapScriptHeader:
+MahoganyGym_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -25,7 +25,7 @@ PryceScript_0x199a9e:
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .Rematch
 	winlosstext PryceText_Impressed, 0
-	loadtrainer PRYCE, 1
+	loadtrainer PRYCE, PRYCE1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
@@ -162,7 +162,7 @@ MahoganyGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext PRYCE, 1, $1
+	trainertotext PRYCE, PRYCE1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 PryceText_Intro:
@@ -399,7 +399,7 @@ MahoganyGymGuyWinText:
 	line "eration gap!"
 	done
 
-MahoganyGym_MapEventHeader:
+MahoganyGym_MapEvents:
 	; filler
 	db 0, 0
 

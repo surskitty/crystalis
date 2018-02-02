@@ -11,7 +11,7 @@ const_value set 2
 	const ROUTE25_COOLTRAINER_M2
 	const ROUTE25_POKE_BALL
 
-Route25_MapScriptHeader:
+Route25_MapScripts:
 .SceneScripts:
 	db 2
 	scene_script .DummyScene0
@@ -26,7 +26,7 @@ Route25_MapScriptHeader:
 .DummyScene1:
 	end
 
-UnknownScript_0x19eea0:
+Route25MistyDate1Script:
 	showemote EMOTE_HEART, ROUTE25_MISTY, 15
 	pause 30
 	showemote EMOTE_SHOCK, ROUTE25_COOLTRAINER_M1, 10
@@ -39,7 +39,7 @@ UnknownScript_0x19eea0:
 	pause 10
 	applymovement ROUTE25_MISTY, MovementData_0x19efed
 	opentext
-	writetext UnknownText_0x19f006
+	writetext Route25MistyDateText
 	waitbutton
 	closetext
 	spriteface PLAYER, DOWN
@@ -48,11 +48,11 @@ UnknownScript_0x19eea0:
 	applymovement ROUTE25_MISTY, MovementData_0x19f000
 	disappear ROUTE25_MISTY
 	clearevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	setscene $0
+	setscene 0
 	special RestartMapMusic
 	end
 
-UnknownScript_0x19eee0:
+Route25MistyDate2Script:
 	showemote EMOTE_HEART, ROUTE25_MISTY, 15
 	pause 30
 	showemote EMOTE_SHOCK, ROUTE25_COOLTRAINER_M1, 10
@@ -65,7 +65,7 @@ UnknownScript_0x19eee0:
 	pause 10
 	applymovement ROUTE25_MISTY, MovementData_0x19eff4
 	opentext
-	writetext UnknownText_0x19f006
+	writetext Route25MistyDateText
 	waitbutton
 	closetext
 	spriteface PLAYER, UP
@@ -74,7 +74,7 @@ UnknownScript_0x19eee0:
 	applymovement ROUTE25_MISTY, MovementData_0x19f000
 	disappear ROUTE25_MISTY
 	clearevent EVENT_TRAINERS_IN_CERULEAN_GYM
-	setscene $0
+	setscene 0
 	special RestartMapMusic
 	end
 
@@ -155,32 +155,32 @@ TrainerSupernerdPat:
 	closetext
 	end
 
-CooltrainerMScript_0x19efac:
+TrainerCooltrainermKevin:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_COOLTRAINERM_KEVIN
-	iftrue UnknownScript_0x19efda
+	iftrue .AfterBattle
 	checkevent EVENT_CLEARED_NUGGET_BRIDGE
-	iftrue UnknownScript_0x19efc7
-	writetext UnknownText_0x19f43b
+	iftrue .AfterNuggetBridge
+	writetext CooltrainermKevinNuggetText
 	buttonsound
 	verbosegiveitem NUGGET
-	iffalse UnknownScript_0x19efde
+	iffalse .NoRoomForNugget
 	setevent EVENT_CLEARED_NUGGET_BRIDGE
-UnknownScript_0x19efc7:
-	writetext UnknownText_0x19f49d
+.AfterNuggetBridge:
+	writetext CooltrainermKevinSeenText
 	waitbutton
 	closetext
-	winlosstext UnknownText_0x19f4fd, 0
+	winlosstext CooltrainermKevinBeatenText, 0
 	loadtrainer COOLTRAINERM, KEVIN
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_COOLTRAINERM_KEVIN
 	opentext
-UnknownScript_0x19efda:
-	writetext UnknownText_0x19f520
+.AfterBattle:
+	writetext CooltrainermKevinAfterBattleText
 	waitbutton
-UnknownScript_0x19efde:
+.NoRoomForNugget:
 	closetext
 	end
 
@@ -191,8 +191,7 @@ Route25Protein:
 	itemball PROTEIN
 
 Route25HiddenPotion:
-	dwb EVENT_ROUTE_25_HIDDEN_POTION, POTION
-
+	hiddenitem EVENT_ROUTE_25_HIDDEN_POTION, POTION
 
 MovementData_0x19efe8:
 	big_step DOWN
@@ -238,7 +237,7 @@ MovementData_0x19f000:
 	step LEFT
 	step_end
 
-UnknownText_0x19f006:
+Route25MistyDateText:
 	text "MISTY: Aww! Why"
 	line "did you have to"
 
@@ -385,7 +384,7 @@ SupernerdPatAfterBattleText:
 	line "cheat anymore…"
 	done
 
-UnknownText_0x19f43b:
+CooltrainermKevinNuggetText:
 	text "You took on one"
 	line "more battle than"
 
@@ -396,7 +395,7 @@ UnknownText_0x19f43b:
 	line "win a prize."
 	done
 
-UnknownText_0x19f49d:
+CooltrainermKevinSeenText:
 	text "But after seeing"
 	line "how you battle, I"
 
@@ -407,12 +406,12 @@ UnknownText_0x19f49d:
 	line "me take you on."
 	done
 
-UnknownText_0x19f4fd:
+CooltrainermKevinBeatenText:
 	text "I've never had a"
 	line "battle this good!"
 	done
 
-UnknownText_0x19f520:
+CooltrainermKevinAfterBattleText:
 	text "That was a great"
 	line "battle!"
 
@@ -430,7 +429,7 @@ BillsHouseSignText:
 	text "BILL'S HOUSE"
 	done
 
-Route25_MapEventHeader:
+Route25_MapEvents:
 	; filler
 	db 0, 0
 
@@ -440,8 +439,8 @@ Route25_MapEventHeader:
 
 .CoordEvents:
 	db 2
-	coord_event 42, 6, 1, UnknownScript_0x19eea0
-	coord_event 42, 7, 1, UnknownScript_0x19eee0
+	coord_event 42, 6, 1, Route25MistyDate1Script
+	coord_event 42, 7, 1, Route25MistyDate2Script
 
 .BGEvents:
 	db 2
@@ -459,5 +458,5 @@ Route25_MapEventHeader:
 	object_event 25, 4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperLloyd, -1
 	object_event 28, 11, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassShannon, -1
 	object_event 31, 7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerSupernerdPat, -1
-	object_event 37, 8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CooltrainerMScript_0x19efac, -1
+	object_event 37, 8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainermKevin, -1
 	object_event 32, 4, SPRITE_POKE_BALL, SPRITEMOVEDATA_ITEM_TREE, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Protein, EVENT_ROUTE_25_PROTEIN

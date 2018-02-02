@@ -3,7 +3,7 @@ const_value set 2
 	const VERMILIONPORT_SAILOR2
 	const VERMILIONPORT_SUPER_NERD
 
-VermilionPort_MapScriptHeader:
+VermilionPort_MapScripts:
 .SceneScripts:
 	db 2
 	scene_script .DummyScene0
@@ -11,7 +11,7 @@ VermilionPort_MapScriptHeader:
 
 .MapCallbacks:
 	db 1
-	dbw MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
 	end
@@ -27,7 +27,7 @@ VermilionPort_MapScriptHeader:
 .LeaveFastShipScript:
 	applymovement PLAYER, MovementData_0x74ef3
 	appear VERMILIONPORT_SAILOR1
-	setscene $0
+	setscene 0
 	setevent EVENT_FAST_SHIP_CABINS_SE_SSE_CAPTAINS_CABIN_TWIN_1
 	setevent EVENT_FAST_SHIP_CABINS_SE_SSE_GENTLEMAN
 	setevent EVENT_FAST_SHIP_PASSENGERS_FIRST_TRIP
@@ -52,7 +52,7 @@ SailorScript_0x74dc4:
 	waitsfx
 	applymovement PLAYER, MovementData_0x74ef1
 	playsound SFX_EXIT_BUILDING
-	special FadeOutPalettes
+	special Special_FadeOutPalettes
 	waitsfx
 	setevent EVENT_FAST_SHIP_PASSENGERS_EASTBOUND
 	clearevent EVENT_FAST_SHIP_PASSENGERS_WESTBOUND
@@ -68,8 +68,8 @@ SailorScript_0x74dc4:
 	clearevent EVENT_BEAT_SCHOOLBOY_RICKY
 	setevent EVENT_FAST_SHIP_DESTINATION_OLIVINE
 	appear VERMILIONPORT_SAILOR1
-	setmapscene FAST_SHIP_1F, $1
-	warp FAST_SHIP_1F, $19, $1
+	setmapscene FAST_SHIP_1F, 1
+	warp FAST_SHIP_1F, 25, 1
 	end
 
 UnknownScript_0x74e1a:
@@ -149,18 +149,18 @@ SailorScript_0x74e97:
 	checkevent EVENT_GAVE_KURT_APRICORNS
 	iftrue UnknownScript_0x74e1a
 	checkcode VAR_WEEKDAY
-	if_equal MONDAY, UnknownScript_0x74eda
-	if_equal TUESDAY, UnknownScript_0x74eda
-	if_equal THURSDAY, UnknownScript_0x74ee0
-	if_equal FRIDAY, UnknownScript_0x74ee0
-	if_equal SATURDAY, UnknownScript_0x74ee0
+	if_equal MONDAY, .NextShipWednesday
+	if_equal TUESDAY, .NextShipWednesday
+	if_equal THURSDAY, .NextShipSunday
+	if_equal FRIDAY, .NextShipSunday
+	if_equal SATURDAY, .NextShipSunday
 	writetext UnknownText_0x74f4d
 	yesorno
 	iffalse UnknownScript_0x74e87
 	writetext UnknownText_0x74f8b
 	buttonsound
 	checkitem S_S_TICKET
-	iffalse UnknownScript_0x74ed4
+	iffalse .NoTicket
 	writetext UnknownText_0x74fc2
 	waitbutton
 	closetext
@@ -168,19 +168,19 @@ SailorScript_0x74e97:
 	applymovement PLAYER, MovementData_0x74efe
 	jump SailorScript_0x74dc4
 
-UnknownScript_0x74ed4:
+.NoTicket:
 	writetext UnknownText_0x74ff2
 	waitbutton
 	closetext
 	end
 
-UnknownScript_0x74eda:
+.NextShipWednesday:
 	writetext UnknownText_0x75059
 	waitbutton
 	closetext
 	end
 
-UnknownScript_0x74ee0:
+.NextShipSunday:
 	writetext UnknownText_0x75080
 	waitbutton
 	closetext
@@ -195,8 +195,7 @@ SuperNerdScript_0x74ee6:
 	end
 
 VermilionPortHiddenIron:
-	dwb EVENT_VERMILION_PORT_HIDDEN_IRON, IRON
-
+	hiddenitem EVENT_VERMILION_PORT_HIDDEN_IRON, IRON
 
 MovementData_0x74ef1:
 	step DOWN
@@ -299,7 +298,7 @@ UnknownText_0x750a6:
 	cont "there."
 	done
 
-VermilionPort_MapEventHeader:
+VermilionPort_MapEvents:
 	; filler
 	db 0, 0
 

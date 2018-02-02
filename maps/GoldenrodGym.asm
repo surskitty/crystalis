@@ -6,7 +6,7 @@ const_value set 2
 	const GOLDENRODGYM_BUENA2
 	const GOLDENRODGYM_GYM_GUY
 
-GoldenrodGym_MapScriptHeader:
+GoldenrodGym_MapScripts:
 .SceneScripts:
 	db 2
 	scene_script .DummyScene0
@@ -37,7 +37,7 @@ WhitneyScript_0x5400c:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WHITNEY
 	setevent EVENT_MADE_WHITNEY_CRY
-	setscene $1
+	setscene 1
 	setevent EVENT_BEAT_BEAUTY_VICTORIA
 	setevent EVENT_BEAT_BEAUTY_SAMANTHA
 	setevent EVENT_BEAT_LASS_CARRIE
@@ -128,7 +128,7 @@ WhitneyCriesScript:
 	waitbutton
 	closetext
 	applymovement GOLDENRODGYM_LASS2, BridgetWalksAwayMovement
-	setscene $0
+	setscene 0
 	clearevent EVENT_MADE_WHITNEY_CRY
 	end
 
@@ -187,7 +187,7 @@ GoldenrodGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext WHITNEY, 1, $1
+	trainertotext WHITNEY, WHITNEY1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 BridgetWalksUpMovement:
@@ -397,7 +397,7 @@ GoldenrodGymGuyWinText:
 	cont "the ladies here."
 	done
 
-GoldenrodGym_MapEventHeader:
+GoldenrodGym_MapEvents:
 	; filler
 	db 0, 0
 

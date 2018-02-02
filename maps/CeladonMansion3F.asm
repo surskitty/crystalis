@@ -4,7 +4,7 @@ const_value set 2
 	const CELADONMANSION3F_SUPER_NERD
 	const CELADONMANSION3F_FISHER
 
-CeladonMansion3F_MapScriptHeader:
+CeladonMansion3F_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -18,13 +18,13 @@ CooltrainerMScript_0x71670:
 	checkevent EVENT_RECEIVED_MEW
 	iffalse .Mew
 	checkcode VAR_DEXCAUGHT
-	if_greater_than 248, UnknownScript_0x7167e
+	if_greater_than NUM_POKEMON - 2 - 1, UnknownScript_0x7167e ; ignore Mew and Celebi
 	waitbutton
 	closetext
 	end
 
 .Mew
-	special SpecialTrainerHouse
+	special Special_TrainerHouse
 	iftrue .ReceiveMew
 	checkevent EVENT_BEAT_CAL
 	iffalse .MewHint
@@ -83,7 +83,7 @@ UnknownScript_0x7167e:
 	waitsfx
 	writetext UnknownText_0x71760
 	buttonsound
-	special Diploma
+	special Special_Diploma
 	writetext UnknownText_0x71763
 	waitbutton
 	closetext
@@ -104,7 +104,7 @@ UnknownScript_0x716a4:
 	writetext UnknownText_0x717d8
 	yesorno
 	iffalse UnknownScript_0x716b0
-	special PrintDiploma
+	special Special_PrintDiploma
 	closetext
 	end
 
@@ -265,7 +265,7 @@ UnknownText_0x71996:
 	cont "a # DOLL."
 	done
 
-CeladonMansion3F_MapEventHeader:
+CeladonMansion3F_MapEvents:
 	; filler
 	db 0, 0
 

@@ -4,36 +4,36 @@ const_value set 2
 	const VIRIDIANCITY_FISHER
 	const VIRIDIANCITY_YOUNGSTER
 
-ViridianCity_MapScriptHeader:
+ViridianCity_MapScripts:
 .SceneScripts:
 	db 0
 
 .MapCallbacks:
 	db 1
-	dbw MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_VIRIDIAN
 	return
 
-GrampsScript_0x1a9a4c:
+ViridianCityCoffeeGramps:
 	faceplayer
 	opentext
 	writetext UnknownText_0x1a9aa5
 	yesorno
-	iffalse UnknownScript_0x1a9a5b
+	iffalse .no
 	writetext UnknownText_0x1a9b6f
 	waitbutton
 	closetext
 	end
 
-UnknownScript_0x1a9a5b:
+.no:
 	writetext UnknownText_0x1a9bb7
 	waitbutton
 	closetext
 	end
 
-GrampsScript_0x1a9a61:
+ViridianCityGrampsNearGym:
 	faceplayer
 	opentext
 	checkevent EVENT_BLUE_IN_CINNABAR
@@ -49,7 +49,7 @@ GrampsScript_0x1a9a61:
 	closetext
 	end
 
-FisherScript_0x1a9a75:
+ViridianCityDreamEaterFisher:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TM42_DREAM_EATER
@@ -215,7 +215,7 @@ TrainerHouseSignText:
 	line "Trainer Battles"
 	done
 
-ViridianCity_MapEventHeader:
+ViridianCity_MapEvents:
 	; filler
 	db 0, 0
 
@@ -241,7 +241,7 @@ ViridianCity_MapEventHeader:
 
 .ObjectEvents:
 	db 4
-	object_event 18, 5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GrampsScript_0x1a9a4c, -1
-	object_event 30, 8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GrampsScript_0x1a9a61, -1
-	object_event 6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FisherScript_0x1a9a75, -1
+	object_event 18, 5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
+	object_event 30, 8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
+	object_event 6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
 	object_event 17, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1

@@ -5,7 +5,7 @@ const_value set 2
 	const GOLDENRODPOKECENTER1F_LASS
 	const GOLDENRODPOKECENTER1F_POKEFAN_F
 
-GoldenrodPokecenter1F_MapScriptHeader:
+GoldenrodPokecenter1F_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -24,7 +24,7 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	checkevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 	iftrue .cancel
 	playsound SFX_EXIT_BUILDING
-	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, $0, $7
+	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, 0, 7
 	disappear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
 	appear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
 	playmusic MUSIC_SHOW_ME_AROUND
@@ -55,7 +55,7 @@ GoldenrodPokecenter1F_GSBallSceneRight:
 	checkevent EVENT_GOT_GS_BALL_FROM_POKECOM_CENTER
 	iftrue .cancel
 	playsound SFX_EXIT_BUILDING
-	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, $0, $7
+	moveobject GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST, 0, 7
 	disappear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
 	appear GOLDENRODPOKECENTER1F_LINK_RECEPTIONIST
 	playmusic MUSIC_SHOW_ME_AROUND
@@ -804,7 +804,7 @@ UnknownText_0x62549:
 	line "the EON MAIL."
 	done
 
-GoldenrodPokecenter1F_MapEventHeader:
+GoldenrodPokecenter1F_MapEvents:
 	; filler
 	db 0, 0
 

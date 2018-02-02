@@ -7,7 +7,7 @@ const_value set 2
 	const AZALEAGYM_TWIN2
 	const AZALEAGYM_GYM_GUY
 
-AzaleaGym_MapScriptHeader:
+AzaleaGym_MapScripts:
 .SceneScripts:
 	db 0
 
@@ -25,7 +25,7 @@ AzaleaGymBugsyScript:
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue .Rematch
 	winlosstext BugsyText_ResearchIncomplete, 0
-	loadtrainer BUGSY, 1
+	loadtrainer BUGSY, BUGSY1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BUGSY
@@ -162,7 +162,7 @@ AzaleaGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext BUGSY, 1, $1
+	trainertotext BUGSY, BUGSY1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 BugsyText_INeverLose:
@@ -386,7 +386,7 @@ AzaleaGymGuyWinText:
 	cont "#MON is bright!"
 	done
 
-AzaleaGym_MapEventHeader:
+AzaleaGym_MapEvents:
 	; filler
 	db 0, 0
 

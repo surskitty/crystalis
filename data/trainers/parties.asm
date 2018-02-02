@@ -41,7 +41,7 @@ FalknerGroup:
 		db PECK
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -167,7 +167,7 @@ WhitneyGroup:
 		db STOMP
 		db MILK_DRINK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -201,7 +201,7 @@ BugsyGroup:
 		db FURY_CUTTER
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -333,7 +333,7 @@ MortyGroup:
 		db THUNDERBOLT
 		db CONFUSE_RAY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -373,7 +373,7 @@ PryceGroup:
 		db MIST
 		db BLIZZARD
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -453,7 +453,7 @@ JasmineGroup:
 		db MAGNITUDE
 		db IRON_TAIL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -573,7 +573,7 @@ ChuckGroup:
 		db SURF
 		db DYNAMICPUNCH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -659,7 +659,7 @@ ClairGroup:
 		db HYPER_BEAM
 		db DRAGONBREATH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -676,7 +676,7 @@ Rival1Group:
 	; party
 	db 5, CHIKORITA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -687,7 +687,7 @@ Rival1Group:
 	; party
 	db 5, CYNDAQUIL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -698,7 +698,7 @@ Rival1Group:
 	; party
 	db 5, TOTODILE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -725,7 +725,7 @@ Rival1Group:
 		db REFLECT
 		db LIGHT_SCREEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -738,7 +738,7 @@ Rival1Group:
 	db 14, ZUBAT
 	db 16, QUILAVA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -751,7 +751,7 @@ Rival1Group:
 	db 14, ZUBAT
 	db 16, CROCONAW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -785,7 +785,7 @@ Rival1Group:
 		db RAZOR_LEAF
 		db POISONPOWDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -819,7 +819,7 @@ Rival1Group:
 		db EMBER
 		db QUICK_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -853,7 +853,7 @@ Rival1Group:
 		db WATER_GUN
 		db BITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -893,7 +893,7 @@ Rival1Group:
 		db REVERSAL
 		db BODY_SLAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -933,7 +933,7 @@ Rival1Group:
 		db QUICK_ATTACK
 		db FLAME_WHEEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -973,7 +973,7 @@ Rival1Group:
 		db BITE
 		db SCARY_FACE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1019,7 +1019,7 @@ Rival1Group:
 		db REVERSAL
 		db BODY_SLAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1065,7 +1065,7 @@ Rival1Group:
 		db QUICK_ATTACK
 		db FLAME_WHEEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1111,7 +1111,7 @@ Rival1Group:
 		db SCARY_FACE
 		db SLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -1163,7 +1163,7 @@ WillGroup:
 		db CONFUSE_RAY
 		db PSYCHIC_M
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 	; WILL (2)
@@ -1273,7 +1273,7 @@ PKMNTrainerGroup:
 	db 10, CYNDAQUIL
 	db 10, TOTODILE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1286,7 +1286,7 @@ PKMNTrainerGroup:
 	db 30, QUILAVA
 	db 30, CROCONAW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1395,7 +1395,7 @@ PKMNTrainerGroup:
 	db 55, ZAPDOS
 	db 55, MOLTRES
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -1441,7 +1441,7 @@ BrunoGroup:
 		db VITAL_THROW
 		db CROSS_CHOP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1672,7 +1672,7 @@ KarenGroup:
 		db IRON_TAIL
 		db CRUNCH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -1718,7 +1718,7 @@ KogaGroup:
 		db WING_ATTACK
 		db TOXIC
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -1908,7 +1908,7 @@ ChampionGroup:
 		db OUTRAGE
 		db HYPER_BEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2000,7 +2000,7 @@ BrockGroup:
 		db ENDURE
 		db GIGA_DRAIN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2046,7 +2046,7 @@ MistyGroup:
 		db RECOVER
 		db ICE_BEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2092,7 +2092,7 @@ LtSurgeGroup:
 		db LIGHT_SCREEN
 		db THUNDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2110,7 +2110,7 @@ ScientistGroup:
 	db 22, KOFFING
 	db 24, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2121,7 +2121,7 @@ ScientistGroup:
 	; party
 	db 24, DITTO, METAL_POWDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2134,7 +2134,7 @@ ScientistGroup:
 	db 22, MAGNEMITE
 	db 23, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2147,7 +2147,7 @@ ScientistGroup:
 	db 28, MAGNEMITE
 	db 29, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2163,7 +2163,7 @@ ScientistGroup:
 		db RECOVER
 		db TRI_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2209,7 +2209,7 @@ ErikaGroup:
 		db MOONBLAST
 		db SOLARBEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2226,7 +2226,7 @@ YoungsterGroup:
 	; party
 	db 4, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2238,7 +2238,7 @@ YoungsterGroup:
 	db 2, PIDGEY
 	db 4, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2250,7 +2250,7 @@ YoungsterGroup:
 	db 6, RATTATA
 	db 8, ZUBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2261,7 +2261,7 @@ YoungsterGroup:
 	; party
 	db 10, WOOPER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2275,7 +2275,7 @@ YoungsterGroup:
 	db 8, SPEAROW
 	db 8, SPEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2287,7 +2287,7 @@ YoungsterGroup:
 	db 10, MANKEY
 	db 12, DIGLETT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2298,7 +2298,7 @@ YoungsterGroup:
 	; party
 	db 15, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2314,7 +2314,7 @@ YoungsterGroup:
 		db HYPER_FANG
 		db SCARY_FACE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2325,7 +2325,7 @@ YoungsterGroup:
 	; party
 	db 55, FEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2337,7 +2337,7 @@ YoungsterGroup:
 	db 53, RATICATE
 	db 53, ARBOK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2348,7 +2348,7 @@ YoungsterGroup:
 	; party
 	db 55, GROWLITHE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2360,7 +2360,7 @@ YoungsterGroup:
 	db 53, SANDSLASH
 	db 53, CROBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2376,7 +2376,7 @@ YoungsterGroup:
 		db HYPER_FANG
 		db PURSUIT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2392,7 +2392,7 @@ YoungsterGroup:
 		db HYPER_FANG
 		db PURSUIT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2410,7 +2410,7 @@ SchoolboyGroup:
 	db 12, ODDISH
 	db 15, VOLTORB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2424,7 +2424,7 @@ SchoolboyGroup:
 	db 51, ELECTRODE
 	db 51, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2436,7 +2436,7 @@ SchoolboyGroup:
 	db 16, TANGELA
 	db 16, YANMA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2449,7 +2449,7 @@ SchoolboyGroup:
 	db 51, WEEPINBELL
 	db 53, VICTREEBEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2462,7 +2462,7 @@ SchoolboyGroup:
 	db 51, ELECTABUZZ
 	db 51, MAGMAR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2474,7 +2474,7 @@ SchoolboyGroup:
 	db 47, XATU
 	db 50, ALAKAZAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2485,7 +2485,7 @@ SchoolboyGroup:
 	; party
 	db 50, ODDISH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2497,7 +2497,7 @@ SchoolboyGroup:
 	db 48, TANGELA
 	db 48, VAPOREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2511,7 +2511,7 @@ SchoolboyGroup:
 	db 47, POLIWHIRL
 	db 55, DITTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2522,7 +2522,7 @@ SchoolboyGroup:
 	; party
 	db 19, MR__MIME
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2534,7 +2534,7 @@ SchoolboyGroup:
 	db 48, LEDIAN
 	db 48, EXEGGUTOR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2546,7 +2546,7 @@ SchoolboyGroup:
 	db 48, AIPOM, BERSERK_GENE
 	db 52, DITTO, METAL_POWDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2558,7 +2558,7 @@ SchoolboyGroup:
 	db 14, ODDISH
 	db 17, VOLTORB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2571,7 +2571,7 @@ SchoolboyGroup:
 	db 26, GROWLITHE
 	db 31, ELECTRODE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2584,7 +2584,7 @@ SchoolboyGroup:
 	db 17, TANGELA
 	db 17, YANMA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2598,7 +2598,7 @@ SchoolboyGroup:
 	db 20, QUAGSIRE
 	db 25, YANMA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2610,7 +2610,7 @@ SchoolboyGroup:
 	db 21, MR__MIME
 	db 21, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2622,7 +2622,7 @@ SchoolboyGroup:
 	db 27, MR__MIME
 	db 31, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2635,7 +2635,7 @@ SchoolboyGroup:
 	db 36, GROWLITHE
 	db 36, ELECTRODE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2663,7 +2663,7 @@ SchoolboyGroup:
 		db ACID
 		db MOONLIGHT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2677,7 +2677,7 @@ SchoolboyGroup:
 	db 40, QUAGSIRE
 	db 40, YANMA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2711,7 +2711,7 @@ SchoolboyGroup:
 		db AMNESIA
 		db EARTHQUAKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2723,7 +2723,7 @@ SchoolboyGroup:
 	db 40, MR__MIME
 	db 44, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2745,7 +2745,7 @@ SchoolboyGroup:
 		db LOCK_ON
 		db SWIFT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -2763,7 +2763,7 @@ BirdKeeperGroup:
 	db 7, PIDGEY
 	db 7, PIDGEY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2774,7 +2774,7 @@ BirdKeeperGroup:
 	; party
 	db 9, SPEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2786,7 +2786,7 @@ BirdKeeperGroup:
 	db 12, PIDGEY
 	db 14, PIDGEOTTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2801,7 +2801,7 @@ BirdKeeperGroup:
 	db 19, PIDGEY
 	db 19, PIDGEY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2814,7 +2814,7 @@ BirdKeeperGroup:
 	db 18, DODUO
 	db 19, DODUO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2827,7 +2827,7 @@ BirdKeeperGroup:
 	db 24, FEAROW
 	db 22, MURKROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2839,7 +2839,7 @@ BirdKeeperGroup:
 	db 33, PIDGEOTTO
 	db 33, PIDGEOTTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2851,7 +2851,7 @@ BirdKeeperGroup:
 	db 47, MURKROW
 	db 54, PIDGEOT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2863,7 +2863,7 @@ BirdKeeperGroup:
 	db 49, DODRIO
 	db 55, FEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2876,7 +2876,7 @@ BirdKeeperGroup:
 	db 48, DODUO
 	db 52, DODRIO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2887,7 +2887,7 @@ BirdKeeperGroup:
 	; party
 	db 54, NOCTOWL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2898,7 +2898,7 @@ BirdKeeperGroup:
 	; party
 	db 46, FARFETCH_D, STICK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2911,7 +2911,7 @@ BirdKeeperGroup:
 	db 6, PIDGEY
 	db 8, SPEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2922,7 +2922,7 @@ BirdKeeperGroup:
 	; party
 	db 37, FARFETCH_D, STICK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2933,7 +2933,7 @@ BirdKeeperGroup:
 	; party
 	db 54, FARFETCH_D, STICK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2945,7 +2945,7 @@ BirdKeeperGroup:
 	db 52, PIDGEOTTO
 	db 52, FEAROW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2961,7 +2961,7 @@ BirdKeeperGroup:
 		db FLY
 		db SLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2973,7 +2973,7 @@ BirdKeeperGroup:
 	db 42, PIDGEOTTO
 	db 42, PIDGEOTTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -2995,7 +2995,7 @@ BirdKeeperGroup:
 		db STEEL_WING
 		db FLY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -3017,7 +3017,7 @@ LassGroup:
 		db BITE
 		db LICK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3030,7 +3030,7 @@ LassGroup:
 	db 15, CLEFAIRY
 	db 15, SNORLAX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3043,7 +3043,7 @@ LassGroup:
 	db 49, ARBOK
 	db 45, GLOOM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3055,7 +3055,7 @@ LassGroup:
 	db 12, ODDISH
 	db 15, CUBONE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3066,7 +3066,7 @@ LassGroup:
 	; party
 	db 21, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3079,7 +3079,7 @@ LassGroup:
 	db 47, IVYSAUR
 	db 49, VENUSAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3092,7 +3092,7 @@ LassGroup:
 	db 46, PIDGEOTTO
 	db 46, BELLOSSOM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3105,7 +3105,7 @@ LassGroup:
 	db 44, PARAS
 	db 47, PARASECT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3118,7 +3118,7 @@ LassGroup:
 	db 48, HOPPIP
 	db 49, JUMPLUFF
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3140,7 +3140,7 @@ LassGroup:
 		db DISABLE
 		db CONFUSION
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3152,7 +3152,7 @@ LassGroup:
 	db 45, WIGGLYTUFF
 	db 49, GRANBULL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3163,7 +3163,7 @@ LassGroup:
 	; party
 	db 21, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3174,7 +3174,7 @@ LassGroup:
 	; party
 	db 21, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3196,7 +3196,7 @@ LassGroup:
 		db DISABLE
 		db CONFUSION
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3218,7 +3218,7 @@ LassGroup:
 		db THUNDER_WAVE
 		db COTTON_SPORE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3240,7 +3240,7 @@ LassGroup:
 		db LIGHT_SCREEN
 		db COTTON_SPORE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3262,7 +3262,7 @@ LassGroup:
 		db PSYCHIC_M
 		db SWAGGER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -3308,7 +3308,7 @@ JanineGroup:
 		db LEECH_LIFE
 		db PSYCHIC_M
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -3328,7 +3328,7 @@ CooltrainerMGroup:
 	db 26, SQUIRTLE
 	db 26, BULBASAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3341,7 +3341,7 @@ CooltrainerMGroup:
 	db 28, CHARMELEON
 	db 28, WARTORTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3354,7 +3354,7 @@ CooltrainerMGroup:
 	db 34, DRATINI
 	db 34, DRATINI
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3366,7 +3366,7 @@ CooltrainerMGroup:
 	db 34, HORSEA
 	db 36, SEADRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3377,7 +3377,7 @@ CooltrainerMGroup:
 	; party
 	db 37, DRAGONAIR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3405,7 +3405,7 @@ CooltrainerMGroup:
 		db BITE
 		db FIRE_SPIN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3433,7 +3433,7 @@ CooltrainerMGroup:
 		db BITE
 		db FIRE_SPIN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3455,7 +3455,7 @@ CooltrainerMGroup:
 		db SWIFT
 		db SCREECH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3477,7 +3477,7 @@ CooltrainerMGroup:
 		db PSYCH_UP
 		db FURY_SWIPES
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3505,7 +3505,7 @@ CooltrainerMGroup:
 		db BITE
 		db FIRE_SPIN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3533,7 +3533,7 @@ CooltrainerMGroup:
 		db SLEEP_POWDER
 		db SOLARBEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3549,7 +3549,7 @@ CooltrainerMGroup:
 		db SLASH
 		db SWIFT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3562,7 +3562,7 @@ CooltrainerMGroup:
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3575,7 +3575,7 @@ CooltrainerMGroup:
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3588,7 +3588,7 @@ CooltrainerMGroup:
 	db 10, CHARMANDER
 	db 10, SQUIRTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3601,7 +3601,7 @@ CooltrainerMGroup:
 	db 45, TANGELA
 	db 45, TAUROS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3614,7 +3614,7 @@ CooltrainerMGroup:
 	db 45, CHARMELEON
 	db 45, WARTORTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3627,7 +3627,7 @@ CooltrainerMGroup:
 	db 14, CHARMANDER
 	db 14, SQUIRTLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3640,7 +3640,7 @@ CooltrainerMGroup:
 	db 27, OMANYTE
 	db 27, KABUTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3656,7 +3656,7 @@ CooltrainerMGroup:
 		db DRAGON_RAGE
 		db SLAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -3676,7 +3676,7 @@ CooltrainerFGroup:
 	db 22, VAPOREON
 	db 22, JOLTEON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3698,7 +3698,7 @@ CooltrainerFGroup:
 		db CONFUSE_RAY
 		db SAFEGUARD
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3709,7 +3709,7 @@ CooltrainerFGroup:
 	; party
 	db 37, SEADRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3721,7 +3721,7 @@ CooltrainerFGroup:
 	db 34, DRATINI
 	db 36, DRAGONAIR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3733,7 +3733,7 @@ CooltrainerFGroup:
 	db 26, SHELLDER
 	db 28, CLOYSTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3745,7 +3745,7 @@ CooltrainerFGroup:
 	db 22, GOLDEEN
 	db 24, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3758,7 +3758,7 @@ CooltrainerFGroup:
 	db 29, WARTORTLE
 	db 29, CROCONAW
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3780,7 +3780,7 @@ CooltrainerFGroup:
 		db SURF
 		db RAIN_DANCE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3796,7 +3796,7 @@ CooltrainerFGroup:
 		db FURY_ATTACK
 		db AGILITY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3809,7 +3809,7 @@ CooltrainerFGroup:
 	db 33, NIDOQUEEN
 	db 31, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3837,7 +3837,7 @@ CooltrainerFGroup:
 		db RAZOR_LEAF
 		db SWEET_SCENT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3853,7 +3853,7 @@ CooltrainerFGroup:
 		db FURY_ATTACK
 		db AGILITY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3866,7 +3866,7 @@ CooltrainerFGroup:
 	db 45, STARMIE
 	db 45, NINETALES
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3878,7 +3878,7 @@ CooltrainerFGroup:
 	db 58, IVYSAUR
 	db 58, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3889,7 +3889,7 @@ CooltrainerFGroup:
 	; party
 	db 28, POLIWHIRL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3902,7 +3902,7 @@ CooltrainerFGroup:
 	db 30, BUTTERFREE
 	db 30, BELLOSSOM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3914,7 +3914,7 @@ CooltrainerFGroup:
 	db 24, STARYU
 	db 26, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3930,7 +3930,7 @@ CooltrainerFGroup:
 		db MEGAHORN
 		db FIRE_BLAST
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3943,7 +3943,7 @@ CooltrainerFGroup:
 	db 46, NIDOQUEEN
 	db 44, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3971,7 +3971,7 @@ CooltrainerFGroup:
 		db WATERFALL
 		db RECOVER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -3999,7 +3999,7 @@ CooltrainerFGroup:
 		db WATERFALL
 		db TWISTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4018,7 +4018,7 @@ BeautyGroup:
 	db 15, JIGGLYPUFF
 	db 17, CLEFAIRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4040,7 +4040,7 @@ BeautyGroup:
 		db BITE
 		db SLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4051,7 +4051,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4062,7 +4062,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4073,7 +4073,7 @@ BeautyGroup:
 	; party
 	db 16, FURRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4085,7 +4085,7 @@ BeautyGroup:
 	db 48, VILEPLUME
 	db 54, BUTTERFREE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4098,7 +4098,7 @@ BeautyGroup:
 	db 32, SEEL
 	db 30, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4109,7 +4109,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4120,7 +4120,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4131,7 +4131,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4142,7 +4142,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4153,7 +4153,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4164,7 +4164,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4177,7 +4177,7 @@ BeautyGroup:
 	db 52, EXEGGCUTE
 	db 55, PARASECT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4188,7 +4188,7 @@ BeautyGroup:
 	; party
 	db 15, SENTRET
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4210,7 +4210,7 @@ BeautyGroup:
 		db FAIRY_WIND
 		db STUN_SPORE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4221,7 +4221,7 @@ BeautyGroup:
 	; party
 	db 22, CORSOLA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4238,7 +4238,7 @@ PokemaniacGroup:
 	; party
 	db 10, SLOWPOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4250,7 +4250,7 @@ PokemaniacGroup:
 	db 24, MAROWAK
 	db 24, MAROWAK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4261,7 +4261,7 @@ PokemaniacGroup:
 	; party
 	db 26, KANGASKHAN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4273,7 +4273,7 @@ PokemaniacGroup:
 	db 18, NIDORINA
 	db 18, NIDORINO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4284,7 +4284,7 @@ PokemaniacGroup:
 	; party
 	db 23, SLOWBRO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4295,7 +4295,7 @@ PokemaniacGroup:
 	; party
 	db 22, LICKITUNG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4306,7 +4306,7 @@ PokemaniacGroup:
 	; party
 	db 25, NIDOKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4318,7 +4318,7 @@ PokemaniacGroup:
 	db 31, RHYHORN
 	db 31, RHYDON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4330,7 +4330,7 @@ PokemaniacGroup:
 	db 30, LICKITUNG
 	db 30, KANGASKHAN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4358,7 +4358,7 @@ PokemaniacGroup:
 		db CONVERSION2
 		db TRI_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4374,7 +4374,7 @@ PokemaniacGroup:
 		db CUT
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4386,7 +4386,7 @@ PokemaniacGroup:
 	db 10, SLOWPOKE
 	db 10, SLOWPOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4397,7 +4397,7 @@ PokemaniacGroup:
 	; party
 	db 32, RHYHORN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4431,7 +4431,7 @@ PokemaniacGroup:
 		db EGG_BOMB
 		db SOFTBOILED
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4443,7 +4443,7 @@ PokemaniacGroup:
 	db 20, NIDOKING
 	db 20, NIDOQUEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4460,7 +4460,7 @@ GruntMGroup:
 	; party
 	db 14, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4473,7 +4473,7 @@ GruntMGroup:
 	db 9, ZUBAT
 	db 9, ZUBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4485,7 +4485,7 @@ GruntMGroup:
 	db 29, RATICATE
 	db 29, RATICATE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4498,7 +4498,7 @@ GruntMGroup:
 	db 28, GRIMER
 	db 30, MUK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4513,7 +4513,7 @@ GruntMGroup:
 	db 28, RATTATA
 	db 28, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4525,7 +4525,7 @@ GruntMGroup:
 	db 31, ZUBAT
 	db 31, ZUBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4539,7 +4539,7 @@ GruntMGroup:
 	db 28, ZUBAT
 	db 28, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4550,7 +4550,7 @@ GruntMGroup:
 	; party
 	db 31, WEEZING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4562,7 +4562,7 @@ GruntMGroup:
 	db 29, RATICATE
 	db 31, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4575,7 +4575,7 @@ GruntMGroup:
 	db 29, GOLBAT
 	db 27, GRIMER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4588,7 +4588,7 @@ GruntMGroup:
 	db 28, KOFFING
 	db 30, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4599,7 +4599,7 @@ GruntMGroup:
 	; party
 	db 32, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4611,7 +4611,7 @@ GruntMGroup:
 	db 29, RATICATE
 	db 29, GOLBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4623,7 +4623,7 @@ GruntMGroup:
 	db 31, GRIMER
 	db 28, WEEZING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4637,7 +4637,7 @@ GruntMGroup:
 	db 21, RATTATA
 	db 21, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4648,7 +4648,7 @@ GruntMGroup:
 	; party
 	db 24, GOLBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4661,7 +4661,7 @@ GruntMGroup:
 	db 22, ZUBAT
 	db 22, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4673,7 +4673,7 @@ GruntMGroup:
 	db 23, VENONAT
 	db 23, VENONAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4685,7 +4685,7 @@ GruntMGroup:
 	db 22, DROWZEE
 	db 24, ZUBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4698,7 +4698,30 @@ GruntMGroup:
 	db 22, GRIMER
 	db 23, RATTATA
 
-	db $ff ; end
+	db -1 ; end
+
+; ================
+
+	; GRUNTM (22)
+	db "EXECUTIVE@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 36, GOLBAT
+
+	db -1 ; end
+
+; ================
+
+	; GRUNTM (23)
+	db "EXECUTIVE@"
+	db TRAINERTYPE_NORMAL
+
+	; party
+	db 30, KOFFING
+>>>>>>> 7547ad839cf1c8141b931d08ef16a894e7db68c9
+
+	db -1 ; end
 
 ; ================
 
@@ -4710,7 +4733,7 @@ GruntMGroup:
 	db 25, KOFFING
 	db 25, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4722,7 +4745,7 @@ GruntMGroup:
 	db 24, KOFFING
 	db 24, MUK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4733,7 +4756,7 @@ GruntMGroup:
 	; party
 	db 33, RATICATE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4745,7 +4768,7 @@ GruntMGroup:
 	db 9, RATTATA
 	db 9, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4756,7 +4779,7 @@ GruntMGroup:
 	; party
 	db 50, GOLBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4774,7 +4797,7 @@ GentlemanGroup:
 	db 18, GROWLITHE
 	db 18, GROWLITHE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4785,7 +4808,7 @@ GentlemanGroup:
 	; party
 	db 53, PERSIAN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4797,7 +4820,7 @@ GentlemanGroup:
 	db 52, PIKACHU
 	db 48, FLAAFFY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4808,7 +4831,7 @@ GentlemanGroup:
 	; party
 	db 20, PONYTA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4819,7 +4842,7 @@ GentlemanGroup:
 	; party
 	db 20, NOCTOWL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4836,7 +4859,7 @@ SkierGroup:
 	; party
 	db 28, JYNX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4847,7 +4870,7 @@ SkierGroup:
 	; party
 	db 28, DEWGONG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4888,7 +4911,7 @@ TeacherGroup:
 	; party
 	db 56, CLEFAIRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4900,7 +4923,7 @@ TeacherGroup:
 	db 52, AIPOM, NO_ITEM
 	db 56, MAROWAK, THICK_CLUB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -4937,7 +4960,7 @@ TeacherGroup:
 	db 5, SENTRET
 	db 5, RATTATA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4977,7 +5000,7 @@ SabrinaGroup:
 		db FAINT_ATTACK
 		db PSYCHIC_M
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -4995,7 +5018,7 @@ BugCatcherGroup:
 	db 3, CATERPIE
 	db 3, CATERPIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5007,7 +5030,7 @@ BugCatcherGroup:
 	db 52, BEEDRILL
 	db 52, BUTTERFREE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5020,7 +5043,7 @@ BugCatcherGroup:
 	db 50, BEEDRILL
 	db 50, BEEDRILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5034,7 +5057,7 @@ BugCatcherGroup:
 	db 3, WEEDLE
 	db 2, CATERPIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5047,7 +5070,7 @@ BugCatcherGroup:
 	db 9, KAKUNA
 	db 12, BEEDRILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5059,7 +5082,7 @@ BugCatcherGroup:
 	db 12, CATERPIE
 	db 12, WEEDLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5070,7 +5093,7 @@ BugCatcherGroup:
 	; party
 	db 13, PARAS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5081,7 +5104,7 @@ BugCatcherGroup:
 	; party
 	db 15, VENONAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5093,7 +5116,7 @@ BugCatcherGroup:
 	db 50, ARIADOS
 	db 52, PINSIR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5107,7 +5130,7 @@ BugCatcherGroup:
 	db 9, KAKUNA
 	db 9, METAPOD
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5121,7 +5144,7 @@ BugCatcherGroup:
 	db 17, BEEDRILL
 	db 16, BUTTERFREE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5132,7 +5155,7 @@ BugCatcherGroup:
 	; party
 	db 54, ARIADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5143,7 +5166,7 @@ BugCatcherGroup:
 	; party
 	db 21, VENONAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5159,7 +5182,7 @@ BugCatcherGroup:
 		db CONFUSION
 		db LEECH_LIFE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5193,7 +5216,7 @@ BugCatcherGroup:
 		db SUPERSONIC
 		db WHIRLWIND
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5227,7 +5250,7 @@ BugCatcherGroup:
 		db GUST
 		db WHIRLWIND
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5243,7 +5266,7 @@ BugCatcherGroup:
 		db PSYBEAM
 		db LEECH_LIFE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5259,7 +5282,7 @@ BugCatcherGroup:
 		db PSYCHIC_M
 		db TOXIC
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5271,7 +5294,7 @@ BugCatcherGroup:
 	db 8, LEDYBA
 	db 10, PARAS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -5291,7 +5314,7 @@ FisherGroup:
 	db 15, MAGIKARP
 	db 5, MAGIKARP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5302,7 +5325,7 @@ FisherGroup:
 	; party
 	db 10, GOLDEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5313,7 +5336,7 @@ FisherGroup:
 	; party
 	db 49, TENTACRUEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5326,7 +5349,7 @@ FisherGroup:
 	db 51, POLIWHIRL
 	db 51, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5338,7 +5361,7 @@ FisherGroup:
 	db 8, POLIWAG
 	db 8, POLIWAG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5352,7 +5375,7 @@ FisherGroup:
 	db 20, MAGIKARP
 	db 20, GYARADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5363,7 +5386,7 @@ FisherGroup:
 	; party
 	db 18, QWILFISH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5374,7 +5397,7 @@ FisherGroup:
 	; party
 	db 27, GYARADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5388,7 +5411,7 @@ FisherGroup:
 	db 22, MAGIKARP
 	db 22, MAGIKARP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5401,7 +5424,7 @@ FisherGroup:
 	db 25, GOLDEEN
 	db 27, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5423,7 +5446,7 @@ FisherGroup:
 		db AURORA_BEAM
 		db OCTAZOOKA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5437,7 +5460,7 @@ FisherGroup:
 	db 45, REMORAID
 	db 49, CLOYSTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5449,7 +5472,7 @@ FisherGroup:
 	db 52, REMORAID
 	db 52, OCTILLERY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5463,7 +5486,7 @@ FisherGroup:
 	db 50, QWILFISH
 	db 50, TENTACRUEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5476,7 +5499,7 @@ FisherGroup:
 	db 50, GYARADOS
 	db 50, GYARADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5487,7 +5510,7 @@ FisherGroup:
 	; party
 	db 19, GOLDEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5499,7 +5522,7 @@ FisherGroup:
 	db 19, QWILFISH
 	db 21, GOLDEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5510,7 +5533,7 @@ FisherGroup:
 	; party
 	db 28, QWILFISH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5523,7 +5546,7 @@ FisherGroup:
 	db 38, HORSEA
 	db 38, QWILFISH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5536,7 +5559,7 @@ FisherGroup:
 	db 39, GOLDEEN
 	db 42, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5549,7 +5572,7 @@ FisherGroup:
 	db 30, QWILFISH
 	db 34, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5577,7 +5600,7 @@ FisherGroup:
 		db BUBBLEBEAM
 		db HYPER_BEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5589,7 +5612,7 @@ FisherGroup:
 	db 35, QWILFISH
 	db 37, GOLDEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5611,7 +5634,7 @@ FisherGroup:
 		db FURY_ATTACK
 		db WATERFALL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5639,7 +5662,7 @@ FisherGroup:
 		db PIN_MISSILE
 		db TAKE_DOWN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -5657,7 +5680,7 @@ SwimmerMGroup:
 	db 52, REMORAID
 	db 50, SEADRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5669,7 +5692,7 @@ SwimmerMGroup:
 	db 20, TENTACOOL
 	db 20, TENTACOOL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5682,7 +5705,7 @@ SwimmerMGroup:
 	db 20, WARTORTLE
 	db 18, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5695,7 +5718,7 @@ SwimmerMGroup:
 	db 19, TENTACOOL
 	db 19, TENTACRUEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5711,7 +5734,7 @@ SwimmerMGroup:
 	db 17, REMORAID
 	db 19, OCTILLERY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5722,7 +5745,7 @@ SwimmerMGroup:
 	; party
 	db 23, QWILFISH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5734,7 +5757,7 @@ SwimmerMGroup:
 	db 20, GYARADOS
 	db 20, GYARADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5747,7 +5770,7 @@ SwimmerMGroup:
 	db 23, OMANYTE
 	db 23, KABUTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5760,7 +5783,7 @@ SwimmerMGroup:
 	db 25, DEWGONG
 	db 24, SEEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5772,7 +5795,7 @@ SwimmerMGroup:
 	db 26, PILOSWINE
 	db 26, PILOSWINE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5785,7 +5808,7 @@ SwimmerMGroup:
 	db 25, CLOYSTER
 	db 24, SHELLDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5798,7 +5821,7 @@ SwimmerMGroup:
 	db 15, HORSEA
 	db 20, SEADRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5811,7 +5834,7 @@ SwimmerMGroup:
 	db 18, STARMIE
 	db 16, HORSEA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5825,7 +5848,7 @@ SwimmerMGroup:
 	db 50, TENTACRUEL
 	db 48, GOLDEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5837,7 +5860,7 @@ SwimmerMGroup:
 	db 50, SHELLDER
 	db 54, CLOYSTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5850,7 +5873,7 @@ SwimmerMGroup:
 	db 18, STARMIE
 	db 16, HORSEA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5862,7 +5885,7 @@ SwimmerMGroup:
 	db 49, MARILL
 	db 51, AZUMARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5875,7 +5898,7 @@ SwimmerMGroup:
 	db 49, OCTILLERY
 	db 52, QUAGSIRE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5888,7 +5911,7 @@ SwimmerMGroup:
 	db 18, STARMIE
 	db 16, HORSEA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5901,7 +5924,7 @@ SwimmerMGroup:
 	db 18, STARMIE
 	db 16, HORSEA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5914,7 +5937,7 @@ SwimmerMGroup:
 	db 49, SEADRA
 	db 51, KINGDRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -5931,7 +5954,7 @@ SwimmerFGroup:
 	; party
 	db 21, STARYU
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5943,7 +5966,7 @@ SwimmerFGroup:
 	db 19, STARYU
 	db 19, SHELLDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5956,7 +5979,7 @@ SwimmerFGroup:
 	db 20, GOLDEEN
 	db 20, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5970,7 +5993,7 @@ SwimmerFGroup:
 	db 22, GOLDEEN
 	db 24, TOTODILE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5981,7 +6004,7 @@ SwimmerFGroup:
 	; party
 	db 22, SEEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -5993,7 +6016,7 @@ SwimmerFGroup:
 	db 20, STARYU
 	db 20, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6015,7 +6038,7 @@ SwimmerFGroup:
 		db LEER
 		db WATER_GUN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6026,7 +6049,7 @@ SwimmerFGroup:
 	; party
 	db 28, JYNX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6037,7 +6060,7 @@ SwimmerFGroup:
 	; party
 	db 28, DEWGONG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6048,7 +6071,7 @@ SwimmerFGroup:
 	; party
 	db 20, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6059,7 +6082,7 @@ SwimmerFGroup:
 	; party
 	db 33, DEWGONG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6070,7 +6093,7 @@ SwimmerFGroup:
 	; party
 	db 50, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6081,7 +6104,7 @@ SwimmerFGroup:
 	; party
 	db 20, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6094,7 +6117,7 @@ SwimmerFGroup:
 	db 50, AZUMARILL
 	db 52, LAPRAS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6106,7 +6129,7 @@ SwimmerFGroup:
 	db 52, STARMIE
 	db 52, STARMIE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6117,7 +6140,7 @@ SwimmerFGroup:
 	; party
 	db 20, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6131,7 +6154,7 @@ SwimmerFGroup:
 	db 48, SEEL
 	db 48, DEWGONG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6142,7 +6165,7 @@ SwimmerFGroup:
 	; party
 	db 52, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6154,7 +6177,7 @@ SwimmerFGroup:
 	db 50, SEAKING
 	db 50, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -6173,7 +6196,7 @@ SailorGroup:
 	db 17, RATICATE
 	db 19, KRABBY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6185,7 +6208,7 @@ SailorGroup:
 	db 18, POLIWAG
 	db 18, POLIWHIRL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6196,7 +6219,7 @@ SailorGroup:
 	; party
 	db 20, POLIWHIRL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6218,7 +6241,7 @@ SailorGroup:
 		db VICEGRIP
 		db HARDEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6231,7 +6254,7 @@ SailorGroup:
 	db 18, MACHOP
 	db 18, POLIWHIRL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6243,7 +6266,7 @@ SailorGroup:
 	db 47, RATICATE
 	db 47, RATICATE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6254,7 +6277,7 @@ SailorGroup:
 	; party
 	db 49, KINGLER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6268,7 +6291,7 @@ SailorGroup:
 	db 48, POLIWRATH
 	db 48, MACHAMP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6281,7 +6304,7 @@ SailorGroup:
 	db 52, MACHOKE
 	db 48, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6292,7 +6315,7 @@ SailorGroup:
 	; party
 	db 19, WOOPER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6304,7 +6327,7 @@ SailorGroup:
 	db 28, POLIWHIRL
 	db 28, POLIWHIRL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6316,7 +6339,7 @@ SailorGroup:
 	db 44, POLITOED
 	db 44, POLIWRATH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6338,7 +6361,7 @@ SailorGroup:
 		db ICE_PUNCH
 		db SUBMISSION
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -6355,7 +6378,7 @@ SuperNerdGroup:
 	; party
 	db 20, GRIMER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6367,7 +6390,7 @@ SuperNerdGroup:
 	db 11, GRIMER
 	db 11, GRIMER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6380,7 +6403,7 @@ SuperNerdGroup:
 	db 20, MAGNEMITE
 	db 20, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6392,7 +6415,7 @@ SuperNerdGroup:
 	db 22, KOFFING
 	db 22, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6403,7 +6426,7 @@ SuperNerdGroup:
 	; party
 	db 24, DITTO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6415,7 +6438,7 @@ SuperNerdGroup:
 	db 52, GRIMER
 	db 54, MUK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6428,7 +6451,7 @@ SuperNerdGroup:
 	db 48, MAGNEMITE
 	db 52, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6439,7 +6462,7 @@ SuperNerdGroup:
 	; party
 	db 36, PORYGON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6452,7 +6475,7 @@ SuperNerdGroup:
 	db 48, MUK
 	db 50, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6466,7 +6489,7 @@ SuperNerdGroup:
 	db 7, MAGNEMITE
 	db 9, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6479,7 +6502,7 @@ SuperNerdGroup:
 	db 27, MAGNEMITE
 	db 27, MAGNEMITE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6495,7 +6518,7 @@ SuperNerdGroup:
 		db RECOVER
 		db TRI_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6511,7 +6534,7 @@ SuperNerdGroup:
 		db SURF
 		db WATERFALL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6527,7 +6550,7 @@ SuperNerdGroup:
 		db GROWL
 		db STRENGTH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -6579,7 +6602,7 @@ Rival2Group:
 		db BODY_SLAM
 		db LIGHT_SCREEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6625,7 +6648,7 @@ Rival2Group:
 		db FLAME_WHEEL
 		db SWIFT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6671,7 +6694,7 @@ Rival2Group:
 		db SCARY_FACE
 		db SLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6717,7 +6740,7 @@ Rival2Group:
 		db LIGHT_SCREEN
 		db SAFEGUARD
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6763,7 +6786,7 @@ Rival2Group:
 		db FIRE_BLAST
 		db SWIFT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6809,7 +6832,7 @@ Rival2Group:
 		db SLASH
 		db SCREECH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -6827,7 +6850,7 @@ GuitaristGroup:
 	db 52, ELEKID
 	db 54, ELECTABUZZ
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6857,7 +6880,7 @@ GuitaristGroup:
 	db 52, KOFFING
 	db 54, BEEDRILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -6875,7 +6898,7 @@ HikerGroup:
 	db 21, GRAVELER
 	db 23, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6888,7 +6911,7 @@ HikerGroup:
 	db 6, GEODUDE
 	db 8, GEODUDE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6901,7 +6924,7 @@ HikerGroup:
 	db 23, GRAVELER
 	db 23, GOLEM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6913,7 +6936,7 @@ HikerGroup:
 	db 23, GEODUDE
 	db 25, MACHOP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6925,7 +6948,7 @@ HikerGroup:
 	db 11, GEODUDE
 	db 11, MACHOP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6938,7 +6961,7 @@ HikerGroup:
 	db 16, GEODUDE
 	db 18, DUGTRIO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6951,7 +6974,7 @@ HikerGroup:
 	db 32, RHYHORN
 	db 32, PRIMEAPE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6964,7 +6987,7 @@ HikerGroup:
 	db 30, GRAVELER
 	db 30, GOLEM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6976,7 +6999,7 @@ HikerGroup:
 	db 45, ONIX
 	db 43, SWINUB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -6998,7 +7021,7 @@ HikerGroup:
 		db SAND_ATTACK
 		db SLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7013,7 +7036,7 @@ HikerGroup:
 	db 13, SLUGMA
 	db 13, GEODUDE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7026,7 +7049,7 @@ HikerGroup:
 	db 27, GRAVELER
 	db 29, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7039,7 +7062,7 @@ HikerGroup:
 	db 51, MAGCARGO
 	db 51, GRAVELER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7051,7 +7074,7 @@ HikerGroup:
 	db 31, SANDSLASH
 	db 33, GOLEM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7063,7 +7086,7 @@ HikerGroup:
 	db 54, DUGTRIO
 	db 52, STEELIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7077,7 +7100,7 @@ HikerGroup:
 	db 51, GOLEM
 	db 49, GRAVELER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7088,7 +7111,7 @@ HikerGroup:
 	; party
 	db 55, MACHAMP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7099,7 +7122,7 @@ HikerGroup:
 	; party
 	db 11, ONIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7127,7 +7150,7 @@ HikerGroup:
 		db SANDSTORM
 		db SLAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7138,7 +7161,7 @@ HikerGroup:
 	; party
 	db 32, ONIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7151,7 +7174,7 @@ HikerGroup:
 	db 40, GOLEM
 	db 42, MACHAMP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7179,7 +7202,7 @@ HikerGroup:
 		db HEADBUTT
 		db DIG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7198,7 +7221,7 @@ BikerGroup:
 	db 20, KOFFING
 	db 20, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7211,7 +7234,7 @@ BikerGroup:
 	db 20, KOFFING
 	db 20, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7225,7 +7248,7 @@ BikerGroup:
 	db 49, WEEZING
 	db 50, ARIADOS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7236,7 +7259,7 @@ BikerGroup:
 	; party
 	db 54, FLAREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7248,7 +7271,7 @@ BikerGroup:
 	db 52, KOFFING
 	db 52, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7261,7 +7284,7 @@ BikerGroup:
 	db 50, CHARMELEON
 	db 50, WEEZING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7272,7 +7295,7 @@ BikerGroup:
 	; party
 	db 54, WEEZING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7284,7 +7307,7 @@ BikerGroup:
 	db 52, MAGBY
 	db 52, MAGMAR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7323,7 +7346,7 @@ BikerGroup:
 	db 50, GRIMER
 	db 52, WEEZING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7369,7 +7392,7 @@ BlaineGroup:
 		db MEGAHORN
 		db FIRE_BLAST
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7388,7 +7411,7 @@ BurglarGroup:
 	db 27, KOFFING
 	db 25, MAGMAR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7410,7 +7433,7 @@ BurglarGroup:
 		db SLUDGE
 		db SMOKESCREEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7424,7 +7447,7 @@ BurglarGroup:
 	db 45, VULPIX
 	db 50, QUILAVA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7443,7 +7466,7 @@ FirebreatherGroup:
 	db 52, WEEZING
 	db 49, CHARIZARD
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7455,7 +7478,7 @@ FirebreatherGroup:
 	db 15, CHARMANDER
 	db 15, CYNDAQUIL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7468,7 +7491,7 @@ FirebreatherGroup:
 	db 16, KOFFING
 	db 15, VULPIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7480,7 +7503,7 @@ FirebreatherGroup:
 	db 52, WEEZING
 	db 52, MAGCARGO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7492,7 +7515,7 @@ FirebreatherGroup:
 	db 6, MAGBY
 	db 6, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7504,7 +7527,7 @@ FirebreatherGroup:
 	db 11, MAGBY
 	db 13, MAGMAR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7515,7 +7538,7 @@ FirebreatherGroup:
 	; party
 	db 9, VULPIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7528,7 +7551,7 @@ FirebreatherGroup:
 	db 51, FLAREON
 	db 48, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7548,7 +7571,7 @@ JugglerGroup:
 	db 10, VOLTORB
 	db 14, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7561,7 +7584,7 @@ JugglerGroup:
 	db 49, MAGMAR
 	db 49, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7575,7 +7598,7 @@ JugglerGroup:
 	db 53, ELECTRODE
 	db 53, MAGNETON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7589,7 +7612,7 @@ JugglerGroup:
 	db 14, VOLTORB
 	db 18, VOLTORB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7603,7 +7626,7 @@ JugglerGroup:
 	db 26, VOLTORB
 	db 30, ELECTRODE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7617,7 +7640,7 @@ JugglerGroup:
 	db 26, VOLTORB
 	db 30, ELECTRODE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7637,7 +7660,7 @@ BlackbeltGroup:
 	db 37, ONIX
 	db 42, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7653,7 +7676,7 @@ BlackbeltGroup:
 		db JUMP_KICK
 		db FOCUS_ENERGY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7687,7 +7710,7 @@ BlackbeltGroup:
 		db MUD_SLAP
 		db SWIFT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7703,7 +7726,7 @@ BlackbeltGroup:
 		db ICE_PUNCH
 		db FIRE_PUNCH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7725,7 +7748,7 @@ BlackbeltGroup:
 		db PROTECT
 		db DIG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7737,7 +7760,7 @@ BlackbeltGroup:
 	db 34, HITMONLEE
 	db 34, HITMONCHAN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7750,7 +7773,7 @@ BlackbeltGroup:
 	db 23, MACHOP
 	db 25, PRIMEAPE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7761,7 +7784,7 @@ BlackbeltGroup:
 	; party
 	db 30, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7774,7 +7797,7 @@ BlackbeltGroup:
 	db 52, MACHOKE
 	db 54, MACHOKE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7808,7 +7831,7 @@ ExecutiveMGroup:
 		db BITE
 		db FAINT_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7824,7 +7847,7 @@ ExecutiveMGroup:
 		db CONFUSE_RAY
 		db WING_ATTACK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7870,7 +7893,7 @@ ExecutiveMGroup:
 		db SLUDGE
 		db SMOKESCREEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7883,7 +7906,7 @@ ExecutiveMGroup:
 	db 24, RATICATE
 	db 22, KOFFING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -7900,7 +7923,7 @@ PsychicGroup:
 	; party
 	db 26, GIRAFARIG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7911,7 +7934,7 @@ PsychicGroup:
 	; party
 	db 52, KADABRA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7924,7 +7947,7 @@ PsychicGroup:
 	db 50, EXEGGCUTE
 	db 50, EXEGGUTOR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7935,7 +7958,7 @@ PsychicGroup:
 	; party
 	db 54, XATU
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7957,7 +7980,7 @@ PsychicGroup:
 		db DREAM_EATER
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -7979,7 +8002,7 @@ PsychicGroup:
 		db WATER_GUN
 		db CONFUSION
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8007,7 +8030,7 @@ PsychicGroup:
 		db CONFUSION
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8029,7 +8052,7 @@ PsychicGroup:
 		db RECOVER
 		db FUTURE_SIGHT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8040,7 +8063,7 @@ PsychicGroup:
 	; party
 	db 36, ESPEON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8053,7 +8076,7 @@ PsychicGroup:
 	db 30, EXEGGCUTE
 	db 34, GIRAFARIG
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8066,7 +8089,7 @@ PsychicGroup:
 	db 47, EXEGGCUTE
 	db 50, EXEGGUTOR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8078,7 +8101,7 @@ PsychicGroup:
 	db 49, DROWZEE
 	db 53, HYPNO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -8095,7 +8118,7 @@ PicnickerGroup:
 	; party
 	db 9, NIDORAN_F
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8108,7 +8131,7 @@ PicnickerGroup:
 	db 10, CHIKORITA
 	db 12, BULBASAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8124,7 +8147,7 @@ PicnickerGroup:
 		db QUICK_ATTACK
 		db DOUBLE_TEAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8135,7 +8158,7 @@ PicnickerGroup:
 	; party
 	db 15, VULPIX
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8146,7 +8169,7 @@ PicnickerGroup:
 	; party
 	db 51, NIDOQUEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8157,7 +8180,7 @@ PicnickerGroup:
 	; party
 	db 54, FLAAFFY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8169,7 +8192,7 @@ PicnickerGroup:
 	db 51, FURRET
 	db 53, RAPIDASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8180,7 +8203,7 @@ PicnickerGroup:
 	; party
 	db 53, SEAKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8193,7 +8216,7 @@ PicnickerGroup:
 	db 17, BAYLEEF
 	db 19, IVYSAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8205,7 +8228,7 @@ PicnickerGroup:
 	db 18, PONYTA
 	db 18, PONYTA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8217,7 +8240,7 @@ PicnickerGroup:
 	db 17, WEEPINBELL
 	db 17, NIDORINA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8230,7 +8253,7 @@ PicnickerGroup:
 	db 24, NIDORINO
 	db 28, NIDOQUEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8242,7 +8265,7 @@ PicnickerGroup:
 	db 52, SKIPLOOM
 	db 52, JUMPLUFF
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8254,7 +8277,7 @@ PicnickerGroup:
 	db 50, NIDORINA
 	db 54, RAICHU
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8267,7 +8290,7 @@ PicnickerGroup:
 	db 27, BAYLEEF
 	db 29, IVYSAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8283,7 +8306,7 @@ PicnickerGroup:
 		db FAIRY_WIND
 		db MINIMIZE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8299,7 +8322,7 @@ PicnickerGroup:
 		db MINIMIZE
 		db METRONOME
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8312,7 +8335,7 @@ PicnickerGroup:
 	db 32, PIKACHU, LIGHT_BALL
 	db 32, PONYTA, NO_ITEM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8323,7 +8346,7 @@ PicnickerGroup:
 	; party
 	db 52, EXEGGUTOR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8339,7 +8362,7 @@ PicnickerGroup:
 		db FAIRY_WIND
 		db MINIMIZE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8367,7 +8390,7 @@ PicnickerGroup:
 		db FIRE_SPIN
 		db MEGAHORN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8380,7 +8403,7 @@ PicnickerGroup:
 	db 36, NIDORINO
 	db 36, NIDOQUEEN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8408,7 +8431,7 @@ PicnickerGroup:
 		db TAIL_WHIP
 		db BODY_SLAM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8421,7 +8444,7 @@ PicnickerGroup:
 	db 40, BAYLEEF
 	db 42, IVYSAUR
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8449,7 +8472,7 @@ PicnickerGroup:
 		db HEADBUTT
 		db MUD_SLAP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8465,7 +8488,7 @@ PicnickerGroup:
 		db MOONLIGHT
 		db MOONBLAST
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -8482,7 +8505,7 @@ CamperGroup:
 	; party
 	db 9, NIDORAN_M
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8493,7 +8516,7 @@ CamperGroup:
 	; party
 	db 14, PSYDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8506,7 +8529,7 @@ CamperGroup:
 	db 10, ZUBAT
 	db 14, DIGLETT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8518,7 +8541,7 @@ CamperGroup:
 	db 13, SANDSHREW
 	db 15, MARILL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8529,7 +8552,7 @@ CamperGroup:
 	; party
 	db 56, NIDOKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8540,7 +8563,7 @@ CamperGroup:
 	; party
 	db 44, NIDOKING
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8552,7 +8575,7 @@ CamperGroup:
 	db 48, GOLDUCK
 	db 46, SANDSLASH
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8565,7 +8588,7 @@ CamperGroup:
 	db 44, PRIMEAPE
 	db 44, POLITOED
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8576,7 +8599,7 @@ CamperGroup:
 	; party
 	db 15, NIDORINO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8587,7 +8610,7 @@ CamperGroup:
 	; party
 	db 15, NIDORINO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8598,7 +8621,7 @@ CamperGroup:
 	; party
 	db 22, MANKEY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8611,7 +8634,7 @@ CamperGroup:
 	db 21, RHYHORN
 	db 27, PSYDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8624,7 +8647,7 @@ CamperGroup:
 	db 28, RHYHORN
 	db 31, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8638,7 +8661,7 @@ CamperGroup:
 	db 40, GOLBAT
 	db 42, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8652,7 +8675,7 @@ CamperGroup:
 	db 40, GOLBAT
 	db 42, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8666,7 +8689,7 @@ CamperGroup:
 	db 40, GOLBAT
 	db 42, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8680,7 +8703,7 @@ CamperGroup:
 	db 40, GOLBAT
 	db 42, GOLDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8693,7 +8716,7 @@ CamperGroup:
 	db 55, OMASTAR
 	db 55, KABUTOPS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8706,7 +8729,7 @@ CamperGroup:
 	db 22, SANDSLASH
 	db 24, ZUBAT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8720,7 +8743,7 @@ CamperGroup:
 	db 40, SLUGMA
 	db 42, PSYDUCK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8754,7 +8777,7 @@ CamperGroup:
 		db SURF
 		db PSYCH_UP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8767,7 +8790,7 @@ CamperGroup:
 	db 30, PRIMEAPE
 	db 30, TAUROS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -8801,7 +8824,7 @@ ExecutiveFGroup:
 		db HAZE
 		db NIGHT_SHADE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8829,7 +8852,7 @@ ExecutiveFGroup:
 		db HAZE
 		db 0
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -8848,7 +8871,7 @@ SageGroup:
 	db 4, HOPPIP
 	db 4, BELLSPROUT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8861,7 +8884,7 @@ SageGroup:
 	db 4, CUBONE
 	db 4, BELLSPROUT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8872,7 +8895,7 @@ SageGroup:
 	; party
 	db 6, BELLSPROUT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8884,7 +8907,7 @@ SageGroup:
 	db 7, BELLSPROUT
 	db 7, HOOTHOOT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8895,7 +8918,7 @@ SageGroup:
 	; party
 	db 22, HAUNTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8910,7 +8933,7 @@ SageGroup:
 	db 16, GASTLY
 	db 16, GASTLY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8923,7 +8946,7 @@ SageGroup:
 	db 3, BELLSPROUT
 	db 3, BELLSPROUT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8935,7 +8958,7 @@ SageGroup:
 	db 6, BELLSPROUT
 	db 6, HOPPIP
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8948,7 +8971,7 @@ SageGroup:
 	db 7, BELLSPROUT
 	db 10, HOOTHOOT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8960,7 +8983,7 @@ SageGroup:
 	db 32, NOCTOWL
 	db 32, FLAREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8972,7 +8995,7 @@ SageGroup:
 	db 32, NOCTOWL
 	db 32, JOLTEON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -8984,7 +9007,7 @@ SageGroup:
 	db 32, NOCTOWL
 	db 32, VAPOREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9003,7 +9026,7 @@ MediumGroup:
 	db 20, HAUNTER
 	db 20, MISDREAVUS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9015,7 +9038,7 @@ MediumGroup:
 	db 20, HAUNTER
 	db 20, HAUNTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9026,7 +9049,7 @@ MediumGroup:
 	; party
 	db 25, HAUNTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9037,7 +9060,7 @@ MediumGroup:
 	; party
 	db 25, HAUNTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9048,7 +9071,7 @@ MediumGroup:
 	; party
 	db 25, HAUNTER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9060,7 +9083,7 @@ MediumGroup:
 	db 50, DROWZEE
 	db 50, HYPNO
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9086,7 +9109,7 @@ MediumGroup:
 	db 7, DITTO
 	db 8, UNOWN
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9105,7 +9128,7 @@ BoarderGroup:
 	db 32, DEWGONG
 	db 31, SEEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9117,7 +9140,7 @@ BoarderGroup:
 	db 33, SWINUB
 	db 33, SWINUB
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9145,7 +9168,7 @@ BoarderGroup:
 	db 52, KANGASKHAN
 	db 53, VAPOREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9162,7 +9185,7 @@ PokefanMGroup:
 	; party
 	db 14, RAICHU, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9173,7 +9196,7 @@ PokefanMGroup:
 	; party
 	db 19, PIKACHU, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9184,7 +9207,7 @@ PokefanMGroup:
 	; party
 	db 53, QUAGSIRE, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9200,7 +9223,7 @@ PokefanMGroup:
 	db 43, PIKACHU, BERRY
 	db 43, PIKACHU, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9216,7 +9239,7 @@ PokefanMGroup:
 	db 49, CYNDAQUIL, BERRY
 	db 49, TOTODILE, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9227,7 +9250,7 @@ PokefanMGroup:
 	; party
 	db 53, PSYDUCK, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9239,7 +9262,7 @@ PokefanMGroup:
 	db 13, SNUBBULL, BERRY
 	db 13, SMOOCHUM, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9252,7 +9275,7 @@ PokefanMGroup:
 	db 48, MEOWTH, BERRY
 	db 48, MEOWTH, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9263,7 +9286,7 @@ PokefanMGroup:
 	; party
 	db 52, DELIBIRD, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9274,7 +9297,7 @@ PokefanMGroup:
 	; party
 	db 39, PIKACHU, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9285,7 +9308,7 @@ PokefanMGroup:
 	; party
 	db 56, PIKACHU, LIGHT_BALL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9298,7 +9321,7 @@ PokefanMGroup:
 	db 49, SLOWKING, KINGS_ROCK
 	db 49, SEAKING, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9309,7 +9332,7 @@ PokefanMGroup:
 	; party
 	db 55, PHANPY, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9320,7 +9343,7 @@ PokefanMGroup:
 	; party
 	db 55, TEDDIURSA, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9340,7 +9363,7 @@ KimonoGirlGroup:
 	db 20, MAGCARGO
 	db 20, MISDREAVUS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9351,7 +9374,7 @@ KimonoGirlGroup:
 	; party
 	db 17, FLAREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9362,7 +9385,7 @@ KimonoGirlGroup:
 	; party
 	db 17, ESPEON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9373,7 +9396,7 @@ KimonoGirlGroup:
 	; party
 	db 17, UMBREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9384,7 +9407,7 @@ KimonoGirlGroup:
 	; party
 	db 17, VAPOREON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9395,7 +9418,7 @@ KimonoGirlGroup:
 	; party
 	db 17, JOLTEON
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9429,7 +9452,7 @@ TwinsGroup:
 	db 10, SPINARAK
 	db 10, LEDYBA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9451,7 +9474,7 @@ TwinsGroup:
 		db POUND
 		db DISABLE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9473,7 +9496,7 @@ TwinsGroup:
 		db DOUBLESLAP
 		db METRONOME
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9485,7 +9508,7 @@ TwinsGroup:
 	db 10, LEDYBA
 	db 10, SPINARAK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9497,7 +9520,7 @@ TwinsGroup:
 	db 50, VICTREEBEL
 	db 50, VILEPLUME
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9509,7 +9532,7 @@ TwinsGroup:
 	db 50, VILEPLUME
 	db 50, VICTREEBEL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9521,7 +9544,7 @@ TwinsGroup:
 	db 51, TEDDIURSA
 	db 51, PHANPY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9533,7 +9556,7 @@ TwinsGroup:
 	db 51, PHANPY
 	db 51, TEDDIURSA
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9555,7 +9578,7 @@ TwinsGroup:
 		db ICE_BEAM
 		db HEADBUTT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9577,7 +9600,7 @@ TwinsGroup:
 		db FLAMETHROWER
 		db HEADBUTT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9594,7 +9617,7 @@ PokefanFGroup:
 	; party
 	db 14, SNUBBULL, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9605,7 +9628,7 @@ PokefanFGroup:
 	; party
 	db 19, PIKACHU, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9616,7 +9639,7 @@ PokefanFGroup:
 	; party
 	db 33, SNUBBULL, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9627,7 +9650,7 @@ PokefanFGroup:
 	; party
 	db 52, GRANBULL, GOLD_BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9642,7 +9665,7 @@ PokefanFGroup:
 	db 48, FURRET, GOLD_BERRY
 	db 43, SENTRET, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9653,7 +9676,7 @@ PokefanFGroup:
 	; party
 	db 18, MEOWTH, BERRY
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9705,7 +9728,7 @@ RedGroup:
 		db BLIZZARD
 		db WHIRLPOOL
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9757,7 +9780,7 @@ BlueGroup:
 		db FLAMETHROWER
 		db EXTREMESPEED
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9774,7 +9797,7 @@ OfficerGroup:
 	; party
 	db 17, GROWLITHE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9786,7 +9809,7 @@ OfficerGroup:
 	db 14, GROWLITHE
 	db 14, GROWLITHE
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9804,7 +9827,7 @@ GruntFGroup:
 	db 9, ZUBAT
 	db 11, EKANS
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9815,7 +9838,7 @@ GruntFGroup:
 	; party
 	db 31, ARBOK
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9827,7 +9850,7 @@ GruntFGroup:
 	db 30, GLOOM
 	db 30, GLOOM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9841,7 +9864,7 @@ GruntFGroup:
 	db 26, EKANS
 	db 29, GLOOM
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 
@@ -9863,7 +9886,7 @@ GruntFGroup:
 		db STUN_SPORE
 		db SLEEP_POWDER
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
@@ -9897,7 +9920,7 @@ MysticalmanGroup:
 		db THUNDER
 		db ROLLOUT
 
-	db $ff ; end
+	db -1 ; end
 
 ; ================
 ; ================================
