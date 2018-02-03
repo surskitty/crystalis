@@ -470,41 +470,37 @@ Special_TrainerHouse: ; 0xc4b9
 	ld [ScriptVar], a
 	jp CloseSRAM
 
+
 SpecialStationaryRespawns:
 	ld a, SUDOWOODO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtSudowoodo
 	clearevent EVENT_ROUTE_36_SUDOWOODO
 .CaughtSudowoodo
-
 	ld a, ARTICUNO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtArticuno
 	clearevent EVENT_ICE_PATH_ARTICUNO
 	clearevent EVENT_FOUGHT_ARTICUNO
 .CaughtArticuno
-
 	ld a, ZAPDOS - 1
 	call CheckCaughtMon
 	jr nz, .CaughtZapdos
 	clearevent EVENT_DARK_CAVE_ZAPDOS
 	clearevent EVENT_FOUGHT_ZAPDOS
 .CaughtZapdos
-
 	ld a, MOLTRES - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMoltres
 	clearevent EVENT_MT_MORTAR_MOLTRES
 	clearevent EVENT_FOUGHT_MOLTRES
 .CaughtMoltres
-
 	ld a, MEWTWO - 1
 	call CheckCaughtMon
 	jr nz, .CaughtMewtwo
 	clearevent EVENT_MT_SILVER_MEWTWO
 	clearevent EVENT_FOUGHT_MEWTWO
 .CaughtMewtwo
-
 	ld a, RAIKOU - 1
 	call CheckCaughtMon
 	jr nz, .CaughtRaikou
@@ -523,7 +519,6 @@ SpecialStationaryRespawns:
 	xor a ; generate new stats
 	ld [wRoamMon1HP], a
 .CaughtRaikou
-
 	ld a, ENTEI - 1
 	call CheckCaughtMon
 	jr nz, .CaughtEntei
@@ -542,7 +537,6 @@ SpecialStationaryRespawns:
 	xor a ; generate new stats
 	ld [wRoamMon2HP], a
 .CaughtEntei
-
 	checkevent EVENT_FOUGHT_SUICUNE
 	iftrue .SuicuneRoam
 .SuicuneRoam
@@ -565,19 +559,16 @@ SpecialStationaryRespawns:
 	xor a ; generate new stats
 	ld [wRoamMon3HP], a
 .CaughtSuicune
-
 	ld a, LUGIA - 1
 	call CheckCaughtMon
 	jr nz, .CaughtLugia
 	clearevent EVENT_WHIRL_ISLAND_LUGIA_CHAMBER_LUGIA
 	clearevent EVENT_FOUGHT_LUGIA
 .CaughtLugia
-
 	ld a, HO_OH - 1
 	call CheckCaughtMon
 	ret nz
 	clearevent EVENT_TIN_TOWER_ROOF_HO_OH
 	clearevent EVENT_FOUGHT_HO_OH
 	ret
-
 
