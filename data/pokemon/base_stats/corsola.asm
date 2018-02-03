@@ -8,6 +8,7 @@
 	db 113 ; base exp
 	db NO_ITEM ; item 1
 	db HARD_STONE ; item 2
+	db GENDER_F75 ; gender
 	db 100 ; unknown
 	db 20 ; step cycles to hatch
 	db 5 ; unknown
