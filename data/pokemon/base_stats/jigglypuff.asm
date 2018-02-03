@@ -8,6 +8,7 @@
 	db 76 ; base exp
 	db POLKADOT_BOW ; item 1
 	db MOON_STONE ; item 2
+	db GENDER_F75 ; gender
 	db 100 ; unknown
 	db 10 ; step cycles to hatch
 	db 5 ; unknown
