@@ -28,7 +28,7 @@ BattleTowerOutsideSailorScript:
 	jumptextfaceplayer BattleTowerOutsideSailorText
 
 MapBattleTowerOutsideSignpost0Script:
-	jumptext BattleTowerOutsideText_UltimateChallenge
+	jumptext BattleTowerOutsideSignText
 
 BattleTowerOutsideUnusedText1:
 	text "Wow, the BATTLE"
@@ -104,12 +104,12 @@ BattleTowerOutsideSailorText:
 	line "all. That I must!"
 	done
 
-BattleTowerOutsideText_BattleTower:
+BattleTowerOutsideSignText_NotYetOpen:
 ; unused; originally shown when the Battle Tower was closed
 	text "BATTLE TOWER"
 	done
 
-BattleTowerOutsideText_UltimateChallenge:
+BattleTowerOutsideSignText:
 	text "BATTLE TOWER"
 
 	para "Take the Ultimate"
