@@ -1013,6 +1013,16 @@ DoRepelStep: ; 96bd7
 
 	ld a, BANK(RepelWoreOffScript)
 	ld hl, RepelWoreOffScript
+	ld a, [wRepelType]
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+ 	ld a, BANK(RepelWoreOffScript)
+ 	ld hl, RepelWoreOffScript
+	jr nc, .got_script
+	ld a, BANK(UseAnotherRepelScript)
+	ld hl, UseAnotherRepelScript
+.got_script
 	call CallScript
 	scf
 	ret
