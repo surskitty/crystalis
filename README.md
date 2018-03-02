@@ -9,3 +9,4 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - All 1/8 female pok&eacute;mon changed to 1/4 female.
 - Repel prompts you to use another one.
 - Hold items added to many wild pok&eacute;mon.
+- Detect replaced with Moonblast

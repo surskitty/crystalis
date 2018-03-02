@@ -1049,8 +1049,8 @@ IcyWindDescription:
 	next "lowers SPEED.@"
 
 DetectDescription:
-	db   "Evades attack that"
-	next "turn. It may fail.@"
+	db   "An attack that may"
+	next "lower SPCL.ATK.@"
 
 BoneRushDescription:
 	db   "An attack that"
