@@ -6,7 +6,7 @@
 	db FIRE, FIRE ; type
 	db 45 ; catch rate
 	db 209 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db CHARCOAL, CHARCOAL ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch

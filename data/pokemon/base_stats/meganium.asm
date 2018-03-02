@@ -6,7 +6,7 @@
 	db GRASS, GRASS ; type
 	db 45 ; catch rate
 	db 208 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db MIRACLE_SEED, MIRACLE_SEED ; items
 	db GENDER_F25 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
