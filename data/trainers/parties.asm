@@ -1341,11 +1341,6 @@ GruntMGroup:
 	db 25, RATTATA
 	db -1 ; end
 
-	; GRUNTM (12)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 33, HOUNDOUR
-	db -1 ; end
-
 	; GRUNTM (13)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 27, RATTATA
@@ -1402,16 +1397,6 @@ GruntMGroup:
 	db 18, RATTATA
 	db -1 ; end
 
-	; GRUNTM (22)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 36, GOLBAT
-	db -1 ; end
-
-	; GRUNTM (23)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 30, KOFFING
-	db -1 ; end
-
 	; GRUNTM (24)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 25, KOFFING
@@ -1424,17 +1409,6 @@ GruntMGroup:
 	db 24, MUK
 	db -1 ; end
 
-	; GRUNTM (26)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 15, RATTATA
-	db 15, RATTATA
-	db -1 ; end
-
-	; GRUNTM (27)
-	db "EXECUTIVE@", TRAINERTYPE_NORMAL
-	db 22, ZUBAT
-	db -1 ; end
-
 	; GRUNTM (28)
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db 19, RATICATE
@@ -1444,13 +1418,6 @@ GruntMGroup:
 	db "GRUNT@", TRAINERTYPE_NORMAL
 	db  9, RATTATA
 	db  9, RATTATA
-	db -1 ; end
-
-	; GRUNTM (30)
-	db "GRUNT@", TRAINERTYPE_NORMAL
-	db 25, GOLBAT
-	db 25, GOLBAT
-	db 30, ARBOK
 	db -1 ; end
 
 	; GRUNTM (31)
