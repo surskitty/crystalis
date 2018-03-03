@@ -6,8 +6,10 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 
 ## Changelog
 - Fairy type added
+- Dark and Ghost have switched so that Dark is now Physical and Ghost is Special.
 - All 1/8 female pok&eacute;mon changed to 1/4 female.
 - Repel prompts you to use another one.
 - Hold items added to many wild pok&eacute;mon.
 - Detect replaced with Moonblast
 - Psywave replaced with Silver Wind
+- Roster changes for many trainers
