@@ -87,10 +87,10 @@ WhitneyScript_0x5400c:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_WHITNEY
 	opentext
-	writetext WhitneyRematchTMsText
+	writetext WhitneyShouldntBeSoSeriousText
 	verbosegiveitem TM_SWAGGER
 	verbosegiveitem TM_ATTRACT
-	writetext UnknownText_0x54302
+	writetext WhitneyRematchTMsText
 	waitbutton
 	closetext
 	end

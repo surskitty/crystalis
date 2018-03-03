@@ -5,6 +5,7 @@ This is a romhack of Pok&eacute;mon Crystal, made off [pret/pokemon-crystal](htt
 The underlying philosophy of this romhack is to leave it playably a main series Pok&eacute;mon game, simplistic difficulty and all.  Encounters are adjusted so that all Pok&eacute;mon will be available in multiple areas, with as few unfeasibly low appearance rates as possible.  As such, there is no intention of releasing a separate document detailing full appearance lists.
 
 ## Changelog
+- Encounters changed almost entirely!  This is a 251 hack.
 - Fairy type added
 - Dark and Ghost have switched so that Dark is now Physical and Ghost is Special.
 - All 1/8 female pok&eacute;mon changed to 1/4 female.
@@ -13,3 +14,4 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - Detect replaced with Moonblast
 - Psywave replaced with Silver Wind
 - Roster changes for many trainers
+- Goldenrod Gym updated to be a Miltank
