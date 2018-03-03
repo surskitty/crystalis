@@ -1,7 +1,7 @@
 ContestMons: ; 97d87
 	;   %, species,   min, max
-	db 20, CATERPIE,    7, 18
-	db 20, WEEDLE,      7, 18
+	db 15, CATERPIE,    7, 18
+	db 15, WEEDLE,      7, 18
 	db 10, METAPOD,     9, 18
 	db 10, KAKUNA,      9, 18
 	db  5, BUTTERFREE, 12, 15
@@ -10,5 +10,6 @@ ContestMons: ; 97d87
 	db 10, PARAS,      10, 17
 	db  5, SCYTHER,    13, 14
 	db  5, PINSIR,     13, 14
-	db -1, VENOMOTH,   30, 40
+	db  5, VENOMOTH,   12, 18
+	db  5, YANMA,      10, 15
 ; 97db3
