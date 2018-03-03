@@ -6,7 +6,7 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 
 ## Changelog
 - Encounters changed almost entirely!  This is a 251 hack.
-- Fairy type added
+- Fairy type added and moves updated to modern standards.
 - Dark and Ghost have switched so that Dark is now Physical and Ghost is Special.
 - All 1/8 female pok&eacute;mon changed to 1/4 female.
 - Repel prompts you to use another one.
