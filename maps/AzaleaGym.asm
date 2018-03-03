@@ -21,6 +21,8 @@ AzaleaGymBugsyScript:
 	waitbutton
 	closetext
 	winlosstext BugsyText_ResearchIncomplete, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	loadtrainer BUGSY, BUGSY1
 	startbattle
 	reloadmapafterbattle
@@ -53,6 +55,20 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_BugMonsAreDeep
 	waitbutton
 .NoRoomForFuryCutter:
+	closetext
+	end
+
+.Rematch:
+	winlosstext BugsyText_Rematch, 0
+	loadtrainer BUGSY, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BUGSY
+	opentext
+	verbosegiveitem TM_FURY_CUTTER
+	verbosegiveitem TM_SILVER_WIND
+	writetext BugsyText_RematchTMsSpeech
+	waitbutton
 	closetext
 	end
 
@@ -124,7 +140,7 @@ TrainerBugCatcherJosh:
 
 AzaleaGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_BUGSY
+	checkflag ENGINE_HIVEBADGE
 	iftrue .AzaleaGymGuyWinScript
 	opentext
 	writetext AzaleaGymGuyText
@@ -177,6 +193,19 @@ BugsyText_ResearchIncomplete:
 	line "this BADGE."
 	done
 
+BugsyText_Rematch:
+	text "Whoa, amazing!"
+	line "You're an expert"
+	cont "on #MON!"
+
+	para "My research isn't"
+	line "complete yet."
+
+	para "Battle me again"
+	line "sometime soon,"
+	cont "okay?"
+	done
+
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
 	line "HIVEBADGE."
@@ -217,6 +246,16 @@ BugsyText_FuryCutterSpeech:
 
 	para "Isn't that great?"
 	line "I discovered it!"
+	done
+
+BugsyText_RematchTMsSpeech:
+	text "FURY CUTTER and"
+	line "SILVER WIND both"
+	cont "need strategy."
+
+	para "Bug #MON aren't"
+	line "just for kids,"
+	cont "you know!"
 	done
 
 BugsyText_BugMonsAreDeep:
