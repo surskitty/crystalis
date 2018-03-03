@@ -28,6 +28,8 @@ WhitneyScript_0x5400c:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	loadtrainer WHITNEY, WHITNEY1
 	startbattle
 	reloadmapafterbattle
@@ -76,6 +78,20 @@ WhitneyScript_0x5400c:
 	writetext WhitneyGoodCryText
 	waitbutton
 .NoRoom:
+	closetext
+	end
+
+.Rematch:
+	loadtrainer WHITNEY, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_WHITNEY
+	opentext
+	writetext WhitneyRematchTMsText
+	verbosegiveitem TM_SWAGGER
+	verbosegiveitem TM_ATTRACT
+	writetext UnknownText_0x54302
+	waitbutton
 	closetext
 	end
 
@@ -149,7 +165,7 @@ TrainerBeautySamantha:
 
 GoldenrodGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	checkflag ENGINE_PLAINBADGE
 	iftrue .GoldenrodGymGuyWinScript
 	opentext
 	writetext GoldenrodGymGuyText
@@ -174,10 +190,12 @@ GoldenrodGymStatue:
 
 BridgetWalksUpMovement:
 	step LEFT
+	step LEFT
 	turn_head UP
 	step_end
 
 BridgetWalksAwayMovement:
+	step RIGHT
 	step RIGHT
 	turn_head LEFT
 	step_end
@@ -260,12 +278,29 @@ WhitneyAttractText:
 	cont "like me?"
 	done
 
+WhitneyRematchTMsText:
+	text "ATTRACT can stack"
+	line "with other status"
+	cont "conditions!"
+
+	para "Try SWAGGER or"
+	line "paralysis to"
+
+	para "really bring out"
+	line "a #MON's charm!"
+	done
+
 WhitneyGoodCryText:
 	text "Ah, that was a"
 	line "good cry!"
 
 	para "Come for a visit"
 	line "again! Bye-bye!"
+	done
+
+WhitneyRematchText:
+	text "You didn't have"
+	line "to play so rough!"
 	done
 
 LassCarrieSeenText:
@@ -385,16 +420,16 @@ GoldenrodGym_MapEvents:
 	warp_event  3, 17, GOLDENROD_CITY, 1
 
 	db 1 ; coord events
-	coord_event  8,  5, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING, WhitneyCriesScript
+	coord_event  9,  7, SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING, WhitneyCriesScript
 
 	db 2 ; bg events
 	bg_event  1, 15, BGEVENT_READ, GoldenrodGymStatue
 	bg_event  4, 15, BGEVENT_READ, GoldenrodGymStatue
 
 	db 6 ; object events
-	object_event  8,  3, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WhitneyScript_0x5400c, -1
-	object_event  9, 13, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
-	object_event  9,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
-	object_event  0,  2, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
-	object_event 19,  5, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
-	object_event  5, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1
+	object_event  8,  5, SPRITE_WHITNEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, WhitneyScript_0x5400c, -1
+	object_event  9, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLassCarrie, -1
+	object_event 11,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassBridget, -1
+	object_event  3,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyVictoria, -1
+	object_event 14,  8, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautySamantha, -1
+	object_event  3, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGymGuyScript, -1
