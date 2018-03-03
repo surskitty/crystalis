@@ -18,6 +18,8 @@ FalknerScript_0x683c2:
 	waitbutton
 	closetext
 	winlosstext UnknownText_0x6854a, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	loadtrainer FALKNER, FALKNER1
 	startbattle
 	reloadmapafterbattle
@@ -52,6 +54,18 @@ FalknerScript_0x683c2:
 .NoRoomForMudSlap:
 	closetext
 	end
+
+.Rematch:
+	loadtrainer FALKNER, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_FALKNER
+	opentext
+	verbosegiveitem TM_MUD_SLAP
+	verbosegiveitem TM_STEEL_WING
+	writetext FalknerRematchAfterText
+	waitbutton
+	closetext
 
 VioletGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
@@ -205,6 +219,16 @@ UnknownText_0x68735:
 
 	para "the greatest bird"
 	line "master!"
+	done
+
+FalknerRematchAfterText:
+	text "Flying #MON"
+	line "learn all sorts"
+	cont "of moves."
+
+	para "I'll win with"
+	line "only birds, you"
+	cont "wait and see!"
 	done
 
 BirdKeeperRodSeenText:

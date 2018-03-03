@@ -29,6 +29,8 @@ BlackthornGym1F_MapScripts:
 BlackthornGymClairScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	checkflag ENGINE_RISINGBADGE
 	iftrue .AlreadyGotBadge
 	checkevent EVENT_BEAT_CLAIR
@@ -90,6 +92,22 @@ BlackthornGymClairScript:
 	closetext
 	end
 
+.Rematch:
+	writetext ClairIntroText
+	waitbutton
+	closetext
+	winlosstext ClairWinText, 0
+	loadtrainer CLAIR, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CLAIR
+	opentext
+	verbosegiveitem TM_DRAGONBREATH
+	verbosegiveitem TM_MOONBLAST
+	writetext ClairText_Rematch
+	waitbutton
+	closetext
+
 TrainerCooltrainermPaul:
 	trainer COOLTRAINERM, PAUL, EVENT_BEAT_COOLTRAINERM_PAUL, CooltrainermPaulSeenText, CooltrainermPaulBeatenText, 0, .Script
 
@@ -126,7 +144,7 @@ TrainerCooltrainerfLola:
 BlackthornGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CLAIR
+	checkflag ENGINE_RISINGBADGE
 	iftrue .BlackthornGymGuyWinScript
 	writetext BlackthornGymGuyText
 	waitbutton
@@ -221,6 +239,17 @@ ClairText_TooMuchToExpect:
 	para "Is it too much to"
 	line "expect of you?"
 	done
+
+ClairText_Rematch:
+	text "I'm amazed..."
+
+	para "Dragon #MON's"
+	line "only weakness is"
+	cont "those of myth."
+
+	para "You keep getting"
+	line "stronger, and I'll"
+	cont "test you again."
 
 BlackthornGymClairText_YouKeptMeWaiting:
 	text "You've kept me"

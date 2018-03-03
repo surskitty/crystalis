@@ -38,6 +38,8 @@ ChuckScript_0x9d60f:
 	waitbutton
 	closetext
 	winlosstext ChuckLossText, 0
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	loadtrainer CHUCK, CHUCK1
 	startbattle
 	reloadmapafterbattle
@@ -70,6 +72,20 @@ ChuckScript_0x9d60f:
 	writetext ChuckAfterText
 	waitbutton
 .BagFull:
+	closetext
+	end
+
+.Rematch:
+	loadtrainer CHUCK, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_CHUCK
+	opentext
+	writetext ChuckRematchTMText
+	verbosegiveitem TM_DYNAMICPUNCH
+	verbosegiveitem TM_EARTHQUAKE
+	writetext ChuckAfterText
+	waitbutton
 	closetext
 	end
 
@@ -224,6 +240,14 @@ ChuckExplainTMText:
 
 	para "does, it causes"
 	line "confusion!"
+	done
+
+ChuckRematchTMText:
+	text "A truly strong"
+	line "#MON can shatter"
+	cont "the earth!"
+
+	para "Here, take this."
 	done
 
 ChuckAfterText:
