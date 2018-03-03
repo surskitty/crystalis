@@ -14,3 +14,4 @@ The underlying philosophy of this romhack is to leave it playably a main series 
 - Removed the moves Detect and Psywave to make room for Moonblast, Silver Wind, Fairy Wind, Captivate, and Fake Tears.
 - Roster changes for many trainers
 - Goldenrod Gym updated to be a Miltank
+- Massive learnset changes, including egg moves.
