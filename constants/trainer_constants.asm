@@ -75,6 +75,14 @@ KRIS EQU __enum__
 	const CAL1
 	const CAL2
 	const CAL3
+	const CARRIE1
+	const CARRIE2
+	const CARRIE3
+	const CYNTHIA
+	const IRIS
+	const GREEN
+
+
 
 	trainerclass BRUNO ; d
 	const BRUNO1
@@ -310,11 +318,15 @@ KRIS EQU __enum__
 	trainerclass SKIER ; 21
 	const ROXANNE
 	const CLARISSA
+	const KATHY
+	const LEXIE
 
 	trainerclass TEACHER ; 22
 	const COLETTE
 	const HILLARY
 	const SHIRLEY
+	const MOLLY
+	const TINA
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -453,6 +465,7 @@ KRIS EQU __enum__
 	trainerclass GUITARIST ; 2b
 	const CLYDE
 	const VINCENT
+	const BILLYJOE
 
 	trainerclass HIKER ; 2c
 	const ANTHONY1
@@ -488,6 +501,8 @@ KRIS EQU __enum__
 	const RILEY
 	const JOEL
 	const GLENN
+	const DILLON
+	const NICKY
 
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -511,9 +526,6 @@ KRIS EQU __enum__
 	const IRWIN1
 	const FRITZ
 	const HORTON
-	const IRWIN2
-	const IRWIN3
-	const IRWIN4
 
 	trainerclass BLACKBELT_T ; 32
 	const KENJI1
@@ -583,7 +595,6 @@ KRIS EQU __enum__
 	const LLOYD
 	const DEAN
 	const SID
-	const HARVEY
 	const DALE
 	const TED
 	const TODD2
@@ -624,11 +635,13 @@ KRIS EQU __enum__
 	const ETHEL
 	const REBECCA
 	const DORIS
+	const HOLLY
 
 	trainerclass BOARDER ; 3a
 	const RONALD
 	const BRAD
 	const DOUGLAS
+	const CLAUDE
 
 	trainerclass POKEFANM ; 3b
 	const WILLIAM
@@ -647,12 +660,13 @@ KRIS EQU __enum__
 	const ALLAN
 
 	trainerclass KIMONO_GIRL ; 3c
-	const NAOKO1
-	const NAOKO2
+	const NAOMI
+	const NAOKO
 	const SAYO
 	const ZUKI
 	const KUNI
 	const MIKI
+	const ROXIE
 
 	trainerclass TWINS ; 3d
 	const AMYANDMAY1

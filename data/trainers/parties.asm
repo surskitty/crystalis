@@ -2962,30 +2962,6 @@ JugglerGroup:
 	db 53, MAGNETON
 	db -1 ; end
 
-	; JUGGLER (4)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 6, VOLTORB
-	db 10, VOLTORB
-	db 14, VOLTORB
-	db 18, VOLTORB
-	db -1 ; end
-
-	; JUGGLER (5)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
-	db -1 ; end
-
-	; JUGGLER (6)
-	db "IRWIN@", TRAINERTYPE_NORMAL
-	db 18, VOLTORB
-	db 22, VOLTORB
-	db 26, VOLTORB
-	db 30, ELECTRODE
-	db -1 ; end
-
 
 BlackbeltGroup:
 	; BLACKBELT_T (1)
@@ -3353,11 +3329,6 @@ CamperGroup:
 	db 47, DUGTRIO
 	db 44, PRIMEAPE
 	db 44, POLITOED
-	db -1 ; end
-
-	; CAMPER (9)
-	db "HARVEY@", TRAINERTYPE_NORMAL
-	db 15, NIDORINO
 	db -1 ; end
 
 	; CAMPER (10)
