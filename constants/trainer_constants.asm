@@ -211,12 +211,8 @@ KRIS EQU __enum__
 	const GAVEN3
 	const BLAKE
 	const BRIAN
-	const ERICK
-	const ANDY
-	const TYLER
 	const SEAN
 	const KEVIN
-	const STEVE
 	const ALLEN
 	const DARIN
 
