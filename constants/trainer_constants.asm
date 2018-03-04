@@ -258,7 +258,7 @@ KRIS EQU __enum__
 	const ETHAN
 	const BRENT2
 	const BRENT3
-	const ISSAC
+	const ISAAC
 	const DONALD
 	const ZACH
 	const BRENT4

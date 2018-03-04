@@ -130,13 +130,13 @@ TrainerSupernerdTeru:
 	closetext
 	end
 
-TrainerPokemaniacIssac:
-	trainer POKEMANIAC, ISSAC, EVENT_BEAT_POKEMANIAC_ISSAC, PokemaniacIssacSeenText, PokemaniacIssacBeatenText, 0, .Script
+TrainerPokemaniacIsaac:
+	trainer POKEMANIAC, ISAAC, EVENT_BEAT_POKEMANIAC_ISAAC, PokemaniacIsaacSeenText, PokemaniacIsaacBeatenText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniacIssacAfterBattleText
+	writetext PokemaniacIsaacAfterBattleText
 	waitbutton
 	closetext
 	end
@@ -459,7 +459,7 @@ SupernerdTeruAfterBattleText:
 	line "type of #MON."
 	done
 
-PokemaniacIssacSeenText:
+PokemaniacIsaacSeenText:
 	text "My #MON just"
 	line "got a haircut!"
 
@@ -467,11 +467,11 @@ PokemaniacIssacSeenText:
 	line "strong it is!"
 	done
 
-PokemaniacIssacBeatenText:
+PokemaniacIsaacBeatenText:
 	text "Aiyeeee!"
 	done
 
-PokemaniacIssacAfterBattleText:
+PokemaniacIsaacAfterBattleText:
 	text "Your #MON will"
 	line "like you more if"
 
@@ -667,7 +667,7 @@ GoldenrodUnderground_MapEvents:
 	db 9 ; object events
 	object_event  5, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdEric, -1
 	object_event  6,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerSupernerdTeru, -1
-	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIssac, -1
+	object_event  3, 27, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacIsaac, -1
 	object_event  2,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDonald, -1
 	object_event  7, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, GoldenrodUndergroundCoinCase, EVENT_GOLDENROD_UNDERGROUND_COIN_CASE
 	object_event  7, 11, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GrampsScript_0x7c146, EVENT_GOLDENROD_UNDERGROUND_GRAMPS
