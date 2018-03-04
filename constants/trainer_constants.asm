@@ -183,15 +183,13 @@ KRIS EQU __enum__
 	const BRIDGET
 	const ALICE
 	const KRISE
-	const CONNIE1
+	const CONNIE
 	const LINDA
 	const LAURA
 	const SHANNON
 	const MICHELLE
 	const DANA1
 	const ELLEN
-	const CONNIE2
-	const CONNIE3
 	const DANA2
 	const DANA3
 	const DANA4
