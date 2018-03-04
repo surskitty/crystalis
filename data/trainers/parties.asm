@@ -1353,62 +1353,10 @@ BeautyGroup:
 	db 16, MEOWTH, SCRATCH, GROWL, BITE, SLASH
 	db -1 ; end
 
-	; BEAUTY (3)
-	db "JULIE@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (4)
-	db "JACLYN@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (5)
-	db "BRENDA@", TRAINERTYPE_NORMAL
-	db 16, FURRET
-	db -1 ; end
-
 	; BEAUTY (6)
 	db "CASSIE@", TRAINERTYPE_NORMAL
 	db 48, VILEPLUME
 	db 54, BUTTERFREE
-	db -1 ; end
-
-	; BEAUTY (7)
-	db "CAROLINE@", TRAINERTYPE_NORMAL
-	db 30, MARILL
-	db 32, SEEL
-	db 30, MARILL
-	db -1 ; end
-
-	; BEAUTY (8)
-	db "CARLENE@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (9)
-	db "JESSICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (10)
-	db "RACHAEL@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (11)
-	db "ANGELICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (12)
-	db "KENDRA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
-	db -1 ; end
-
-	; BEAUTY (13)
-	db "VERONICA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
 	db -1 ; end
 
 	; BEAUTY (14)
@@ -1416,11 +1364,6 @@ BeautyGroup:
 	db 52, BAYLEEF
 	db 52, EXEGGCUTE
 	db 55, PARASECT
-	db -1 ; end
-
-	; BEAUTY (15)
-	db "THERESA@", TRAINERTYPE_NORMAL
-	db 15, SENTRET
 	db -1 ; end
 
 	; BEAUTY (16)
@@ -3494,11 +3437,6 @@ MediumGroup:
 	db "GRACE@", TRAINERTYPE_NORMAL
 	db 20, HAUNTER
 	db 20, HAUNTER
-	db -1 ; end
-
-	; MEDIUM (3)
-	db "BETHANY@", TRAINERTYPE_NORMAL
-	db 25, HAUNTER
 	db -1 ; end
 
 	; MEDIUM (4)

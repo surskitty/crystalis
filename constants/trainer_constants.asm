@@ -242,19 +242,8 @@ KRIS EQU __enum__
 	trainerclass BEAUTY ; 1d
 	const VICTORIA
 	const SAMANTHA
-	const JULIE
-	const JACLYN
-	const BRENDA
 	const CASSIE
-	const CAROLINE
-	const CARLENE
-	const JESSICA
-	const RACHAEL
-	const ANGELICA
-	const KENDRA
-	const VERONICA
 	const JULIA
-	const THERESA
 	const VALERIE
 	const OLIVIA
 
@@ -624,7 +613,6 @@ KRIS EQU __enum__
 	trainerclass MEDIUM ; 39
 	const MARTHA
 	const GRACE
-	const BETHANY
 	const MARGRET
 	const ETHEL
 	const REBECCA
