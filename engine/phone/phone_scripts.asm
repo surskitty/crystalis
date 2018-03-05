@@ -1145,7 +1145,7 @@ GinaHasLeafStone:
 ; Irwin
 
 IrwinPhoneScript1:
-	trainertotext JUGGLER, IRWIN1, MEM_BUFFER_0
+	trainertotext JUGGLER, IRWIN, MEM_BUFFER_0
 	farscall PhoneScript_AnswerPhone_Male
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue .Rockets
@@ -1155,7 +1155,7 @@ IrwinPhoneScript1:
 	farjump IrwinRocketRumor
 
 IrwinPhoneScript2:
-	trainertotext JUGGLER, IRWIN1, MEM_BUFFER_0
+	trainertotext JUGGLER, IRWIN, MEM_BUFFER_0
 	farscall PhoneScript_GreetPhone_Male
 	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
 	iftrue .Rockets

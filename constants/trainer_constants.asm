@@ -475,8 +475,6 @@ KRIS EQU __enum__
 
 	trainerclass FIREBREATHER ; 30
 	const OTIS
-	const DICK
-	const NED
 	const BURT
 	const BILL
 	const WALT
@@ -484,7 +482,7 @@ KRIS EQU __enum__
 	const LYLE
 
 	trainerclass JUGGLER ; 31
-	const IRWIN1
+	const IRWIN
 	const FRITZ
 	const HORTON
 

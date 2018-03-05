@@ -2665,19 +2665,6 @@ FirebreatherGroup:
 	db 49, CHARIZARD
 	db -1 ; end
 
-	; FIREBREATHER (2)
-	db "DICK@", TRAINERTYPE_NORMAL
-	db 15, CHARMANDER
-	db 15, CYNDAQUIL
-	db -1 ; end
-
-	; FIREBREATHER (3)
-	db "NED@", TRAINERTYPE_NORMAL
-	db 15, GROWLITHE
-	db 16, KOFFING
-	db 15, VULPIX
-	db -1 ; end
-
 	; FIREBREATHER (4)
 	db "BURT@", TRAINERTYPE_NORMAL
 	db 52, WEEZING

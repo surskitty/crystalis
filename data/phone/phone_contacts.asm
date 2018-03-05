@@ -32,7 +32,7 @@ PhoneContacts: ; 9045f
 	phone HIKER,        ANTHONY2,           ROUTE_33,         ANYTIME, AnthonyPhoneScript1, ANYTIME, AnthonyPhoneScript2
 	phone CAMPER,       TODD1,              ROUTE_34,         ANYTIME, ToddPhoneScript1,    ANYTIME, ToddPhoneScript2
 	phone PICNICKER,    GINA1,              ROUTE_34,         ANYTIME, GinaPhoneScript1,    ANYTIME, GinaPhoneScript2
-	phone JUGGLER,      IRWIN1,             ROUTE_35,         ANYTIME, IrwinPhoneScript1,   ANYTIME, IrwinPhoneScript2
+	phone JUGGLER,      IRWIN,              ROUTE_35,         ANYTIME, IrwinPhoneScript1,   ANYTIME, IrwinPhoneScript2
 	phone BUG_CATCHER,  ARNIE1,             ROUTE_35,         ANYTIME, ArniePhoneScript1,   ANYTIME, ArniePhoneScript2
 	phone SCHOOLBOY,    ALAN1,              ROUTE_36,         ANYTIME, AlanPhoneScript1,    ANYTIME, AlanPhoneScript2
 	phone TRAINER_NONE, PHONE_00,           N_A,              0,       UnusedPhoneScript,   0,       UnusedPhoneScript

@@ -28,7 +28,7 @@ TrainerBirdKeeperBryan:
 	end
 
 TrainerJugglerIrwin:
-	trainer JUGGLER, IRWIN1, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwin1SeenText, JugglerIrwin1BeatenText, 0, .Script
+	trainer JUGGLER, IRWIN, EVENT_BEAT_JUGGLER_IRWIN, JugglerIrwinSeenText, JugglerIrwinBeatenText, 0, .Script
 
 .Script:
 	writecode VAR_CALLERID, PHONE_JUGGLER_IRWIN
@@ -50,7 +50,7 @@ TrainerJugglerIrwin:
 	askforphonenumber PHONE_JUGGLER_IRWIN
 	ifequal PHONE_CONTACTS_FULL, Route35PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route35NumberDeclinedM
-	trainertotext JUGGLER, IRWIN1, MEM_BUFFER_0
+	trainertotext JUGGLER, IRWIN, MEM_BUFFER_0
 	scall Route35RegisteredNumberM
 	jump Route35NumberAcceptedM
 
@@ -368,12 +368,12 @@ BirdKeeperBryanAfterBattleText:
 	line "custom BALL."
 	done
 
-JugglerIrwin1SeenText:
+JugglerIrwinSeenText:
 	text "Behold my graceful"
 	line "BALL dexterity!"
 	done
 
-JugglerIrwin1BeatenText:
+JugglerIrwinBeatenText:
 	text "Whew! That was a"
 	line "jolt!"
 	done
