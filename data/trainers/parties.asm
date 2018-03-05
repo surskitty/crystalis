@@ -1643,11 +1643,6 @@ GentlemanGroup:
 	db 48, FLAAFFY
 	db -1 ; end
 
-	; GENTLEMAN (4)
-	db "VIRGIL@", TRAINERTYPE_NORMAL
-	db 20, PONYTA
-	db -1 ; end
-
 	; GENTLEMAN (5)
 	db "ALFRED@", TRAINERTYPE_NORMAL
 	db 20, NOCTOWL
@@ -2068,40 +2063,6 @@ SwimmerMGroup:
 	db 23, KABUTO
 	db -1 ; end
 
-	; SWIMMERM (9)
-	db "HAL@", TRAINERTYPE_NORMAL
-	db 24, SEEL
-	db 25, DEWGONG
-	db 24, SEEL
-	db -1 ; end
-
-	; SWIMMERM (10)
-	db "PATON@", TRAINERTYPE_NORMAL
-	db 26, PILOSWINE
-	db 26, PILOSWINE
-	db -1 ; end
-
-	; SWIMMERM (11)
-	db "DARYL@", TRAINERTYPE_NORMAL
-	db 24, SHELLDER
-	db 25, CLOYSTER
-	db 24, SHELLDER
-	db -1 ; end
-
-	; SWIMMERM (12)
-	db "WALTER@", TRAINERTYPE_NORMAL
-	db 15, HORSEA
-	db 15, HORSEA
-	db 20, SEADRA
-	db -1 ; end
-
-	; SWIMMERM (13)
-	db "TONY@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 18, STARMIE
-	db 16, HORSEA
-	db -1 ; end
-
 	; SWIMMERM (14)
 	db "JEROME@", TRAINERTYPE_NORMAL
 	db 46, SEADRA
@@ -2116,13 +2077,6 @@ SwimmerMGroup:
 	db 54, CLOYSTER
 	db -1 ; end
 
-	; SWIMMERM (16)
-	db "RICK@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 18, STARMIE
-	db 16, HORSEA
-	db -1 ; end
-
 	; SWIMMERM (17)
 	db "CAMERON@", TRAINERTYPE_NORMAL
 	db 49, MARILL
@@ -2134,20 +2088,6 @@ SwimmerMGroup:
 	db 49, QUAGSIRE
 	db 49, OCTILLERY
 	db 52, QUAGSIRE
-	db -1 ; end
-
-	; SWIMMERM (19)
-	db "JAMES@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 18, STARMIE
-	db 16, HORSEA
-	db -1 ; end
-
-	; SWIMMERM (20)
-	db "LEWIS@", TRAINERTYPE_NORMAL
-	db 13, STARYU
-	db 18, STARMIE
-	db 16, HORSEA
 	db -1 ; end
 
 	; SWIMMERM (21)

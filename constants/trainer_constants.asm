@@ -295,7 +295,6 @@ KRIS EQU __enum__
 	const PRESTON
 	const EDWARD
 	const GREGORY
-	const VIRGIL
 	const ALFRED
 
 	trainerclass SKIER ; 21
@@ -371,18 +370,10 @@ KRIS EQU __enum__
 	const BERKE
 	const KIRK
 	const MATHEW
-	const HAL
-	const PATON
-	const DARYL
-	const WALTER
-	const TONY
 	const JEROME
 	const TUCKER
-	const RICK
 	const CAMERON
 	const SETH
-	const JAMES
-	const LEWIS
 	const PARKER
 
 	trainerclass SWIMMERF ; 27
