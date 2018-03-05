@@ -15,6 +15,8 @@ JasmineScript_0x9c12f:
 	writetext Jasmine_SteelTypeIntro
 	waitbutton
 	closetext
+	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
+	iftrue .Rematch
 	winlosstext Jasmine_BetterTrainer, 0
 	loadtrainer JASMINE, JASMINE1
 	startbattle
@@ -47,6 +49,20 @@ JasmineScript_0x9c12f:
 	closetext
 	end
 
+.Rematch:
+	winlosstext Jasmine_Rematch, 0
+	loadtrainer JASMINE, 2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_JASMINE
+	opentext
+	verbosegiveitem TM_IRON_TAIL
+	verbosegiveitem TM_SANDSTORM
+	writetext Jasmine_IronTailSpeech
+	waitbutton
+	closetext
+	end
+
 OlivineGymActivateRockets:
 	ifequal 7, .RadioTowerRockets
 	ifequal 6, .GoldenrodRockets
@@ -60,7 +76,7 @@ OlivineGymActivateRockets:
 
 OlivineGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_JASMINE
+	checkflag ENGINE_MINERALBADGE
 	iftrue .OlivineGymGuyWinScript
 	checkevent EVENT_JASMINE_RETURNED_TO_GYM
 	iffalse .OlivineGymGuyPreScript
@@ -160,6 +176,14 @@ Jasmine_GoodLuck:
 	text "Um… I don't know"
 	line "how to say this,"
 	cont "but good luck…"
+	done
+
+Jasmine_Rematch:
+	text "…You are a better"
+	line "trainer than me,"
+
+	para "in both skill and"
+	line "kindness."
 	done
 
 OlivineGymGuyText:
