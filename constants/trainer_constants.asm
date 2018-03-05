@@ -552,14 +552,9 @@ KRIS EQU __enum__
 	const LLOYD
 	const DEAN
 	const SID
-	const DALE
 	const TED
 	const TODD2
 	const TODD3
-	const THOMAS
-	const LEROY
-	const DAVID
-	const JOHN
 	const JERRY
 	const SPENCER
 	const TODD4

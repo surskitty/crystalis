@@ -3076,11 +3076,6 @@ CamperGroup:
 	db 44, POLITOED
 	db -1 ; end
 
-	; CAMPER (10)
-	db "DALE@", TRAINERTYPE_NORMAL
-	db 15, NIDORINO
-	db -1 ; end
-
 	; CAMPER (11)
 	db "TED@", TRAINERTYPE_NORMAL
 	db 22, MANKEY
@@ -3098,38 +3093,6 @@ CamperGroup:
 	db 28, GEODUDE
 	db 28, RHYHORN
 	db 31, GOLDUCK
-	db -1 ; end
-
-	; CAMPER (14)
-	db "THOMAS@", TRAINERTYPE_NORMAL
-	db 33, GRAVELER
-	db 36, GRAVELER
-	db 40, GOLBAT
-	db 42, GOLDUCK
-	db -1 ; end
-
-	; CAMPER (15)
-	db "LEROY@", TRAINERTYPE_NORMAL
-	db 33, GRAVELER
-	db 36, GRAVELER
-	db 40, GOLBAT
-	db 42, GOLDUCK
-	db -1 ; end
-
-	; CAMPER (16)
-	db "DAVID@", TRAINERTYPE_NORMAL
-	db 33, GRAVELER
-	db 36, GRAVELER
-	db 40, GOLBAT
-	db 42, GOLDUCK
-	db -1 ; end
-
-	; CAMPER (17)
-	db "JOHN@", TRAINERTYPE_NORMAL
-	db 33, GRAVELER
-	db 36, GRAVELER
-	db 40, GOLBAT
-	db 42, GOLDUCK
 	db -1 ; end
 
 	; CAMPER (18)
