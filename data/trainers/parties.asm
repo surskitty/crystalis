@@ -2141,34 +2141,9 @@ SwimmerFGroup:
 	db 21, HORSEA, DRAGON_RAGE, SMOKESCREEN, LEER, WATER_GUN
 	db -1 ; end
 
-	; SWIMMERF (8)
-	db "LISA@", TRAINERTYPE_NORMAL
-	db 28, JYNX
-	db -1 ; end
-
-	; SWIMMERF (9)
-	db "JILL@", TRAINERTYPE_NORMAL
-	db 28, DEWGONG
-	db -1 ; end
-
-	; SWIMMERF (10)
-	db "MARY@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (11)
-	db "KATIE@", TRAINERTYPE_NORMAL
-	db 33, DEWGONG
-	db -1 ; end
-
 	; SWIMMERF (12)
 	db "DAWN@", TRAINERTYPE_NORMAL
 	db 50, SEAKING
-	db -1 ; end
-
-	; SWIMMERF (13)
-	db "TARA@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
 	db -1 ; end
 
 	; SWIMMERF (14)
@@ -2182,11 +2157,6 @@ SwimmerFGroup:
 	db "LORI@", TRAINERTYPE_NORMAL
 	db 52, STARMIE
 	db 52, STARMIE
-	db -1 ; end
-
-	; SWIMMERF (16)
-	db "JODY@", TRAINERTYPE_NORMAL
-	db 20, SEAKING
 	db -1 ; end
 
 	; SWIMMERF (17)
@@ -2303,24 +2273,6 @@ SuperNerdGroup:
 	db 11, GRIMER
 	db -1 ; end
 
-	; SUPER_NERD (3)
-	db "GREGG@", TRAINERTYPE_NORMAL
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
-	db 20, MAGNEMITE
-	db -1 ; end
-
-	; SUPER_NERD (4)
-	db "JAY@", TRAINERTYPE_NORMAL
-	db 22, KOFFING
-	db 22, KOFFING
-	db -1 ; end
-
-	; SUPER_NERD (5)
-	db "DAVE@", TRAINERTYPE_NORMAL
-	db 24, DITTO
-	db -1 ; end
-
 	; SUPER_NERD (6)
 	db "SAM@", TRAINERTYPE_NORMAL
 	db 52, GRIMER
@@ -2352,18 +2304,6 @@ SuperNerdGroup:
 	db 11, VOLTORB
 	db 7, MAGNEMITE
 	db 9, MAGNEMITE
-	db -1 ; end
-
-	; SUPER_NERD (11)
-	db "RUSS@", TRAINERTYPE_NORMAL
-	db 27, MAGNEMITE
-	db 27, MAGNEMITE
-	db 27, MAGNEMITE
-	db -1 ; end
-
-	; SUPER_NERD (12)
-	db "NORTON@", TRAINERTYPE_MOVES
-	db 30, PORYGON, CONVERSION, CONVERSION2, RECOVER, TRI_ATTACK
 	db -1 ; end
 
 	; SUPER_NERD (13)
@@ -2613,20 +2553,6 @@ HikerGroup:
 
 
 BikerGroup:
-	; BIKER (1)
-	db "BENNY@", TRAINERTYPE_NORMAL
-	db 20, KOFFING
-	db 20, KOFFING
-	db 20, KOFFING
-	db -1 ; end
-
-	; BIKER (2)
-	db "KAZU@", TRAINERTYPE_NORMAL
-	db 20, KOFFING
-	db 20, KOFFING
-	db 20, KOFFING
-	db -1 ; end
-
 	; BIKER (3)
 	db "DWAYNE@", TRAINERTYPE_NORMAL
 	db 47, KOFFING

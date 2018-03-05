@@ -318,7 +318,7 @@ KRIS EQU __enum__
 	const ROB
 	const ED
 	const WADE1
-	const BUG_CATCHER_BENNY
+	const BENNY
 	const AL
 	const JOSH
 	const ARNIE1
@@ -384,15 +384,9 @@ KRIS EQU __enum__
 	const DENISE
 	const KARA
 	const WENDY
-	const LISA
-	const JILL
-	const MARY
-	const KATIE
 	const DAWN
-	const TARA
 	const NICOLE
 	const LORI
-	const JODY
 	const NIKKI
 	const DIANA
 	const BRIANA
@@ -415,16 +409,11 @@ KRIS EQU __enum__
 	trainerclass SUPER_NERD ; 29
 	const STAN
 	const ERIC
-	const GREGG
-	const JAY
-	const DAVE
 	const SAM
 	const TOM
 	const PAT
 	const SHAWN
 	const TERU
-	const RUSS
-	const NORTON
 	const HUGH
 	const MARKUS
 
@@ -466,8 +455,6 @@ KRIS EQU __enum__
 	const ANTHONY5
 
 	trainerclass BIKER ; 2d
-	const BIKER_BENNY
-	const KAZU
 	const DWAYNE
 	const HARRIS
 	const ZEKE
