@@ -19,7 +19,7 @@ Route45_MapScripts:
 	db 0 ; callbacks
 
 TrainerBlackbeltKenji:
-	trainer BLACKBELT_T, KENJI3, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenji3SeenText, BlackbeltKenji3BeatenText, 0, .Script
+	trainer BLACKBELT_T, KENJI, EVENT_BEAT_BLACKBELT_KENJI, BlackbeltKenjiSeenText, BlackbeltKenjiBeatenText, 0, .Script
 
 .Script:
 	writecode VAR_CALLERID, PHONE_BLACKBELT_KENJI
@@ -42,7 +42,7 @@ TrainerBlackbeltKenji:
 	askforphonenumber PHONE_BLACKBELT_KENJI
 	ifequal PHONE_CONTACTS_FULL, Route45PhoneFullM
 	ifequal PHONE_CONTACT_REFUSED, Route45NumberDeclinedM
-	trainertotext BLACKBELT_T, KENJI3, MEM_BUFFER_0
+	trainertotext BLACKBELT_T, KENJI, MEM_BUFFER_0
 	scall Route45RegisteredNumberM
 	jump Route45NumberAcceptedM
 
@@ -415,7 +415,7 @@ HikerParryGivesIronText:
 	line "when we last met."
 	done
 
-BlackbeltKenji3SeenText:
+BlackbeltKenjiSeenText:
 	text "I was training"
 	line "here alone."
 
@@ -423,7 +423,7 @@ BlackbeltKenji3SeenText:
 	line "of my labor!"
 	done
 
-BlackbeltKenji3BeatenText:
+BlackbeltKenjiBeatenText:
 	text "Waaaargh!"
 	done
 

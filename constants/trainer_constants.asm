@@ -487,14 +487,12 @@ KRIS EQU __enum__
 	const HORTON
 
 	trainerclass BLACKBELT_T ; 32
-	const KENJI1
 	const YOSHI
-	const KENJI2
 	const LAO
 	const NOB
 	const KIYO
 	const LUNG
-	const KENJI3
+	const KENJI
 	const WAI
 
 	trainerclass EXECUTIVEM ; 33
