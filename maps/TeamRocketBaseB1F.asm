@@ -461,7 +461,7 @@ GeodudeExplodingTrap:
 	special FadeInPalettes
 	setlasttalked -1
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	loadwildmon GEODUDE, 21
+	loadwildmon PORYGON, 21
 	startbattle
 	end
 
