@@ -11,7 +11,7 @@
 	tilepal 0, BROWN, BROWN, BROWN, BROWN, GRAY, GRAY, GRAY, BROWN
 	tilepal 0, BROWN, BROWN, GRAY, GRAY, GRAY, GRAY, GRAY, WATER
 
-rept 16
+rept 32
 	db $ff
 endr
 
