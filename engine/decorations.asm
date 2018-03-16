@@ -600,14 +600,6 @@ GetDecoName: ; 26c72
 	call .getdeconame
 	pop de
 	ld a, e
-	jr .getpokename
-
-.unused ; 26cb8
-	push de
-	call .getdeconame
-	pop de
-	ld a, e
-	jr .getdeconame
 
 .getpokename ; 26cc0
 	push bc
@@ -1036,22 +1028,6 @@ GetDecorationID: ; 26f0c
 	pop hl
 	ret
 ; 26f19
-
-SetAllDecorationFlags: ; 26f19
-	ld hl, DecorationIDs
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .done
-	push hl
-	ld b, SET_FLAG
-	call DecorationFlagAction
-	pop hl
-	jr .loop
-
-.done
-	ret
-; 26f2b
 
 INCLUDE "data/decorations/decorations.asm"
 

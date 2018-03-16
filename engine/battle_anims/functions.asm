@@ -3286,14 +3286,9 @@ Functionce29f: ; ce29f (33:629f)
 	srl a
 	ld e, a
 	ld d, $0
-	ld a, [hSGB]
-	and a
-	jr nz, .asm_ce2b6
 	ld hl, Unknown_ce2c4
 	jr .asm_ce2b9
 
-.asm_ce2b6
-	ld hl, Unknown_ce2c8
 .asm_ce2b9
 	add hl, de
 	ld a, [hl]
@@ -3306,8 +3301,6 @@ Functionce29f: ; ce29f (33:629f)
 ; ce2c4 (33:62c4)
 Unknown_ce2c4: ; ce2c4
 	db $ff, $aa, $55, $aa
-Unknown_ce2c8: ; ce2c8
-	db $ff, $ff, $00, $00
 ; ce2cc
 
 BattleAnimFunction_33: ; ce2cc (33:62cc)
@@ -4143,22 +4136,6 @@ BattleAnim_Cosine_e: ; ce76b (33:676b)
 	ld e, a
 	ret
 ; ce771 (33:6771)
-
-BattleAnim_AbsSinePrecise: ; ce771
-	ld a, e
-	call BattleAnim_Sine
-	ld e, l
-	ld d, h
-	ret
-; ce778
-
-BattleAnim_AbsCosinePrecise: ; ce778
-	ld a, e
-	call BattleAnim_Cosine
-	ld e, l
-	ld d, h
-	ret
-; ce77f
 
 BattleAnimSineWave: ; ce77f
 	sine_table 32

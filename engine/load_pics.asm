@@ -288,25 +288,6 @@ GLOBAL PICS_FIX
 	db BANK(Pics_1) + 22
 	db BANK(Pics_1) + 23
 
-Function511ec: ; 511ec
-	ld a, c
-	push de
-	ld hl, PokemonPicPointers
-	dec a
-	ld bc, 6
-	call AddNTimes
-	ld a, BANK(PokemonPicPointers)
-	call GetFarByte
-	call FixPicBank
-	push af
-	inc hl
-	ld a, BANK(PokemonPicPointers)
-	call GetFarHalfword
-	pop af
-	pop de
-	call FarDecompress
-	ret
-
 GetTrainerPic: ; 5120d
 	ld a, [wTrainerClass]
 	and a

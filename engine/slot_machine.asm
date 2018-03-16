@@ -87,7 +87,6 @@ _SlotMachine:
 	call PlaySFX
 	call WaitSFX
 	call ClearBGPalettes
-	farcall StubbedTrainerRankings_EndSlotsWinStreak
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, rLCDC
@@ -167,11 +166,6 @@ Slots_GetPals: ; 9279b (24:679b)
 	ld a, %11100100
 	call DmgToCgbBGPals
 	lb de, %11100100, %11100100
-	ld a, [hCGB]
-	and a
-	jr nz, .cgb
-	lb de, %11000000, %11100100
-.cgb
 	call DmgToCgbObjPals
 	ret
 
@@ -233,48 +227,6 @@ SlotsLoop: ; 927af (24:67af)
 	ret
 
 ; 92811 (24:6811)
-
-Unreferenced_Function92811: ; 92811
-; debug function?
-	ld a, [wSlotBias]
-	add 0
-	daa
-	ld e, a
-	and $f
-	add "0"
-	hlcoord 1, 0
-	ld [hl], a
-	ld a, e
-	swap a
-	and $f
-	add "0"
-	hlcoord 0, 0
-	ld [hl], a
-	ret
-
-; 9282c
-
-Unreferenced_Function9282c: ; 9282c
-; animate OAM tiles?
-	ld hl, wcf66
-	ld a, [hl]
-	inc [hl]
-	and $7
-	ret nz
-	ld hl, wVirtualOAMSprite16TileID
-	ld c, NUM_SPRITE_OAM_STRUCTS - 16
-.loop
-	ld a, [hl]
-	xor %00100000
-	ld [hli], a ; tile id
-rept SPRITEOAMSTRUCT_LENGTH + -1
-	inc hl
-endr
-	dec c
-	jr nz, .loop
-	ret
-
-; 92844
 
 SlotsJumptable: ; 92844 (24:6844)
 	jumptable .Jumptable, wJumptableIndex
@@ -854,25 +806,6 @@ Slots_UpdateReelPositionAndOAM: ; 92b53 (24:6b53)
 	ret
 
 ; 92bbe (24:6bbe)
-
-Unreferenced_Function92bbe: ; 92bbe
-	push hl
-	srl a
-	srl a
-	add LOW(.Unknown_92bce)
-	ld l, a
-	ld a, 0
-	adc HIGH(.Unknown_92bce)
-	ld h, a
-	ld a, [hl]
-	pop hl
-	ret
-
-; 92bce
-
-.Unknown_92bce: ; 92bce
-	db 0, 1, 2, 3, 4, 5
-; 92bd4
 
 ReelActionJumptable: ; 92bd4 (24:6bd4)
 	ld hl, REEL_ACTION
@@ -1936,7 +1869,6 @@ Slots_GetPayout: ; 93124 (24:7124)
 	ld a, [hl]
 	ld [wPayout], a
 	ld d, a
-	farcall StubbedTrainerRankings_AddToSlotsPayouts
 	ret
 
 .PayoutTable:
@@ -1960,7 +1892,6 @@ Slots_PayoutText: ; 93158 (24:7158)
 	jr nz, .MatchedSomething
 	ld hl, .Text_Darn
 	call PrintText
-	farcall StubbedTrainerRankings_EndSlotsWinStreak
 	ret
 
 .MatchedSomething:
@@ -1984,7 +1915,6 @@ Slots_PayoutText: ; 93158 (24:7158)
 .return
 	ld hl, .Text_PrintPayout
 	call PrintText
-	farcall StubbedTrainerRankings_AddToSlotsWinStreak
 	ret
 
 ; 93195 (24:7195)

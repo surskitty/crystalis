@@ -244,28 +244,8 @@ TilesetDarkCaveGFX: ; 0x326b0
 INCBIN "gfx/tilesets/dark_cave.2bpp.lz"
 ; 0x329f0
 
-UnusedTilesetDarkCaveMeta: ; 0x329f0
-INCBIN "data/tilesets/unused_dark_cave_metatiles.bin"
-; 0x331f0
-
-UnusedTilesetDarkCaveColl: ; 0x331f0
-INCLUDE "data/tilesets/unused_dark_cave_collision.asm"
-; 0x333f0
-
 
 SECTION "Tileset Data 5", ROMX
-
-TilesetPokeComCenterGFX: ; 0xb4000
-INCBIN "gfx/tilesets/pokecom_center.2bpp.lz"
-; 0xb48a0
-
-TilesetPokeComCenterMeta: ; 0xb48a0
-INCBIN "data/tilesets/pokecom_center_metatiles.bin"
-; 0xb4ca0
-
-TilesetPokeComCenterColl: ; 0xb4ca0
-INCLUDE "data/tilesets/pokecom_center_collision.asm"
-; 0xb4da0
 
 TilesetBattleTowerGFX: ; 0xb4da0
 INCBIN "gfx/tilesets/battle_tower.2bpp.lz"

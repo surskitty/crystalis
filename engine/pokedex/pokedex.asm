@@ -824,12 +824,6 @@ Pokedex_UpdateUnownMode: ; 405df (10:45df)
 	ld a, DEXSTATE_OPTION_SCR
 	ld [wJumptableIndex], a
 	call DelayFrame
-	call Pokedex_CheckSGB
-	jr nz, .decompress
-	farcall LoadSGBPokedexGFX2
-	jr .done
-
-.decompress
 	ld hl, PokedexLZ
 	ld de, vTiles2 tile $31
 	lb bc, BANK(PokedexLZ), 58
@@ -1169,8 +1163,6 @@ Pokedex_DrawDexEntryScreenBG: ; 407fd
 	call Pokedex_PlaceFrontpicTopLeftCorner
 	ret
 
-.Unused: ; 4084f
-	db $5c, $5d, -1 ; No.
 .Height: ; 40852
 	db "HT  ?", $5e, "??", $5f, -1 ; HT  ?'??"
 .Weight: ; 4085c
@@ -1464,18 +1456,8 @@ Pokedex_PlaceBorder: ; 40ad5
 Pokedex_PrintListing: ; 40b0f (10:4b0f)
 ; Prints the list of Pokémon on the main Pokédex screen.
 
-; This check is completely useless.
-	ld a, [wCurrentDexMode]
-	cp DEXMODE_OLD
-	jr z, .okay
-	ld c, 11
-	jr .resume
-.okay
-	ld c, 11
-; End useless check
-
-.resume
 ; Clear (2 * [wDexListingHeight] + 1) by 11 box starting at 0,1
+	ld c, 11
 	hlcoord 0, 1
 	ld a, [wDexListingHeight]
 	add a
@@ -2443,12 +2425,6 @@ Pokedex_LoadGFX: ; 414b7
 	ld hl, vTiles2 tile $60
 	ld bc, $20 tiles
 	call Pokedex_InvertTiles
-	call Pokedex_CheckSGB
-	jr nz, .LoadPokedexLZ
-	farcall LoadSGBPokedexGFX
-	jr .LoadPokedexSlowpokeLZ
-
-.LoadPokedexLZ:
 	ld hl, PokedexLZ
 	ld de, vTiles2 tile $31
 	call Decompress
@@ -2483,14 +2459,6 @@ INCBIN "gfx/pokedex/pokedex.2bpp.lz"
 
 PokedexSlowpokeLZ: ; 416b0
 INCBIN "gfx/pokedex/slowpoke.2bpp.lz"
-
-Pokedex_CheckSGB: ; 41a24
-	ld a, [hCGB]
-	or a
-	ret nz
-	ld a, [hSGB]
-	dec a
-	ret
 
 Pokedex_LoadUnownFont: ; 41a2c
 	ld a, BANK(sScratch)
@@ -2577,11 +2545,7 @@ Pokedex_SetBGMapMode4: ; 41ae1 (10:5ae1)
 	ret
 
 Pokedex_SetBGMapMode_3ifDMG_4ifCGB: ; 41aeb (10:5aeb)
-	ld a, [hCGB]
-	and a
-	jr z, .DMG
 	call Pokedex_SetBGMapMode4
-.DMG:
 	call Pokedex_SetBGMapMode3
 	ret
 

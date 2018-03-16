@@ -84,12 +84,6 @@ ScrollingMenuJoyAction: ; 24609
 	jr .loop
 ; 24640
 
-.unreferenced ; unused
-	ld a, -1
-	and a
-	ret
-; 24644
-
 .a_button ; 24644
 	call PlaceHollowCursor
 	ld a, [wMenuCursorY]

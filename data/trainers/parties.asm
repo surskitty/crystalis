@@ -307,13 +307,6 @@ WillGroup:
 
 
 PKMNTrainerGroup:
-	; CAL (1)
-	db "CAL@", TRAINERTYPE_NORMAL
-	db 10, CHIKORITA
-	db 10, CYNDAQUIL
-	db 10, TOTODILE
-	db -1 ; end
-
 	; CAL (2)
 	db "CAL@", TRAINERTYPE_NORMAL
 	db 30, BAYLEEF

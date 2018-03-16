@@ -527,28 +527,6 @@ GetFrameOAMPointer: ; 8d1a2
 	ret
 ; 8d1ac
 
-Unreferenced_BrokenGetStdGraphics: ; 8d1ac
-	push hl
-	ld l, a
-	ld h, 0
-	add hl, hl
-	add hl, hl
-	ld de, BrokenStdGFXPointers ; broken 2bpp pointers
-	add hl, de
-	ld c, [hl]
-	inc hl
-	ld b, [hl]
-	inc hl
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	pop hl
-	push bc
-	call Request2bpp
-	pop bc
-	ret
-; 8d1c4
-
 
 INCLUDE "data/sprite_anims/sequences.asm"
 
@@ -557,23 +535,6 @@ INCLUDE "engine/sprite_anims.asm"
 INCLUDE "data/sprite_anims/framesets.asm"
 
 INCLUDE "data/sprite_anims/oam.asm"
-
-
-BrokenStdGFXPointers:
-	; tile count, bank, pointer
-	; (all pointers were dummied out to .deleted)
-	dbbw 128, $01, .deleted
-	dbbw 128, $01, .deleted
-	dbbw 128, $01, .deleted
-	dbbw 128, $01, .deleted
-	dbbw 16, $37, .deleted
-	dbbw 16, $11, .deleted
-	dbbw 16, $39, .deleted
-	dbbw 16, $24, .deleted
-	dbbw 16, $21, .deleted
-
-.deleted
-; 8e72a (23:672a)
 
 
 Sprites_Cosine: ; 8e72a
@@ -586,13 +547,7 @@ Sprites_Sine: ; 8e72c
 
 
 AnimateEndOfExpBar: ; 8e79d
-	ld a, [hSGB]
 	ld de, EndOfExpBarGFX
-	and a
-	jr z, .load
-	ld de, SGBEndOfExpBarGFX
-
-.load
 	ld hl, vTiles0 tile $00
 	lb bc, BANK(EndOfExpBarGFX), 1
 	call Request2bpp
@@ -652,8 +607,6 @@ AnimateEndOfExpBar: ; 8e79d
 
 EndOfExpBarGFX: ; 8e7f4
 INCBIN "gfx/battle/expbarend.2bpp"
-SGBEndOfExpBarGFX: ; 8e804
-INCBIN "gfx/battle/expbarend_sgb.2bpp"
 
 ClearSpriteAnims2: ; 8e814
 	push hl

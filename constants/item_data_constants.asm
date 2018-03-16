@@ -57,12 +57,8 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const_def
 	const HELD_NONE
 	const HELD_BERRY
-	const HELD_2
 	const HELD_LEFTOVERS
-	const HELD_4
-	const HELD_5
 	const HELD_RESTORE_PP
-	const HELD_7
 	const HELD_CLEANSE_TAG
 
 	const_def 10
@@ -83,7 +79,6 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_PREVENT_CONFUSE
 
 	const_def 30
-	const HELD_30
 	const HELD_ATTACK_UP
 	const HELD_DEFENSE_UP
 	const HELD_SPEED_UP
@@ -91,11 +86,8 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_SP_DEFENSE_UP
 	const HELD_ACCURACY_UP
 	const HELD_EVASION_UP
-	const HELD_38
 
 	const_def 40
-	const HELD_40
-	const HELD_41
 	const HELD_METAL_POWDER
 
 	const_def 50
@@ -120,14 +112,12 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 
 	const_def 70
 	const HELD_CATCH_CHANCE
-	const HELD_71
 	const HELD_ESCAPE
 	const HELD_CRITICAL_UP
 	const HELD_QUICK_CLAW
 	const HELD_FLINCH
 	const HELD_AMULET_COIN
 	const HELD_BRIGHTPOWDER
-	const HELD_78
 	const HELD_FOCUS_BAND
 
 

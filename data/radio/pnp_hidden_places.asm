@@ -9,5 +9,5 @@ PnP_HiddenPlaces:
 	map_id ROUTE_11
 	map_id ROUTE_16
 	map_id ROUTE_14
-	map_id CINNABAR_POKECENTER_2F_BETA
+	map_id CINNABAR_POKECENTER_1F
 .End

@@ -30,28 +30,6 @@ BattleTowerOutsideSailorScript:
 MapBattleTowerOutsideSignpost0Script:
 	jumptext BattleTowerOutsideSignText
 
-BattleTowerOutsideUnusedText1:
-	text "Wow, the BATTLE"
-	line "TOWER is huge! My"
-
-	para "neck is tired from"
-	line "looking up at it."
-	done
-
-BattleTowerOutsideUnusedText2:
-	text "Wow, the BATTLE"
-	line "TOWER is huge!"
-
-	para "Since there are a"
-	line "whole bunch of"
-
-	para "trainers inside,"
-	line "there must also be"
-
-	para "a wide variety of"
-	line "#MON."
-	done
-
 BattleTowerOutsideYoungsterText:
 	text "Wow, the BATTLE"
 	line "TOWER is huge!"
@@ -59,17 +37,6 @@ BattleTowerOutsideYoungsterText:
 	para "There must be many"
 	line "kinds of #MON"
 	cont "in there!"
-	done
-
-BattleTowerOutsideUnusedText3:
-	text "What on earth do"
-	line "they do here?"
-
-	para "If the name says"
-	line "anything, I guess"
-
-	para "it must be for"
-	line "#MON battles."
 	done
 
 BattleTowerOutsideBuenaText:
@@ -83,16 +50,6 @@ BattleTowerOutsideBuenaText:
 	line "battle…"
 	done
 
-BattleTowerOutsideUnusedText4:
-	text "Ehehehe…"
-	line "I sneaked out of"
-	cont "work to come here."
-
-	para "I'm never giving"
-	line "up until I become"
-	cont "a LEADER!"
-	done
-
 BattleTowerOutsideSailorText:
 	text "Hehehe, I snuck"
 	line "out from work."
@@ -104,27 +61,11 @@ BattleTowerOutsideSailorText:
 	line "all. That I must!"
 	done
 
-BattleTowerOutsideSignText_NotYetOpen:
-; unused; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER"
-	done
-
 BattleTowerOutsideSignText:
 	text "BATTLE TOWER"
 
 	para "Take the Ultimate"
 	line "Trainer Challenge!"
-	done
-
-BattleTowerOutsideText_DoorsClosed:
-; unused; originally shown when the Battle Tower was closed
-	text "The BATTLE TOWER's"
-	line "doors are closed…"
-	done
-
-BattleTowerOutsideText_DoorsOpen:
-; unused; originally shown after the Battle Tower opened
-	text "It's open!"
 	done
 
 BattleTowerOutside_MapEvents:

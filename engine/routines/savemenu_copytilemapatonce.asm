@@ -1,8 +1,4 @@
 SaveMenu_CopyTilemapAtOnce: ; 4cf45 (13:4f45)
-	ld a, [hCGB]
-	and a
-	jp z, WaitBGMap
-
 ; The following is a modified version of CopyTilemapAtOnce.
 	ld a, [hBGMapMode]
 	push af

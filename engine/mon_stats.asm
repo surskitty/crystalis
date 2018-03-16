@@ -1,9 +1,5 @@
 DrawPlayerHP: ; 50b0a
 	ld a, $1
-	jr DrawHP
-
-DrawEnemyHP: ; 50b0e
-	ld a, $2
 
 DrawHP: ; 50b10
 	ld [wWhichHPBar], a
@@ -322,45 +318,6 @@ ListMovePP: ; 50c50
 	add hl, de
 	dec c
 	jr nz, .load_loop
-	ret
-
-Unreferenced_Function50cd0: ; 50cd0
-.loop
-	ld [hl], $32
-	inc hl
-	ld [hl], $3e
-	dec hl
-	add hl, de
-	dec c
-	jr nz, .loop
-	ret
-
-Unused_PlaceEnemyHPLevel:
-	push hl
-	push hl
-	ld hl, wPartyMonNicknames
-	ld a, [wCurPartyMon]
-	call GetNick
-	pop hl
-	call PlaceString
-	call CopyMonToTempMon
-	pop hl
-	ld a, [wCurPartySpecies]
-	cp EGG
-	jr z, .egg
-	push hl
-	ld bc, -12
-	add hl, bc
-	ld b, $0
-	call DrawEnemyHP
-	pop hl
-	ld bc, 5
-	add hl, bc
-	push de
-	call PrintLevel
-	pop de
-
-.egg
 	ret
 
 PlaceStatusString: ; 50d0a

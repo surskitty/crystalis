@@ -306,7 +306,6 @@ ElmsLabHealingMachine:
 	end
 
 ElmsLabHealingMachine_HealParty:
-	special StubbedTrainerRankings_Healings
 	special HealParty
 	playmusic MUSIC_NONE
 	writebyte HEALMACHINE_ELMS_LAB
@@ -600,10 +599,6 @@ ElmsLabTrashcan:
 
 ElmsLabPC:
 	jumptext ElmsLabPCText
-
-ElmsLabTrashcan2:
-; unused
-	jumpstd trashcan
 
 ElmsLabBookshelf:
 	jumpstd difficultbookshelf
@@ -1207,12 +1202,6 @@ ElmGiveTicketText2:
 
 	para "Give my regards to"
 	line "PROF.OAK in KANTO!"
-	done
-
-ElmsLabSignpostText_Egg:
-	text "It's the #MON"
-	line "EGG being studied"
-	cont "by PROF.ELM."
 	done
 
 AideText_GiveYouPotion:

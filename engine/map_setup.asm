@@ -137,10 +137,6 @@ LoadObjectsRunCallback_02: ; 154d7
 	ret
 ; 154ea (5:54ea)
 
-; unused
-	ret
-; 154eb
-
 DelayClearingOldSprites: ; 154eb
 	ld hl, wPlayerSpriteSetupFlags
 	set PLAYERSPRITESETUP_RESET_ACTION_F, [hl]

@@ -3,13 +3,6 @@ CARDFLIP_LIGHT_ON  EQU $f5
 
 CARDFLIP_DECK_SIZE EQU 4 * 6
 
-; two labels below called from inside ./dummy_game.asm
-Unknown_e00ed: ; e00ed (38:40ed)
-; Graphics for an unused Game Corner
-; game were meant to be here.
-ret_e00ed: ; e00ed (38:40ed)
-	ret
-
 _CardFlip: ; e00ee (38:40ee)
 	ld hl, wOptions
 	set 4, [hl]
@@ -478,11 +471,6 @@ CardFlip_DisplayCardFaceUp: ; e03ec
 	dec b
 	jr nz, .row
 	pop hl
-
-	; Pointless CGB check
-	ld a, [hCGB]
-	and a
-	ret z
 
 	; Set the attributes
 	ld de, wAttrMap - wTileMap
@@ -1385,14 +1373,6 @@ ChooseCard_HandleJoypad: ; e089c
 
 CardFlip_UpdateCursorOAM: ; e0960
 	call ClearSprites
-	ld a, [hCGB]
-	and a
-	jr nz, .skip
-	ld a, [hVBlankCounter]
-	and $4
-	ret nz
-
-.skip
 	call CollapseCursorPosition
 	add hl, hl
 	add hl, hl
@@ -1621,10 +1601,6 @@ ENDM
 ; e0c37
 
 CardFlip_InitAttrPals: ; e0c37 (38:4c37)
-	ld a, [hCGB]
-	and a
-	ret z
-
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
 	xor a

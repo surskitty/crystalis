@@ -16,10 +16,6 @@ Special:: ; c01b
 
 INCLUDE "data/special_pointers.asm"
 
-DummySpecial_c224: ; c224
-	ret
-; c225
-
 SetPlayerPalette: ; c225
 	ld a, [wScriptVar]
 	ld d, a
@@ -42,27 +38,6 @@ GameCornerPrizeMonCheckDex: ; c230
 	call ExitAllMenus
 	ret
 ; c252
-
-UnusedSetSeenMon: ; c252
-	ld a, [wScriptVar]
-	dec a
-	call SetSeenMon
-	ret
-; c25a
-
-FindPartyMonAboveLevel: ; c25a
-	ld a, [wScriptVar]
-	ld b, a
-	farcall _FindPartyMonAboveLevel
-	jr z, FoundNone
-	jr FoundOne
-
-FindPartyMonAtLeastThatHappy: ; c268
-	ld a, [wScriptVar]
-	ld b, a
-	farcall _FindPartyMonAtLeastThatHappy
-	jr z, FoundNone
-	jr FoundOne
 
 FindPartyMonThatSpecies: ; c276
 	ld a, [wScriptVar]
@@ -228,15 +203,6 @@ CardFlip: ; c380
 	ret
 ; c38d
 
-DummyNonfunctionalGameCornerGame: ; c38d
-	call CheckCoinsAndCoinCase
-	ret c
-	ld a, BANK(_DummyGame)
-	ld hl, _DummyGame
-	call StartGameCornerGame
-	ret
-; c39a
-
 StartGameCornerGame: ; c39a
 	call FarQueueScript
 	call FadeToMenu
@@ -290,12 +256,6 @@ CheckCoinsAndCoinCase: ; c3ae
 	db "@"
 ; 0xc3db
 
-ClearBGPalettesBufferScreen: ; c3db
-	call ClearBGPalettes
-	call BufferScreen
-	ret
-; c3e2
-
 ScriptReturnCarry: ; c3e2
 	jr c, .carry
 	xor a
@@ -306,13 +266,6 @@ ScriptReturnCarry: ; c3e2
 	ld [wScriptVar], a
 	ret
 ; c3ef
-
-UnusedCheckUnusedTwoDayTimer: ; c3ef
-	farcall CheckUnusedTwoDayTimer
-	ld a, [wUnusedTwoDayTimer]
-	ld [wScriptVar], a
-	ret
-; c3fc
 
 ActivateFishingSwarm: ; c3fc
 	ld a, [wScriptVar]
@@ -415,28 +368,6 @@ PlayCurMonCry: ; c472
 	ld a, [wCurPartySpecies]
 	jp PlayMonCry
 ; c478
-
-
-GameboyCheck: ; c478
-	ld a, [hCGB]
-	and a
-	jr nz, .cgb
-
-	ld a, [hSGB]
-	and a
-	jr nz, .sgb
-
-.gb
-	xor a ; GBCHECK_GB
-	jr .done
-.sgb
-	ld a, GBCHECK_SGB
-	jr .done
-.cgb
-	ld a, GBCHECK_CGB
-.done
-	ld [wScriptVar], a
-	ret
 
 
 FadeOutMusic: ; c48f

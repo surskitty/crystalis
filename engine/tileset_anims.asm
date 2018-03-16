@@ -95,34 +95,6 @@ TilesetJohtoAnim: ; 0xfc0a3
 	dw NULL,  DoneTileAnimation
 ; 0xfc0d7
 
-UnusedTilesetAnim_fc0d7: ; 0xfc0d7
-	dw vTiles2 tile $03, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateFlowerTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  DoneTileAnimation
-; 0xfc103
-
-UnusedTilesetAnim_fc103: ; 0xfc103
-	dw vTiles2 tile $14, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $14, WriteTileFromBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  DoneTileAnimation
-; 0xfc12f
-
 TilesetPortAnim: ; 0xfc12f
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
@@ -148,38 +120,6 @@ TilesetEliteFourRoomAnim: ; 0xfc15f
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 ; 0xfc17f
-
-UnusedTilesetAnim_fc17f: ; 0xfc17f
-	dw vTiles2 tile $53, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $53, WriteTileFromBuffer
-	dw vTiles2 tile $03, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromBuffer
-	dw vTiles2 tile $53, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $53, WriteTileFromBuffer
-	dw NULL,  DoneTileAnimation
-; 0xfc1af
-
-UnusedTilesetAnim_fc1af: ; 0xfc1af
-	dw vTiles2 tile $54, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $54, WriteTileFromBuffer
-	dw NULL,  WaitTileAnimation
-	dw vTiles2 tile $03, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $03, WriteTileFromBuffer
-	dw NULL,  WaitTileAnimation
-	dw vTiles2 tile $54, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $54, WriteTileFromBuffer
-	dw NULL,  DoneTileAnimation
-; 0xfc1e7
 
 TilesetCaveAnim: ; 0xfc1e7
 TilesetDarkCaveAnim: ; 0xfc1e7
@@ -245,19 +185,6 @@ TilesetTowerAnim: ; 0xfc27f
 	dw NULL,  DoneTileAnimation
 ; 0xfc2bf
 
-UnusedTilesetAnim_fc2bf: ; 0xfc2bf
-	dw vTiles2 tile $4f, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $4f, WriteTileFromBuffer
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  DoneTileAnimation
-; 0xfc2e7
-
 TilesetBattleTowerOutsideAnim: ; 0xfc2e7
 TilesetHouseAnim: ; 0xfc2e7
 TilesetPlayersHouseAnim: ; 0xfc2e7
@@ -273,7 +200,6 @@ TilesetTrainStationAnim: ; 0xfc2e7
 TilesetChampionsRoomAnim: ; 0xfc2e7
 TilesetLighthouseAnim: ; 0xfc2e7
 TilesetPlayersRoomAnim: ; 0xfc2e7
-TilesetPokeComCenterAnim: ; 0xfc2e7
 TilesetBattleTowerAnim: ; 0xfc2e7
 TilesetRuinsOfAlphAnim: ; 0xfc2e7
 TilesetRadioTowerAnim: ; 0xfc2e7
@@ -320,17 +246,6 @@ ScrollTileRightLeft: ; fc309
 	jr ScrollTileRight
 ; fc318
 
-ScrollTileUpDown: ; fc318
-; Scroll up for 4 ticks, then down for 4 ticks.
-	ld a, [wTileAnimationTimer]
-	inc a
-	and %111
-	ld [wTileAnimationTimer], a
-	and %100
-	jr nz, ScrollTileDown
-	jr ScrollTileUp
-; fc327
-
 ScrollTileLeft: ; fc327
 	ld h, d
 	ld l, e
@@ -360,33 +275,6 @@ endr
 	jr nz, .loop
 	ret
 ; fc34f
-
-ScrollTileUp: ; fc34f
-	ld h, d
-	ld l, e
-	ld d, [hl]
-	inc hl
-	ld e, [hl]
-	ld bc, TILE_WIDTH * 2 - 2
-	add hl, bc
-	ld a, TILE_WIDTH / 2
-.loop
-	ld c, [hl]
-	ld [hl], e
-	dec hl
-	ld b, [hl]
-	ld [hl], d
-	dec hl
-	ld e, [hl]
-	ld [hl], c
-	dec hl
-	ld d, [hl]
-	ld [hl], b
-	dec hl
-	dec a
-	jr nz, .loop
-	ret
-; fc36a
 
 ScrollTileDown: ; fc36a
 	ld h, d
@@ -680,8 +568,7 @@ AnimateFlowerTile: ; fc56d
 	ld e, a
 
 ; CGB has different color mappings for flowers.
-	ld a, [hCGB]
-	and 1
+	ld a, 1
 
 	add e
 	swap a
@@ -918,11 +805,6 @@ endr
 TileAnimationPalette: ; fc6d7
 ; Transition between color values 0-2 for color 0 in palette 3.
 
-; No palette changes on DMG.
-	ld a, [hCGB]
-	and a
-	ret z
-
 ; We don't want to mess with non-standard palettes.
 	ld a, [rBGP] ; BGP
 	cp %11100100
@@ -982,10 +864,6 @@ TileAnimationPalette: ; fc6d7
 
 
 FlickeringCaveEntrancePalette: ; fc71e
-; No palette changes on DMG.
-	ld a, [hCGB]
-	and a
-	ret z
 ; We don't want to mess with non-standard palettes.
 	ld a, [rBGP]
 	cp %11100100

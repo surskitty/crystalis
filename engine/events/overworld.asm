@@ -414,8 +414,6 @@ UsedSurfScript: ; c986
 	waitbutton
 	closetext
 
-	callasm .empty_fn ; empty function
-
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
 
@@ -425,10 +423,6 @@ UsedSurfScript: ; c986
 	special SurfStartStep
 	applymovement PLAYER, wMovementBuffer
 	end
-
-.empty_fn ; c9a2
-	farcall StubbedTrainerRankings_Surf
-	ret
 
 UsedSurfText: ; c9a9
 	text_jump _UsedSurfText
@@ -700,7 +694,6 @@ Script_UsedWaterfall: ; 0xcb20
 	ld a, [wPlayerStandingTile]
 	call CheckWaterfallTile
 	ret z
-	farcall StubbedTrainerRankings_Waterfall
 	ld a, $1
 	ld [wScriptVar], a
 	ret
@@ -985,12 +978,6 @@ StrengthFunction: ; cce5
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
-
-.Unreferenced_AlreadyUsing:
-	ld hl, .JumpText
-	call MenuTextBoxBackup
-	ld a, $80
-	ret
 
 .JumpText: ; 0xcd01
 	text_jump UnknownText_0x1c0751
@@ -1642,11 +1629,6 @@ UnknownText_0xd0a9: ; 0xd0a9
 	text_jump UnknownText_0x1c0965
 	db "@"
 
-UnknownText_0xd0ae: ; unused
-	; Looks like there's nothing here.
-	text_jump UnknownText_0x1c0979
-	db "@"
-
 BikeFunction: ; d0b3
 	call .TryBike
 	and $7f
@@ -1748,10 +1730,6 @@ Script_GetOnBike_Register: ; 0xd14e
 	closetext
 	special ReplaceKrisSprite
 	end
-
-; unused
-	nop
-	ret
 
 Script_GetOffBike: ; 0xd158
 	reloadmappart

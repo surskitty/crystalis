@@ -319,13 +319,6 @@ CheckObjectTime:: ; 18f5
 	ret
 ; 194d
 
-; unused
-	ld [hMapObjectIndexBuffer], a
-	call GetMapObject
-	call CopyObjectStruct
-	ret
-; 1956
-
 _CopyObjectStruct:: ; 1956
 	ld [hMapObjectIndexBuffer], a
 	call UnmaskObject
@@ -385,36 +378,6 @@ CopyPlayerObjectTemplate:: ; 19a6
 	call CopyBytes
 	ret
 ; 19b8
-
-Unreferenced_Function19b8:
-	call GetMapObject
-	ld hl, MAPOBJECT_OBJECT_STRUCT_ID
-	add hl, bc
-	ld a, [hl]
-	push af
-	ld [hl], -1
-	inc hl
-	ld bc, OBJECT_LENGTH - 1
-	xor a
-	call ByteFill
-	pop af
-	cp -1
-	ret z
-	cp $d
-	ret nc
-	ld b, a
-	ld a, [wObjectFollow_Leader]
-	cp b
-	jr nz, .ok
-	ld a, -1
-	ld [wObjectFollow_Leader], a
-
-.ok
-	ld a, b
-	call GetObjectStruct
-	farcall DeleteMapObject
-	ret
-; 19e9
 
 LoadMovementDataPointer:: ; 19e9
 ; Load the movement data pointer for object a.
@@ -605,18 +568,6 @@ _GetMovementByte:: ; 1aae
 	ld a, h
 	ret
 ; 1ac6
-
-SetVramState_Bit0:: ; 1ac6
-	ld hl, wVramState
-	set 0, [hl]
-	ret
-; 1acc
-
-ResetVramState_Bit0:: ; 1acc
-	ld hl, wVramState
-	res 0, [hl]
-	ret
-; 1ad2
 
 UpdateSprites:: ; 1ad2
 	ld a, [wVramState]

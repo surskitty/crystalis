@@ -110,10 +110,6 @@ NUM_PLAYER_EVENTS EQU const_value
 	const OBJECTTYPE_SCRIPT
 	const OBJECTTYPE_ITEMBALL
 	const OBJECTTYPE_TRAINER
-	const OBJECTTYPE_3
-	const OBJECTTYPE_4
-	const OBJECTTYPE_5
-	const OBJECTTYPE_6
 
 
 ; command queue members

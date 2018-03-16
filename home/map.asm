@@ -384,15 +384,6 @@ CheckIndoorMap:: ; 22f4
 	ret
 ; 2300
 
-; unused
-	cp INDOOR
-	ret z
-	cp GATE
-	ret z
-	cp ENVIRONMENT_5
-	ret
-; 2309
-
 LoadMapAttributes:: ; 2309
 	call CopyMapPartialAndAttributes
 	call SwitchToMapScriptsBank
@@ -1165,24 +1156,6 @@ ObjectEventText::
 	db "@"
 ; 0x26f7
 
-BGEvent:: ; 26f7
-	jumptext BGEventText
-; 26fa
-
-BGEventText:: ; 26fa
-	text_jump UnknownText_0x1c46fc
-	db "@"
-; 26ff
-
-CoordinatesEvent:: ; 26ff
-	jumptext CoordinatesEventText
-; 2702
-
-CoordinatesEventText:: ; 2702
-	text_jump UnknownText_0x1c4706
-	db "@"
-; 2707
-
 CheckObjectMask:: ; 2707
 	ld a, [hMapObjectIndexBuffer]
 	ld e, a
@@ -1382,14 +1355,6 @@ UpdateBGMapColumn:: ; 27f8
 	ld [hBGMapTileCount], a
 	ret
 ; 2816
-
-Unreferenced_Function2816::
-	ld hl, wBGMapBuffer
-	ld bc, wBGMapBufferEnd - wBGMapBuffer
-	xor a
-	call ByteFill
-	ret
-; 2821
 
 LoadTilesetGFX:: ; 2821
 	ld hl, wTilesetAddress
@@ -2146,11 +2111,6 @@ SwitchToAnyMapAttributesBank:: ; 2c24
 	ret
 ; 2c29
 
-GetMapAttributesBank:: ; 2c29
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
 GetAnyMapAttributesBank:: ; 2c31
 	push hl
 	push de
@@ -2247,9 +2207,6 @@ GetMapEnvironment:: ; 2c8a
 	ret
 ; 2c98
 
-	ret ; unused
-; 2c99
-
 GetAnyMapEnvironment:: ; 2c99
 	push hl
 	push de
@@ -2292,11 +2249,8 @@ GetMapMusic:: ; 2cbd
 	ld de, MAP_MUSIC
 	call GetMapField
 	ld a, c
-	cp MUSIC_MAHOGANY_MART
-	jr z, .mahoganymart
 	bit RADIO_TOWER_MUSIC_F, c
 	jr nz, .radiotower
-	farcall Function8b342
 	ld e, c
 	ld d, 0
 .done
@@ -2317,17 +2271,6 @@ GetMapMusic:: ; 2cbd
 	and RADIO_TOWER_MUSIC - 1
 	ld e, a
 	ld d, 0
-	jr .done
-
-.mahoganymart
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F, a
-	jr z, .clearedmahogany
-	ld de, MUSIC_ROCKET_HIDEOUT
-	jr .done
-
-.clearedmahogany
-	ld de, MUSIC_CHERRYGROVE_CITY
 	jr .done
 ; 2cff
 

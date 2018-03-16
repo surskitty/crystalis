@@ -72,7 +72,6 @@ KRIS EQU __enum__
 	const WILL1
 
 	trainerclass CAL ; c
-	const CAL1
 	const CAL2
 	const CAL3
 	const CARRIE1

@@ -97,9 +97,6 @@ OlivineLighthouseJasmine:
 	closetext
 	end
 
-UnknownScript_0x60c39:
-	end
-
 OlivineLighthouseAmphy:
 	faceplayer
 	opentext

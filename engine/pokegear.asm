@@ -102,9 +102,6 @@ PokeGear: ; 90b8d (24:4b8d)
 	ld b, SCGB_POKEGEAR_PALS
 	call GetSGBLayout
 	call SetPalettes
-	ld a, [hCGB]
-	and a
-	ret z
 	ld a, %11100100
 	call DmgToCgbObjPal0
 	ret
@@ -295,14 +292,10 @@ InitPokegearTilemap: ; 90da8 (24:4da8)
 	ret
 
 .UpdateBGMap: ; 90e00 (24:4e00)
-	ld a, [hCGB]
-	and a
-	jr z, .dmg
 	ld a, $2
 	ld [hBGMapMode], a
 	ld c, 3
 	call DelayFrames
-.dmg
 	call WaitBGMap
 	ret
 
@@ -1339,22 +1332,6 @@ PokegearPhoneContactSubmenu: ; 91342 (24:5342)
 
 ; 9146e
 
-; unused
-	ld a, [hHours]
-	cp 12
-	jr c, .am
-	sub 12
-	ld [wd265], a
-	scf
-	ret
-
-.am
-	ld [wd265], a
-	and a
-	ret
-
-; 91480
-
 Pokegear_SwitchPage: ; 91480 (24:5480)
 	ld de, SFX_READ_TEXT_2
 	call PlaySFX
@@ -1528,16 +1505,6 @@ UpdateRadioStation: ; 9166f (24:566f)
 	ret
 
 ; 916a1 (24:56a1)
-
-; unused
-	ld [wPokegearRadioChannelBank], a
-	ld a, [hli]
-	ld [wPokegearRadioChannelAddr], a
-	ld a, [hli]
-	ld [wPokegearRadioChannelAddr + 1], a
-	ret
-
-; 916ad
 
 RadioChannels:
 ; entries correspond to constants/radio_constants.asm
@@ -1781,9 +1748,6 @@ LoadStation_EvolutionRadio: ; 9183e (24:583e)
 
 ; 91853 (24:5853)
 
-Unreferenced_LoadStation: ; 91853
-	ret
-
 RadioMusicRestartDE: ; 91854 (24:5854)
 	push de
 	ld a, e
@@ -1901,14 +1865,10 @@ _TownMap: ; 9191c
 	ld b, SCGB_POKEGEAR_PALS
 	call GetSGBLayout
 	call SetPalettes
-	ld a, [hCGB]
-	and a
-	jr z, .dmg
 	ld a, %11100100
 	call DmgToCgbObjPal0
 	call DelayFrame
 
-.dmg
 	ld a, [wTownMapPlayerIconLandmark]
 	cp KANTO_LANDMARK
 	jr nc, .kanto
@@ -2772,10 +2732,6 @@ TownMapBGUpdate: ; 91ee4
 	ld [hBGMapAddress], a
 	ld a, h
 	ld [hBGMapAddress + 1], a
-; Only update palettes on CGB
-	ld a, [hCGB]
-	and a
-	jr z, .tiles
 ; BG Map mode 2 (palettes)
 	ld a, 2
 	ld [hBGMapMode], a
@@ -2784,7 +2740,6 @@ TownMapBGUpdate: ; 91ee4
 ; 3 frames to update the whole screen's palettes.
 	ld c, 3
 	call DelayFrames
-.tiles
 ; Update BG Map tiles
 	call WaitBGMap
 ; Turn off BG Map update
@@ -2962,136 +2917,3 @@ PokedexNestIconGFX: ; 922d1
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"
 FlyMapLabelBorderGFX: ; 922e1
 INCBIN "gfx/pokegear/flymap_label_border.1bpp"
-
-Unreferenced_Function92311:
-	xor a
-	ld [wTownMapPlayerIconLandmark], a
-	call ClearBGPalettes
-	call ClearTileMap
-	call ClearSprites
-	ld hl, hInMenu
-	ld a, [hl]
-	push af
-	ld [hl], $1
-	xor a
-	ld [hBGMapMode], a
-	farcall ClearSpriteAnims
-	call LoadTownMapGFX
-	ld de, FlyMapLabelBorderGFX
-	ld hl, vTiles2 tile $30
-	lb bc, BANK(FlyMapLabelBorderGFX), 6
-	call Request1bpp
-	call FillKantoMap
-	call TownMapBubble
-	call TownMapPals
-	hlbgcoord 0, 0, vBGMap1
-	call TownMapBGUpdate
-	call FillJohtoMap
-	call TownMapBubble
-	call TownMapPals
-	hlbgcoord 0, 0
-	call TownMapBGUpdate
-	call TownMapMon
-	ld a, c
-	ld [wTownMapCursorCoordinates], a
-	ld a, b
-	ld [wTownMapCursorCoordinates + 1], a
-	ld b, SCGB_POKEGEAR_PALS
-	call GetSGBLayout
-	call SetPalettes
-.loop
-	call JoyTextDelay
-	ld hl, hJoyPressed
-	ld a, [hl]
-	and B_BUTTON
-	jr nz, .pressedB
-	ld a, [hl]
-	and A_BUTTON
-	jr nz, .pressedA
-	call .HandleDPad
-	call GetMapCursorCoordinates
-	farcall PlaySpriteAnimations
-	call DelayFrame
-	jr .loop
-
-.pressedB
-	ld a, -1
-	jr .finished_a_b
-
-.pressedA
-	ld a, [wTownMapPlayerIconLandmark]
-	ld l, a
-	ld h, 0
-	add hl, hl
-	ld de, Flypoints + 1
-	add hl, de
-	ld a, [hl]
-.finished_a_b
-	ld [wTownMapPlayerIconLandmark], a
-	pop af
-	ld [hInMenu], a
-	call ClearBGPalettes
-	ld a, $90
-	ld [hWY], a
-	xor a ; LOW(vBGMap0)
-	ld [hBGMapAddress], a
-	ld a, HIGH(vBGMap0)
-	ld [hBGMapAddress + 1], a
-	ld a, [wTownMapPlayerIconLandmark]
-	ld e, a
-	ret
-
-; 923b8
-
-.HandleDPad: ; 923b8
-	ld hl, hJoyLast
-	ld a, [hl]
-	and D_DOWN | D_RIGHT
-	jr nz, .down_right
-	ld a, [hl]
-	and D_UP | D_LEFT
-	jr nz, .up_left
-	ret
-
-.down_right
-	ld hl, wTownMapPlayerIconLandmark
-	ld a, [hl]
-	cp FLY_INDIGO
-	jr c, .okay_dr
-	ld [hl], -1
-.okay_dr
-	inc [hl]
-	jr .continue
-
-.up_left
-	ld hl, wTownMapPlayerIconLandmark
-	ld a, [hl]
-	and a
-	jr nz, .okay_ul
-	ld [hl], FLY_INDIGO + 1
-.okay_ul
-	dec [hl]
-.continue
-	ld a, [wTownMapPlayerIconLandmark]
-	cp KANTO_FLYPOINT
-	jr c, .johto
-	call FillKantoMap
-	xor a
-	ld b, $9c
-	jr .finish
-
-.johto
-	call FillJohtoMap
-	ld a, $90
-	ld b, $98
-.finish
-	ld [hWY], a
-	ld a, b
-	ld [hBGMapAddress + 1], a
-	call TownMapBubble
-	call WaitBGMap
-	xor a
-	ld [hBGMapMode], a
-	ret
-
-; 92402

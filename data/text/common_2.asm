@@ -187,21 +187,6 @@ UnknownText_0x1c03c2::
 	text "."
 	prompt
 
-UnknownText_0x1c03fa::
-	text "You have no room"
-	line "for any more"
-	cont "@"
-	text_from_ram wStringBuffer1
-	text "S."
-	prompt
-
-UnknownText_0x1c0421::
-	text "You received"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "!"
-	prompt
-
 UnknownText_0x1c0436::
 	text "The link has been"
 	line "cancelled."
@@ -249,36 +234,6 @@ UnknownText_0x1c04fa::
 	cont "to @"
 	text_from_ram wMysteryGiftPlayerName
 	text "'s home."
-	prompt
-
-UnknownText_0x1c051a::
-	text "Received"
-	line "@"
-	text_from_ram wc850
-	text "'s CARD."
-	prompt
-
-UnknownText_0x1c0531::
-	text_from_ram wc850
-	text "'s CARD was"
-	line "listed as no.@"
-	deciram wd265, 1, 2
-	text "."
-	prompt
-
-UnknownText_0x1c0555::
-	text "The CARD was not"
-	line "registered."
-	prompt
-
-UnknownText_0x1c0573::
-	text "The link has been"
-	line "cancelled."
-	prompt
-
-UnknownText_0x1c0591::
-	text "Communication"
-	line "error."
 	prompt
 
 _BadgeRequiredText::
@@ -476,11 +431,6 @@ UnknownText_0x1c0965::
 	text "Not even a nibble!"
 	prompt
 
-UnknownText_0x1c0979::
-	text "Looks like there's"
-	line "nothing here."
-	prompt
-
 UnknownText_0x1c099a::
 	text "You can't get off"
 	line "here!"
@@ -587,10 +537,6 @@ Text_AnEGGCantHoldAnItem::
 	line "an item."
 	prompt
 
-UnknownText_0x1c0b9a::
-	text "No items."
-	done
-
 UnknownText_0x1c0ba5::
 	text "Throw away how"
 	line "many?"
@@ -643,11 +589,6 @@ UnknownText_0x1c0c63::
 UnknownText_0x1c0c83::
 	text_start
 	done
-
-Text_YouCantUseItInABattle::
-	text "You can't use it"
-	line "in a battle."
-	prompt
 
 Text_AreYouABoyOrAreYouAGirl::
 	text "Are you a boy?"
@@ -863,27 +804,6 @@ MailMovedFromBoxText::
 	line "from the MAILBOX."
 	prompt
 
-UnknownText_0x1c0fb3::
-	text "Yes"
-	prompt
-
-UnknownText_0x1c0fb8::
-	text "No"
-	prompt
-
-UnknownText_0x1c0fbc::
-	deciram wcf64, 1, 3
-	text " @"
-	text_from_ram wStringBuffer1
-	text_start
-	line "Animation type @"
-	text_from_ram wStringBuffer2
-	db "@@"
-
-UnknownText_0x1c0fdd::
-	text "#MON number?"
-	done
-
 Text_WasSentToBillsPC::
 	text_from_ram wStringBuffer1
 	text " was"
@@ -905,21 +825,6 @@ UnknownText_0x1c102b::
 
 	para "Please remove the"
 	line "MAIL."
-	prompt
-
-UnknownText_0x1c1062::
-	text "You don't have a"
-	line "single #MON!"
-	prompt
-
-UnknownText_0x1c1080::
-	text "You can't deposit"
-	line "your last #MON!"
-	prompt
-
-UnknownText_0x1c10a2::
-	text "You can't take any"
-	line "more #MON."
 	prompt
 
 UnknownText_0x1c10c0::
@@ -1313,35 +1218,6 @@ _OakRating19::
 _OakPCText4::
 	text "The link to PROF."
 	line "OAK's PC closed."
-	done
-
-UnknownText_0x1c19cd::
-	text "Triple-theme"
-	line "trainer ranking!"
-
-	para "The SAVE file you"
-	line "just sent might"
-	cont "make the rankings!"
-
-	para ""
-	done
-
-UnknownText_0x1c1a22::
-	text "There is no"
-	line "ranking data."
-
-	para "Link to obtain"
-	line "ranking data."
-
-	para ""
-	done
-
-UnknownText_0x1c1a5b::
-	text " , yeah!"
-	done
-
-UnknownText_0x1c1a65::
-	text "Darn…"
 	done
 
 UnknownText_0x1c1a6c::

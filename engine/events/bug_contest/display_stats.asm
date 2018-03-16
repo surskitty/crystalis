@@ -100,8 +100,3 @@ DisplayAlreadyCaughtText: ; cc0c7
 	; You already caught a @ .
 	text_jump UnknownText_0x1c10dd
 	db "@"
-
-DummyPredef2F:
-DummyPredef38:
-DummyPredef39: ; cc0d5
-	ret

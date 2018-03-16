@@ -1,15 +1,3 @@
-Unreferenced_Function88248: ; 88248
-	ld c, CAL
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .okay
-	ld c, KAREN
-
-.okay
-	ld a, c
-	ld [wTrainerClass], a
-	ret
-
 MovePlayerPicRight: ; 88258
 	hlcoord 6, 4
 	ld de, 1
@@ -71,18 +59,6 @@ ShowPlayerNamingChoices: ; 88297
 	ret
 
 INCLUDE "data/player_names.asm"
-
-GetPlayerNameArray: ; 88318 This Function is never called
-	ld hl, wPlayerName
-	ld de, MalePlayerNameArray
-	ld a, [wPlayerGender]
-	bit PLAYERGENDER_FEMALE_F, a
-	jr z, .done
-	ld de, FemalePlayerNameArray
-
-.done
-	call InitName
-	ret
 
 GetPlayerIcon: ; 8832c
 ; Get the player icon corresponding to gender

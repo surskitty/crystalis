@@ -42,83 +42,7 @@ LoadMenuMonIcon: ; 8e83f
 	dw NamingScreen_InitAnimatedMonIcon ; naming screen
 	dw MoveList_InitAnimatedMonIcon ; moves (?)
 	dw Trade_LoadMonIconGFX ; trade
-	dw Mobile_InitAnimatedMonIcon ; mobile
-	dw Mobile_InitPartyMenuBGPal71 ; mobile
-	dw .GetPartyMenuMonIcon ; unused
 
-.GetPartyMenuMonIcon: ; 8e862 (23:6862)
-	call InitPartyMenuIcon
-	call .GetPartyMonItemGFX
-	call SetPartyMonIconAnimSpeed
-	ret
-
-.GetPartyMonItemGFX: ; 8e86c (23:686c)
-	push bc
-	ld a, [hObjectStructIndexBuffer]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop bc
-	ld a, [hl]
-	and a
-	jr z, .no_item
-	push hl
-	push bc
-	ld d, a
-	callfar ItemIsMail
-	pop bc
-	pop hl
-	jr c, .not_mail
-	ld a, $6
-	jr .got_tile
-.not_mail
-	ld a, $5
-	; jr .got_tile
-
-.no_item
-	ld a, $4
-.got_tile
-	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
-	add hl, bc
-	ld [hl], a
-	ret
-
-Mobile_InitAnimatedMonIcon: ; 8e898 (23:6898)
-	call PartyMenu_InitAnimatedMonIcon
-	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
-	add hl, bc
-	ld a, SPRITE_ANIM_SEQ_NULL
-	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld a, 9 * 8
-	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_YCOORD
-	add hl, bc
-	ld a, 9 * 8
-	ld [hl], a
-	ret
-
-Mobile_InitPartyMenuBGPal71: ; 8e8b1 (23:68b1)
-	call InitPartyMenuIcon
-	call SetPartyMonIconAnimSpeed
-	ld hl, SPRITEANIMSTRUCT_ANIM_SEQ_ID
-	add hl, bc
-	ld a, SPRITE_ANIM_SEQ_NULL
-	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_XCOORD
-	add hl, bc
-	ld a, 3 * 8
-	ld [hl], a
-	ld hl, SPRITEANIMSTRUCT_YCOORD
-	add hl, bc
-	ld a, 12 * 8
-	ld [hl], a
-	ld a, c
-	ld [wc608], a
-	ld a, b
-	ld [wc608 + 1], a
-	ret
 
 PartyMenu_InitAnimatedMonIcon: ; 8e8d5 (23:68d5)
 	call InitPartyMenuIcon
@@ -281,16 +205,6 @@ FlyFunction_GetMonIcon: ; 8e9bc (23:69bc)
 	ret
 ; 8e9cc (23:69cc)
 
-Unreferenced_GetMonIcon2: ; 8e9cc
-	push de
-	ld a, [wd265]
-	call ReadMonMenuIcon
-	ld [wCurIcon], a
-	pop de
-	call GetIcon_de
-	ret
-; 8e9db
-
 GetMemIconGFX: ; 8e9db (23:69db)
 	ld a, [wCurIconTile]
 GetIconGFX: ; 8e9de
@@ -299,7 +213,7 @@ GetIconGFX: ; 8e9de
 	add hl, de
 	ld de, HeldItemIcons
 	lb bc, BANK(HeldItemIcons), 2
-	call GetGFXUnlessMobile
+	call Get2bpp_2
 	ld a, [wCurIconTile]
 	add 10
 	ld [wCurIconTile], a
@@ -309,12 +223,6 @@ HeldItemIcons:
 INCBIN "gfx/icons/mail.2bpp"
 INCBIN "gfx/icons/item.2bpp"
 ; 8ea17
-
-GetIcon_de: ; 8ea17
-; Load icon graphics into VRAM starting from tile de.
-	ld l, e
-	ld h, d
-	jr GetIcon
 
 GetIcon_a: ; 8ea1b
 ; Load icon graphics into VRAM starting from tile a.
@@ -348,18 +256,11 @@ endr
 	pop hl
 
 	lb bc, BANK(Icons), 8
-	call GetGFXUnlessMobile
+	call Get2bpp_2
 
 	pop hl
 	ret
 ; 8ea3f
-
-GetGFXUnlessMobile: ; 8ea3f
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jp nz, Request2bpp
-	jp Get2bpp_2
-; 8ea4a
 
 FreezeMonIcons: ; 8ea4a
 	ld hl, wSpriteAnimationStructs

@@ -463,9 +463,6 @@ YoungsterScript_0x6adba:
 	closetext
 	end
 
-UnknownScript_0x6adce:
-	jumptext UnknownText_0x6b84c
-
 MovementData_0x6add1:
 	big_step DOWN
 	big_step RIGHT
@@ -792,39 +789,6 @@ UnknownText_0x6b7af:
 
 	para "not good enough to"
 	line "win."
-	done
-
-; This text is unused and unreferenced in the final game.
-; The tree Pokémon is Sudowoodo.
-; The Silph Scope 2 was later reworked into the Squirtbottle.
-UnusedSudowoodoText:
-	text "I hear there's a"
-	line "#MON that looks"
-	cont "just like a tree."
-
-	para "You can reveal its"
-	line "identity using a"
-	cont "SILPHSCOPE 2."
-	done
-
-UnknownText_0x6b84c:
-	text "The Bug-Catching"
-	line "Contest is held on"
-
-	para "Tuesday, Thursday"
-	line "and Saturday."
-
-	para "Not only do you"
-	line "earn a prize just"
-
-	para "for participating,"
-	line "you also get to"
-
-	para "keep the bug"
-	line "#MON you may"
-
-	para "have at the end of"
-	line "the contest."
 	done
 
 UnknownText_0x6b910:

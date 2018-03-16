@@ -113,11 +113,6 @@ UnknownText_0x58c8e:
 	line "on the walls…"
 	done
 
-; unused
-UnusedText_0x58caf:
-	text "It's UNOWN text!"
-	done
-
 UnknownText_0x58cc0:
 	text "Patterns appeared"
 	line "on the walls…"

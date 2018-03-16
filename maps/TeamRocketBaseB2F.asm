@@ -165,7 +165,6 @@ LanceHealsCommon:
 	waitbutton
 	closetext
 	special FadeOutPalettes
-	special StubbedTrainerRankings_Healings
 	playsound SFX_FULL_HEAL
 	special HealParty
 	special FadeInPalettes
@@ -729,11 +728,6 @@ UnknownText_0x6d809:
 	para "I found it here,"
 	line "but I don't have"
 	cont "any need for it."
-	done
-
-UnknownText_0x6d8e6:
-	text "<PLAYER> received"
-	line "HM06."
 	done
 
 UnknownText_0x6d8f8:

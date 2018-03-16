@@ -35,54 +35,6 @@ EnableEvents:: ; 966d0
 	ret
 ; 966d6
 
-CheckBit5_ScriptFlags3: ; 966d6
-	ld hl, wScriptFlags3
-	bit 5, [hl]
-	ret
-; 966dc
-
-DisableWarpsConnxns: ; 966dc
-	ld hl, wScriptFlags3
-	res 2, [hl]
-	ret
-; 966e2
-
-DisableCoordEvents: ; 966e2
-	ld hl, wScriptFlags3
-	res 1, [hl]
-	ret
-; 966e8
-
-DisableStepCount: ; 966e8
-	ld hl, wScriptFlags3
-	res 0, [hl]
-	ret
-; 966ee
-
-DisableWildEncounters: ; 966ee
-	ld hl, wScriptFlags3
-	res 4, [hl]
-	ret
-; 966f4
-
-EnableWarpsConnxns: ; 966f4
-	ld hl, wScriptFlags3
-	set 2, [hl]
-	ret
-; 966fa
-
-EnableCoordEvents: ; 966fa
-	ld hl, wScriptFlags3
-	set 1, [hl]
-	ret
-; 96700
-
-EnableStepCount: ; 96700
-	ld hl, wScriptFlags3
-	set 0, [hl]
-	ret
-; 96706
-
 EnableWildEncounters: ; 96706
 	ld hl, wScriptFlags3
 	set 4, [hl]
@@ -150,12 +102,6 @@ EnterMap: ; 9673e
 	ld [wMapStatus], a
 	ret
 ; 9676d
-
-UnusedWait30Frames: ; 9676d
-	ld c, 30
-	call DelayFrames
-	ret
-; 96773
 
 HandleMap: ; 96773
 	call ResetOverworldDelay
@@ -275,8 +221,6 @@ PlayerEvents: ; 9681f
 	ld a, [wScriptRunning]
 	and a
 	ret nz
-
-	call Dummy_CheckScriptFlags3Bit5 ; This is a waste of time
 
 	call CheckTrainerBattle3
 	jr c, .ok
@@ -418,26 +362,6 @@ SetUpFiveStepWildEncounterCooldown: ; 968d1
 	ret
 ; 968d7
 
-ret_968d7: ; 968d7
-	ret
-;968d8
-
-SetMinTwoStepWildEncounterCooldown: ; 968d8
-	ld a, [wWildEncounterCooldown]
-	cp 2
-	ret nc
-	ld a, 2
-	ld [wWildEncounterCooldown], a
-	ret
-; 968e4
-
-Dummy_CheckScriptFlags3Bit5: ; 968e4
-	call CheckBit5_ScriptFlags3
-	ret z
-	call ret_2f3e
-	ret
-; 968ec
-
 RunSceneScript: ; 968ec
 	ld a, [wCurrMapSceneScriptCount]
 	and a
@@ -518,12 +442,6 @@ CheckTimeEvents: ; 9693a
 	scf
 	ret
 ; 96970
-
-.unused ; 96970
-	ld a, 8
-	scf
-	ret
-; 96974
 
 OWPlayerInput: ; 96974
 
@@ -621,11 +539,6 @@ TryObjectEvent: ; 969b5
 	dbw OBJECTTYPE_SCRIPT, .script
 	dbw OBJECTTYPE_ITEMBALL, .itemball
 	dbw OBJECTTYPE_TRAINER, .trainer
-	; the remaining four are dummy events
-	dbw OBJECTTYPE_3, .three
-	dbw OBJECTTYPE_4, .four
-	dbw OBJECTTYPE_5, .five
-	dbw OBJECTTYPE_6, .six
 	db -1
 ; 96a04
 
@@ -661,26 +574,6 @@ TryObjectEvent: ; 969b5
 	scf
 	ret
 ; 96a30
-
-.three ; 96a30
-	xor a
-	ret
-; 96a32
-
-.four ; 96a32
-	xor a
-	ret
-; 96a34
-
-.five ; 96a34
-	xor a
-	ret
-; 96a36
-
-.six ; 96a36
-	xor a
-	ret
-; 96a38
 
 TryBGEvent: ; 96a38
 	call CheckFacingBGEvent
@@ -831,7 +724,6 @@ PlayerMovement: ; 96af0
 ; 96b10
 
 .seven ; 96b10
-	call ret_968d7 ; mobile
 	xor a
 	ld c, a
 	ret
@@ -995,13 +887,6 @@ CountStep: ; 96b79
 	ret
 ; 96bd3
 
-; unused
-.unreferenced ; 96bd3
-	ld a, 7
-	scf
-	ret
-; 96bd7
-
 DoRepelStep: ; 96bd7
 	ld a, [wRepelEffect]
 	and a
@@ -1071,10 +956,6 @@ PlayerEventScriptPointers: ; 96c0c
 Invalid_0x96c2d: ; 96c2d
 	end
 ; 96c2e
-
-; unused
-	end
-; 96c2f
 
 HatchEggScript: ; 96c2f
 	callasm OverworldHatchEgg

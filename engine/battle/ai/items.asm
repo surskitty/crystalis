@@ -150,13 +150,6 @@ SwitchSometimes: ; 380c1
 ; 380ff
 
 
-CheckSubstatusCantRun: ; 380ff
-	ld a, [wEnemySubStatus5]
-	bit SUBSTATUS_CANT_RUN, a
-	ret
-; 38105
-
-
 AI_TryItem: ; 38105
 	; items are not allowed in the BattleTower
 	ld a, [wInBattleTowerBattle]
@@ -414,50 +407,6 @@ AI_Items: ; 39196
 	call EnemyUsedPotion
 	jp .Use
 ; 382ae
-
-.asm_382ae ; This appears to be unused
-	callfar AICheckEnemyMaxHP
-	jr c, .dont_use
-	push bc
-	ld de, wEnemyMonMaxHP + 1
-	ld hl, wEnemyMonHP + 1
-	ld a, [de]
-	sub [hl]
-	jr z, .check_40_percent
-	dec hl
-	dec de
-	ld c, a
-	sbc [hl]
-	and a
-	jr nz, .check_40_percent
-	ld a, c
-	cp b
-	jp c, .check_50_percent
-	callfar AICheckEnemyQuarterHP
-	jr c, .check_40_percent
-
-.check_50_percent
-	pop bc
-	ld a, [bc]
-	bit UNKNOWN_USE_F, a
-	jp z, .Use
-	call Random
-	cp 50 percent + 1
-	jp c, .Use
-
-.dont_use
-	jp .DontUse
-
-.check_40_percent
-	pop bc
-	ld a, [bc]
-	bit UNKNOWN_USE_F, a
-	jp z, .DontUse
-	call Random
-	cp 39 percent + 1
-	jp c, .Use
-	jp .DontUse
-; 382f9
 
 .XAccuracy: ; 382f9
 	call .XItem
@@ -746,13 +695,6 @@ TextJump_EnemyWithdrew: ; 384d0
 	db "@"
 ; 384d5
 
-Function384d5: ; This appears to be unused
-	call AIUsedItemSound
-	call AI_HealStatus
-	ld a, FULL_HEAL_RED ; X_SPEED
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-; 384e0
-
 AI_HealStatus: ; 384e0
 	ld a, [wCurOTMon]
 	ld hl, wOTPartyMon1Status
@@ -791,32 +733,6 @@ EnemyUsedDireHit: ; 38511
 	ld a, DIRE_HIT
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 ; 3851e
-
-Function3851e: ; This appears to be unused
-	ld [hDivisor], a
-	ld hl, wEnemyMonMaxHP
-	ld a, [hli]
-	ld [hDividend], a
-	ld a, [hl]
-	ld [hDividend + 1], a
-	ld b, 2
-	call Divide
-	ld a, [hQuotient + 2]
-	ld c, a
-	ld a, [hQuotient + 1]
-	ld b, a
-	ld hl, wEnemyMonHP + 1
-	ld a, [hld]
-	ld e, a
-	ld a, [hl]
-	ld d, a
-	ld a, d
-	sub b
-	ret nz
-	ld a, e
-	sub c
-	ret
-; 38541
 
 EnemyUsedXAttack: ; 38541
 	ld b, ATTACK

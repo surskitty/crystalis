@@ -53,20 +53,12 @@ DoBattleTransition: ; 8c20f
 ; 8c26d
 
 .InitGFX: ; 8c26d
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jr z, .mobile
 	farcall ReanchorBGMap_NoOAMUpdate
 	call UpdateSprites
 	call DelayFrame
 	call .NonMobile_LoadPokeballTiles
 	call BattleStart_CopyTilemapAtOnce
-	jr .resume
 
-.mobile
-	call LoadTrainerBattlePokeballTiles
-
-.resume
 	ld a, SCREEN_HEIGHT_PX
 	ld [hWY], a
 	call DelayFrame
@@ -628,16 +620,6 @@ StartTrainerBattle_LoadPokeBallGraphics: ; 8c5dc (23:45dc)
 	dec b
 	jr nz, .loop2
 
-	ld a, [hCGB]
-	and a
-	jr nz, .cgb
-	ld a, $1
-	ld [hBGMapMode], a
-	call DelayFrame
-	call DelayFrame
-	jr .nextscene
-
-.cgb
 	ld hl, .daypals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
@@ -818,11 +800,3 @@ ENDM
 	jr nz, .row
 	ret
 ; 8c7c9 (23:47c9)
-
-Unreferenced_Function8c7c9:
-	ld a, $1
-	ld [hBGMapMode], a
-	call WaitBGMap
-	xor a
-	ld [hBGMapMode], a
-	ret

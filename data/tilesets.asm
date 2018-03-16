@@ -33,7 +33,6 @@ Tilesets:: ; 4d596
 	tileset TilesetChampionsRoom
 	tileset TilesetLighthouse
 	tileset TilesetPlayersRoom
-	tileset TilesetPokeComCenter
 	tileset TilesetBattleTower
 	tileset TilesetTower
 	tileset TilesetCave

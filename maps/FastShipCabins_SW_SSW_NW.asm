@@ -47,17 +47,8 @@ TrainerGuitaristClyde:
 
 .Script:
 	endifjustbattled
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	opentext
 	writetext UnknownText_0x75d65
-	waitbutton
-	closetext
-	end
-
-.mobile
-	opentext
-	writetext UnknownText_0x75cfe
 	waitbutton
 	closetext
 	end
@@ -69,7 +60,6 @@ FastShipBed:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	special StubbedTrainerRankings_Healings
 	special HealParty
 	playmusic MUSIC_HEAL
 	pause 60
@@ -178,16 +168,6 @@ GuitaristClydeSeenText:
 GuitaristClydeBeatenText:
 	text "Yowza!"
 	line "Total distortion!"
-	done
-
-UnknownText_0x75cfe:
-	text "I was going to"
-	line "make my debut at"
-	cont "the BATTLE TOWER…"
-
-	para "I should go back"
-	line "to VERMILION and"
-	cont "redo my training…"
 	done
 
 UnknownText_0x75d65:

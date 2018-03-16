@@ -146,7 +146,6 @@ TeachTMHM: ; 2c867
 	and a
 	jr z, .nope
 
-	farcall StubbedTrainerRankings_TMsHMsTaught
 	ld a, [wCurItem]
 	call IsHM
 	ret c
@@ -160,9 +159,6 @@ TeachTMHM: ; 2c867
 	and a
 	ret
 
-.unused
-	ld a, 2
-	ld [wItemEffectSucceeded], a
 .learned_move
 	scf
 	ret
@@ -447,20 +443,6 @@ TMHMPocket_GetCurrentLineCoord: ; 2ca86 (b:4a86)
 	ret
 ; 2ca95 (b:4a95)
 
-Unreferenced_Function2ca95: ; 2ca95
-	pop hl
-	ld bc, 3
-	add hl, bc
-	predef GetTMHMMove
-	ld a, [wd265]
-	ld [wPutativeTMHMMove], a
-	call GetMoveName
-	push hl
-	call PlaceString
-	pop hl
-	ret
-; 2caae
-
 TMHM_String_Cancel: ; 2caae
 	db "CANCEL@"
 ; 2cab5
@@ -497,43 +479,6 @@ TMHM_PlaySFX_ReadText2: ; 2cad6 (b:4ad6)
 	pop de
 	ret
 ; 2cadf (b:4adf)
-
-Unreferenced_Function2cadf: ; 2cadf
-	call ConvertCurItemIntoCurTMHM
-	call .CheckHaveRoomForTMHM
-	ld hl, .NoRoomText
-	jr nc, .print
-	ld hl, .ReceivedText
-.print
-	jp PrintText
-; 2caf0
-
-.NoRoomText: ; 0x2caf0
-	; You have no room for any more @ S.
-	text_jump UnknownText_0x1c03fa
-	db "@"
-; 0x2caf5
-
-.ReceivedText: ; 0x2caf5
-	; You received @ !
-	text_jump UnknownText_0x1c0421
-	db "@"
-; 0x2cafa
-
-.CheckHaveRoomForTMHM: ; 2cafa
-	ld a, [wd265]
-	dec a
-	ld hl, wTMsHMs
-	ld b, 0
-	ld c, a
-	add hl, bc
-	ld a, [hl]
-	inc a
-	cp NUM_TMS * 2
-	ret nc
-	ld [hl], a
-	ret
-; 2cb0c
 
 ConsumeTM: ; 2cb0c (b:4b0c)
 	call ConvertCurItemIntoCurTMHM

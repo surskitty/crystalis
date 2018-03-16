@@ -6,9 +6,6 @@ GoldenrodBikeShop_MapScripts:
 
 	db 0 ; callbacks
 
-UnknownScript_0x5474f:
-	end
-
 ClerkScript_0x54750:
 	faceplayer
 	opentext
@@ -38,10 +35,6 @@ UnknownScript_0x5477b:
 	waitbutton
 	closetext
 	end
-
-; possibly unused
-UnknownScript_0x54781:
-	jumptext UnknownText_0x548c0
 
 MapGoldenrodBikeShopSignpost8Script:
 	jumptext UnknownText_0x548ed
@@ -85,14 +78,6 @@ UnknownText_0x54898:
 	text "…sigh… Oh, for"
 	line "the kindness of"
 	cont "people…"
-	done
-
-; possibly unused
-UnknownText_0x548c0:
-	text "Just released!"
-
-	para "First-rate compact"
-	line "BICYCLES!"
 	done
 
 UnknownText_0x548ed:

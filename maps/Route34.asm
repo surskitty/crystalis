@@ -470,9 +470,6 @@ TrainerCooltrainerfKate:
 	closetext
 	end
 
-; unused
-	jumptext MapRoute34UnusedSignpostText
-
 Route34Sign:
 	jumptext Route34SignText
 
@@ -513,17 +510,6 @@ YoungsterSamuelSeenText:
 YoungsterSamuelBeatenText:
 	text "Beaten by a"
 	line "passing stranger!"
-	done
-
-YoungsterSamuelMobileText:
-	text "Have you been to"
-	line "GOLDENROD CITY?"
-
-	para "Weren't you amazed"
-	line "by how they've"
-
-	para "changed the"
-	line "#MON CENTER?"
 	done
 
 YoungsterSamuelAfterText:
@@ -722,11 +708,6 @@ CooltrainerfKateAfterText:
 
 	para "here. You sure"
 	line "startled us."
-	done
-
-MapRoute34UnusedSignpostText:
-	text "ILEX FOREST"
-	line "THROUGH THE GATE"
 	done
 
 Route34SignText:

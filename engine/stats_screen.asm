@@ -4,25 +4,9 @@
 	const BLUE_PAGE  ; 3
 NUM_STAT_PAGES EQU const_value + -1
 
-BattleStatsScreenInit: ; 4dc7b (13:5c7b)
-	ld a, [wLinkMode]
-	cp LINK_MOBILE
-	jr nz, StatsScreenInit
-
-	ld a, [wBattleMode]
-	and a
-	jr z, StatsScreenInit
-	jr _MobileStatsScreenInit
-
 StatsScreenInit: ; 4dc8a
 	ld hl, StatsScreenMain
-	jr StatsScreenInit_gotaddress
 
-_MobileStatsScreenInit: ; 4dc8f
-	ld hl, StatsScreenMobile
-	jr StatsScreenInit_gotaddress
-
-StatsScreenInit_gotaddress: ; 4dc94
 	ld a, [hMapAnims]
 	push af
 	xor a
@@ -78,32 +62,6 @@ StatsScreenMain: ; 0x4dcd2
 	jr z, .loop
 	ret
 ; 0x4dcf7
-
-StatsScreenMobile: ; 4dcf7
-	xor a
-	ld [wJumptableIndex], a
-	; stupid interns
-	ld [wcf64], a
-	ld a, [wcf64]
-	and %11111100
-	or 1
-	ld [wcf64], a
-.loop
-	farcall Mobile_SetOverworldDelay
-	ld a, [wJumptableIndex]
-	and $ff ^ (1 << 7)
-	ld hl, StatsScreenPointerTable
-	rst JumpTable
-	call StatsScreen_WaitAnim
-	farcall MobileComms_CheckInactivityTimer
-	jr c, .exit
-	ld a, [wJumptableIndex]
-	bit 7, a
-	jr z, .loop
-
-.exit
-	ret
-; 4dd2a
 
 StatsScreenPointerTable: ; 4dd2a
 	dw MonStatsInit       ; regular pokémon
@@ -452,19 +410,6 @@ StatsScreen_InitUpperHalf: ; 4deea (13:5eea)
 	dw sBoxMonNicknames
 	dw wBufferMonNick
 ; 4df7f
-
-Unreferenced_Function4df7f: ; 4df7f
-	hlcoord 7, 0
-	ld bc, SCREEN_WIDTH
-	ld d, SCREEN_HEIGHT
-.loop
-	ld a, $31 ; vertical divider
-	ld [hl], a
-	add hl, bc
-	dec d
-	jr nz, .loop
-	ret
-; 4df8f
 
 StatsScreen_PlaceHorizontalDivider: ; 4df8f (13:5f8f)
 	hlcoord 0, 7
@@ -967,11 +912,6 @@ StatsScreen_LoadTextBoxSpaceGFX: ; 4e307 (13:6307)
 	pop hl
 	ret
 ; 4e32a (13:632a)
-
-Unreferenced_4e32a: ; 4e32a
-; A blank space tile?
-	ds 16
-; 4e33a
 
 EggStatsScreen: ; 4e33a
 	xor a

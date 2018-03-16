@@ -41,17 +41,9 @@ TownMapGFX: ; f8ba0
 INCBIN "gfx/pokegear/town_map.2bpp.lz"
 ; f8ea4
 
-UnusedWeekdayKanjiGFX: ; unused kanji
-INCBIN "gfx/font/unused_weekday_kanji.2bpp"
-; f8f24
-
 PokegearPhoneIconGFX: ; f8f24
 INCBIN "gfx/font/phone_icon.2bpp"
 ; f8f34
-
-UnusedBoldFontGFX: ; unused bold letters + unown chars
-INCBIN "gfx/font/unused_bold_font.1bpp"
-; f9204
 
 TextBoxSpaceGFX: ; f9204
 INCBIN "gfx/frames/space.1bpp"
@@ -60,14 +52,6 @@ INCBIN "gfx/frames/space.1bpp"
 FontsExtra_SolidBlackGFX: ; f9214
 INCBIN "gfx/font/black.1bpp"
 ; f921c
-
-UnusedUpArrowGFX: ; unused up arrow + whitespace
-INCBIN "gfx/font/unused_up_arrow.1bpp"
-; f9234
-
-MobilePhoneTilesGFX: ; f9234
-INCBIN "gfx/mobile/phone_tiles.2bpp"
-; f9344
 
 MapEntryFrameGFX: ; f9344
 INCBIN "gfx/frames/map_entry_sign.2bpp"
