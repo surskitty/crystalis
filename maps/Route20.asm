@@ -49,6 +49,9 @@ TrainerSwimmermCameron:
 CinnabarGymSign:
 	jumptext CinnabarGymSignText
 
+SeafoamIslandSign:
+	jumptext SeafoamIslandSignText
+
 SwimmerfNicoleSeenText:
 	text "I feel so much"
 	line "lighter in water."
@@ -110,16 +113,26 @@ CinnabarGymSignText:
 	line "LEADER: BLAINE"
 	done
 
+SeafoamIslandSignText:
+	text "SEAFOAM ISLANDS"
+
+	para "Two small islands"
+	line "lightly floating"
+	cont "in the ocean."
+	done
+
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 38,  7, SEAFOAM_GYM, 1
+	warp_event 38,  9, SEAFOAM_GYM, 1
+;	warp_event 30,  5, SEAFOAM_ISLAND_1F, 2
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 37, 11, BGEVENT_READ, CinnabarGymSign
+	bg_event 33, 7, BGEVENT_READ, SeafoamIslandSign
 
 	db 3 ; object events
 	object_event 52,  8, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerfNicole, -1

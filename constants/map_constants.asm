@@ -174,6 +174,11 @@ ENDM
 	map_const ROUTE_20,                                    30,  9 ;  6
 	map_const ROUTE_21,                                    10, 18 ;  7
 	map_const CINNABAR_ISLAND,                             10,  9 ;  8
+	map_const SEAFOAM_ISLAND_1F,                           15,  9 ;  9
+	map_const SEAFOAM_ISLAND_B1F,                          15,  9 ;  10
+	map_const SEAFOAM_ISLAND_B2F,                          15,  9 ;  11
+	map_const SEAFOAM_ISLAND_B3F,                          15,  9 ;  12
+	map_const SEAFOAM_ISLAND_B4F,                          15,  9 ;  13
 
 	newgroup                                                      ;  7
 
