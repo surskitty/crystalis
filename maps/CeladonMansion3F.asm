@@ -13,11 +13,66 @@ CooltrainerMScript_0x71670:
 	faceplayer
 	opentext
 	writetext UnknownText_0x716ce
+	checkevent EVENT_RECEIVED_MEW
+	iffalse .Mew
 	checkcode VAR_DEXCAUGHT
 	ifgreater NUM_POKEMON - 2 - 1, UnknownScript_0x7167e ; ignore Mew and Celebi
 	waitbutton
 	closetext
 	end
+
+.Mew
+	special TrainerHouse
+	iftrue .ReceiveMew
+	checkevent EVENT_BEAT_CAL
+	iffalse .MewHint
+	checkevent EVENT_BEAT_CARRIE1
+	iffalse .MewHint
+	checkevent EVENT_BEAT_CARRIE2
+	iffalse .MewHint
+	checkevent EVENT_BEAT_CARRIE3
+	iffalse .MewHint
+	checkevent EVENT_BEAT_CYNTHIA
+	iffalse .MewHint
+	checkevent EVENT_BEAT_IRIS
+	iffalse .MewHint
+	checkevent EVENT_BEAT_GREEN
+	iftrue .ReceiveMew
+.MewHint
+	writetext Designer_Mew_Hint
+	ret
+
+.ReceiveMew
+	writetext Designer_Mew_Gift
+	buttonsound
+	waitsfx
+	checkcode VAR_PARTYCOUNT
+	if_equal $6, .PartyFull
+	writetext .GotMewText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke MEW, 5
+	setevent EVENT_RECEIVED_MEW
+	waitbutton
+	closetext
+	end
+
+.PartyFull:
+	writetext .PartyFullText
+	waitbutton
+	closetext
+	end
+
+.GotMewText:
+	text "<PLAYER> received"
+	line "MEW!"
+	done
+
+.PartyFullText:
+	text "Hey, wait. You"
+	line "can't carry any"
+	cont "more #MON."
+	done
 
 UnknownScript_0x7167e:
 	buttonsound
@@ -84,6 +139,27 @@ UnknownText_0x716ce:
 	para "Filling up your"
 	line "#DEX is tough,"
 	cont "but don't give up!"
+	done
+
+Designer_Mew_Hint:
+	text "Have you tried"
+	line "MYSTERY GIFT?"
+
+	para "I met some weirdos"
+	line "in the VIRIDIAN"
+	cont "TRAINER HOUSE."
+
+	para "If you fight them"
+	line "all, I'll give you"
+	cont "something good."
+	done
+
+Designer_Mew_Gift:
+	text "Wow, incredible!"
+
+	para "This #MON will"
+	line "be the envy of"
+	cont "all your friends."
 	done
 
 UnknownText_0x71725:
