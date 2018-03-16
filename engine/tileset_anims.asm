@@ -246,6 +246,17 @@ ScrollTileRightLeft: ; fc309
 	jr ScrollTileRight
 ; fc318
 
+ScrollTileUpDown: ; fc318
+; Scroll up for 4 ticks, then down for 4 ticks.
+	ld a, [wTileAnimationTimer]
+	inc a
+	and %111
+	ld [wTileAnimationTimer], a
+	and %100
+	jr nz, ScrollTileDown
+	jr ScrollTileUp
+; fc327
+
 ScrollTileLeft: ; fc327
 	ld h, d
 	ld l, e
@@ -275,6 +286,33 @@ endr
 	jr nz, .loop
 	ret
 ; fc34f
+
+ScrollTileUp: ; fc34f
+	ld h, d
+	ld l, e
+	ld d, [hl]
+	inc hl
+	ld e, [hl]
+	ld bc, TILE_WIDTH * 2 - 2
+	add hl, bc
+	ld a, TILE_WIDTH / 2
+.loop
+	ld c, [hl]
+	ld [hl], e
+	dec hl
+	ld b, [hl]
+	ld [hl], d
+	dec hl
+	ld e, [hl]
+	ld [hl], c
+	dec hl
+	ld d, [hl]
+	ld [hl], b
+	dec hl
+	dec a
+	jr nz, .loop
+	ret
+; fc36a
 
 ScrollTileDown: ; fc36a
 	ld h, d
@@ -568,7 +606,8 @@ AnimateFlowerTile: ; fc56d
 	ld e, a
 
 ; CGB has different color mappings for flowers.
-	ld a, 1
+	ld a, [hCGB]
+	and 1
 
 	add e
 	swap a
@@ -805,6 +844,11 @@ endr
 TileAnimationPalette: ; fc6d7
 ; Transition between color values 0-2 for color 0 in palette 3.
 
+; No palette changes on DMG.
+	ld a, [hCGB]
+	and a
+	ret z
+
 ; We don't want to mess with non-standard palettes.
 	ld a, [rBGP] ; BGP
 	cp %11100100
@@ -864,6 +908,10 @@ TileAnimationPalette: ; fc6d7
 
 
 FlickeringCaveEntrancePalette: ; fc71e
+; No palette changes on DMG.
+	ld a, [hCGB]
+	and a
+	ret z
 ; We don't want to mess with non-standard palettes.
 	ld a, [rBGP]
 	cp %11100100

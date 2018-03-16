@@ -2793,7 +2793,6 @@ JumpToPartyMenuAndPrintText: ; 3d313
 SelectBattleMon: ; 3d329
 	farcall PartyMenuSelect
 	ret
-; 3d33c
 
 PickPartyMonInBattle: ; 3d33c
 .loop
@@ -2936,7 +2935,6 @@ LostBattle: ; 3d38e
 .end
 	scf
 	ret
-; 3d432
 
 EnemyMonFaintedAnimation: ; 3d432
 	hlcoord 12, 5
@@ -3800,7 +3798,6 @@ TryToRunAwayFromBattle: ; 3d8b3
 	call LoadTileMapToTempTileMap
 	scf
 	ret
-; 3da0d
 
 InitBattleMon: ; 3da0d
 	ld a, MON_SPECIES
@@ -5056,7 +5053,6 @@ BattleMenuPKMN_Loop:
 .GetMenu: ; 3e2f5
 	farcall BattleMonMenu
 	ret
-; 3e308
 
 Battle_StatsScreen: ; 3e308
 	call DisableLCD
@@ -6460,7 +6456,6 @@ CheckUnownLetter: ; 3eb75
 	ret
 
 INCLUDE "data/wild/unlocked_unowns.asm"
-
 
 BattleWinSlideInEnemyTrainerFrontpic: ; 3ebd8
 	xor a
@@ -8296,8 +8291,6 @@ DisplayLinkBattleResult: ; 3f77c
 	call WaitPressAorB_BlinkCursor
 	call ClearTileMap
 	ret
-; 3f7f7
-
 .Win:
 	db "YOU WIN@"
 .Lose:
@@ -9010,5 +9003,6 @@ BattleStartMessage: ; 3fc8b
 	farcall BattleStart_TrainerHuds
 	pop hl
 	call StdBattleTextBox
+
 	ret
 ; 3fd26
