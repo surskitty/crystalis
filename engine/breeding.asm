@@ -232,7 +232,6 @@ HatchEggs: ; 16f70 (5:6f70)
 	push de
 
 	farcall SetEggMonCaughtData
-	farcall StubbedTrainerRankings_EggsHatched
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Species
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -982,13 +981,3 @@ DayCareMonCompatibilityText: ; 1746c
 	text_jump UnknownText_0x1c0ec6
 	db "@"
 ; 0x174b5
-
-Unreferenced_DayCareMonPrintEmptyString: ; 174b5
-	ld hl, .string
-	ret
-; 174b9
-
-.string ; 174b9
-	db "@"
-; 174ba
-

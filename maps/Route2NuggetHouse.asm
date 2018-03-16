@@ -23,10 +23,6 @@ FisherScript_0x9b847:
 	closetext
 	end
 
-Route2NuggetHouseBookshelf:
-; unused
-	jumpstd difficultbookshelf
-
 UnknownText_0x9b865:
 	text "Hi! Wow, I'm glad"
 	line "to see you."

@@ -2611,11 +2611,6 @@ Script_warpcheck:
 	farcall EnableEvents
 	ret
 
-Script_enableevents:
-; unused
-	farcall EnableEvents
-	ret
-
 Script_newloadmap:
 ; script command 0x8a
 ; parameters: which_method
@@ -2654,8 +2649,6 @@ Script_loadbytec2cf:
 	call GetScriptByte
 	ld [wc2cf], a
 	ret
-
-	db closetext_command ; unused
 
 Script_closetext:
 ; script command 0x49
@@ -2792,8 +2785,6 @@ Script_halloffame:
 
 	ld hl, wGameTimerPause
 	res GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
-	farcall StubbedTrainerRankings_HallOfFame
-	farcall StubbedTrainerRankings_HallOfFame2
 	farcall HallOfFame
 	ld hl, wGameTimerPause
 	set GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
@@ -2833,12 +2824,3 @@ Script_checksave:
 	ld a, c
 	ld [wScriptVar], a
 	ret
-
-
-; unused
-	ld a, [.byte]
-	ld [wScriptVar], a
-	ret
-
-.byte
-	db 0

@@ -155,9 +155,6 @@ RunTradeAnimScript: ; 28fa1
 	call DisableLCD
 	call LoadFontsBattleExtra
 	callfar ClearSpriteAnims
-	ld a, [hCGB]
-	and a
-	jr z, .NotCGB
 	ld a, $1
 	ld [rVBK], a
 	ld hl, vTiles0
@@ -167,7 +164,6 @@ RunTradeAnimScript: ; 28fa1
 	ld a, $0
 	ld [rVBK], a
 
-.NotCGB:
 	hlbgcoord 0, 0
 	ld bc, sScratch - vBGMap0
 	ld a, " "
@@ -1461,13 +1457,7 @@ TradeAnim_CopyBoxFromDEtoHL: ; 297db
 ; 297ed
 
 TradeAnim_NormalPals: ; 297ed
-	ld a, [hSGB]
-	and a
 	ld a, %11100100 ; 3,2,1,0
-	jr z, .not_sgb
-	ld a, $f0
-
-.not_sgb
 	call DmgToCgbObjPal0
 	ld a, %11100100 ; 3,2,1,0
 	call DmgToCgbBGPals
@@ -1573,50 +1563,6 @@ TradeAnim_WaitAnim2: ; 29886
 	ret
 
 ; 29893
-
-
-Unreferenced_DebugTrade: ; 29893
-; This function is not referenced.
-; It was meant for use in Japanese versions, so the
-; constant used for copy length was changed by accident.
-
-	ld hl, .DebugTradeData
-
-	ld a, [hli]
-	ld [wPlayerTrademonSpecies], a
-	ld de, wPlayerTrademonSenderName
-	ld c, NAME_LENGTH + 2 ; JP: NAME_LENGTH_JAPANESE + 2
-.loop1
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop1
-
-	ld a, [hli]
-	ld [wOTTrademonSpecies], a
-	ld de, wOTTrademonSenderName
-	ld c, NAME_LENGTH + 2 ; JP: NAME_LENGTH_JAPANESE + 2
-.loop2
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec c
-	jr nz, .loop2
-	ret
-
-; 298b5
-
-debugtrade: MACRO
-; species, ot name, ot id (?)
-	db \1, \2
-	dw \3
-ENDM
-
-.DebugTradeData: ; 298b5
-	debugtrade VENUSAUR, "ゲーフり@@", $0123 ; GAME FREAK
-	debugtrade CHARIZARD, "クりーチャ@", $0456 ; Creatures Inc.
-; 298c7
 
 
 TradeGameBoyTilemap: ; 298c7

@@ -118,9 +118,6 @@ CianwoodCityPokefanM:
 CianwoodCityLass:
 	jumptextfaceplayer CianwoodCityLassText
 
-CianwoodCityUnknownScript:
-	jumptextfaceplayer CianwoodCityUnknownText
-
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
 
@@ -262,17 +259,6 @@ CianwoodCityLassText:
 
 	para "his fighting #-"
 	line "MON."
-	done
-
-; possibly unused
-CianwoodCityUnknownText:
-	text "There are several"
-	line "islands between"
-	cont "here and OLIVINE."
-
-	para "A mythical sea"
-	line "creature supposed-"
-	cont "ly lives there."
 	done
 
 EusineSuicuneText:

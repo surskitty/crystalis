@@ -85,8 +85,6 @@ endc
 	ret
 ; 11c05d
 
-INCLUDE "mobile/fixed_words.asm"
-
 INCLUDE "data/trainers/genders.asm"
 
 

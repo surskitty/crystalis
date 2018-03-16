@@ -64,7 +64,6 @@ INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-INCLUDE "engine/routines/correcterrorsinplayerparty.asm"
 INCLUDE "engine/routines/getsquareroot.asm"
 
 
@@ -128,7 +127,6 @@ SECTION "bankA", ROMX
 
 INCLUDE "engine/link.asm"
 INCLUDE "engine/wildmons.asm"
-INCLUDE "engine/battle/link_result.asm"
 
 ChrisBackpic: ; 2ba1a
 INCBIN "gfx/player/chris_back.2bpp.lz"
@@ -195,11 +193,8 @@ INCLUDE "engine/init_gender.asm"
 INCLUDE "engine/routines/drawkrispackgfx.asm"
 INCLUDE "engine/events/move_tutor.asm"
 INCLUDE "engine/crystal_layouts.asm"
-INCLUDE "engine/events/celebi.asm"
 INCLUDE "engine/main_menu.asm"
-INCLUDE "mobile/mobile_menu.asm"
 INCLUDE "engine/search.asm"
-INCLUDE "mobile/mobile_12_2.asm"
 INCLUDE "engine/events/buena_menu.asm"
 
 
@@ -234,9 +229,7 @@ INCLUDE "engine/stats_screen.asm"
 INCLUDE "engine/events/catch_tutorial.asm"
 INCLUDE "engine/evolution_animation.asm"
 INCLUDE "engine/init_hof_credits.asm"
-INCLUDE "engine/events/battle_tower/get_trainer_class.asm"
 INCLUDE "engine/battle/sliding_intro.asm"
-INCLUDE "mobile/print_opp_message.asm"
 INCLUDE "engine/battle/checkbattlescene.asm"
 INCLUDE "engine/gbc_only.asm"
 INCLUDE "engine/events/poke_seer.asm"
@@ -253,7 +246,6 @@ INCLUDE "engine/events/basement_key.asm"
 INCLUDE "engine/events/sacred_ash.asm"
 INCLUDE "engine/tempmon.asm"
 INCLUDE "engine/types.asm"
-INCLUDE "engine/routines/unreferenced_getgen1trainerclassname.asm"
 INCLUDE "engine/mon_stats.asm"
 INCLUDE "engine/routines/initlist.asm"
 INCLUDE "engine/experience.asm"
@@ -262,11 +254,6 @@ INCLUDE "engine/load_pics.asm"
 INCLUDE "engine/move_mon_wo_mail.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/names.asm"
-INCLUDE "data/unused_53d84.asm"
-
-UnknownEggPic:: ; 53d9c
-; Another egg pic. This is shifted up a few pixels.
-INCBIN "gfx/unknown/unknown_egg.2bpp.lz"
 
 
 SECTION "Crystal Phone Text", ROMX
@@ -280,7 +267,6 @@ INCLUDE "engine/player_movement.asm"
 INCLUDE "engine/engine_flags.asm"
 INCLUDE "engine/variables.asm"
 INCLUDE "data/text/battle.asm"
-INCLUDE "engine/debug.asm"
 
 
 SECTION "bank21", ROMX
@@ -294,12 +280,10 @@ SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
 INCLUDE "engine/player_gfx.asm"
-INCLUDE "mobile/mobile_22.asm"
 INCLUDE "engine/events/unown_walls.asm"
 INCLUDE "engine/events/buena.asm"
 INCLUDE "engine/events/dratini.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
-INCLUDE "mobile/mobile_22_2.asm"
 
 
 SECTION "bank23", ROMX
@@ -432,7 +416,6 @@ SECTION "bank38", ROMX
 INCLUDE "engine/events/print_unown_2.asm"
 INCLUDE "engine/card_flip.asm"
 INCLUDE "engine/unown_puzzle.asm"
-INCLUDE "engine/dummy_game.asm"
 INCLUDE "engine/billspc.asm"
 
 
@@ -476,13 +459,7 @@ INCLUDE "gfx/emotes.asm"
 INCLUDE "engine/warp_connection.asm"
 INCLUDE "engine/mystery_gift.asm"
 INCLUDE "engine/battle/used_move_text.asm"
-INCLUDE "mobile/mobile_41.asm"
 INCLUDE "engine/routines/loadoverworldfont.asm"
-
-
-SECTION "Mobile 42", ROMX
-
-INCLUDE "mobile/mobile_42.asm"
 
 
 SECTION "Intro Logo", ROMX
@@ -493,7 +470,6 @@ INCBIN "gfx/intro/logo.2bpp.lz"
 
 SECTION "Title", ROMX
 
-INCLUDE "engine/unused_title.asm"
 INCLUDE "engine/title.asm"
 
 
@@ -510,13 +486,12 @@ INCLUDE "engine/events/battle_tower/trainer_text.asm"
 
 SECTION "bank5B", ROMX
 
-INCLUDE "mobile/mobile_5b.asm"
 INCLUDE "engine/link_trade.asm"
 
 
 SECTION "Mobile 5C", ROMX
 
-INCLUDE "mobile/mobile_5c.asm"
+INCLUDE "engine/events/battle_tower/battle_tower.asm"
 
 
 SECTION "Crystal Phone Text 2", ROMX
@@ -527,11 +502,6 @@ INCLUDE "data/phone/text/extra2.asm"
 SECTION "UpdateBattleHUDs", ROMX
 
 INCLUDE "engine/battle/updatebattlehuds.asm"
-
-
-SECTION "Mobile 5E", ROMX
-
-INCLUDE "mobile/mobile_5e.asm"
 
 
 SECTION "Mobile 5F", ROMX
@@ -604,21 +574,7 @@ SECTION "Battle Tower Trainer Data", ROMX
 INCLUDE "data/battle_tower/unknown.asm"
 
 
-SECTION "Mobile News Data", ROMX
-
-INCLUDE "mobile/news/news.asm"
-
-
 SECTION "Crystal Events", ROMX
 
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
-
-
-SECTION "Mobile Stadium 2", ROMX
-
-if DEF(_CRYSTAL11)
-INCBIN "mobile/stadium/stadium2_2.bin"
-else
-INCBIN "mobile/stadium/stadium2_1.bin"
-endc

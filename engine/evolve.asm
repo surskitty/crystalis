@@ -247,7 +247,6 @@ EvolveAfterBattle_MasterLoop
 	push hl
 	ld hl, Text_EvolvedIntoPKMN
 	call PrintTextBoxText
-	farcall StubbedTrainerRankings_MonsEvolved
 
 	ld de, MUSIC_NONE
 	call PlayMusic
@@ -333,8 +332,6 @@ EvolveAfterBattle_MasterLoop
 	inc hl
 	jp .loop
 
-; unused
-	pop hl
 .ReturnToMap:
 	pop de
 	pop bc

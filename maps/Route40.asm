@@ -77,12 +77,7 @@ Route40Lass1Script:
 	jumptextfaceplayer Route40Lass1Text
 
 PokefanMScript_0x1a61c7:
-	special Mobile_DummyReturnFalse
-	iftrue .mobile
 	jumptextfaceplayer UnknownText_0x1a646a
-
-.mobile
-	jumptextfaceplayer UnknownText_0x1a649b
 
 Route40Lass2Script:
 	jumptextfaceplayer Route40Lass2Text
@@ -134,31 +129,6 @@ Route40Rock:
 
 Route40HiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_ROUTE_40_HIDDEN_HYPER_POTION
-
-MovementData_0x1a621c:
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-MovementData_0x1a6224:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-MovementData_0x1a622a:
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
 
 SwimmermSimonSeenText:
 	text "You have to warm"
@@ -246,15 +216,6 @@ UnknownText_0x1a646a:
 	line "building up ahead!"
 
 	para "What is it?"
-	done
-
-UnknownText_0x1a649b:
-	text "Hm! Look at all"
-	line "those serious-"
-	cont "looking trainers"
-	cont "streaming in."
-
-	para "What? What?"
 	done
 
 Route40Lass2Text:

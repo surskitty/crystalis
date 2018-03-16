@@ -57,12 +57,6 @@ UnknownScript_0x716b0:
 	closetext
 	end
 
-UnknownScript_0x716b6:
-	writetext UnknownText_0x71863
-	waitbutton
-	closetext
-	end
-
 CeladonMansion3FSuperNerdScript:
 	jumptextfaceplayer CeladonMansion3FSuperNerdText
 
@@ -135,12 +129,6 @@ UnknownText_0x71830:
 	text "Give me a shout if"
 	line "you want your"
 	cont "DIPLOMA printed."
-	done
-
-UnknownText_0x71863:
-	text "Something's wrong."
-	line "I'll have to can-"
-	cont "cel printing."
 	done
 
 CeladonMansion3FSuperNerdText:

@@ -42,31 +42,10 @@ INCLUDE "home/menu.asm"
 INCLUDE "home/handshake.asm"
 INCLUDE "home/game_time.asm"
 INCLUDE "home/map.asm"
-
-InexplicablyEmptyFunction:: ; 2d43
-; unused
-; Inexplicably empty.
-; Seen in PredefPointers.
-rept 16
-	nop
-endr
-	ret
-; 2d54
-
 INCLUDE "home/farcall.asm"
 INCLUDE "home/predef.asm"
 INCLUDE "home/window.asm"
 INCLUDE "home/flag.asm"
-
-Unreferenced_Function2ebb:: ; 2ebb
-	ld a, [wMonStatusFlags]
-	bit 1, a
-	ret z
-
-	ld a, [hJoyDown]
-	bit B_BUTTON_F, a
-	ret
-; 2ec6
 
 xor_a:: ; 2ec6
 	xor a
@@ -78,14 +57,6 @@ xor_a_dec_a:: ; 2ec8
 	dec a
 	ret
 ; 2ecb
-
-Unreferenced_Function2ecb:: ; 2ecb
-	push hl
-	ld hl, wMonStatusFlags
-	bit 1, [hl]
-	pop hl
-	ret
-; 2ed3
 
 DisableSpriteUpdates:: ; 0x2ed3
 ; disables overworld sprite updating?
@@ -395,11 +366,6 @@ PrintNum:: ; 3198
 	ret
 ; 31a4
 
-MobilePrintNum:: ; 31a4
-	homecall _MobilePrintNum
-	ret
-; 31b0
-
 FarPrintText:: ; 31b0
 	ld [hBuffer], a
 	ld a, [hROMBank]
@@ -497,16 +463,11 @@ WaitBGMap:: ; 31f6
 ; 3200
 
 WaitBGMap2:: ; 0x3200
-	ld a, [hCGB]
-	and a
-	jr z, .bg0
-
 	ld a, 2
 	ld [hBGMapMode], a
 	ld c, 4
 	call DelayFrames
 
-.bg0
 	ld a, 1
 	ld [hBGMapMode], a
 	ld c, 4
@@ -514,17 +475,7 @@ WaitBGMap2:: ; 0x3200
 	ret
 ; 0x3218
 
-IsCGB:: ; 3218
-	ld a, [hCGB]
-	and a
-	ret
-; 321c
-
 ApplyTilemap:: ; 321c
-	ld a, [hCGB]
-	and a
-	jr z, .dmg
-
 	ld a, [wSpriteUpdatesEnabled]
 	cp 0
 	jr z, .dmg
@@ -543,20 +494,7 @@ ApplyTilemap:: ; 321c
 ; 3238
 
 CGBOnly_CopyTilemapAtOnce:: ; 3238
-	ld a, [hCGB]
-	and a
-	jr z, WaitBGMap
-
 CopyTilemapAtOnce:: ; 323d
-	jr .CopyTilemapAtOnce
-; 323f
-
-; unused
-	farcall HDMATransferAttrMapAndTileMapToWRAMBank3
-	ret
-; 3246
-
-.CopyTilemapAtOnce: ; 3246
 	ld a, [hBGMapMode]
 	push af
 	xor a
@@ -640,17 +578,6 @@ endr
 SetPalettes:: ; 32f9
 ; Inits the Palettes
 ; depending on the system the monochromes palettes or color palettes
-	ld a, [hCGB]
-	and a
-	jr nz, .SetPalettesForGameBoyColor
-	ld a, %11100100
-	ld [rBGP], a
-	ld a, %11010000
-	ld [rOBP0], a
-	ld [rOBP1], a
-	ret
-
-.SetPalettesForGameBoyColor:
 	push de
 	ld a, %11100100
 	call DmgToCgbBGPals
@@ -664,18 +591,6 @@ ClearPalettes:: ; 3317
 ; Make all palettes white
 
 ; CGB: make all the palette colors white
-	ld a, [hCGB]
-	and a
-	jr nz, .cgb
-
-; DMG: just change palettes to 0 (white)
-	xor a
-	ld [rBGP], a
-	ld [rOBP0], a
-	ld [rOBP1], a
-	ret
-
-.cgb
 	ld a, [rSVBK]
 	push af
 
@@ -700,18 +615,8 @@ ClearPalettes:: ; 3317
 GetMemSGBLayout:: ; 333e
 	ld b, SCGB_RAM
 GetSGBLayout:: ; 3340
-; load sgb packets unless dmg
-
-	ld a, [hCGB]
-	and a
-	jr nz, .sgb
-
-	ld a, [hSGB]
-	and a
-	ret z
-
-.sgb
-	predef_jump LoadSGBLayout
+; load sgb packets
+	predef_jump LoadSGBLayoutCGB
 ; 334e
 
 SetHPPal:: ; 334e
@@ -1126,16 +1031,6 @@ Print8BitNumRightAlign:: ; 3842
 	jp PrintNum
 ; 384d
 
-Unreferenced_Function384d:: ; 384d
-; GetNthMove
-	ld hl, wListMoves_MoveIndicesBuffer
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ret
-; 3856
-
 GetBaseData:: ; 3856
 	push bc
 	push de
@@ -1161,24 +1056,10 @@ GetBaseData:: ; 3856
 	jr .end
 
 .egg
-; ????
-	ld de, UnknownEggPic
-
 ; Sprite dimensions
 	ld b, $55 ; 5x5
 	ld hl, wBasePicSize
 	ld [hl], b
-
-; ????
-	ld hl, wBasePadding
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	inc hl
-	ld [hl], e
-	inc hl
-	ld [hl], d
-	jr .end
 
 .end
 ; Replace Pokedex # with species
@@ -1319,26 +1200,6 @@ GetPartyLocation:: ; 3927
 	jp AddNTimes
 ; 392d
 
-Unreferenced_Function392d:: ; 392d
-; GetDexNumber
-; Probably used in gen 1 to convert index number to dex number
-; Not required in gen 2 because index number == dex number
-	push hl
-	ld a, b
-	dec a
-	ld b, 0
-	add hl, bc
-	ld hl, BaseData + BASE_DEX_NO
-	ld bc, BASE_DATA_SIZE
-	call AddNTimes
-	ld a, BANK(BaseData)
-	call GetFarHalfword
-	ld b, l
-	ld c, h
-	pop hl
-	ret
-; 3945
-
 INCLUDE "home/battle.asm"
 
 PushLYOverrides:: ; 3b0c
@@ -1399,4 +1260,3 @@ ReinitSpriteAnimFrame:: ; 3b3c
 ; 3b4e
 
 INCLUDE "home/audio.asm"
-INCLUDE "home/mobile.asm"

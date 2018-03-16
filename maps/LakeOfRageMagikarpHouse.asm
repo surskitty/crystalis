@@ -83,9 +83,6 @@ UnknownScript_0x19a722:
 	closetext
 	end
 
-UnknownScript_0x19a728:
-	jumptext UnknownText_0x19aabc
-
 MagikarpHouseBookshelf:
 	jumpstd difficultbookshelf
 
@@ -193,16 +190,6 @@ UnknownText_0x19aa79:
 	para "enough to show me?"
 	line "Maybe next time."
 	done
-
-UnknownText_0x19aabc:
-	text "CURRENT RECORD"
-
-	para "@"
-	text_from_ram wStringBuffer3
-	text " caught by"
-	line "@"
-	text_from_ram wStringBuffer4
-	db "@@"
 
 LakeOfRageMagikarpHouse_MapEvents:
 	db 0, 0 ; filler

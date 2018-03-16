@@ -215,11 +215,7 @@ LoadWarpData: ; 1046c6
 	call GetAnyMapTileset
 	ld a, c
 	cp TILESET_POKECENTER
-	jr z, .pokecenter_pokecom
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecenter_pokecom
-	ret
-.pokecenter_pokecom
+	ret nz
 
 	ld a, [wPrevMapGroup]
 	ld [wLastSpawnMapGroup], a
@@ -270,10 +266,6 @@ LoadMapTimeOfDay: ; 104750
 .PushAttrMap: ; 1047a3 (41:47a3)
 	decoord 0, 0
 	call .copy
-	ld a, [hCGB]
-	and a
-	ret z
-
 	decoord 0, 0, wAttrMap
 	ld a, $1
 	ld [rVBK], a

@@ -211,9 +211,6 @@ DisplayDexEntry: ; 4424d
 	call FarString
 	ret
 
-String_44331: ; 44331
-	db "#@"
-
 GetDexEntryPointer: ; 44333
 ; return dex entry pointer b:de
 	push hl

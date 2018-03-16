@@ -39,18 +39,6 @@ MapTradeCenterSignpost1Script:
 	newloadmap MAPSETUP_LINKRETURN
 	end
 
-ChrisScript_0x19340b:
-	opentext
-	writetext .FriendReadyText
-	waitbutton
-	closetext
-	end
-
-.FriendReadyText:
-	text "Your friend is"
-	line "ready."
-	done
-
 TradeCenter_MapEvents:
 	db 0, 0 ; filler
 

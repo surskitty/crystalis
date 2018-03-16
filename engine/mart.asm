@@ -796,19 +796,6 @@ SellMenu: ; 15eb3
 	ret
 ; 15ed3
 
-.Unreferenced_NothingToSell:
-	ld hl, .NothingToSellText
-	call MenuTextBoxBackup
-	and a
-	ret
-; 15edb
-
-.NothingToSellText: ; 0x15edb
-	; You don't have anything to sell.
-	text_jump UnknownText_0x1c4f12
-	db "@"
-; 0x15ee0
-
 
 .TryToSellItem: ; 15ee0
 	farcall CheckItemMenu
@@ -890,9 +877,6 @@ Text_Mart_ICanPayThisMuch: ; 0x15f78
 	text_jump UnknownText_0x1c4f3e
 	db "@"
 ; 0x15f7d
-
-.UnusedString15f7d: ; 15f7d
-	db "！ダミー！@"
 
 Text_Mart_HowMayIHelpYou: ; 0x15f83
 	; Welcome! How may I help you?

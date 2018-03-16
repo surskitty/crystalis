@@ -1274,7 +1274,6 @@ MonMenu_Fly: ; 12e30
 	jr z, .Fail
 	cp $0
 	jr z, .Error
-	farcall StubbedTrainerRankings_Fly
 	ld b, $4
 	ld a, $2
 	ret
@@ -1286,11 +1285,6 @@ MonMenu_Fly: ; 12e30
 .Error:
 	ld a, $0
 	ret
-
-.Unreferenced:
-	ld a, $1
-	ret
-; 12e55
 
 MonMenu_Flash: ; 12e55
 	farcall OWFlash

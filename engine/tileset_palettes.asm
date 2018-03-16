@@ -1,7 +1,5 @@
 LoadSpecialMapPalette: ; 494ac
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER
 	jr z, .battle_tower
 	cp TILESET_ICE_PATH
@@ -13,11 +11,6 @@ LoadSpecialMapPalette: ; 494ac
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
 	jr .do_nothing
-
-.pokecom_2f
-	call LoadPokeComPalette
-	scf
-	ret
 
 .battle_tower
 	call LoadBattleTowerPalette
@@ -52,19 +45,6 @@ LoadSpecialMapPalette: ; 494ac
 	and a
 	ret
 ; 494f2
-
-LoadPokeComPalette: ; 494f2
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, PokeComPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-; 49501
-
-PokeComPalette: ; 49501
-INCLUDE "gfx/tilesets/pokecom_center.pal"
-; 49541
 
 LoadBattleTowerPalette: ; 49541
 	ld a, BANK(wBGPals1)

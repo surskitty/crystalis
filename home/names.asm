@@ -7,7 +7,6 @@ NamesPointers:: ; 33ab
 	dbw 0, wPartyMonOT       ; PARTY_OT_NAME
 	dbw 0, wOTPartyMonOT     ; ENEMY_OT_NAME
 	dba TrainerClassNames   ; TRAINER_NAME
-	dbw 4, MoveDescriptions ; MOVE_DESC_NAME_BROKEN (wrong bank)
 ; 33c3
 
 GetName:: ; 33c3

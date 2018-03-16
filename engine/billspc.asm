@@ -244,22 +244,6 @@ BillsPCDepositMenuHeader: ; 0xe253d (38:653d)
 	db "CANCEL@"
 ; 0xe2564 (38:6564)
 
-Unreferenced_BillsPCClearThreeBoxes: ; e2564
-	hlcoord 0, 0
-	ld b,  4
-	ld c,  8
-	call ClearBox
-	hlcoord 0, 4
-	ld b, 10
-	ld c,  9
-	call ClearBox
-	hlcoord 0, 14
-	ld b,  2
-	ld c,  8
-	call ClearBox
-	ret
-; e2583
-
 _WithdrawPKMN: ; e2583 (38:6583)
 	ld hl, wOptions
 	ld a, [hl]
@@ -363,11 +347,6 @@ _WithdrawPKMN: ; e2583 (38:6583)
 	ld a, $2
 	ld [wJumptableIndex], a
 	ret ; e264a (38:664a)
-
-.unused
-	ld hl, wJumptableIndex
-	dec [hl]
-	ret
 
 .b_button
 	ld a, $4
@@ -622,11 +601,6 @@ _MovePKMNWithoutMail: ; e2759
 	jr z, .b_button
 	ld a, $2
 	ld [wJumptableIndex], a
-	ret
-
-.unused
-	ld hl, wJumptableIndex
-	dec [hl]
 	ret
 
 .b_button
@@ -1582,23 +1556,6 @@ endr
 	db -1
 ; e2ed5
 
-Unreferenced_BillsPC_FillBox: ; e2ed5
-.row
-	push bc
-	push hl
-.col
-	ld [hli], a
-	dec c
-	jr nz, .col
-	pop hl
-	ld bc, SCREEN_WIDTH
-	add hl, bc
-	pop bc
-	dec b
-	jr nz, .row
-	ret
-; e2ee5
-
 BillsPC_CheckSpaceInDestination: ; e2ee5
 ; If moving within a box, no need to be here.
 	ld hl, wBillsPC_LoadedBox
@@ -2285,7 +2242,6 @@ PCString_ReleasedPKMN: db "Released <PK><MN>.@"
 PCString_Bye: db "Bye,@"
 PCString_Stored: db "Stored @"
 PCString_Got: db "Got @"
-PCString_Non: db "Non.@"
 PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
@@ -2553,8 +2509,6 @@ BillsPC_ChangeBoxSubmenu: ; e36f9 (38:76f9)
 	call CopyName2
 	ret
 ; e3778 (38:7778)
-
-	hlcoord 11, 7 ; unused
 
 .MenuHeader: ; 0xe377b
 	db MENU_BACKUP_TILES ; flags

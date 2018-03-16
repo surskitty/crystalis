@@ -420,20 +420,6 @@ UpdatePlayerStep: ; 4738
 	ret
 ; 4759
 
-Unreferenced_Function4759: ; 4759
-	push bc
-	ld e, a
-	ld d, 0
-	ld hl, OBJECT_MAP_OBJECT_INDEX
-	add hl, bc
-	ld a, [hl]
-	call GetMapObject
-	add hl, de
-	ld a, [hl]
-	pop bc
-	ret
-; 4769
-
 RestoreDefaultMovement: ; 4769
 	ld hl, OBJECT_MAP_OBJECT_INDEX
 	add hl, bc
@@ -452,13 +438,6 @@ RestoreDefaultMovement: ; 4769
 	ld a, SPRITEMOVEFN_STANDING
 	ret
 ; 4780
-
-ClearObjectMovementByteIndex: ; 4780
-	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
-	add hl, bc
-	ld [hl], 0
-	ret
-; 4787
 
 IncrementObjectMovementByteIndex: ; 4787
 	ld hl, OBJECT_MOVEMENT_BYTE_INDEX
@@ -505,20 +484,6 @@ Field1cAnonymousJumptable: ; 47a8
 	rst JumpTable
 	ret
 ; 47b0
-
-GetValueObjectStructField1c: ; 47b0
-	ld hl, OBJECT_1C
-	add hl, bc
-	ld a, [hl]
-	ret
-; 47b6
-
-SetValueObjectStructField1c: ; 47b6
-	ld hl, OBJECT_1C
-	add hl, bc
-	ld [hl], a
-	ret
-; 47bc
 
 ObjectMovementReset: ; 47bc
 	ld hl, OBJECT_NEXT_MAP_X
@@ -1572,7 +1537,6 @@ StepType05: ; 4e0c
 	ld [hl], a
 	call IncrementObjectStructField1c
 StepType04: ; 4e21
-	call Stubbed_Function4fb2
 	ld hl, OBJECT_DIRECTION_WALKING
 	add hl, bc
 	ld [hl], STANDING
@@ -1580,7 +1544,6 @@ StepType04: ; 4e21
 ; 4e2b
 
 NPCStep: ; 4e2b
-	call Stubbed_Function4fb2
 	call AddStepVector
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
@@ -1843,28 +1806,6 @@ SkyfallTop: ; 4f83
 	ret
 ; 4fb2
 
-Stubbed_Function4fb2:
-	ret
-	ld hl, OBJECT_1D
-	add hl, bc
-	inc [hl]
-	ld a, [hl]
-	srl a
-	srl a
-	and %00000111
-	ld l, a
-	ld h, 0
-	ld de, .y
-	add hl, de
-	ld a, [hl]
-	ld hl, OBJECT_SPRITE_Y_OFFSET
-	add hl, bc
-	ld [hl], a
-	ret
-
-.y ; 4fcd
-	db 0, -1, -2, -3, -4, -3, -2, -1
-; 4fd5
 UpdateJumpPosition: ; 4fd5
 	call GetStepVector
 	ld a, h
@@ -2670,16 +2611,6 @@ SetFlagsForMovement_1:: ; 585c
 	ret
 ; 586e
 
-Function586e: ; 586e
-	call CheckObjectVisibility
-	ret c
-	ld hl, OBJECT_FLAGS2
-	add hl, bc
-	set 5, [hl]
-	xor a
-	ret
-; 587a
-
 Function587a: ; 587a
 	ld bc, wObjectStructs
 	xor a
@@ -2747,15 +2678,6 @@ Function58b9:: ; 58b9
 	pop bc
 	ret
 ; 58d8
-
-Function58d8: ; 58d8
-	call CheckObjectVisibility
-	ret c
-	ld hl, OBJECT_FLAGS2
-	add hl, bc
-	res 5, [hl]
-	ret
-; 58e3
 
 Function58e3: ; 58e3
 	ld hl, OBJECT_MAP_OBJECT_INDEX

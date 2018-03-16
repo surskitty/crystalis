@@ -110,17 +110,6 @@ TrainerPsychicNathan:
 	closetext
 	end
 
-TrainerSuperNerdStan:
-	trainer SUPER_NERD, STAN, EVENT_BEAT_SUPER_NERD_STAN, UnknownText_0x581e5, UnknownText_0x58217, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext SuperNerdStanAfterBattleText
-	waitbutton
-	closetext
-	end
-
 RuinsOfAlphOutsideSignpost0Script:
 	jumptext UnknownText_0x58325
 
@@ -174,37 +163,6 @@ UnknownText_0x580c7:
 	para "I know! Let me up-"
 	line "grade your #-"
 	cont "DEX. Follow me."
-	done
-
-UnknownText_0x581e5:
-	text "What do you want?"
-	line "I'm studying--"
-	cont "don't disturb me!"
-	done
-
-UnknownText_0x58217:
-	text "Sorry…"
-	line "I'm frustrated by"
-
-	para "our lack of real"
-	line "understanding…"
-	done
-
-SuperNerdStanAfterBattleText:
-	text "The RUINS are from"
-	line "about 1500 years"
-	cont "ago."
-
-	para "Nobody knows who"
-	line "built them."
-
-	para "It's also not"
-	line "known if the #-"
-	cont "MON statues have"
-	cont "any meaning."
-
-	para "It's all one big"
-	line "mystery…"
 	done
 
 PsychicNathanSeenText:

@@ -141,12 +141,6 @@ MapCeladonGameCornerSignpost9Script:
 	closetext
 	end
 
-MovementData_0x721cd:
-; unused
-	step RIGHT
-	turn_head LEFT
-	step_end
-
 CeladonGameCornerReceptionistText:
 	text "Welcome!"
 

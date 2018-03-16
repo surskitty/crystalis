@@ -534,35 +534,6 @@ TossMenu: ; 10364
 	ret
 ; 1039d
 
-Unreferenced_ResetPocketCursorPositions: ; 1039d
-	ld a, [wCurrPocket]
-	and a ; ITEM_POCKET
-	jr z, .items
-	dec a ; BALL_POCKET
-	jr z, .balls
-	dec a ; KEY_ITEM_POCKET
-	jr z, .key
-	ret
-
-.balls
-	xor a
-	ld [wBallsPocketCursor], a
-	ld [wBallsPocketScrollPosition], a
-	ret
-
-.items
-	xor a
-	ld [wItemsPocketCursor], a
-	ld [wItemsPocketScrollPosition], a
-	ret
-
-.key
-	xor a
-	ld [wKeyItemsPocketCursor], a
-	ld [wKeyItemsPocketScrollPosition], a
-	ret
-; 103c2
-
 RegisterItem: ; 103c2
 	farcall CheckSelectableItem
 	ld a, [wItemAttributeParamBuffer]
@@ -1513,14 +1484,6 @@ Pack_GetItemName: ; 10a1d
 	ret
 ; 10a2a
 
-Unreferenced_Pack_ClearTilemap: ; 10a2a
-	hlcoord 0, 0
-	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, " "
-	call ByteFill
-	ret
-; 10a36
-
 ClearPocketList: ; 10a36 (4:4a36)
 	hlcoord 5, 2
 	lb bc, 10, SCREEN_WIDTH - 5
@@ -1638,12 +1601,6 @@ PC_Mart_BallsPocketMenuHeader: ; 0x10ac7
 	dba UpdateItemDescription
 ; 10adf
 
-Text_PackNoItems: ; 0x10adf
-	; No items.
-	text_jump UnknownText_0x1c0b9a
-	db "@"
-; 0x10ae4
-
 Text_ThrowAwayHowMany: ; 0x10ae4
 	; Throw away how many?
 	text_jump UnknownText_0x1c0ba5
@@ -1697,13 +1654,6 @@ Text_PackEmptyString: ; 0x10b0c
 	text_jump UnknownText_0x1c0c83
 	db "@"
 ; 0x10b11
-
-TextJump_YouCantUseItInABattle: ; 0x10b11
-	; Doesn't seem to be used anywhere
-	; "You can't use it in a battle."
-	text_jump Text_YouCantUseItInABattle
-	db "@"
-; 0x10b16
 
 PackMenuGFX:
 INCBIN "gfx/pack/pack_menu.2bpp"

@@ -143,11 +143,6 @@ SpeechTextBox:: ; 103e
 	jp TextBox
 ; 1048
 
-TestText:: ; 1048
-	text "ゲームフりーク！"
-	done
-; 1052
-
 RadioTerminator:: ; 1052
 	ld hl, .stop
 	ret
@@ -214,7 +209,6 @@ dict2: MACRO
 ._\@:
 ENDM
 
-	dict TX_DAY,      DayOfWeekChar
 	dict "<LINE>",    LineChar
 	dict "<NEXT>",    NextLineChar
 	dict TX_FAR,      TextFar
@@ -297,14 +291,6 @@ ENDM
 	call PrintLetterDelay
 	jp NextChar
 ; 0x117b
-
-
-DayOfWeekChar:: ; 117b
-	ld c, l
-	ld b, h
-	farcall Function17f036
-	jp PlaceNextChar
-; 1186
 
 
 print_name: MACRO
@@ -505,8 +491,6 @@ Paragraph:: ; 12f2
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr z, .linkbattle
-	cp LINK_MOBILE
-	jr z, .linkbattle
 	call LoadBlinkingCursor
 
 .linkbattle
@@ -579,8 +563,6 @@ PromptText:: ; 135a
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jr z, .ok
-	cp LINK_MOBILE
-	jr z, .ok
 	call LoadBlinkingCursor
 
 .ok
@@ -588,8 +570,6 @@ PromptText:: ; 135a
 	call ButtonSound
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
-	jr z, DoneText
-	cp LINK_MOBILE
 	jr z, DoneText
 	call UnloadBlinkingCursor
 
@@ -901,8 +881,6 @@ Text_WAIT_BUTTON:: ; 149f
 	ld a, [wLinkMode]
 	cp LINK_COLOSSEUM
 	jp z, Text_LINK_WAIT_BUTTON
-	cp LINK_MOBILE
-	jp z, Text_LINK_WAIT_BUTTON
 
 	push hl
 	call LoadBlinkingCursor
@@ -1015,19 +993,6 @@ Text_PlaySound:: ; 1500
 	pop bc
 	ret
 ; 1522
-
-Unreferenced_Function1522:: ; 1522
-; TX_CRY
-	push de
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	call PlayMonCry
-	pop de
-	pop hl
-	pop bc
-	ret
-; 152d
 
 TextSFX:: ; 152d
 	dbw TX_SOUND_DEX_FANFARE_50_79,  SFX_DEX_FANFARE_50_79

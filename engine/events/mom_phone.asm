@@ -217,8 +217,6 @@ endr
 
 INCLUDE "data/items/mom_phone.asm"
 
-	db 0, 0, 0 ; unused
-
 _MomText_HiHowAreYou: ; 0xfd1b1
 	; Hi,  ! How are you?
 	text_jump UnknownText_0x1bc615
@@ -254,11 +252,3 @@ _MomText_ItsInRoom: ; 0xfd1ca
 	text_jump UnknownText_0x1bc6c7
 	db "@"
 ; 0xfd1cf
-
-	db 0 ; unused
-
-DummyPredef3A: ; fd1d0
-	ret
-; fd1d1
-
-	ret ; unused

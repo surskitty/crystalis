@@ -16,9 +16,6 @@ RadioTower2F_MapScripts:
 
 	db 0 ; callbacks
 
-UnknownScript_0x5d6fd:
-	end
-
 RadioTower2FSuperNerdScript:
 	jumptextfaceplayer RadioTower2FSuperNerdText
 

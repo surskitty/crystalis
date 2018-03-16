@@ -9,16 +9,6 @@ TinTower9F_MapScripts:
 TinTower9FHPUp:
 	itemball HP_UP
 
-; unused
-TinTower9FUnusedHoOhText:
-	text "HO-OH: Shaoooh!"
-	done
-
-; unused
-TinTower9FUnusedLugiaText:
-	text "LUGIA: Gyaaan!"
-	done
-
 TinTower9F_MapEvents:
 	db 0, 0 ; filler
 

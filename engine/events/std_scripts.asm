@@ -54,8 +54,6 @@ StdScripts::
 	dba HappinessCheckScript
 
 PokecenterNurseScript:
-; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
-
 	opentext
 	checktime MORN
 	iftrue .morn
@@ -66,49 +64,27 @@ PokecenterNurseScript:
 	jump .ok
 
 .morn
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .morn_comcenter
 	farwritetext NurseMornText
-	buttonsound
-	jump .ok
-.morn_comcenter
-	farwritetext PokeComNurseMornText
 	buttonsound
 	jump .ok
 
 .day
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .day_comcenter
 	farwritetext NurseDayText
-	buttonsound
-	jump .ok
-.day_comcenter
-	farwritetext PokeComNurseDayText
 	buttonsound
 	jump .ok
 
 .nite
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .nite_comcenter
 	farwritetext NurseNiteText
-	buttonsound
-	jump .ok
-.nite_comcenter
-	farwritetext PokeComNurseNiteText
 	buttonsound
 	jump .ok
 
 .ok
-	; only do this once
-	clearevent EVENT_WELCOMED_TO_POKECOM_CENTER
-
 	farwritetext NurseAskHealText
 	yesorno
 	iffalse .done
 
 	farwritetext NurseTakePokemonText
 	pause 20
-	special StubbedTrainerRankings_Healings
 	turnobject LAST_TALKED, LEFT
 	pause 10
 	special HealParty
@@ -144,20 +120,10 @@ PokecenterNurseScript:
 	end
 
 .pokerus
-	; already cleared earlier in the script
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
-	jump .pokerus_done
 
-.pokerus_comcenter
-	farwritetext PokeComNursePokerusText
-	waitbutton
-	closetext
-
-.pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
 	specialphonecall SPECIALCALL_POKERUS
 	end

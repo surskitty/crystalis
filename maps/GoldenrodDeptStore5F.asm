@@ -104,18 +104,10 @@ ReceptionistScript_0x560ce:
 Carrie:
 	faceplayer
 	opentext
-	special GameboyCheck
-	ifnotequal GBCHECK_CGB, .NotGBC ; This is a dummy check from Gold/Silver
 	writetext UnknownText_0x56241
 	waitbutton
 	closetext
 	special UnlockMysteryGift
-	end
-
-.NotGBC:
-	writetext UnknownText_0x56279
-	waitbutton
-	closetext
 	end
 
 GoldenrodDeptStore5FLassScript:
@@ -179,12 +171,6 @@ UnknownText_0x56241:
 	para "With just a"
 	line "little beep, you"
 	cont "get a gift."
-	done
-
-UnknownText_0x56279:
-	text "The MYSTERY GIFT"
-	line "option requires a"
-	cont "Game Boy Color."
 	done
 
 GoldenrodDeptStore5FLassText:

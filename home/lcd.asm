@@ -1,17 +1,6 @@
 ; LCD handling
 
 
-Unreferenced_Function547:: ; 547
-	ld a, [hLCDCPointer]
-	cp rSCX - $ff00
-	ret nz
-	ld c, a
-	ld a, [wLYOverrides]
-	ld [$ff00+c], a
-	ret
-; 552
-
-
 LCD:: ; 552
 	push af
 	ld a, [hLCDCPointer]

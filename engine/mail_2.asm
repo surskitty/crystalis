@@ -725,18 +725,6 @@ MailGFX_PlaceMessage: ; b9803
 	jp PlaceString
 ; b984e
 
-Unreferenced_Functionb984e: ; b984e
-.loop
-	ld a, [hl]
-	xor $ff
-	ld [hli], a
-	dec bc
-	ld a, b
-	or c
-	jr nz, .loop
-	ret
-; b9858
-
 DrawMailBorder: ; b9858
 	hlcoord 0, 0
 	ld a, $31
@@ -785,11 +773,6 @@ Mail_Place14TileAlternatingRow: ; b989e
 	ld b, 14 / 2
 	jr Mail_PlaceAlternatingRow
 
-Mail_Place16TileAlternatingRow: ; b98a3
-	push af
-	ld b, 16 / 2
-	jr Mail_PlaceAlternatingRow
-
 Mail_Place18TileAlternatingRow: ; b98a8
 	push af
 	ld b, 18 / 2
@@ -831,10 +814,6 @@ Mail_PlaceAlternatingColumn: ; b98bd
 	pop af
 	ret
 ; b98cc
-
-Mail_Draw7TileRow: ; b98cc
-	ld b, $7
-	jr Mail_DrawRowLoop
 
 Mail_Draw13TileRow: ; b98d0
 	ld b, $d

@@ -117,10 +117,6 @@ TilesetPlayersRoomPalMap: ; 0x4caf5
 INCLUDE "gfx/tilesets/players_room_palette_map.asm"
 ; 0x4cb65
 
-UnusedMuseumPalMap: ; 0x4cb65
-INCLUDE "gfx/tilesets/unused_museum_palette_map.asm"
-; 4cbd5
-
 TilesetIcePathPalMap: ; 0x4cbd5
 INCLUDE "gfx/tilesets/ice_path_palette_map.asm"
 ; 0x4cc45
@@ -129,10 +125,6 @@ TilesetForestPalMap: ; 0x4cc45
 INCLUDE "gfx/tilesets/forest_palette_map.asm"
 ; 0x4ccb5
 
-TilesetPokeComCenterPalMap: ; 0x4ccb5
-INCLUDE "gfx/tilesets/pokecom_center_palette_map.asm"
-; 0x4cd25
-
 TilesetBattleTowerPalMap: ; 0x4cd25
 INCLUDE "gfx/tilesets/battle_tower_palette_map.asm"
 ; 0x4cd95
@@ -140,10 +132,3 @@ INCLUDE "gfx/tilesets/battle_tower_palette_map.asm"
 TilesetBattleTowerOutsidePalMap: ; 0x4cd95
 INCLUDE "gfx/tilesets/battle_tower_outside_palette_map.asm"
 ; 0x4ce05
-
-; unused
-; 0x4ce05
-rept 26
-	db $06
-endr
-; 0x4ce1f

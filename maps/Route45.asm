@@ -285,12 +285,6 @@ TrainerCamperQuentin:
 	closetext
 	end
 
-Route45DummyScript:
-	writetext Route45DummyText
-	waitbutton
-	closetext
-	end
-
 Route45Sign:
 	jumptext Route45SignText
 
@@ -495,15 +489,6 @@ CooltrainerfKellyAfterBattleText:
 	para "I want to win, but"
 	line "I also don't want"
 	cont "to harm #MON."
-	done
-
-Route45DummyText:
-	text "I'm really, really"
-	line "tough!"
-
-	para "Is there anywhere"
-	line "I can prove how"
-	cont "tough I really am?"
 	done
 
 CamperQuentinSeenText:

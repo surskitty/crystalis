@@ -1594,24 +1594,6 @@ Function28b22: ; 28b22
 	ret
 ; 28b42
 
-Unreferenced_Function28b42: ; 28b42
-	hlcoord 0, 16
-	ld a, "┘"
-	ld bc, 2 * SCREEN_WIDTH
-	call ByteFill
-	hlcoord 1, 16
-	ld a, " "
-	ld bc, SCREEN_WIDTH - 2
-	call ByteFill
-	hlcoord 2, 16
-	ld de, .Cancel
-	jp PlaceString
-; 28b61
-
-.Cancel: ; 28b61
-	db "CANCEL@"
-; 28b68
-
 Function28b68: ; 28b68
 	ld a, [wOtherPlayerLinkMode]
 	hlcoord 6, 9
@@ -1954,8 +1936,6 @@ LinkTrade: ; 28b87
 
 .save
 	farcall SaveAfterLinkTrade
-	farcall StubbedTrainerRankings_Trades
-	farcall BackupMobileEventIndex
 	ld c, 40
 	call DelayFrames
 	hlcoord 0, 12
@@ -2015,19 +1995,6 @@ SetTradeRoomBGPals: ; 28eff
 	call SetPalettes
 	ret
 ; 28f09
-
-Unreferenced_Function28f09: ; 28f09
-	hlcoord 0, 0
-	ld b, 6
-	ld c, 18
-	call LinkTextboxAtHL
-	hlcoord 0, 8
-	ld b, 6
-	ld c, 18
-	call LinkTextboxAtHL
-	farcall PlaceTradePartnerNamesAndParty
-	ret
-; 28f24
 
 INCLUDE "engine/trade_animation.asm"
 
@@ -2572,18 +2539,3 @@ CableClubCheckWhichChris: ; 29f47
 	ld [wScriptVar], a
 	ret
 ; 29f54
-
-Unreferenced_Gen1LinkCommsBorderGFX: ; 29f54
-INCBIN "gfx/trade/unused_gen_1_border_tiles.2bpp"
-; 29fe4
-
-Unreferenced_Function29fe4:
-	ld a, BANK(sPartyMail)
-	call GetSRAMBank
-	ld d, FALSE
-	ld b, CHECK_FLAG
-	predef SmallFarFlagAction
-	call CloseSRAM
-	ld a, c
-	and a
-	ret

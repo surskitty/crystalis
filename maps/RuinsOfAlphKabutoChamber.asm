@@ -200,33 +200,9 @@ UnknownText_0x589b8:
 	cont "this wall here…"
 	done
 
-; unused
-UnusedText_0x58a03:
-	text "The patterns on"
-	line "the wall appear to"
-	cont "be words!"
-
-	para "And those sliding"
-	line "stone panels seem"
-
-	para "to be signals of"
-	line "some kind."
-
-	para "I think they make"
-	line "#MON appear,"
-
-	para "but it's not clear"
-	line "yet…"
-	done
-
 UnknownText_0x58aa7:
 	text "Patterns appeared"
 	line "on the walls…"
-	done
-
-; unused
-UnusedText_0x58ac8:
-	text "It's UNOWN text!"
 	done
 
 UnknownText_0x58ad9:
