@@ -14,9 +14,8 @@ NurseScript_0x60f91:
 	jumpstd pokecenternurse
 
 GoldenrodPokecenter1F_GSBallSceneLeft:
-	writebyte BATTLETOWERACTION_CHECKMOBILEEVENT
-	special BattleTowerAction
-	ifequal MOBILE_EVENT_OBJECT_GS_BALL, .gsball
+	checkevent EVENT_TEAM_ROCKET_DISBANDED
+	iftrue .gsball
 	end
 
 .gsball
@@ -46,9 +45,8 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	end
 
 GoldenrodPokecenter1F_GSBallSceneRight:
-	writebyte BATTLETOWERACTION_CHECKMOBILEEVENT
-	special BattleTowerAction
-	ifequal MOBILE_EVENT_OBJECT_GS_BALL, .gsball
+	checkevent EVENT_TEAM_ROCKET_DISBANDED
+	iftrue .gsball
 	end
 
 .gsball
@@ -718,13 +716,15 @@ GoldenrodPokecenter1FLassText:
 UnknownText_0x622f0:
 	text "<PLAYER>, isn't it?"
 
-	para "Congratulations!"
+	para "A ROCKET left this"
+	line "GS BALL behind."
 
-	para "As a special deal,"
-	line "a GS BALL has been"
-	cont "sent just for you!"
+	para "You saved us, so"
+	line "maybe you can find"
+	cont "what it does."
 
-	para "Please accept it!"
+	para "Please keep it"
+	line "safe for us all."
 	done
 
 UnknownText_0x62359:
