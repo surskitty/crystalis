@@ -436,7 +436,11 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/CinnabarPokecenter1F.asm"
 INCLUDE "maps/Route19FuchsiaGate.asm"
 INCLUDE "maps/SeafoamGym.asm"
-
+INCLUDE "maps/SeafoamIsland1F.asm"
+INCLUDE "maps/SeafoamIslandB1F.asm"
+INCLUDE "maps/SeafoamIslandB2F.asm"
+INCLUDE "maps/SeafoamIslandB3F.asm"
+INCLUDE "maps/SeafoamIslandB4F.asm"
 
 SECTION "Map Scripts 24", ROMX
 

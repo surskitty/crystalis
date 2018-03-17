@@ -90,7 +90,7 @@ Landmarks: ; 0x1ca8c3
 	landmark 100, 132, FuchsiaCityName
 	landmark 100, 144, Route19Name
 	landmark  84, 148, Route20Name
-	landmark  76, 148, SeafoamIslandsName
+	landmark  76, 148, SeafoamIslandName
 	landmark  60, 148, CinnabarIslandName
 	landmark  60, 136, Route21Name
 	landmark  44,  84, Route22Name
@@ -144,7 +144,7 @@ VictoryRoadName:     db "VICTORY¯ROAD@"
 MtMoonName:          db "MT.MOON@"
 RockTunnelName:      db "ROCK TUNNEL@"
 LavRadioTowerName:   db "LAV¯RADIO TOWER@"
-SeafoamIslandsName:  db "SEAFOAM¯ISLANDS@"
+SeafoamIslandName:  db "SEAFOAM¯ISLANDS@"
 Route1Name:          db "ROUTE 1@"
 Route2Name:          db "ROUTE 2@"
 Route3Name:          db "ROUTE 3@"

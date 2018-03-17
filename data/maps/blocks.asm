@@ -169,6 +169,21 @@ Route5SaffronGate_Blocks:
 CinnabarIsland_Blocks:
 	INCBIN "maps/CinnabarIsland.blk"
 
+SeafoamIsland1F_Blocks:
+	INCBIN "maps/SeafoamIsland1F.blk"
+
+SeafoamIslandB1F_Blocks:
+	INCBIN "maps/SeafoamIslandB1F.blk"
+
+SeafoamIslandB2F_Blocks:
+	INCBIN "maps/SeafoamIslandB2F.blk"
+
+SeafoamIslandB3F_Blocks:
+	INCBIN "maps/SeafoamIslandB3F.blk"
+
+SeafoamIslandB4F_Blocks:
+	INCBIN "maps/SeafoamIslandB4F.blk"
+
 Route4_Blocks:
 	INCBIN "maps/Route4.blk"
 

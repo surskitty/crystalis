@@ -50,7 +50,7 @@ MAP_NONE   EQU 0
 	const FISHGROUP_QWILFISH
 	const FISHGROUP_REMORAID
 	const FISHGROUP_QWILFISH_NO_SWARM
-	const FISHGROUP_SEAFOAM_ISLANDS
+	const FISHGROUP_SEAFOAM
 
 
 ; connection directions (see data/maps/data.asm)

@@ -1,18 +1,18 @@
 	const_def 2 ; object constants
-	const SEAFOAMIslandB2F_POKE_BALL
+	const SEAFOAMISLANDB3F_POKE_BALL
 
-SeafoamIslands1F_MapScripts:
+SeafoamIslandB3F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-SeafoamIslandB2FHyperPotion:
+SeafoamIslandB3FHyperPotion:
 	itemball HYPER_POTION
 
-SeafoamIslandB2FHiddenWaterStone:
+SeafoamIslandB3FHiddenWaterStone:
 	hiddenitem WATER_STONE, EVENT_SEAFOAM_ISLAND_1F_WATER_STONE
 
-SeafoamIslandB2F_MapEvents:
+SeafoamIslandB3F_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
@@ -27,7 +27,7 @@ SeafoamIslandB2F_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 27, 8, BGEVENT_ITEM, SeafoamIslandB2FHiddenWaterStone
+	bg_event 27, 8, BGEVENT_ITEM, SeafoamIslandB3FHiddenWaterStone
 
 	db 2 ; object events
-	object_event 26,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandB2FHyperPotion, EVENT_SEAFOAM_ISLAND_B2F_HYPER_POTION
+	object_event 26,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandB3FHyperPotion, EVENT_SEAFOAM_ISLAND_B2F_HYPER_POTION

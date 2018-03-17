@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	const SEAFOAMISLANDB1F_POKE_BALL
 
-SeafoamIslands1F_MapScripts:
+SeafoamIslandB1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks

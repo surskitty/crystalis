@@ -13,24 +13,24 @@ SeafoamIsland1FHyperPotion:
 SeafoamIsland1FHiddenWaterStone:
 	hiddenitem WATER_STONE, EVENT_SEAFOAM_ISLAND_1F_WATER_STONE
 
-SeafoamGymGuyScript:
+SeafoamIsland1FGymGuyScript:
 	faceplayer
 	checkflag ENGINE_VOLCANOBADGE
 	iftrue .GotBadge
 	opentext
-	writetext SeafoamGymGuyText
+	writetext SeafoamGymGuyBlaineIntroText
 	waitbutton
 	closetext
 	end
 
 .GotBadge:
 	opentext
-	writetext SeafoamGymGuyWinText
+	writetext SeafoamGymGuyArticunoText
 	waitbutton
 	closetext
 	end
 
-SeafoamGymGuyText:
+SeafoamGymGuyBlaineIntroText:
 	text "Hey, trainer!"
 
 	para "After the volcano,"
@@ -45,7 +45,7 @@ SeafoamGymGuyText:
 	line "okay down there."
 	done
 
-SeafoamGymGuyWinText:
+SeafoamGymGuyArticunoText:
 	text "Wow, he's still"
 	line "training there?"
 
@@ -74,5 +74,5 @@ SeafoamIsland1F_MapEvents:
 	bg_event 13, 7, BGEVENT_ITEM, SeafoamIsland1FHiddenWaterStone
 
 	db 2 ; object events
-	object_event  3, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamGymGuyScript, -1
+	object_event  3, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeafoamIsland1FGymGuyScript, -1
 	object_event  21,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIsland1FHyperPotion, EVENT_SEAFOAM_ISLAND_1F_HYPER_POTION
