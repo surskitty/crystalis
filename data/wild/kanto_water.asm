@@ -146,4 +146,34 @@ KantoWaterWildMons: ; 0x2b7f7
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
 
+	map_id SEAFOAM_ISLAND_1F
+	db 6 percent ; encounter rate
+	db 35, TENTACOOL
+	db 35, SEEL
+	db 35, STARYU
+
+	map_id SEAFOAM_ISLAND_B1F
+	db 6 percent ; encounter rate
+	db 40, SEEL
+	db 40, SLOWPOKE
+	db 40, STARYU
+
+	map_id SEAFOAM_ISLAND_B2F
+	db 6 percent ; encounter rate
+	db 45, PSYDUCK
+	db 45, SEEL
+	db 45, SLOWBRO
+
+	map_id SEAFOAM_ISLAND_B3F
+	db 6 percent ; encounter rate
+	db 45, GOLDUCK
+	db 50, DEWGONG
+	db 50, DELIBIRD
+
+	map_id SEAFOAM_ISLAND_B4F
+	db 3 percent ; encounter rate
+	db 50, SLOWPOKE
+	db 55, SEADRA
+	db 55, DEWGONG
+
 	db -1 ; end

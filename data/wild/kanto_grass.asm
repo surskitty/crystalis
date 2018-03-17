@@ -164,6 +164,141 @@ KantoGrassWildMons: ; 0x2b274
 	db 23, SLOWPOKE
 	db 23, SLOWPOKE
 
+	map_id SEAFOAM_ISLAND_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, ZUBAT
+	db 42, DEWGONG
+	db 43, SHELLDER
+	db 45, KINGLER
+	; day
+	db 40, SEEL
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, ZUBAT
+	db 42, DEWGONG
+	db 43, SHELLDER
+	db 45, KINGLER
+	; nite
+	db 40, STARYU
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, KRABBY
+	db 42, KINGLER
+	db 43, SHELLDER
+	db 45, KINGLER
+
+	map_id SEAFOAM_ISLAND_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, ZUBAT
+	db 42, DEWGONG
+	db 43, SHELLDER
+	db 45, KINGLER
+	; day
+	db 40, SEEL
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, ZUBAT
+	db 42, DEWGONG
+	db 43, SHELLDER
+	db 45, KINGLER
+	; nite
+	db 40, STARYU
+	db 44, GOLBAT
+	db 41, SHELLDER
+	db 40, KRABBY
+	db 42, KINGLER
+	db 43, SHELLDER
+	db 45, KINGLER
+
+	map_id SEAFOAM_ISLAND_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 43, SEEL
+	db 44, GOLBAT
+	db 43, GOLDUCK
+	db 44, SLOWPOKE
+	db 45, DEWGONG
+	db 45, SLOWBRO
+	db 47, SLOWKING
+	; day
+	db 43, SEEL
+	db 44, GOLBAT
+	db 43, GOLDUCK
+	db 44, SLOWPOKE
+	db 45, DEWGONG
+	db 45, SLOWBRO
+	db 47, SLOWKING
+	; nite
+	db 43, PSYDUCK
+	db 44, GOLBAT
+	db 43, GOLDUCK
+	db 44, SLOWPOKE
+	db 45, SEEL
+	db 45, SLOWBRO
+	db 47, SLOWKING
+
+	map_id SEAFOAM_ISLAND_B3F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 44, SEEL
+	db 43, PSYDUCK
+	db 45, SLOWPOKE
+	db 43, GOLBAT
+	db 46, DEWGONG
+	db 47, SLOWBRO
+	db 43, DELIBIRD
+	; day
+	db 44, SEEL
+	db 43, PSYDUCK
+	db 45, SLOWPOKE
+	db 43, GOLBAT
+	db 46, DEWGONG
+	db 47, SLOWBRO
+	db 43, DELIBIRD
+	; nite
+	db 43, PSYDUCK
+	db 44, DELIBIRD
+	db 43, GOLBAT
+	db 45, SLOWPOKE
+	db 46, GOLDUCK
+	db 47, SLOWBRO
+	db 43, SLOWKING
+
+	map_id SEAFOAM_ISLAND_B4F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 45, SEEL
+	db 46, DEWGONG
+	db 45, SLOWPOKE
+	db 48, GOLDUCK
+	db 48, GOLBAT
+	db 45, SLOWBRO
+	db 45, SLOWKING
+	; day
+	db 45, SEEL
+	db 46, DEWGONG
+	db 45, SLOWPOKE
+	db 48, PSYDUCK
+	db 48, GOLBAT
+	db 45, SLOWBRO
+	db 45, SLOWKING
+	; nite
+	db 46, GOLDUCK
+	db 48, DELIBIRD
+	db 45, SLOWPOKE
+	db 48, SLOWBRO
+	db 48, GOLBAT
+	db 45, SLOWBRO
+	db 45, SLOWKING
+
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

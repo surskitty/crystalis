@@ -20,6 +20,7 @@ FishGroups: ; 92488
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup 50 percent + 1, .Seafoam_Old,          .Seafoam_Good,          .Seafoam_Super
 
 .Shore_Old: ; 924e3
 	db  70 percent + 1, MAGIKARP,   10
@@ -203,6 +204,22 @@ FishGroups: ; 92488
 	db  70 percent,     time_group 7
 	db  90 percent + 1, MAGIKARP,   60
 	db 100 percent,     REMORAID,   40
+
+.Seafoam_Old:
+	db  70 percent + 1, KRABBY,     20
+	db  85 percent + 1, SHELLDER,   20
+	db 100 percent,     STARYU,     20
+.Seafoam_Good:
+	db  35 percent,     KRABBY,     30
+	db  70 percent,     HORSEA,     30
+	db  90 percent + 1, SHELLDER,   30
+	db 100 percent,     STARYU,     30
+.Seafoam_Super:
+	db  40 percent,     SEADRA,     40
+	db  70 percent,     KINGLER,    40
+	db  90 percent + 1, STARYU,     50
+	db 100 percent,     GYARADOS,   60
+
 
 
 TimeFishGroups: ; 9266f
