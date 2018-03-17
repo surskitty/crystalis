@@ -88,11 +88,9 @@ SwimmerfLoriAfterBattleText:
 	done
 
 SwimmermCameronSeenText:
-	text "I guess it's im-"
-	line "possible to swim"
-
-	para "all the way to"
-	line "JOHTO."
+	text "I guess no one"
+	line "can swim all the"
+	line "way to JOHTO."
 	done
 
 SwimmermCameronBeatenText:
@@ -125,8 +123,8 @@ Route20_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 38,  9, SEAFOAM_GYM, 1
-;	warp_event 30,  5, SEAFOAM_ISLAND_1F, 2
+	warp_event 30,  5, SEAFOAM_ISLAND_1F, 1
+	warp_event 38,  9, SEAFOAM_ISLAND_1F, 2
 
 	db 0 ; coord events
 
