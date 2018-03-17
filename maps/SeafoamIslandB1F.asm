@@ -6,11 +6,11 @@ SeafoamIslandB1F_MapScripts:
 
 	db 0 ; callbacks
 
-SeafoamIslandB1FHyperPotion:
-	itemball HYPER_POTION
+SeafoamIslandB1FFullHeal:
+	itemball FULL_HEAL
 
-SeafoamIslandB1FHiddenWaterStone:
-	hiddenitem WATER_STONE, EVENT_SEAFOAM_ISLAND_1F_WATER_STONE
+SeafoamIslandB1FHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_SEAFOAM_ISLAND_B1F_RARE_CANDY
 
 SeafoamIslandB1F_MapEvents:
 	db 0, 0 ; filler
@@ -26,8 +26,8 @@ SeafoamIslandB1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event 27, 8, BGEVENT_ITEM, SeafoamIslandB1FHiddenWaterStone
+	db 1 ; bg events
+	bg_event 27, 8, BGEVENT_ITEM, SeafoamIslandB1FHiddenRareCandy
 
-	db 2 ; object events
-	object_event  2, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandB1FHyperPotion, EVENT_SEAFOAM_ISLAND_B1F_HYPER_POTION
+	db 1 ; object events
+	object_event  3, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeafoamIslandB1FFullHeal, EVENT_SEAFOAM_ISLAND_B1F_FULL_HEAL
