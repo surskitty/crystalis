@@ -46,10 +46,10 @@ GoldenrodGameCornerPokefanM3Script:
 	turnobject GOLDENRODGAMECORNER_POKEFAN_M3, RIGHT
 	end
 
-GoldenrodGmeCornerCoinVendorScript:
+GoldenrodGameCornerCoinVendorScript:
 	jumpstd gamecornercoinvendor
 
-GoldenrodGmeCornerTMVendorScript:
+GoldenrodGameCornerTMVendorScript:
 	faceplayer
 	opentext
 	writetext GoldenrodGameCornerPrizeVendorIntroText
@@ -57,7 +57,7 @@ GoldenrodGmeCornerTMVendorScript:
 	checkitem COIN_CASE
 	iffalse GoldenrodGameCornerPrizeVendor_NoCoinCaseScript
 	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
-GoldenrodGmeCornerTMVendor_LoopScript: ; 056c36
+GoldenrodGameCornerTMVendor_LoopScript: ; 056c36
 	special DisplayCoinCaseBalance
 	loadmenu GoldenrodGameCornerTMVendorMenuHeader
 	verticalmenu
@@ -68,6 +68,9 @@ GoldenrodGmeCornerTMVendor_LoopScript: ; 056c36
 	jump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .Thunder:
+
+	checkitem TM_THUNDER
+	iftrue .AlreadyHaveTMScript
 	checkcoins 5500
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	itemtotext TM_THUNDER, MEM_BUFFER_0
@@ -76,9 +79,11 @@ GoldenrodGmeCornerTMVendor_LoopScript: ; 056c36
 	giveitem TM_THUNDER
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins 5500
-	jump GoldenrodGmeCornerTMVendor_FinishScript
+	jump GoldenrodGameCornerTMVendor_FinishScript
 
 .Blizzard:
+	checkitem TM_BLIZZARD
+	iftrue .AlreadyHaveTMScript
 	checkcoins 5500
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	itemtotext TM_BLIZZARD, MEM_BUFFER_0
@@ -87,9 +92,11 @@ GoldenrodGmeCornerTMVendor_LoopScript: ; 056c36
 	giveitem TM_BLIZZARD
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins 5500
-	jump GoldenrodGmeCornerTMVendor_FinishScript
+	jump GoldenrodGameCornerTMVendor_FinishScript
 
 .FireBlast:
+	checkitem TM_FIRE_BLAST
+	iftrue .AlreadyHaveTMScript
 	checkcoins 5500
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	itemtotext TM_FIRE_BLAST, MEM_BUFFER_0
@@ -98,19 +105,24 @@ GoldenrodGmeCornerTMVendor_LoopScript: ; 056c36
 	giveitem TM_FIRE_BLAST
 	iffalse GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
 	takecoins 5500
-	jump GoldenrodGmeCornerTMVendor_FinishScript
+	jump GoldenrodGameCornerTMVendor_FinishScript
+
+.AlreadyHaveTMScript:
+	writetext GoldenrodGameCornerPrizeVendorAlreadyHaveTMText
+	waitbutton
+	jump GoldenrodGameCornerTMVendor_LoopScript
 
 GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript:
 	writetext GoldenrodGameCornerPrizeVendorConfirmPrizeText
 	yesorno
 	end
 
-GoldenrodGmeCornerTMVendor_FinishScript:
+GoldenrodGameCornerTMVendor_FinishScript:
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	jump GoldenrodGmeCornerTMVendor_LoopScript
+	jump GoldenrodGameCornerTMVendor_LoopScript
 
 GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript:
 	writetext GoldenrodGameCornerPrizeVendorNeedMoreCoinsText
@@ -335,6 +347,11 @@ GoldenrodGameCornerPrizeVendorHereYouGoText:
 	text "Here you go!"
 	done
 
+GoldenrodGameCornerPrizeVendorAlreadyHaveTMText:
+	text "But you already"
+	line "have that TM!"
+	done
+
 GoldenrodGameCornerPrizeVendorNeedMoreCoinsText:
 	text "Sorry! You need"
 	line "more coins."
@@ -477,8 +494,8 @@ GoldenrodGameCorner_MapEvents:
 	bg_event 12,  1, BGEVENT_LEFT, GoldenrodGameCornerLeftTheirDrinkScript
 
 	db 12 ; object events
-	object_event  3,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGmeCornerCoinVendorScript, -1
-	object_event 16,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGmeCornerTMVendorScript, -1
+	object_event  3,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerCoinVendorScript, -1
+	object_event 16,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerTMVendorScript, -1
 	object_event 18,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPrizeMonVendorScript, -1
 	object_event  8,  7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPharmacistScript, -1
 	object_event  8,  7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodGameCornerPharmacistScript, -1

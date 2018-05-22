@@ -9,10 +9,7 @@ Marts: ; 160a9
 	dw MartGoldenrod2F2
 	dw MartGoldenrod3F
 	dw MartGoldenrod4F
-	dw MartGoldenrod5F1
-	dw MartGoldenrod5F2
-	dw MartGoldenrod5F3
-	dw MartGoldenrod5F4
+	dw MartGoldenrod5F
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
@@ -143,41 +140,13 @@ MartGoldenrod4F: ; 16134
 	db -1 ; end
 ; 1613b
 
-MartGoldenrod5F1: ; 1613b
+MartGoldenrod5F: ; 1613b
 	db 3 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db -1 ; end
 ; 16140
-
-MartGoldenrod5F2: ; 16140
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db -1 ; end
-; 16146
-
-MartGoldenrod5F3: ; 16146
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_ROCK_SMASH
-	db -1 ; end
-; 1614c
-
-MartGoldenrod5F4: ; 1614c
-	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db TM_ROCK_SMASH
-	db -1 ; end
-; 16153
 
 MartOlivine: ; 16153
 	db 9 ; # items
@@ -340,11 +309,12 @@ MartCeladon2F2: ; 161c2
 
 MartCeladon3F: ; 161ce
 	db 5 ; # items
-	db TM_HIDDEN_POWER
-	db TM_SUNNY_DAY
-	db TM_PROTECT
-	db TM_RAIN_DANCE
-	db TM_SANDSTORM
+db TM_HIDDEN_POWER
+	db TM_PSYCH_UP
+ 	db TM_PROTECT
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
 	db -1 ; end
 ; 161d5
 

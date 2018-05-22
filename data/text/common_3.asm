@@ -355,6 +355,12 @@ UnknownText_0x1c4bfd::
 	text "How many?"
 	done
 
+
+AlreadyHaveTMText::
+	text "You already have"
+	line "that TM."
+	done
+
 UnknownText_0x1c4c08::
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " @"

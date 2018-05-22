@@ -378,6 +378,9 @@ LoadBuyMenuText: ; 15c7d
 ; 15c91
 
 MartAskPurchaseQuantity: ; 15c91
+	ld a, [wCurItem]
+	cp TM01
+	jr nc, .PurchaseQuantityOfTM
 	call GetMartDialogGroup ; gets a pointer from GetMartDialogGroup.MartTextFunctionPointers
 	inc hl
 	inc hl
@@ -388,6 +391,44 @@ MartAskPurchaseQuantity: ; 15c91
 	jp z, BargainShopAskPurchaseQuantity
 	jp RooftopSaleAskPurchaseQuantity
 ; 15ca3
+
+.PurchaseQuantityOfTM:
+	push de
+	ld hl, wNumItems
+	call CheckItem
+	pop de
+	jp c, .AlreadyHaveTM
+	farcall GetItemPrice
+	ld a, d
+	ld [wBuffer1], a
+	ld a, e
+	ld [wBuffer2], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld a, 99
+	ld [wItemQuantityBuffer], a
+	farcall BuySell_MultiplyPrice
+	push hl
+	ld hl, hMoneyTemp
+	ld a, [hProduct + 1]
+	ld [hli], a
+	ld a, [hProduct + 2]
+	ld [hli], a
+	ld a, [hProduct + 3]
+	ld [hl], a
+	pop hl
+	ret
+
+.AlreadyHaveTM:
+	ld hl, .AlreadyHaveTMText
+	call PrintText
+	call JoyWaitAorB
+	scf
+	ret
+
+.AlreadyHaveTMText:
+	text_jump AlreadyHaveTMText
+	db "@"
 
 GetMartDialogGroup: ; 15ca3
 	ld a, [wEngineBuffer1]
