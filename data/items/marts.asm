@@ -308,10 +308,8 @@ MartCeladon2F2: ; 161c2
 ; 161ce
 
 MartCeladon3F: ; 161ce
-	db 5 ; # items
-db TM_HIDDEN_POWER
+	db 4 ; # items
 	db TM_PSYCH_UP
- 	db TM_PROTECT
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH

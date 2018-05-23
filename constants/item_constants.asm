@@ -249,47 +249,47 @@ ENDM
 	add_tm EARTHQUAKE   ; d9
 	add_tm RETURN       ; da
 	add_tm DIG          ; db
-	add_tm PSYCHIC_M    ; dd
-	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
-	add_tm DOUBLE_TEAM  ; e0
-	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
-	add_tm SLEEP_TALK   ; e3
-	add_tm SLUDGE_BOMB  ; e4
-	add_tm SANDSTORM    ; e5
-	add_tm FIRE_BLAST   ; e6
-	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
-	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
-	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
-	add_tm THIEF        ; ee
-	add_tm STEEL_WING   ; ef
-	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
+	add_tm PSYCHIC_M    ; dc
+	add_tm SHADOW_BALL  ; dd
+	add_tm MUD_SLAP     ; de
+	add_tm DOUBLE_TEAM  ; df
+	add_tm ICE_PUNCH    ; e0
+	add_tm SWAGGER      ; e1
+	add_tm SLEEP_TALK   ; e2
+	add_tm SLUDGE_BOMB  ; e3
+	add_tm SANDSTORM    ; e4
+	add_tm FIRE_BLAST   ; e5
+	add_tm SWIFT        ; e6
+	add_tm DEFENSE_CURL ; e7
+	add_tm THUNDERPUNCH ; e8
+	add_tm DREAM_EATER  ; e9
+	add_tm FLASH        ; ea
+	add_tm REST         ; eb
+	add_tm ATTRACT      ; ec
+	add_tm THIEF        ; ed
+	add_tm STEEL_WING   ; ee
+	add_tm FIRE_PUNCH   ; ef
+	add_tm FURY_CUTTER  ; f0
+	add_tm NIGHTMARE    ; f1
 NUM_TMS = const_value - TM01
 
-	add_hm CUT          ; f3
-	add_hm FLY          ; f4
-	add_hm SURF         ; f5
-	add_hm STRENGTH     ; f6
-	add_hm FLASH        ; f7
-	add_hm WHIRLPOOL    ; f8
-	add_hm WATERFALL    ; f9
+	const ITEM_F2       ; f2
+	const ITEM_F3       ; f3
+	const ITEM_F4       ; f4
+	const ITEM_F5       ; f5
+
+	add_hm CUT          ; f6
+	add_hm FLY          ; f7
+	add_hm SURF         ; f8
+	add_hm STRENGTH     ; f9
+	add_hm WHIRLPOOL    ; fa
+	add_hm WATERFALL    ; fb
 NUM_HMS = const_value - HM01
 
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
 NUM_TM_HM_TUTOR = __enum__ + -1
-
-	const ITEM_F8       ; f8
-	const ITEM_F9       ; f9
-	const ITEM_FA       ; fa
 
 USE_SCRIPT_VAR EQU $00
 ITEM_FROM_MEM  EQU $ff
