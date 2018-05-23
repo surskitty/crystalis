@@ -225,7 +225,6 @@ ENDM
 	add_tm HEADBUTT     ; c0
 	add_tm CURSE        ; c1
 	add_tm ROLLOUT      ; c2
-	const ITEM_C3       ; c3
 	add_tm ROAR         ; c4
 	add_tm TOXIC        ; c5
 	add_tm ZAP_CANNON   ; c6
@@ -250,7 +249,6 @@ ENDM
 	add_tm EARTHQUAKE   ; d9
 	add_tm RETURN       ; da
 	add_tm DIG          ; db
-	const ITEM_DC       ; dc
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
 	add_tm MUD_SLAP     ; df
@@ -273,7 +271,7 @@ ENDM
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
-NUM_TMS = const_value - TM01 - 2 ; discount ITEM_C3 and ITEM_DC
+NUM_TMS = const_value - TM01
 
 	add_hm CUT          ; f3
 	add_hm FLY          ; f4
@@ -289,6 +287,8 @@ NUM_HMS = const_value - HM01
 	add_mt ICE_BEAM
 NUM_TM_HM_TUTOR = __enum__ + -1
 
+	const ITEM_F8       ; f8
+	const ITEM_F9       ; f9
 	const ITEM_FA       ; fa
 
 USE_SCRIPT_VAR EQU $00

@@ -38,6 +38,7 @@ CheckRegisteredItem: ; 13345
 	dw .CheckBall
 	dw .CheckKeyItem
 	dw .CheckTMHM
+	dw .CheckBerry
 
 .CheckItem:
 	ld hl, wNumItems
@@ -66,6 +67,7 @@ CheckRegisteredItem: ; 13345
 
 .CheckBall:
 	ld hl, wNumBalls
+.StandardCheck:
 	call .CheckRegisteredNo
 	jr nc, .NoRegisteredItem
 	inc hl
@@ -76,6 +78,10 @@ CheckRegisteredItem: ; 13345
 	call .IsSameItem
 	jr c, .NoRegisteredItem
 	ret
+
+.CheckBerry:
+	ld hl, wNumBerries
+	jr .StandardCheck
 
 .CheckTMHM:
 	jr .NoRegisteredItem

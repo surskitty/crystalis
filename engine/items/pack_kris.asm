@@ -15,6 +15,7 @@ PackFGFXPointers: ; 48e93
 	dw PackFGFX + (15 tiles) * 3 ; BALL_POCKET
 	dw PackFGFX + (15 tiles) * 0 ; KEY_ITEM_POCKET
 	dw PackFGFX + (15 tiles) * 2 ; TM_HM_POCKET
+	dw PackFGFX + (15 tiles) * 4 ; BERRY_POCKET
 
 PackFGFX: ; 48e9b
 INCBIN "gfx/pack/pack_f.2bpp"

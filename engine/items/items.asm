@@ -16,6 +16,7 @@ _ReceiveItem:: ; d1d5
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Berry
 
 .Item: ; d1f1
 	ld h, d
@@ -29,6 +30,10 @@ _ReceiveItem:: ; d1d5
 
 .Ball: ; d1fb
 	ld hl, wNumBalls
+	jp PutItemInPocket
+
+.Berry:
+	ld hl, wNumBerries
 	jp PutItemInPocket
 
 .TMHM: ; d201
@@ -57,9 +62,14 @@ _TossItem:: ; d20d
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Berry
 
 .Ball: ; d228
 	ld hl, wNumBalls
+	jp RemoveItemFromPocket
+
+.Berry: ; d228
+	ld hl, wNumBerries
 	jp RemoveItemFromPocket
 
 .TMHM: ; d22e
@@ -100,9 +110,14 @@ _CheckItem:: ; d244
 	dw .KeyItem
 	dw .Ball
 	dw .TMHM
+	dw .Berry
 
 .Ball: ; d25f
 	ld hl, wNumBalls
+	jp CheckTheItem
+
+.Berry: ; d25f
+	ld hl, wNumBerries
 	jp CheckTheItem
 
 .TMHM: ; d265
@@ -152,6 +167,15 @@ GetPocketCapacity: ; d283
 	ret z
 
 .not_pc
+	ld c, MAX_BERRIES
+	ld a, e
+	cp LOW(wBerries)
+	jr nz, .not_berries
+	ld a, d
+	cp HIGH(wBerries)
+	ret z
+
+.not_berries
 	ld c, MAX_BALLS
 	ret
 
@@ -459,15 +483,6 @@ CheckTMHM: ; d3fb
 GetTMHMNumber:: ; d407
 ; Return the number of a TM/HM by item id c.
 	ld a, c
-; Skip any dummy items.
-	cp ITEM_C3 ; TM04-05
-	jr c, .done
-	cp ITEM_DC ; TM28-29
-	jr c, .skip
-	dec a
-.skip
-	dec a
-.done
 	sub TM01
 	inc a
 	ld c, a
@@ -476,16 +491,6 @@ GetTMHMNumber:: ; d407
 GetNumberedTMHM: ; d417
 ; Return the item id of a TM/HM by number c.
 	ld a, c
-; Skip any gaps.
-	cp ITEM_C3 - (TM01 - 1)
-	jr c, .done
-	cp ITEM_DC - (TM01 - 1) - 1
-	jr c, .skip_one
-.skip_two
-	inc a
-.skip_one
-	inc a
-.done
 	add TM01
 	dec a
 	ld c, a

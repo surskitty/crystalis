@@ -598,6 +598,9 @@ HasNoItems: ; 129d5
 	ld a, [wNumBalls]
 	and a
 	ret nz
+	ld a, [wNumBerries]
+	and a
+	ret nz
 	ld hl, wTMsHMs
 	ld b, NUM_TMS + NUM_HMS
 .loop
