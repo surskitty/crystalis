@@ -18,6 +18,5 @@ before_script:
       fi;
     }
 script:
-  - make -j2 compare
   - check_status
 
