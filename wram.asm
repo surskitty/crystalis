@@ -2477,7 +2477,9 @@ wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 wTMsHMs:: flag_array NUM_TMS + NUM_HMS ; d859
 wTMsHMsEnd::
 
-ds 50
+ds 49
+
+wCurItemBallContents:: ds 1
 
 wNumItems:: db ; d892
 wItems:: ds MAX_ITEMS * 2 + 1 ; d893

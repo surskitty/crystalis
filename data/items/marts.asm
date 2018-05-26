@@ -141,10 +141,11 @@ MartGoldenrod4F: ; 16134
 ; 1613b
 
 MartGoldenrod5F: ; 1613b
-	db 3 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
+	db 1 ; # items
+	db POTION
+;	db TM_THUNDERPUNCH
+;	db TM_FIRE_PUNCH
+;	db TM_ICE_PUNCH
 	db -1 ; end
 ; 16140
 
@@ -309,10 +310,11 @@ MartCeladon2F2: ; 161c2
 
 MartCeladon3F: ; 161ce
 	db 4 ; # items
-	db TM_PSYCH_UP
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
+	db POTION
+;	db TM_PSYCH_UP
+;	db TM_THUNDERPUNCH
+;	db TM_FIRE_PUNCH
+;	db TM_ICE_PUNCH
 	db -1 ; end
 ; 161d5
 

@@ -132,3 +132,9 @@ stonetable: MACRO
 ;\3: script pointer
 	dbbw \1, \2, \3
 ENDM
+
+tmhmball_event: MACRO
+	object_event \1, \2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, (1 << 3) | PAL_OW_BLUE, OBJECTTYPE_ITEMBALL, PLAYEREVENT_TMHMBALL, \3, \4
+ENDM
+
+

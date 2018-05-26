@@ -940,6 +940,7 @@ PlayerEventScriptPointers: ; 96c0c
 	dba Script_OverworldWhiteout ; 7
 	dba HatchEggScript           ; 8
 	dba ChangeDirectionScript    ; 9
+	dba FindTMHMInBallScript     ; PLAYEREVENT_TMHMBALL
 	dba Invalid_0x96c2d          ; 10
 ; 96c2d
 
