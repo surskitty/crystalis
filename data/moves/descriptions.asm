@@ -251,9 +251,9 @@ MoveDescriptions:: ; 2cb52
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw MoveFCDescription
-	dw MoveFDDescription
-	dw MoveFEDescription
+	dw FairyWindDescription
+	dw CaptivateDescription
+	dw FakeTearsDescription
 	dw MoveFFDescription
 	dw Move00Description
 ; 2cd52
@@ -1268,3 +1268,15 @@ BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
 ; 2ed44
+
+FairyWindDescription:
+	db   "A fey wind that"
+	next "never misses.@"
+
+CaptivateDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.ATK.@"
+
+FakeTearsDescription:
+	db   "Sharply reduces"
+	next "foe's SPCL.DEF.@"
