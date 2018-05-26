@@ -2477,8 +2477,6 @@ wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 wTMsHMs:: flag_array NUM_TMS + NUM_HMS ; d859
 wTMsHMsEnd::
 
-ds 47
-
 wCurItemBallContents:: ds 1
 
 wNumItems:: db ; d892
@@ -2499,6 +2497,8 @@ wBerriesEnd::
 
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d8f1
 wPCItemsEnd::
+
+ds 47 ; this is free space
 
 ds 1
 

@@ -160,7 +160,7 @@ Moves: ; 41afb
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
 	move SPORE,        EFFECT_SLEEP,               0, GRASS,    100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,    70, 20,   0
-	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
+	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,       60,  5,  10
 	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,   100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,   100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,         90, WATER,     85, 10,   0
@@ -208,7 +208,7 @@ Moves: ; 41afb
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, GHOST,    100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,       95, 15, 100
-	move DETECT,       EFFECT_PROTECT,             0, FIGHTING, 100,  5,   0
+	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,    80, FAIRY,    100, 15,  30
 	move BONE_RUSH,    EFFECT_MULTI_HIT,          25, GROUND,    80, 10,   0
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,            90, DRAGON,   100, 15,   0

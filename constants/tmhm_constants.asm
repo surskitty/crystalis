@@ -50,7 +50,7 @@
 	add_tm FIRE_PUNCH   ; 47
 	add_tm FURY_CUTTER  ; 48
 	add_tm NIGHTMARE    ; 49
-	add_tm SWORDS_DANCE ; 50
+	add_tm SILVER_WIND  ; 50
 	add_tm PAY_DAY      ; 51
 	add_tm METRONOME    ; 52
 	add_tm EXPLOSION    ; 53
@@ -61,7 +61,7 @@
 	add_tm SAFEGUARD    ; 58
 	add_tm FALSE_SWIPE  ; 59
 	add_tm SUBSTITUTE   ; 60
-;	add_tm MOONBLAST    ; 61
+	add_tm MOONBLAST    ; 61
 	add_tm FLAMETHROWER ; 62
 	add_tm THUNDERBOLT  ; 63
 	add_tm ICE_BEAM     ; 64
