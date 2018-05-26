@@ -288,9 +288,6 @@ OWFlash: ; c8ac
 
 .CheckUseFlash: ; c8b5
 ; Flash
-	ld de, ENGINE_ZEPHYRBADGE
-	farcall CheckBadge
-	jr c, .nozephyrbadge
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -305,10 +302,6 @@ OWFlash: ; c8ac
 
 .notadarkcave
 	call FieldMoveFailed
-	ld a, $80
-	ret
-
-.nozephyrbadge
 	ld a, $80
 	ret
 

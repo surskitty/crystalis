@@ -43,7 +43,7 @@ TMHMMoves: ; 1167a
 	db DEFENSE_CURL
 	db THUNDERPUNCH
 	db DREAM_EATER
-	db DETECT
+	db FLASH
 	db REST
 	db ATTRACT
 	db THIEF
@@ -56,7 +56,6 @@ TMHMMoves: ; 1167a
 	db FLY
 	db SURF
 	db STRENGTH
-	db FLASH
 	db WHIRLPOOL
 	db WATERFALL
 ; Move tutor
