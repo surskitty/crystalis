@@ -1,6 +1,14 @@
 IconPointers:
 ; entries correspond to ICON_* constants
 	dw NullIcon
+	dw BulbasaurIcon
+	dw IvysaurIcon
+	dw VenusaurIcon
+	dw CharmanderIcon
+	dw SquirtleIcon
+	dw CaterpieIcon
+	dw MetapodIcon
+	dw KakunaIcon
 	dw PoliwagIcon
 	dw JigglypuffIcon
 	dw DiglettIcon
@@ -21,9 +29,6 @@ IconPointers:
 	dw BlobIcon
 	dw SerpentIcon
 	dw VoltorbIcon
-	dw SquirtleIcon
-	dw BulbasaurIcon
-	dw CharmanderIcon
 	dw CaterpillarIcon
 	dw UnownIcon
 	dw GeodudeIcon
@@ -33,9 +38,18 @@ IconPointers:
 	dw MothIcon
 	dw BatIcon
 	dw SnorlaxIcon
-	dw HoOhIcon
-	dw LugiaIcon
 	dw GyaradosIcon
 	dw SlowpokeIcon
 	dw SudowoodoIcon
 	dw BigmonIcon
+	dw ZubatIcon
+	dw ChikoritaIcon
+	dw MeganiumIcon
+	dw CyndaquilIcon
+	dw QuilavaIcon
+	dw TotodileIcon
+	dw CroconawIcon
+	dw LugiaIcon
+	dw HoOhIcon
+	dw VenonatIcon
+

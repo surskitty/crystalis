@@ -1,5 +1,13 @@
 Icons:
 NullIcon:
+BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp" ; 0x8f68d
+IvysaurIcon:      INCBIN "gfx/icons/ivysaur.2bpp" ; 0x8f68d
+VenusaurIcon:     INCBIN "gfx/icons/venusaur.2bpp" ; 0x8f68d
+CharmanderIcon:   INCBIN "gfx/icons/charmander.2bpp" ; 0x8f70d
+SquirtleIcon:     INCBIN "gfx/icons/squirtle.2bpp" ; 0x8f60d
+CaterpieIcon:     INCBIN "gfx/icons/caterpie.2bpp" ; 0x8f60d
+MetapodIcon:      INCBIN "gfx/icons/metapod.2bpp" ; 0x8f60d
+KakunaIcon:       INCBIN "gfx/icons/kakuna.2bpp" ; 0x8f60d
 PoliwagIcon:      INCBIN "gfx/icons/poliwag.2bpp" ; 0x8ec0d
 JigglypuffIcon:   INCBIN "gfx/icons/jigglypuff.2bpp" ; 0x8ec8d
 DiglettIcon:      INCBIN "gfx/icons/diglett.2bpp" ; 0x8ed0d
@@ -20,9 +28,6 @@ ShellIcon:        INCBIN "gfx/icons/shell.2bpp" ; 0x8f40d
 BlobIcon:         INCBIN "gfx/icons/blob.2bpp" ; 0x8f48d
 SerpentIcon:      INCBIN "gfx/icons/serpent.2bpp" ; 0x8f50d
 VoltorbIcon:      INCBIN "gfx/icons/voltorb.2bpp" ; 0x8f58d
-SquirtleIcon:     INCBIN "gfx/icons/squirtle.2bpp" ; 0x8f60d
-BulbasaurIcon:    INCBIN "gfx/icons/bulbasaur.2bpp" ; 0x8f68d
-CharmanderIcon:   INCBIN "gfx/icons/charmander.2bpp" ; 0x8f70d
 CaterpillarIcon:  INCBIN "gfx/icons/caterpillar.2bpp" ; 0x8f78d
 UnownIcon:        INCBIN "gfx/icons/unown.2bpp" ; 0x8f80d
 GeodudeIcon:      INCBIN "gfx/icons/geodude.2bpp" ; 0x8f88d
@@ -32,9 +37,17 @@ JellyfishIcon:    INCBIN "gfx/icons/jellyfish.2bpp" ; 0x8fa0d
 MothIcon:         INCBIN "gfx/icons/moth.2bpp" ; 0x8fa8d
 BatIcon:          INCBIN "gfx/icons/bat.2bpp" ; 0x8fb0d
 SnorlaxIcon:      INCBIN "gfx/icons/snorlax.2bpp" ; 0x8fb8d
-HoOhIcon:         INCBIN "gfx/icons/ho_oh.2bpp" ; 0x8fc0d
-LugiaIcon:        INCBIN "gfx/icons/lugia.2bpp" ; 0x8fc8d
 GyaradosIcon:     INCBIN "gfx/icons/gyarados.2bpp" ; 0x8fd0d
 SlowpokeIcon:     INCBIN "gfx/icons/slowpoke.2bpp" ; 0x8fd8d
 SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp" ; 0x8fe0d
 BigmonIcon:       INCBIN "gfx/icons/bigmon.2bpp" ; 0x8fe8d
+ZubatIcon:        INCBIN "gfx/icons/zubat.2bpp"
+ChikoritaIcon:    INCBIN "gfx/icons/chikorita.2bpp"
+MeganiumIcon:     INCBIN "gfx/icons/meganium.2bpp"
+CyndaquilIcon:    INCBIN "gfx/icons/cyndaquil.2bpp"
+QuilavaIcon:      INCBIN "gfx/icons/quilava.2bpp"
+TotodileIcon:     INCBIN "gfx/icons/totodile.2bpp"
+CroconawIcon:     INCBIN "gfx/icons/croconaw.2bpp"
+LugiaIcon:        INCBIN "gfx/icons/lugia.2bpp" ; 0x8fc8d
+HoOhIcon:         INCBIN "gfx/icons/ho_oh.2bpp" ; 0x8fc0d
+VenonatIcon:      INCBIN "gfx/icons/venonat.2bpp"
