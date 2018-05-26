@@ -153,6 +153,9 @@ _ResetWRAM: ; 5bae
 	ld hl, wPCItems
 	call .InitList
 
+	ld hl, wTMsHMs
+	call .InitList
+
 	xor a
 	ld [wRoamMon1Species], a
 	ld [wRoamMon2Species], a
@@ -648,7 +651,7 @@ OakSpeech: ; 0x5f99
 	call RotateThreePalettesRight
 	call ClearTileMap
 
-	ld a, WOOPER
+	ld a, VENONAT
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
@@ -708,7 +711,7 @@ OakText1: ; 0x6045
 OakText2: ; 0x604a
 	text_jump _OakText2
 	start_asm
-	ld a, WOOPER
+	ld a, VENONAT
 	call PlayMonCry
 	call WaitSFX
 	ld hl, OakText3

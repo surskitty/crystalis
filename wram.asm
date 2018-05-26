@@ -2474,7 +2474,7 @@ wJohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
 wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 
 
-wTMsHMs:: flag_array NUM_TMS + NUM_HMS ; d859
+wTMsHMs:: ds 9 ; d859
 wTMsHMsEnd::
 
 wCurItemBallContents:: ds 1
@@ -2498,7 +2498,7 @@ wBerriesEnd::
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d8f1
 wPCItemsEnd::
 
-ds 47 ; this is free space
+ds 48 ; this is free space
 
 ds 1
 
