@@ -48,7 +48,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	buttonsound
 	checkitem TM_RETURN
 	iftrue .AlreadyGotTM
-	verbosegiveitem TM_RETURN
+	verbosegivetmhm TM_RETURN
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
 	end
@@ -64,7 +64,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	buttonsound
 	checkitem TM_FRUSTRATION
 	iftrue .AlreadyGotTM
-	verbosegiveitem TM_FRUSTRATION
+	verbosegivetmhm TM_FRUSTRATION
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
 	end

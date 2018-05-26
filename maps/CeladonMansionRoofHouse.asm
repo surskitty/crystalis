@@ -23,7 +23,7 @@ CeladonMansionRoofHousePharmacistScript:
 .Night:
 	writetext UnknownText_0x71ba3
 	buttonsound
-	verbosegiveitem TM_CURSE
+	verbosegivetmhm TM_CURSE
 	iffalse .NoRoom
 	setevent EVENT_GOT_TM03_CURSE
 .GotCurse:
