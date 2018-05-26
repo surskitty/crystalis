@@ -46,7 +46,7 @@ GoldenrodDeptStore5FReceptionistScript:
 .VeryHappy:
 	writetext UnknownText_0x5615a
 	buttonsound
-	checkitem TM_RETURN
+	checktmhm TM_RETURN
 	iftrue .AlreadyGotTM
 	verbosegivetmhm TM_RETURN
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
@@ -62,7 +62,7 @@ GoldenrodDeptStore5FReceptionistScript:
 .NotVeryHappy:
 	writetext UnknownText_0x561d8
 	buttonsound
-	checkitem TM_FRUSTRATION
+	checktmhm TM_FRUSTRATION
 	iftrue .AlreadyGotTM
 	verbosegivetmhm TM_FRUSTRATION
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
