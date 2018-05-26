@@ -43,6 +43,7 @@ IconPointers:
 	dw SudowoodoIcon
 	dw BigmonIcon
 	dw ZubatIcon
+	dw DratiniIcon
 	dw ChikoritaIcon
 	dw MeganiumIcon
 	dw CyndaquilIcon

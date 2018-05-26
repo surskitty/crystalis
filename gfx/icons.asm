@@ -42,6 +42,7 @@ SlowpokeIcon:     INCBIN "gfx/icons/slowpoke.2bpp" ; 0x8fd8d
 SudowoodoIcon:    INCBIN "gfx/icons/sudowoodo.2bpp" ; 0x8fe0d
 BigmonIcon:       INCBIN "gfx/icons/bigmon.2bpp" ; 0x8fe8d
 ZubatIcon:        INCBIN "gfx/icons/zubat.2bpp"
+DratiniIcon:      INCBIN "gfx/icons/dratini.2bpp"
 ChikoritaIcon:    INCBIN "gfx/icons/chikorita.2bpp"
 MeganiumIcon:     INCBIN "gfx/icons/meganium.2bpp"
 CyndaquilIcon:    INCBIN "gfx/icons/cyndaquil.2bpp"
