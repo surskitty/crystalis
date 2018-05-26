@@ -50,17 +50,31 @@
 	add_tm FIRE_PUNCH   ; 47
 	add_tm FURY_CUTTER  ; 48
 	add_tm NIGHTMARE    ; 49
+	add_tm SWORDS_DANCE ; 50
+	add_tm PAY_DAY      ; 51
+	add_tm METRONOME    ; 52
+	add_tm EXPLOSION    ; 53
+	add_tm COUNTER      ; 54
+	add_tm BUBBLEBEAM   ; 55
+	add_tm REFLECT      ; 56
+	add_tm LIGHT_SCREEN ; 57
+	add_tm SAFEGUARD    ; 58
+	add_tm FALSE_SWIPE  ; 59
+	add_tm SUBSTITUTE   ; 60
+;	add_tm MOONBLAST    ; 61
+	add_tm FLAMETHROWER ; 62
+	add_tm THUNDERBOLT  ; 63
+	add_tm ICE_BEAM     ; 64
+	add_tm THUNDER_WAVE ; 65
+
 NUM_TMS = const_value - TM01
 
-	add_hm CUT          ; 50
-	add_hm FLY          ; 51
-	add_hm SURF         ; 52
-	add_hm STRENGTH     ; 53
-	add_hm WHIRLPOOL    ; 54
-	add_hm WATERFALL    ; 55
+	add_hm CUT          ; 66
+	add_hm FLY          ; 67
+	add_hm SURF         ; 68
+	add_hm STRENGTH     ; 69
+	add_hm WHIRLPOOL    ; 70
+	add_hm WATERFALL    ; 71
 NUM_HMS = const_value - HM01
 
-	add_mt FLAMETHROWER
-	add_mt THUNDERBOLT
-	add_mt ICE_BEAM
 NUM_TM_HM_TUTOR = __enum__ + -1
