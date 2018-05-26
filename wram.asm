@@ -2474,8 +2474,10 @@ wJohtoBadges:: flag_array NUM_JOHTO_BADGES ; d857
 wKantoBadges:: flag_array NUM_KANTO_BADGES ; d858
 
 
-wTMsHMs:: ds NUM_TMS + NUM_HMS ; d859
+wTMsHMs:: flag_array NUM_TMS + NUM_HMS ; d859
 wTMsHMsEnd::
+
+ds 50
 
 wNumItems:: db ; d892
 wItems:: ds MAX_ITEMS * 2 + 1 ; d893
@@ -2496,7 +2498,7 @@ wBerriesEnd::
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1 ; d8f1
 wPCItemsEnd::
 
-	ds 1
+ds 1
 
 wPokegearFlags::
 ; bit 0: map

@@ -7,38 +7,8 @@ TMHMPocket: ; 2c76f (b:476f)
 	ret nc
 	call PlaceHollowCursor
 	call WaitBGMap
-	ld a, [wCurItem]
-	dec a
-	ld [wCurItemQuantity], a
-	ld hl, wTMsHMs
-	ld c, a
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	ld [wItemQuantityBuffer], a
-	call .ConvertItemToTMHMNumber
+	ld a, [wCurTMHM]
 	scf
-	ret
-
-.ConvertItemToTMHMNumber: ; 2c798 (b:4798)
-	ld a, [wCurItem]
-	ld c, a
-	callfar GetNumberedTMHM
-	ld a, c
-	ld [wCurItem], a
-	ret
-
-ConvertCurItemIntoCurTMHM: ; 2c7a7 (b:47a7)
-	ld a, [wCurItem]
-	ld c, a
-	callfar GetTMHMNumber
-	ld a, c
-	ld [wCurTMHM], a
-	ret
-
-GetTMHMItemMove: ; 2c7b6 (b:47b6)
-	call ConvertCurItemIntoCurTMHM
-	predef GetTMHMMove
 	ret
 
 AskTeachTMHM: ; 2c7bf (b:47bf)
@@ -46,17 +16,16 @@ AskTeachTMHM: ; 2c7bf (b:47bf)
 	ld a, [hl]
 	push af
 	res NO_TEXT_SCROLL, [hl]
-	ld a, [wCurItem]
-	cp TM01
-	jr c, .NotTMHM
-	call GetTMHMItemMove
+	ld a, [wCurTMHM]
+	ld [wCurTMHM], a
+	predef GetTMHMMove
 	ld a, [wCurTMHM]
 	ld [wPutativeTMHMMove], a
 	call GetMoveName
 	call CopyName1
 	ld hl, Text_BootedTM ; Booted up a TM
-	ld a, [wCurItem]
-	cp HM01
+	ld a, [wCurTMHM]
+	cp HM01 + 1
 	jr c, .TM
 	ld hl, Text_BootedHM ; Booted up an HM
 .TM:
@@ -64,7 +33,6 @@ AskTeachTMHM: ; 2c7bf (b:47bf)
 	ld hl, Text_ItContained
 	call PrintText
 	call YesNoBox
-.NotTMHM:
 	pop bc
 	ld a, b
 	ld [wOptions], a
@@ -146,7 +114,7 @@ TeachTMHM: ; 2c867
 	and a
 	jr z, .nope
 
-	ld a, [wCurItem]
+	ld a, [wCurTMHM]
 	call IsHM
 	ret c
 
@@ -249,7 +217,7 @@ TMHM_ShowTMMoveDescription: ; 2c946 (b:4946)
 	ld b, 4
 	ld c, SCREEN_WIDTH - 2
 	call TextBox
-	ld a, [wCurItem]
+	ld a, [wCurTMHM]
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, TMHM_JoypadLoop
 	ld [wd265], a
@@ -281,14 +249,13 @@ TMHM_CheckHoveringOverCancel: ; 2c98a (b:498a)
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .okay
-	ld a, [hli]
-	and a
+	call InnerCheckTMHM
 	jr z, .loop
 	dec b
 	jr nz, .loop
 	ld a, c
 .okay
-	ld [wCurItem], a
+	ld [wCurTMHM], a
 	cp -1
 	ret
 
@@ -324,8 +291,7 @@ TMHM_ScrollPocket: ; 2c9b1 (b:49b1)
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jp nc, TMHM_JoypadLoop
-	ld a, [hli]
-	and a
+	call InnerCheckTMHM
 	jr z, .loop
 	dec b
 	jr nz, .loop
@@ -350,8 +316,7 @@ TMHM_DisplayPocketItems: ; 2c9e2 (b:49e2)
 	ld a, c
 	cp NUM_TMS + NUM_HMS + 1
 	jr nc, .NotTMHM
-	ld a, [hli]
-	and a
+	call InnerCheckTMHM
 	jr z, .loop2
 	ld b, a
 	ld a, c
@@ -431,15 +396,14 @@ TMHM_GetCurrentPocketPosition: ; 2cab5 (b:4ab5)
 	ld a, [wTMHMPocketScrollPosition]
 	ld b, a
 	inc b
-	ld c, 0
+	ld c, -1
 .loop
 	inc c
-	ld a, [hli]
-	and a
+	ld a, c
+	call InnerCheckTMHM
 	jr z, .loop
 	dec b
 	jr nz, .loop
-	dec hl
 	dec c
 	ret
 
@@ -460,20 +424,66 @@ TMHM_PlaySFX_ReadText2: ; 2cad6 (b:4ad6)
 ; 2cadf (b:4adf)
 
 CountTMsHMs: ; 2cb2a (b:4b2a)
-	ld b, 0
-	ld c, NUM_TMS + NUM_HMS
 	ld hl, wTMsHMs
+ 	ld b, 0
+ 	ld b, 0
+	ld c, ((NUM_TMS + NUM_HMS) + 7) / 8
 .loop
 	ld a, [hli]
-	and a
-	jr z, .skip
-	inc b
-.skip
+	call CountSetBitsInByte
+	add b
+	ld b, a
 	dec c
 	jr nz, .loop
 	ld a, b
 	ld [wd265], a
 	ret
+
+CountSetBitsInByte:
+	push hl
+	push bc
+	ld hl, .SetBitsInByte
+	ld b, 0
+	ld c, a
+	add hl, bc
+	ld a, [hl]
+	pop bc
+	pop hl
+	ret
+
+.SetBitsInByte:
+	db 0, 1, 1, 2, 1, 2, 2, 3
+	db 1, 2, 2, 3, 2, 3, 3, 4
+	db 1, 2, 2, 3, 2, 3, 3, 4
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 1, 2, 2, 3, 2, 3, 3, 4
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 1, 2, 2, 3, 2, 3, 3, 4
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 4, 5, 5, 6, 5, 6, 6, 7
+	db 1, 2, 2, 3, 2, 3, 3, 4
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 4, 5, 5, 6, 5, 6, 6, 7
+	db 2, 3, 3, 4, 3, 4, 4, 5
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 4, 5, 5, 6, 5, 6, 6, 7
+	db 3, 4, 4, 5, 4, 5, 5, 6
+	db 4, 5, 5, 6, 5, 6, 6, 7
+	db 4, 5, 5, 6, 5, 6, 6, 7
+	db 5, 6, 6, 7, 6, 7, 7, 8
 
 PrintMoveDesc: ; 2cb3e
 	push hl
@@ -490,3 +500,18 @@ PrintMoveDesc: ; 2cb3e
 	pop hl
 	jp PlaceString
 ; 2cb52
+
+InnerCheckTMHM:
+	push bc
+	push de
+	dec a
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	ld hl, wTMsHMs
+	call FlagAction
+	ld a, c
+	pop de
+	pop bc
+	and a
+	ret

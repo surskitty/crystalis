@@ -237,6 +237,11 @@ endc
 	dw Script_name                       ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
+	dw Script_givetmhm                   ; aa
+	dw Script_checktmhm                  ; ab
+	dw Script_verbosegivetmhm            ; ac
+	dw Script_tmhmnotify                 ; ad
+	dw Script_tmhmtotext                 ; ae
 
 StartScript:
 	ld hl, wScriptFlags
@@ -628,10 +633,27 @@ GetPocketName:
 
 INCLUDE "data/items/pocket_names.asm"
 
+GetTMHMPocketName:
+	ld hl, .TMHMPocket
+	ld d, h
+	ld l, e
+	ld hl, wStringBuffer3
+	call CopyName2
+	ret
+
+.TMHMPocket:
+	db "TM Pocket@"
+
 CurItemName:
 	ld a, [wCurItem]
 	ld [wd265], a
 	call GetItemName
+	ret
+
+CurTMHMName:
+	ld a, [wCurTMHM]
+	ld [wd265], a
+	call GetTMHMName
 	ret
 
 
@@ -2824,3 +2846,107 @@ Script_checksave:
 	ld a, c
 	ld [wScriptVar], a
 	ret
+
+Script_givetmhm:
+; script command 0xae
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	call GetScriptByte
+	ld [wCurTMHM], a
+	ld [wItemQuantityChangeBuffer], a
+	call ReceiveTMHM
+	jr nc, .full
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+.full
+	xor a
+	ld [wScriptVar], a
+	ret
+
+ReceiveTMHM: ; d3c4
+	ld a, [wCurTMHM]
+	ld e, a
+	ld d, 0
+	ld b, SET_FLAG
+	ld hl, wTMsHMs
+	call FlagAction
+	scf
+	ret
+
+Script_checktmhm:
+; script command 0xaf
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	xor a
+	ld [wScriptVar], a
+	call GetScriptByte
+	ld [wCurTMHM], a
+	call CheckTMHM
+	ret nc
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+CheckTMHM: ; d3fb
+	ld a, [wCurTMHM]
+	ld e, a
+	ld d, 0
+	ld b, CHECK_FLAG
+	ld hl, wTMsHMs
+	call FlagAction
+	ret z
+	scf
+	ret
+
+Script_verbosegivetmhm:
+; script command 0xb0
+; parameters:
+;     tmhm (TMHMLabelByte)
+
+	call Script_givetmhm
+	call CurTMHMName
+	ld de, wStringBuffer1
+	ld a, 1
+	call CopyConvertedText
+	ld b, BANK(GiveTMHMScript)
+	ld de, GiveTMHMScript
+	jp ScriptCall
+
+GiveTMHMScript:
+	callasm ret_96f76
+	writetext ReceivedItemText
+	waitsfx
+	specialsound
+	waitbutton
+	tmhmnotify
+	end
+
+Script_tmhmnotify:
+; script command 0xb1
+
+	call GetTMHMPocketName
+	call CurTMHMName
+	ld b, BANK(PutItemInPocketText)
+	ld hl, PutItemInPocketText
+	call MapTextbox
+	ret
+; 96fd5
+
+Script_tmhmtotext:
+; script command 0xb2
+; parameters:
+; tmhm (TMHMLabelByte) use 0 to draw from ScriptVar
+;     memory (SingleByteParam)
+
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wd265], a
+	call GetTMHMName
+	ld de, wStringBuffer1
+	jp ConvertMemToText
